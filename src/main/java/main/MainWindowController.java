@@ -1,6 +1,7 @@
 package main;
 
 
+import javafx.event.ActionEvent;
 import javafx.stage.FileChooser;
 
 import java.io.BufferedReader;
@@ -11,11 +12,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainWindowController {
-    private List<List<String>> baskets;
+    private List<List<String>> baskets=new ArrayList<>();
 
 
     public void loadBaskets() {
-        this.baskets=new ArrayList<>();
+        baskets.clear();
+
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Wybierz plik zawierający algebrę");
         try
@@ -37,5 +39,16 @@ public class MainWindowController {
 
 
 
+    }
+
+    public void showBaskets() {
+        for(List<String> bsk: baskets )
+        {
+            for(String b: bsk )
+            {
+                System.out.print(b+"; ");
+            }
+            System.out.print("\n");
+        }
     }
 }

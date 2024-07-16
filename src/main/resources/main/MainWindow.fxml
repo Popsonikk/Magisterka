@@ -11,9 +11,10 @@
             fx:controller="main.MainWindowController"
             prefHeight="400.0" prefWidth="600.0">
     <children>
-        <Button onAction="#loadBaskets" layoutX="10.0" layoutY="10.0" prefWidth="100.0" prefHeight="50.0" text="Wczytaj koszyki">
+        <Button onAction="#loadBaskets" layoutX="10.0" layoutY="10.0" prefWidth="100.0" prefHeight="50.0" text="Wczytaj koszyki"/>
+        <Button onAction="#showBaskets" layoutX="10.0" layoutY="70.0" prefWidth="100.0" prefHeight="50.0" text="Zobacz koszyki"/>
 
-        </Button>
+
     </children>
 
 </AnchorPane>
