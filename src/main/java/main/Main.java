@@ -16,6 +16,7 @@ public class Main extends Application {
 
         Parent mainWindow = mainWindowLoader.load();
         MainWindowController mainWindowController = mainWindowLoader.getController();
+        stage.setTitle("Analiza koszykowa");
 
         stage.setScene(new Scene(mainWindow,800,600));
         stage.show();
