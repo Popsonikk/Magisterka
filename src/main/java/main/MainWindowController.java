@@ -1,21 +1,28 @@
 package main;
 
 
-import javafx.event.ActionEvent;
-import javafx.stage.FileChooser;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.Scanner;
 
 public class MainWindowController {
     private BasketManager basketManager;
 
+    private Stage mainStage;
+
+    private Scene basketScene;
+
     public void setBasketManager(BasketManager basketManager) {
         this.basketManager = basketManager;
+    }
+
+    public void setMainStage(Stage mainStage) {
+        this.mainStage = mainStage;
+    }
+
+    public void setBasketScene(Scene basketScene) {
+        this.basketScene = basketScene;
     }
 
     public void loadBaskets() {
@@ -25,7 +32,7 @@ public class MainWindowController {
 
     }
 
-    public void showBaskets() {
-        basketManager.showBaskets();
+    public void showBasketInterface() {
+        mainStage.setScene(basketScene);
     }
 }

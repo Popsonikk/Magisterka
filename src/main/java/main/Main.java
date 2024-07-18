@@ -14,12 +14,26 @@ public class Main extends Application {
         BasketManager basketManager=new BasketManager();
 
         FXMLLoader mainWindowLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
-
         Parent mainWindow = mainWindowLoader.load();
         MainWindowController mainWindowController = mainWindowLoader.getController();
-        mainWindowController.setBasketManager(basketManager);
-        stage.setTitle("Analiza koszykowa");
 
+        FXMLLoader basketWindowLoader = new FXMLLoader(getClass().getResource("BasketInterface.fxml"));
+        Parent basketWindow = basketWindowLoader.load();
+        BasketInterfaceController basketInterfaceController = basketWindowLoader.getController();
+
+
+
+
+
+
+        mainWindowController.setBasketManager(basketManager);
+        mainWindowController.setMainStage(stage);
+        mainWindowController.setBasketScene(new Scene(basketWindow,1200,800));
+
+
+
+
+        stage.setTitle("Analiza koszykowa");
         stage.setScene(new Scene(mainWindow,800,600));
         stage.show();
 
