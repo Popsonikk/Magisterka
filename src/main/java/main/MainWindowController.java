@@ -12,43 +12,20 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainWindowController {
-    private List<List<String>> baskets=new ArrayList<>();
+    private BasketManager basketManager;
 
+    public void setBasketManager(BasketManager basketManager) {
+        this.basketManager = basketManager;
+    }
 
     public void loadBaskets() {
-        baskets.clear();
 
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Wybierz plik zawierający algebrę");
-        try
-        {
-            File file = fileChooser.showOpenDialog(null);
-            System.out.println("Wybrano plik poprawnie");
-            BufferedReader reader= new BufferedReader(new FileReader(file));
-            String line=reader.readLine();
-            while (line!=null)
-            {
-                baskets.add(List.of(line.split(",")));
-                line=reader.readLine();
-            }
-        }
-        catch (Exception e)
-        {
-            System.out.println("Wystąpił błąd podczas wczytania pliku: "+e);
-        }
-
+        basketManager.loadBaskets();
 
 
     }
 
     public void showBaskets() {
-        for(List<String> bsk: baskets )
-        {
-            for(String b: bsk )
-            {
-                System.out.print(b+"; ");
-            }
-            System.out.print("\n");
-        }
+        basketManager.showBaskets();
     }
 }
