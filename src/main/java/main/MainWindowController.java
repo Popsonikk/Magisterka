@@ -12,6 +12,7 @@ public class MainWindowController {
     private Stage mainStage;
 
     private Scene basketScene;
+    private BasketInterfaceController bik;
 
     public void setBasketManager(BasketManager basketManager) {
         this.basketManager = basketManager;
@@ -25,6 +26,10 @@ public class MainWindowController {
         this.basketScene = basketScene;
     }
 
+    public void setBik(BasketInterfaceController bik) {
+        this.bik = bik;
+    }
+
     public void loadBaskets() {
 
         basketManager.loadBaskets();
@@ -33,6 +38,7 @@ public class MainWindowController {
     }
 
     public void showBasketInterface() {
+        bik.init();
         mainStage.setScene(basketScene);
     }
 }

@@ -6,15 +6,12 @@
 <?import javafx.scene.layout.Pane?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0"
+      prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.BasketInterfaceController">
    <children>
-      <Button layoutX="1035.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść koszyki" />
-      <Button layoutX="870.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść i wczytaj" />
-      <Button layoutX="705.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Dodaj do bazy" />
-      <ScrollPane fx:id="pane" layoutY="65.0" prefHeight="735.0" prefWidth="1185.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-        </content>
-      </ScrollPane>
+      <Button layoutX="835.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść koszyki" />
+      <Button layoutX="670.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść i wczytaj" />
+      <Button layoutX="505.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Dodaj do bazy" />
+
    </children>
 </Pane>

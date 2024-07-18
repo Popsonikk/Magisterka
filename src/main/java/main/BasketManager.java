@@ -51,6 +51,14 @@ public class BasketManager {
             System.out.print("\n");
         }
     }
+    public int getBasketSize()
+    {
+        return baskets.size();
+    }
+    public List<String > getSingleBasket(int i)
+    {
+        return baskets.get(i);
+    }
 
 
 
