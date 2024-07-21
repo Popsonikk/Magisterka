@@ -1,19 +1,25 @@
 package main;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class BasketInterfaceController {
+public class BasketInterfaceController implements Initializable {
     @FXML
-    private ScrollPane pane;
+    public VBox contentVBox;
     @FXML
-    private Pane mainPane;
+    public ScrollPane pane;
+
 
     private BasketManager basketManager;
 
@@ -37,14 +43,16 @@ public class BasketInterfaceController {
             HBox box=new HBox();
             box.setLayoutX(15.0);
             box.setLayoutY(20.0+50.0*(i+1));
-            box.setPrefWidth(900);
-            box.setPrefHeight(50);
+            box.setPrefWidth(970);
+            box.setPrefHeight(25);
+            box.setPadding(new Insets(5.0));
             box.setBorder(new Border(new BorderStroke(
                     Color.BLACK,
                     BorderStrokeStyle.SOLID,
                     CornerRadii.EMPTY,
-                    new BorderWidths(3) )));
+                    new BorderWidths(2) )));
             Text text=new Text(builder.toString());
+            text.setFont(new Font(18.0));
             text.setId("text");
             Button button=new Button();
             button.setText("edit");
@@ -55,11 +63,18 @@ public class BasketInterfaceController {
             box.getChildren().add(text);
             box.getChildren().add(button);
             box.getChildren().add(button1);
-            mainPane.getChildren().add(box);
+            contentVBox.getChildren().add(box);
+            contentVBox.setPadding(new Insets(15.0));
 
 
 
         }
 
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
     }
 }
