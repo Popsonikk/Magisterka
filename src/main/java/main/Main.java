@@ -21,21 +21,11 @@ public class Main extends Application {
         Parent basketWindow = basketWindowLoader.load();
         BasketInterfaceController basketInterfaceController = basketWindowLoader.getController();
 
-
-
-
-
-
-        mainWindowController.setBasketManager(basketManager);
         mainWindowController.setMainStage(stage);
         mainWindowController.setBasketScene(new Scene(basketWindow,1000,750));
 
-
         basketInterfaceController.setBasketManager(basketManager);
 
-
-
-        mainWindowController.setBik(basketInterfaceController);
         stage.setTitle("Analiza koszykowa");
         stage.setScene(new Scene(mainWindow,1000,750));
         stage.show();

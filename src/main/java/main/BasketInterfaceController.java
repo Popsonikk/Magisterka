@@ -1,10 +1,15 @@
 package main;
 
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -20,6 +25,12 @@ public class BasketInterfaceController implements Initializable {
     public VBox contentVBox;
     @FXML
     public ScrollPane pane;
+    @FXML
+    public Pane mainPane;
+
+
+    private int boxSize;
+    private int startId;
 
 
     private BasketManager basketManager;
@@ -28,24 +39,26 @@ public class BasketInterfaceController implements Initializable {
         this.basketManager = basketManager;
     }
 
-    public void init()
+    public void createView()
     {
         int size= basketManager.getBasketSize();
         if(size==0)
             return;
-        for(int i=0;i<size;i++)
+        int range=Math.min(size,(startId+boxSize));
+        for(int i=startId;i<range;i++)
         {
             List<String> basket =basketManager.getSingleBasket(i);
             StringBuilder builder=new StringBuilder();
             for(String s:basket)
             {
-
                 builder.append(s.trim()).append("; ");
+
             }
+
             HBox box=new HBox();
             box.setLayoutX(15.0);
             box.setLayoutY(20.0+50.0*(i+1));
-            box.setPrefWidth(940);
+            box.setPrefWidth(950);
             box.setPrefHeight(25);
             box.setPadding(new Insets(5.0));
             box.setBorder(new Border(new BorderStroke(
@@ -56,17 +69,8 @@ public class BasketInterfaceController implements Initializable {
             Text text=new Text(builder.toString());
             text.setFont(new Font(18.0));
             text.setId("text");
-            Button button=new Button();
-            button.setText("edit");
-            button.setLayoutX(900.0);
-            Button button1=new Button();
-            button1.setText("detete");
-            button.setLayoutX(1050.0);
-            box.getChildren().addAll(text);
-            //box.getChildren().add(button);
-            //box.getChildren().add(button1);
+            box.getChildren().add(text);
             contentVBox.getChildren().add(box);
-            contentVBox.setPadding(new Insets(15.0));
 
 
 
@@ -77,7 +81,7 @@ public class BasketInterfaceController implements Initializable {
         try
         {
             basketManager.loadBaskets();
-            init();
+            createView();
             System.out.println("Dane wczytane poprawnie");
         }
         catch (Exception e)
@@ -92,8 +96,55 @@ public class BasketInterfaceController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+
+        Text text1=new Text("Pokazuj  ");
+        Text text2=new Text("  Koszyków");
+        text1.setFont(new Font(18.0));
+        text2.setFont(new Font(18.0));
+
+        pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        MenuButton menuButton=new MenuButton();
+        menuButton.setText("50");
+        boxSize=50;
+        startId=0;
+        EventHandler<ActionEvent> event = e -> {
+            MenuItem item = (MenuItem) e.getSource();
+            boxSize = Integer.parseInt(item.getText());
+            menuButton.setText(item.getText());
+            contentVBox.getChildren().clear();
+            createView();
+
+        };
+        MenuItem item1=new MenuItem("10");
+        item1.setOnAction(event);
+        MenuItem item2=new MenuItem("25");
+        item2.setOnAction(event);
+        MenuItem item3=new MenuItem("50");
+        item3.setOnAction(event);
+        MenuItem item4=new MenuItem("75");
+        item4.setOnAction(event);
+        MenuItem item5=new MenuItem("100");
+        item5.setOnAction(event);
+
+        menuButton.getItems().addAll(item1,item2,item3,item4,item5);
+
+        HBox box=new HBox();
+        box.setPadding(new Insets(10.0));
+        box.setAlignment(Pos.CENTER);
+
+        box.setLayoutX(375.0);
+        box.setLayoutY(685.0);
+        box.setPrefWidth(250);
+        box.setPrefHeight(50);
+        box.setPadding(new Insets(5.0));
+        box.setBorder(new Border(new BorderStroke(
+                Color.BLACK,
+                BorderStrokeStyle.SOLID,
+                CornerRadii.EMPTY,
+                new BorderWidths(2) )));
+        box.getChildren().addAll(text1,menuButton,text2);
+        mainPane.getChildren().add(box);
     }
 
     public void clearBaskets() {
