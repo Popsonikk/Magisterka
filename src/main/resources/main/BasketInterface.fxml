@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
 
@@ -10,10 +9,10 @@
 <Pane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0"
       prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.BasketInterfaceController">
    <children>
-      <Button layoutX="835.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść koszyki" />
-      <Button layoutX="670.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść i wczytaj" />
+      <Button onAction="#clearBaskets" layoutX="835.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść koszyki" />
+      <Button onAction="#loadBaskets" layoutX="670.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wczytaj koszyki" />
       <Button layoutX="505.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Dodaj do bazy" />
-      <ScrollPane fx:id="pane"  prefHeight="670" prefWidth="970.0" layoutY="70.0"  >
+      <ScrollPane fx:id="pane"  prefHeight="670" prefWidth="985.0" layoutY="70.0"  >
       <content>
          <VBox fx:id="contentVBox" />
       </content>

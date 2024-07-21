@@ -37,7 +37,7 @@ public class Main extends Application {
 
         mainWindowController.setBik(basketInterfaceController);
         stage.setTitle("Analiza koszykowa");
-        stage.setScene(new Scene(mainWindow,800,600));
+        stage.setScene(new Scene(mainWindow,1000,750));
         stage.show();
 
     }

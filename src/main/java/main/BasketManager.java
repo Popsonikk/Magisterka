@@ -2,9 +2,7 @@ package main;
 
 import javafx.stage.FileChooser;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,30 +13,19 @@ public class BasketManager {
     {
         this.baskets=new ArrayList<>();
     }
-    public void loadBaskets() {
+    public void loadBaskets() throws IOException {
         baskets.clear();
 
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Wybierz plik zawierający algebrę");
-        try
+        fileChooser.setTitle("Wybierz plik zawierający listę koszyków");
+        File file = fileChooser.showOpenDialog(null);
+        BufferedReader reader= new BufferedReader(new FileReader(file));
+        String line=reader.readLine();
+        while (line!=null)
         {
-            File file = fileChooser.showOpenDialog(null);
-            System.out.println("Wybrano plik poprawnie");
-            BufferedReader reader= new BufferedReader(new FileReader(file));
-            String line=reader.readLine();
-            while (line!=null)
-            {
-                baskets.add(List.of(line.split(",")));
-                line=reader.readLine();
-            }
+            baskets.add(List.of(line.split(",")));
+            line=reader.readLine();
         }
-        catch (Exception e)
-        {
-            System.out.println("Wystąpił błąd podczas wczytania pliku: "+e);
-        }
-
-
-
     }
 
     public void showBaskets() {
@@ -58,6 +45,11 @@ public class BasketManager {
     public List<String > getSingleBasket(int i)
     {
         return baskets.get(i);
+    }
+
+    public void clearBaskets()
+    {
+        baskets.clear();
     }
 
 

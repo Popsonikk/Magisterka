@@ -30,12 +30,7 @@ public class MainWindowController {
         this.bik = bik;
     }
 
-    public void loadBaskets() {
 
-        basketManager.loadBaskets();
-
-
-    }
 
     public void showBasketInterface() {
         bik.init();
