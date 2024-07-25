@@ -7,17 +7,19 @@
 
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.layout.HBox?>
 <Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0"
       prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.BasketInterfaceController">
    <children>
       <Button onAction="#clearBaskets" layoutX="835.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść koszyki" />
       <Button onAction="#loadBaskets" layoutX="670.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wczytaj koszyki" />
-      <Button layoutX="505.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Dodaj do bazy" />
       <ScrollPane fx:id="pane"  prefHeight="600.0" prefWidth="970.0" layoutY="70.0"  layoutX="15.0">
       <content>
          <VBox fx:id="contentVBox" />
       </content>
       </ScrollPane>
+      <HBox fx:id="selectSizeBox"  layoutX="15.0" layoutY="685.0" alignment="CENTER" prefHeight="50.0" prefWidth="250.0" />
+      <HBox fx:id="switchPageBox"  layoutX="575.0" layoutY="685.0" alignment="CENTER" prefHeight="50.0" prefWidth="400.0" />
 
 
    </children>

@@ -6,7 +6,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
@@ -27,6 +26,10 @@ public class BasketInterfaceController implements Initializable {
     public ScrollPane pane;
     @FXML
     public Pane mainPane;
+    @FXML
+    public HBox selectSizeBox;
+    @FXML
+    public HBox switchPageBox;
 
 
     private int boxSize;
@@ -41,6 +44,7 @@ public class BasketInterfaceController implements Initializable {
 
     public void createView()
     {
+        contentVBox.getChildren().clear();
         int size= basketManager.getBasketSize();
         if(size==0)
             return;
@@ -49,6 +53,7 @@ public class BasketInterfaceController implements Initializable {
         {
             List<String> basket =basketManager.getSingleBasket(i);
             StringBuilder builder=new StringBuilder();
+            builder.append("ID: ").append(i).append(" - ");
             for(String s:basket)
             {
                 builder.append(s.trim()).append("; ");
@@ -71,10 +76,9 @@ public class BasketInterfaceController implements Initializable {
             text.setId("text");
             box.getChildren().add(text);
             contentVBox.getChildren().add(box);
-
-
-
         }
+        Text tx= (Text) switchPageBox.lookup("#showInfo");
+        tx.setText("  Pokazano "+(startId+1)+"-"+(Math.min(startId+boxSize, basketManager.getBasketSize()))+" z "+basketManager.getBasketSize()+" koszyków  ");
 
     }
     public void loadBaskets() {
@@ -112,7 +116,6 @@ public class BasketInterfaceController implements Initializable {
             MenuItem item = (MenuItem) e.getSource();
             boxSize = Integer.parseInt(item.getText());
             menuButton.setText(item.getText());
-            contentVBox.getChildren().clear();
             createView();
 
         };
@@ -129,22 +132,49 @@ public class BasketInterfaceController implements Initializable {
 
         menuButton.getItems().addAll(item1,item2,item3,item4,item5);
 
-        HBox box=new HBox();
-        box.setPadding(new Insets(10.0));
-        box.setAlignment(Pos.CENTER);
-
-        box.setLayoutX(375.0);
-        box.setLayoutY(685.0);
-        box.setPrefWidth(250);
-        box.setPrefHeight(50);
-        box.setPadding(new Insets(5.0));
-        box.setBorder(new Border(new BorderStroke(
+        selectSizeBox.setBorder(new Border(new BorderStroke(
                 Color.BLACK,
                 BorderStrokeStyle.SOLID,
                 CornerRadii.EMPTY,
                 new BorderWidths(2) )));
-        box.getChildren().addAll(text1,menuButton,text2);
-        mainPane.getChildren().add(box);
+
+        selectSizeBox.setPadding(new Insets(5.0));
+        selectSizeBox.getChildren().addAll(text1,menuButton,text2);
+
+        switchPageBox.setBorder(new Border(new BorderStroke(
+                Color.BLACK,
+                BorderStrokeStyle.SOLID,
+                CornerRadii.EMPTY,
+                new BorderWidths(2) )));
+
+        switchPageBox.setPadding(new Insets(5.0));
+        Button backButton = new Button("<");
+        //backButton.setFont(new Font(18.0));
+        backButton.setPrefSize(50,20);
+        Button nextButton= new Button(">");
+       // nextButton.setFont(new Font(18.0));
+        nextButton.setPrefSize(50,20);
+        Text text=new Text("  Pokazano 0 z 0 koszyków  ");
+       // text.setFont(new Font(18.0));
+        text.setId("showInfo");
+
+        backButton.setOnAction(e -> {
+            if(startId==0)
+                return;
+            startId=Math.max(0,startId-boxSize);
+            createView();
+
+        });
+        nextButton.setOnAction(e -> {
+
+            if(startId+boxSize>=basketManager.getBasketSize())
+                return;
+            startId+=boxSize;
+            createView();
+
+        });
+        switchPageBox.getChildren().addAll(backButton,text,nextButton);
+
     }
 
     public void clearBaskets() {
