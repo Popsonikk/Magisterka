@@ -6,13 +6,16 @@
 
 
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
 <Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0"
       prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.BasketInterfaceController">
    <children>
       <Button onAction="#clearBaskets" layoutX="835.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść koszyki" />
       <Button onAction="#loadBaskets" layoutX="670.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wczytaj koszyki" />
+      <TextField fx:id="tx" layoutX="15.0" layoutY="15.0" prefHeight="50.0" prefWidth="150.0" alignment="CENTER"/>
+      <Button onAction="#filtrBaskets" layoutX="180.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Filtruj koszyki" />
+      <Button onAction="#clearFilter" layoutX="345.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść filtr" />
       <ScrollPane fx:id="pane"  prefHeight="600.0" prefWidth="970.0" layoutY="70.0"  layoutX="15.0">
       <content>
          <VBox fx:id="contentVBox" />

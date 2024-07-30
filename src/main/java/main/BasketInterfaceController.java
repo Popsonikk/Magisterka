@@ -6,10 +6,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -30,10 +27,14 @@ public class BasketInterfaceController implements Initializable {
     public HBox selectSizeBox;
     @FXML
     public HBox switchPageBox;
+    @FXML
+    public TextField tx;
 
 
     private int boxSize;
     private int startId;
+
+    private boolean filtred;
 
 
     private BasketManager basketManager;
@@ -45,21 +46,26 @@ public class BasketInterfaceController implements Initializable {
     public void createView()
     {
         contentVBox.getChildren().clear();
-        int size= basketManager.getBasketSize();
+
+        int size;
+        if(filtred)
+            size=basketManager.getFilteredBasketSize();
+        else
+            size= basketManager.getBasketSize();
         if(size==0)
             return;
         int range=Math.min(size,(startId+boxSize));
         for(int i=startId;i<range;i++)
         {
-            List<String> basket =basketManager.getSingleBasket(i);
+            List<String> basket;
+            if (filtred)
+                basket=basketManager.getFilteredSingleBasket(i);
+            else
+                basket =basketManager.getSingleBasket(i);
             StringBuilder builder=new StringBuilder();
             builder.append("ID: ").append(i).append(" - ");
             for(String s:basket)
-            {
                 builder.append(s.trim()).append("; ");
-
-            }
-
             HBox box=new HBox();
             box.setLayoutX(15.0);
             box.setLayoutY(20.0+50.0*(i+1));
@@ -78,9 +84,14 @@ public class BasketInterfaceController implements Initializable {
             contentVBox.getChildren().add(box);
         }
         Text tx= (Text) switchPageBox.lookup("#showInfo");
-        tx.setText("  Pokazano "+(startId+1)+"-"+(Math.min(startId+boxSize, basketManager.getBasketSize()))+" z "+basketManager.getBasketSize()+" koszyków  ");
+        if (filtred)
+            tx.setText("  Pokazano "+(startId+1)+"-"+(Math.min(startId+boxSize, basketManager.getFilteredBasketSize()))+" z "+basketManager.getFilteredBasketSize()+" koszyków  ");
+        else
+            tx.setText("  Pokazano "+(startId+1)+"-"+(Math.min(startId+boxSize, basketManager.getBasketSize()))+" z "+basketManager.getBasketSize()+" koszyków  ");
+
 
     }
+
     public void loadBaskets() {
         try
         {
@@ -93,13 +104,11 @@ public class BasketInterfaceController implements Initializable {
             System.out.println("Nastąpił błąd w czasie wczytywania danych: "+e);
         }
 
-
-
-
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        filtred=false;
 
         Text text1=new Text("Pokazuj  ");
         Text text2=new Text("  Koszyków");
@@ -166,9 +175,17 @@ public class BasketInterfaceController implements Initializable {
 
         });
         nextButton.setOnAction(e -> {
+            if(filtred)
+            {
+                if(startId+boxSize>=basketManager.getFilteredBasketSize())
+                    return;
+            }
+            else
+            {
+                if(startId+boxSize>=basketManager.getBasketSize())
+                    return;
+            }
 
-            if(startId+boxSize>=basketManager.getBasketSize())
-                return;
             startId+=boxSize;
             createView();
 
@@ -183,6 +200,8 @@ public class BasketInterfaceController implements Initializable {
             basketManager.clearBaskets();
             contentVBox.getChildren().clear();
             System.out.println("Usunięcie koszyków zakończone pomyślnie");
+            Text tx= (Text) switchPageBox.lookup("#showInfo");
+            tx.setText("  Pokazano 0 z 0 koszyków  ");
         }
         catch (Exception e)
         {
@@ -190,4 +209,21 @@ public class BasketInterfaceController implements Initializable {
         }
 
     }
+
+    public void filtrBaskets() {
+        String s=tx.getText();
+        if (s.isEmpty()||basketManager.getBasketSize()==0)
+            return;
+        basketManager.filtrBaskets(s);
+        filtred=true;
+        createView();
+    }
+
+    public void clearFilter() {
+        filtred=false;
+        tx.clear();
+        createView();
+
+    }
+
 }

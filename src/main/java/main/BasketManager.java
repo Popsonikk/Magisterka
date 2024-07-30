@@ -1,16 +1,18 @@
 package main;
 
 import javafx.stage.FileChooser;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class BasketManager {
     private List<List<String>> baskets;
+    private List<List<String>> filteredBaskets;
 
     BasketManager()
     {
+        this.filteredBaskets=new ArrayList<>();
         this.baskets=new ArrayList<>();
     }
     public void loadBaskets() throws IOException {
@@ -38,6 +40,15 @@ public class BasketManager {
             System.out.print("\n");
         }
     }
+    public int getFilteredBasketSize()
+    {
+        return filteredBaskets.size();
+    }
+    public List<String> getFilteredSingleBasket(int i)
+    {
+        return filteredBaskets.get(i);
+    }
+
     public int getBasketSize()
     {
         return baskets.size();
@@ -51,6 +62,20 @@ public class BasketManager {
     {
         baskets.clear();
     }
+
+    public void clearFilteredBaskets()
+    {
+        filteredBaskets.clear();
+    }
+
+    public void filtrBaskets(String item)
+    {
+       filteredBaskets = baskets.stream()
+                .filter(basket -> basket.contains(item))
+                .toList();
+    }
+
+
 
 
 
