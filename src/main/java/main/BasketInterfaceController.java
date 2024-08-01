@@ -6,11 +6,13 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.List;
@@ -36,8 +38,19 @@ public class BasketInterfaceController implements Initializable {
 
     private boolean filtred;
 
+    private Scene mainScene;
+
+    private Stage mainStage;
 
     private BasketManager basketManager;
+
+    public void setMainScene(Scene mainScene) {
+        this.mainScene = mainScene;
+    }
+
+    public void setMainStage(Stage mainStage) {
+        this.mainStage = mainStage;
+    }
 
     public void setBasketManager(BasketManager basketManager) {
         this.basketManager = basketManager;
@@ -226,4 +239,7 @@ public class BasketInterfaceController implements Initializable {
 
     }
 
+    public void back() {
+        mainStage.setScene(mainScene);
+    }
 }

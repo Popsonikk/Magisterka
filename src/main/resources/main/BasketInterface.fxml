@@ -16,6 +16,7 @@
       <TextField fx:id="tx" layoutX="15.0" layoutY="15.0" prefHeight="50.0" prefWidth="150.0" alignment="CENTER"/>
       <Button onAction="#filtrBaskets" layoutX="180.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Filtruj koszyki" />
       <Button onAction="#clearFilter" layoutX="345.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść filtr" />
+      <Button onAction="#back" layoutX="500.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Powrót" />
       <ScrollPane fx:id="pane"  prefHeight="600.0" prefWidth="970.0" layoutY="70.0"  layoutX="15.0">
       <content>
          <VBox fx:id="contentVBox" />

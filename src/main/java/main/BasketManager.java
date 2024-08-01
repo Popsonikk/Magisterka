@@ -10,6 +10,8 @@ public class BasketManager {
     private List<List<String>> baskets;
     private List<List<String>> filteredBaskets;
 
+
+
     BasketManager()
     {
         this.filteredBaskets=new ArrayList<>();
@@ -66,6 +68,10 @@ public class BasketManager {
     public void clearFilteredBaskets()
     {
         filteredBaskets.clear();
+    }
+
+    public List<List<String>> getBaskets() {
+        return baskets;
     }
 
     public void filtrBaskets(String item)
