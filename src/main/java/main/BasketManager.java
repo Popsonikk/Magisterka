@@ -4,11 +4,13 @@ import javafx.stage.FileChooser;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 public class BasketManager {
-    private List<List<String>> baskets;
-    private List<List<String>> filteredBaskets;
+    private List<Set<String>> baskets;
+    private List<Set<String>> filteredBaskets;
 
 
 
@@ -27,26 +29,16 @@ public class BasketManager {
         String line=reader.readLine();
         while (line!=null)
         {
-            baskets.add(List.of(line.split(",")));
+            baskets.add(Set.of(line.split(",")));
             line=reader.readLine();
         }
     }
 
-    public void showBaskets() {
-        for(List<String> bsk: baskets )
-        {
-            for(String b: bsk )
-            {
-                System.out.print(b+"; ");
-            }
-            System.out.print("\n");
-        }
-    }
     public int getFilteredBasketSize()
     {
         return filteredBaskets.size();
     }
-    public List<String> getFilteredSingleBasket(int i)
+    public Set<String> getFilteredSingleBasket(int i)
     {
         return filteredBaskets.get(i);
     }
@@ -55,7 +47,7 @@ public class BasketManager {
     {
         return baskets.size();
     }
-    public List<String > getSingleBasket(int i)
+    public Set<String > getSingleBasket(int i)
     {
         return baskets.get(i);
     }
@@ -70,15 +62,19 @@ public class BasketManager {
         filteredBaskets.clear();
     }
 
-    public List<List<String>> getBaskets() {
+    public List<Set<String>> getBaskets() {
         return baskets;
     }
 
-    public void filtrBaskets(String item)
-    {
-       filteredBaskets = baskets.stream()
+    public List<Set<String>> getFilteredBaskets() {
+        return filteredBaskets;
+    }
+
+    public void filtrBaskets(String item) {
+        filteredBaskets.clear();
+        filteredBaskets.addAll(baskets.stream()
                 .filter(basket -> basket.contains(item))
-                .toList();
+                .toList());
     }
 
 

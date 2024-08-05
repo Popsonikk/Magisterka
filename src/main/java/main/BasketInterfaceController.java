@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 public class BasketInterfaceController implements Initializable {
     @FXML
@@ -59,50 +60,50 @@ public class BasketInterfaceController implements Initializable {
     public void createView()
     {
         contentVBox.getChildren().clear();
-
-        int size;
         if(filtred)
-            size=basketManager.getFilteredBasketSize();
+            createViewFromSet(basketManager.getFilteredBaskets());
         else
-            size= basketManager.getBasketSize();
-        if(size==0)
-            return;
+            createViewFromSet(basketManager.getBaskets());
+    }
+    private void createViewFromSet(List<Set<String>> baskets)
+    {
+        int size=baskets.size();
         int range=Math.min(size,(startId+boxSize));
-        for(int i=startId;i<range;i++)
+        for(int i=startId,j=0;i<range;i++,j++)
         {
-            List<String> basket;
-            if (filtred)
-                basket=basketManager.getFilteredSingleBasket(i);
-            else
-                basket =basketManager.getSingleBasket(i);
+            Set<String> basket=baskets.get(i);
             StringBuilder builder=new StringBuilder();
             builder.append("ID: ").append(i).append(" - ");
             for(String s:basket)
                 builder.append(s.trim()).append("; ");
-            HBox box=new HBox();
-            box.setLayoutX(15.0);
-            box.setLayoutY(20.0+50.0*(i+1));
-            box.setPrefWidth(950);
-            box.setPrefHeight(25);
-            box.setPadding(new Insets(5.0));
-            box.setBorder(new Border(new BorderStroke(
-                    Color.BLACK,
-                    BorderStrokeStyle.SOLID,
-                    CornerRadii.EMPTY,
-                    new BorderWidths(2) )));
-            Text text=new Text(builder.toString());
-            text.setFont(new Font(18.0));
-            text.setId("text");
-            box.getChildren().add(text);
+            HBox box=createBox(builder,j);
             contentVBox.getChildren().add(box);
         }
+
+
         Text tx= (Text) switchPageBox.lookup("#showInfo");
-        if (filtred)
-            tx.setText("  Pokazano "+(startId+1)+"-"+(Math.min(startId+boxSize, basketManager.getFilteredBasketSize()))+" z "+basketManager.getFilteredBasketSize()+" koszyków  ");
-        else
-            tx.setText("  Pokazano "+(startId+1)+"-"+(Math.min(startId+boxSize, basketManager.getBasketSize()))+" z "+basketManager.getBasketSize()+" koszyków  ");
+        tx.setText("  Pokazano "+(startId+1)+"-"+(Math.min(startId+boxSize, size)+" z "+size+" koszyków  "));
+    }
 
 
+    private HBox createBox(StringBuilder builder,int i)
+    {
+        HBox box=new HBox();
+        box.setLayoutX(15.0);
+        box.setLayoutY(20.0+50.0*(i+1));
+        box.setPrefWidth(950);
+        box.setPrefHeight(25);
+        box.setPadding(new Insets(5.0));
+        box.setBorder(new Border(new BorderStroke(
+                Color.BLACK,
+                BorderStrokeStyle.SOLID,
+                CornerRadii.EMPTY,
+                new BorderWidths(2) )));
+        Text text=new Text(builder.toString());
+        text.setFont(new Font(18.0));
+        //text.setId("text");
+        box.getChildren().add(text);
+        return  box;
     }
 
     public void loadBaskets() {
@@ -235,6 +236,7 @@ public class BasketInterfaceController implements Initializable {
     public void clearFilter() {
         filtred=false;
         tx.clear();
+        basketManager.clearFilteredBaskets();
         createView();
 
     }
