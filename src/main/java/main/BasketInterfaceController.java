@@ -13,11 +13,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Set;
 
 public class BasketInterfaceController implements Initializable {
     @FXML
@@ -65,13 +63,13 @@ public class BasketInterfaceController implements Initializable {
         else
             createViewFromSet(basketManager.getBaskets());
     }
-    private void createViewFromSet(List<Set<String>> baskets)
+    private void createViewFromSet(List<List<String>> baskets)
     {
         int size=baskets.size();
         int range=Math.min(size,(startId+boxSize));
         for(int i=startId,j=0;i<range;i++,j++)
         {
-            Set<String> basket=baskets.get(i);
+            List<String> basket=baskets.get(i);
             StringBuilder builder=new StringBuilder();
             builder.append("ID: ").append(i).append(" - ");
             for(String s:basket)

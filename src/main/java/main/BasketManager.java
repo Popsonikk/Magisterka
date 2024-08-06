@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 
 
 public class BasketManager {
-    private List<Set<String>> baskets;
-    private List<Set<String>> filteredBaskets;
+    private List<List<String>> baskets;
+    private List<List<String>> filteredBaskets;
 
 
 
@@ -29,7 +29,7 @@ public class BasketManager {
         String line=reader.readLine();
         while (line!=null)
         {
-            baskets.add(Set.of(line.split(",")));
+            baskets.add(List.of(line.split(",")));
             line=reader.readLine();
         }
     }
@@ -38,7 +38,7 @@ public class BasketManager {
     {
         return filteredBaskets.size();
     }
-    public Set<String> getFilteredSingleBasket(int i)
+    public List<String> getFilteredSingleBasket(int i)
     {
         return filteredBaskets.get(i);
     }
@@ -47,7 +47,7 @@ public class BasketManager {
     {
         return baskets.size();
     }
-    public Set<String > getSingleBasket(int i)
+    public List<String > getSingleBasket(int i)
     {
         return baskets.get(i);
     }
@@ -62,11 +62,11 @@ public class BasketManager {
         filteredBaskets.clear();
     }
 
-    public List<Set<String>> getBaskets() {
+    public List<List<String>> getBaskets() {
         return baskets;
     }
 
-    public List<Set<String>> getFilteredBaskets() {
+    public List<List<String>> getFilteredBaskets() {
         return filteredBaskets;
     }
 
