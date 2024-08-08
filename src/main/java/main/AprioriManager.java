@@ -1,12 +1,14 @@
 package main;
 
+import javafx.util.Pair;
+
 import java.util.*;
 
 public class AprioriManager {
     private  BasketManager basketManager;
 
 
-    private List<List<String>> result;
+    private List<Pair<List<String>,Double>> result;
 
     AprioriManager()
     {
@@ -17,7 +19,7 @@ public class AprioriManager {
         this.basketManager = basketManager;
     }
 
-    public void Apriori(double minSup)
+    public void Apriori(double minSup, int len)
     {
 
         if(basketManager.getBasketSize()==0)
@@ -39,12 +41,13 @@ public class AprioriManager {
             }
         }
         //Częste wzorce jednoelementowe
-        List<List<String>> currentPatterns = filterItemSets(itemSetCount, baskets.size(),minSup);
+        List<Pair<List<String>,Double>>  currentPatterns = filterItemSets(itemSetCount, baskets.size(),minSup);
         //dodanie wzorców do listy wynikowej
         result.addAll(currentPatterns);
+        int i=2;
 
         // krok rekurencyjny
-        while (!currentPatterns.isEmpty()) {
+        while (!currentPatterns.isEmpty()&&i<=len) {
             // Generowanie k-wzorców częstych
             List<List<String>> candidates = generateCandidates(currentPatterns);
             //wyczyszczenie mapy zliczającej wystąpienia k-wzorców
@@ -64,19 +67,20 @@ public class AprioriManager {
             //wyfiltrowanie wzorców po wymaganym wsparciu
             currentPatterns = filterItemSets(itemSetCount, baskets.size(),minSup);
             result.addAll(currentPatterns);
+            i++;
         }
 
     }
 
-    private List<List<String>> generateCandidates(List<List<String>> frequentItemSets) {
+    private List<List<String>> generateCandidates(List<Pair<List<String>,Double>> frequentItemSets) {
         //set dla pozbycia się duplikatów
         Set<Set<String>> candidates = new HashSet<>(); // Używamy Set do eliminacji duplikatów
 
         //generowanie wszystkich możliwych par (bez powtórzeń)
         for (int i = 0; i < frequentItemSets.size(); i++) {
             for (int j = i + 1; j < frequentItemSets.size(); j++) {
-                List<String> itemSet1 = frequentItemSets.get(i);
-                List<String> itemSet2 = frequentItemSets.get(j);
+                List<String> itemSet1 = frequentItemSets.get(i).getKey();
+                List<String> itemSet2 = frequentItemSets.get(j).getKey();
                 //stworzenie tymczasowej listy i dodanie pierwszego wzorca
                 Set<String> union = new HashSet<>(itemSet1);
                 //dodanie drugiego wzorca z pary(duplikaty usuwane za pomocą set)
@@ -97,15 +101,16 @@ public class AprioriManager {
         return result;
     }
 
-    private List<List<String>> filterItemSets(Map<List<String>, Integer> itemSetCount, int transactionCount, double minSupport)
+    private List<Pair<List<String>,Double>>  filterItemSets(Map<List<String>, Integer> itemSetCount, int transactionCount, double minSupport)
     {
         //pusta lista wynikowa
-        List<List<String>> filteredItemSets = new ArrayList<>();
+        List<Pair<List<String>,Double>>  filteredItemSets = new ArrayList<>();
         //filtrujemy po mapie
         for (Map.Entry<List<String>, Integer> entry : itemSetCount.entrySet()) {
             //wyliczamy wsparcie
-            if ((entry.getValue() / (double) transactionCount) >= minSupport) {
-                filteredItemSets.add(entry.getKey());
+            double supp=(entry.getValue() / (double) transactionCount);
+            if ( supp>= minSupport) {
+                filteredItemSets.add(new Pair<>(entry.getKey(),supp));
             }
         }
         return filteredItemSets;
