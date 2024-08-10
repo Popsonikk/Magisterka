@@ -22,6 +22,7 @@ public class AprioriManager {
     public void Apriori(double minSup, int len)
     {
 
+        result.clear();
         if(basketManager.getBasketSize()==0)
         {
             System.out.println("Brak koszyków");
@@ -69,6 +70,7 @@ public class AprioriManager {
             result.addAll(currentPatterns);
             i++;
         }
+        printSupport();
 
     }
 
@@ -114,6 +116,18 @@ public class AprioriManager {
             }
         }
         return filteredItemSets;
+    }
+    public void printSupport()
+    {
+        for(Pair<List<String>,Double> pattern: result)
+        {
+            System.out.print(pattern.getValue()+": ");
+            for (String s: pattern.getKey())
+            {
+                System.out.print(s+"; ");
+            }
+            System.out.println();
+        }
     }
 
 

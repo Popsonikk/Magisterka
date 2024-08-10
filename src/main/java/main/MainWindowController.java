@@ -2,12 +2,18 @@ package main;
 
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
 
 public class MainWindowController {
+    @FXML
+    private TextField support;
+    @FXML
+    private TextField length;
 
 
     private Stage mainStage;
@@ -32,6 +38,9 @@ public class MainWindowController {
     }
 
     public void useApriori() {
-        aprioriManager.initStage();
+        aprioriManager.Apriori(Double.parseDouble(support.getText()),Integer.parseInt(length.getText()));
+        support.setText("0.1");
+        length.setText("3");
+
     }
 }
