@@ -13,7 +13,9 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         BasketManager basketManager=new BasketManager();
         AprioriManager aprioriManager=new AprioriManager();
+        RuleManager ruleManager=new RuleManager();
         aprioriManager.setBasketManager(basketManager);
+        ruleManager.setAprioriManager(aprioriManager);
 
         FXMLLoader mainWindowLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
         Parent mainWindow = mainWindowLoader.load();
@@ -26,6 +28,7 @@ public class Main extends Application {
         mainWindowController.setMainStage(stage);
         mainWindowController.setBasketScene(new Scene(basketWindow,1000,750));
         mainWindowController.setAprioriManager(aprioriManager);
+        mainWindowController.setRuleManager(ruleManager);
 
         Scene mainScene=new Scene(mainWindow,1000,750);
         basketInterfaceController.setBasketManager(basketManager);

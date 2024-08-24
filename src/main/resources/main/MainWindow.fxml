@@ -13,6 +13,7 @@
     <children>
         <Button layoutX="425.0" layoutY="50.0" onAction="#showBasketInterface" prefHeight="50.0" prefWidth="150.0" text="Zarządzaj koszykami" />
         <Button layoutX="425.0" layoutY="250.0" onAction="#useApriori" prefHeight="50.0" prefWidth="150.0" text="Algorytm Apriori" />
+        <Button layoutX="425.0" layoutY="325.0" onAction="#useRules" prefHeight="50.0" prefWidth="150.0" text="Wygeneruj reguły" />
       <GridPane layoutX="350.0" layoutY="125.0" prefHeight="100.0" prefWidth="300.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

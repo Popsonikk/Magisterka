@@ -17,7 +17,9 @@ public class AssociationRule {
 
     @Override
     public String toString() {
-        return antecedent + " -> " + consequent + " (Confidence: " + confidence + ", Lift: " + lift + ")";
+        return antecedent.getPattern() + " -> " + consequent.getPattern() + " (Antecedent support: "+antecedent.getSupport()+
+                ", consequent support "+consequent.getSupport()+
+                ", Confidence: " + confidence + ", Lift: " + lift + ")";
     }
 
 

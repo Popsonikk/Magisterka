@@ -20,6 +20,7 @@ public class MainWindowController {
 
     private Scene basketScene;
     private AprioriManager aprioriManager;
+    private RuleManager ruleManager;
 
     public void setMainStage(Stage mainStage) {
         this.mainStage = mainStage;
@@ -33,6 +34,8 @@ public class MainWindowController {
         this.aprioriManager = aprioriManager;
     }
 
+    public void setRuleManager(RuleManager ruleManager) {this.ruleManager = ruleManager;}
+
     public void showBasketInterface() {
         mainStage.setScene(basketScene);
     }
@@ -42,5 +45,9 @@ public class MainWindowController {
         support.setText("0.1");
         length.setText("3");
 
+    }
+
+    public void useRules() {
+        ruleManager.generateRules();
     }
 }

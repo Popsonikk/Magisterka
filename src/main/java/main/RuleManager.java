@@ -29,16 +29,19 @@ public class RuleManager {
         //iterujemy po wszystkich możliwych wzorcach
         for (SimplePattern pattern:patterns)
         {
+            if(pattern.getPattern().size()==1)
+                continue;
+
             //tworzymy podzbiory wzorca
             List<List<String>> subsets=generateNonEmptySubsets(pattern.getPattern());
             for (List<String> antecedent:subsets)
             {
+
                 //tworzenie prawej strony na zasadzie usunięcia lewej strony z głównego wzorca
-                List<String> consequent=pattern.getPattern();
+                List<String> consequent=new ArrayList<>(pattern.getPattern());
                 consequent.removeAll(antecedent);
                 double antecedentSupport = getSupport(patterns, antecedent);
                 double consequentSupport = getSupport(patterns, consequent);
-
                 double confidence = pattern.getSupport() / antecedentSupport;
                 double lift = confidence / consequentSupport;
                 //potencjalne nabijanie złożoności pamięciowej
@@ -84,7 +87,7 @@ public class RuleManager {
     {
         for(AssociationRule rule: ruleList)
         {
-           System.out.println( rule.toString()+"\n");
+           System.out.println( rule.toString());
         }
     }
 
