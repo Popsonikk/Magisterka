@@ -4,8 +4,6 @@ import javafx.stage.FileChooser;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 
 public class BasketManager {
@@ -21,7 +19,6 @@ public class BasketManager {
     }
     public void loadBaskets() throws IOException {
         baskets.clear();
-
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Wybierz plik zawierający listę koszyków");
         File file = fileChooser.showOpenDialog(null);

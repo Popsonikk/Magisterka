@@ -6,22 +6,16 @@ import java.util.*;
 
 public class AprioriManager {
     private  BasketManager basketManager;
-
-
     private List<Pair<List<String>,Double>> result;
-
     AprioriManager()
     {
         this.result=new ArrayList<>();
     }
-
     public void setBasketManager(BasketManager basketManager) {
         this.basketManager = basketManager;
     }
-
     public void Apriori(double minSup, int len)
     {
-
         result.clear();
         if(basketManager.getBasketSize()==0)
         {
@@ -53,7 +47,6 @@ public class AprioriManager {
             List<List<String>> candidates = generateCandidates(currentPatterns);
             //wyczyszczenie mapy zliczającej wystąpienia k-wzorców
             itemSetCount = new HashMap<>();
-
             for (List<String> basket : baskets) {
                 //Struktura set zapobiega duplikatom w danych
                 Set<String> basketSet = new HashSet<>(basket);
@@ -71,12 +64,10 @@ public class AprioriManager {
             i++;
         }
         printSupport();
-
     }
-
     private List<List<String>> generateCandidates(List<Pair<List<String>,Double>> frequentItemSets) {
         //set dla pozbycia się duplikatów
-        Set<Set<String>> candidates = new HashSet<>(); // Używamy Set do eliminacji duplikatów
+        Set<List<String>> candidates = new HashSet<>(); // Używamy Set do eliminacji duplikatów
 
         //generowanie wszystkich możliwych par (bez powtórzeń)
         for (int i = 0; i < frequentItemSets.size(); i++) {
@@ -87,20 +78,13 @@ public class AprioriManager {
                 Set<String> union = new HashSet<>(itemSet1);
                 //dodanie drugiego wzorca z pary(duplikaty usuwane za pomocą set)
                 union.addAll(itemSet2);
-
-
                 //jeżeli długość jest większa o 1 to mamy kandydata, duplikaty usuwane przez strukturę set
                 if (union.size() == itemSet1.size() + 1) {
-                    candidates.add(union);
+                    candidates.add(new ArrayList<>(union));
                 }
             }
         }
-        // Konwertujemy Set na List przed zwróceniem
-        List<List<String>> result = new ArrayList<>();
-        for (Set<String> candidate : candidates) {
-            result.add(new ArrayList<>(candidate));
-        }
-        return result;
+        return  new ArrayList<>(candidates);
     }
 
     private List<Pair<List<String>,Double>>  filterItemSets(Map<List<String>, Integer> itemSetCount, int transactionCount, double minSupport)
@@ -119,6 +103,12 @@ public class AprioriManager {
     }
     public void printSupport()
     {
+        result.sort(new Comparator<Pair<List<String>, Double>>() {
+            @Override
+            public int compare(Pair<List<String>, Double> o1, Pair<List<String>, Double> o2) {
+                return o1.getValue().compareTo(o2.getValue());
+            }
+        });
         for(Pair<List<String>,Double> pattern: result)
         {
             System.out.print(pattern.getValue()+": ");
