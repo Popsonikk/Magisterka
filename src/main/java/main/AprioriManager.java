@@ -116,5 +116,12 @@ public class AprioriManager {
         }
     }
 
+    public List<SimplePattern> getSupportList() {
+        return result;
+    }
+    public int getSupportListSize()
+    {
+        return result.size();
+    }
 
 }
