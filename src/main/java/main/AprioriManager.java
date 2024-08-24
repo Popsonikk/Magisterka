@@ -6,7 +6,7 @@ import java.util.*;
 
 public class AprioriManager {
     private  BasketManager basketManager;
-    private List<Pair<List<String>,Double>> result;
+    private List<SimplePattern> result;
     AprioriManager()
     {
         this.result=new ArrayList<>();
@@ -23,7 +23,8 @@ public class AprioriManager {
             return;
         }
         List<List<String>> baskets=basketManager.getBaskets();
-        Map<List<String>, Integer> itemSetCount = new HashMap<>();
+        //struktura do zliczania występowania wzorca w zbiorze
+        Map<List<String>, Integer> patternCount = new HashMap<>();
         //Kandydaci jedno Elementowi
         for(List<String> basket:baskets)
         {
@@ -32,11 +33,11 @@ public class AprioriManager {
                 //lista jedno elementowa (klucze to całe listy)
                 List<String> itemSet = new ArrayList<>(Collections.singletonList(item));
                 //zliczanie pojedynczych wystąpień (pobranie wartości +1)
-                itemSetCount.put(itemSet, itemSetCount.getOrDefault(itemSet, 0) + 1);
+                patternCount.put(itemSet, patternCount.getOrDefault(itemSet, 0) + 1);
             }
         }
         //Częste wzorce jednoelementowe
-        List<Pair<List<String>,Double>>  currentPatterns = filterItemSets(itemSetCount, baskets.size(),minSup);
+        List<SimplePattern>  currentPatterns = filterItemSets(patternCount, baskets.size(),minSup);
         //dodanie wzorców do listy wynikowej
         result.addAll(currentPatterns);
         int i=2;
@@ -46,7 +47,7 @@ public class AprioriManager {
             // Generowanie k-wzorców częstych
             List<List<String>> candidates = generateCandidates(currentPatterns);
             //wyczyszczenie mapy zliczającej wystąpienia k-wzorców
-            itemSetCount = new HashMap<>();
+            patternCount = new HashMap<>();
             for (List<String> basket : baskets) {
                 //Struktura set zapobiega duplikatom w danych
                 Set<String> basketSet = new HashSet<>(basket);
@@ -54,26 +55,26 @@ public class AprioriManager {
                     //sprawdzenie czy konkretny wzorzec w całości znajduje się w koszyku
                     if (basketSet.containsAll(candidate)) {
                         //zliczanie występowania wzorca
-                        itemSetCount.put(candidate, itemSetCount.getOrDefault(candidate, 0) + 1);
+                        patternCount.put(candidate, patternCount.getOrDefault(candidate, 0) + 1);
                     }
                 }
             }
             //wyfiltrowanie wzorców po wymaganym wsparciu
-            currentPatterns = filterItemSets(itemSetCount, baskets.size(),minSup);
+            currentPatterns = filterItemSets(patternCount, baskets.size(),minSup);
             result.addAll(currentPatterns);
             i++;
         }
         printSupport();
     }
-    private List<List<String>> generateCandidates(List<Pair<List<String>,Double>> frequentItemSets) {
+    private List<List<String>> generateCandidates(List<SimplePattern> candidatePatterns) {
         //set dla pozbycia się duplikatów
         Set<List<String>> candidates = new HashSet<>(); // Używamy Set do eliminacji duplikatów
 
         //generowanie wszystkich możliwych par (bez powtórzeń)
-        for (int i = 0; i < frequentItemSets.size(); i++) {
-            for (int j = i + 1; j < frequentItemSets.size(); j++) {
-                List<String> itemSet1 = frequentItemSets.get(i).getKey();
-                List<String> itemSet2 = frequentItemSets.get(j).getKey();
+        for (int i = 0; i < candidatePatterns.size(); i++) {
+            for (int j = i + 1; j < candidatePatterns.size(); j++) {
+                List<String> itemSet1 = candidatePatterns.get(i).getPattern();
+                List<String> itemSet2 = candidatePatterns.get(j).getPattern();
                 //stworzenie tymczasowej listy i dodanie pierwszego wzorca
                 Set<String> union = new HashSet<>(itemSet1);
                 //dodanie drugiego wzorca z pary(duplikaty usuwane za pomocą set)
@@ -87,32 +88,27 @@ public class AprioriManager {
         return  new ArrayList<>(candidates);
     }
 
-    private List<Pair<List<String>,Double>>  filterItemSets(Map<List<String>, Integer> itemSetCount, int transactionCount, double minSupport)
+    private List<SimplePattern>  filterItemSets(Map<List<String>, Integer> itemSetCount, int transactionCount, double minSupport)
     {
         //pusta lista wynikowa
-        List<Pair<List<String>,Double>>  filteredItemSets = new ArrayList<>();
+        List<SimplePattern>  patterns = new ArrayList<>();
         //filtrujemy po mapie
         for (Map.Entry<List<String>, Integer> entry : itemSetCount.entrySet()) {
             //wyliczamy wsparcie
             double supp=(entry.getValue() / (double) transactionCount);
             if ( supp>= minSupport) {
-                filteredItemSets.add(new Pair<>(entry.getKey(),supp));
+                patterns.add(new SimplePattern(entry.getKey(),supp));
             }
         }
-        return filteredItemSets;
+        return patterns;
     }
     public void printSupport()
     {
-        result.sort(new Comparator<Pair<List<String>, Double>>() {
-            @Override
-            public int compare(Pair<List<String>, Double> o1, Pair<List<String>, Double> o2) {
-                return o1.getValue().compareTo(o2.getValue());
-            }
-        });
-        for(Pair<List<String>,Double> pattern: result)
+        result.sort((o1, o2) -> Double.compare(o2.getSupport(), o1.getSupport()));
+        for(SimplePattern pattern: result)
         {
-            System.out.print(pattern.getValue()+": ");
-            for (String s: pattern.getKey())
+            System.out.print(pattern.getSupport()+": ");
+            for (String s: pattern.getPattern())
             {
                 System.out.print(s+"; ");
             }
