@@ -88,15 +88,8 @@ public class BasketInterfaceController implements Initializable {
     {
         HBox box=new HBox();
         box.setLayoutX(15.0);
-        box.setLayoutY(20.0+50.0*(i+1));
-        box.setPrefWidth(950);
-        box.setPrefHeight(25);
-        box.setPadding(new Insets(5.0));
-        box.setBorder(new Border(new BorderStroke(
-                Color.BLACK,
-                BorderStrokeStyle.SOLID,
-                CornerRadii.EMPTY,
-                new BorderWidths(2) )));
+        box.setLayoutY(20.0+(50.0*(i+1)));
+        box.getStyleClass().add("basketBorder");
         Text text=new Text(builder.toString());
         text.setFont(new Font(18.0));
         //text.setId("text");

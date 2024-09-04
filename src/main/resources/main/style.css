@@ -1,0 +1,23 @@
+.interfaceButton
+{
+    -fx-background-color: #a2a8d3; /*kolor tła*/
+    -fx-font-size: 14px;  /*rozmiar czcionki*/
+
+    -fx-pref-width: 150px;
+    -fx-pref-height: 50px;   /*rozmiary przycisku*/
+    -fx-text-fill: #142d4c;  /*kolor czcionki*/
+    -fx-text-align: center;  /*wyrównanie czcionki*/
+    -fx-border-color: #142d4c; /* kolor obwódki */
+    -fx-border-width: 2px; /*szerokosc obwódki*/
+}
+.basketBorder{
+
+    -fx-border-color: #142d4c; /* kolor obwódki */
+    -fx-border-width: 2px; /*szerokosc obwódki*/
+    -fx-padding: 5px;
+    -fx-background-color: #e7eaf6;
+    -fx-pref-width: 950px;
+    -fx-pref-height: 25px;
+
+
+}
