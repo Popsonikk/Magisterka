@@ -2,22 +2,40 @@
 {
     -fx-background-color: #a2a8d3; /*kolor tła*/
     -fx-font-size: 14px;  /*rozmiar czcionki*/
-
     -fx-pref-width: 150px;
     -fx-pref-height: 50px;   /*rozmiary przycisku*/
-    -fx-text-fill: #142d4c;  /*kolor czcionki*/
+    -fx-text-fill: green;  /*kolor czcionki*/
     -fx-text-align: center;  /*wyrównanie czcionki*/
-    -fx-border-color: #142d4c; /* kolor obwódki */
+    -fx-border-color: #385170; /* kolor obwódki */
     -fx-border-width: 2px; /*szerokosc obwódki*/
 }
 .basketBorder{
 
     -fx-border-color: #142d4c; /* kolor obwódki */
-    -fx-border-width: 2px; /*szerokosc obwódki*/
+    -fx-border-width: 1px 3px; /*szerokosc obwódki*/
     -fx-padding: 5px;
     -fx-background-color: #e7eaf6;
     -fx-pref-width: 950px;
     -fx-pref-height: 25px;
+    -fx-text-fill: red !important;
+    -fx-font-size: 20px;
 
 
 }
+.infoBox{
+    -fx-background-color: #e0ffcd;
+    -fx-background-radius: 25px;
+    -fx-font-size: 14px;
+    -fx-border-width: 3px;
+    -fx-border-color: #ffcab0;
+    -fx-border-style: dashed;
+    -fx-border-radius: 25px;
+    -fx-text-fill: #142d4c;
+    -fx-spacing: 10px;
+}
+.textStyle{
+
+}
+
+
+

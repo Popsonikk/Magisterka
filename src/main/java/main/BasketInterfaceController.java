@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -71,29 +72,29 @@ public class BasketInterfaceController implements Initializable {
         {
             List<String> basket=baskets.get(i);
             StringBuilder builder=new StringBuilder();
-            builder.append("ID: ").append(i).append(" - ");
             for(String s:basket)
                 builder.append(s.trim()).append("; ");
-            HBox box=createBox(builder,j);
+            HBox box=createBox(builder.toString(),j);
             contentVBox.getChildren().add(box);
         }
 
 
         Text tx= (Text) switchPageBox.lookup("#showInfo");
-        tx.setText("  Pokazano "+(startId+1)+"-"+(Math.min(startId+boxSize, size)+" z "+size+" koszyków  "));
+        tx.setText("Pokazano "+(startId+1)+"-"+(Math.min(startId+boxSize, size)+" z "+size+" koszyków"));
     }
 
 
-    private HBox createBox(StringBuilder builder,int i)
+    private HBox createBox(String builder,int i)
     {
         HBox box=new HBox();
         box.setLayoutX(15.0);
         box.setLayoutY(20.0+(50.0*(i+1)));
         box.getStyleClass().add("basketBorder");
-        Text text=new Text(builder.toString());
-        text.setFont(new Font(18.0));
-        //text.setId("text");
+        Text text=new Text(builder);
+        //text.setFill(Color.GREEN);
+
         box.getChildren().add(text);
+        text.getStyleClass().add("textStyle");
         return  box;
     }
 
@@ -114,14 +115,14 @@ public class BasketInterfaceController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         filtred=false;
-
-        Text text1=new Text("Pokazuj  ");
-        Text text2=new Text("  Koszyków");
-        text1.setFont(new Font(18.0));
-        text2.setFont(new Font(18.0));
-
         pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        selectSizeBox.getStyleClass().add("infoBox");
+        switchPageBox.getStyleClass().add("infoBox");
+
+        Text text1=new Text("Pokazuj");
+        Text text2=new Text("Koszyków");
+
         MenuButton menuButton=new MenuButton();
         menuButton.setText("50");
         boxSize=50;
@@ -143,33 +144,14 @@ public class BasketInterfaceController implements Initializable {
         item4.setOnAction(event);
         MenuItem item5=new MenuItem("100");
         item5.setOnAction(event);
-
         menuButton.getItems().addAll(item1,item2,item3,item4,item5);
-
-        selectSizeBox.setBorder(new Border(new BorderStroke(
-                Color.BLACK,
-                BorderStrokeStyle.SOLID,
-                CornerRadii.EMPTY,
-                new BorderWidths(2) )));
-
-        selectSizeBox.setPadding(new Insets(5.0));
         selectSizeBox.getChildren().addAll(text1,menuButton,text2);
 
-        switchPageBox.setBorder(new Border(new BorderStroke(
-                Color.BLACK,
-                BorderStrokeStyle.SOLID,
-                CornerRadii.EMPTY,
-                new BorderWidths(2) )));
-
-        switchPageBox.setPadding(new Insets(5.0));
         Button backButton = new Button("<");
-        //backButton.setFont(new Font(18.0));
         backButton.setPrefSize(50,20);
         Button nextButton= new Button(">");
-       // nextButton.setFont(new Font(18.0));
         nextButton.setPrefSize(50,20);
-        Text text=new Text("  Pokazano 0 z 0 koszyków  ");
-       // text.setFont(new Font(18.0));
+        Text text=new Text("Pokazano 0 z 0 koszyków");
         text.setId("showInfo");
 
         backButton.setOnAction(e -> {
