@@ -9,33 +9,59 @@
     -fx-border-color: #385170; /* kolor obwódki */
     -fx-border-width: 2px; /*szerokosc obwódki*/
 }
+.interfaceButton:hover { /*  efekt podświetlenia przy najechanie :hover*/
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 5, 0.5, 0, 0); /* Efekt cienia */
+}
 .basketBorder{
-
     -fx-border-color: #142d4c; /* kolor obwódki */
     -fx-border-width: 1px 3px; /*szerokosc obwódki*/
     -fx-padding: 5px;
     -fx-background-color: #e7eaf6;
     -fx-pref-width: 950px;
     -fx-pref-height: 25px;
-    -fx-text-fill: red !important;
+}
+.basketText{
     -fx-font-size: 20px;
-
-
+    -fx-fill: green !important;
 }
 .infoBox{
     -fx-background-color: #e0ffcd;
     -fx-background-radius: 25px;
-    -fx-font-size: 14px;
+
     -fx-border-width: 3px;
     -fx-border-color: #ffcab0;
     -fx-border-style: dashed;
     -fx-border-radius: 25px;
-    -fx-text-fill: #142d4c;
     -fx-spacing: 10px;
 }
-.textStyle{
+.infoBoxText {
+    -fx-font-size: 14px;
+    -fx-fill: purple !important;
 
 }
-
+.backButton{
+    -fx-background-color: #8dc6ff;
+    -fx-background-radius: 20px;
+    -fx-border-width: 3px;
+    -fx-border-color: #385170;
+    -fx-border-style: solid;
+    -fx-border-radius: 20px;
+    -fx-spacing: 10px;
+    -fx-font-size: 15px;  /*rozmiar czcionki*/
+    -fx-pref-width: 100px;
+    -fx-pref-height: 50px;
+    -fx-text-fill: darkGreen;
+}
+.backButton:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 5, 0.5, 0, 0); /* Efekt cienia */
+}
+.boxButton{
+    -fx-pref-height: 20px;
+    -fx-background-color: #5fc9f3;
+    -fx-font-size: 12px;
+}
+.boxButton:hover{
+    -fx-background-color: #2e79ba;
+}
 
 

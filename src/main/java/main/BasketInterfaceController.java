@@ -91,10 +91,8 @@ public class BasketInterfaceController implements Initializable {
         box.setLayoutY(20.0+(50.0*(i+1)));
         box.getStyleClass().add("basketBorder");
         Text text=new Text(builder);
-        //text.setFill(Color.GREEN);
-
+        text.getStyleClass().add("basketText");
         box.getChildren().add(text);
-        text.getStyleClass().add("textStyle");
         return  box;
     }
 
@@ -120,8 +118,11 @@ public class BasketInterfaceController implements Initializable {
         selectSizeBox.getStyleClass().add("infoBox");
         switchPageBox.getStyleClass().add("infoBox");
 
-        Text text1=new Text("Pokazuj");
+        Text text1=new Text();
+        text1.setText("Pokazuj");
         Text text2=new Text("Koszyków");
+        text1.getStyleClass().add("infoBoxText");
+        text2.getStyleClass().add("infoBoxText");
 
         MenuButton menuButton=new MenuButton();
         menuButton.setText("50");
@@ -145,13 +146,15 @@ public class BasketInterfaceController implements Initializable {
         MenuItem item5=new MenuItem("100");
         item5.setOnAction(event);
         menuButton.getItems().addAll(item1,item2,item3,item4,item5);
+        menuButton.getStyleClass().add("boxButton");
         selectSizeBox.getChildren().addAll(text1,menuButton,text2);
 
         Button backButton = new Button("<");
-        backButton.setPrefSize(50,20);
+        backButton.getStyleClass().add("boxButton");
         Button nextButton= new Button(">");
-        nextButton.setPrefSize(50,20);
+        nextButton.getStyleClass().add("boxButton");
         Text text=new Text("Pokazano 0 z 0 koszyków");
+        text.getStyleClass().add("infoBoxText");
         text.setId("showInfo");
 
         backButton.setOnAction(e -> {
@@ -188,7 +191,7 @@ public class BasketInterfaceController implements Initializable {
             contentVBox.getChildren().clear();
             System.out.println("Usunięcie koszyków zakończone pomyślnie");
             Text tx= (Text) switchPageBox.lookup("#showInfo");
-            tx.setText("  Pokazano 0 z 0 koszyków  ");
+            tx.setText("Pokazano 0 z 0 koszyków");
         }
         catch (Exception e)
         {

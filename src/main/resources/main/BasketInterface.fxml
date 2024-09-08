@@ -17,13 +17,13 @@
       <TextField fx:id="tx" layoutX="15.0" layoutY="15.0" prefHeight="50.0" prefWidth="150.0" alignment="CENTER"/>
       <Button onAction="#filtrBaskets" layoutX="180.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Filtruj koszyki" styleClass="interfaceButton" />
       <Button onAction="#clearFilter" layoutX="345.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść filtr" />
-      <Button onAction="#back" layoutX="400.0" layoutY="685.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Powrót" />
+      <Button onAction="#back" layoutX="345.0" layoutY="685.0"  text="Powrót" styleClass="backButton" />
       <ScrollPane fx:id="pane"  prefHeight="600.0" prefWidth="970.0" layoutY="70.0"  layoutX="15.0">
       <content>
          <VBox fx:id="contentVBox" />
       </content>
       </ScrollPane>
       <HBox fx:id="selectSizeBox"  layoutX="15.0" layoutY="685.0" alignment="CENTER" prefHeight="50.0" prefWidth="250.0" />
-      <HBox fx:id="switchPageBox"  layoutX="575.0" layoutY="685.0" alignment="CENTER" prefHeight="50.0" prefWidth="400.0" />
+      <HBox fx:id="switchPageBox"  layoutX="525.0" layoutY="685.0" alignment="CENTER" prefHeight="50.0" prefWidth="450.0" />
    </children>
 </Pane>
