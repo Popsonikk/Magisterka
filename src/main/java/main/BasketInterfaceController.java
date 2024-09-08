@@ -5,16 +5,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -36,7 +34,7 @@ public class BasketInterfaceController implements Initializable {
     private int boxSize;
     private int startId;
 
-    private boolean filtred;
+    private boolean filtered;
 
     private Scene mainScene;
 
@@ -56,10 +54,12 @@ public class BasketInterfaceController implements Initializable {
         this.basketManager = basketManager;
     }
 
+    private List<String> filtr;
+
     public void createView()
     {
         contentVBox.getChildren().clear();
-        if(filtred)
+        if(filtered)
             createViewFromSet(basketManager.getFilteredBaskets());
         else
             createViewFromSet(basketManager.getBaskets());
@@ -71,10 +71,20 @@ public class BasketInterfaceController implements Initializable {
         for(int i=startId,j=0;i<range;i++,j++)
         {
             List<String> basket=baskets.get(i);
-            StringBuilder builder=new StringBuilder();
+            //StringBuilder builder=new StringBuilder();
+          //  for(String s:basket)
+               // builder.append(s.trim()).append("; ");
+            List<Text> textList=new ArrayList<>();
             for(String s:basket)
-                builder.append(s.trim()).append("; ");
-            HBox box=createBox(builder.toString(),j);
+            {
+                Text text=new Text(s+"; ");
+                if(filtr.contains(s))
+                    text.getStyleClass().add("basketTextFiltr");
+                else
+                    text.getStyleClass().add("basketText");
+                textList.add(text);
+            }
+            HBox box=createBox(textList,j);
             contentVBox.getChildren().add(box);
         }
 
@@ -84,15 +94,15 @@ public class BasketInterfaceController implements Initializable {
     }
 
 
-    private HBox createBox(String builder,int i)
+    private HBox createBox(List<Text> textList,int i)
     {
         HBox box=new HBox();
         box.setLayoutX(15.0);
         box.setLayoutY(20.0+(50.0*(i+1)));
         box.getStyleClass().add("basketBorder");
-        Text text=new Text(builder);
-        text.getStyleClass().add("basketText");
-        box.getChildren().add(text);
+        TextFlow textFlow=new TextFlow();
+        textFlow.getChildren().addAll(textList);
+        box.getChildren().add(textFlow);
         return  box;
     }
 
@@ -112,7 +122,8 @@ public class BasketInterfaceController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        filtred=false;
+        filtered =false;
+        filtr=new ArrayList<>();
         pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         selectSizeBox.getStyleClass().add("infoBox");
@@ -165,7 +176,7 @@ public class BasketInterfaceController implements Initializable {
 
         });
         nextButton.setOnAction(e -> {
-            if(filtred)
+            if(filtered)
             {
                 if(startId+boxSize>=basketManager.getFilteredBasketSize())
                     return;
@@ -202,16 +213,22 @@ public class BasketInterfaceController implements Initializable {
 
     public void filtrBaskets() {
         String s=tx.getText();
+
         if (s.isEmpty()||basketManager.getBasketSize()==0)
             return;
-        basketManager.filtrBaskets(s);
-        filtred=true;
+        String[] items = s.split(":|,|;");
+        for (String item : items) {
+            filtr.add(item.trim());
+        }
+        basketManager.filtrBaskets(filtr);
+        filtered =true;
+        tx.clear();
         createView();
     }
 
     public void clearFilter() {
-        filtred=false;
-        tx.clear();
+        filtered =false;
+        filtr.clear();
         basketManager.clearFilteredBaskets();
         createView();
 

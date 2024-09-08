@@ -3,6 +3,7 @@ package main;
 import javafx.stage.FileChooser;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 
@@ -67,10 +68,11 @@ public class BasketManager {
         return filteredBaskets;
     }
 
-    public void filtrBaskets(String item) {
+    public void filtrBaskets(List<String> items) {
+
         filteredBaskets.clear();
         filteredBaskets.addAll(baskets.stream()
-                .filter(basket -> basket.contains(item))
+                .filter(basket -> new HashSet<>(basket).containsAll(items))
                 .toList());
     }
 

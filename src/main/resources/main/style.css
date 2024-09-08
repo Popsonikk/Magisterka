@@ -19,10 +19,15 @@
     -fx-background-color: #e7eaf6;
     -fx-pref-width: 950px;
     -fx-pref-height: 25px;
+
 }
 .basketText{
     -fx-font-size: 20px;
     -fx-fill: green !important;
+}
+.basketTextFiltr{
+    -fx-font-size: 20px;
+    -fx-fill: red !important;
 }
 .infoBox{
     -fx-background-color: #e0ffcd;
