@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.CacheHint;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -31,6 +32,7 @@ public class BasketInterfaceController implements Initializable {
     public TextField tx;
 
 
+    private List<CheckBox> checkBoxes;
     private int boxSize;
     private int startId;
 
@@ -59,6 +61,7 @@ public class BasketInterfaceController implements Initializable {
     public void createView()
     {
         contentVBox.getChildren().clear();
+        checkBoxes.clear();
         if(filtered)
             createViewFromSet(basketManager.getFilteredBaskets());
         else
@@ -97,12 +100,14 @@ public class BasketInterfaceController implements Initializable {
     private HBox createBox(List<Text> textList,int i)
     {
         HBox box=new HBox();
+        CheckBox checkBox=new CheckBox();
+        checkBoxes.add(checkBox);
         box.setLayoutX(15.0);
         box.setLayoutY(20.0+(50.0*(i+1)));
         box.getStyleClass().add("basketBorder");
         TextFlow textFlow=new TextFlow();
         textFlow.getChildren().addAll(textList);
-        box.getChildren().add(textFlow);
+        box.getChildren().addAll(checkBox,textFlow);
         return  box;
     }
 
@@ -124,6 +129,7 @@ public class BasketInterfaceController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         filtered =false;
         filtr=new ArrayList<>();
+        checkBoxes=new ArrayList<>();
         pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         selectSizeBox.getStyleClass().add("infoBox");
@@ -192,6 +198,7 @@ public class BasketInterfaceController implements Initializable {
 
         });
         switchPageBox.getChildren().addAll(backButton,text,nextButton);
+        createFiltrButton();
 
     }
 
@@ -200,6 +207,8 @@ public class BasketInterfaceController implements Initializable {
         {
             basketManager.clearBaskets();
             contentVBox.getChildren().clear();
+            checkBoxes.clear();
+            startId=0;
             System.out.println("Usunięcie koszyków zakończone pomyślnie");
             Text tx= (Text) switchPageBox.lookup("#showInfo");
             tx.setText("Pokazano 0 z 0 koszyków");
@@ -229,6 +238,7 @@ public class BasketInterfaceController implements Initializable {
     public void clearFilter() {
         filtered =false;
         filtr.clear();
+        startId=0;
         basketManager.clearFilteredBaskets();
         createView();
 
@@ -237,4 +247,50 @@ public class BasketInterfaceController implements Initializable {
     public void back() {
         mainStage.setScene(mainScene);
     }
+    private void createFiltrButton()
+    {
+        MenuButton menuButton=new MenuButton("Zarządzaj filtrami");
+        menuButton.setLayoutX(505.0);
+        menuButton.setLayoutY(15.0);
+        menuButton.setPrefSize(150.0,50.0);
+        menuButton.getStyleClass().add("filterButton");
+        MenuItem item1=new MenuItem("Wyczyść filtry");
+        item1.setOnAction(actionEvent -> clearFilter());
+        MenuItem item2=new MenuItem("Usuń zaznaczone wiersze");
+        item2.setOnAction(actionEvent -> deleteRows());
+        MenuItem item3=new MenuItem("Usuń filtrowane przedmioty");
+        item3.setOnAction(actionEvent -> deleteItems());
+        MenuItem item4=new MenuItem("Zaznacz wszystkie boxy");
+        item4.setOnAction(actionEvent -> selectAllBoxes());
+        menuButton.getItems().addAll(item1,item2,item3,item4);
+        menuButton.setOnShowing(event -> {
+            menuButton.setStyle("-fx-background-color: #2e79ba; -fx-border-style: solid;");
+        });
+
+        menuButton.setOnHidden(event -> {
+            menuButton.setStyle("-fx-background-color: #5fc9f3; -fx-border-style: dashed;");
+        });
+        mainPane.getChildren().add(menuButton);
+    }
+    private void deleteRows()
+    {
+        basketManager.deleteSelectedRows(checkBoxes,startId,filtered);
+        if(filtered)
+            basketManager.filtrBaskets(filtr);
+        createView();
+    }
+    private void deleteItems()
+    {
+        if (!filtered)
+            return;
+        basketManager.deleteSelectedItems(checkBoxes, filtr,startId);
+        basketManager.filtrBaskets(filtr);
+        createView();
+    }
+    private void selectAllBoxes()
+    {
+        for(CheckBox box:checkBoxes)
+            box.setSelected(true);
+    }
+
 }

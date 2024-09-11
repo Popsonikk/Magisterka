@@ -7,7 +7,7 @@
     -fx-text-fill: green;  /*kolor czcionki*/
     -fx-text-align: center;  /*wyrównanie czcionki*/
     -fx-border-color: #385170; /* kolor obwódki */
-    -fx-border-width: 2px; /*szerokosc obwódki*/
+    -fx-border-width: 3px; /*szerokosc obwódki*/
 }
 .interfaceButton:hover { /*  efekt podświetlenia przy najechanie :hover*/
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 5, 0.5, 0, 0); /* Efekt cienia */
@@ -16,9 +16,11 @@
     -fx-border-color: #142d4c; /* kolor obwódki */
     -fx-border-width: 1px 3px; /*szerokosc obwódki*/
     -fx-padding: 5px;
+    -fx-spacing: 10px;
     -fx-background-color: #e7eaf6;
     -fx-pref-width: 950px;
     -fx-pref-height: 25px;
+    -fx-alignment: center-left;
 
 }
 .basketText{
@@ -67,6 +69,23 @@
 }
 .boxButton:hover{
     -fx-background-color: #2e79ba;
+}
+.filterBox{
+    -fx-border-color: #385170; /* kolor obwódki */
+    -fx-border-width: 3px;
+    -fx-font-size: 16px;
+}
+.filterBox:focused{
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 5, 0.5, 0, 0);
+    -fx-background-color: lightGrey;
+}
+.filterButton{
+    -fx-background-color: #5fc9f3;
+    -fx-font-size: 14px;
+    -fx-border-width: 3px;
+    -fx-border-color: #ffcab0;
+    -fx-border-style: dashed;
+
 }
 
 
