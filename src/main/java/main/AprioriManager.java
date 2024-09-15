@@ -11,6 +11,12 @@ public class AprioriManager {
     {
         this.result=new ArrayList<>();
     }
+
+    public int getAprioriSize()
+    {
+        return result.size();
+    }
+
     public void setBasketManager(BasketManager basketManager) {
         this.basketManager = basketManager;
     }

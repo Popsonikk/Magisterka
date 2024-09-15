@@ -41,6 +41,7 @@ public class Main extends Application {
         basketInterfaceController.setMainStage(stage);
         aprioriInterfaceController.setMainScene(mainScene);
         aprioriInterfaceController.setMainStage(stage);
+        aprioriInterfaceController.setAprioriManager(aprioriManager);
 
         stage.setTitle("Analiza koszykowa");
         stage.setScene(mainScene);

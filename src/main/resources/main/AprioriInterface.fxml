@@ -12,8 +12,8 @@
         <URL value="@style.css" />
     </stylesheets>
     <children>
-        <Button  layoutX="835.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść koszyki" styleClass="interfaceButton" />
-        <Button  layoutX="670.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wczytaj koszyki" styleClass="interfaceButton"/>
+        <Button  layoutX="835.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Import z CSV" styleClass="interfaceButton" />
+        <Button  layoutX="670.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Export z CSV" styleClass="interfaceButton"/>
         <TextField fx:id="tx" layoutX="15.0" layoutY="15.0" prefHeight="50.0" prefWidth="329.0" alignment="CENTER" styleClass="filterBox"/>
         <Button  layoutX="340.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Filtruj koszyki" styleClass="interfaceButton" />
 

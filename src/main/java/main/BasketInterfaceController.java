@@ -10,6 +10,12 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class BasketInterfaceController extends  InterfaceTemplate implements Initializable {
+
+    protected BasketManager basketManager;
+    public void setBasketManager(BasketManager basketManager) {
+        this.basketManager = basketManager;
+    }
+    @Override
     public void createView()
     {
         contentVBox.getChildren().clear();
@@ -120,8 +126,8 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
 
     }
 
-
-    private void createFiltrButton()
+    @Override
+    protected void createFiltrButton()
     {
         MenuButton menuButton=new MenuButton("Zarządzaj filtrami");
         menuButton.setLayoutX(505.0);
@@ -165,6 +171,41 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
     {
         for(CheckBox box:checkBoxes)
             box.setSelected(true);
+    }
+    protected void createSwitchPageBox()
+    {
+        switchPageBox.getStyleClass().add("infoBox");
+        Button backButton = new Button("<");
+        backButton.getStyleClass().add("boxButton");
+        Button nextButton= new Button(">");
+        nextButton.getStyleClass().add("boxButton");
+        Text text=new Text("Pokazano 0 z 0 koszyków");
+        text.getStyleClass().add("infoBoxText");
+        text.setId("showInfo");
+
+        backButton.setOnAction(e -> {
+            if(startId==0)
+                return;
+            startId=Math.max(0,startId-boxSize);
+            createView();
+
+        });
+        nextButton.setOnAction(e -> {
+            if(filtered)
+            {
+                if(startId+boxSize>=basketManager.getFilteredBasketSize())
+                    return;
+            }
+            else
+            {
+                if(startId+boxSize>=basketManager.getBasketSize())
+                    return;
+            }
+            startId+=boxSize;
+            createView();
+
+        });
+        switchPageBox.getChildren().addAll(backButton,text,nextButton);
     }
 
 

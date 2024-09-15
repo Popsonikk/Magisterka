@@ -41,7 +41,7 @@ public abstract class InterfaceTemplate {
 
     protected Stage mainStage;
 
-    protected BasketManager basketManager;
+
 
     public void setMainScene(Scene mainScene) {
         this.mainScene = mainScene;
@@ -51,9 +51,7 @@ public abstract class InterfaceTemplate {
         this.mainStage = mainStage;
     }
 
-    public void setBasketManager(BasketManager basketManager) {
-        this.basketManager = basketManager;
-    }
+
     public void back() {
         mainStage.setScene(mainScene);
     }
@@ -95,41 +93,7 @@ public abstract class InterfaceTemplate {
         MenuButton menuButton=createSizeButton();
         selectSizeBox.getChildren().addAll(text1,menuButton,text2);
     }
-    protected void createSwitchPageBox()
-    {
-        switchPageBox.getStyleClass().add("infoBox");
-        Button backButton = new Button("<");
-        backButton.getStyleClass().add("boxButton");
-        Button nextButton= new Button(">");
-        nextButton.getStyleClass().add("boxButton");
-        Text text=new Text("Pokazano 0 z 0 koszyków");
-        text.getStyleClass().add("infoBoxText");
-        text.setId("showInfo");
 
-        backButton.setOnAction(e -> {
-            if(startId==0)
-                return;
-            startId=Math.max(0,startId-boxSize);
-            createView();
-
-        });
-        nextButton.setOnAction(e -> {
-            if(filtered)
-            {
-                if(startId+boxSize>=basketManager.getFilteredBasketSize())
-                    return;
-            }
-            else
-            {
-                if(startId+boxSize>=basketManager.getBasketSize())
-                    return;
-            }
-            startId+=boxSize;
-            createView();
-
-        });
-        switchPageBox.getChildren().addAll(backButton,text,nextButton);
-    }
     protected void init()
     {
         filtered =false;
@@ -140,5 +104,6 @@ public abstract class InterfaceTemplate {
         pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
     }
+    protected abstract void createFiltrButton();
 
 }
