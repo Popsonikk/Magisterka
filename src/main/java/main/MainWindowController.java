@@ -1,14 +1,8 @@
 package main;
-
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-
-
 public class MainWindowController {
     @FXML
     private TextField support;
@@ -19,6 +13,7 @@ public class MainWindowController {
     private Stage mainStage;
 
     private Scene basketScene;
+    private Scene aprioriScene;
     private AprioriManager aprioriManager;
     private RuleManager ruleManager;
 
@@ -29,6 +24,8 @@ public class MainWindowController {
     public void setBasketScene(Scene basketScene) {
         this.basketScene = basketScene;
     }
+
+    public void setAprioriScene(Scene aprioriScene) {this.aprioriScene = aprioriScene;}
 
     public void setAprioriManager(AprioriManager aprioriManager) {
         this.aprioriManager = aprioriManager;
@@ -49,5 +46,9 @@ public class MainWindowController {
 
     public void useRules() {
         ruleManager.generateRules();
+    }
+
+    public void showAprioriInterface() {
+        mainStage.setScene(aprioriScene);
     }
 }

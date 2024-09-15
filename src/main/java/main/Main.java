@@ -25,8 +25,13 @@ public class Main extends Application {
         Parent basketWindow = basketWindowLoader.load();
         BasketInterfaceController basketInterfaceController = basketWindowLoader.getController();
 
+        FXMLLoader aprioriWindowLoader = new FXMLLoader(getClass().getResource("AprioriInterface.fxml"));
+        Parent aprioriWindow = aprioriWindowLoader.load();
+        AprioriInterfaceController aprioriInterfaceController = aprioriWindowLoader.getController();
+
         mainWindowController.setMainStage(stage);
         mainWindowController.setBasketScene(new Scene(basketWindow,1000,750));
+        mainWindowController.setAprioriScene(new Scene(aprioriWindow,1000,750));
         mainWindowController.setAprioriManager(aprioriManager);
         mainWindowController.setRuleManager(ruleManager);
 
