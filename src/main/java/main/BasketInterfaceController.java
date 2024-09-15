@@ -1,63 +1,15 @@
 package main;
-
-
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.CacheHint;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
-import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class BasketInterfaceController implements Initializable {
-    @FXML
-    public VBox contentVBox;
-    @FXML
-    public ScrollPane pane;
-    @FXML
-    public Pane mainPane;
-    @FXML
-    public HBox selectSizeBox;
-    @FXML
-    public HBox switchPageBox;
-    @FXML
-    public TextField tx;
-
-
-    private List<CheckBox> checkBoxes;
-    private int boxSize;
-    private int startId;
-
-    private boolean filtered;
-
-    private Scene mainScene;
-
-    private Stage mainStage;
-
-    private BasketManager basketManager;
-
-    public void setMainScene(Scene mainScene) {
-        this.mainScene = mainScene;
-    }
-
-    public void setMainStage(Stage mainStage) {
-        this.mainStage = mainStage;
-    }
-
-    public void setBasketManager(BasketManager basketManager) {
-        this.basketManager = basketManager;
-    }
-
-    private List<String> filtr;
-
+public class BasketInterfaceController extends  InterfaceTemplate implements Initializable {
     public void createView()
     {
         contentVBox.getChildren().clear();
@@ -74,9 +26,6 @@ public class BasketInterfaceController implements Initializable {
         for(int i=startId,j=0;i<range;i++,j++)
         {
             List<String> basket=baskets.get(i);
-            //StringBuilder builder=new StringBuilder();
-          //  for(String s:basket)
-               // builder.append(s.trim()).append("; ");
             List<Text> textList=new ArrayList<>();
             for(String s:basket)
             {
@@ -90,13 +39,9 @@ public class BasketInterfaceController implements Initializable {
             HBox box=createBox(textList,j);
             contentVBox.getChildren().add(box);
         }
-
-
         Text tx= (Text) switchPageBox.lookup("#showInfo");
         tx.setText("Pokazano "+(startId+1)+"-"+(Math.min(startId+boxSize, size)+" z "+size+" koszyków"));
     }
-
-
     private HBox createBox(List<Text> textList,int i)
     {
         HBox box=new HBox();
@@ -127,79 +72,10 @@ public class BasketInterfaceController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        filtered =false;
-        filtr=new ArrayList<>();
-        checkBoxes=new ArrayList<>();
-        pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
-        pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
-        selectSizeBox.getStyleClass().add("infoBox");
-        switchPageBox.getStyleClass().add("infoBox");
-
-        Text text1=new Text();
-        text1.setText("Pokazuj");
-        Text text2=new Text("Koszyków");
-        text1.getStyleClass().add("infoBoxText");
-        text2.getStyleClass().add("infoBoxText");
-
-        MenuButton menuButton=new MenuButton();
-        menuButton.setText("50");
-        boxSize=50;
-        startId=0;
-        EventHandler<ActionEvent> event = e -> {
-            MenuItem item = (MenuItem) e.getSource();
-            boxSize = Integer.parseInt(item.getText());
-            menuButton.setText(item.getText());
-            createView();
-
-        };
-        MenuItem item1=new MenuItem("10");
-        item1.setOnAction(event);
-        MenuItem item2=new MenuItem("25");
-        item2.setOnAction(event);
-        MenuItem item3=new MenuItem("50");
-        item3.setOnAction(event);
-        MenuItem item4=new MenuItem("75");
-        item4.setOnAction(event);
-        MenuItem item5=new MenuItem("100");
-        item5.setOnAction(event);
-        menuButton.getItems().addAll(item1,item2,item3,item4,item5);
-        menuButton.getStyleClass().add("boxButton");
-        selectSizeBox.getChildren().addAll(text1,menuButton,text2);
-
-        Button backButton = new Button("<");
-        backButton.getStyleClass().add("boxButton");
-        Button nextButton= new Button(">");
-        nextButton.getStyleClass().add("boxButton");
-        Text text=new Text("Pokazano 0 z 0 koszyków");
-        text.getStyleClass().add("infoBoxText");
-        text.setId("showInfo");
-
-        backButton.setOnAction(e -> {
-            if(startId==0)
-                return;
-            startId=Math.max(0,startId-boxSize);
-            createView();
-
-        });
-        nextButton.setOnAction(e -> {
-            if(filtered)
-            {
-                if(startId+boxSize>=basketManager.getFilteredBasketSize())
-                    return;
-            }
-            else
-            {
-                if(startId+boxSize>=basketManager.getBasketSize())
-                    return;
-            }
-
-            startId+=boxSize;
-            createView();
-
-        });
-        switchPageBox.getChildren().addAll(backButton,text,nextButton);
+        init();
+        createSelectSizeBox();
         createFiltrButton();
-
+        createSwitchPageBox();
     }
 
     public void clearBaskets() {
@@ -244,9 +120,7 @@ public class BasketInterfaceController implements Initializable {
 
     }
 
-    public void back() {
-        mainStage.setScene(mainScene);
-    }
+
     private void createFiltrButton()
     {
         MenuButton menuButton=new MenuButton("Zarządzaj filtrami");
@@ -292,5 +166,7 @@ public class BasketInterfaceController implements Initializable {
         for(CheckBox box:checkBoxes)
             box.setSelected(true);
     }
+
+
 
 }
