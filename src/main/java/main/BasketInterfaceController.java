@@ -74,10 +74,16 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
             basketManager.loadBaskets();
             createView();
             System.out.println("Dane wczytane poprawnie");
+            Alert a=new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText("Koszyki zostały wczytane poprawnie");
+            a.show();
         }
         catch (Exception e)
         {
             System.out.println("Nastąpił błąd w czasie wczytywania danych: "+e);
+            Alert a=new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Ne udało się wczytać koszyków");
+            a.show();
         }
 
     }
@@ -108,6 +114,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
     }
 
     public void clearBaskets() {
+
         try
         {
             basketManager.clearBaskets();
@@ -118,28 +125,56 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
             System.out.println("Usunięcie koszyków zakończone pomyślnie");
             Text tx= (Text) switchPageBox.lookup("#showInfo");
             tx.setText("Pokazano 0 z 0 koszyków");
+            Alert a=new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText("Usunięcie koszyków zakończone pomyślnie");
+            a.show();
         }
         catch (Exception e)
         {
             System.out.println("Nastąpił błąd podczas usuwania koszyków: "+e);
+            Alert a=new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Nastąpił błąd podczas usuwania koszyków");
+            a.show();
         }
 
     }
 
     public void filtrBaskets() {
-        String s=tx.getText();
+        try
+        {
+            String s=tx.getText();
+            if (s.isEmpty()||basketManager.getBasketSize()==0)
+                return;
+            String[] items = s.split(":|,|;");
+            for (String item : items) {
+                filtr.add(item.trim());
+            }
+            basketManager.filtrBaskets(filtr);
+            System.out.println("Filtrowanie zakończone pomyslnie");
+            if(basketManager.getFilteredBasketSize()==0)
+            {
+                filtr.clear();
+                Alert a=new Alert(Alert.AlertType.INFORMATION);
+                a.setContentText("Brak koszyków spełniających podane warunki");
+                a.show();
+            }
+            else
+            {
+                Alert a=new Alert(Alert.AlertType.INFORMATION);
+                a.setContentText("Filtrowanie zakończone pomyslnie");
+                a.show();
+                filtered =true;
+                startId=0;
+                tx.clear();
+                createView();
+            }
 
-        if (s.isEmpty()||basketManager.getBasketSize()==0)
-            return;
-        String[] items = s.split(":|,|;");
-        for (String item : items) {
-            filtr.add(item.trim());
         }
-        basketManager.filtrBaskets(filtr);
-        filtered =true;
-        startId=0;
-        tx.clear();
-        createView();
+        catch (Exception e)
+        {
+            System.out.println("Nastąpił błąd podczas filtrowania koszyków: "+e);
+        }
+
     }
 
     public void clearFilter() {
@@ -147,6 +182,9 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         filtr.clear();
         basketManager.clearFilteredBaskets();
         createView();
+        Alert a=new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText("Filtry wyczyszczone pomyślnie, przywrócono podstawową listę koszyków");
+        a.show();
 
     }
 
@@ -178,18 +216,37 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
     }
     private void deleteRows()
     {
-        basketManager.deleteSelectedRows(checkBoxes,startId,filtered);
+        Alert a=new Alert(Alert.AlertType.INFORMATION);
+        int j= basketManager.deleteSelectedRows(checkBoxes,startId,filtered);
+        if(j==0)
+        {
+            a.setContentText("Brak wybranych koszyków do usunięcia");
+            a.show();
+            return;
+        }
         if(filtered)
             basketManager.filtrBaskets(filtr);
         createView();
+        a.setContentText("Wybrane koszyki zostały usunięte");
+        a.show();
+
     }
     private void deleteItems()
     {
+        Alert a=new Alert(Alert.AlertType.INFORMATION);
         if (!filtered)
             return;
-        basketManager.deleteSelectedItems(checkBoxes, filtr,startId);
+        int j=basketManager.deleteSelectedItems(checkBoxes, filtr,startId);
+        if(j==0)
+        {
+            a.setContentText("Brak wybranych przedmiotów do usunięcia");
+            a.show();
+            return;
+        }
         basketManager.filtrBaskets(filtr);
         createView();
+        a.setContentText("Wybrane przedmioty zostały usunięte z koszyków");
+        a.show();
     }
     private void selectAllBoxes()
     {

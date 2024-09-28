@@ -1,5 +1,6 @@
 package main;
 
+import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.stage.FileChooser;
 import java.io.*;
@@ -86,32 +87,42 @@ public class BasketManager {
         }
 
     }
-    public void deleteSelectedRows(List<CheckBox> checkBoxes,int startID,boolean f)
+    public int deleteSelectedRows(List<CheckBox> checkBoxes,int startID,boolean f)
     {
-
+        int j=0;
+        //idziemy od tyłu, aby nie zaburzyć ciągłosci listy
         for (int i = checkBoxes.size() - 1; i >= 0; i--)
         {
 
-            if (checkBoxes.get(i).isSelected()&&!f)
+
+            if (checkBoxes.get(i).isSelected()&&!f) {
                 baskets.remove(startID + i);
+                j++;
+            }
             else if(checkBoxes.get(i).isSelected()&&f)
+            {
                 baskets.remove(filteredBaskets.get(startID + i));
+                j++;
+            }
         }
+        return  j;
     }
-    public void deleteSelectedItems(List<CheckBox> checkBoxes,List<String> filtr,int startID)
+    public int deleteSelectedItems(List<CheckBox> checkBoxes,List<String> filtr,int startID)
     {
 
+        int j=0;
         for (int i = checkBoxes.size() - 1; i >= 0; i--)
         {
             if (checkBoxes.get(i).isSelected())
             {
+                j++;
                 int k=filteredId.get(startID+i);
                 List<String> list = new ArrayList<>(baskets.get(k));//pojedynczy koszyk jest niemodyfikowalny, bo powstał z list.of
                 list.removeAll(filtr);
                 baskets.set(k, list);
             }
-
         }
+        return j;
     }
 
 
