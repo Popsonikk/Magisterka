@@ -20,6 +20,12 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
     {
         contentVBox.getChildren().clear();
         checkBoxes.clear();
+        if(basketManager.getBasketSize()==0)
+        {
+            Text tx= (Text) switchPageBox.lookup("#showInfo");
+            tx.setText("Pokazano 0 z 0 koszyków");
+            return;
+        }
         if(filtered)
             createViewFromSet(basketManager.getFilteredBaskets());
         else
@@ -82,12 +88,30 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         createSelectSizeBox();
         createFiltrButton();
         createSwitchPageBox();
+        Button nextButton=(Button) switchPageBox.lookup("#nButt");
+
+        nextButton.setOnAction(e -> {
+            if(filtered)
+            {
+                if(startId+boxSize>=basketManager.getFilteredBasketSize())
+                    return;
+            }
+            else
+            {
+                if(startId+boxSize>=basketManager.getBasketSize())
+                    return;
+            }
+            startId+=boxSize;
+            createView();
+
+        });
     }
 
     public void clearBaskets() {
         try
         {
             basketManager.clearBaskets();
+            basketManager.clearFilteredBaskets();
             contentVBox.getChildren().clear();
             checkBoxes.clear();
             startId=0;
@@ -113,6 +137,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         }
         basketManager.filtrBaskets(filtr);
         filtered =true;
+        startId=0;
         tx.clear();
         createView();
     }
@@ -120,7 +145,6 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
     public void clearFilter() {
         filtered =false;
         filtr.clear();
-        startId=0;
         basketManager.clearFilteredBaskets();
         createView();
 
@@ -172,41 +196,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         for(CheckBox box:checkBoxes)
             box.setSelected(true);
     }
-    protected void createSwitchPageBox()
-    {
-        switchPageBox.getStyleClass().add("infoBox");
-        Button backButton = new Button("<");
-        backButton.getStyleClass().add("boxButton");
-        Button nextButton= new Button(">");
-        nextButton.getStyleClass().add("boxButton");
-        Text text=new Text("Pokazano 0 z 0 koszyków");
-        text.getStyleClass().add("infoBoxText");
-        text.setId("showInfo");
 
-        backButton.setOnAction(e -> {
-            if(startId==0)
-                return;
-            startId=Math.max(0,startId-boxSize);
-            createView();
-
-        });
-        nextButton.setOnAction(e -> {
-            if(filtered)
-            {
-                if(startId+boxSize>=basketManager.getFilteredBasketSize())
-                    return;
-            }
-            else
-            {
-                if(startId+boxSize>=basketManager.getBasketSize())
-                    return;
-            }
-            startId+=boxSize;
-            createView();
-
-        });
-        switchPageBox.getChildren().addAll(backButton,text,nextButton);
-    }
 
 
 

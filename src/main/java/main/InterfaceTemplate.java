@@ -104,6 +104,26 @@ public abstract class InterfaceTemplate {
         pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
     }
+    protected void createSwitchPageBox()
+    {
+        switchPageBox.getStyleClass().add("infoBox");
+        Button backButton = new Button("<");
+        backButton.getStyleClass().add("boxButton");
+        Button nextButton= new Button(">");
+        nextButton.getStyleClass().add("boxButton");
+        nextButton.setId("nButt");
+        Text text=new Text("Pokazano 0 z 0 koszyków");
+        text.getStyleClass().add("infoBoxText");
+        text.setId("showInfo");
+        backButton.setOnAction(e -> {
+            if(startId==0)
+                return;
+            startId=Math.max(0,startId-boxSize);
+            createView();
+
+        });
+        switchPageBox.getChildren().addAll(backButton,text,nextButton);
+    }
     protected abstract void createFiltrButton();
 
 }

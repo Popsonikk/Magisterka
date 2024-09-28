@@ -23,6 +23,16 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         init();
         createSelectSizeBox();
         createSwitchPageBox();
+
+        Button nextButton=(Button) switchPageBox.lookup("#nButt");
+
+        nextButton.setOnAction(e -> {
+            if(startId+boxSize>= aprioriManager.getAprioriSize())
+                return;
+            startId+=boxSize;
+            createView();
+
+        });
     }
     @Override
     protected void createView() {
@@ -34,31 +44,5 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
 
     }
 
-    private void createSwitchPageBox()
-    {
-        switchPageBox.getStyleClass().add("infoBox");
-        Button backButton = new Button("<");
-        backButton.getStyleClass().add("boxButton");
-        Button nextButton= new Button(">");
-        nextButton.getStyleClass().add("boxButton");
-        Text text=new Text("Pokazano 0 z 0 koszyków");
-        text.getStyleClass().add("infoBoxText");
-        text.setId("showInfo");
 
-        backButton.setOnAction(e -> {
-            if(startId==0)
-                return;
-            startId=Math.max(0,startId-boxSize);
-            createView();
-
-        });
-        nextButton.setOnAction(e -> {
-            if(startId+boxSize>= aprioriManager.getAprioriSize())
-                return;
-            startId+=boxSize;
-            createView();
-
-        });
-        switchPageBox.getChildren().addAll(backButton,text,nextButton);
-    }
 }

@@ -28,10 +28,12 @@ public class BasketManager {
         fileChooser.setTitle("Wybierz plik zawierający listę koszyków");
         File file = fileChooser.showOpenDialog(null);
         BufferedReader reader= new BufferedReader(new FileReader(file));
-        String line=reader.readLine();
+        String line;
+        line=reader.readLine(); // pominięcie lini nagłówka
+        line=reader.readLine();
         while (line!=null)
         {
-            baskets.add(List.of(line.split(",")));
+            baskets.add(List.of(line.split(",")[1].split(";")));
             line=reader.readLine();
         }
     }
