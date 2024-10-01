@@ -78,7 +78,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
             contentVBox.getChildren().add(box);
         }
         Text tx= (Text) switchPageBox.lookup("#showInfo");
-        tx.setText("Pokazano "+(startId+1)+"-"+(Math.min(startId+boxSize, size)+" z "+size+" koszyków"));
+        tx.setText("Pokazano "+(startId+1)+"-"+(Math.min(startId+boxSize, size)+" z "+size+" elementów"));
     }
     private HBox createBox(List<Text> textList,int i)
     {
@@ -129,7 +129,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
             startId=0;
             System.out.println("Usunięcie koszyków zakończone pomyślnie");
             Text tx= (Text) switchPageBox.lookup("#showInfo");
-            tx.setText("Pokazano 0 z 0 koszyków");
+            tx.setText("Pokazano 0 z 0 elementów");
             Alert a=new Alert(Alert.AlertType.INFORMATION);
             a.setContentText("Usunięcie koszyków zakończone pomyślnie");
             a.show();
@@ -221,11 +221,10 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
     @Override
     protected void createFiltrButton()
     {
-        MenuButton menuButton=new MenuButton("Zarządzaj filtrami");
+        MenuButton menuButton=makeMenuButtonStyle();
+        menuButton.setText("Zarządzaj filtrami");
         menuButton.setLayoutX(505.0);
         menuButton.setLayoutY(5.0);
-        menuButton.setPrefSize(150.0,50.0);
-        menuButton.getStyleClass().add("filterButton");
         MenuItem item1=new MenuItem("Wyczyść filtry");
         item1.setOnAction(actionEvent -> clearFilter());
         MenuItem item2=new MenuItem("Usuń zaznaczone wiersze");
@@ -236,8 +235,6 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         item4.setOnAction(actionEvent -> selectAllBoxes());
 
         menuButton.getItems().addAll(item1,item2,item3,item4);
-        menuButton.setOnShowing(event -> menuButton.setStyle("-fx-background-color: #2e79ba; -fx-border-style: solid;"));
-        menuButton.setOnHidden(event -> menuButton.setStyle("-fx-background-color: #5fc9f3; -fx-border-style: dashed;"));
         mainPane.getChildren().add(menuButton);
     }
 

@@ -1,5 +1,6 @@
 package main;
 
+import javafx.scene.control.Alert;
 import javafx.util.Pair;
 
 import java.util.*;
@@ -26,6 +27,9 @@ public class AprioriManager {
         if(basketManager.getBasketSize()==0)
         {
             System.out.println("Brak koszyków");
+            Alert a=new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Nie wczytałeś koszyków");
+            a.show();
             return;
         }
         List<List<String>> baskets=basketManager.getBaskets();

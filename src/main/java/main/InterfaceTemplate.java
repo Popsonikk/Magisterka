@@ -88,7 +88,7 @@ public abstract class InterfaceTemplate {
         selectSizeBox.getStyleClass().add("infoBox");
         Text text1=new Text();
         text1.setText("Pokazuj");
-        Text text2=new Text("Koszyków");
+        Text text2=new Text("elementów");
         text1.getStyleClass().add("infoBoxText");
         text2.getStyleClass().add("infoBoxText");
         MenuButton menuButton=createSizeButton();
@@ -113,7 +113,7 @@ public abstract class InterfaceTemplate {
         Button nextButton= new Button(">");
         nextButton.getStyleClass().add("boxButton");
         nextButton.setId("nButt");
-        Text text=new Text("Pokazano 0 z 0 koszyków");
+        Text text=new Text("Pokazano 0 z 0 elementów");
         text.getStyleClass().add("infoBoxText");
         text.setId("showInfo");
         backButton.setOnAction(e -> {
@@ -128,5 +128,14 @@ public abstract class InterfaceTemplate {
     protected abstract void createFiltrButton();
 
     protected abstract void createHeader();
+
+    protected MenuButton makeMenuButtonStyle(){
+        MenuButton menuButton=new MenuButton();
+        menuButton.setPrefSize(150.0,50.0);
+        menuButton.getStyleClass().add("filterButton");
+        menuButton.setOnShowing(event -> menuButton.setStyle("-fx-background-color: #2e79ba; -fx-border-style: solid;"));
+        menuButton.setOnHidden(event -> menuButton.setStyle("-fx-background-color: #5fc9f3; -fx-border-style: dashed;"));
+        return menuButton;
+    }
 
 }
