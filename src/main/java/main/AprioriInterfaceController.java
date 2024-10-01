@@ -44,5 +44,10 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
 
     }
 
+    @Override
+    protected void createHeader() {
+
+    }
+
 
 }

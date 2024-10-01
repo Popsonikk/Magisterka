@@ -12,6 +12,31 @@ import java.util.ResourceBundle;
 public class BasketInterfaceController extends  InterfaceTemplate implements Initializable {
 
     protected BasketManager basketManager;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        init();
+        createSelectSizeBox();
+        createFiltrButton();
+        createSwitchPageBox();
+        createHeader();
+        Button nextButton=(Button) switchPageBox.lookup("#nButt");
+
+        nextButton.setOnAction(e -> {
+            if(filtered)
+            {
+                if(startId+boxSize>=basketManager.getFilteredBasketSize())
+                    return;
+            }
+            else
+            {
+                if(startId+boxSize>=basketManager.getBasketSize())
+                    return;
+            }
+            startId+=boxSize;
+            createView();
+
+        });
+    }
     public void setBasketManager(BasketManager basketManager) {
         this.basketManager = basketManager;
     }
@@ -87,32 +112,6 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         }
 
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        init();
-        createSelectSizeBox();
-        createFiltrButton();
-        createSwitchPageBox();
-        Button nextButton=(Button) switchPageBox.lookup("#nButt");
-
-        nextButton.setOnAction(e -> {
-            if(filtered)
-            {
-                if(startId+boxSize>=basketManager.getFilteredBasketSize())
-                    return;
-            }
-            else
-            {
-                if(startId+boxSize>=basketManager.getBasketSize())
-                    return;
-            }
-            startId+=boxSize;
-            createView();
-
-        });
-    }
-
     public void clearBaskets() {
 
         try
@@ -187,13 +186,18 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         a.show();
 
     }
-
+    @Override
+    protected void createHeader() {
+        Text text=new Text("Koszyk");
+        text.getStyleClass().add("basketHeaderText");
+        header.getChildren().add(text);
+    }
     @Override
     protected void createFiltrButton()
     {
         MenuButton menuButton=new MenuButton("Zarządzaj filtrami");
         menuButton.setLayoutX(505.0);
-        menuButton.setLayoutY(15.0);
+        menuButton.setLayoutY(5.0);
         menuButton.setPrefSize(150.0,50.0);
         menuButton.getStyleClass().add("filterButton");
         MenuItem item1=new MenuItem("Wyczyść filtry");
@@ -204,6 +208,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         item3.setOnAction(actionEvent -> deleteItems());
         MenuItem item4=new MenuItem("Zaznacz wszystkie boxy");
         item4.setOnAction(actionEvent -> selectAllBoxes());
+
         menuButton.getItems().addAll(item1,item2,item3,item4);
         menuButton.setOnShowing(event -> {
             menuButton.setStyle("-fx-background-color: #2e79ba; -fx-border-style: solid;");
@@ -214,6 +219,9 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         });
         mainPane.getChildren().add(menuButton);
     }
+
+
+
     private void deleteRows()
     {
         Alert a=new Alert(Alert.AlertType.INFORMATION);

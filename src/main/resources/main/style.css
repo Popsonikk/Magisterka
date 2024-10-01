@@ -87,5 +87,22 @@
     -fx-border-style: dashed;
 
 }
+.basketHeader{
+    -fx-border-width: 2px 3px 2px 3px;
+    -fx-border-style: solid;
+    -fx-border-color: #142d4c;
+    -fx-spacing: 10px;
+    -fx-padding: 5px;
+    -fx-background-color: lightgreen;
+    -fx-pref-height: 25px;
 
+}
+.basketHeaderText{
+    -fx-font-size: 20px;
+    -fx-fill: #e7eaf6 !important;
 
+}
+.empty{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}

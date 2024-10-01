@@ -28,6 +28,8 @@ public abstract class InterfaceTemplate {
     public HBox switchPageBox;
     @FXML
     public TextField tx;
+    @FXML
+    public VBox header;
 
 
     protected List<CheckBox> checkBoxes;
@@ -102,7 +104,7 @@ public abstract class InterfaceTemplate {
         boxSize=100;
         startId=0;
         pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
-        pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
     }
     protected void createSwitchPageBox()
     {
@@ -125,5 +127,7 @@ public abstract class InterfaceTemplate {
         switchPageBox.getChildren().addAll(backButton,text,nextButton);
     }
     protected abstract void createFiltrButton();
+
+    protected abstract void createHeader();
 
 }

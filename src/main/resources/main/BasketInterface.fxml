@@ -12,18 +12,18 @@
       <URL value="@style.css" />
    </stylesheets>
    <children>
-      <Button onAction="#clearBaskets" layoutX="835.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść koszyki" styleClass="interfaceButton" />
-      <Button onAction="#loadBaskets" layoutX="670.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wczytaj koszyki" styleClass="interfaceButton"/>
-      <TextField fx:id="tx" layoutX="15.0" layoutY="15.0" prefHeight="50.0" prefWidth="329.0" alignment="CENTER" styleClass="filterBox"/>
-      <Button onAction="#filtrBaskets" layoutX="340.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Filtruj koszyki" styleClass="interfaceButton" />
-
-      <Button onAction="#back" layoutX="345.0" layoutY="685.0"  text="Powrót" styleClass="backButton" />
-      <ScrollPane fx:id="pane"  prefHeight="600.0" prefWidth="970.0" layoutY="70.0"  layoutX="15.0">
+      <Button onAction="#clearBaskets" layoutX="835.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść koszyki" styleClass="interfaceButton" />
+      <Button onAction="#loadBaskets" layoutX="670.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wczytaj koszyki" styleClass="interfaceButton"/>
+      <TextField fx:id="tx" layoutX="15.0" layoutY="5.0" prefHeight="50.0" prefWidth="329.0" alignment="CENTER" styleClass="filterBox"/>
+      <Button onAction="#filtrBaskets" layoutX="340.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Filtruj koszyki" styleClass="interfaceButton" />
+      <VBox fx:id="header" prefWidth="950.0" layoutY="66.0"  layoutX="18.0"  styleClass="basketHeader"/>
+      <ScrollPane fx:id="pane"  prefHeight="575.0" prefWidth="970.0" layoutY="105.0"  layoutX="15.0" styleClass="empty">
       <content>
          <VBox fx:id="contentVBox" />
       </content>
       </ScrollPane>
-      <HBox fx:id="selectSizeBox"  layoutX="15.0" layoutY="685.0" alignment="CENTER" prefHeight="50.0" prefWidth="250.0" />
-      <HBox fx:id="switchPageBox"  layoutX="525.0" layoutY="685.0" alignment="CENTER" prefHeight="50.0" prefWidth="450.0" />
+      <HBox fx:id="selectSizeBox"  layoutX="15.0" layoutY="695.0" alignment="CENTER" prefHeight="50.0" prefWidth="250.0" />
+      <HBox fx:id="switchPageBox"  layoutX="525.0" layoutY="695.0" alignment="CENTER" prefHeight="50.0" prefWidth="450.0" />
+      <Button onAction="#back" layoutX="345.0" layoutY="695.0"  text="Powrót" styleClass="backButton" />
    </children>
 </Pane>
