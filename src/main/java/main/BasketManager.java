@@ -29,7 +29,12 @@ public class BasketManager {
         line = reader.readLine(); // pominięcie lini nagłówka
         line = reader.readLine();
         while (line != null) {
-            baskets.add(List.of(line.split(",")[1].split(";")));
+            //baskets.add(List.of(line.split(",")[1].split(";")));
+            String[]b=line.split(",")[1].split(";");
+            List list=new ArrayList<>();
+            for(String s:b)
+                list.add(s.trim().toLowerCase());
+            baskets.add(list);
             line = reader.readLine();
         }
     }

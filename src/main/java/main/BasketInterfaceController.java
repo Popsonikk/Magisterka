@@ -124,6 +124,8 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
             basketManager.clearFilteredBaskets();
             contentVBox.getChildren().clear();
             checkBoxes.clear();
+            filtered=false;
+            filtr.clear();
             startId=0;
             System.out.println("Usunięcie koszyków zakończone pomyślnie");
             Text tx= (Text) switchPageBox.lookup("#showInfo");
@@ -148,12 +150,12 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
             String s=tx.getText();
             if (s.isEmpty()||basketManager.getBasketSize()==0)
                 return;
-            String[] items = s.split(":|,|;");
+            String[] items = s.split("[:,;]");
             for (String item : items) {
                 filtr.add(item.trim());
             }
             basketManager.filtrBaskets(filtr);
-            System.out.println("Filtrowanie zakończone pomyslnie");
+            System.out.println("Filtrowanie zakończone pomyślnie");
             if(basketManager.getFilteredBasketSize()==0)
             {
                 filtr.clear();
@@ -164,7 +166,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
             else
             {
                 Alert a=new Alert(Alert.AlertType.INFORMATION);
-                a.setContentText("Filtrowanie zakończone pomyslnie");
+                a.setContentText("Filtrowanie zakończone pomyślnie");
                 a.show();
                 filtered =true;
                 startId=0;
@@ -234,13 +236,8 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         item4.setOnAction(actionEvent -> selectAllBoxes());
 
         menuButton.getItems().addAll(item1,item2,item3,item4);
-        menuButton.setOnShowing(event -> {
-            menuButton.setStyle("-fx-background-color: #2e79ba; -fx-border-style: solid;");
-        });
-
-        menuButton.setOnHidden(event -> {
-            menuButton.setStyle("-fx-background-color: #5fc9f3; -fx-border-style: dashed;");
-        });
+        menuButton.setOnShowing(event -> menuButton.setStyle("-fx-background-color: #2e79ba; -fx-border-style: solid;"));
+        menuButton.setOnHidden(event -> menuButton.setStyle("-fx-background-color: #5fc9f3; -fx-border-style: dashed;"));
         mainPane.getChildren().add(menuButton);
     }
 
