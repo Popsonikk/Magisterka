@@ -28,8 +28,7 @@ public abstract class InterfaceTemplate {
     public HBox switchPageBox;
     @FXML
     public TextField tx;
-    @FXML
-    public VBox header;
+    protected HBox header;
 
 
     protected List<CheckBox> checkBoxes;

@@ -7,6 +7,7 @@ import javafx.scene.text.TextFlow;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class BasketInterfaceController extends  InterfaceTemplate implements Initializable {
@@ -96,7 +97,9 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
     public void loadBaskets() {
         try
         {
+
             basketManager.loadBaskets();
+            mainPane.getChildren().add(header);
             createView();
             System.out.println("Dane wczytane poprawnie");
             Alert a=new Alert(Alert.AlertType.INFORMATION);
@@ -116,6 +119,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
 
         try
         {
+            mainPane.getChildren().remove(header);
             basketManager.clearBaskets();
             basketManager.clearFilteredBaskets();
             contentVBox.getChildren().clear();
@@ -188,9 +192,29 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
     }
     @Override
     protected void createHeader() {
+        header=new HBox();
+        header.setLayoutX(17.0);
+        header.setLayoutY(66.0);
+        header.setPrefWidth(950.0);
+        header.getStyleClass().add("basketHeader");
         Text text=new Text("Koszyk");
         text.getStyleClass().add("basketHeaderText");
-        header.getChildren().add(text);
+        Button button=new Button("↑");
+        button.getStyleClass().add("boxButton");
+        button.setOnAction((event)->{
+            if(basketManager.getBasketSize()==0)
+                return;
+            if(Objects.equals(button.getText(), "↑"))
+            {
+                basketManager.sortByLengthUp();
+                button.setText("↓");
+            } else{
+                basketManager.sortByLengthDown();
+                button.setText("↑");
+            }
+            createView();
+        });
+        header.getChildren().addAll(text,button);
     }
     @Override
     protected void createFiltrButton()

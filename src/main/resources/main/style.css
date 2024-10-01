@@ -94,12 +94,13 @@
     -fx-spacing: 10px;
     -fx-padding: 5px;
     -fx-background-color: lightgreen;
-    -fx-pref-height: 25px;
+    -fx-alignment: center-left;
+
 
 }
 .basketHeaderText{
     -fx-font-size: 20px;
-    -fx-fill: #e7eaf6 !important;
+    -fx-fill: #385170 !important;
 
 }
 .empty{
