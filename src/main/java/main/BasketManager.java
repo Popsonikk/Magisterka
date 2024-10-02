@@ -11,12 +11,14 @@ public class BasketManager {
     private List<List<String>> baskets;
     private List<List<String>> filteredBaskets;
     private List<Integer> filteredId;
+    private String filename;
 
 
     BasketManager() {
         this.filteredBaskets = new ArrayList<>();
         this.baskets = new LinkedList<>();
         this.filteredId = new ArrayList<>();
+        this.filename="";
     }
 
     public void loadBaskets() throws IOException {
@@ -24,6 +26,7 @@ public class BasketManager {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Wybierz plik zawierający listę koszyków");
         File file = fileChooser.showOpenDialog(null);
+        filename=file.getName();
         BufferedReader reader = new BufferedReader(new FileReader(file));
         String line;
         line = reader.readLine(); // pominięcie lini nagłówka
@@ -37,6 +40,14 @@ public class BasketManager {
             baskets.add(list);
             line = reader.readLine();
         }
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 
     public int getFilteredBasketSize() {

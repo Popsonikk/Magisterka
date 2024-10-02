@@ -1,16 +1,20 @@
 package main;
 
 import javafx.scene.control.Alert;
-import javafx.util.Pair;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class AprioriManager {
     private  BasketManager basketManager;
     private List<SimplePattern> result;
+    private String supportFilename;
     AprioriManager()
     {
         this.result=new ArrayList<>();
+        supportFilename="";
     }
 
     public int getAprioriSize()
@@ -133,5 +137,48 @@ public class AprioriManager {
     {
         return result.size();
     }
+
+    public void createCSVFIle() {
+        if(Objects.equals(basketManager.getFilename(), "")|| result.isEmpty())
+        {
+            Alert a=new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Brak danych do zapisania");
+            a.show();
+            return;
+        }
+
+        try {
+            String filename;
+            if(Objects.equals(supportFilename, ""))
+                filename=basketManager.getFilename().split("\\.")[0];
+            else
+                filename=supportFilename;
+            File file = new File("dane/" + filename+"_supportData.csv");
+            file.createNewFile();
+            FileWriter writer=new FileWriter(file);
+            writer.write("id,support,pattern\n");
+            int i=0;
+            for(SimplePattern pattern:result)
+            {
+                writer.write(i+","+ pattern.getSupport()+",");
+                List<String> patterns = pattern.getPattern();
+                for(int j = 0; j < patterns.size()-1; j++)
+                    writer.write(patterns.get(j)+";");
+                writer.write(patterns.get(patterns.size()-1)+"\n");
+                i++;
+            }
+            writer.close();
+            Alert a=new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText("Utworzenie pliku zakończone pomyślnie");
+            a.show();
+        } catch (IOException e) {
+            Alert a=new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Wystąpił błąd przy zapisie");
+            a.show();
+            throw new RuntimeException(e);
+        }
+
+    }
+
 
 }

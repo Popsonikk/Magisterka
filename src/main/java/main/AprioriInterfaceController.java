@@ -61,6 +61,7 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         menuButton.setLayoutX(670.0);
         menuButton.setLayoutY(5.0);
         MenuItem item1=new MenuItem("Zapisz do pliku");
+        item1.setOnAction((event)->aprioriManager.createCSVFIle());
         MenuItem item2=new MenuItem("Wczytaj z pliku");
         menuButton.getItems().addAll(item1,item2);
         mainPane.getChildren().add(menuButton);

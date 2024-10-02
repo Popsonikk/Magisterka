@@ -126,6 +126,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
             checkBoxes.clear();
             filtered=false;
             filtr.clear();
+            basketManager.setFilename("");
             startId=0;
             System.out.println("Usunięcie koszyków zakończone pomyślnie");
             Text tx= (Text) switchPageBox.lookup("#showInfo");
