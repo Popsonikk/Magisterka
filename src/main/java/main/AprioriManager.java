@@ -1,10 +1,10 @@
 package main;
 
 import javafx.scene.control.Alert;
+import javafx.stage.FileChooser;
+import javafx.stage.Window;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class AprioriManager {
@@ -139,7 +139,7 @@ public class AprioriManager {
     }
 
     public void createCSVFIle() {
-        if(Objects.equals(basketManager.getFilename(), "")|| result.isEmpty())
+        if(result.isEmpty())
         {
             Alert a=new Alert(Alert.AlertType.ERROR);
             a.setContentText("Brak danych do zapisania");
@@ -179,6 +179,40 @@ public class AprioriManager {
         }
 
     }
+    public void loadFromCSV()
+    {
+        try {
+            FileChooser fileChooser=new FileChooser();
+            fileChooser.setTitle("Wybierz plik zawierający poziomy wsparcia");
+            File file = fileChooser.showOpenDialog(null);
+            supportFilename=file.getName();
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line;
+            reader.readLine(); //header
+            line= reader.readLine();
+            while (line!=null)
+            {
+                String []pattern=line.split(",");
+                double support=Double.parseDouble(pattern[1]);
+                pattern=pattern[2].split(";");
+                List<String> list=new ArrayList<>();
+                for(String s:pattern)
+                    list.add(s.trim().toLowerCase());
+                result.add(new SimplePattern(list,support));
+                line= reader.readLine();
+            }
+            Alert a=new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText("Dane zostały wczytane poprawnie");
+            a.show();
+        } catch (IOException e) {
+            Alert a=new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Wystąpił błąd przy zapisie");
+            a.show();
+            throw new RuntimeException(e);
+
+        }
+    }
+
 
 
 }
