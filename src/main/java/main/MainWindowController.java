@@ -8,6 +8,7 @@ public class MainWindowController {
     private TextField support;
     @FXML
     private TextField length;
+    private AprioriInterfaceController aprioriInterfaceController;
 
 
     private Stage mainStage;
@@ -37,6 +38,10 @@ public class MainWindowController {
         mainStage.setScene(basketScene);
     }
 
+    public void setAprioriInterfaceController(AprioriInterfaceController aprioriInterfaceController) {
+        this.aprioriInterfaceController = aprioriInterfaceController;
+    }
+
     public void useApriori() {
         aprioriManager.Apriori(Double.parseDouble(support.getText()),Integer.parseInt(length.getText()));
         support.setText("0.1");
@@ -49,6 +54,11 @@ public class MainWindowController {
     }
 
     public void showAprioriInterface() {
+        if(aprioriManager.getSupportListSize()>0)
+        {
+            aprioriInterfaceController.deleteHeader();
+            aprioriInterfaceController.showTable();
+        }
         mainStage.setScene(aprioriScene);
     }
 }

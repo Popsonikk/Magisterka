@@ -61,7 +61,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
     {
         int size=baskets.size();
         int range=Math.min(size,(startId+boxSize));
-        for(int i=startId,j=0;i<range;i++,j++)
+        for(int i=startId;i<range;i++)
         {
             List<String> basket=baskets.get(i);
             List<Text> textList=new ArrayList<>();
@@ -74,19 +74,17 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
                     text.getStyleClass().add("basketText");
                 textList.add(text);
             }
-            HBox box=createBox(textList,j);
+            HBox box=createBox(textList);
             contentVBox.getChildren().add(box);
         }
         Text tx= (Text) switchPageBox.lookup("#showInfo");
         tx.setText("Pokazano "+(startId+1)+"-"+(Math.min(startId+boxSize, size)+" z "+size+" elementów"));
     }
-    private HBox createBox(List<Text> textList,int i)
+    private HBox createBox(List<Text> textList)
     {
         HBox box=new HBox();
         CheckBox checkBox=new CheckBox();
         checkBoxes.add(checkBox);
-        box.setLayoutX(15.0);
-        box.setLayoutY(20.0+(50.0*(i+1)));
         box.getStyleClass().add("basketBorder");
         TextFlow textFlow=new TextFlow();
         textFlow.getChildren().addAll(textList);

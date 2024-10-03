@@ -2,7 +2,6 @@ package main;
 
 import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
-import javafx.stage.Window;
 
 import java.io.*;
 import java.util.*;
@@ -78,7 +77,9 @@ public class AprioriManager {
             result.addAll(currentPatterns);
             i++;
         }
-        printSupport();
+        Alert a=new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText("Operacja zakończona pomyślnie");
+        a.show();
     }
     private List<List<String>> generateCandidates(List<SimplePattern> candidatePatterns) {
         //set dla pozbycia się duplikatów
@@ -115,19 +116,6 @@ public class AprioriManager {
             }
         }
         return patterns;
-    }
-    public void printSupport()
-    {
-        result.sort((o1, o2) -> Double.compare(o2.getSupport(), o1.getSupport()));
-        for(SimplePattern pattern: result)
-        {
-            System.out.print(pattern.getSupport()+": ");
-            for (String s: pattern.getPattern())
-            {
-                System.out.print(s+"; ");
-            }
-            System.out.println();
-        }
     }
 
     public List<SimplePattern> getSupportList() {

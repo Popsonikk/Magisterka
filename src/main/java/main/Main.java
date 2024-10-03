@@ -34,6 +34,7 @@ public class Main extends Application {
         mainWindowController.setAprioriScene(new Scene(aprioriWindow,1000,750));
         mainWindowController.setAprioriManager(aprioriManager);
         mainWindowController.setRuleManager(ruleManager);
+        mainWindowController.setAprioriInterfaceController(aprioriInterfaceController);
 
         Scene mainScene=new Scene(mainWindow,1000,750);
         basketInterfaceController.setBasketManager(basketManager);
