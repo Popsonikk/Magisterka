@@ -1,17 +1,13 @@
 package main;
 
+
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
-
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -170,7 +166,27 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
     }
 
 
-
-
-
+    public void clearBase() {
+        try
+        {
+            mainPane.getChildren().remove(header);
+            aprioriManager.clearSupportList();
+            contentVBox.getChildren().clear();
+            checkBoxes.clear();
+            startId=0;
+            System.out.println("Usunięcie listy wsparcia zakończone pomyślnie");
+            Text tx= (Text) switchPageBox.lookup("#showInfo");
+            tx.setText("Pokazano 0 z 0 elementów");
+            Alert a=new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText("Usunięcie koszyków zakończone pomyślnie");
+            a.show();
+        }
+        catch (Exception e)
+        {
+            System.out.println("Nastąpił błąd podczas usuwania koszyków: "+e);
+            Alert a=new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Nastąpił błąd podczas usuwania koszyków");
+            a.show();
+        }
+    }
 }

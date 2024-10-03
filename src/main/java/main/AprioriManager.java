@@ -200,6 +200,12 @@ public class AprioriManager {
 
         }
     }
+    public void clearSupportList()
+    {
+        result.clear();
+    }
+
+
 
 
 
