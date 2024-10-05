@@ -76,6 +76,7 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         gridPane.getColumnConstraints().add(new ColumnConstraints(200.0));
         gridPane.getColumnConstraints().add(new ColumnConstraints(750.0));
         HBox box1=createTableColumn(String.format("%.3f", pattern.getSupport()),"basketBorder","basketText");
+        box1.getChildren().add(0,checkBox);
         gridPane.add(box1,0,0);
         StringBuilder builder=new StringBuilder();
         for(String s: pattern.getPattern())
@@ -92,7 +93,27 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         menuButton.setText("Zarządzaj filtrami");
         menuButton.setLayoutX(505.0);
         menuButton.setLayoutY(5.0);
+        MenuItem item=new MenuItem("Zaznacz wszystkie boxy");
+        item.setOnAction(actionEvent -> selectAllBoxes());
+        MenuItem item2=new MenuItem("Usuń zaznaczone wiersze");
+        item2.setOnAction(actionEvent -> deleteRows());
+        menuButton.getItems().addAll(item,item2);
         mainPane.getChildren().add(menuButton);
+    }
+
+    @Override
+    protected void deleteRows() {
+        Alert a=new Alert(Alert.AlertType.INFORMATION);
+        int j= aprioriManager.deleteSelectedRows(checkBoxes,startId);
+        if(j==0)
+        {
+            a.setContentText("Brak wybranych elementów do usunięcia");
+            a.show();
+            return;
+        }
+        createView();
+        a.setContentText("Wybrane elementów zostały usunięte");
+        a.show();
     }
 
     @Override

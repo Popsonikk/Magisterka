@@ -137,5 +137,11 @@ public abstract class InterfaceTemplate {
         menuButton.setOnHidden(event -> menuButton.setStyle("-fx-background-color: #5fc9f3; -fx-border-style: dashed;"));
         return menuButton;
     }
+    protected void selectAllBoxes()
+    {
+        for(CheckBox box:checkBoxes)
+            box.setSelected(true);
+    }
+    protected abstract void deleteRows();
 
 }

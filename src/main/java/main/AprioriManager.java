@@ -1,6 +1,7 @@
 package main;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
 import javafx.stage.FileChooser;
 
 import java.io.*;
@@ -223,6 +224,21 @@ public class AprioriManager {
         result.sort((o1, o2) -> Integer.compare(o2.getPattern().size(), o1.getPattern().size()));
 
     }
+    public int deleteSelectedRows(List<CheckBox> checkBoxes, int startID) {
+        int j = 0;
+        //idziemy od tyłu, aby nie zaburzyć ciągłosci listy
+        for (int i = checkBoxes.size() - 1; i >= 0; i--) {
+
+
+            if (checkBoxes.get(i).isSelected())
+            {
+                result.remove(startID + i);
+                j++;
+            }
+        }
+        return j;
+    }
+
 
 
 

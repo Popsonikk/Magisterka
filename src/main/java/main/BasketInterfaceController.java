@@ -239,7 +239,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
 
 
 
-    private void deleteRows()
+    protected void deleteRows()
     {
         Alert a=new Alert(Alert.AlertType.INFORMATION);
         int j= basketManager.deleteSelectedRows(checkBoxes,startId,filtered);
@@ -273,11 +273,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         a.setContentText("Wybrane przedmioty zostały usunięte z koszyków");
         a.show();
     }
-    private void selectAllBoxes()
-    {
-        for(CheckBox box:checkBoxes)
-            box.setSelected(true);
-    }
+
 
 
 
