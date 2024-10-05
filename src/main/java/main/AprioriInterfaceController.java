@@ -9,6 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class AprioriInterfaceController extends InterfaceTemplate implements Initializable {
@@ -74,20 +75,12 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         GridPane gridPane=new GridPane();
         gridPane.getColumnConstraints().add(new ColumnConstraints(200.0));
         gridPane.getColumnConstraints().add(new ColumnConstraints(750.0));
-        HBox box1=new HBox();
-        box1.getStyleClass().add("basketBorder");
-        Text text1 = new Text(String.format("%.3f", pattern.getSupport()));
-        text1.getStyleClass().add("basketText");
-        box1.getChildren().add(text1);
+        HBox box1=createTableColumn(String.format("%.3f", pattern.getSupport()),"basketBorder","basketText");
         gridPane.add(box1,0,0);
-        HBox box2=new HBox();
-        box2.getStyleClass().add("basketBorder");
         StringBuilder builder=new StringBuilder();
         for(String s: pattern.getPattern())
             builder.append(s).append("; ");
-        Text text2=new Text(builder.toString());
-        text2.getStyleClass().add("basketText");
-        box2.getChildren().add(text2);
+        HBox box2=createTableColumn(builder.toString(),"basketBorder","basketText");
         gridPane.add(box2,1,0);
         box.getChildren().add(gridPane);
         return box;
@@ -112,22 +105,56 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         GridPane gridPane=new GridPane();
         gridPane.getColumnConstraints().add(new ColumnConstraints(200.0));
         gridPane.getColumnConstraints().add(new ColumnConstraints(750.0));
-        gridPane.add(createHeaderColumn("Wsparcie"),0,0);
-        gridPane.add(createHeaderColumn("Wzorzec"),1,0);
+
+        HBox box1=createTableColumn("Wsparcie","basketHeader","basketHeaderText");
+        Button button1=new Button("↑");
+        button1.getStyleClass().add("boxButton");
+        button1.setOnAction((event)->{
+            if(aprioriManager.getSupportListSize()==0)
+                return;
+            if(Objects.equals(button1.getText(), "↑"))
+            {
+                aprioriManager.sortBySupportUp();
+                button1.setText("↓");
+            } else{
+                aprioriManager.sortBySupportDown();
+                button1.setText("↑");
+            }
+            createView();
+        });
+        box1.getChildren().add(button1);
+        gridPane.add(box1,0,0);
+
+        HBox box2=createTableColumn("Wzorzec","basketHeader","basketHeaderText");
+        Button button2=new Button("↑");
+        button2.getStyleClass().add("boxButton");
+        button2.setOnAction((event)->{
+            if(aprioriManager.getSupportListSize()==0)
+                return;
+            if(Objects.equals(button2.getText(), "↑"))
+            {
+                aprioriManager.sortByPatternUp();
+                button2.setText("↓");
+            } else{
+                aprioriManager.sortByPatternDown();
+                button2.setText("↑");
+            }
+            createView();
+        });
+        box2.getChildren().add(button2);
+        gridPane.add(box2,1,0);
         header.getChildren().add(gridPane);
 
     }
 
 
-    private HBox createHeaderColumn(String name)
+    private HBox createTableColumn(String name,String styleName,String styleTextName)
     {
         HBox box=new HBox();
         Text text=new Text(name);
-        text.getStyleClass().add("basketHeaderText");
-        Button button=new Button("↑");
-        button.getStyleClass().add("boxButton");
-        box.getStyleClass().add("basketHeader");
-        box.getChildren().addAll(text,button);
+        text.getStyleClass().add(styleTextName);
+        box.getStyleClass().add(styleName);
+        box.getChildren().addAll(text);
         return box;
     }
     private void createCSVButton()

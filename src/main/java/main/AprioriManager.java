@@ -205,6 +205,25 @@ public class AprioriManager {
         result.clear();
     }
 
+    public void sortBySupportUp() {
+        result.sort(Comparator.comparingDouble(SimplePattern::getSupport));
+
+
+    }
+    public void sortBySupportDown() {
+        result.sort((o1, o2) -> Double.compare(o2.getSupport(), o1.getSupport()));
+
+    }
+    public void sortByPatternUp() {
+        result.sort(Comparator.comparingInt(o -> o.getPattern().size()));
+
+
+    }
+    public void sortByPatternDown() {
+        result.sort((o1, o2) -> Integer.compare(o2.getPattern().size(), o1.getPattern().size()));
+
+    }
+
 
 
 
