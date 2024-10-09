@@ -1,53 +1,34 @@
 package main;
-
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.stage.FileChooser;
-
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class AprioriManager {
     private  BasketManager basketManager;
-    private List<SimplePattern> result;
+    private List<SimplePattern> supportList;
     private List<SimplePattern> filtredList;
     private String supportFilename;
     private List<Integer> filteredId;
     AprioriManager()
     {
-        this.result=new ArrayList<>();
+        this.supportList=new ArrayList<>();
         this.filtredList=new ArrayList<>();
         this.filteredId=new ArrayList<>();
         supportFilename="";
     }
-    public void setBasketManager(BasketManager basketManager) {
-        this.basketManager = basketManager;
-    }
-    public List<SimplePattern> getSupportList() {
-        return result;
-    }
-    public List<SimplePattern> getFiltredList() {
-        return filtredList;
-    }
-    public int getSupportListSize()
-    {
-        return result.size();
-    }
-    public int getFilteredListSize()
-    {
-        return filtredList.size();
-    }
-    public void clearSupportList()
-    {
-        result.clear();
-    }
-    public void clearFilteredList()
-    {
-        filtredList.clear();
-    }
+    public void setBasketManager(BasketManager basketManager) {this.basketManager = basketManager;}
+    public List<SimplePattern> getSupportList() {return supportList;}
+    public List<SimplePattern> getFiltredList() {return filtredList;}
+    public int getSupportListSize() {return supportList.size();}
+    public int getFilteredListSize() {return filtredList.size();}
+    public void clearSupportList() {supportList.clear();}
+    public void clearFilteredList() {filtredList.clear();}
     public void Apriori(double minSup, int len)
     {
-        result.clear();
+        supportList.clear();
         if(basketManager.getBasketSize()==0)
         {
             System.out.println("Brak koszyków");
@@ -71,82 +52,79 @@ public class AprioriManager {
             }
         }
         //Częste wzorce jednoelementowe
-        List<SimplePattern>  currentPatterns = filterItemSets(patternCount, baskets.size(),minSup);
-        //dodanie wzorców do listy wynikowej
-        result.addAll(currentPatterns);
+        List<List<String>>  currentPatterns = filterItemSets(patternCount, baskets.size(),minSup);
         int i=2;
-
         // krok rekurencyjny
-        while (!currentPatterns.isEmpty()&&i<=len) {
+        while (!currentPatterns.isEmpty()&&i<=len)
+        {
+            Set<String> uniqueItems = currentPatterns.stream().flatMap(List::stream).collect(Collectors.toSet());
             // Generowanie k-wzorców częstych
-            List<List<String>> candidates = generateCandidates(currentPatterns);
+            List<List<String>> candidates = generateCandidates(new ArrayList<>(uniqueItems),0,i,new ArrayList<>());
             //wyczyszczenie mapy zliczającej wystąpienia k-wzorców
             patternCount = new HashMap<>();
             for (List<String> basket : baskets) {
                 //Struktura set zapobiega duplikatom w danych
                 Set<String> basketSet = new HashSet<>(basket);
-                for (List<String> candidate : candidates) {
+                for (List<String> candidate : candidates)
+                {
                     //sprawdzenie czy konkretny wzorzec w całości znajduje się w koszyku
-                    if (basketSet.containsAll(candidate)) {
-                        //zliczanie występowania wzorca
+                    if (basketSet.containsAll(candidate))
                         patternCount.put(candidate, patternCount.getOrDefault(candidate, 0) + 1);
-                    }
                 }
             }
             //wyfiltrowanie wzorców po wymaganym wsparciu
             currentPatterns = filterItemSets(patternCount, baskets.size(),minSup);
-            result.addAll(currentPatterns);
             i++;
         }
         Alert a=new Alert(Alert.AlertType.INFORMATION);
         a.setContentText("Operacja zakończona pomyślnie");
         a.show();
     }
-    private List<List<String>> generateCandidates(List<SimplePattern> candidatePatterns) {
-        //set dla pozbycia się duplikatów
-        Set<List<String>> candidates = new HashSet<>(); // Używamy Set do eliminacji duplikatów
-
-        //generowanie wszystkich możliwych par (bez powtórzeń)
-        for (int i = 0; i < candidatePatterns.size(); i++) {
-            for (int j = i + 1; j < candidatePatterns.size(); j++) {
-                List<String> itemSet1 = candidatePatterns.get(i).getPattern();
-                List<String> itemSet2 = candidatePatterns.get(j).getPattern();
-                //stworzenie tymczasowej listy i dodanie pierwszego wzorca
-                Set<String> union = new HashSet<>(itemSet1);
-                //dodanie drugiego wzorca z pary(duplikaty usuwane za pomocą set)
-                union.addAll(itemSet2);
-                //jeżeli długość jest większa o 1 to mamy kandydata, duplikaty usuwane przez strukturę set
-                if (union.size() == itemSet1.size() + 1) {
-                    candidates.add(new ArrayList<>(union));
-                }
-            }
+    //rekurencyjne szukanie kandydatów
+    private List<List<String>> generateCandidates(List<String> candidates, int index, int size, List<String> currCandidate) {
+        List<List<String>> patterns = new ArrayList<>();
+        //dodanie kandydata do zbioru
+        if (currCandidate.size() == size)
+        {
+            patterns.add(new ArrayList<>(currCandidate));
+            return patterns;
         }
-        return  new ArrayList<>(candidates);
+        // Warunek zakończenia, przekroczony rozmiar listy
+        if (index >= candidates.size())
+            return patterns;
+        // Krok rekurencyjny
+        currCandidate.add(candidates.get(index));
+        patterns.addAll(generateCandidates(candidates, index + 1, size, currCandidate));
+        // Backtracking rekurencji
+        currCandidate.remove(currCandidate.size() - 1);
+        patterns.addAll(generateCandidates(candidates, index + 1, size, currCandidate));
+        return patterns;
     }
-
-    private List<SimplePattern>  filterItemSets(Map<List<String>, Integer> itemSetCount, int transactionCount, double minSupport)
+    private List<List<String>>  filterItemSets(Map<List<String>, Integer> itemSetCount, int transactionCount, double minSupport)
     {
         //pusta lista wynikowa
-        List<SimplePattern>  patterns = new ArrayList<>();
+        List<List<String>>  patterns = new ArrayList<>();
         //filtrujemy po mapie
         for (Map.Entry<List<String>, Integer> entry : itemSetCount.entrySet()) {
             //wyliczamy wsparcie
             double supp=(entry.getValue() / (double) transactionCount);
-            if ( supp>= minSupport) {
-                patterns.add(new SimplePattern(entry.getKey(),supp));
+            if ( supp>= minSupport)
+            {
+                patterns.add(entry.getKey());
+                //dodanie wyniku do listy wzorców
+                supportList.add(new SimplePattern(entry.getKey(),supp));
             }
         }
         return patterns;
     }
     public void createCSVFIle() {
-        if(result.isEmpty())
+        if(supportList.isEmpty())
         {
             Alert a=new Alert(Alert.AlertType.ERROR);
             a.setContentText("Brak danych do zapisania");
             a.show();
             return;
         }
-
         try {
             String filename;
             if(Objects.equals(supportFilename, ""))
@@ -154,11 +132,17 @@ public class AprioriManager {
             else
                 filename=supportFilename;
             File file = new File("dane/" + filename+"_supportData.csv");
+            int k=1;
+            while (file.exists())
+            {
+                file = new File("dane/" + filename+k+"_supportData.csv");
+                k++;
+            }
             file.createNewFile();
             FileWriter writer=new FileWriter(file);
             writer.write("id,support,pattern\n");
             int i=0;
-            for(SimplePattern pattern:result)
+            for(SimplePattern pattern:supportList)
             {
                 writer.write(i+","+ pattern.getSupport()+",");
                 List<String> patterns = pattern.getPattern();
@@ -177,7 +161,6 @@ public class AprioriManager {
             a.show();
             throw new RuntimeException(e);
         }
-
     }
     public void loadFromCSV()
     {
@@ -198,7 +181,7 @@ public class AprioriManager {
                 List<String> list=new ArrayList<>();
                 for(String s:pattern)
                     list.add(s.trim().toLowerCase());
-                result.add(new SimplePattern(list,support));
+                supportList.add(new SimplePattern(list,support));
                 line= reader.readLine();
             }
             Alert a=new Alert(Alert.AlertType.INFORMATION);
@@ -209,49 +192,41 @@ public class AprioriManager {
             a.setContentText("Wystąpił błąd przy zapisie");
             a.show();
             throw new RuntimeException(e);
-
         }
     }
-
-
     public void sortBySupportUp() {
-        result.sort(Comparator.comparingDouble(SimplePattern::getSupport));
+        supportList.sort(Comparator.comparingDouble(SimplePattern::getSupport));
         if(filtredList.size()>0)
             filtredList.sort(Comparator.comparingDouble(SimplePattern::getSupport));
-
     }
     public void sortBySupportDown() {
-        result.sort((o1, o2) -> Double.compare(o2.getSupport(), o1.getSupport()));
+        supportList.sort((o1, o2) -> Double.compare(o2.getSupport(), o1.getSupport()));
         if(filtredList.size()>0)
             filtredList.sort((o1, o2) -> Double.compare(o2.getSupport(), o1.getSupport()));
-
     }
     public void sortByPatternUp() {
-        result.sort(Comparator.comparingInt(o -> o.getPattern().size()));
+        supportList.sort(Comparator.comparingInt(o -> o.getPattern().size()));
         if(filtredList.size()>0)
             filtredList.sort(Comparator.comparingInt(o -> o.getPattern().size()));
-
     }
     public void sortByPatternDown() {
-        result.sort((o1, o2) -> Integer.compare(o2.getPattern().size(), o1.getPattern().size()));
+        supportList.sort((o1, o2) -> Integer.compare(o2.getPattern().size(), o1.getPattern().size()));
         if(filtredList.size()>0)
             filtredList.sort((o1, o2) -> Integer.compare(o2.getPattern().size(), o1.getPattern().size()));
-
     }
     public int deleteSelectedRows(List<CheckBox> checkBoxes, int startID,boolean f) {
         int j = 0;
         //idziemy od tyłu, aby nie zaburzyć ciągłosci listy
         for (int i = checkBoxes.size() - 1; i >= 0; i--) {
-
             if (checkBoxes.get(i).isSelected())
             {
                 if (checkBoxes.get(i).isSelected() && !f)
                 {
-                    result.remove(startID + i);
+                    supportList.remove(startID + i);
                     j++;
                 } else if (checkBoxes.get(i).isSelected() && f)
                 {
-                    result.remove(filtredList.get(startID + i));
+                    supportList.remove(filtredList.get(startID + i));
                     filtredList.remove(startID + i);
                     j++;
                 }
@@ -260,11 +235,10 @@ public class AprioriManager {
         return j;
     }
     public void filtrPatternItems(List<String> items) {
-
         filtredList.clear();
         filteredId.clear();
         int i = 0;
-        for (SimplePattern pattern : result) {
+        for (SimplePattern pattern : supportList) {
             if (new HashSet<>(pattern.getPattern()).containsAll(items)) {
                 filtredList.add(pattern);
                 filteredId.add(i);
@@ -273,11 +247,10 @@ public class AprioriManager {
         }
     }
     public void filtrSupportLevel(double supp,boolean f) {
-
         filtredList.clear();
         filteredId.clear();
         int i = 0;
-        for (SimplePattern pattern : result) {
+        for (SimplePattern pattern : supportList) {
             if ((pattern.getSupport()<=supp &&f)||(pattern.getSupport()>=supp &&!f) )
             {
                 filtredList.add(pattern);
@@ -286,10 +259,4 @@ public class AprioriManager {
             i++;
         }
     }
-
-
-
-
-
-
 }
