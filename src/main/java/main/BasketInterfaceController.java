@@ -171,7 +171,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
 
     }
 
-    public void clearFilter() {
+    protected void clearFilter() {
         filtered =false;
         filtr.clear();
         basketManager.clearFilteredBaskets();

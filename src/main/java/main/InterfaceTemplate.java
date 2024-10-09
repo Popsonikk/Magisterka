@@ -159,4 +159,6 @@ public abstract class InterfaceTemplate {
         return textList;
     }
 
+    protected abstract void clearFilter();
+
 }

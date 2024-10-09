@@ -95,13 +95,25 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         item.setOnAction(actionEvent -> selectAllBoxes());
         MenuItem item2=new MenuItem("Usuń zaznaczone wiersze");
         item2.setOnAction(actionEvent -> deleteRows());
-        menuButton.getItems().addAll(item,item2);
+        MenuItem item3=new MenuItem("Wyczyść filtr");
+        item3.setOnAction(actionEvent -> clearFilter());
+        menuButton.getItems().addAll(item,item2,item3);
         mainPane.getChildren().add(menuButton);
+    }
+    protected void clearFilter() {
+        filtered =false;
+        filtr.clear();
+        aprioriManager.clearFilteredList();
+        createView();
+        Alert a=new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText("Filtry wyczyszczone pomyślnie, przywrócono podstawową listę koszyków");
+        a.show();
+
     }
     @Override
     protected void deleteRows() {
         Alert a=new Alert(Alert.AlertType.INFORMATION);
-        int j= aprioriManager.deleteSelectedRows(checkBoxes,startId);
+        int j= aprioriManager.deleteSelectedRows(checkBoxes,startId,filtered);
         if(j==0)
         {
             a.setContentText("Brak wybranych elementów do usunięcia");

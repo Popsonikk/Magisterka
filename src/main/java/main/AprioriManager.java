@@ -20,11 +20,30 @@ public class AprioriManager {
         this.filteredId=new ArrayList<>();
         supportFilename="";
     }
-
-
-
     public void setBasketManager(BasketManager basketManager) {
         this.basketManager = basketManager;
+    }
+    public List<SimplePattern> getSupportList() {
+        return result;
+    }
+    public List<SimplePattern> getFiltredList() {
+        return filtredList;
+    }
+    public int getSupportListSize()
+    {
+        return result.size();
+    }
+    public int getFilteredListSize()
+    {
+        return filtredList.size();
+    }
+    public void clearSupportList()
+    {
+        result.clear();
+    }
+    public void clearFilteredList()
+    {
+        filtredList.clear();
     }
     public void Apriori(double minSup, int len)
     {
@@ -119,23 +138,6 @@ public class AprioriManager {
         }
         return patterns;
     }
-
-    public List<SimplePattern> getSupportList() {
-        return result;
-    }
-    public List<SimplePattern> getFiltredList() {
-        return filtredList;
-    }
-    public int getSupportListSize()
-    {
-        return result.size();
-    }
-    public int getFilteredListSize()
-    {
-        return filtredList.size();
-    }
-
-
     public void createCSVFIle() {
         if(result.isEmpty())
         {
@@ -210,39 +212,49 @@ public class AprioriManager {
 
         }
     }
-    public void clearSupportList()
-    {
-        result.clear();
-    }
+
 
     public void sortBySupportUp() {
         result.sort(Comparator.comparingDouble(SimplePattern::getSupport));
-
+        if(filtredList.size()>0)
+            filtredList.sort(Comparator.comparingDouble(SimplePattern::getSupport));
 
     }
     public void sortBySupportDown() {
         result.sort((o1, o2) -> Double.compare(o2.getSupport(), o1.getSupport()));
+        if(filtredList.size()>0)
+            filtredList.sort((o1, o2) -> Double.compare(o2.getSupport(), o1.getSupport()));
 
     }
     public void sortByPatternUp() {
         result.sort(Comparator.comparingInt(o -> o.getPattern().size()));
-
+        if(filtredList.size()>0)
+            filtredList.sort(Comparator.comparingInt(o -> o.getPattern().size()));
 
     }
     public void sortByPatternDown() {
         result.sort((o1, o2) -> Integer.compare(o2.getPattern().size(), o1.getPattern().size()));
+        if(filtredList.size()>0)
+            filtredList.sort((o1, o2) -> Integer.compare(o2.getPattern().size(), o1.getPattern().size()));
 
     }
-    public int deleteSelectedRows(List<CheckBox> checkBoxes, int startID) {
+    public int deleteSelectedRows(List<CheckBox> checkBoxes, int startID,boolean f) {
         int j = 0;
         //idziemy od tyłu, aby nie zaburzyć ciągłosci listy
         for (int i = checkBoxes.size() - 1; i >= 0; i--) {
 
-
             if (checkBoxes.get(i).isSelected())
             {
-                result.remove(startID + i);
-                j++;
+                if (checkBoxes.get(i).isSelected() && !f)
+                {
+                    result.remove(startID + i);
+                    j++;
+                } else if (checkBoxes.get(i).isSelected() && f)
+                {
+                    result.remove(filtredList.get(startID + i));
+                    filtredList.remove(startID + i);
+                    j++;
+                }
             }
         }
         return j;
