@@ -30,8 +30,9 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         createHeader();
         Button nextButton=(Button) switchPageBox.lookup("#nButt");
         nextButton.setOnAction(e -> {
-            if(startId+boxSize>= aprioriManager.getSupportListSize())
+            if((startId+boxSize>= aprioriManager.getSupportListSize())||(filtered&&startId+boxSize>= aprioriManager.getFilteredListSize()))
                 return;
+
             startId+=boxSize;
             createView();
         });
@@ -205,7 +206,11 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         menuButton.setLayoutY(5.0);
         MenuItem menuItem=new MenuItem("Pokaż wybrane elementy");
         menuItem.setOnAction((event)->filtrPatternItems());
-        menuButton.getItems().add(menuItem);
+        MenuItem item=new MenuItem("Pokaż poziomy wsparcia poniżej");
+        item.setOnAction((event)->filtrSupportLevel(true));
+        MenuItem item1=new MenuItem("Pokaż poziomy wsparcia powyżej");
+        item1.setOnAction((event)->filtrSupportLevel(false));
+        menuButton.getItems().addAll(menuItem,item,item1);
         mainPane.getChildren().add(menuButton);
     }
     private void filtrPatternItems()
@@ -237,9 +242,21 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
             createView();
         }
     }
-
-
-
+    private void filtrSupportLevel( boolean f)
+    {
+        String s=tx.getText();
+        if (s.isEmpty()||aprioriManager.getSupportListSize()==0)
+            return;
+        double supp=Double.parseDouble(s);
+        aprioriManager.filtrSupportLevel(supp,f);
+        Alert a=new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText("Filtrowanie zakończone pomyślnie");
+        a.show();
+        filtered =true;
+        startId=0;
+        tx.clear();
+        createView();
+    }
     public void showTable()
     {
         mainPane.getChildren().add(header);
@@ -256,6 +273,8 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
             aprioriManager.clearSupportList();
             contentVBox.getChildren().clear();
             checkBoxes.clear();
+            filtered=false;
+            filtr.clear();
             startId=0;
             System.out.println("Usunięcie listy wsparcia zakończone pomyślnie");
             Text tx= (Text) switchPageBox.lookup("#showInfo");

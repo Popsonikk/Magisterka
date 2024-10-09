@@ -272,6 +272,20 @@ public class AprioriManager {
             i++;
         }
     }
+    public void filtrSupportLevel(double supp,boolean f) {
+
+        filtredList.clear();
+        filteredId.clear();
+        int i = 0;
+        for (SimplePattern pattern : result) {
+            if ((pattern.getSupport()<=supp &&f)||(pattern.getSupport()>=supp &&!f) )
+            {
+                filtredList.add(pattern);
+                filteredId.add(i);
+            }
+            i++;
+        }
+    }
 
 
 
