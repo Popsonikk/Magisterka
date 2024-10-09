@@ -64,17 +64,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         for(int i=startId;i<range;i++)
         {
             List<String> basket=baskets.get(i);
-            List<Text> textList=new ArrayList<>();
-            for(String s:basket)
-            {
-                Text text=new Text(s+"; ");
-                if(filtr.contains(s))
-                    text.getStyleClass().add("basketTextFiltr");
-                else
-                    text.getStyleClass().add("basketText");
-                textList.add(text);
-            }
-            HBox box=createBox(textList);
+            HBox box=createBox(createTextList(basket));
             contentVBox.getChildren().add(box);
         }
         Text tx= (Text) switchPageBox.lookup("#showInfo");

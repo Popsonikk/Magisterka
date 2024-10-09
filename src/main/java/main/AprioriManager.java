@@ -10,17 +10,18 @@ import java.util.*;
 public class AprioriManager {
     private  BasketManager basketManager;
     private List<SimplePattern> result;
+    private List<SimplePattern> filtredList;
     private String supportFilename;
+    private List<Integer> filteredId;
     AprioriManager()
     {
         this.result=new ArrayList<>();
+        this.filtredList=new ArrayList<>();
+        this.filteredId=new ArrayList<>();
         supportFilename="";
     }
 
-    public int getAprioriSize()
-    {
-        return result.size();
-    }
+
 
     public void setBasketManager(BasketManager basketManager) {
         this.basketManager = basketManager;
@@ -122,10 +123,18 @@ public class AprioriManager {
     public List<SimplePattern> getSupportList() {
         return result;
     }
+    public List<SimplePattern> getFiltredList() {
+        return filtredList;
+    }
     public int getSupportListSize()
     {
         return result.size();
     }
+    public int getFilteredListSize()
+    {
+        return filtredList.size();
+    }
+
 
     public void createCSVFIle() {
         if(result.isEmpty())
@@ -237,6 +246,19 @@ public class AprioriManager {
             }
         }
         return j;
+    }
+    public void filtrPatternItems(List<String> items) {
+
+        filtredList.clear();
+        filteredId.clear();
+        int i = 0;
+        for (SimplePattern pattern : result) {
+            if (new HashSet<>(pattern.getPattern()).containsAll(items)) {
+                filtredList.add(pattern);
+                filteredId.add(i);
+            }
+            i++;
+        }
     }
 
 

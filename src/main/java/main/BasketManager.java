@@ -87,10 +87,7 @@ public class BasketManager {
                 filteredId.add(i);
             }
             i++;
-
-
         }
-
     }
 
     public int deleteSelectedRows(List<CheckBox> checkBoxes, int startID, boolean f) {

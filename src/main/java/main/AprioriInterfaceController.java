@@ -1,13 +1,14 @@
 package main;
-
-
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
+
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -15,11 +16,9 @@ import java.util.ResourceBundle;
 public class AprioriInterfaceController extends InterfaceTemplate implements Initializable {
 
     private AprioriManager aprioriManager;
-
     public void setAprioriManager(AprioriManager aprioriManager) {
         this.aprioriManager = aprioriManager;
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         init();
@@ -29,15 +28,12 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         createFiltrButton();
         createOptionButton();
         createHeader();
-
         Button nextButton=(Button) switchPageBox.lookup("#nButt");
-
         nextButton.setOnAction(e -> {
-            if(startId+boxSize>= aprioriManager.getAprioriSize())
+            if(startId+boxSize>= aprioriManager.getSupportListSize())
                 return;
             startId+=boxSize;
             createView();
-
         });
     }
     @Override
@@ -50,8 +46,10 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
             tx.setText("Pokazano 0 z 0 elementów");
             return;
         }
-        createViewTable(aprioriManager.getSupportList());
-
+        if(!filtered)
+            createViewTable(aprioriManager.getSupportList());
+        else
+            createViewTable(aprioriManager.getFiltredList());
     }
     private void createViewTable(List<SimplePattern> patterns)
     {
@@ -60,9 +58,8 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         for(int i=startId,j=0;i<range;i++,j++)
         {
             SimplePattern pattern=patterns.get(i);
-
-           HBox box=createTableRow(pattern);
-           contentVBox.getChildren().add(box);
+               HBox box=createTableRow(pattern);
+               contentVBox.getChildren().add(box);
         }
         Text tx= (Text) switchPageBox.lookup("#showInfo");
         tx.setText("Pokazano "+(startId+1)+"-"+(Math.min(startId+boxSize, size)+" z "+size+" elementów"));
@@ -78,17 +75,18 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         HBox box1=createTableColumn(String.format("%.3f", pattern.getSupport()),"basketBorder","basketText");
         box1.getChildren().add(0,checkBox);
         gridPane.add(box1,0,0);
-        StringBuilder builder=new StringBuilder();
-        for(String s: pattern.getPattern())
-            builder.append(s).append("; ");
-        HBox box2=createTableColumn(builder.toString(),"basketBorder","basketText");
+        HBox box2=createTableColumn("","basketBorder","basketText");
+        box2.getChildren().remove(0);
+        List<Text> textList=createTextList(pattern.getPattern());
+        TextFlow textFlow=new TextFlow();
+        textFlow.getChildren().addAll(textList);
+        box2.getChildren().add(textFlow);
         gridPane.add(box2,1,0);
         box.getChildren().add(gridPane);
         return box;
     }
 
-    @Override
-    protected void createFiltrButton() {
+    protected void createOptionButton() {
         MenuButton menuButton=makeMenuButtonStyle();
         menuButton.setText("Zarządzaj filtrami");
         menuButton.setLayoutX(505.0);
@@ -100,7 +98,6 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         menuButton.getItems().addAll(item,item2);
         mainPane.getChildren().add(menuButton);
     }
-
     @Override
     protected void deleteRows() {
         Alert a=new Alert(Alert.AlertType.INFORMATION);
@@ -115,7 +112,6 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         a.setContentText("Wybrane elementów zostały usunięte");
         a.show();
     }
-
     @Override
     protected void createHeader() {
         header=new HBox();
@@ -126,7 +122,6 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         GridPane gridPane=new GridPane();
         gridPane.getColumnConstraints().add(new ColumnConstraints(200.0));
         gridPane.getColumnConstraints().add(new ColumnConstraints(750.0));
-
         HBox box1=createTableColumn("Wsparcie","basketHeader","basketHeaderText");
         Button button1=new Button("↑");
         button1.getStyleClass().add("boxButton");
@@ -145,7 +140,6 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         });
         box1.getChildren().add(button1);
         gridPane.add(box1,0,0);
-
         HBox box2=createTableColumn("Wzorzec","basketHeader","basketHeaderText");
         Button button2=new Button("↑");
         button2.getStyleClass().add("boxButton");
@@ -165,14 +159,12 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         box2.getChildren().add(button2);
         gridPane.add(box2,1,0);
         header.getChildren().add(gridPane);
-
     }
-
-
     private HBox createTableColumn(String name,String styleName,String styleTextName)
     {
         HBox box=new HBox();
         Text text=new Text(name);
+        text.setId("text");
         text.getStyleClass().add(styleTextName);
         box.getStyleClass().add(styleName);
         box.getChildren().addAll(text);
@@ -190,19 +182,52 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         item2.setOnAction((event)-> {
             aprioriManager.loadFromCSV();
             showTable();});
-
         menuButton.getItems().addAll(item1,item2);
         mainPane.getChildren().add(menuButton);
-
     }
-    protected void createOptionButton() {
+    @Override
+    protected void createFiltrButton() {
         MenuButton menuButton=makeMenuButtonStyle();
         menuButton.setText("Wybierz Filtr");
         menuButton.setLayoutX(340.0);
         menuButton.setLayoutY(5.0);
+        MenuItem menuItem=new MenuItem("Pokaż wybrane elementy");
+        menuItem.setOnAction((event)->filtrPatternItems());
+        menuButton.getItems().add(menuItem);
         mainPane.getChildren().add(menuButton);
-
     }
+    private void filtrPatternItems()
+    {
+        String s=tx.getText();
+        if (s.isEmpty()||aprioriManager.getSupportListSize()==0)
+            return;
+        String[] items = s.split("[:,;]");
+        for (String item : items) {
+            filtr.add(item.trim());
+        }
+        aprioriManager.filtrPatternItems(filtr);
+        System.out.println("Filtrowanie zakończone pomyślnie");
+        if(aprioriManager.getFilteredListSize()==0)
+        {
+            filtr.clear();
+            Alert a=new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText("Brak wzorców spełniających podane warunki");
+            a.show();
+        }
+        else
+        {
+            Alert a=new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText("Filtrowanie zakończone pomyślnie");
+            a.show();
+            filtered =true;
+            startId=0;
+            tx.clear();
+            createView();
+        }
+    }
+
+
+
     public void showTable()
     {
         mainPane.getChildren().add(header);
@@ -212,8 +237,6 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
     {
         mainPane.getChildren().remove(header);
     }
-
-
     public void clearBase() {
         try
         {

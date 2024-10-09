@@ -144,4 +144,19 @@ public abstract class InterfaceTemplate {
     }
     protected abstract void deleteRows();
 
+    protected List<Text> createTextList(List<String> pattern)
+    {
+        List<Text> textList=new ArrayList<>();
+        for(String s:pattern)
+        {
+            Text text=new Text(s+"; ");
+            if(filtr.contains(s))
+                text.getStyleClass().add("basketTextFiltr");
+            else
+                text.getStyleClass().add("basketText");
+            textList.add(text);
+        }
+        return textList;
+    }
+
 }
