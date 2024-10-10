@@ -1,4 +1,6 @@
-package main;
+package main.rules;
+
+import main.apriori.SimplePattern;
 
 public class AssociationRule {
 

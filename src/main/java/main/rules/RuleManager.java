@@ -1,4 +1,7 @@
-package main;
+package main.rules;
+
+import main.apriori.AprioriManager;
+import main.apriori.SimplePattern;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +11,7 @@ public class RuleManager {
     private AprioriManager aprioriManager;
     private List<AssociationRule> ruleList;
 
-    RuleManager()
+    public RuleManager()
     {
         this.ruleList=new ArrayList<>();
     }

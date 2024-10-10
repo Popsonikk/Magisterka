@@ -1,47 +1,40 @@
-package main;
+package main.baskets;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import main.InterfaceTemplate;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class BasketInterfaceController extends  InterfaceTemplate implements Initializable {
-
+public class BasketInterfaceController extends InterfaceTemplate implements Initializable {
     protected BasketManager basketManager;
+    public void setBasketManager(BasketManager basketManager) {
+        this.basketManager = basketManager;
+    }
     @Override
+    //funkcja inicjalizująca interfejs
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //generowanie przycisków
         init();
         createSelectSizeBox();
         createFiltrButton();
         createSwitchPageBox();
         createHeader();
         Button nextButton=(Button) switchPageBox.lookup("#nButt");
-
+        //edycja przycisku przewijającego strony do przodu
         nextButton.setOnAction(e -> {
-            if(filtered)
-            {
-                if(startId+boxSize>=basketManager.getFilteredBasketSize())
-                    return;
-            }
-            else
-            {
-                if(startId+boxSize>=basketManager.getBasketSize())
-                    return;
-            }
+            if((startId+boxSize>= basketManager.getBasketSize())||(filtered&&startId+boxSize>= basketManager.getFilteredBasketSize()))
+                return;
             startId+=boxSize;
             createView();
-
         });
     }
-    public void setBasketManager(BasketManager basketManager) {
-        this.basketManager = basketManager;
-    }
     @Override
+    //funkcja tworząca widok tabeli
     public void createView()
     {
         contentVBox.getChildren().clear();
@@ -53,39 +46,44 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
             return;
         }
         if(filtered)
-            createViewFromSet(basketManager.getFilteredBaskets());
+            createViewTable(basketManager.getFilteredBaskets());
         else
-            createViewFromSet(basketManager.getBaskets());
+            createViewTable(basketManager.getBaskets());
     }
-    private void createViewFromSet(List<List<String>> baskets)
+    //funkcja bezpośrednio generująca widoczną tablicę
+    private void createViewTable(List<List<String>> baskets)
     {
         int size=baskets.size();
         int range=Math.min(size,(startId+boxSize));
         for(int i=startId;i<range;i++)
         {
             List<String> basket=baskets.get(i);
+            //generowanie pojedynczego wiersza
             HBox box=createBox(createTextList(basket));
             contentVBox.getChildren().add(box);
         }
+        //aktualizacja informacji o widocznej części tablicy
         Text tx= (Text) switchPageBox.lookup("#showInfo");
         tx.setText("Pokazano "+(startId+1)+"-"+(Math.min(startId+boxSize, size)+" z "+size+" elementów"));
     }
+    //pojedyncza komórka wiersza
     private HBox createBox(List<Text> textList)
     {
         HBox box=new HBox();
         CheckBox checkBox=new CheckBox();
         checkBoxes.add(checkBox);
         box.getStyleClass().add("basketBorder");
+        //text flow dla zmienienia koloru filtrowanych produktów
         TextFlow textFlow=new TextFlow();
         textFlow.getChildren().addAll(textList);
         box.getChildren().addAll(checkBox,textFlow);
         return  box;
     }
-
+    //funkcja wczytująca koszyki
     public void loadBaskets() {
         try
         {
-
+            //wywołanie funkcji wczytujacej
             basketManager.loadBaskets();
             mainPane.getChildren().add(header);
             createView();
@@ -101,76 +99,57 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
             a.setContentText("Ne udało się wczytać koszyków");
             a.show();
         }
-
     }
+    //funkcja czyszcząca całą bazę interfejsu
     public void clearBaskets() {
-
-        try
-        {
-            mainPane.getChildren().remove(header);
-            basketManager.clearBaskets();
-            basketManager.clearFilteredBaskets();
-            contentVBox.getChildren().clear();
-            checkBoxes.clear();
-            filtered=false;
-            filtr.clear();
-            basketManager.setFilename("");
-            startId=0;
-            System.out.println("Usunięcie koszyków zakończone pomyślnie");
-            Text tx= (Text) switchPageBox.lookup("#showInfo");
-            tx.setText("Pokazano 0 z 0 elementów");
-            Alert a=new Alert(Alert.AlertType.INFORMATION);
-            a.setContentText("Usunięcie koszyków zakończone pomyślnie");
-            a.show();
-        }
-        catch (Exception e)
-        {
-            System.out.println("Nastąpił błąd podczas usuwania koszyków: "+e);
-            Alert a=new Alert(Alert.AlertType.ERROR);
-            a.setContentText("Nastąpił błąd podczas usuwania koszyków");
-            a.show();
-        }
-
+        mainPane.getChildren().remove(header);
+        basketManager.clearBaskets();
+        basketManager.clearFilteredBaskets();
+        contentVBox.getChildren().clear();
+        checkBoxes.clear();
+        filtered=false;
+        filtr.clear();
+        basketManager.setFilename("");
+        startId=0;
+        System.out.println("Usunięcie koszyków zakończone pomyślnie");
+        Text tx= (Text) switchPageBox.lookup("#showInfo");
+        tx.setText("Pokazano 0 z 0 elementów");
+        Alert a=new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText("Usunięcie koszyków zakończone pomyślnie");
+        a.show();
     }
-
+    //funkcja filtrującą tablicę
     public void filtrBaskets() {
-        try
-        {
-            String s=tx.getText();
-            if (s.isEmpty()||basketManager.getBasketSize()==0)
-                return;
-            String[] items = s.split("[:,;]");
-            for (String item : items) {
-                filtr.add(item.trim());
-            }
-            basketManager.filtrBaskets(filtr);
-            System.out.println("Filtrowanie zakończone pomyślnie");
-            if(basketManager.getFilteredBasketSize()==0)
-            {
-                filtr.clear();
-                Alert a=new Alert(Alert.AlertType.INFORMATION);
-                a.setContentText("Brak koszyków spełniających podane warunki");
-                a.show();
-            }
-            else
-            {
-                Alert a=new Alert(Alert.AlertType.INFORMATION);
-                a.setContentText("Filtrowanie zakończone pomyślnie");
-                a.show();
-                filtered =true;
-                startId=0;
-                tx.clear();
-                createView();
-            }
-
+        //sczytanie filtru i jego zapis do tablicy
+        String s=tx.getText();
+        if (s.isEmpty()||basketManager.getBasketSize()==0)
+            return;
+        String[] items = s.split("[:,;]");
+        for (String item : items) {
+            filtr.add(item.trim());
         }
-        catch (Exception e)
+        //wywołanie funkcji filtrującej
+        basketManager.filtrBaskets(filtr);
+        System.out.println("Filtrowanie zakończone pomyślnie");
+        if(basketManager.getFilteredBasketSize()==0)
         {
-            System.out.println("Nastąpił błąd podczas filtrowania koszyków: "+e);
+            filtr.clear();
+            Alert a=new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText("Brak koszyków spełniających podane warunki");
+            a.show();
         }
-
+        else
+        {
+            Alert a=new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText("Filtrowanie zakończone pomyślnie");
+            a.show();
+            filtered =true;
+            startId=0;
+            tx.clear();
+            createView();
+        }
     }
-
+    //wyczyszczenie filtru
     protected void clearFilter() {
         filtered =false;
         filtr.clear();
@@ -182,6 +161,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
 
     }
     @Override
+    //funkcja tworząca nagłówek tablicy
     protected void createHeader() {
         header=new HBox();
         header.setLayoutX(17.0);
@@ -192,6 +172,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         text.getStyleClass().add("basketHeaderText");
         Button button=new Button("↑");
         button.getStyleClass().add("boxButton");
+        //przycisk filtrujący po długości koszyka
         button.setOnAction((event)->{
             if(basketManager.getBasketSize()==0)
                 return;
@@ -208,6 +189,7 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         header.getChildren().addAll(text,button);
     }
     @Override
+    //generowanie przycisku zawierającego opcje interfejsu
     protected void createFiltrButton()
     {
         MenuButton menuButton=makeMenuButtonStyle();
@@ -222,16 +204,14 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         item3.setOnAction(actionEvent -> deleteItems());
         MenuItem item4=new MenuItem("Zaznacz wszystkie boxy");
         item4.setOnAction(actionEvent -> selectAllBoxes());
-
         menuButton.getItems().addAll(item1,item2,item3,item4);
         mainPane.getChildren().add(menuButton);
     }
-
-
-
+    //funkcja usuwająca wybrane wiersze
     protected void deleteRows()
     {
         Alert a=new Alert(Alert.AlertType.INFORMATION);
+        //wywołanie funkcji
         int j= basketManager.deleteSelectedRows(checkBoxes,startId,filtered);
         if(j==0)
         {
@@ -241,16 +221,19 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         }
         if(filtered)
             basketManager.filtrBaskets(filtr);
+        //odświeżenie widoku
         createView();
         a.setContentText("Wybrane koszyki zostały usunięte");
         a.show();
 
     }
+    //funkcja usuwająca wybrane przedmioty z wiersza
     private void deleteItems()
     {
         Alert a=new Alert(Alert.AlertType.INFORMATION);
         if (!filtered)
             return;
+        //wywołanie funkcji
         int j=basketManager.deleteSelectedItems(checkBoxes, filtr,startId);
         if(j==0)
         {
@@ -263,9 +246,4 @@ public class BasketInterfaceController extends  InterfaceTemplate implements Ini
         a.setContentText("Wybrane przedmioty zostały usunięte z koszyków");
         a.show();
     }
-
-
-
-
-
 }

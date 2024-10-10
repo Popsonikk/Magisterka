@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import java.net.URL?>
 <Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0"
-      prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.BasketInterfaceController">
+      prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.baskets.BasketInterfaceController">
    <stylesheets>
       <URL value="@style.css" />
    </stylesheets>

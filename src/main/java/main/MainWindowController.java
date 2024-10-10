@@ -3,6 +3,10 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.apriori.AprioriInterfaceController;
+import main.apriori.AprioriManager;
+import main.rules.RuleManager;
+
 public class MainWindowController {
     @FXML
     private TextField support;

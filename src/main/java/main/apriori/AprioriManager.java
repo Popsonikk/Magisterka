@@ -1,24 +1,25 @@
-package main;
+package main.apriori;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.stage.FileChooser;
+import main.baskets.BasketManager;
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
-
 public class AprioriManager {
-    private  BasketManager basketManager;
+    private BasketManager basketManager;
     private List<SimplePattern> supportList;
     private List<SimplePattern> filtredList;
     private String supportFilename;
     private List<Integer> filteredId;
-    AprioriManager()
+    public AprioriManager()
     {
         this.supportList=new ArrayList<>();
         this.filtredList=new ArrayList<>();
         this.filteredId=new ArrayList<>();
         supportFilename="";
     }
+    //funkcje dostępowe do tablic
     public void setBasketManager(BasketManager basketManager) {this.basketManager = basketManager;}
     public List<SimplePattern> getSupportList() {return supportList;}
     public List<SimplePattern> getFiltredList() {return filtredList;}
@@ -26,9 +27,12 @@ public class AprioriManager {
     public int getFilteredListSize() {return filtredList.size();}
     public void clearSupportList() {supportList.clear();}
     public void clearFilteredList() {filtredList.clear();}
+    //algorytm apriori
     public void Apriori(double minSup, int len)
     {
+        //wyczyszczenie listy wynikowej (przy wywołaniu funkcji, jeżeli dane już istnieją)
         supportList.clear();
+        //wiadomość przy braku danych koszykowych
         if(basketManager.getBasketSize()==0)
         {
             System.out.println("Brak koszyków");
@@ -57,6 +61,7 @@ public class AprioriManager {
         // krok rekurencyjny
         while (!currentPatterns.isEmpty()&&i<=len)
         {
+            //wyszukanie unikalnych przedmiotów, znajdujących się w zbiorze N częstym
             Set<String> uniqueItems = currentPatterns.stream().flatMap(List::stream).collect(Collectors.toSet());
             // Generowanie k-wzorców częstych
             List<List<String>> candidates = generateCandidates(new ArrayList<>(uniqueItems),0,i,new ArrayList<>());
@@ -67,7 +72,7 @@ public class AprioriManager {
                 Set<String> basketSet = new HashSet<>(basket);
                 for (List<String> candidate : candidates)
                 {
-                    //sprawdzenie czy konkretny wzorzec w całości znajduje się w koszyku
+                    //sprawdzenie, czy konkretny wzorzec w całości znajduje się w koszyku
                     if (basketSet.containsAll(candidate))
                         patternCount.put(candidate, patternCount.getOrDefault(candidate, 0) + 1);
                 }
@@ -100,9 +105,10 @@ public class AprioriManager {
         patterns.addAll(generateCandidates(candidates, index + 1, size, currCandidate));
         return patterns;
     }
+    //funkcja sprawdzająca minimalne wsparcie
     private List<List<String>>  filterItemSets(Map<List<String>, Integer> itemSetCount, int transactionCount, double minSupport)
     {
-        //pusta lista wynikowa
+        //lista przechowująca wzorce spełniające próg wsparcia
         List<List<String>>  patterns = new ArrayList<>();
         //filtrujemy po mapie
         for (Map.Entry<List<String>, Integer> entry : itemSetCount.entrySet()) {
@@ -117,6 +123,7 @@ public class AprioriManager {
         }
         return patterns;
     }
+    //funkcja zapisująca do pliku
     public void createCSVFIle() {
         if(supportList.isEmpty())
         {
@@ -127,11 +134,13 @@ public class AprioriManager {
         }
         try {
             String filename;
+            //pobranie nazwy pliku, na podstawie którego pracował algorytm
             if(Objects.equals(supportFilename, ""))
                 filename=basketManager.getFilename().split("\\.")[0];
             else
                 filename=supportFilename;
             File file = new File("dane/" + filename+"_supportData.csv");
+            //pętla mająca na celu zablokowanie duplikowania nazw plików
             int k=1;
             while (file.exists())
             {
@@ -142,6 +151,7 @@ public class AprioriManager {
             FileWriter writer=new FileWriter(file);
             writer.write("id,support,pattern\n");
             int i=0;
+            //ręczny zapis do pliku w formie CSV
             for(SimplePattern pattern:supportList)
             {
                 writer.write(i+","+ pattern.getSupport()+",");
@@ -162,12 +172,14 @@ public class AprioriManager {
             throw new RuntimeException(e);
         }
     }
+    //funkcja pobierająca dane z pliku
     public void loadFromCSV()
     {
         try {
             FileChooser fileChooser=new FileChooser();
             fileChooser.setTitle("Wybierz plik zawierający poziomy wsparcia");
             File file = fileChooser.showOpenDialog(null);
+            //zapis nazwy pliku
             supportFilename=file.getName();
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line;
@@ -175,6 +187,7 @@ public class AprioriManager {
             line= reader.readLine();
             while (line!=null)
             {
+                //pobranie danych zgodnie z formatem
                 String []pattern=line.split(",");
                 double support=Double.parseDouble(pattern[1]);
                 pattern=pattern[2].split(";");
@@ -194,6 +207,7 @@ public class AprioriManager {
             throw new RuntimeException(e);
         }
     }
+    //funkcje sortujące dla interfejsu
     public void sortBySupportUp() {
         supportList.sort(Comparator.comparingDouble(SimplePattern::getSupport));
         if(filtredList.size()>0)
@@ -214,12 +228,14 @@ public class AprioriManager {
         if(filtredList.size()>0)
             filtredList.sort((o1, o2) -> Integer.compare(o2.getPattern().size(), o1.getPattern().size()));
     }
+    //funkcja usuwająca dane z listy
     public int deleteSelectedRows(List<CheckBox> checkBoxes, int startID,boolean f) {
         int j = 0;
-        //idziemy od tyłu, aby nie zaburzyć ciągłosci listy
+        //idziemy od tyłu, aby nie zaburzyć ciągłości listy
         for (int i = checkBoxes.size() - 1; i >= 0; i--) {
             if (checkBoxes.get(i).isSelected())
             {
+                //
                 if (checkBoxes.get(i).isSelected() && !f)
                 {
                     supportList.remove(startID + i);
@@ -234,6 +250,7 @@ public class AprioriManager {
         }
         return j;
     }
+    //funkcja filtrująca po wzorcach
     public void filtrPatternItems(List<String> items) {
         filtredList.clear();
         filteredId.clear();
@@ -246,6 +263,7 @@ public class AprioriManager {
             i++;
         }
     }
+    //funkcja filtrująca po poziomie wsparcia, zależne od flagi
     public void filtrSupportLevel(double supp,boolean f) {
         filtredList.clear();
         filteredId.clear();

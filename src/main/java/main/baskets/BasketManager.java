@@ -1,26 +1,29 @@
-package main;
-
-import javafx.scene.control.Alert;
+package main.baskets;
 import javafx.scene.control.CheckBox;
 import javafx.stage.FileChooser;
 import java.io.*;
 import java.util.*;
-
-
 public class BasketManager {
     private List<List<String>> baskets;
     private List<List<String>> filteredBaskets;
     private List<Integer> filteredId;
     private String filename;
-
-
-    BasketManager() {
+    //funkcje dostępowe
+    public String getFilename() {return filename;}
+    public void setFilename(String filename) {this.filename = filename;}
+    public int getFilteredBasketSize() {return filteredBaskets.size();}
+    public int getBasketSize() {return baskets.size();}
+    public void clearBaskets() {baskets.clear();}
+    public void clearFilteredBaskets() {filteredBaskets.clear();}
+    public List<List<String>> getBaskets() {return baskets;}
+    public List<List<String>> getFilteredBaskets() {return filteredBaskets;}
+    public BasketManager() {
         this.filteredBaskets = new ArrayList<>();
         this.baskets = new LinkedList<>();
         this.filteredId = new ArrayList<>();
         this.filename="";
     }
-
+    //wczytanie danych z pliku
     public void loadBaskets() throws IOException {
         baskets.clear();
         FileChooser fileChooser = new FileChooser();
@@ -32,7 +35,7 @@ public class BasketManager {
         line = reader.readLine(); // pominięcie lini nagłówka
         line = reader.readLine();
         while (line != null) {
-            //baskets.add(List.of(line.split(",")[1].split(";")));
+            //formatowanie danych w celu uniknięcia tworzenia przez list.of
             String[]b=line.split(",")[1].split(";");
             List list=new ArrayList<>();
             for(String s:b)
@@ -41,41 +44,7 @@ public class BasketManager {
             line = reader.readLine();
         }
     }
-
-    public String getFilename() {
-        return filename;
-    }
-
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
-
-    public int getFilteredBasketSize() {
-        return filteredBaskets.size();
-    }
-
-
-    public int getBasketSize() {
-        return baskets.size();
-    }
-
-
-    public void clearBaskets() {
-        baskets.clear();
-    }
-
-    public void clearFilteredBaskets() {
-        filteredBaskets.clear();
-    }
-
-    public List<List<String>> getBaskets() {
-        return baskets;
-    }
-
-    public List<List<String>> getFilteredBaskets() {
-        return filteredBaskets;
-    }
-
+    //filtrowanie koszyków
     public void filtrBaskets(List<String> items) {
 
         filteredBaskets.clear();
@@ -89,13 +58,12 @@ public class BasketManager {
             i++;
         }
     }
-
+    // funkcja usuwająca wybrane wiersze
     public int deleteSelectedRows(List<CheckBox> checkBoxes, int startID, boolean f) {
         int j = 0;
-        //idziemy od tyłu, aby nie zaburzyć ciągłosci listy
+        //idziemy od tyłu, aby nie zaburzyć ciągłości listy
         for (int i = checkBoxes.size() - 1; i >= 0; i--) {
-
-
+            //usuwanie zależne od obecnego trtbu
             if (checkBoxes.get(i).isSelected() && !f) {
                 baskets.remove(startID + i);
                 j++;
@@ -106,7 +74,7 @@ public class BasketManager {
         }
         return j;
     }
-
+    // funkcja usuwająca wybrane przedmioty z wierszy
     public int deleteSelectedItems(List<CheckBox> checkBoxes, List<String> filtr, int startID) {
 
         int j = 0;
@@ -121,19 +89,15 @@ public class BasketManager {
         }
         return j;
     }
-
+    //funkcje sortujące
     public void sortByLengthUp() {
         baskets.sort(Comparator.comparingInt(List::size));
         if(filteredBaskets.size()>0)
-        {
             filteredBaskets.sort(Comparator.comparingInt(List::size));
-        }
     }
     public void sortByLengthDown() {
         baskets.sort((o1, o2) -> Integer.compare(o2.size(), o1.size()));
         if(filteredBaskets.size()>0)
-        {
             filteredBaskets.sort((o1, o2) -> Integer.compare(o2.size(), o1.size()));
-        }
     }
 }

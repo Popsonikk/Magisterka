@@ -5,6 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import main.apriori.AprioriInterfaceController;
+import main.apriori.AprioriManager;
+import main.baskets.BasketInterfaceController;
+import main.baskets.BasketManager;
+import main.rules.RuleManager;
 
 public class Main extends Application {
 

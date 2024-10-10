@@ -27,46 +27,30 @@ public abstract class InterfaceTemplate {
     @FXML
     public HBox switchPageBox;
     @FXML
+    //pole do wpisania filtru
     public TextField tx;
     protected HBox header;
-
-
     protected List<CheckBox> checkBoxes;
     protected int boxSize;
+    //zmienna pokazująca start okna
     protected int startId;
-
     protected boolean filtered;
-
     protected List<String> filtr;
     protected Scene mainScene;
-
     protected Stage mainStage;
-
-
-
-    public void setMainScene(Scene mainScene) {
-        this.mainScene = mainScene;
-    }
-
-    public void setMainStage(Stage mainStage) {
-        this.mainStage = mainStage;
-    }
-
-
-    public void back() {
-        mainStage.setScene(mainScene);
-    }
+    public void setMainScene(Scene mainScene) {this.mainScene = mainScene;}
+    public void setMainStage(Stage mainStage) {this.mainStage = mainStage;}
+    public void back() {mainStage.setScene(mainScene);}
+    //funkcja, generująca przycisk wyboru rozmiaru widocznego okna
     protected MenuButton createSizeButton()
     {
         MenuButton menuButton=new MenuButton();
         menuButton.setText("100");
-
         EventHandler<ActionEvent> event = e -> {
             MenuItem item = (MenuItem) e.getSource();
             boxSize = Integer.parseInt(item.getText());
             menuButton.setText(item.getText());
             createView();
-
         };
         MenuItem item1=new MenuItem("10");
         item1.setOnAction(event);
@@ -82,7 +66,7 @@ public abstract class InterfaceTemplate {
         menuButton.getStyleClass().add("boxButton");
         return menuButton;
     }
-    protected abstract void createView();
+    //funkcja generująca okno wyboru rozmiar widocznego okna
     protected void createSelectSizeBox()
     {
         selectSizeBox.getStyleClass().add("infoBox");
@@ -94,7 +78,7 @@ public abstract class InterfaceTemplate {
         MenuButton menuButton=createSizeButton();
         selectSizeBox.getChildren().addAll(text1,menuButton,text2);
     }
-
+    //funkcja inicjalizująca zmienne dla interfejsu
     protected void init()
     {
         filtered =false;
@@ -105,6 +89,7 @@ public abstract class InterfaceTemplate {
         pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
     }
+    //funkcja pozwalająca przechodzić między kartami interfejsu
     protected void createSwitchPageBox()
     {
         switchPageBox.getStyleClass().add("infoBox");
@@ -125,10 +110,7 @@ public abstract class InterfaceTemplate {
         });
         switchPageBox.getChildren().addAll(backButton,text,nextButton);
     }
-    protected abstract void createFiltrButton();
-
-    protected abstract void createHeader();
-
+    //funkcja, ustawiająca wygląd przycisków rozwijanych interfejsów
     protected MenuButton makeMenuButtonStyle(){
         MenuButton menuButton=new MenuButton();
         menuButton.setPrefSize(150.0,50.0);
@@ -137,13 +119,13 @@ public abstract class InterfaceTemplate {
         menuButton.setOnHidden(event -> menuButton.setStyle("-fx-background-color: #5fc9f3; -fx-border-style: dashed;"));
         return menuButton;
     }
+    //zaznaczenie wszystkich dostępnych boxów
     protected void selectAllBoxes()
     {
         for(CheckBox box:checkBoxes)
             box.setSelected(true);
     }
-    protected abstract void deleteRows();
-
+    //generowanie listy obiektów text z różnymi kolorami w zależności od filtru
     protected List<Text> createTextList(List<String> pattern)
     {
         List<Text> textList=new ArrayList<>();
@@ -158,7 +140,10 @@ public abstract class InterfaceTemplate {
         }
         return textList;
     }
-
+    protected abstract void deleteRows();
     protected abstract void clearFilter();
+    protected abstract void createView();
+    protected abstract void createFiltrButton();
+    protected abstract void createHeader();
 
 }
