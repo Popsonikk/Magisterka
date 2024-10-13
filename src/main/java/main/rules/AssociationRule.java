@@ -21,7 +21,7 @@ public class AssociationRule {
     public String toString() {
         return antecedent.getPattern() + " -> " + consequent.getPattern() + " (Antecedent support: "+antecedent.getSupport()+
                 ", consequent support "+consequent.getSupport()+
-                ", Confidence: " + confidence + ", Lift: " + lift + ")";
+                ", Confidence: " + String.format("%.3f", confidence) + ", Lift: " + String.format("%.3f", lift) + ")";
     }
 
 

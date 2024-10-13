@@ -1,10 +1,10 @@
 package main.rules;
 
+import javafx.scene.control.Alert;
 import main.apriori.AprioriManager;
 import main.apriori.SimplePattern;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class RuleManager {
 
@@ -25,6 +25,9 @@ public class RuleManager {
         if (aprioriManager.getSupportListSize()==0)
         {
             System.out.println("Brak wyznaczonych wzorców");
+            Alert alert=new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Brak wyznaczonych wzorców");
+            alert.show();
             return;
         }
         ruleList.clear();
@@ -34,6 +37,15 @@ public class RuleManager {
         {
             if(pattern.getPattern().size()==1)
                 continue;
+            if(pattern.getPattern().size()==2)
+            {
+                SimplePattern at = getSupport(patterns, Collections.singletonList(pattern.getPattern().get(0)));
+                SimplePattern ct= getSupport(patterns,Collections.singletonList(pattern.getPattern().get(1)));
+                double confidence = pattern.getSupport() / at.getSupport();
+                double lift = confidence / ct.getSupport();
+                ruleList.add(new AssociationRule(at,ct,confidence,lift));
+                continue;
+            }
 
             //tworzymy podzbiory wzorca
             List<List<String>> subsets=generateNonEmptySubsets(pattern.getPattern());
@@ -43,27 +55,29 @@ public class RuleManager {
                 //tworzenie prawej strony na zasadzie usunięcia lewej strony z głównego wzorca
                 List<String> consequent=new ArrayList<>(pattern.getPattern());
                 consequent.removeAll(antecedent);
-                double antecedentSupport = getSupport(patterns, antecedent);
-                double consequentSupport = getSupport(patterns, consequent);
-                double confidence = pattern.getSupport() / antecedentSupport;
-                double lift = confidence / consequentSupport;
-                //potencjalne nabijanie złożoności pamięciowej
-                ruleList.add(new AssociationRule(new SimplePattern(antecedent,antecedentSupport),
-                             new SimplePattern(consequent,consequentSupport),confidence,lift));
+                SimplePattern at = getSupport(patterns,antecedent);
+                SimplePattern ct= getSupport(patterns, consequent);
+
+                double confidence = pattern.getSupport() / at.getSupport();
+                double lift = confidence / ct.getSupport();
+
+                ruleList.add(new AssociationRule(at,ct,confidence,lift));
             }
 
         }
         showRules();
+        Alert alert=new Alert(Alert.AlertType.INFORMATION);
+        alert.setContentText("Reguły wygenerowane pomyślnie");
+        alert.show();
 
     }
-    //każdorazowe wyszukiwanie wzorca pesymistyczne O(n) :(
-    private  double getSupport(List<SimplePattern> patterns, List<String> subset) {
-        for (SimplePattern pattern : patterns) {
-            if (pattern.getPattern().equals(subset)) {
-                return pattern.getSupport();
-            }
-        }
-        return 0.0;
+
+    private SimplePattern getSupport(List<SimplePattern> patterns, List<String> subset) {
+         double res=0.0;
+         Optional<SimplePattern> matchingPattern = patterns.stream()
+                .filter(simplePattern -> new HashSet<>(simplePattern.getPattern()).containsAll(subset)&&simplePattern.getPattern().size()==subset.size()).findFirst();
+        return matchingPattern.orElse(null);
+
     }
 
     //generowanie wszystkich możliwych podzbiorów dla wzorca
@@ -72,7 +86,12 @@ public class RuleManager {
         int n = list.size();
         //Rozpatrujemy wzorzec jako liczbę bitową (1 << n) == 2^n.
         //zaczynamy od 1, ponieważ nie chcemy podzbiory niepuste, konczymy na 2^n-1 bo nie interesuje nas podzbiór pełny
-        for (int i = 1; i < ((1 << n)-1); i++) {
+        int k;
+        if (n%2==0)
+            k=n/2;
+        else
+            k=n/2+1;
+        for (int i = 1; i < ((1 << k)); i++) {
             List<String> subset = new ArrayList<>();
             for (int j = 0; j < n; j++) {
                 //Liczba i jest traktowana jak binarna. Liczna j ma zapalony tylko 1 bit, którego przesuwamy ciągle w lewo.
