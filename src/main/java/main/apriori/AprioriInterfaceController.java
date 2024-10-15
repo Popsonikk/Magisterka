@@ -35,6 +35,7 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
             startId+=boxSize;
             createView();
         });
+
     }
     @Override
     //funkcja wywołująca wygenerowanie tablicy
@@ -99,10 +100,7 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
     }
     //generowanie przycisku z opcjami interfejsu
     protected void createOptionButton() {
-        MenuButton menuButton=makeMenuButtonStyle();
-        menuButton.setText("Zarządzaj filtrami");
-        menuButton.setLayoutX(505.0);
-        menuButton.setLayoutY(5.0);
+        MenuButton menuButton=makeMenuButtonStyle("Zarządzaj filtrami",505.0,5.0);
         MenuItem item=new MenuItem("Zaznacz wszystkie boxy");
         item.setOnAction(actionEvent -> selectAllBoxes());
         MenuItem item2=new MenuItem("Usuń zaznaczone wiersze");
@@ -110,7 +108,6 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         MenuItem item3=new MenuItem("Wyczyść filtr");
         item3.setOnAction(actionEvent -> clearFilter());
         menuButton.getItems().addAll(item,item2,item3);
-        mainPane.getChildren().add(menuButton);
     }
     //funkcja czyszcząca filtr
     protected void clearFilter() {
@@ -195,24 +192,11 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         gridPane.add(box2,1,0);
         header.getChildren().add(gridPane);
     }
-    //funkcja generująca podstawową komórkę kolumny
-    private HBox createTableColumn(String name,String styleName,String styleTextName)
-    {
-        HBox box=new HBox();
-        Text text=new Text(name);
-        text.setId("text");
-        text.getStyleClass().add(styleTextName);
-        box.getStyleClass().add(styleName);
-        box.getChildren().addAll(text);
-        return box;
-    }
+
     //generowanie przycisku do zapisu/odczytu z pliku
     private void createCSVButton()
     {
-        MenuButton menuButton=makeMenuButtonStyle();
-        menuButton.setText("Zarządzaj CSV");
-        menuButton.setLayoutX(670.0);
-        menuButton.setLayoutY(5.0);
+        MenuButton menuButton=makeMenuButtonStyle("Zarządzaj CSV",670.0,5.0);
         MenuItem item1=new MenuItem("Zapisz do pliku");
         item1.setOnAction((event)->aprioriManager.createCSVFIle());
         MenuItem item2=new MenuItem("Wczytaj z pliku");
@@ -221,15 +205,11 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
             //wywołanie wygenerowania nagłówka tabeli
             showTable();});
         menuButton.getItems().addAll(item1,item2);
-        mainPane.getChildren().add(menuButton);
     }
     //generowanie przycisku, pozwalającego wybrać rodzaj filtru
     @Override
     protected void createFiltrButton() {
-        MenuButton menuButton=makeMenuButtonStyle();
-        menuButton.setText("Wybierz Filtr");
-        menuButton.setLayoutX(340.0);
-        menuButton.setLayoutY(5.0);
+        MenuButton menuButton=makeMenuButtonStyle("Wybierz Filtr",340.0,5.0);
         MenuItem menuItem=new MenuItem("Pokaż wybrane elementy");
         menuItem.setOnAction((event)->filtrPatternItems());
         MenuItem item=new MenuItem("Pokaż poziomy wsparcia poniżej");
@@ -237,7 +217,6 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         MenuItem item1=new MenuItem("Pokaż poziomy wsparcia powyżej");
         item1.setOnAction((event)->filtrSupportLevel(false));
         menuButton.getItems().addAll(menuItem,item,item1);
-        mainPane.getChildren().add(menuButton);
     }
     //funkcja filtrująca wyświetlaną tabele
     private void filtrPatternItems()
@@ -291,35 +270,19 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         tx.clear();
         createView();
     }
-    //wygenerowanie nagłówka przy pierwszym wczytaniu wartości
-    public void showTable()
-    {
-        mainPane.getChildren().add(header);
-        createView();
-    }
-    //usunięcie nagłówka tabeli, przy wyczyszczeniu danych
-    public void deleteHeader()
-    {
-        mainPane.getChildren().remove(header);
-    }
+
+
     //funkcja czyszcząca całą bazę interfejsu
     @Override
     public void clearBase() {
         try
         {
             //wyczyszczenie wszystkich tabel, flag i kontenerów
-            mainPane.getChildren().remove(header);
+            clearFlags();
             aprioriManager.clearSupportList();
-            contentVBox.getChildren().clear();
-            checkBoxes.clear();
-            filtered=false;
-            filtr.clear();
-            startId=0;
-            System.out.println("Usunięcie listy wsparcia zakończone pomyślnie");
-            Text tx= (Text) switchPageBox.lookup("#showInfo");
-            tx.setText("Pokazano 0 z 0 elementów");
+            aprioriManager.clearFilteredList();
             Alert a=new Alert(Alert.AlertType.INFORMATION);
-            a.setContentText("Usunięcie koszyków zakończone pomyślnie");
+            a.setContentText("Usunięcie listy wsparcia zakończone pomyślnie");
             a.show();
         }
         catch (Exception e)

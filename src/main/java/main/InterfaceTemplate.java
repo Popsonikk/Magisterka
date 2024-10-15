@@ -111,12 +111,16 @@ public abstract class InterfaceTemplate {
         switchPageBox.getChildren().addAll(backButton,text,nextButton);
     }
     //funkcja, ustawiająca wygląd przycisków rozwijanych interfejsów
-    protected MenuButton makeMenuButtonStyle(){
+    protected MenuButton makeMenuButtonStyle(String name,double x,double y){
         MenuButton menuButton=new MenuButton();
         menuButton.setPrefSize(150.0,50.0);
+        menuButton.setText(name);
+        menuButton.setLayoutX(x);
+        menuButton.setLayoutY(y);
         menuButton.getStyleClass().add("filterButton");
         menuButton.setOnShowing(event -> menuButton.setStyle("-fx-background-color: #2e79ba; -fx-border-style: solid;"));
         menuButton.setOnHidden(event -> menuButton.setStyle("-fx-background-color: #5fc9f3; -fx-border-style: dashed;"));
+        mainPane.getChildren().add(menuButton);
         return menuButton;
     }
     //zaznaczenie wszystkich dostępnych boxów
@@ -139,6 +143,38 @@ public abstract class InterfaceTemplate {
             textList.add(text);
         }
         return textList;
+    }
+    //wygenerowanie nagłówka przy pierwszym wczytaniu wartości
+    protected void showTable()
+    {
+        mainPane.getChildren().add(header);
+        createView();
+    }
+    //funkcja generująca podstawową komórkę kolumny
+    protected HBox createTableColumn(String name,String styleName,String styleTextName)
+    {
+        HBox box=new HBox();
+        Text text=new Text(name);
+        text.setId("text");
+        text.getStyleClass().add(styleTextName);
+        box.getStyleClass().add(styleName);
+        box.getChildren().addAll(text);
+        return box;
+    }
+    //usunięcie nagłówka tabeli, przy wyczyszczeniu danych
+    protected void deleteHeader()
+    {
+        mainPane.getChildren().remove(header);
+    }
+    protected void clearFlags(){
+        mainPane.getChildren().remove(header);
+        contentVBox.getChildren().clear();
+        checkBoxes.clear();
+        filtered=false;
+        filtr.clear();
+        startId=0;
+        Text tx= (Text) switchPageBox.lookup("#showInfo");
+        tx.setText("Pokazano 0 z 0 elementów");
     }
     protected abstract void deleteRows();
     protected abstract void clearFilter();

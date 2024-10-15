@@ -103,18 +103,11 @@ public class BasketInterfaceController extends InterfaceTemplate implements Init
     //funkcja czyszcząca całą bazę interfejsu
     @Override
     public void clearBase() {
-        mainPane.getChildren().remove(header);
+        clearFlags();
         basketManager.clearBaskets();
         basketManager.clearFilteredBaskets();
-        contentVBox.getChildren().clear();
-        checkBoxes.clear();
-        filtered=false;
-        filtr.clear();
         basketManager.setFilename("");
-        startId=0;
-        System.out.println("Usunięcie koszyków zakończone pomyślnie");
-        Text tx= (Text) switchPageBox.lookup("#showInfo");
-        tx.setText("Pokazano 0 z 0 elementów");
+
         Alert a=new Alert(Alert.AlertType.INFORMATION);
         a.setContentText("Usunięcie koszyków zakończone pomyślnie");
         a.show();
@@ -193,10 +186,7 @@ public class BasketInterfaceController extends InterfaceTemplate implements Init
     //generowanie przycisku zawierającego opcje interfejsu
     protected void createFiltrButton()
     {
-        MenuButton menuButton=makeMenuButtonStyle();
-        menuButton.setText("Zarządzaj filtrami");
-        menuButton.setLayoutX(505.0);
-        menuButton.setLayoutY(5.0);
+        MenuButton menuButton=makeMenuButtonStyle("Zarządzaj filtrami",505.0,5.0);
         MenuItem item1=new MenuItem("Wyczyść filtry");
         item1.setOnAction(actionEvent -> clearFilter());
         MenuItem item2=new MenuItem("Usuń zaznaczone wiersze");
@@ -206,7 +196,7 @@ public class BasketInterfaceController extends InterfaceTemplate implements Init
         MenuItem item4=new MenuItem("Zaznacz wszystkie boxy");
         item4.setOnAction(actionEvent -> selectAllBoxes());
         menuButton.getItems().addAll(item1,item2,item3,item4);
-        mainPane.getChildren().add(menuButton);
+
     }
     //funkcja usuwająca wybrane wiersze
     protected void deleteRows()

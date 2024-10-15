@@ -5,6 +5,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.apriori.AprioriInterfaceController;
 import main.apriori.AprioriManager;
+import main.rules.RuleInterfaceController;
 import main.rules.RuleManager;
 public class MainWindowController {
     @FXML
@@ -12,6 +13,7 @@ public class MainWindowController {
     @FXML
     private TextField length;
     private AprioriInterfaceController aprioriInterfaceController;
+    private RuleInterfaceController ruleInterfaceController;
     private Stage mainStage;
     private Scene basketScene;
     private Scene aprioriScene;
@@ -22,6 +24,11 @@ public class MainWindowController {
     public void setBasketScene(Scene basketScene) {this.basketScene = basketScene;}
     public void setAprioriScene(Scene aprioriScene) {this.aprioriScene = aprioriScene;}
     public void setRuleScene(Scene ruleScene) {this.ruleScene = ruleScene;}
+
+    public void setRuleInterfaceController(RuleInterfaceController ruleInterfaceController) {
+        this.ruleInterfaceController = ruleInterfaceController;
+    }
+
     public void setAprioriManager(AprioriManager aprioriManager) {this.aprioriManager = aprioriManager;}
     public void setRuleManager(RuleManager ruleManager) {this.ruleManager = ruleManager;}
     public void showBasketInterface() {mainStage.setScene(basketScene);}
@@ -46,6 +53,13 @@ public class MainWindowController {
         mainStage.setScene(aprioriScene);
     }
     public void showRuleInterface() {
+        System.out.println(ruleManager.getRuleListSize());
+        if(ruleManager.getRuleListSize()>0)
+        {
+            ruleInterfaceController.deleteHeader();
+            ruleInterfaceController.showTable();
+        }
+        mainStage.setScene(aprioriScene);
         mainStage.setScene(ruleScene);
     }
 }

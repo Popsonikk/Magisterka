@@ -45,7 +45,7 @@ public class RuleManager {
                 SimplePattern ct= getSupport(patterns,Collections.singletonList(pattern.getPattern().get(1)));
                 double confidence = pattern.getSupport() / at.getSupport();
                 double lift = confidence / ct.getSupport();
-                ruleList.add(new AssociationRule(at,ct,confidence,lift));
+                ruleList.add(new AssociationRule(at,ct, pattern.getSupport(), confidence,lift));
                 continue;
             }
 
@@ -61,10 +61,9 @@ public class RuleManager {
                 SimplePattern ct= getSupport(patterns, consequent);
                 double confidence = pattern.getSupport() / at.getSupport();
                 double lift = confidence / ct.getSupport();
-                ruleList.add(new AssociationRule(at,ct,confidence,lift));
+                ruleList.add(new AssociationRule(at,ct, pattern.getSupport(),confidence,lift));
             }
         }
-        showRules();
         Alert alert=new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText("Reguły wygenerowane pomyślnie");
         alert.show();
@@ -100,15 +99,34 @@ public class RuleManager {
         }
         return subsets;
     }
-    public void showRules()
-    {
-        for(AssociationRule rule: ruleList)
-        {
-           System.out.println( rule.toString());
-        }
-    }
     public int getRuleListSize() {return  ruleList.size();}
     public int getFilteredRuleListSize() {return  filteredRuleList.size();}
+
+    public List<AssociationRule> getRuleList() {
+        return ruleList;
+    }
+
+    public List<AssociationRule> getFilteredRuleList() {
+        return filteredRuleList;
+    }
+    public void clearList()
+    {
+        ruleList.clear();
+    }
+    public void clearFilteredList()
+    {
+        filteredRuleList.clear();
+    }
+
+
+
+    public void createCSVFIle(){
+
+    }
+    public void loadFromCSV(){
+
+    }
+
 
 
 
