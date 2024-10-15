@@ -15,6 +15,7 @@
         <Button layoutX="425.0" layoutY="250.0" onAction="#useApriori" prefHeight="50.0" prefWidth="150.0" text="Algorytm Apriori" />
         <Button layoutX="425.0" layoutY="325.0" onAction="#showAprioriInterface" prefHeight="50.0" prefWidth="150.0" text="Zarządzaj wsparciem" />
         <Button layoutX="425.0" layoutY="400.0" onAction="#useRules" prefHeight="50.0" prefWidth="150.0" text="Wygeneruj reguły" />
+        <Button layoutX="425.0" layoutY="475.0" onAction="#showRuleInterface" prefHeight="50.0" prefWidth="150.0" text="Zarządzaj regułami" />
       <GridPane layoutX="350.0" layoutY="125.0" prefHeight="100.0" prefWidth="300.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

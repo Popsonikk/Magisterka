@@ -9,6 +9,7 @@ import main.apriori.AprioriInterfaceController;
 import main.apriori.AprioriManager;
 import main.baskets.BasketInterfaceController;
 import main.baskets.BasketManager;
+import main.rules.RuleInterfaceController;
 import main.rules.RuleManager;
 
 public class Main extends Application {
@@ -34,9 +35,14 @@ public class Main extends Application {
         Parent aprioriWindow = aprioriWindowLoader.load();
         AprioriInterfaceController aprioriInterfaceController = aprioriWindowLoader.getController();
 
+        FXMLLoader ruleWindowLoader = new FXMLLoader(getClass().getResource("RuleInterface.fxml"));
+        Parent ruleWindow = ruleWindowLoader.load();
+        RuleInterfaceController ruleInterfaceController=ruleWindowLoader.getController();
+
         mainWindowController.setMainStage(stage);
         mainWindowController.setBasketScene(new Scene(basketWindow,1000,750));
         mainWindowController.setAprioriScene(new Scene(aprioriWindow,1000,750));
+        mainWindowController.setRuleScene(new Scene(ruleWindow,1000,750));
         mainWindowController.setAprioriManager(aprioriManager);
         mainWindowController.setRuleManager(ruleManager);
         mainWindowController.setAprioriInterfaceController(aprioriInterfaceController);
@@ -48,6 +54,9 @@ public class Main extends Application {
         aprioriInterfaceController.setMainScene(mainScene);
         aprioriInterfaceController.setMainStage(stage);
         aprioriInterfaceController.setAprioriManager(aprioriManager);
+        ruleInterfaceController.setRuleManager(ruleManager);
+        ruleInterfaceController.setMainScene(mainScene);
+        ruleInterfaceController.setMainStage(stage);
 
         stage.setTitle("Analiza koszykowa");
         stage.setScene(mainScene);

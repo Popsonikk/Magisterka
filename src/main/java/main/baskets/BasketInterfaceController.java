@@ -101,7 +101,8 @@ public class BasketInterfaceController extends InterfaceTemplate implements Init
         }
     }
     //funkcja czyszcząca całą bazę interfejsu
-    public void clearBaskets() {
+    @Override
+    public void clearBase() {
         mainPane.getChildren().remove(header);
         basketManager.clearBaskets();
         basketManager.clearFilteredBaskets();

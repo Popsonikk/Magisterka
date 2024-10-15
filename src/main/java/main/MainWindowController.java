@@ -6,53 +6,33 @@ import javafx.stage.Stage;
 import main.apriori.AprioriInterfaceController;
 import main.apriori.AprioriManager;
 import main.rules.RuleManager;
-
 public class MainWindowController {
     @FXML
     private TextField support;
     @FXML
     private TextField length;
     private AprioriInterfaceController aprioriInterfaceController;
-
-
     private Stage mainStage;
-
     private Scene basketScene;
     private Scene aprioriScene;
+    private Scene ruleScene;
     private AprioriManager aprioriManager;
     private RuleManager ruleManager;
-
-    public void setMainStage(Stage mainStage) {
-        this.mainStage = mainStage;
-    }
-
-    public void setBasketScene(Scene basketScene) {
-        this.basketScene = basketScene;
-    }
-
+    public void setMainStage(Stage mainStage) {this.mainStage = mainStage;}
+    public void setBasketScene(Scene basketScene) {this.basketScene = basketScene;}
     public void setAprioriScene(Scene aprioriScene) {this.aprioriScene = aprioriScene;}
-
-    public void setAprioriManager(AprioriManager aprioriManager) {
-        this.aprioriManager = aprioriManager;
-    }
-
+    public void setRuleScene(Scene ruleScene) {this.ruleScene = ruleScene;}
+    public void setAprioriManager(AprioriManager aprioriManager) {this.aprioriManager = aprioriManager;}
     public void setRuleManager(RuleManager ruleManager) {this.ruleManager = ruleManager;}
-
-    public void showBasketInterface() {
-        mainStage.setScene(basketScene);
-    }
-
+    public void showBasketInterface() {mainStage.setScene(basketScene);}
     public void setAprioriInterfaceController(AprioriInterfaceController aprioriInterfaceController) {
         this.aprioriInterfaceController = aprioriInterfaceController;
     }
-
     public void useApriori() {
         aprioriManager.Apriori(Double.parseDouble(support.getText()),Integer.parseInt(length.getText()));
         support.setText("0.1");
         length.setText("3");
-
     }
-
     public void useRules() {
         ruleManager.generateRules();
     }
@@ -64,5 +44,8 @@ public class MainWindowController {
             aprioriInterfaceController.showTable();
         }
         mainStage.setScene(aprioriScene);
+    }
+    public void showRuleInterface() {
+        mainStage.setScene(ruleScene);
     }
 }

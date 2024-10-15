@@ -12,7 +12,7 @@
       <URL value="@style.css" />
    </stylesheets>
    <children>
-      <Button onAction="#clearBaskets" layoutX="835.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść koszyki" styleClass="interfaceButton" />
+      <Button onAction="#clearBase" layoutX="835.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść koszyki" styleClass="interfaceButton" />
       <Button onAction="#loadBaskets" layoutX="670.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wczytaj koszyki" styleClass="interfaceButton"/>
       <TextField fx:id="tx" layoutX="15.0" layoutY="5.0" prefHeight="50.0" prefWidth="329.0" alignment="CENTER" styleClass="filterBox"/>
       <Button onAction="#filtrBaskets" layoutX="340.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Filtruj koszyki" styleClass="interfaceButton" />

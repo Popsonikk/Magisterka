@@ -145,5 +145,6 @@ public abstract class InterfaceTemplate {
     protected abstract void createView();
     protected abstract void createFiltrButton();
     protected abstract void createHeader();
+    public abstract void clearBase();
 
 }

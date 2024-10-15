@@ -303,6 +303,7 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         mainPane.getChildren().remove(header);
     }
     //funkcja czyszcząca całą bazę interfejsu
+    @Override
     public void clearBase() {
         try
         {

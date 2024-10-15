@@ -10,10 +10,12 @@ public class RuleManager {
 
     private AprioriManager aprioriManager;
     private List<AssociationRule> ruleList;
+    private List<AssociationRule> filteredRuleList;
 
     public RuleManager()
     {
         this.ruleList=new ArrayList<>();
+        this.filteredRuleList=new ArrayList<>();
     }
 
     public void setAprioriManager(AprioriManager aprioriManager) {
@@ -57,27 +59,20 @@ public class RuleManager {
                 consequent.removeAll(antecedent);
                 SimplePattern at = getSupport(patterns,antecedent);
                 SimplePattern ct= getSupport(patterns, consequent);
-
                 double confidence = pattern.getSupport() / at.getSupport();
                 double lift = confidence / ct.getSupport();
-
                 ruleList.add(new AssociationRule(at,ct,confidence,lift));
             }
-
         }
         showRules();
         Alert alert=new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText("Reguły wygenerowane pomyślnie");
         alert.show();
-
     }
-
     private SimplePattern getSupport(List<SimplePattern> patterns, List<String> subset) {
-         double res=0.0;
          Optional<SimplePattern> matchingPattern = patterns.stream()
                 .filter(simplePattern -> new HashSet<>(simplePattern.getPattern()).containsAll(subset)&&simplePattern.getPattern().size()==subset.size()).findFirst();
         return matchingPattern.orElse(null);
-
     }
 
     //generowanie wszystkich możliwych podzbiorów dla wzorca
@@ -112,6 +107,9 @@ public class RuleManager {
            System.out.println( rule.toString());
         }
     }
+    public int getRuleListSize() {return  ruleList.size();}
+    public int getFilteredRuleListSize() {return  filteredRuleList.size();}
+
 
 
 }
