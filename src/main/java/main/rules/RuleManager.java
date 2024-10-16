@@ -1,12 +1,11 @@
 package main.rules;
 
 import javafx.scene.control.Alert;
+import javafx.stage.FileChooser;
 import main.apriori.AprioriManager;
 import main.apriori.SimplePattern;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class RuleManager {
@@ -151,15 +150,15 @@ public class RuleManager {
                 for(int j = 0; j < left_pattern.size()-1; j++)
                     writer.write(left_pattern.get(j)+";");
                 writer.write(left_pattern.get(left_pattern.size()-1)+",");
-                writer.write(String.format("%.3f", rule.getAntecedent().getSupport())+",");
+                writer.write(String.format(Locale.US,"%.3f", rule.getAntecedent().getSupport())+",");
                 List<String> right_pattern = rule.getConsequent().getPattern();
                 for(int j = 0; j < right_pattern.size()-1; j++)
                     writer.write(right_pattern.get(j)+";");
                 writer.write(right_pattern.get(right_pattern.size()-1)+",");
-                writer.write(String.format("%.3f", rule.getConsequent().getSupport())+",");
-                writer.write(String.format("%.3f", rule.getSupport())+",");
-                writer.write(String.format("%.3f", rule.getConfidence())+",");
-                writer.write(String.format("%.3f", rule.getLift())+"\n");
+                writer.write(String.format(Locale.US,"%.3f", rule.getConsequent().getSupport())+",");
+                writer.write(String.format(Locale.US,"%.3f", rule.getSupport())+",");
+                writer.write(String.format(Locale.US,"%.3f", rule.getConfidence())+",");
+                writer.write(String.format(Locale.US,"%.3f", rule.getLift())+"\n");
                 i++;
             }
             writer.close();
@@ -175,6 +174,48 @@ public class RuleManager {
 
     }
     public void loadFromCSV(){
+        try {
+            FileChooser fileChooser=new FileChooser();
+            fileChooser.setTitle("Wybierz plik zawierający poziomy wsparcia");
+            File file = fileChooser.showOpenDialog(null);
+            //zapis nazwy pliku
+            ruleFilename=file.getName();
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line;
+            reader.readLine(); //header
+            line= reader.readLine();
+            while (line!=null)
+            {
+                //pobranie danych zgodnie z formatem
+                String []pattern=line.split(",");
+                double left_support=Double.parseDouble(pattern[2]);
+                double right_support=Double.parseDouble(pattern[4]);
+                double support=Double.parseDouble(pattern[5]);
+                double confidence=Double.parseDouble(pattern[6]);
+                double lift=Double.parseDouble(pattern[7]);
+                String[] left_pattern=pattern[1].split(";");
+                List<String> left_list=new ArrayList<>();
+                for(String s:left_pattern)
+                    left_list.add(s.trim().toLowerCase());
+                String[] right_pattern=pattern[1].split(";");
+                List<String> right_list=new ArrayList<>();
+                for(String s:right_pattern)
+                    right_list.add(s.trim().toLowerCase());
+                ruleList.add(new AssociationRule(new SimplePattern(left_list,left_support),new SimplePattern(right_list,right_support),
+                        support,confidence,lift));
+
+
+                line= reader.readLine();
+            }
+            Alert a=new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText("Dane zostały wczytane poprawnie");
+            a.show();
+        } catch (IOException e) {
+            Alert a=new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Wystąpił błąd przy zapisie");
+            a.show();
+            throw new RuntimeException(e);
+        }
 
     }
 

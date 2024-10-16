@@ -158,7 +158,7 @@ public class AprioriManager {
             //ręczny zapis do pliku w formie CSV
             for(SimplePattern pattern:supportList)
             {
-                writer.write(i+","+ pattern.getSupport()+",");
+                writer.write(i+","+ String.format(Locale.US,"%.3f", pattern.getSupport())+",");
                 List<String> patterns = pattern.getPattern();
                 for(int j = 0; j < patterns.size()-1; j++)
                     writer.write(patterns.get(j)+";");
