@@ -27,6 +27,10 @@ public class AprioriManager {
     public int getFilteredListSize() {return filtredList.size();}
     public void clearSupportList() {supportList.clear();}
     public void clearFilteredList() {filtredList.clear();}
+    public String getBasketName() {return basketManager.getFilename();}
+
+    public String getSupportFilename() {return supportFilename;}
+
     //algorytm apriori
     public void Apriori(double minSup, int len)
     {
@@ -277,4 +281,6 @@ public class AprioriManager {
             i++;
         }
     }
+
+
 }

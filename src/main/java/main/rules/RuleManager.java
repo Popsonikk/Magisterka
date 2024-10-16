@@ -4,6 +4,9 @@ import javafx.scene.control.Alert;
 import main.apriori.AprioriManager;
 import main.apriori.SimplePattern;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class RuleManager {
@@ -11,11 +14,13 @@ public class RuleManager {
     private AprioriManager aprioriManager;
     private List<AssociationRule> ruleList;
     private List<AssociationRule> filteredRuleList;
+    private String ruleFilename;
 
     public RuleManager()
     {
         this.ruleList=new ArrayList<>();
         this.filteredRuleList=new ArrayList<>();
+        this.ruleFilename="";
     }
 
     public void setAprioriManager(AprioriManager aprioriManager) {
@@ -121,6 +126,66 @@ public class RuleManager {
 
 
     public void createCSVFIle(){
+        if(ruleList.isEmpty())
+        {
+            Alert a=new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Brak danych do zapisania");
+            a.show();
+            return;
+        }
+        try {
+            String filename="";
+            //pobranie nazwy pliku, na podstawie którego pracował algorytm
+            if(Objects.equals(ruleFilename, ""))
+            {
+                if(!Objects.equals(aprioriManager.getSupportFilename(), ""))
+                    filename=aprioriManager.getSupportFilename().split("\\.")[0];
+                else if(!Objects.equals(aprioriManager.getBasketName(), ""))
+                    filename=aprioriManager.getBasketName().split("\\.")[0];
+            }
+            else
+                filename=ruleFilename;
+            File file = new File("dane/" + filename+"_ruleData.csv");
+            //pętla mająca na celu zablokowanie duplikowania nazw plików
+            int k=1;
+            while (file.exists())
+            {
+                file = new File("dane/" + filename+k+"_ruleData.csv");
+                k++;
+            }
+            file.createNewFile();
+            FileWriter writer=new FileWriter(file);
+            writer.write("id,left_pattern,left_support,right_pattern,right_support,support,confidence,lift\n");
+            int i=0;
+            //ręczny zapis do pliku w formie CSV
+            for(AssociationRule rule:ruleList)
+            {
+                writer.write(i+",");
+                List<String> left_pattern = rule.getAntecedent().getPattern();
+                for(int j = 0; j < left_pattern.size()-1; j++)
+                    writer.write(left_pattern.get(j)+";");
+                writer.write(left_pattern.get(left_pattern.size()-1)+",");
+                writer.write(String.format("%.3f", rule.getAntecedent().getSupport())+",");
+                List<String> right_pattern = rule.getConsequent().getPattern();
+                for(int j = 0; j < right_pattern.size()-1; j++)
+                    writer.write(right_pattern.get(j)+";");
+                writer.write(right_pattern.get(right_pattern.size()-1)+",");
+                writer.write(String.format("%.3f", rule.getConsequent().getSupport())+",");
+                writer.write(String.format("%.3f", rule.getSupport())+",");
+                writer.write(String.format("%.3f", rule.getConfidence())+",");
+                writer.write(String.format("%.3f", rule.getLift())+"\n");
+                i++;
+            }
+            writer.close();
+            Alert a=new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText("Utworzenie pliku zakończone pomyślnie");
+            a.show();
+        } catch (IOException e) {
+            Alert a=new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Wystąpił błąd przy zapisie");
+            a.show();
+            throw new RuntimeException(e);
+        }
 
     }
     public void loadFromCSV(){
