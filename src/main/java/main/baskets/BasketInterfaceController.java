@@ -178,6 +178,8 @@ public class BasketInterfaceController extends InterfaceTemplate implements Init
                 basketManager.sortByLengthDown();
                 button.setText("↑");
             }
+            if(filtered)
+                basketManager.filtrBaskets(filtr);
             createView();
         });
         header.getChildren().addAll(text,button);

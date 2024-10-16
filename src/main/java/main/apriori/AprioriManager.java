@@ -214,23 +214,15 @@ public class AprioriManager {
     //funkcje sortujące dla interfejsu
     public void sortBySupportUp() {
         supportList.sort(Comparator.comparingDouble(SimplePattern::getSupport));
-        if(filtredList.size()>0)
-            filtredList.sort(Comparator.comparingDouble(SimplePattern::getSupport));
     }
     public void sortBySupportDown() {
         supportList.sort((o1, o2) -> Double.compare(o2.getSupport(), o1.getSupport()));
-        if(filtredList.size()>0)
-            filtredList.sort((o1, o2) -> Double.compare(o2.getSupport(), o1.getSupport()));
     }
     public void sortByPatternUp() {
         supportList.sort(Comparator.comparingInt(o -> o.getPattern().size()));
-        if(filtredList.size()>0)
-            filtredList.sort(Comparator.comparingInt(o -> o.getPattern().size()));
     }
     public void sortByPatternDown() {
         supportList.sort((o1, o2) -> Integer.compare(o2.getPattern().size(), o1.getPattern().size()));
-        if(filtredList.size()>0)
-            filtredList.sort((o1, o2) -> Integer.compare(o2.getPattern().size(), o1.getPattern().size()));
     }
     //funkcja usuwająca dane z listy
     public int deleteSelectedRows(List<CheckBox> checkBoxes, int startID,boolean f) {

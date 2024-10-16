@@ -197,7 +197,7 @@ public class RuleManager {
                 List<String> left_list=new ArrayList<>();
                 for(String s:left_pattern)
                     left_list.add(s.trim().toLowerCase());
-                String[] right_pattern=pattern[1].split(";");
+                String[] right_pattern=pattern[3].split(";");
                 List<String> right_list=new ArrayList<>();
                 for(String s:right_pattern)
                     right_list.add(s.trim().toLowerCase());
@@ -217,6 +217,46 @@ public class RuleManager {
             throw new RuntimeException(e);
         }
 
+    }
+    public void sortByConfidenceUp() {
+        ruleList.sort(Comparator.comparingDouble(AssociationRule::getConfidence));
+    }
+    public void sortByConfidenceDown() {
+        ruleList.sort((o1, o2) -> Double.compare(o2.getConfidence(), o1.getConfidence()));
+    }
+    public void sortByLiftUp() {
+        ruleList.sort(Comparator.comparingDouble(AssociationRule::getLift));
+    }
+    public void sortByLiftDown() {
+        ruleList.sort((o1, o2) -> Double.compare(o2.getLift(), o1.getLift()));
+    }
+    public void sortByPatternUp() {
+        ruleList.sort((o1, o2) -> {
+            int sizeComparison=Integer.compare(o1.getAntecedent().getPattern().size(), o2.getAntecedent().getPattern().size());
+            if (sizeComparison != 0) {
+                return sizeComparison;
+            }
+            String f1 = o1.getAntecedent().getPattern().get(0);
+            String f2 = o2.getAntecedent().getPattern().get(0);
+            return f1.compareTo(f2);
+        });
+    }
+    public void sortByPatternDown() {
+        ruleList.sort((o1, o2) -> {
+            int sizeComparison=Integer.compare(o2.getAntecedent().getPattern().size(), o1.getAntecedent().getPattern().size());
+            if (sizeComparison != 0) {
+                return sizeComparison;
+            }
+            String f1 = o1.getAntecedent().getPattern().get(0);
+            String f2 = o2.getAntecedent().getPattern().get(0);
+            return f2.compareTo(f1);
+        });
+    }
+    public void sortBySortUp() {
+        ruleList.sort(Comparator.comparingDouble(AssociationRule::getSupport));
+    }
+    public void sortBySortDown() {
+        ruleList.sort((o1, o2) -> Double.compare(o2.getSupport(), o1.getSupport()));
     }
 
 

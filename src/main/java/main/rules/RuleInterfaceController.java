@@ -12,6 +12,7 @@ import main.apriori.SimplePattern;
 
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class RuleInterfaceController extends InterfaceTemplate implements Initializable {
@@ -54,6 +55,7 @@ public class RuleInterfaceController extends InterfaceTemplate implements Initia
     }
     protected void createOptionButton() {
         MenuButton menuButton=makeMenuButtonStyle("Zarządzaj filtrami",505.0,5.0);
+
     }
 
 
@@ -161,12 +163,84 @@ public class RuleInterfaceController extends InterfaceTemplate implements Initia
         gridPane.getColumnConstraints().add(new ColumnConstraints(125.0));
         gridPane.getColumnConstraints().add(new ColumnConstraints(125.0));
         HBox box1=createTableColumn("Reguła","basketHeader","basketHeaderText");
+        Button button3=new Button("↑");
+        button3.getStyleClass().add("boxButton");
+        //funkcja sortująca
+        button3.setOnAction((event)->{
+            if(ruleManager.getRuleListSize()==0)
+                return;
+            if(Objects.equals(button3.getText(), "↑"))
+            {
+                ruleManager.sortByPatternUp();
+                button3.setText("↓");
+            } else{
+                ruleManager.sortByPatternDown();
+                button3.setText("↑");
+            }
+            //odświeżenie widoku po sortowaniu
+            createView();
+        });
+        box1.getChildren().add(button3);
         gridPane.add(box1,0,0);
         HBox box2=createTableColumn("Wsparcie","basketHeader","basketHeaderText");
+        Button button4=new Button("↑");
+        button4.getStyleClass().add("boxButton");
+        //funkcja sortująca
+        button4.setOnAction((event)->{
+            if(ruleManager.getRuleListSize()==0)
+                return;
+            if(Objects.equals(button4.getText(), "↑"))
+            {
+                ruleManager.sortBySortUp();
+                button4.setText("↓");
+            } else{
+                ruleManager.sortBySortDown();
+                button4.setText("↑");
+            }
+            //odświeżenie widoku po sortowaniu
+            createView();
+        });
+        box2.getChildren().add(button4);
         gridPane.add(box2,1,0);
         HBox box4=createTableColumn("Ufność","basketHeader","basketHeaderText");
+        Button button1=new Button("↑");
+        button1.getStyleClass().add("boxButton");
+        //funkcja sortująca
+        button1.setOnAction((event)->{
+            if(ruleManager.getRuleListSize()==0)
+                return;
+            if(Objects.equals(button1.getText(), "↑"))
+            {
+                ruleManager.sortByConfidenceUp();
+                button1.setText("↓");
+            } else{
+                ruleManager.sortByConfidenceDown();
+                button1.setText("↑");
+            }
+            //odświeżenie widoku po sortowaniu
+            createView();
+        });
+        box4.getChildren().add(button1);
         gridPane.add(box4,2,0);
         HBox box5=createTableColumn("Lift","basketHeader","basketHeaderText");
+        Button button2=new Button("↑");
+        button2.getStyleClass().add("boxButton");
+        //funkcja sortująca
+        button2.setOnAction((event)->{
+            if(ruleManager.getRuleListSize()==0)
+                return;
+            if(Objects.equals(button2.getText(), "↑"))
+            {
+                ruleManager.sortByLiftUp();
+                button2.setText("↓");
+            } else{
+                ruleManager.sortByLiftDown();
+                button2.setText("↑");
+            }
+            //odświeżenie widoku po sortowaniu
+            createView();
+        });
+        box5.getChildren().add(button2);
         gridPane.add(box5,3,0);
         header.getChildren().add(gridPane);
     }

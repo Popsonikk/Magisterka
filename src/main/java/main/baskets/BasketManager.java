@@ -92,12 +92,8 @@ public class BasketManager {
     //funkcje sortujące
     public void sortByLengthUp() {
         baskets.sort(Comparator.comparingInt(List::size));
-        if(filteredBaskets.size()>0)
-            filteredBaskets.sort(Comparator.comparingInt(List::size));
     }
     public void sortByLengthDown() {
         baskets.sort((o1, o2) -> Integer.compare(o2.size(), o1.size()));
-        if(filteredBaskets.size()>0)
-            filteredBaskets.sort((o1, o2) -> Integer.compare(o2.size(), o1.size()));
     }
 }

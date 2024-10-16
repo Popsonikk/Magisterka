@@ -13,12 +13,16 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 public class AprioriInterfaceController extends InterfaceTemplate implements Initializable {
     private AprioriManager aprioriManager;
+    private FiltrType filtrType;
+    double supportFiltr;
     public void setAprioriManager(AprioriManager aprioriManager) {
         this.aprioriManager = aprioriManager;
     }
     @Override
     //funkcja inicjująca interfejs
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        filtrType=FiltrType.none;
+        supportFiltr=0.0;
         init();
         //tworzenie elementów interfejsu
         createSelectSizeBox();
@@ -111,6 +115,8 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
     }
     //funkcja czyszcząca filtr
     protected void clearFilter() {
+        filtrType=FiltrType.none;
+        supportFiltr=0.0;
         filtered =false;
         filtr.clear();
         aprioriManager.clearFilteredList();
@@ -164,6 +170,7 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
                 aprioriManager.sortBySupportDown();
                 button1.setText("↑");
             }
+            refresh();
             //odświeżenie widoku po sortowaniu
             createView();
         });
@@ -185,6 +192,7 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
                 aprioriManager.sortByPatternDown();
                 button2.setText("↑");
             }
+            refresh();
             //odświeżenie widoku po sortowaniu
             createView();
         });
@@ -231,6 +239,7 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         }
         //wywołanie funkcji filtrującej
         aprioriManager.filtrPatternItems(filtr);
+        filtrType=FiltrType.pattern;
         System.out.println("Filtrowanie zakończone pomyślnie");
         //wyświetlenie komunikatu, zależnego od wyniku filtrowania
         if(aprioriManager.getFilteredListSize()==0)
@@ -255,12 +264,19 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
     //filtr po wartości wsparcia
     private void filtrSupportLevel( boolean f)
     {
+        if(filtered)
+            filtr.clear();
         String s=tx.getText();
         if (s.isEmpty()||aprioriManager.getSupportListSize()==0)
             return;
         //pobranie wartości liczbowej z napisu
         double supp=Double.parseDouble(s);
+        supportFiltr=supp;
         aprioriManager.filtrSupportLevel(supp,f);
+        if(f)
+            filtrType=FiltrType.supportDown;
+        else
+            filtrType=FiltrType.supportUp;
         Alert a=new Alert(Alert.AlertType.INFORMATION);
         a.setContentText("Filtrowanie zakończone pomyślnie");
         a.show();
@@ -279,6 +295,8 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
         {
             //wyczyszczenie wszystkich tabel, flag i kontenerów
             clearFlags();
+            filtrType=FiltrType.none;
+            supportFiltr=0.0;
             aprioriManager.clearSupportList();
             aprioriManager.clearFilteredList();
             Alert a=new Alert(Alert.AlertType.INFORMATION);
@@ -293,4 +311,13 @@ public class AprioriInterfaceController extends InterfaceTemplate implements Ini
             a.show();
         }
     }
+    private void refresh()
+    {
+        switch(filtrType){
+            case pattern -> aprioriManager.filtrPatternItems(filtr);
+            case supportDown -> aprioriManager.filtrSupportLevel(supportFiltr,true);
+            case supportUp -> aprioriManager.filtrSupportLevel(supportFiltr,false);
+        }
+    }
+
 }
