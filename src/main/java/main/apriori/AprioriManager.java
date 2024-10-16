@@ -90,7 +90,7 @@ public class AprioriManager {
         a.show();
     }
     //rekurencyjne szukanie kandydatów
-    private List<List<String>> generateCandidates(List<String> candidates, int index, int size, List<String> currCandidate) {
+    public List<List<String>> generateCandidates(List<String> candidates, int index, int size, List<String> currCandidate) {
         List<List<String>> patterns = new ArrayList<>();
         //dodanie kandydata do zbioru
         if (currCandidate.size() == size)

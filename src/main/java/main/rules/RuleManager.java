@@ -29,6 +29,7 @@ public class RuleManager {
 
     public void generateRules() {
 
+        List<List<String>> subsets=new ArrayList<>();
         if (aprioriManager.getSupportListSize()==0)
         {
             System.out.println("Brak wyznaczonych wzorców");
@@ -53,9 +54,17 @@ public class RuleManager {
                 ruleList.add(new AssociationRule(at,ct, pattern.getSupport(), confidence,lift));
                 continue;
             }
-
+            subsets.clear();
+            int size=pattern.getPattern().size();
+            int h;
+            if(size%2==1)
+                h=size/2+1;
+            else
+                h=size/2;
             //tworzymy podzbiory wzorca
-            List<List<String>> subsets=generateNonEmptySubsets(pattern.getPattern());
+            for(int i=h;i<size;i++)
+                subsets.addAll(aprioriManager.generateCandidates(pattern.getPattern(),0,i,new ArrayList<>()));
+
             for (List<String> antecedent:subsets)
             {
 
@@ -80,30 +89,7 @@ public class RuleManager {
     }
 
     //generowanie wszystkich możliwych podzbiorów dla wzorca
-    private  List<List<String>> generateNonEmptySubsets(List<String> list) {
-        List<List<String>> subsets = new ArrayList<>();
-        int n = list.size();
-        //Rozpatrujemy wzorzec jako liczbę bitową (1 << n) == 2^n.
-        //zaczynamy od 1, ponieważ nie chcemy podzbiory niepuste, konczymy na 2^n-1 bo nie interesuje nas podzbiór pełny
-        int k;
-        if (n%2==0)
-            k=n/2;
-        else
-            k=n/2+1;
-        for (int i = 1; i < ((1 << k)); i++) {
-            List<String> subset = new ArrayList<>();
-            for (int j = 0; j < n; j++) {
-                //Liczba i jest traktowana jak binarna. Liczna j ma zapalony tylko 1 bit, którego przesuwamy ciągle w lewo.
-                //Sprawia to, że jeżeli bit w liczbie i jest zapalony, to dzięki and zostanie dodany odpowiedni item do wzorca
-                // np i=5 -> 101  j(0-2) a) 101&001=001 b) 101&010=000 c) 101&100=100. a i c spełniają warunek więc to one zostaną dodane do wzorca
-                if ((i & (1 << j)) > 0) {
-                    subset.add(list.get(j));
-                }
-            }
-            subsets.add(subset);
-        }
-        return subsets;
-    }
+
     public int getRuleListSize() {return  ruleList.size();}
     public int getFilteredRuleListSize() {return  filteredRuleList.size();}
 
