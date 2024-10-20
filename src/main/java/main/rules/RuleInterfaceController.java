@@ -245,7 +245,6 @@ public class RuleInterfaceController extends InterfaceTemplate implements Initia
             return;
         //pobranie wartości liczbowej z napisu
         filtrValue=Double.parseDouble(s);
-        System.out.println("hello "+filtrType);
         ruleManager.filtrSupportLevel(filtrValue,ft);
         filtrType=ft;
         Alert a=new Alert(Alert.AlertType.INFORMATION);

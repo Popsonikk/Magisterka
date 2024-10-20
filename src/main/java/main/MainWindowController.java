@@ -9,6 +9,10 @@ import main.rules.RuleInterfaceController;
 import main.rules.RuleManager;
 public class MainWindowController {
     @FXML
+    public TextField confidence;
+    @FXML
+    public TextField lift;
+    @FXML
     private TextField support;
     @FXML
     private TextField length;
@@ -41,7 +45,9 @@ public class MainWindowController {
         length.setText("3");
     }
     public void useRules() {
-        ruleManager.generateRules();
+        ruleManager.generateRules(Double.parseDouble(confidence.getText()),Integer.parseInt(lift.getText()));
+        confidence.setText("0.25");
+        lift.setText("0.75");
     }
 
     public void showAprioriInterface() {
@@ -53,7 +59,6 @@ public class MainWindowController {
         mainStage.setScene(aprioriScene);
     }
     public void showRuleInterface() {
-        System.out.println(ruleManager.getRuleListSize());
         if(ruleManager.getRuleListSize()>0)
         {
             ruleInterfaceController.deleteHeader();

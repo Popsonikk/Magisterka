@@ -30,7 +30,7 @@ public class RuleManager {
         this.aprioriManager = aprioriManager;
     }
 
-    public void generateRules() {
+    public void generateRules(double conf,double lt) {
 
         List<List<String>> subsets=new ArrayList<>();
         if (aprioriManager.getSupportListSize()==0)
@@ -54,7 +54,8 @@ public class RuleManager {
                 SimplePattern ct= getSupport(patterns,Collections.singletonList(pattern.getPattern().get(1)));
                 double confidence = pattern.getSupport() / at.getSupport();
                 double lift = confidence / ct.getSupport();
-                ruleList.add(new AssociationRule(at,ct, pattern.getSupport(), confidence,lift));
+                if(conf>confidence&&lift>lt)
+                    ruleList.add(new AssociationRule(at,ct, pattern.getSupport(), confidence,lift));
                 continue;
             }
             subsets.clear();
