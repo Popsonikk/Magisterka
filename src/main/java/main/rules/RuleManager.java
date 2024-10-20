@@ -1,7 +1,9 @@
 package main.rules;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
 import javafx.stage.FileChooser;
+import main.FiltrType;
 import main.apriori.AprioriManager;
 import main.apriori.SimplePattern;
 
@@ -14,12 +16,14 @@ public class RuleManager {
     private List<AssociationRule> ruleList;
     private List<AssociationRule> filteredRuleList;
     private String ruleFilename;
+    private List<Integer> filteredId;
 
     public RuleManager()
     {
         this.ruleList=new ArrayList<>();
         this.filteredRuleList=new ArrayList<>();
         this.ruleFilename="";
+        this.filteredId=new ArrayList<>();
     }
 
     public void setAprioriManager(AprioriManager aprioriManager) {
@@ -176,7 +180,7 @@ public class RuleManager {
     public void loadFromCSV(){
         try {
             FileChooser fileChooser=new FileChooser();
-            fileChooser.setTitle("Wybierz plik zawierający poziomy wsparcia");
+            fileChooser.setTitle("Wybierz plik zawierający gotowe reguły");
             File file = fileChooser.showOpenDialog(null);
             //zapis nazwy pliku
             ruleFilename=file.getName();
@@ -218,6 +222,27 @@ public class RuleManager {
         }
 
     }
+    public int deleteSelectedRows(List<CheckBox> checkBoxes, int startID, boolean f) {
+        int j = 0;
+        //idziemy od tyłu, aby nie zaburzyć ciągłości listy
+        for (int i = checkBoxes.size() - 1; i >= 0; i--) {
+            if (checkBoxes.get(i).isSelected())
+            {
+                //
+                if (checkBoxes.get(i).isSelected() && !f)
+                {
+                    ruleList.remove(startID + i);
+                    j++;
+                } else if (checkBoxes.get(i).isSelected() && f)
+                {
+                    ruleList.remove(filteredRuleList.get(startID + i));
+                    filteredRuleList.remove(startID + i);
+                    j++;
+                }
+            }
+        }
+        return j;
+    }
     public void sortByConfidenceUp() {
         ruleList.sort(Comparator.comparingDouble(AssociationRule::getConfidence));
     }
@@ -257,6 +282,73 @@ public class RuleManager {
     }
     public void sortBySortDown() {
         ruleList.sort((o1, o2) -> Double.compare(o2.getSupport(), o1.getSupport()));
+    }
+    public void filtrPatternItems(List<String> items) {
+        filteredRuleList.clear();
+        filteredId.clear();
+        int i = 0;
+        for (AssociationRule rule : ruleList) {
+            if (new HashSet<>(rule.getConsequent().getPattern()).containsAll(items)) {
+                filteredRuleList.add(rule);
+                filteredId.add(i);
+            }
+            i++;
+        }
+    }
+    //funkcja filtrująca po poziomie wsparcia, zależne od flagi
+    public void filtrSupportLevel(double val, FiltrType type) {
+        filteredRuleList.clear();
+        filteredId.clear();
+
+        int i = 0;
+        for (AssociationRule rule : ruleList) {
+            switch (type){
+                case liftUp -> {
+                    if(rule.getLift()>=val)
+                    {
+                        filteredRuleList.add(rule);
+                        filteredId.add(i);
+                    }
+                }
+                case liftDown -> {
+                    if(rule.getLift()<=val)
+                    {
+                        filteredRuleList.add(rule);
+                        filteredId.add(i);
+                    }
+                }
+                case confidenceUp -> {
+                    if(rule.getConfidence()>=val)
+                    {
+                        filteredRuleList.add(rule);
+                        filteredId.add(i);
+                    }
+                }
+                case confidenceDown -> {
+                    if(rule.getConfidence()<=val)
+                    {
+                        filteredRuleList.add(rule);
+                        filteredId.add(i);
+                    }
+                }case supportUp -> {
+                    if(rule.getSupport()>=val)
+                    {
+                        filteredRuleList.add(rule);
+                        filteredId.add(i);
+                    }
+                }
+                case supportDown -> {
+                    if(rule.getSupport()<=val)
+                    {
+                        filteredRuleList.add(rule);
+                        filteredId.add(i);
+                    }
+                }
+
+            }
+
+            i++;
+        }
     }
 
 

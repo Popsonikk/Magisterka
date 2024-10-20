@@ -7,6 +7,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import main.FiltrType;
 import main.InterfaceTemplate;
 import main.apriori.SimplePattern;
 
@@ -17,6 +18,8 @@ import java.util.ResourceBundle;
 
 public class RuleInterfaceController extends InterfaceTemplate implements Initializable {
     private RuleManager ruleManager;
+    FiltrType filtrType;
+    double filtrValue;
 
     public void setRuleManager(RuleManager ruleManager) {
         this.ruleManager = ruleManager;
@@ -25,6 +28,8 @@ public class RuleInterfaceController extends InterfaceTemplate implements Initia
     //funkcja inicjująca interfejs
     public void initialize(URL url, ResourceBundle resourceBundle) {
         init();
+        filtrType=FiltrType.none;
+        filtrValue=0.0;
         //tworzenie elementów interfejsu
         createSelectSizeBox();
         createSwitchPageBox();
@@ -55,17 +60,47 @@ public class RuleInterfaceController extends InterfaceTemplate implements Initia
     }
     protected void createOptionButton() {
         MenuButton menuButton=makeMenuButtonStyle("Zarządzaj filtrami",505.0,5.0);
+        MenuItem item=new MenuItem("Zaznacz wszystkie boxy");
+        item.setOnAction(actionEvent -> selectAllBoxes());
+        MenuItem item2=new MenuItem("Usuń zaznaczone wiersze");
+        item2.setOnAction(actionEvent -> deleteRows());
+        MenuItem item3=new MenuItem("Wyczyść filtr");
+        item3.setOnAction(actionEvent -> clearFilter());
+        menuButton.getItems().addAll(item,item2,item3);
 
     }
 
 
     @Override
     protected void deleteRows() {
+        Alert a=new Alert(Alert.AlertType.INFORMATION);
+        //wywołanie funkcji usuwającej
+        int j= ruleManager.deleteSelectedRows(checkBoxes,startId,filtered);
+        if(j==0)
+        {
+            a.setContentText("Brak wybranych elementów do usunięcia");
+            a.show();
+            return;
+        }
+        //odświeżenie widoku
+        createView();
+        a.setContentText("Wybrane elementów zostały usunięte");
+        a.show();
 
     }
 
     @Override
     protected void clearFilter() {
+        filtrType=FiltrType.none;
+        filtrValue=0.0;
+        filtered =false;
+        filtr.clear();
+        ruleManager.clearFilteredList();
+        //odświeżenie wyglądu po zdjęciu filtru
+        createView();
+        Alert a=new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText("Filtry wyczyszczone pomyślnie, przywrócono podstawową listę koszyków");
+        a.show();
 
     }
 
@@ -145,11 +180,83 @@ public class RuleInterfaceController extends InterfaceTemplate implements Initia
         box.getChildren().add(gridPane);
         return box;
     }
+
     @Override
     protected void createFiltrButton() {
         MenuButton menuButton=makeMenuButtonStyle("Wybierz Filtr",340.0,5.0);
+        MenuItem menuItem=new MenuItem("Pokaż wybrane elementy");
+        menuItem.setOnAction((event)->filtrPatternItems());
+        MenuItem item=new MenuItem("Pokaż poziomy wsparcia poniżej");
+        item.setOnAction((event)->filtrSupportLevel(FiltrType.supportDown));
+        MenuItem item1=new MenuItem("Pokaż poziomy wsparcia powyżej");
+        item1.setOnAction((event)->filtrSupportLevel(FiltrType.supportUp));
+        MenuItem item2=new MenuItem("Pokaż poziomy ufności poniżej");
+        item2.setOnAction((event)->filtrSupportLevel(FiltrType.confidenceDown));
+        MenuItem item3=new MenuItem("Pokaż poziomy ufności powyżej");
+        item3.setOnAction((event)->filtrSupportLevel(FiltrType.confidenceUp));
+        MenuItem item4=new MenuItem("Pokaż poziom lift poniżej");
+        item4.setOnAction((event)->filtrSupportLevel(FiltrType.liftDown));
+        MenuItem item5=new MenuItem("Pokaż poziom lift powyżej");
+        item5.setOnAction((event)->filtrSupportLevel(FiltrType.liftUp));
+        menuButton.getItems().addAll(menuItem,item,item1,item2,item3,item4,item5);
     }
-
+    //funkcja filtrująca wyświetlaną tabele
+    private void filtrPatternItems()
+    {
+        //sczytanie filtru i jego zapis do tablicy
+        String s=tx.getText();
+        if (s.isEmpty()||ruleManager.getRuleListSize()==0)
+            return;
+        String[] items = s.split("[:,;]");
+        for (String item : items) {
+            filtr.add(item.trim());
+        }
+        //wywołanie funkcji filtrującej
+        ruleManager.filtrPatternItems(filtr);
+        filtrType= FiltrType.pattern;
+        System.out.println("Filtrowanie zakończone pomyślnie");
+        //wyświetlenie komunikatu, zależnego od wyniku filtrowania
+        if(ruleManager.getFilteredRuleListSize()==0)
+        {
+            filtr.clear();
+            Alert a=new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText("Brak wzorców spełniających podane warunki");
+            a.show();
+        }
+        else
+        {
+            Alert a=new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText("Filtrowanie zakończone pomyślnie");
+            a.show();
+            //ustawianie flag informujących o istnieniu filtru
+            filtered =true;
+            startId=0;
+            tx.clear();
+            createView();
+        }
+    }
+    //filtr po wartości wsparcia
+    private void filtrSupportLevel( FiltrType ft)
+    {
+        if(filtered)
+            filtr.clear();
+        String s=tx.getText();
+        if (s.isEmpty()||ruleManager.getRuleListSize()==0)
+            return;
+        //pobranie wartości liczbowej z napisu
+        filtrValue=Double.parseDouble(s);
+        System.out.println("hello "+filtrType);
+        ruleManager.filtrSupportLevel(filtrValue,ft);
+        filtrType=ft;
+        Alert a=new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText("Filtrowanie zakończone pomyślnie");
+        a.show();
+        //ustawienie flag
+        filtered =true;
+        startId=0;
+        tx.clear();
+        createView();
+    }
     @Override
     protected void createHeader() {
         header=new HBox();
@@ -177,6 +284,7 @@ public class RuleInterfaceController extends InterfaceTemplate implements Initia
                 ruleManager.sortByPatternDown();
                 button3.setText("↑");
             }
+            refresh();
             //odświeżenie widoku po sortowaniu
             createView();
         });
@@ -198,6 +306,7 @@ public class RuleInterfaceController extends InterfaceTemplate implements Initia
                 button4.setText("↑");
             }
             //odświeżenie widoku po sortowaniu
+            refresh();
             createView();
         });
         box2.getChildren().add(button4);
@@ -218,6 +327,7 @@ public class RuleInterfaceController extends InterfaceTemplate implements Initia
                 button1.setText("↑");
             }
             //odświeżenie widoku po sortowaniu
+            refresh();
             createView();
         });
         box4.getChildren().add(button1);
@@ -238,6 +348,7 @@ public class RuleInterfaceController extends InterfaceTemplate implements Initia
                 button2.setText("↑");
             }
             //odświeżenie widoku po sortowaniu
+            refresh();
             createView();
         });
         box5.getChildren().add(button2);
@@ -254,5 +365,17 @@ public class RuleInterfaceController extends InterfaceTemplate implements Initia
         a.setContentText("Usunięcie reguł zakończone pomyślnie");
         a.show();
 
+    }
+    private void refresh()
+    {
+        switch(filtrType){
+            case pattern -> ruleManager.filtrPatternItems(filtr);
+            case supportDown -> ruleManager.filtrSupportLevel(filtrValue,FiltrType.supportDown);
+            case supportUp -> ruleManager.filtrSupportLevel(filtrValue,FiltrType.supportUp);
+            case confidenceDown -> ruleManager.filtrSupportLevel(filtrValue,FiltrType.confidenceDown);
+            case confidenceUp -> ruleManager.filtrSupportLevel(filtrValue,FiltrType.confidenceUp);
+            case liftDown -> ruleManager.filtrSupportLevel(filtrValue,FiltrType.liftDown);
+            case liftUp -> ruleManager.filtrSupportLevel(filtrValue,FiltrType.liftUp);
+        }
     }
 }

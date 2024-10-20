@@ -6,6 +6,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import main.FiltrType;
 import main.InterfaceTemplate;
 import java.net.URL;
 import java.util.List;
