@@ -344,6 +344,14 @@ public class RuleManager {
                         filteredRuleList.add(rule);
                         filteredId.add(i);
                     }
+
+                }
+                case patternLen -> {
+                    if(rule.getConsequent().getPattern().size()==val)
+                    {
+                        filteredRuleList.add(rule);
+                        filteredId.add(i);
+                    }
                 }
 
             }

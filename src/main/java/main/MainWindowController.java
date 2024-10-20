@@ -45,7 +45,7 @@ public class MainWindowController {
         length.setText("3");
     }
     public void useRules() {
-        ruleManager.generateRules(Double.parseDouble(confidence.getText()),Integer.parseInt(lift.getText()));
+        ruleManager.generateRules(Double.parseDouble(confidence.getText()),Double.parseDouble(lift.getText()));
         confidence.setText("0.25");
         lift.setText("0.75");
     }

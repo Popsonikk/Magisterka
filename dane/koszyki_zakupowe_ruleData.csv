@@ -1,0 +1,384 @@
+id,left_pattern,left_support,right_pattern,right_support,support,confidence,lift
+0,ser żółty;jogurt naturalny,0.175,ziemniaki,0.401,0.054,0.309,0.770
+1,jabłka;jajka,0.167,ogórki,0.396,0.051,0.305,0.771
+2,ogórki;mleko,0.162,jajka,0.432,0.054,0.333,0.772
+3,jajka;jogurt naturalny,0.180,ogórki,0.396,0.055,0.306,0.772
+4,ziemniaki;ser żółty,0.159,jogurt naturalny,0.434,0.054,0.340,0.783
+5,ziemniaki;jogurt naturalny,0.165,ser żółty,0.418,0.054,0.327,0.783
+6,jogurt naturalny;ogórki,0.162,jajka,0.432,0.055,0.340,0.786
+7,jabłka;ogórki,0.150,jajka,0.432,0.051,0.340,0.787
+8,jajka;mleko,0.171,ogórki,0.396,0.054,0.316,0.797
+9,ziemniaki;ogórki,0.153,jogurt naturalny,0.434,0.053,0.346,0.798
+10,chleb pełnoziarnisty;ogórki,0.163,jabłka,0.407,0.053,0.325,0.799
+11,banany,0.389,makaron pełnoziarnisty,0.183,0.057,0.147,0.801
+12,jajka;ogórki,0.155,mleko,0.434,0.054,0.348,0.803
+13,jabłka;mleko,0.170,jajka,0.432,0.059,0.347,0.803
+14,jajka;chleb pełnoziarnisty,0.180,jabłka,0.407,0.059,0.328,0.805
+15,jajka;ogórki,0.155,jabłka,0.407,0.051,0.329,0.808
+16,ser żółty,0.418,kurczak,0.192,0.065,0.156,0.810
+17,jabłka;banany,0.160,jajka,0.432,0.056,0.350,0.810
+18,ziemniaki;jogurt naturalny,0.165,ogórki,0.396,0.053,0.321,0.811
+19,ryż brązowy;jogurt naturalny,0.172,ziemniaki,0.401,0.056,0.326,0.812
+20,banany;mleko,0.165,jajka,0.432,0.058,0.352,0.814
+21,jabłka;jajka,0.167,mleko,0.434,0.059,0.353,0.814
+22,jajka;jogurt naturalny,0.180,banany,0.389,0.057,0.317,0.814
+23,jogurt naturalny;ogórki,0.162,ziemniaki,0.401,0.053,0.327,0.816
+24,mleko,0.434,kurczak,0.192,0.068,0.157,0.816
+25,jajka;ogórki,0.155,jogurt naturalny,0.434,0.055,0.355,0.818
+26,jajka;chleb pełnoziarnisty,0.180,jogurt naturalny,0.434,0.064,0.356,0.819
+27,ser żółty,0.418,makaron pełnoziarnisty,0.183,0.063,0.151,0.824
+28,ziemniaki;jogurt naturalny,0.165,ryż brązowy,0.412,0.056,0.339,0.824
+29,jabłka;chleb pełnoziarnisty,0.162,ogórki,0.396,0.053,0.327,0.826
+30,ziemniaki;ryż brązowy,0.156,jogurt naturalny,0.434,0.056,0.359,0.827
+31,ser żółty;mleko,0.194,jajka,0.432,0.070,0.361,0.835
+32,jabłka;banany,0.160,jogurt naturalny,0.434,0.058,0.363,0.835
+33,jajka;banany,0.157,jogurt naturalny,0.434,0.057,0.363,0.837
+34,jabłka;jogurt naturalny,0.177,ogórki,0.396,0.059,0.333,0.842
+35,ser żółty;jogurt naturalny,0.175,chleb pełnoziarnisty,0.414,0.061,0.349,0.842
+36,jabłka;jogurt naturalny,0.177,banany,0.389,0.058,0.328,0.842
+37,jabłka;chleb pełnoziarnisty,0.162,jajka,0.432,0.059,0.364,0.843
+38,ser żółty;ogórki,0.172,jogurt naturalny,0.434,0.063,0.366,0.844
+39,ziemniaki,0.401,kurczak,0.192,0.065,0.162,0.844
+40,jabłka,0.407,kurczak,0.192,0.066,0.162,0.845
+41,ziemniaki,0.401,makaron pełnoziarnisty,0.183,0.062,0.155,0.845
+42,jogurt naturalny;banany,0.156,jajka,0.432,0.057,0.365,0.846
+43,jabłka;mleko,0.170,ogórki,0.396,0.057,0.335,0.847
+44,jajka,0.432,makaron pełnoziarnisty,0.183,0.067,0.155,0.848
+45,jajka;mleko,0.171,jabłka,0.407,0.059,0.345,0.848
+46,ziemniaki;mleko,0.178,ogórki,0.396,0.060,0.337,0.851
+47,jajka;banany,0.157,mleko,0.434,0.058,0.369,0.851
+48,ryż brązowy;jogurt naturalny,0.172,banany,0.389,0.057,0.331,0.852
+49,jabłka;jajka,0.167,chleb pełnoziarnisty,0.414,0.059,0.353,0.853
+50,jabłka;ogórki,0.150,chleb pełnoziarnisty,0.414,0.053,0.353,0.853
+51,ogórki,0.396,kurczak,0.192,0.065,0.164,0.855
+52,ziemniaki;jogurt naturalny,0.165,banany,0.389,0.055,0.333,0.857
+53,jajka;jogurt naturalny,0.180,chleb pełnoziarnisty,0.414,0.064,0.356,0.859
+54,ziemniaki;mleko,0.178,ryż brązowy,0.412,0.063,0.354,0.859
+55,chleb pełnoziarnisty;banany,0.158,jogurt naturalny,0.434,0.059,0.373,0.860
+56,ziemniaki;chleb pełnoziarnisty,0.164,ser żółty,0.418,0.059,0.360,0.861
+57,ser żółty;ogórki,0.172,jajka,0.432,0.064,0.372,0.861
+58,jabłka;jajka,0.167,banany,0.389,0.056,0.335,0.862
+59,ser żółty;banany,0.163,jogurt naturalny,0.434,0.061,0.374,0.862
+60,chleb pełnoziarnisty;jogurt naturalny,0.169,ser żółty,0.418,0.061,0.361,0.864
+61,ogórki;mleko,0.162,jabłka,0.407,0.057,0.352,0.865
+62,jogurt naturalny;mleko,0.184,ogórki,0.396,0.063,0.342,0.865
+63,ziemniaki;jajka,0.177,ser żółty,0.418,0.064,0.362,0.865
+64,jabłka;ryż brązowy,0.175,ogórki,0.396,0.060,0.343,0.866
+65,ryż brązowy;mleko,0.181,ziemniaki,0.401,0.063,0.348,0.868
+66,ziemniaki;banany,0.146,jogurt naturalny,0.434,0.055,0.377,0.868
+67,jabłka;chleb pełnoziarnisty,0.162,ser żółty,0.418,0.059,0.364,0.871
+68,jajka;mleko,0.171,banany,0.389,0.058,0.339,0.872
+69,ryż brązowy;ogórki,0.169,jabłka,0.407,0.060,0.355,0.872
+70,jabłka;ser żółty,0.163,chleb pełnoziarnisty,0.414,0.059,0.362,0.874
+71,jabłka;ogórki,0.150,mleko,0.434,0.057,0.380,0.876
+72,jajka;banany,0.157,jabłka,0.407,0.056,0.357,0.876
+73,chleb pełnoziarnisty;jogurt naturalny,0.169,jajka,0.432,0.064,0.379,0.877
+74,ser żółty;chleb pełnoziarnisty,0.160,jogurt naturalny,0.434,0.061,0.381,0.878
+75,jogurt naturalny;banany,0.156,ziemniaki,0.401,0.055,0.353,0.879
+76,banany;mleko,0.165,jogurt naturalny,0.434,0.063,0.382,0.880
+77,jogurt naturalny;mleko,0.184,banany,0.389,0.063,0.342,0.880
+78,jogurt naturalny;mleko,0.184,jajka,0.432,0.070,0.380,0.881
+79,ziemniaki;mleko,0.178,banany,0.389,0.061,0.343,0.881
+80,ryż brązowy;banany,0.149,jogurt naturalny,0.434,0.057,0.383,0.881
+81,jabłka;ryż brązowy,0.175,ziemniaki,0.401,0.062,0.354,0.884
+82,banany,0.389,kurczak,0.192,0.066,0.170,0.884
+83,ziemniaki;jajka,0.177,ogórki,0.396,0.062,0.350,0.885
+84,jabłka,0.407,makaron pełnoziarnisty,0.183,0.066,0.162,0.886
+85,jogurt naturalny;banany,0.156,ryż brązowy,0.412,0.057,0.365,0.887
+86,jabłka;banany,0.160,ziemniaki,0.401,0.057,0.356,0.888
+87,ser żółty,0.418,płatki owsiane,0.210,0.078,0.187,0.889
+88,ryż brązowy,0.412,makaron pełnoziarnisty,0.183,0.067,0.163,0.889
+89,ryż brązowy;ogórki,0.169,jajka,0.432,0.065,0.385,0.890
+90,ryż brązowy;chleb pełnoziarnisty,0.176,banany,0.389,0.061,0.347,0.891
+91,mleko,0.434,makaron pełnoziarnisty,0.183,0.071,0.164,0.894
+92,ryż brązowy;mleko,0.181,banany,0.389,0.063,0.348,0.895
+93,jogurt naturalny;ogórki,0.162,jabłka,0.407,0.059,0.364,0.895
+94,jogurt naturalny;ogórki,0.162,mleko,0.434,0.063,0.389,0.896
+95,ogórki;mleko,0.162,jogurt naturalny,0.434,0.063,0.389,0.896
+96,jajka;jogurt naturalny,0.180,mleko,0.434,0.070,0.389,0.896
+97,ser żółty;jogurt naturalny,0.175,banany,0.389,0.061,0.349,0.896
+98,ziemniaki;ser żółty,0.159,chleb pełnoziarnisty,0.414,0.059,0.371,0.896
+99,chleb pełnoziarnisty;jogurt naturalny,0.169,banany,0.389,0.059,0.349,0.897
+100,jabłka;ryż brązowy,0.175,jajka,0.432,0.068,0.389,0.899
+101,ryż brązowy;ogórki,0.169,jogurt naturalny,0.434,0.066,0.391,0.900
+102,ziemniaki;jajka,0.177,banany,0.389,0.062,0.350,0.900
+103,ryż brązowy;jogurt naturalny,0.172,jajka,0.432,0.067,0.390,0.902
+104,ziemniaki;jajka,0.177,jabłka,0.407,0.065,0.367,0.902
+105,jajka;ryż brązowy,0.171,jogurt naturalny,0.434,0.067,0.392,0.903
+106,ziemniaki,0.401,oliwa z oliwek,0.196,0.071,0.177,0.903
+107,jajka;jogurt naturalny,0.180,ryż brązowy,0.412,0.067,0.372,0.903
+108,ziemniaki;ogórki,0.153,mleko,0.434,0.060,0.392,0.904
+109,ser żółty;banany,0.163,chleb pełnoziarnisty,0.414,0.061,0.374,0.904
+110,ser żółty;ryż brązowy,0.171,ziemniaki,0.401,0.062,0.363,0.904
+111,chleb pełnoziarnisty;ogórki,0.163,mleko,0.434,0.064,0.393,0.905
+112,ser żółty;chleb pełnoziarnisty,0.160,jabłka,0.407,0.059,0.369,0.906
+113,jabłka;ogórki,0.150,jogurt naturalny,0.434,0.059,0.393,0.906
+114,ser żółty;jajka,0.176,ziemniaki,0.401,0.064,0.364,0.907
+115,ser żółty;banany,0.163,ryż brązowy,0.412,0.061,0.374,0.908
+116,jabłka;ryż brązowy,0.175,jogurt naturalny,0.434,0.069,0.394,0.908
+117,jajka;chleb pełnoziarnisty,0.180,mleko,0.434,0.071,0.394,0.909
+118,ser żółty;mleko,0.194,chleb pełnoziarnisty,0.414,0.073,0.376,0.909
+119,ser żółty;jogurt naturalny,0.175,ogórki,0.396,0.063,0.360,0.909
+120,jabłka;ryż brązowy,0.175,banany,0.389,0.062,0.354,0.911
+121,jogurt naturalny,0.434,kurczak,0.192,0.076,0.175,0.912
+122,chleb pełnoziarnisty;mleko,0.177,ogórki,0.396,0.064,0.362,0.913
+123,jogurt naturalny;banany,0.156,jabłka,0.407,0.058,0.372,0.914
+124,ogórki;banany,0.156,chleb pełnoziarnisty,0.414,0.059,0.378,0.914
+125,jogurt naturalny;banany,0.156,chleb pełnoziarnisty,0.414,0.059,0.378,0.914
+126,ogórki;banany,0.156,jogurt naturalny,0.434,0.062,0.397,0.916
+127,ogórki;banany,0.156,mleko,0.434,0.062,0.397,0.916
+128,ziemniaki;jabłka,0.160,banany,0.389,0.057,0.356,0.916
+129,ser żółty;jajka,0.176,mleko,0.434,0.070,0.398,0.916
+130,ser żółty;ryż brązowy,0.171,banany,0.389,0.061,0.357,0.917
+131,chleb pełnoziarnisty;ogórki,0.163,ziemniaki,0.401,0.060,0.368,0.918
+132,ser żółty;jajka,0.176,ogórki,0.396,0.064,0.364,0.918
+133,chleb pełnoziarnisty;ogórki,0.163,jogurt naturalny,0.434,0.065,0.399,0.919
+134,ser żółty;chleb pełnoziarnisty,0.160,ziemniaki,0.401,0.059,0.369,0.920
+135,ryż brązowy;mleko,0.181,jajka,0.432,0.072,0.398,0.921
+136,ser żółty;jajka,0.176,jabłka,0.407,0.066,0.375,0.921
+137,jabłka;ryż brązowy,0.175,mleko,0.434,0.070,0.400,0.922
+138,banany;mleko,0.165,ziemniaki,0.401,0.061,0.370,0.922
+139,ziemniaki;ryż brązowy,0.156,banany,0.389,0.056,0.359,0.923
+140,ogórki;mleko,0.162,ziemniaki,0.401,0.060,0.370,0.924
+141,chleb pełnoziarnisty;banany,0.158,ser żółty,0.418,0.061,0.386,0.924
+142,ziemniaki;chleb pełnoziarnisty,0.164,ogórki,0.396,0.060,0.366,0.924
+143,chleb pełnoziarnisty,0.414,makaron pełnoziarnisty,0.183,0.070,0.169,0.924
+144,ziemniaki;chleb pełnoziarnisty,0.164,banany,0.389,0.059,0.360,0.925
+145,jajka;chleb pełnoziarnisty,0.180,ogórki,0.396,0.066,0.367,0.926
+146,banany;mleko,0.165,ryż brązowy,0.412,0.063,0.382,0.927
+147,ziemniaki;chleb pełnoziarnisty,0.164,jogurt naturalny,0.434,0.066,0.402,0.927
+148,jabłka;jogurt naturalny,0.177,jajka,0.432,0.071,0.401,0.929
+149,chleb pełnoziarnisty;mleko,0.177,jajka,0.432,0.071,0.401,0.929
+150,ryż brązowy;chleb pełnoziarnisty,0.176,jogurt naturalny,0.434,0.071,0.403,0.930
+151,jabłka;ryż brązowy,0.175,ser żółty,0.418,0.068,0.389,0.930
+152,ser żółty;ryż brązowy,0.171,jogurt naturalny,0.434,0.069,0.404,0.930
+153,jogurt naturalny;ogórki,0.162,ser żółty,0.418,0.063,0.389,0.930
+154,chleb pełnoziarnisty;ogórki,0.163,banany,0.389,0.059,0.362,0.930
+155,jogurt naturalny;banany,0.156,mleko,0.434,0.063,0.404,0.931
+156,ziemniaki;ryż brązowy,0.156,mleko,0.434,0.063,0.404,0.931
+157,ziemniaki;banany,0.146,ryż brązowy,0.412,0.056,0.384,0.931
+158,chleb pełnoziarnisty;banany,0.158,ziemniaki,0.401,0.059,0.373,0.931
+159,ziemniaki;ser żółty,0.159,jajka,0.432,0.064,0.403,0.932
+160,jogurt naturalny;banany,0.156,ser żółty,0.418,0.061,0.391,0.935
+161,jabłka;banany,0.160,mleko,0.434,0.065,0.406,0.936
+162,chleb pełnoziarnisty;banany,0.158,ryż brązowy,0.412,0.061,0.386,0.937
+163,ryż brązowy;banany,0.149,ziemniaki,0.401,0.056,0.376,0.937
+164,chleb pełnoziarnisty;ogórki,0.163,jajka,0.432,0.066,0.405,0.937
+165,jabłka;ser żółty,0.163,jajka,0.432,0.066,0.405,0.937
+166,ziemniaki;ogórki,0.153,jajka,0.432,0.062,0.405,0.938
+167,ziemniaki;jabłka,0.160,jajka,0.432,0.065,0.406,0.940
+168,ziemniaki;jabłka,0.160,ryż brązowy,0.412,0.062,0.388,0.941
+169,jabłka;banany,0.160,ryż brązowy,0.412,0.062,0.388,0.941
+170,chleb pełnoziarnisty;banany,0.158,ogórki,0.396,0.059,0.373,0.943
+171,jajka;mleko,0.171,jogurt naturalny,0.434,0.070,0.409,0.943
+172,jabłka;jajka,0.167,ser żółty,0.418,0.066,0.395,0.945
+173,jabłka;jogurt naturalny,0.177,ser żółty,0.418,0.070,0.395,0.946
+174,jabłka;jogurt naturalny,0.177,ryż brązowy,0.412,0.069,0.390,0.946
+175,ziemniaki;ser żółty,0.159,ryż brązowy,0.412,0.062,0.390,0.946
+176,ziemniaki;ogórki,0.153,chleb pełnoziarnisty,0.414,0.060,0.392,0.947
+177,banany;mleko,0.165,ogórki,0.396,0.062,0.376,0.949
+178,ogórki;banany,0.156,jajka,0.432,0.064,0.410,0.950
+179,ziemniaki,0.401,płatki owsiane,0.210,0.080,0.200,0.950
+180,ser żółty;mleko,0.194,jogurt naturalny,0.434,0.080,0.412,0.950
+181,ryż brązowy;mleko,0.181,jabłka,0.407,0.070,0.387,0.950
+182,ziemniaki;ryż brązowy,0.156,ser żółty,0.418,0.062,0.397,0.951
+183,ser żółty;mleko,0.194,ryż brązowy,0.412,0.076,0.392,0.951
+184,jabłka;banany,0.160,chleb pełnoziarnisty,0.414,0.063,0.394,0.951
+185,ziemniaki,0.401,pomidory,0.196,0.075,0.187,0.954
+186,ogórki;mleko,0.162,chleb pełnoziarnisty,0.414,0.064,0.395,0.954
+187,ryż brązowy;mleko,0.181,jogurt naturalny,0.434,0.075,0.414,0.955
+188,chleb pełnoziarnisty,0.414,kurczak,0.192,0.076,0.184,0.956
+189,jajka;chleb pełnoziarnisty,0.180,banany,0.389,0.067,0.372,0.957
+190,jajka;chleb pełnoziarnisty,0.180,ser żółty,0.418,0.072,0.400,0.957
+191,ser żółty;jogurt naturalny,0.175,ryż brązowy,0.412,0.069,0.394,0.957
+192,ser żółty;ogórki,0.172,jabłka,0.407,0.067,0.390,0.957
+193,ziemniaki;banany,0.146,jabłka,0.407,0.057,0.390,0.959
+194,jabłka,0.407,płatki owsiane,0.210,0.082,0.201,0.959
+195,ryż brązowy;jogurt naturalny,0.172,ser żółty,0.418,0.069,0.401,0.960
+196,jajka;ryż brązowy,0.171,ogórki,0.396,0.065,0.380,0.960
+197,ziemniaki;banany,0.146,mleko,0.434,0.061,0.418,0.963
+198,ziemniaki;jabłka,0.160,ogórki,0.396,0.061,0.381,0.963
+199,chleb pełnoziarnisty;mleko,0.177,jogurt naturalny,0.434,0.074,0.418,0.963
+200,ryż brązowy;chleb pełnoziarnisty,0.176,ziemniaki,0.401,0.068,0.386,0.964
+201,jajka,0.432,kurczak,0.192,0.080,0.185,0.965
+202,ryż brązowy;chleb pełnoziarnisty,0.176,ser żółty,0.418,0.071,0.403,0.965
+203,ser żółty;banany,0.163,jajka,0.432,0.068,0.417,0.966
+204,ogórki,0.396,makaron pełnoziarnisty,0.183,0.070,0.177,0.966
+205,ziemniaki;jogurt naturalny,0.165,chleb pełnoziarnisty,0.414,0.066,0.400,0.966
+206,ser żółty;mleko,0.194,banany,0.389,0.073,0.376,0.967
+207,banany;mleko,0.165,jabłka,0.407,0.065,0.394,0.968
+208,ser żółty;ogórki,0.172,chleb pełnoziarnisty,0.414,0.069,0.401,0.969
+209,ryż brązowy;jogurt naturalny,0.172,ogórki,0.396,0.066,0.384,0.969
+210,jajka;jogurt naturalny,0.180,jabłka,0.407,0.071,0.394,0.969
+211,jogurt naturalny;ogórki,0.162,chleb pełnoziarnisty,0.414,0.065,0.401,0.969
+212,jajka;ryż brązowy,0.171,mleko,0.434,0.072,0.421,0.970
+213,jabłka;jajka,0.167,ziemniaki,0.401,0.065,0.389,0.971
+214,ziemniaki;mleko,0.178,jogurt naturalny,0.434,0.075,0.421,0.971
+215,jabłka;ogórki,0.150,ryż brązowy,0.412,0.060,0.400,0.971
+216,chleb pełnoziarnisty;jogurt naturalny,0.169,ogórki,0.396,0.065,0.385,0.971
+217,ser żółty;ogórki,0.172,ziemniaki,0.401,0.067,0.390,0.971
+218,jogurt naturalny;mleko,0.184,chleb pełnoziarnisty,0.414,0.074,0.402,0.971
+219,ziemniaki;jabłka,0.160,ser żółty,0.418,0.065,0.406,0.972
+220,ziemniaki;jajka,0.177,ryż brązowy,0.412,0.071,0.401,0.974
+221,chleb pełnoziarnisty;jogurt naturalny,0.169,ziemniaki,0.401,0.066,0.391,0.974
+222,ryż brązowy;banany,0.149,mleko,0.434,0.063,0.423,0.974
+223,ziemniaki;banany,0.146,chleb pełnoziarnisty,0.414,0.059,0.404,0.976
+224,ziemniaki;ryż brązowy,0.156,jabłka,0.407,0.062,0.397,0.977
+225,jajka;ryż brązowy,0.171,jabłka,0.407,0.068,0.398,0.977
+226,ser żółty;ryż brązowy,0.171,jabłka,0.407,0.068,0.398,0.977
+227,jajka;mleko,0.171,ser żółty,0.418,0.070,0.409,0.979
+228,ryż brązowy;banany,0.149,ser żółty,0.418,0.061,0.409,0.979
+229,ziemniaki;ogórki,0.153,jabłka,0.407,0.061,0.399,0.980
+230,jabłka;jajka,0.167,jogurt naturalny,0.434,0.071,0.425,0.980
+231,chleb pełnoziarnisty;banany,0.158,jabłka,0.407,0.063,0.399,0.980
+232,ser żółty;chleb pełnoziarnisty,0.160,banany,0.389,0.061,0.381,0.980
+233,chleb pełnoziarnisty;banany,0.158,jajka,0.432,0.067,0.424,0.982
+234,ser żółty;jogurt naturalny,0.175,jabłka,0.407,0.070,0.400,0.983
+235,jabłka;mleko,0.170,banany,0.389,0.065,0.382,0.983
+236,ziemniaki;banany,0.146,jajka,0.432,0.062,0.425,0.983
+237,jogurt naturalny;ogórki,0.162,banany,0.389,0.062,0.383,0.984
+238,ogórki;mleko,0.162,banany,0.389,0.062,0.383,0.984
+239,jajka;banany,0.157,ziemniaki,0.401,0.062,0.395,0.985
+240,ryż brązowy;jogurt naturalny,0.172,jabłka,0.407,0.069,0.401,0.986
+241,jabłka;jogurt naturalny,0.177,ziemniaki,0.401,0.070,0.395,0.986
+242,ryż brązowy;chleb pełnoziarnisty,0.176,jajka,0.432,0.075,0.426,0.986
+243,chleb pełnoziarnisty;mleko,0.177,ser żółty,0.418,0.073,0.412,0.987
+244,jajka;ogórki,0.155,ser żółty,0.418,0.064,0.413,0.988
+245,ser żółty;mleko,0.194,jabłka,0.407,0.078,0.402,0.988
+246,ser żółty;jajka,0.176,chleb pełnoziarnisty,0.414,0.072,0.409,0.988
+247,jabłka;jajka,0.167,ryż brązowy,0.412,0.068,0.407,0.988
+248,jogurt naturalny;ogórki,0.162,ryż brązowy,0.412,0.066,0.407,0.989
+249,ryż brązowy;banany,0.149,chleb pełnoziarnisty,0.414,0.061,0.409,0.989
+250,ser żółty;mleko,0.194,ogórki,0.396,0.076,0.392,0.989
+251,jogurt naturalny;mleko,0.184,ryż brązowy,0.412,0.075,0.408,0.989
+252,ziemniaki;jajka,0.177,jogurt naturalny,0.434,0.076,0.429,0.989
+253,jabłka;ser żółty,0.163,jogurt naturalny,0.434,0.070,0.429,0.990
+254,ziemniaki;mleko,0.178,chleb pełnoziarnisty,0.414,0.073,0.410,0.991
+255,ogórki;banany,0.156,ziemniaki,0.401,0.062,0.397,0.991
+256,jajka;ryż brązowy,0.171,banany,0.389,0.066,0.386,0.992
+257,ser żółty;jajka,0.176,banany,0.389,0.068,0.386,0.993
+258,ser żółty;banany,0.163,ziemniaki,0.401,0.065,0.399,0.994
+259,jabłka;ser żółty,0.163,ziemniaki,0.401,0.065,0.399,0.994
+260,ryż brązowy;jogurt naturalny,0.172,chleb pełnoziarnisty,0.414,0.071,0.413,0.997
+261,jajka;ogórki,0.155,ziemniaki,0.401,0.062,0.400,0.998
+262,jabłka;mleko,0.170,ryż brązowy,0.412,0.070,0.412,0.999
+263,jabłka;chleb pełnoziarnisty,0.162,banany,0.389,0.063,0.389,1.000
+264,jabłka;banany,0.160,ser żółty,0.418,0.067,0.419,1.002
+265,jajka;mleko,0.171,chleb pełnoziarnisty,0.414,0.071,0.415,1.003
+266,ser żółty;ryż brązowy,0.171,chleb pełnoziarnisty,0.414,0.071,0.415,1.003
+267,jogurt naturalny;banany,0.156,ogórki,0.396,0.062,0.397,1.004
+268,ziemniaki;chleb pełnoziarnisty,0.164,jabłka,0.407,0.067,0.409,1.004
+269,ziemniaki;ser żółty,0.159,jabłka,0.407,0.065,0.409,1.004
+270,ryż brązowy;mleko,0.181,ser żółty,0.418,0.076,0.420,1.005
+271,ryż brązowy;jogurt naturalny,0.172,mleko,0.434,0.075,0.436,1.005
+272,ziemniaki;chleb pełnoziarnisty,0.164,ryż brązowy,0.412,0.068,0.415,1.006
+273,ser żółty;jajka,0.176,jogurt naturalny,0.434,0.077,0.438,1.008
+274,ziemniaki;jabłka,0.160,jogurt naturalny,0.434,0.070,0.438,1.008
+275,ryż brązowy;ogórki,0.169,mleko,0.434,0.074,0.438,1.009
+276,chleb pełnoziarnisty;jogurt naturalny,0.169,mleko,0.434,0.074,0.438,1.009
+277,jabłka;jogurt naturalny,0.177,chleb pełnoziarnisty,0.414,0.074,0.418,1.010
+278,ziemniaki;jajka,0.177,chleb pełnoziarnisty,0.414,0.074,0.418,1.010
+279,ser żółty;banany,0.163,jabłka,0.407,0.067,0.411,1.010
+280,jajka;chleb pełnoziarnisty,0.180,ryż brązowy,0.412,0.075,0.417,1.011
+281,ziemniaki;jabłka,0.160,chleb pełnoziarnisty,0.414,0.067,0.419,1.011
+282,jabłka;ser żółty,0.163,ryż brązowy,0.412,0.068,0.417,1.013
+283,chleb pełnoziarnisty;ogórki,0.163,ser żółty,0.418,0.069,0.423,1.013
+284,jabłka;ogórki,0.150,ziemniaki,0.401,0.061,0.407,1.014
+285,jogurt naturalny;mleko,0.184,ziemniaki,0.401,0.075,0.408,1.016
+286,chleb pełnoziarnisty;mleko,0.177,banany,0.389,0.070,0.395,1.017
+287,jajka;ogórki,0.155,ryż brązowy,0.412,0.065,0.419,1.018
+288,ser żółty;ogórki,0.172,mleko,0.434,0.076,0.442,1.018
+289,ser żółty;jogurt naturalny,0.175,jajka,0.432,0.077,0.440,1.019
+290,chleb pełnoziarnisty;jogurt naturalny,0.169,ryż brązowy,0.412,0.071,0.420,1.020
+291,jajka;banany,0.157,ryż brązowy,0.412,0.066,0.420,1.020
+292,chleb pełnoziarnisty;banany,0.158,mleko,0.434,0.070,0.443,1.021
+293,ryż brązowy;chleb pełnoziarnisty,0.176,mleko,0.434,0.078,0.443,1.021
+294,jajka;mleko,0.171,ryż brązowy,0.412,0.072,0.421,1.022
+295,ryż brązowy;banany,0.149,jabłka,0.407,0.062,0.416,1.022
+296,jajka;jogurt naturalny,0.180,ser żółty,0.418,0.077,0.428,1.023
+297,ogórki;banany,0.156,jabłka,0.407,0.065,0.417,1.024
+298,ser żółty;ryż brązowy,0.171,mleko,0.434,0.076,0.444,1.024
+299,banany;mleko,0.165,chleb pełnoziarnisty,0.414,0.070,0.424,1.025
+300,jajka;chleb pełnoziarnisty,0.180,ziemniaki,0.401,0.074,0.411,1.025
+301,ryż brązowy;banany,0.149,jajka,0.432,0.066,0.443,1.025
+302,ziemniaki;chleb pełnoziarnisty,0.164,mleko,0.434,0.073,0.445,1.026
+303,jabłka;banany,0.160,ogórki,0.396,0.065,0.406,1.026
+304,jabłka;jogurt naturalny,0.177,mleko,0.434,0.079,0.446,1.028
+305,chleb pełnoziarnisty;mleko,0.177,ziemniaki,0.401,0.073,0.412,1.029
+306,jajka;ogórki,0.155,chleb pełnoziarnisty,0.414,0.066,0.426,1.029
+307,ser żółty;ryż brązowy,0.171,jajka,0.432,0.076,0.444,1.029
+308,jajka;banany,0.157,ogórki,0.396,0.064,0.408,1.029
+309,jajka;banany,0.157,chleb pełnoziarnisty,0.414,0.067,0.427,1.031
+310,jabłka;chleb pełnoziarnisty,0.162,ziemniaki,0.401,0.067,0.414,1.031
+311,ser żółty;banany,0.163,mleko,0.434,0.073,0.448,1.032
+312,ryż brązowy;mleko,0.181,ogórki,0.396,0.074,0.409,1.032
+313,ryż brązowy;ogórki,0.169,banany,0.389,0.068,0.402,1.034
+314,jajka;ryż brązowy,0.171,ziemniaki,0.401,0.071,0.415,1.035
+315,jajka;banany,0.157,ser żółty,0.418,0.068,0.433,1.036
+316,jabłka;ser żółty,0.163,ogórki,0.396,0.067,0.411,1.038
+317,jogurt naturalny;mleko,0.184,ser żółty,0.418,0.080,0.435,1.040
+318,ryż brązowy;mleko,0.181,chleb pełnoziarnisty,0.414,0.078,0.431,1.041
+319,chleb pełnoziarnisty;mleko,0.177,jabłka,0.407,0.075,0.424,1.041
+320,ser żółty;mleko,0.194,ziemniaki,0.401,0.081,0.418,1.041
+321,ser żółty;chleb pełnoziarnisty,0.160,jajka,0.432,0.072,0.450,1.042
+322,ziemniaki;ogórki,0.153,banany,0.389,0.062,0.405,1.042
+323,ziemniaki;jogurt naturalny,0.165,jabłka,0.407,0.070,0.424,1.042
+324,ryż brązowy;ogórki,0.169,chleb pełnoziarnisty,0.414,0.073,0.432,1.043
+325,ziemniaki;chleb pełnoziarnisty,0.164,jajka,0.432,0.074,0.451,1.044
+326,ziemniaki;jogurt naturalny,0.165,mleko,0.434,0.075,0.455,1.047
+327,ryż brązowy;chleb pełnoziarnisty,0.176,ogórki,0.396,0.073,0.415,1.047
+328,ziemniaki;ogórki,0.153,ser żółty,0.418,0.067,0.438,1.048
+329,ser żółty;jajka,0.176,ryż brązowy,0.412,0.076,0.432,1.048
+330,ziemniaki;ser żółty,0.159,banany,0.389,0.065,0.409,1.051
+331,ser żółty;chleb pełnoziarnisty,0.160,mleko,0.434,0.073,0.456,1.051
+332,jabłka;chleb pełnoziarnisty,0.162,jogurt naturalny,0.434,0.074,0.457,1.053
+333,ziemniaki;ryż brązowy,0.156,chleb pełnoziarnisty,0.414,0.068,0.436,1.053
+334,jajka;jogurt naturalny,0.180,ziemniaki,0.401,0.076,0.422,1.053
+335,ser żółty;jogurt naturalny,0.175,mleko,0.434,0.080,0.457,1.053
+336,ziemniaki;ryż brązowy,0.156,jajka,0.432,0.071,0.455,1.054
+337,jogurt naturalny;mleko,0.184,jabłka,0.407,0.079,0.429,1.055
+338,jabłka;ser żółty,0.163,banany,0.389,0.067,0.411,1.057
+339,ogórki;banany,0.156,ryż brązowy,0.412,0.068,0.436,1.058
+340,banany;mleko,0.165,ser żółty,0.418,0.073,0.442,1.058
+341,jajka;ryż brązowy,0.171,chleb pełnoziarnisty,0.414,0.075,0.439,1.059
+342,ser żółty;ogórki,0.172,banany,0.389,0.071,0.413,1.061
+343,jajka;ogórki,0.155,banany,0.389,0.064,0.413,1.061
+344,ziemniaki;mleko,0.178,jabłka,0.407,0.077,0.433,1.063
+345,jajka;ryż brązowy,0.171,ser żółty,0.418,0.076,0.444,1.063
+346,ziemniaki;ser żółty,0.159,ogórki,0.396,0.067,0.421,1.064
+347,ziemniaki;banany,0.146,ser żółty,0.418,0.065,0.445,1.065
+348,jabłka;mleko,0.170,chleb pełnoziarnisty,0.414,0.075,0.441,1.066
+349,ziemniaki;jogurt naturalny,0.165,jajka,0.432,0.076,0.461,1.066
+350,jabłka;chleb pełnoziarnisty,0.162,mleko,0.434,0.075,0.463,1.067
+351,jabłka;ogórki,0.150,ser żółty,0.418,0.067,0.447,1.069
+352,chleb pełnoziarnisty;mleko,0.177,ryż brązowy,0.412,0.078,0.441,1.070
+353,jabłka;mleko,0.170,jogurt naturalny,0.434,0.079,0.465,1.071
+354,ziemniaki;banany,0.146,ogórki,0.396,0.062,0.425,1.072
+355,chleb pełnoziarnisty;jogurt naturalny,0.169,jabłka,0.407,0.074,0.438,1.076
+356,ser żółty;chleb pełnoziarnisty,0.160,ryż brązowy,0.412,0.071,0.444,1.077
+357,chleb pełnoziarnisty;ogórki,0.163,ryż brązowy,0.412,0.073,0.448,1.087
+358,ziemniaki;mleko,0.178,ser żółty,0.418,0.081,0.455,1.089
+359,ogórki;banany,0.156,ser żółty,0.418,0.071,0.455,1.089
+360,ser żółty;chleb pełnoziarnisty,0.160,ogórki,0.396,0.069,0.431,1.089
+361,jabłka;ryż brązowy,0.175,chleb pełnoziarnisty,0.414,0.079,0.451,1.090
+362,ryż brązowy;ogórki,0.169,ziemniaki,0.401,0.074,0.438,1.092
+363,ziemniaki;mleko,0.178,jajka,0.432,0.084,0.472,1.092
+364,ziemniaki;jajka,0.177,mleko,0.434,0.084,0.475,1.093
+365,jabłka;mleko,0.170,ser żółty,0.418,0.078,0.459,1.098
+366,ser żółty;banany,0.163,ogórki,0.396,0.071,0.436,1.100
+367,jabłka;ser żółty,0.163,mleko,0.434,0.078,0.479,1.103
+368,ryż brązowy;chleb pełnoziarnisty,0.176,jabłka,0.407,0.079,0.449,1.103
+369,ogórki;mleko,0.162,ryż brązowy,0.412,0.074,0.457,1.109
+370,ziemniaki;jabłka,0.160,mleko,0.434,0.077,0.481,1.109
+371,jabłka;ogórki,0.150,banany,0.389,0.065,0.433,1.114
+372,ser żółty;ogórki,0.172,ryż brązowy,0.412,0.079,0.459,1.115
+373,ryż brązowy;ogórki,0.169,ser żółty,0.418,0.079,0.467,1.118
+374,ogórki;mleko,0.162,ser żółty,0.418,0.076,0.469,1.122
+375,jabłka;mleko,0.170,ziemniaki,0.401,0.077,0.453,1.130
+376,ryż brązowy;banany,0.149,ogórki,0.396,0.068,0.456,1.152
+377,ser żółty;ryż brązowy,0.171,ogórki,0.396,0.079,0.462,1.167
+378,ziemniaki;ser żółty,0.159,mleko,0.434,0.081,0.509,1.174
+379,ziemniaki;ogórki,0.153,ryż brązowy,0.412,0.074,0.484,1.174
+380,jabłka;chleb pełnoziarnisty,0.162,ryż brązowy,0.412,0.079,0.488,1.184
+381,ziemniaki;ryż brązowy,0.156,ogórki,0.396,0.074,0.474,1.198
+382,jajka;mleko,0.171,ziemniaki,0.401,0.084,0.491,1.225
