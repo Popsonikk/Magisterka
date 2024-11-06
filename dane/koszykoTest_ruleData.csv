@@ -1,0 +1,1369 @@
+id,left_pattern,left_support,right_pattern,right_support,support,confidence,lift
+0,pomidory;płatki owsiane,0.045,kurczak,0.192,0.014,0.311,1.620
+1,pomidory;chleb pełnoziarnisty,0.076,kurczak,0.192,0.023,0.303,1.576
+2,ogórki;kurczak,0.065,pomidory,0.196,0.020,0.308,1.570
+3,płatki owsiane;kurczak,0.046,pomidory,0.196,0.014,0.304,1.553
+4,chleb pełnoziarnisty;kurczak,0.076,pomidory,0.196,0.023,0.303,1.544
+5,pomidory;ogórki,0.068,kurczak,0.192,0.020,0.294,1.532
+6,mleko;kurczak,0.068,oliwa z oliwek,0.196,0.020,0.294,1.501
+7,ogórki;kurczak,0.065,makaron pełnoziarnisty,0.183,0.017,0.262,1.429
+8,mleko;kurczak,0.068,pomidory,0.196,0.019,0.279,1.426
+9,płatki owsiane;chleb pełnoziarnisty,0.073,makaron pełnoziarnisty,0.183,0.019,0.260,1.422
+10,oliwa z oliwek;jabłka,0.066,kurczak,0.192,0.018,0.273,1.420
+11,chleb pełnoziarnisty;makaron pełnoziarnisty,0.070,kurczak,0.192,0.019,0.271,1.414
+12,pomidory;jogurt naturalny,0.074,kurczak,0.192,0.020,0.270,1.408
+13,jajka;makaron pełnoziarnisty,0.067,kurczak,0.192,0.018,0.269,1.399
+14,płatki owsiane;chleb pełnoziarnisty,0.073,oliwa z oliwek,0.196,0.020,0.274,1.398
+15,oliwa z oliwek;jajka,0.071,kurczak,0.192,0.019,0.268,1.394
+16,jabłka;kurczak,0.066,oliwa z oliwek,0.196,0.018,0.273,1.391
+17,oliwa z oliwek;mleko,0.075,kurczak,0.192,0.020,0.267,1.389
+18,chleb pełnoziarnisty;kurczak,0.076,makaron pełnoziarnisty,0.183,0.019,0.250,1.366
+19,pomidory;kurczak,0.049,płatki owsiane,0.210,0.014,0.286,1.361
+20,jogurt naturalny;kurczak,0.076,pomidory,0.196,0.020,0.263,1.343
+21,jogurt naturalny;kurczak,0.076,oliwa z oliwek,0.196,0.020,0.263,1.343
+22,jogurt naturalny;makaron pełnoziarnisty,0.057,pomidory,0.196,0.015,0.263,1.343
+23,pomidory;jajka,0.070,makaron pełnoziarnisty,0.183,0.017,0.243,1.327
+24,oliwa z oliwek;makaron pełnoziarnisty,0.036,płatki owsiane,0.210,0.010,0.278,1.323
+25,pomidory;ryż brązowy,0.063,makaron pełnoziarnisty,0.183,0.015,0.238,1.301
+26,oliwa z oliwek;ogórki,0.063,makaron pełnoziarnisty,0.183,0.015,0.238,1.301
+27,oliwa z oliwek;jabłka,0.066,płatki owsiane,0.210,0.018,0.273,1.299
+28,jajka;makaron pełnoziarnisty,0.067,pomidory,0.196,0.017,0.254,1.295
+29,chleb pełnoziarnisty;makaron pełnoziarnisty,0.070,płatki owsiane,0.210,0.019,0.271,1.293
+30,jogurt naturalny;makaron pełnoziarnisty,0.057,kurczak,0.192,0.014,0.246,1.279
+31,oliwa z oliwek;chleb pełnoziarnisty,0.075,płatki owsiane,0.210,0.020,0.267,1.270
+32,ogórki;makaron pełnoziarnisty,0.070,kurczak,0.192,0.017,0.243,1.265
+33,oliwa z oliwek,0.196,kurczak,0.192,0.047,0.240,1.249
+34,oliwa z oliwek;ogórki,0.063,kurczak,0.192,0.015,0.238,1.240
+35,ziemniaki;makaron pełnoziarnisty,0.062,pomidory,0.196,0.015,0.242,1.234
+36,jajka;kurczak,0.080,makaron pełnoziarnisty,0.183,0.018,0.225,1.230
+37,ziemniaki;makaron pełnoziarnisty,0.062,płatki owsiane,0.210,0.016,0.258,1.229
+38,płatki owsiane;jogurt naturalny,0.079,pomidory,0.196,0.019,0.241,1.227
+39,oliwa z oliwek;jogurt naturalny,0.085,kurczak,0.192,0.020,0.235,1.225
+40,jajka;mleko,0.171,ziemniaki,0.401,0.084,0.491,1.225
+41,pomidory;jogurt naturalny,0.074,płatki owsiane,0.210,0.019,0.257,1.223
+42,ziemniaki;oliwa z oliwek,0.071,pomidory,0.196,0.017,0.239,1.222
+43,mleko;makaron pełnoziarnisty,0.071,pomidory,0.196,0.017,0.239,1.222
+44,oliwa z oliwek;płatki owsiane,0.045,makaron pełnoziarnisty,0.183,0.010,0.222,1.214
+45,pomidory;płatki owsiane,0.045,makaron pełnoziarnisty,0.183,0.010,0.222,1.214
+46,jajka;kurczak,0.080,oliwa z oliwek,0.196,0.019,0.238,1.212
+47,ziemniaki;płatki owsiane,0.080,pomidory,0.196,0.019,0.238,1.212
+48,ziemniaki;oliwa z oliwek,0.071,płatki owsiane,0.210,0.018,0.254,1.207
+49,pomidory;mleko,0.082,kurczak,0.192,0.019,0.232,1.207
+50,ziemniaki;pomidory,0.075,płatki owsiane,0.210,0.019,0.253,1.206
+51,pomidory;ogórki,0.068,makaron pełnoziarnisty,0.183,0.015,0.221,1.205
+52,ziemniaki;ryż brązowy,0.156,ogórki,0.396,0.074,0.474,1.198
+53,płatki owsiane,0.210,makaron pełnoziarnisty,0.183,0.046,0.219,1.197
+54,ogórki;kurczak,0.065,chleb pełnoziarnisty,0.414,0.032,0.492,1.189
+55,ryż brązowy;kurczak,0.060,makaron pełnoziarnisty,0.183,0.013,0.217,1.184
+56,pomidory;banany,0.066,kurczak,0.192,0.015,0.227,1.184
+57,jabłka;chleb pełnoziarnisty,0.162,ryż brązowy,0.412,0.079,0.488,1.184
+58,ser żółty;płatki owsiane,0.078,oliwa z oliwek,0.196,0.018,0.231,1.177
+59,ziemniaki;kurczak,0.065,pomidory,0.196,0.015,0.231,1.177
+60,ogórki;kurczak,0.065,oliwa z oliwek,0.196,0.015,0.231,1.177
+61,ziemniaki;ogórki,0.153,ryż brązowy,0.412,0.074,0.484,1.174
+62,ziemniaki;ser żółty,0.159,mleko,0.434,0.081,0.509,1.174
+63,pomidory,0.196,makaron pełnoziarnisty,0.183,0.042,0.214,1.171
+64,ser żółty;ryż brązowy,0.171,ogórki,0.396,0.079,0.462,1.167
+65,chleb pełnoziarnisty;makaron pełnoziarnisty,0.070,pomidory,0.196,0.016,0.229,1.166
+66,płatki owsiane;banany,0.067,kurczak,0.192,0.015,0.224,1.166
+67,jogurt naturalny;makaron pełnoziarnisty,0.057,oliwa z oliwek,0.196,0.013,0.228,1.164
+68,banany;makaron pełnoziarnisty,0.057,oliwa z oliwek,0.196,0.013,0.228,1.164
+69,banany;kurczak,0.066,pomidory,0.196,0.015,0.227,1.160
+70,banany;kurczak,0.066,oliwa z oliwek,0.196,0.015,0.227,1.160
+71,ziemniaki;pomidory,0.075,oliwa z oliwek,0.196,0.017,0.227,1.156
+72,oliwa z oliwek;chleb pełnoziarnisty,0.075,pomidory,0.196,0.017,0.227,1.156
+73,jabłka;makaron pełnoziarnisty,0.066,płatki owsiane,0.210,0.016,0.242,1.154
+74,jabłka;kurczak,0.066,płatki owsiane,0.210,0.016,0.242,1.154
+75,ryż brązowy;banany,0.149,ogórki,0.396,0.068,0.456,1.152
+76,pomidory;chleb pełnoziarnisty,0.076,makaron pełnoziarnisty,0.183,0.016,0.211,1.150
+77,ziemniaki;płatki owsiane,0.080,oliwa z oliwek,0.196,0.018,0.225,1.148
+78,kurczak;makaron pełnoziarnisty,0.040,chleb pełnoziarnisty,0.414,0.019,0.475,1.147
+79,oliwa z oliwek;ser żółty,0.075,płatki owsiane,0.210,0.018,0.240,1.143
+80,płatki owsiane;banany,0.067,pomidory,0.196,0.015,0.224,1.142
+81,płatki owsiane;banany,0.067,oliwa z oliwek,0.196,0.015,0.224,1.142
+82,ryż brązowy;makaron pełnoziarnisty,0.067,pomidory,0.196,0.015,0.224,1.142
+83,pomidory;chleb pełnoziarnisty,0.076,oliwa z oliwek,0.196,0.017,0.224,1.141
+84,płatki owsiane,0.210,kurczak,0.192,0.046,0.219,1.141
+85,kurczak,0.192,makaron pełnoziarnisty,0.183,0.040,0.208,1.138
+86,oliwa z oliwek;pomidory,0.042,płatki owsiane,0.210,0.010,0.238,1.134
+87,oliwa z oliwek;płatki owsiane,0.045,pomidory,0.196,0.010,0.222,1.134
+88,pomidory;płatki owsiane,0.045,oliwa z oliwek,0.196,0.010,0.222,1.134
+89,pomidory;ryż brązowy,0.063,mleko,0.434,0.031,0.492,1.134
+90,pomidory;kurczak,0.049,chleb pełnoziarnisty,0.414,0.023,0.469,1.134
+91,pomidory;makaron pełnoziarnisty,0.042,płatki owsiane,0.210,0.010,0.238,1.134
+92,pomidory;mleko,0.082,makaron pełnoziarnisty,0.183,0.017,0.207,1.133
+93,oliwa z oliwek;banany,0.069,kurczak,0.192,0.015,0.217,1.132
+94,jabłka;mleko,0.170,ziemniaki,0.401,0.077,0.453,1.130
+95,ogórki;mleko,0.162,ser żółty,0.418,0.076,0.469,1.122
+96,płatki owsiane;jogurt naturalny,0.079,kurczak,0.192,0.017,0.215,1.121
+97,jabłka;płatki owsiane,0.082,oliwa z oliwek,0.196,0.018,0.220,1.120
+98,oliwa z oliwek;ryż brązowy,0.070,jogurt naturalny,0.434,0.034,0.486,1.119
+99,ryż brązowy;ogórki,0.169,ser żółty,0.418,0.079,0.467,1.118
+100,ser żółty;ogórki,0.172,ryż brązowy,0.412,0.079,0.459,1.115
+101,jabłka;ogórki,0.150,banany,0.389,0.065,0.433,1.114
+102,płatki owsiane;makaron pełnoziarnisty,0.046,oliwa z oliwek,0.196,0.010,0.217,1.109
+103,płatki owsiane;makaron pełnoziarnisty,0.046,pomidory,0.196,0.010,0.217,1.109
+104,ziemniaki;jabłka,0.160,mleko,0.434,0.077,0.481,1.109
+105,ogórki;mleko,0.162,ryż brązowy,0.412,0.074,0.457,1.109
+106,pomidory;jogurt naturalny,0.074,makaron pełnoziarnisty,0.183,0.015,0.203,1.108
+107,ryż brązowy;kurczak,0.060,oliwa z oliwek,0.196,0.013,0.217,1.105
+108,pomidory;jogurt naturalny,0.074,oliwa z oliwek,0.196,0.016,0.216,1.103
+109,ryż brązowy;chleb pełnoziarnisty,0.176,jabłka,0.407,0.079,0.449,1.103
+110,jabłka;ser żółty,0.163,mleko,0.434,0.078,0.479,1.103
+111,ser żółty;banany,0.163,ogórki,0.396,0.071,0.436,1.100
+112,pomidory;ser żółty,0.065,mleko,0.434,0.031,0.477,1.099
+113,jabłka;mleko,0.170,ser żółty,0.418,0.078,0.459,1.098
+114,ser żółty;makaron pełnoziarnisty,0.063,mleko,0.434,0.030,0.476,1.097
+115,ziemniaki;jajka,0.177,mleko,0.434,0.084,0.475,1.093
+116,oliwa z oliwek,0.196,pomidory,0.196,0.042,0.214,1.093
+117,pomidory,0.196,płatki owsiane,0.210,0.045,0.230,1.093
+118,oliwa z oliwek,0.196,płatki owsiane,0.210,0.045,0.230,1.093
+119,ogórki;makaron pełnoziarnisty,0.070,pomidory,0.196,0.015,0.214,1.093
+120,ogórki;makaron pełnoziarnisty,0.070,oliwa z oliwek,0.196,0.015,0.214,1.093
+121,ziemniaki;pomidory,0.075,makaron pełnoziarnisty,0.183,0.015,0.200,1.093
+122,ziemniaki;płatki owsiane,0.080,makaron pełnoziarnisty,0.183,0.016,0.200,1.093
+123,pomidory;ser żółty,0.065,makaron pełnoziarnisty,0.183,0.013,0.200,1.093
+124,ziemniaki;mleko,0.178,jajka,0.432,0.084,0.472,1.092
+125,ryż brązowy;ogórki,0.169,ziemniaki,0.401,0.074,0.438,1.092
+126,jabłka;ryż brązowy,0.175,chleb pełnoziarnisty,0.414,0.079,0.451,1.090
+127,pomidory;jogurt naturalny,0.074,mleko,0.434,0.035,0.473,1.090
+128,ser żółty;chleb pełnoziarnisty,0.160,ogórki,0.396,0.069,0.431,1.089
+129,ogórki;banany,0.156,ser żółty,0.418,0.071,0.455,1.089
+130,ziemniaki;mleko,0.178,ser żółty,0.418,0.081,0.455,1.089
+131,płatki owsiane;jogurt naturalny,0.079,jabłka,0.407,0.035,0.443,1.089
+132,chleb pełnoziarnisty;ogórki,0.163,ryż brązowy,0.412,0.073,0.448,1.087
+133,pomidory;jabłka,0.057,płatki owsiane,0.210,0.013,0.228,1.086
+134,banany;makaron pełnoziarnisty,0.057,płatki owsiane,0.210,0.013,0.228,1.086
+135,pomidory;banany,0.066,płatki owsiane,0.210,0.015,0.227,1.082
+136,banany;kurczak,0.066,płatki owsiane,0.210,0.015,0.227,1.082
+137,płatki owsiane;banany,0.067,chleb pełnoziarnisty,0.414,0.030,0.448,1.082
+138,ser żółty;chleb pełnoziarnisty,0.160,ryż brązowy,0.412,0.071,0.444,1.077
+139,chleb pełnoziarnisty;jogurt naturalny,0.169,jabłka,0.407,0.074,0.438,1.076
+140,pomidory;jabłka,0.057,oliwa z oliwek,0.196,0.012,0.211,1.074
+141,oliwa z oliwek;płatki owsiane,0.045,chleb pełnoziarnisty,0.414,0.020,0.444,1.074
+142,kurczak;makaron pełnoziarnisty,0.040,ogórki,0.396,0.017,0.425,1.073
+143,ziemniaki;banany,0.146,ogórki,0.396,0.062,0.425,1.072
+144,jabłka;mleko,0.170,jogurt naturalny,0.434,0.079,0.465,1.071
+145,płatki owsiane;chleb pełnoziarnisty,0.073,kurczak,0.192,0.015,0.205,1.070
+146,chleb pełnoziarnisty;mleko,0.177,ryż brązowy,0.412,0.078,0.441,1.070
+147,oliwa z oliwek;banany,0.069,jogurt naturalny,0.434,0.032,0.464,1.069
+148,jabłka;ogórki,0.150,ser żółty,0.418,0.067,0.447,1.069
+149,jabłka;chleb pełnoziarnisty,0.162,mleko,0.434,0.075,0.463,1.067
+150,jabłka;makaron pełnoziarnisty,0.066,ryż brązowy,0.412,0.029,0.439,1.066
+151,jabłka;płatki owsiane,0.082,makaron pełnoziarnisty,0.183,0.016,0.195,1.066
+152,ziemniaki;jogurt naturalny,0.165,jajka,0.432,0.076,0.461,1.066
+153,jajka;makaron pełnoziarnisty,0.067,płatki owsiane,0.210,0.015,0.224,1.066
+154,chleb pełnoziarnisty;kurczak,0.076,jajka,0.432,0.035,0.461,1.066
+155,jabłka;mleko,0.170,chleb pełnoziarnisty,0.414,0.075,0.441,1.066
+156,jogurt naturalny;kurczak,0.076,płatki owsiane,0.210,0.017,0.224,1.065
+157,ziemniaki;banany,0.146,ser żółty,0.418,0.065,0.445,1.065
+158,ziemniaki;ser żółty,0.159,ogórki,0.396,0.067,0.421,1.064
+159,ryż brązowy;makaron pełnoziarnisty,0.067,jabłka,0.407,0.029,0.433,1.063
+160,jajka;ryż brązowy,0.171,ser żółty,0.418,0.076,0.444,1.063
+161,chleb pełnoziarnisty;kurczak,0.076,ogórki,0.396,0.032,0.421,1.063
+162,ziemniaki;mleko,0.178,jabłka,0.407,0.077,0.433,1.063
+163,jajka;ogórki,0.155,banany,0.389,0.064,0.413,1.061
+164,ser żółty;ogórki,0.172,banany,0.389,0.071,0.413,1.061
+165,oliwa z oliwek;ogórki,0.063,jogurt naturalny,0.434,0.029,0.460,1.061
+166,płatki owsiane;banany,0.067,makaron pełnoziarnisty,0.183,0.013,0.194,1.060
+167,jajka;ryż brązowy,0.171,chleb pełnoziarnisty,0.414,0.075,0.439,1.059
+168,jogurt naturalny;makaron pełnoziarnisty,0.057,chleb pełnoziarnisty,0.414,0.025,0.439,1.059
+169,płatki owsiane;chleb pełnoziarnisty,0.073,ziemniaki,0.401,0.031,0.425,1.059
+170,banany;mleko,0.165,ser żółty,0.418,0.073,0.442,1.058
+171,oliwa z oliwek;ogórki,0.063,płatki owsiane,0.210,0.014,0.222,1.058
+172,ogórki;banany,0.156,ryż brązowy,0.412,0.068,0.436,1.058
+173,jajka;kurczak,0.080,chleb pełnoziarnisty,0.414,0.035,0.438,1.057
+174,jabłka;ser żółty,0.163,banany,0.389,0.067,0.411,1.057
+175,płatki owsiane;chleb pełnoziarnisty,0.073,banany,0.389,0.030,0.411,1.056
+176,jogurt naturalny;mleko,0.184,jabłka,0.407,0.079,0.429,1.055
+177,oliwa z oliwek;jajka,0.071,ziemniaki,0.401,0.030,0.423,1.054
+178,ziemniaki;ryż brązowy,0.156,jajka,0.432,0.071,0.455,1.054
+179,ser żółty;jogurt naturalny,0.175,mleko,0.434,0.080,0.457,1.053
+180,jajka;jogurt naturalny,0.180,ziemniaki,0.401,0.076,0.422,1.053
+181,pomidory;płatki owsiane,0.045,ziemniaki,0.401,0.019,0.422,1.053
+182,ziemniaki;ryż brązowy,0.156,chleb pełnoziarnisty,0.414,0.068,0.436,1.053
+183,ser żółty;makaron pełnoziarnisty,0.063,oliwa z oliwek,0.196,0.013,0.206,1.053
+184,ser żółty;makaron pełnoziarnisty,0.063,pomidory,0.196,0.013,0.206,1.053
+185,jabłka;chleb pełnoziarnisty,0.162,jogurt naturalny,0.434,0.074,0.457,1.053
+186,oliwa z oliwek;makaron pełnoziarnisty,0.036,ogórki,0.396,0.015,0.417,1.052
+187,oliwa z oliwek;jabłka,0.066,banany,0.389,0.027,0.409,1.052
+188,ser żółty;chleb pełnoziarnisty,0.160,mleko,0.434,0.073,0.456,1.051
+189,ziemniaki;ser żółty,0.159,banany,0.389,0.065,0.409,1.051
+190,pomidory;ogórki,0.068,płatki owsiane,0.210,0.015,0.221,1.050
+191,płatki owsiane;jogurt naturalny,0.079,mleko,0.434,0.036,0.456,1.050
+192,płatki owsiane;mleko,0.079,jogurt naturalny,0.434,0.036,0.456,1.050
+193,ser żółty;jajka,0.176,ryż brązowy,0.412,0.076,0.432,1.048
+194,ziemniaki;ogórki,0.153,ser żółty,0.418,0.067,0.438,1.048
+195,ryż brązowy;chleb pełnoziarnisty,0.176,ogórki,0.396,0.073,0.415,1.047
+196,ziemniaki;jogurt naturalny,0.165,mleko,0.434,0.075,0.455,1.047
+197,oliwa z oliwek;jabłka,0.066,jogurt naturalny,0.434,0.030,0.455,1.047
+198,jogurt naturalny;banany,0.156,oliwa z oliwek,0.196,0.032,0.205,1.047
+199,mleko;kurczak,0.068,makaron pełnoziarnisty,0.183,0.013,0.191,1.045
+200,ziemniaki;chleb pełnoziarnisty,0.164,jajka,0.432,0.074,0.451,1.044
+201,ryż brązowy;ogórki,0.169,chleb pełnoziarnisty,0.414,0.073,0.432,1.043
+202,ziemniaki;jogurt naturalny,0.165,jabłka,0.407,0.070,0.424,1.042
+203,ziemniaki;ogórki,0.153,banany,0.389,0.062,0.405,1.042
+204,ziemniaki;pomidory,0.075,kurczak,0.192,0.015,0.200,1.042
+205,kurczak;makaron pełnoziarnisty,0.040,jajka,0.432,0.018,0.450,1.042
+206,pomidory;jajka,0.070,kurczak,0.192,0.014,0.200,1.042
+207,ser żółty;chleb pełnoziarnisty,0.160,jajka,0.432,0.072,0.450,1.042
+208,ser żółty;mleko,0.194,ziemniaki,0.401,0.081,0.418,1.041
+209,chleb pełnoziarnisty;mleko,0.177,jabłka,0.407,0.075,0.424,1.041
+210,ryż brązowy;mleko,0.181,chleb pełnoziarnisty,0.414,0.078,0.431,1.041
+211,jogurt naturalny;mleko,0.184,ser żółty,0.418,0.080,0.435,1.040
+212,jabłka;ser żółty,0.163,ogórki,0.396,0.067,0.411,1.038
+213,jajka;banany,0.157,ser żółty,0.418,0.068,0.433,1.036
+214,jajka;ryż brązowy,0.171,ziemniaki,0.401,0.071,0.415,1.035
+215,oliwa z oliwek;banany,0.069,płatki owsiane,0.210,0.015,0.217,1.035
+216,pomidory;jajka,0.070,chleb pełnoziarnisty,0.414,0.030,0.429,1.035
+217,ryż brązowy;ogórki,0.169,banany,0.389,0.068,0.402,1.034
+218,płatki owsiane;ogórki,0.074,pomidory,0.196,0.015,0.203,1.034
+219,płatki owsiane;mleko,0.079,pomidory,0.196,0.016,0.203,1.033
+220,ser żółty;kurczak,0.065,jajka,0.432,0.029,0.446,1.033
+221,ryż brązowy;mleko,0.181,ogórki,0.396,0.074,0.409,1.032
+222,ser żółty;banany,0.163,mleko,0.434,0.073,0.448,1.032
+223,jabłka;chleb pełnoziarnisty,0.162,ziemniaki,0.401,0.067,0.414,1.031
+224,jajka;banany,0.157,chleb pełnoziarnisty,0.414,0.067,0.427,1.031
+225,pomidory;kurczak,0.049,ogórki,0.396,0.020,0.408,1.031
+226,oliwa z oliwek;banany,0.069,makaron pełnoziarnisty,0.183,0.013,0.188,1.030
+227,jajka;banany,0.157,ogórki,0.396,0.064,0.408,1.029
+228,ser żółty;ryż brązowy,0.171,jajka,0.432,0.076,0.444,1.029
+229,jajka;ogórki,0.155,chleb pełnoziarnisty,0.414,0.066,0.426,1.029
+230,chleb pełnoziarnisty;mleko,0.177,ziemniaki,0.401,0.073,0.412,1.029
+231,jabłka;jogurt naturalny,0.177,mleko,0.434,0.079,0.446,1.028
+232,jabłka;banany,0.160,ogórki,0.396,0.065,0.406,1.026
+233,ogórki;kurczak,0.065,płatki owsiane,0.210,0.014,0.215,1.026
+234,ziemniaki;kurczak,0.065,płatki owsiane,0.210,0.014,0.215,1.026
+235,ziemniaki;chleb pełnoziarnisty,0.164,mleko,0.434,0.073,0.445,1.026
+236,ryż brązowy;banany,0.149,jajka,0.432,0.066,0.443,1.025
+237,jajka;chleb pełnoziarnisty,0.180,ziemniaki,0.401,0.074,0.411,1.025
+238,banany;mleko,0.165,chleb pełnoziarnisty,0.414,0.070,0.424,1.025
+239,płatki owsiane;jajka,0.080,makaron pełnoziarnisty,0.183,0.015,0.188,1.025
+240,ser żółty;ryż brązowy,0.171,mleko,0.434,0.076,0.444,1.024
+241,ogórki;banany,0.156,jabłka,0.407,0.065,0.417,1.024
+242,jajka;jogurt naturalny,0.180,ser żółty,0.418,0.077,0.428,1.023
+243,chleb pełnoziarnisty;ogórki,0.163,kurczak,0.192,0.032,0.196,1.022
+244,ryż brązowy;banany,0.149,jabłka,0.407,0.062,0.416,1.022
+245,pomidory;jabłka,0.057,ryż brązowy,0.412,0.024,0.421,1.022
+246,jajka;mleko,0.171,ryż brązowy,0.412,0.072,0.421,1.022
+247,ryż brązowy;chleb pełnoziarnisty,0.176,mleko,0.434,0.078,0.443,1.021
+248,chleb pełnoziarnisty;banany,0.158,mleko,0.434,0.070,0.443,1.021
+249,oliwa z oliwek;mleko,0.075,ser żółty,0.418,0.032,0.427,1.021
+250,ziemniaki;oliwa z oliwek,0.071,chleb pełnoziarnisty,0.414,0.030,0.423,1.021
+251,ryż brązowy;kurczak,0.060,pomidory,0.196,0.012,0.200,1.020
+252,oliwa z oliwek;mleko,0.075,pomidory,0.196,0.015,0.200,1.020
+253,ser żółty;kurczak,0.065,oliwa z oliwek,0.196,0.013,0.200,1.020
+254,jajka;banany,0.157,ryż brązowy,0.412,0.066,0.420,1.020
+255,chleb pełnoziarnisty;jogurt naturalny,0.169,ryż brązowy,0.412,0.071,0.420,1.020
+256,ser żółty;jogurt naturalny,0.175,jajka,0.432,0.077,0.440,1.019
+257,ziemniaki;makaron pełnoziarnisty,0.062,ogórki,0.396,0.025,0.403,1.018
+258,ser żółty;ogórki,0.172,mleko,0.434,0.076,0.442,1.018
+259,jajka;ogórki,0.155,ryż brązowy,0.412,0.065,0.419,1.018
+260,chleb pełnoziarnisty;mleko,0.177,banany,0.389,0.070,0.395,1.017
+261,jogurt naturalny;mleko,0.184,ziemniaki,0.401,0.075,0.408,1.016
+262,jabłka;płatki owsiane,0.082,kurczak,0.192,0.016,0.195,1.016
+263,jabłka;ogórki,0.150,ziemniaki,0.401,0.061,0.407,1.014
+264,oliwa z oliwek;mleko,0.075,jogurt naturalny,0.434,0.033,0.440,1.014
+265,jajka;chleb pełnoziarnisty,0.180,kurczak,0.192,0.035,0.194,1.013
+266,chleb pełnoziarnisty;ogórki,0.163,ser żółty,0.418,0.069,0.423,1.013
+267,jabłka;ser żółty,0.163,ryż brązowy,0.412,0.068,0.417,1.013
+268,ziemniaki;jabłka,0.160,chleb pełnoziarnisty,0.414,0.067,0.419,1.011
+269,jajka;chleb pełnoziarnisty,0.180,ryż brązowy,0.412,0.075,0.417,1.011
+270,mleko;makaron pełnoziarnisty,0.071,ser żółty,0.418,0.030,0.423,1.011
+271,pomidory;jabłka,0.057,jogurt naturalny,0.434,0.025,0.439,1.011
+272,ryż brązowy;makaron pełnoziarnisty,0.067,kurczak,0.192,0.013,0.194,1.011
+273,płatki owsiane;mleko,0.079,ziemniaki,0.401,0.032,0.405,1.010
+274,ser żółty;banany,0.163,jabłka,0.407,0.067,0.411,1.010
+275,jabłka;jogurt naturalny,0.177,chleb pełnoziarnisty,0.414,0.074,0.418,1.010
+276,ziemniaki;jajka,0.177,chleb pełnoziarnisty,0.414,0.074,0.418,1.010
+277,oliwa z oliwek;pomidory,0.042,ziemniaki,0.401,0.017,0.405,1.009
+278,ryż brązowy;ogórki,0.169,mleko,0.434,0.074,0.438,1.009
+279,chleb pełnoziarnisty;jogurt naturalny,0.169,mleko,0.434,0.074,0.438,1.009
+280,ziemniaki;kurczak,0.065,makaron pełnoziarnisty,0.183,0.012,0.185,1.009
+281,ryż brązowy;jogurt naturalny,0.172,oliwa z oliwek,0.196,0.034,0.198,1.009
+282,ziemniaki;jabłka,0.160,jogurt naturalny,0.434,0.070,0.438,1.008
+283,ser żółty;jajka,0.176,jogurt naturalny,0.434,0.077,0.438,1.008
+284,ziemniaki;makaron pełnoziarnisty,0.062,kurczak,0.192,0.012,0.194,1.008
+285,jogurt naturalny;kurczak,0.076,makaron pełnoziarnisty,0.183,0.014,0.184,1.007
+286,ziemniaki;chleb pełnoziarnisty,0.164,ryż brązowy,0.412,0.068,0.415,1.006
+287,oliwa z oliwek;jajka,0.071,jogurt naturalny,0.434,0.031,0.437,1.006
+288,ryż brązowy;jogurt naturalny,0.172,mleko,0.434,0.075,0.436,1.005
+289,ryż brązowy;mleko,0.181,ser żółty,0.418,0.076,0.420,1.005
+290,ziemniaki;ser żółty,0.159,jabłka,0.407,0.065,0.409,1.004
+291,ziemniaki;chleb pełnoziarnisty,0.164,jabłka,0.407,0.067,0.409,1.004
+292,oliwa z oliwek,0.196,makaron pełnoziarnisty,0.183,0.036,0.184,1.004
+293,jogurt naturalny;banany,0.156,ogórki,0.396,0.062,0.397,1.004
+294,jajka;mleko,0.171,chleb pełnoziarnisty,0.414,0.071,0.415,1.003
+295,ser żółty;ryż brązowy,0.171,chleb pełnoziarnisty,0.414,0.071,0.415,1.003
+296,jabłka;banany,0.160,ser żółty,0.418,0.067,0.419,1.002
+297,jabłka;chleb pełnoziarnisty,0.162,banany,0.389,0.063,0.389,1.000
+298,jabłka;mleko,0.170,ryż brązowy,0.412,0.070,0.412,0.999
+299,płatki owsiane;makaron pełnoziarnisty,0.046,chleb pełnoziarnisty,0.414,0.019,0.413,0.998
+300,jajka;ogórki,0.155,ziemniaki,0.401,0.062,0.400,0.998
+301,oliwa z oliwek;chleb pełnoziarnisty,0.075,ziemniaki,0.401,0.030,0.400,0.998
+302,pomidory;ser żółty,0.065,ziemniaki,0.401,0.026,0.400,0.998
+303,oliwa z oliwek;płatki owsiane,0.045,ziemniaki,0.401,0.018,0.400,0.998
+304,ryż brązowy;jogurt naturalny,0.172,chleb pełnoziarnisty,0.414,0.071,0.413,0.997
+305,pomidory;banany,0.066,ogórki,0.396,0.026,0.394,0.995
+306,ser żółty;banany,0.163,ziemniaki,0.401,0.065,0.399,0.994
+307,jabłka;ser żółty,0.163,ziemniaki,0.401,0.065,0.399,0.994
+308,ser żółty;jajka,0.176,banany,0.389,0.068,0.386,0.993
+309,jajka;ryż brązowy,0.171,banany,0.389,0.066,0.386,0.992
+310,pomidory;jabłka,0.057,banany,0.389,0.022,0.386,0.992
+311,pomidory;ryż brązowy,0.063,kurczak,0.192,0.012,0.190,0.992
+312,ogórki;banany,0.156,ziemniaki,0.401,0.062,0.397,0.991
+313,ziemniaki;mleko,0.178,chleb pełnoziarnisty,0.414,0.073,0.410,0.991
+314,płatki owsiane;banany,0.067,jabłka,0.407,0.027,0.403,0.990
+315,jabłka;ser żółty,0.163,jogurt naturalny,0.434,0.070,0.429,0.990
+316,ziemniaki;jajka,0.177,jogurt naturalny,0.434,0.076,0.429,0.989
+317,jogurt naturalny;mleko,0.184,ryż brązowy,0.412,0.075,0.408,0.989
+318,ser żółty;mleko,0.194,ogórki,0.396,0.076,0.392,0.989
+319,ryż brązowy;banany,0.149,chleb pełnoziarnisty,0.414,0.061,0.409,0.989
+320,ogórki;jogurt naturalny,0.162,ryż brązowy,0.412,0.066,0.407,0.989
+321,jabłka;jajka,0.167,ryż brązowy,0.412,0.068,0.407,0.988
+322,ser żółty;jajka,0.176,chleb pełnoziarnisty,0.414,0.072,0.409,0.988
+323,ser żółty;mleko,0.194,jabłka,0.407,0.078,0.402,0.988
+324,jajka;ogórki,0.155,ser żółty,0.418,0.064,0.413,0.988
+325,ziemniaki;makaron pełnoziarnisty,0.062,oliwa z oliwek,0.196,0.012,0.194,0.987
+326,chleb pełnoziarnisty;mleko,0.177,ser żółty,0.418,0.073,0.412,0.987
+327,ryż brązowy;chleb pełnoziarnisty,0.176,jajka,0.432,0.075,0.426,0.986
+328,jabłka;jogurt naturalny,0.177,ziemniaki,0.401,0.070,0.395,0.986
+329,ryż brązowy;jogurt naturalny,0.172,jabłka,0.407,0.069,0.401,0.986
+330,płatki owsiane;ogórki,0.074,kurczak,0.192,0.014,0.189,0.985
+331,jajka;banany,0.157,ziemniaki,0.401,0.062,0.395,0.985
+332,ogórki;jogurt naturalny,0.162,banany,0.389,0.062,0.383,0.984
+333,ogórki;mleko,0.162,banany,0.389,0.062,0.383,0.984
+334,jabłka;płatki owsiane,0.082,jogurt naturalny,0.434,0.035,0.427,0.983
+335,pomidory;mleko,0.082,jogurt naturalny,0.434,0.035,0.427,0.983
+336,oliwa z oliwek;ser żółty,0.075,mleko,0.434,0.032,0.427,0.983
+337,ziemniaki;banany,0.146,jajka,0.432,0.062,0.425,0.983
+338,płatki owsiane;chleb pełnoziarnisty,0.073,jajka,0.432,0.031,0.425,0.983
+339,pomidory;ogórki,0.068,banany,0.389,0.026,0.382,0.983
+340,jabłka;mleko,0.170,banany,0.389,0.065,0.382,0.983
+341,ser żółty;jogurt naturalny,0.175,jabłka,0.407,0.070,0.400,0.983
+342,oliwa z oliwek;płatki owsiane,0.045,jabłka,0.407,0.018,0.400,0.983
+343,ser żółty;makaron pełnoziarnisty,0.063,płatki owsiane,0.210,0.013,0.206,0.983
+344,jabłka;kurczak,0.066,jajka,0.432,0.028,0.424,0.982
+345,chleb pełnoziarnisty;banany,0.158,jajka,0.432,0.067,0.424,0.982
+346,oliwa z oliwek;kurczak,0.047,mleko,0.434,0.020,0.426,0.980
+347,oliwa z oliwek;kurczak,0.047,jogurt naturalny,0.434,0.020,0.426,0.980
+348,mleko;kurczak,0.068,płatki owsiane,0.210,0.014,0.206,0.980
+349,ser żółty;chleb pełnoziarnisty,0.160,banany,0.389,0.061,0.381,0.980
+350,chleb pełnoziarnisty;banany,0.158,jabłka,0.407,0.063,0.399,0.980
+351,jabłka;jajka,0.167,jogurt naturalny,0.434,0.071,0.425,0.980
+352,ziemniaki;ogórki,0.153,jabłka,0.407,0.061,0.399,0.980
+353,ryż brązowy;banany,0.149,ser żółty,0.418,0.061,0.409,0.979
+354,jajka;mleko,0.171,ser żółty,0.418,0.070,0.409,0.979
+355,ziemniaki;oliwa z oliwek,0.071,jajka,0.432,0.030,0.423,0.978
+356,oliwa z oliwek;pomidory,0.042,chleb pełnoziarnisty,0.414,0.017,0.405,0.978
+357,jajka;ryż brązowy,0.171,jabłka,0.407,0.068,0.398,0.977
+358,ser żółty;ryż brązowy,0.171,jabłka,0.407,0.068,0.398,0.977
+359,ziemniaki;ryż brązowy,0.156,jabłka,0.407,0.062,0.397,0.977
+360,ziemniaki;banany,0.146,chleb pełnoziarnisty,0.414,0.059,0.404,0.976
+361,ryż brązowy;banany,0.149,mleko,0.434,0.063,0.423,0.974
+362,chleb pełnoziarnisty;jogurt naturalny,0.169,ziemniaki,0.401,0.066,0.391,0.974
+363,ziemniaki;jajka,0.177,ryż brązowy,0.412,0.071,0.401,0.974
+364,ziemniaki;oliwa z oliwek,0.071,jogurt naturalny,0.434,0.030,0.423,0.974
+365,jajka;makaron pełnoziarnisty,0.067,chleb pełnoziarnisty,0.414,0.027,0.403,0.973
+366,pomidory;płatki owsiane,0.045,jogurt naturalny,0.434,0.019,0.422,0.973
+367,ziemniaki;jabłka,0.160,ser żółty,0.418,0.065,0.406,0.972
+368,jogurt naturalny;mleko,0.184,chleb pełnoziarnisty,0.414,0.074,0.402,0.971
+369,ser żółty;ogórki,0.172,ziemniaki,0.401,0.067,0.390,0.971
+370,ser żółty;kurczak,0.065,ogórki,0.396,0.025,0.385,0.971
+371,chleb pełnoziarnisty;jogurt naturalny,0.169,ogórki,0.396,0.065,0.385,0.971
+372,jabłka;ogórki,0.150,ryż brązowy,0.412,0.060,0.400,0.971
+373,oliwa z oliwek;jogurt naturalny,0.085,ryż brązowy,0.412,0.034,0.400,0.971
+374,ziemniaki;mleko,0.178,jogurt naturalny,0.434,0.075,0.421,0.971
+375,jabłka;jajka,0.167,ziemniaki,0.401,0.065,0.389,0.971
+376,jogurt naturalny;mleko,0.184,pomidory,0.196,0.035,0.190,0.970
+377,banany;makaron pełnoziarnisty,0.057,mleko,0.434,0.024,0.421,0.970
+378,jajka;ryż brązowy,0.171,mleko,0.434,0.072,0.421,0.970
+379,ogórki;jogurt naturalny,0.162,chleb pełnoziarnisty,0.414,0.065,0.401,0.969
+380,jajka;jogurt naturalny,0.180,jabłka,0.407,0.071,0.394,0.969
+381,ser żółty;ogórki,0.172,chleb pełnoziarnisty,0.414,0.069,0.401,0.969
+382,ryż brązowy;jogurt naturalny,0.172,ogórki,0.396,0.066,0.384,0.969
+383,płatki owsiane;jogurt naturalny,0.079,oliwa z oliwek,0.196,0.015,0.190,0.969
+384,banany;mleko,0.165,jabłka,0.407,0.065,0.394,0.968
+385,oliwa z oliwek;jogurt naturalny,0.085,banany,0.389,0.032,0.376,0.968
+386,ser żółty;mleko,0.194,banany,0.389,0.073,0.376,0.967
+387,oliwa z oliwek;ryż brązowy,0.070,kurczak,0.192,0.013,0.186,0.967
+388,ziemniaki;jogurt naturalny,0.165,chleb pełnoziarnisty,0.414,0.066,0.400,0.966
+389,ziemniaki;kurczak,0.065,chleb pełnoziarnisty,0.414,0.026,0.400,0.966
+390,ogórki,0.396,makaron pełnoziarnisty,0.183,0.070,0.177,0.966
+391,ser żółty;banany,0.163,jajka,0.432,0.068,0.417,0.966
+392,płatki owsiane;ogórki,0.074,oliwa z oliwek,0.196,0.014,0.189,0.965
+393,ryż brązowy;chleb pełnoziarnisty,0.176,ser żółty,0.418,0.071,0.403,0.965
+394,jajka,0.432,kurczak,0.192,0.080,0.185,0.965
+395,ryż brązowy;chleb pełnoziarnisty,0.176,ziemniaki,0.401,0.068,0.386,0.964
+396,chleb pełnoziarnisty;mleko,0.177,jogurt naturalny,0.434,0.074,0.418,0.963
+397,ziemniaki;jabłka,0.160,ogórki,0.396,0.061,0.381,0.963
+398,ziemniaki;banany,0.146,mleko,0.434,0.061,0.418,0.963
+399,pomidory;ser żółty,0.065,kurczak,0.192,0.012,0.185,0.962
+400,ziemniaki;kurczak,0.065,jajka,0.432,0.027,0.415,0.962
+401,oliwa z oliwek;banany,0.069,jabłka,0.407,0.027,0.391,0.961
+402,oliwa z oliwek;jogurt naturalny,0.085,pomidory,0.196,0.016,0.188,0.960
+403,płatki owsiane;ogórki,0.074,makaron pełnoziarnisty,0.183,0.013,0.176,0.960
+404,jajka;ryż brązowy,0.171,ogórki,0.396,0.065,0.380,0.960
+405,ryż brązowy;jogurt naturalny,0.172,ser żółty,0.418,0.069,0.401,0.960
+406,jabłka,0.407,płatki owsiane,0.210,0.082,0.201,0.959
+407,ziemniaki;banany,0.146,jabłka,0.407,0.057,0.390,0.959
+408,pomidory;ogórki,0.068,chleb pełnoziarnisty,0.414,0.027,0.397,0.959
+409,pomidory;jabłka,0.057,makaron pełnoziarnisty,0.183,0.010,0.175,0.959
+410,ser żółty;ogórki,0.172,jabłka,0.407,0.067,0.390,0.957
+411,ser żółty;jogurt naturalny,0.175,ryż brązowy,0.412,0.069,0.394,0.957
+412,płatki owsiane;jajka,0.080,ser żółty,0.418,0.032,0.400,0.957
+413,oliwa z oliwek;płatki owsiane,0.045,ser żółty,0.418,0.018,0.400,0.957
+414,jajka;chleb pełnoziarnisty,0.180,ser żółty,0.418,0.072,0.400,0.957
+415,jajka;chleb pełnoziarnisty,0.180,banany,0.389,0.067,0.372,0.957
+416,jabłka;kurczak,0.066,ogórki,0.396,0.025,0.379,0.957
+417,oliwa z oliwek;jabłka,0.066,ryż brązowy,0.412,0.026,0.394,0.956
+418,chleb pełnoziarnisty,0.414,kurczak,0.192,0.076,0.184,0.956
+419,oliwa z oliwek;ryż brązowy,0.070,banany,0.389,0.026,0.371,0.955
+420,ryż brązowy;mleko,0.181,jogurt naturalny,0.434,0.075,0.414,0.955
+421,płatki owsiane;ryż brązowy,0.070,mleko,0.434,0.029,0.414,0.955
+422,ogórki;mleko,0.162,chleb pełnoziarnisty,0.414,0.064,0.395,0.954
+423,ziemniaki,0.401,pomidory,0.196,0.075,0.187,0.954
+424,mleko;makaron pełnoziarnisty,0.071,kurczak,0.192,0.013,0.183,0.954
+425,pomidory;ogórki,0.068,ziemniaki,0.401,0.026,0.382,0.953
+426,oliwa z oliwek;jajka,0.071,chleb pełnoziarnisty,0.414,0.028,0.394,0.953
+427,pomidory;jajka,0.070,płatki owsiane,0.210,0.014,0.200,0.952
+428,pomidory;ser żółty,0.065,płatki owsiane,0.210,0.013,0.200,0.952
+429,płatki owsiane;jajka,0.080,jabłka,0.407,0.031,0.388,0.952
+430,banany;kurczak,0.066,chleb pełnoziarnisty,0.414,0.026,0.394,0.952
+431,pomidory;banany,0.066,chleb pełnoziarnisty,0.414,0.026,0.394,0.952
+432,jabłka;banany,0.160,chleb pełnoziarnisty,0.414,0.063,0.394,0.951
+433,ser żółty;mleko,0.194,ryż brązowy,0.412,0.076,0.392,0.951
+434,ziemniaki;ryż brązowy,0.156,ser żółty,0.418,0.062,0.397,0.951
+435,ryż brązowy;mleko,0.181,jabłka,0.407,0.070,0.387,0.950
+436,ser żółty;mleko,0.194,jogurt naturalny,0.434,0.080,0.412,0.950
+437,ziemniaki,0.401,płatki owsiane,0.210,0.080,0.200,0.950
+438,ser żółty;płatki owsiane,0.078,jajka,0.432,0.032,0.410,0.950
+439,ogórki;banany,0.156,jajka,0.432,0.064,0.410,0.950
+440,banany;mleko,0.165,ogórki,0.396,0.062,0.376,0.949
+441,ziemniaki;ogórki,0.153,chleb pełnoziarnisty,0.414,0.060,0.392,0.947
+442,oliwa z oliwek;ser żółty,0.075,makaron pełnoziarnisty,0.183,0.013,0.173,0.947
+443,płatki owsiane;jogurt naturalny,0.079,ziemniaki,0.401,0.030,0.380,0.947
+444,ziemniaki;ser żółty,0.159,ryż brązowy,0.412,0.062,0.390,0.946
+445,jabłka;jogurt naturalny,0.177,ryż brązowy,0.412,0.069,0.390,0.946
+446,jabłka;jogurt naturalny,0.177,ser żółty,0.418,0.070,0.395,0.946
+447,jabłka;jajka,0.167,ser żółty,0.418,0.066,0.395,0.945
+448,ogórki;kurczak,0.065,jabłka,0.407,0.025,0.385,0.945
+449,ser żółty;płatki owsiane,0.078,jabłka,0.407,0.030,0.385,0.945
+450,jogurt naturalny;kurczak,0.076,jajka,0.432,0.031,0.408,0.944
+451,ziemniaki;oliwa z oliwek,0.071,ser żółty,0.418,0.028,0.394,0.943
+452,jajka;mleko,0.171,jogurt naturalny,0.434,0.070,0.409,0.943
+453,chleb pełnoziarnisty;banany,0.158,ogórki,0.396,0.059,0.373,0.943
+454,jabłka;kurczak,0.066,jogurt naturalny,0.434,0.027,0.409,0.943
+455,oliwa z oliwek;jabłka,0.066,mleko,0.434,0.027,0.409,0.943
+456,ser żółty;kurczak,0.065,pomidory,0.196,0.012,0.185,0.942
+457,ziemniaki;kurczak,0.065,oliwa z oliwek,0.196,0.012,0.185,0.942
+458,jajka;makaron pełnoziarnisty,0.067,ryż brązowy,0.412,0.026,0.388,0.942
+459,ryż brązowy;kurczak,0.060,jabłka,0.407,0.023,0.383,0.942
+460,jabłka;jogurt naturalny,0.177,płatki owsiane,0.210,0.035,0.198,0.942
+461,oliwa z oliwek;kurczak,0.047,jabłka,0.407,0.018,0.383,0.941
+462,ziemniaki;jabłka,0.160,ryż brązowy,0.412,0.062,0.388,0.941
+463,jabłka;banany,0.160,ryż brązowy,0.412,0.062,0.388,0.941
+464,pomidory;kurczak,0.049,jogurt naturalny,0.434,0.020,0.408,0.940
+465,ziemniaki;jabłka,0.160,jajka,0.432,0.065,0.406,0.940
+466,chleb pełnoziarnisty;kurczak,0.076,płatki owsiane,0.210,0.015,0.197,0.940
+467,płatki owsiane;mleko,0.079,ser żółty,0.418,0.031,0.392,0.939
+468,ziemniaki;ogórki,0.153,jajka,0.432,0.062,0.405,0.938
+469,chleb pełnoziarnisty;makaron pełnoziarnisty,0.070,ogórki,0.396,0.026,0.371,0.938
+470,chleb pełnoziarnisty;ogórki,0.163,jajka,0.432,0.066,0.405,0.937
+471,jabłka;ser żółty,0.163,jajka,0.432,0.066,0.405,0.937
+472,ryż brązowy;banany,0.149,ziemniaki,0.401,0.056,0.376,0.937
+473,chleb pełnoziarnisty;banany,0.158,ryż brązowy,0.412,0.061,0.386,0.937
+474,pomidory;makaron pełnoziarnisty,0.042,jajka,0.432,0.017,0.405,0.937
+475,płatki owsiane;ryż brązowy,0.070,makaron pełnoziarnisty,0.183,0.012,0.171,0.937
+476,jabłka;banany,0.160,mleko,0.434,0.065,0.406,0.936
+477,pomidory;ryż brązowy,0.063,jabłka,0.407,0.024,0.381,0.936
+478,ziemniaki;płatki owsiane,0.080,chleb pełnoziarnisty,0.414,0.031,0.388,0.936
+479,płatki owsiane;jajka,0.080,chleb pełnoziarnisty,0.414,0.031,0.388,0.936
+480,oliwa z oliwek;kurczak,0.047,jajka,0.432,0.019,0.404,0.936
+481,jogurt naturalny;banany,0.156,ser żółty,0.418,0.061,0.391,0.935
+482,płatki owsiane;jajka,0.080,ziemniaki,0.401,0.030,0.375,0.935
+483,jabłka;kurczak,0.066,banany,0.389,0.024,0.364,0.935
+484,oliwa z oliwek;ser żółty,0.075,chleb pełnoziarnisty,0.414,0.029,0.387,0.934
+485,ziemniaki;chleb pełnoziarnisty,0.164,oliwa z oliwek,0.196,0.030,0.183,0.933
+486,pomidory;mleko,0.082,oliwa z oliwek,0.196,0.015,0.183,0.933
+487,pomidory;makaron pełnoziarnisty,0.042,mleko,0.434,0.017,0.405,0.933
+488,ziemniaki;ser żółty,0.159,jajka,0.432,0.064,0.403,0.932
+489,oliwa z oliwek;ryż brązowy,0.070,chleb pełnoziarnisty,0.414,0.027,0.386,0.932
+490,jogurt naturalny;mleko,0.184,płatki owsiane,0.210,0.036,0.196,0.932
+491,chleb pełnoziarnisty;banany,0.158,ziemniaki,0.401,0.059,0.373,0.931
+492,oliwa z oliwek;ser żółty,0.075,ziemniaki,0.401,0.028,0.373,0.931
+493,ziemniaki;banany,0.146,ryż brązowy,0.412,0.056,0.384,0.931
+494,jogurt naturalny;banany,0.156,mleko,0.434,0.063,0.404,0.931
+495,ziemniaki;ryż brązowy,0.156,mleko,0.434,0.063,0.404,0.931
+496,chleb pełnoziarnisty;ogórki,0.163,banany,0.389,0.059,0.362,0.930
+497,banany;makaron pełnoziarnisty,0.057,ogórki,0.396,0.021,0.368,0.930
+498,ogórki;jogurt naturalny,0.162,ser żółty,0.418,0.063,0.389,0.930
+499,ser żółty;ryż brązowy,0.171,jogurt naturalny,0.434,0.069,0.404,0.930
+500,jabłka;ryż brązowy,0.175,ser żółty,0.418,0.068,0.389,0.930
+501,ryż brązowy;chleb pełnoziarnisty,0.176,jogurt naturalny,0.434,0.071,0.403,0.930
+502,pomidory;mleko,0.082,płatki owsiane,0.210,0.016,0.195,0.929
+503,jabłka;jogurt naturalny,0.177,jajka,0.432,0.071,0.401,0.929
+504,chleb pełnoziarnisty;mleko,0.177,jajka,0.432,0.071,0.401,0.929
+505,oliwa z oliwek;makaron pełnoziarnisty,0.036,banany,0.389,0.013,0.361,0.928
+506,oliwa z oliwek;jabłka,0.066,pomidory,0.196,0.012,0.182,0.928
+507,pomidory;banany,0.066,oliwa z oliwek,0.196,0.012,0.182,0.928
+508,ziemniaki;jogurt naturalny,0.165,oliwa z oliwek,0.196,0.030,0.182,0.928
+509,ziemniaki;chleb pełnoziarnisty,0.164,jogurt naturalny,0.434,0.066,0.402,0.927
+510,banany;mleko,0.165,ryż brązowy,0.412,0.063,0.382,0.927
+511,płatki owsiane;ryż brązowy,0.070,ziemniaki,0.401,0.026,0.371,0.926
+512,jajka;chleb pełnoziarnisty,0.180,ogórki,0.396,0.066,0.367,0.926
+513,ryż brązowy;kurczak,0.060,ogórki,0.396,0.022,0.367,0.926
+514,oliwa z oliwek;chleb pełnoziarnisty,0.075,ser żółty,0.418,0.029,0.387,0.925
+515,ziemniaki;chleb pełnoziarnisty,0.164,banany,0.389,0.059,0.360,0.925
+516,ser żółty;kurczak,0.065,makaron pełnoziarnisty,0.183,0.011,0.169,0.925
+517,ser żółty;chleb pełnoziarnisty,0.160,oliwa z oliwek,0.196,0.029,0.181,0.925
+518,mleko;makaron pełnoziarnisty,0.071,ogórki,0.396,0.026,0.366,0.925
+519,chleb pełnoziarnisty,0.414,makaron pełnoziarnisty,0.183,0.070,0.169,0.924
+520,ziemniaki;chleb pełnoziarnisty,0.164,ogórki,0.396,0.060,0.366,0.924
+521,chleb pełnoziarnisty;banany,0.158,ser żółty,0.418,0.061,0.386,0.924
+522,ogórki;mleko,0.162,ziemniaki,0.401,0.060,0.370,0.924
+523,ziemniaki;oliwa z oliwek,0.071,makaron pełnoziarnisty,0.183,0.012,0.169,0.924
+524,płatki owsiane;mleko,0.079,kurczak,0.192,0.014,0.177,0.923
+525,ziemniaki;ryż brązowy,0.156,banany,0.389,0.056,0.359,0.923
+526,banany;mleko,0.165,ziemniaki,0.401,0.061,0.370,0.922
+527,jabłka;ryż brązowy,0.175,mleko,0.434,0.070,0.400,0.922
+528,ziemniaki;płatki owsiane,0.080,mleko,0.434,0.032,0.400,0.922
+529,ser żółty;jajka,0.176,jabłka,0.407,0.066,0.375,0.921
+530,ziemniaki;płatki owsiane,0.080,jabłka,0.407,0.030,0.375,0.921
+531,ryż brązowy;mleko,0.181,jajka,0.432,0.072,0.398,0.921
+532,oliwa z oliwek;ogórki,0.063,chleb pełnoziarnisty,0.414,0.024,0.381,0.920
+533,pomidory;makaron pełnoziarnisty,0.042,chleb pełnoziarnisty,0.414,0.016,0.381,0.920
+534,ogórki;kurczak,0.065,ser żółty,0.418,0.025,0.385,0.920
+535,ser żółty;chleb pełnoziarnisty,0.160,ziemniaki,0.401,0.059,0.369,0.920
+536,chleb pełnoziarnisty;ogórki,0.163,jogurt naturalny,0.434,0.065,0.399,0.919
+537,jabłka;makaron pełnoziarnisty,0.066,ogórki,0.396,0.024,0.364,0.918
+538,ser żółty;jajka,0.176,ogórki,0.396,0.064,0.364,0.918
+539,chleb pełnoziarnisty;ogórki,0.163,ziemniaki,0.401,0.060,0.368,0.918
+540,pomidory;mleko,0.082,ryż brązowy,0.412,0.031,0.378,0.918
+541,ryż brązowy;kurczak,0.060,ser żółty,0.418,0.023,0.383,0.917
+542,ser żółty;ryż brązowy,0.171,banany,0.389,0.061,0.357,0.917
+543,ser żółty;jajka,0.176,mleko,0.434,0.070,0.398,0.916
+544,ziemniaki;jabłka,0.160,banany,0.389,0.057,0.356,0.916
+545,ogórki;banany,0.156,jogurt naturalny,0.434,0.062,0.397,0.916
+546,ser żółty;płatki owsiane,0.078,mleko,0.434,0.031,0.397,0.916
+547,ogórki;banany,0.156,mleko,0.434,0.062,0.397,0.916
+548,płatki owsiane;chleb pełnoziarnisty,0.073,mleko,0.434,0.029,0.397,0.915
+549,jogurt naturalny;mleko,0.184,oliwa z oliwek,0.196,0.033,0.179,0.915
+550,jabłka;kurczak,0.066,chleb pełnoziarnisty,0.414,0.025,0.379,0.915
+551,mleko;kurczak,0.068,jogurt naturalny,0.434,0.027,0.397,0.915
+552,oliwa z oliwek;banany,0.069,ryż brązowy,0.412,0.026,0.377,0.915
+553,pomidory;chleb pełnoziarnisty,0.076,jajka,0.432,0.030,0.395,0.914
+554,pomidory;jabłka,0.057,kurczak,0.192,0.010,0.175,0.914
+555,ogórki;banany,0.156,chleb pełnoziarnisty,0.414,0.059,0.378,0.914
+556,jogurt naturalny;banany,0.156,chleb pełnoziarnisty,0.414,0.059,0.378,0.914
+557,jogurt naturalny;banany,0.156,jabłka,0.407,0.058,0.372,0.914
+558,ogórki;jogurt naturalny,0.162,oliwa z oliwek,0.196,0.029,0.179,0.913
+559,chleb pełnoziarnisty;mleko,0.177,ogórki,0.396,0.064,0.362,0.913
+560,oliwa z oliwek;ryż brązowy,0.070,jabłka,0.407,0.026,0.371,0.913
+561,płatki owsiane;ryż brązowy,0.070,jabłka,0.407,0.026,0.371,0.913
+562,jabłka;płatki owsiane,0.082,ziemniaki,0.401,0.030,0.366,0.912
+563,jogurt naturalny,0.434,kurczak,0.192,0.076,0.175,0.912
+564,banany;kurczak,0.066,jajka,0.432,0.026,0.394,0.912
+565,ziemniaki;płatki owsiane,0.080,kurczak,0.192,0.014,0.175,0.911
+566,oliwa z oliwek;ogórki,0.063,ser żółty,0.418,0.024,0.381,0.911
+567,jabłka;ryż brązowy,0.175,banany,0.389,0.062,0.354,0.911
+568,oliwa z oliwek;jabłka,0.066,makaron pełnoziarnisty,0.183,0.011,0.167,0.911
+569,ser żółty;płatki owsiane,0.078,makaron pełnoziarnisty,0.183,0.013,0.167,0.911
+570,jabłka;kurczak,0.066,makaron pełnoziarnisty,0.183,0.011,0.167,0.911
+571,ogórki;kurczak,0.065,banany,0.389,0.023,0.354,0.910
+572,ser żółty;makaron pełnoziarnisty,0.063,kurczak,0.192,0.011,0.175,0.909
+573,ser żółty;jogurt naturalny,0.175,ogórki,0.396,0.063,0.360,0.909
+574,ser żółty;mleko,0.194,chleb pełnoziarnisty,0.414,0.073,0.376,0.909
+575,jajka;chleb pełnoziarnisty,0.180,mleko,0.434,0.071,0.394,0.909
+576,płatki owsiane;chleb pełnoziarnisty,0.073,jabłka,0.407,0.027,0.370,0.909
+577,płatki owsiane;chleb pełnoziarnisty,0.073,pomidory,0.196,0.013,0.178,0.909
+578,jabłka;ryż brązowy,0.175,jogurt naturalny,0.434,0.069,0.394,0.908
+579,ser żółty;banany,0.163,ryż brązowy,0.412,0.061,0.374,0.908
+580,pomidory;banany,0.066,mleko,0.434,0.026,0.394,0.908
+581,mleko;kurczak,0.068,banany,0.389,0.024,0.353,0.907
+582,ser żółty;jajka,0.176,ziemniaki,0.401,0.064,0.364,0.907
+583,jabłka;ogórki,0.150,jogurt naturalny,0.434,0.059,0.393,0.906
+584,ser żółty;chleb pełnoziarnisty,0.160,jabłka,0.407,0.059,0.369,0.906
+585,jabłka;ryż brązowy,0.175,makaron pełnoziarnisty,0.183,0.029,0.166,0.906
+586,banany;makaron pełnoziarnisty,0.057,jabłka,0.407,0.021,0.368,0.905
+587,chleb pełnoziarnisty;ogórki,0.163,mleko,0.434,0.064,0.393,0.905
+588,ryż brązowy;makaron pełnoziarnisty,0.067,ogórki,0.396,0.024,0.358,0.905
+589,pomidory;mleko,0.082,ser żółty,0.418,0.031,0.378,0.904
+590,ser żółty;ryż brązowy,0.171,ziemniaki,0.401,0.062,0.363,0.904
+591,chleb pełnoziarnisty;banany,0.158,płatki owsiane,0.210,0.030,0.190,0.904
+592,płatki owsiane;mleko,0.079,oliwa z oliwek,0.196,0.014,0.177,0.904
+593,ser żółty;banany,0.163,chleb pełnoziarnisty,0.414,0.061,0.374,0.904
+594,ziemniaki;ogórki,0.153,mleko,0.434,0.060,0.392,0.904
+595,jajka;jogurt naturalny,0.180,ryż brązowy,0.412,0.067,0.372,0.903
+596,ziemniaki,0.401,oliwa z oliwek,0.196,0.071,0.177,0.903
+597,jajka;ryż brązowy,0.171,jogurt naturalny,0.434,0.067,0.392,0.903
+598,oliwa z oliwek;chleb pełnoziarnisty,0.075,kurczak,0.192,0.013,0.173,0.903
+599,oliwa z oliwek;ser żółty,0.075,kurczak,0.192,0.013,0.173,0.903
+600,ziemniaki;jajka,0.177,jabłka,0.407,0.065,0.367,0.902
+601,płatki owsiane;ryż brązowy,0.070,ogórki,0.396,0.025,0.357,0.902
+602,pomidory;makaron pełnoziarnisty,0.042,ogórki,0.396,0.015,0.357,0.902
+603,ryż brązowy;jogurt naturalny,0.172,jajka,0.432,0.067,0.390,0.902
+604,ziemniaki;jajka,0.177,banany,0.389,0.062,0.350,0.900
+605,ziemniaki;chleb pełnoziarnisty,0.164,płatki owsiane,0.210,0.031,0.189,0.900
+606,ryż brązowy;ogórki,0.169,jogurt naturalny,0.434,0.066,0.391,0.900
+607,jabłka;ryż brązowy,0.175,jajka,0.432,0.068,0.389,0.899
+608,płatki owsiane;mleko,0.079,makaron pełnoziarnisty,0.183,0.013,0.165,0.899
+609,ziemniaki;ser żółty,0.159,oliwa z oliwek,0.196,0.028,0.176,0.898
+610,ryż brązowy;makaron pełnoziarnisty,0.067,jajka,0.432,0.026,0.388,0.898
+611,chleb pełnoziarnisty;jogurt naturalny,0.169,banany,0.389,0.059,0.349,0.897
+612,ogórki;makaron pełnoziarnisty,0.070,chleb pełnoziarnisty,0.414,0.026,0.371,0.897
+613,pomidory;chleb pełnoziarnisty,0.076,ogórki,0.396,0.027,0.355,0.897
+614,jajka;jogurt naturalny,0.180,kurczak,0.192,0.031,0.172,0.897
+615,płatki owsiane;ogórki,0.074,jabłka,0.407,0.027,0.365,0.896
+616,ziemniaki;ser żółty,0.159,chleb pełnoziarnisty,0.414,0.059,0.371,0.896
+617,ser żółty;jogurt naturalny,0.175,banany,0.389,0.061,0.349,0.896
+618,jajka;jogurt naturalny,0.180,mleko,0.434,0.070,0.389,0.896
+619,ogórki;jogurt naturalny,0.162,mleko,0.434,0.063,0.389,0.896
+620,ogórki;mleko,0.162,jogurt naturalny,0.434,0.063,0.389,0.896
+621,ogórki;jogurt naturalny,0.162,jabłka,0.407,0.059,0.364,0.895
+622,ryż brązowy;mleko,0.181,banany,0.389,0.063,0.348,0.895
+623,oliwa z oliwek;jogurt naturalny,0.085,mleko,0.434,0.033,0.388,0.895
+624,mleko,0.434,makaron pełnoziarnisty,0.183,0.071,0.164,0.894
+625,banany;kurczak,0.066,jabłka,0.407,0.024,0.364,0.893
+626,pomidory;kurczak,0.049,mleko,0.434,0.019,0.388,0.893
+627,ziemniaki;ogórki,0.153,makaron pełnoziarnisty,0.183,0.025,0.163,0.893
+628,ziemniaki;jabłka,0.160,płatki owsiane,0.210,0.030,0.188,0.893
+629,jajka;kurczak,0.080,jogurt naturalny,0.434,0.031,0.388,0.893
+630,chleb pełnoziarnisty;makaron pełnoziarnisty,0.070,jajka,0.432,0.027,0.386,0.893
+631,jajka;kurczak,0.080,pomidory,0.196,0.014,0.175,0.893
+632,płatki owsiane;jajka,0.080,pomidory,0.196,0.014,0.175,0.893
+633,płatki owsiane;banany,0.067,ser żółty,0.418,0.025,0.373,0.893
+634,płatki owsiane;mleko,0.079,ryż brązowy,0.412,0.029,0.367,0.891
+635,ryż brązowy;chleb pełnoziarnisty,0.176,banany,0.389,0.061,0.347,0.891
+636,oliwa z oliwek;ogórki,0.063,pomidory,0.196,0.011,0.175,0.891
+637,ogórki;makaron pełnoziarnisty,0.070,ziemniaki,0.401,0.025,0.357,0.891
+638,pomidory;makaron pełnoziarnisty,0.042,ziemniaki,0.401,0.015,0.357,0.891
+639,ogórki;kurczak,0.065,jajka,0.432,0.025,0.385,0.890
+640,ryż brązowy;ogórki,0.169,jajka,0.432,0.065,0.385,0.890
+641,ryż brązowy;banany,0.149,oliwa z oliwek,0.196,0.026,0.174,0.890
+642,banany;makaron pełnoziarnisty,0.057,chleb pełnoziarnisty,0.414,0.021,0.368,0.890
+643,oliwa z oliwek;mleko,0.075,płatki owsiane,0.210,0.014,0.187,0.889
+644,oliwa z oliwek;jajka,0.071,ryż brązowy,0.412,0.026,0.366,0.889
+645,ryż brązowy,0.412,makaron pełnoziarnisty,0.183,0.067,0.163,0.889
+646,ser żółty,0.418,płatki owsiane,0.210,0.078,0.187,0.889
+647,jabłka;banany,0.160,ziemniaki,0.401,0.057,0.356,0.888
+648,mleko;kurczak,0.068,chleb pełnoziarnisty,0.414,0.025,0.368,0.888
+649,oliwa z oliwek;banany,0.069,pomidory,0.196,0.012,0.174,0.887
+650,jogurt naturalny;banany,0.156,ryż brązowy,0.412,0.057,0.365,0.887
+651,płatki owsiane;mleko,0.079,chleb pełnoziarnisty,0.414,0.029,0.367,0.887
+652,ser żółty;kurczak,0.065,mleko,0.434,0.025,0.385,0.886
+653,ziemniaki;kurczak,0.065,jogurt naturalny,0.434,0.025,0.385,0.886
+654,jabłka,0.407,makaron pełnoziarnisty,0.183,0.066,0.162,0.886
+655,pomidory;jabłka,0.057,ogórki,0.396,0.020,0.351,0.886
+656,jogurt naturalny;makaron pełnoziarnisty,0.057,ogórki,0.396,0.020,0.351,0.886
+657,ziemniaki;jajka,0.177,ogórki,0.396,0.062,0.350,0.885
+658,mleko;makaron pełnoziarnisty,0.071,chleb pełnoziarnisty,0.414,0.026,0.366,0.885
+659,oliwa z oliwek;mleko,0.075,jabłka,0.407,0.027,0.360,0.885
+660,ogórki;makaron pełnoziarnisty,0.070,płatki owsiane,0.210,0.013,0.186,0.884
+661,jabłka;jajka,0.167,płatki owsiane,0.210,0.031,0.186,0.884
+662,banany,0.389,kurczak,0.192,0.066,0.170,0.884
+663,jabłka;ryż brązowy,0.175,ziemniaki,0.401,0.062,0.354,0.884
+664,ser żółty;kurczak,0.065,ziemniaki,0.401,0.023,0.354,0.882
+665,pomidory;ryż brązowy,0.063,chleb pełnoziarnisty,0.414,0.023,0.365,0.882
+666,ser żółty;makaron pełnoziarnisty,0.063,jajka,0.432,0.024,0.381,0.882
+667,ser żółty;makaron pełnoziarnisty,0.063,ogórki,0.396,0.022,0.349,0.882
+668,ryż brązowy;banany,0.149,jogurt naturalny,0.434,0.057,0.383,0.881
+669,ziemniaki;mleko,0.178,banany,0.389,0.061,0.343,0.881
+670,jogurt naturalny;mleko,0.184,jajka,0.432,0.070,0.380,0.881
+671,ziemniaki;oliwa z oliwek,0.071,kurczak,0.192,0.012,0.169,0.880
+672,jogurt naturalny;mleko,0.184,banany,0.389,0.063,0.342,0.880
+673,oliwa z oliwek;jogurt naturalny,0.085,ziemniaki,0.401,0.030,0.353,0.880
+674,banany;kurczak,0.066,ogórki,0.396,0.023,0.348,0.880
+675,banany;mleko,0.165,jogurt naturalny,0.434,0.063,0.382,0.880
+676,mleko;kurczak,0.068,ser żółty,0.418,0.025,0.368,0.880
+677,chleb pełnoziarnisty;kurczak,0.076,banany,0.389,0.026,0.342,0.879
+678,pomidory;chleb pełnoziarnisty,0.076,banany,0.389,0.026,0.342,0.879
+679,jogurt naturalny;banany,0.156,ziemniaki,0.401,0.055,0.353,0.879
+680,jajka;jogurt naturalny,0.180,oliwa z oliwek,0.196,0.031,0.172,0.879
+681,ser żółty;chleb pełnoziarnisty,0.160,jogurt naturalny,0.434,0.061,0.381,0.878
+682,oliwa z oliwek;jabłka,0.066,chleb pełnoziarnisty,0.414,0.024,0.364,0.878
+683,oliwa z oliwek;pomidory,0.042,jogurt naturalny,0.434,0.016,0.381,0.878
+684,ogórki;mleko,0.162,makaron pełnoziarnisty,0.183,0.026,0.160,0.877
+685,chleb pełnoziarnisty;jogurt naturalny,0.169,jajka,0.432,0.064,0.379,0.877
+686,jabłka;ser żółty,0.163,płatki owsiane,0.210,0.030,0.184,0.876
+687,jajka;banany,0.157,jabłka,0.407,0.056,0.357,0.876
+688,płatki owsiane;ogórki,0.074,ziemniaki,0.401,0.026,0.351,0.876
+689,jabłka;ogórki,0.150,mleko,0.434,0.057,0.380,0.876
+690,ziemniaki;pomidory,0.075,ogórki,0.396,0.026,0.347,0.875
+691,jabłka;płatki owsiane,0.082,ser żółty,0.418,0.030,0.366,0.875
+692,jabłka;płatki owsiane,0.082,jajka,0.432,0.031,0.378,0.875
+693,chleb pełnoziarnisty;makaron pełnoziarnisty,0.070,oliwa z oliwek,0.196,0.012,0.171,0.875
+694,oliwa z oliwek;chleb pełnoziarnisty,0.075,makaron pełnoziarnisty,0.183,0.012,0.160,0.874
+695,jabłka;ogórki,0.150,makaron pełnoziarnisty,0.183,0.024,0.160,0.874
+696,jabłka;ser żółty,0.163,chleb pełnoziarnisty,0.414,0.059,0.362,0.874
+697,ryż brązowy;mleko,0.181,pomidory,0.196,0.031,0.171,0.874
+698,oliwa z oliwek;chleb pełnoziarnisty,0.075,ryż brązowy,0.412,0.027,0.360,0.874
+699,jabłka;jajka,0.167,kurczak,0.192,0.028,0.168,0.873
+700,jogurt naturalny;kurczak,0.076,jabłka,0.407,0.027,0.355,0.873
+701,banany;kurczak,0.066,jogurt naturalny,0.434,0.025,0.379,0.873
+702,chleb pełnoziarnisty;kurczak,0.076,oliwa z oliwek,0.196,0.013,0.171,0.873
+703,ryż brązowy;ogórki,0.169,jabłka,0.407,0.060,0.355,0.872
+704,jajka;mleko,0.171,banany,0.389,0.058,0.339,0.872
+705,oliwa z oliwek;jajka,0.071,płatki owsiane,0.210,0.013,0.183,0.872
+706,mleko;makaron pełnoziarnisty,0.071,płatki owsiane,0.210,0.013,0.183,0.872
+707,ziemniaki;makaron pełnoziarnisty,0.062,jabłka,0.407,0.022,0.355,0.872
+708,chleb pełnoziarnisty;ogórki,0.163,makaron pełnoziarnisty,0.183,0.026,0.160,0.872
+709,jabłka;chleb pełnoziarnisty,0.162,ser żółty,0.418,0.059,0.364,0.871
+710,płatki owsiane;mleko,0.079,jabłka,0.407,0.028,0.354,0.871
+711,oliwa z oliwek;jabłka,0.066,ser żółty,0.418,0.024,0.364,0.870
+712,pomidory;banany,0.066,ziemniaki,0.401,0.023,0.348,0.869
+713,oliwa z oliwek;jajka,0.071,banany,0.389,0.024,0.338,0.869
+714,mleko;makaron pełnoziarnisty,0.071,banany,0.389,0.024,0.338,0.869
+715,ziemniaki;oliwa z oliwek,0.071,banany,0.389,0.024,0.338,0.869
+716,ziemniaki;płatki owsiane,0.080,jajka,0.432,0.030,0.375,0.868
+717,jabłka;ogórki,0.150,kurczak,0.192,0.025,0.167,0.868
+718,jabłka;makaron pełnoziarnisty,0.066,kurczak,0.192,0.011,0.167,0.868
+719,ziemniaki;banany,0.146,jogurt naturalny,0.434,0.055,0.377,0.868
+720,ryż brązowy;mleko,0.181,ziemniaki,0.401,0.063,0.348,0.868
+721,płatki owsiane;makaron pełnoziarnisty,0.046,ziemniaki,0.401,0.016,0.348,0.867
+722,oliwa z oliwek;banany,0.069,ziemniaki,0.401,0.024,0.348,0.867
+723,jajka;kurczak,0.080,ser żółty,0.418,0.029,0.363,0.867
+724,oliwa z oliwek;jogurt naturalny,0.085,jabłka,0.407,0.030,0.353,0.867
+725,ziemniaki;ogórki,0.153,pomidory,0.196,0.026,0.170,0.867
+726,jajka;makaron pełnoziarnisty,0.067,ogórki,0.396,0.023,0.343,0.867
+727,pomidory;makaron pełnoziarnisty,0.042,ryż brązowy,0.412,0.015,0.357,0.867
+728,ser żółty;jajka,0.176,płatki owsiane,0.210,0.032,0.182,0.866
+729,jabłka;ryż brązowy,0.175,ogórki,0.396,0.060,0.343,0.866
+730,ziemniaki;jogurt naturalny,0.165,płatki owsiane,0.210,0.030,0.182,0.866
+731,ryż brązowy;makaron pełnoziarnisty,0.067,chleb pełnoziarnisty,0.414,0.024,0.358,0.865
+732,ziemniaki;jajka,0.177,ser żółty,0.418,0.064,0.362,0.865
+733,jabłka;jogurt naturalny,0.177,oliwa z oliwek,0.196,0.030,0.169,0.865
+734,ziemniaki;jajka,0.177,oliwa z oliwek,0.196,0.030,0.169,0.865
+735,jogurt naturalny;mleko,0.184,ogórki,0.396,0.063,0.342,0.865
+736,ogórki;mleko,0.162,jabłka,0.407,0.057,0.352,0.865
+737,oliwa z oliwek;chleb pełnoziarnisty,0.075,jajka,0.432,0.028,0.373,0.864
+738,ziemniaki;płatki owsiane,0.080,jogurt naturalny,0.434,0.030,0.375,0.864
+739,oliwa z oliwek;makaron pełnoziarnisty,0.036,ser żółty,0.418,0.013,0.361,0.864
+740,chleb pełnoziarnisty;jogurt naturalny,0.169,ser żółty,0.418,0.061,0.361,0.864
+741,jajka;banany,0.157,kurczak,0.192,0.026,0.166,0.863
+742,ser żółty;banany,0.163,jogurt naturalny,0.434,0.061,0.374,0.862
+743,jabłka;jajka,0.167,banany,0.389,0.056,0.335,0.862
+744,oliwa z oliwek;jogurt naturalny,0.085,ogórki,0.396,0.029,0.341,0.862
+745,ser żółty;ogórki,0.172,jajka,0.432,0.064,0.372,0.861
+746,ziemniaki;makaron pełnoziarnisty,0.062,ryż brązowy,0.412,0.022,0.355,0.861
+747,jabłka;banany,0.160,oliwa z oliwek,0.196,0.027,0.169,0.861
+748,ziemniaki;chleb pełnoziarnisty,0.164,ser żółty,0.418,0.059,0.360,0.861
+749,chleb pełnoziarnisty;banany,0.158,jogurt naturalny,0.434,0.059,0.373,0.860
+750,oliwa z oliwek;ser żółty,0.075,jogurt naturalny,0.434,0.028,0.373,0.860
+751,ziemniaki;pomidory,0.075,mleko,0.434,0.028,0.373,0.860
+752,jajka;kurczak,0.080,jabłka,0.407,0.028,0.350,0.860
+753,oliwa z oliwek;ryż brązowy,0.070,jajka,0.432,0.026,0.371,0.860
+754,ryż brązowy;makaron pełnoziarnisty,0.067,mleko,0.434,0.025,0.373,0.860
+755,ziemniaki;mleko,0.178,ryż brązowy,0.412,0.063,0.354,0.859
+756,ser żółty;kurczak,0.065,ryż brązowy,0.412,0.023,0.354,0.859
+757,jajka;jogurt naturalny,0.180,chleb pełnoziarnisty,0.414,0.064,0.356,0.859
+758,ser żółty;jajka,0.176,kurczak,0.192,0.029,0.165,0.858
+759,jabłka;ogórki,0.150,płatki owsiane,0.210,0.027,0.180,0.857
+760,chleb pełnoziarnisty;banany,0.158,kurczak,0.192,0.026,0.165,0.857
+761,jajka;makaron pełnoziarnisty,0.067,ser żółty,0.418,0.024,0.358,0.857
+762,pomidory;płatki owsiane,0.045,banany,0.389,0.015,0.333,0.857
+763,ziemniaki;jogurt naturalny,0.165,banany,0.389,0.055,0.333,0.857
+764,oliwa z oliwek;płatki owsiane,0.045,banany,0.389,0.015,0.333,0.857
+765,ziemniaki;mleko,0.178,płatki owsiane,0.210,0.032,0.180,0.856
+766,oliwa z oliwek;ryż brązowy,0.070,mleko,0.434,0.026,0.371,0.856
+767,chleb pełnoziarnisty;makaron pełnoziarnisty,0.070,mleko,0.434,0.026,0.371,0.856
+768,ogórki;makaron pełnoziarnisty,0.070,mleko,0.434,0.026,0.371,0.856
+769,pomidory;jajka,0.070,ziemniaki,0.401,0.024,0.343,0.855
+770,oliwa z oliwek;ryż brązowy,0.070,ziemniaki,0.401,0.024,0.343,0.855
+771,ogórki,0.396,kurczak,0.192,0.065,0.164,0.855
+772,pomidory;ser żółty,0.065,chleb pełnoziarnisty,0.414,0.023,0.354,0.855
+773,mleko;makaron pełnoziarnisty,0.071,ryż brązowy,0.412,0.025,0.352,0.855
+774,płatki owsiane;makaron pełnoziarnisty,0.046,jabłka,0.407,0.016,0.348,0.855
+775,płatki owsiane;kurczak,0.046,jabłka,0.407,0.016,0.348,0.855
+776,oliwa z oliwek;ryż brązowy,0.070,ser żółty,0.418,0.025,0.357,0.854
+777,płatki owsiane;ryż brązowy,0.070,ser żółty,0.418,0.025,0.357,0.854
+778,jabłka;ogórki,0.150,chleb pełnoziarnisty,0.414,0.053,0.353,0.853
+779,jabłka;jajka,0.167,chleb pełnoziarnisty,0.414,0.059,0.353,0.853
+780,chleb pełnoziarnisty;kurczak,0.076,ziemniaki,0.401,0.026,0.342,0.853
+781,pomidory;chleb pełnoziarnisty,0.076,ziemniaki,0.401,0.026,0.342,0.853
+782,ryż brązowy;makaron pełnoziarnisty,0.067,płatki owsiane,0.210,0.012,0.179,0.853
+783,jogurt naturalny;makaron pełnoziarnisty,0.057,jajka,0.432,0.021,0.368,0.853
+784,ryż brązowy;jogurt naturalny,0.172,banany,0.389,0.057,0.331,0.852
+785,banany;makaron pełnoziarnisty,0.057,ryż brązowy,0.412,0.020,0.351,0.852
+786,płatki owsiane;kurczak,0.046,jogurt naturalny,0.434,0.017,0.370,0.852
+787,pomidory;mleko,0.082,ziemniaki,0.401,0.028,0.341,0.852
+788,jajka;banany,0.157,mleko,0.434,0.058,0.369,0.851
+789,ziemniaki;mleko,0.178,ogórki,0.396,0.060,0.337,0.851
+790,jabłka;makaron pełnoziarnisty,0.066,oliwa z oliwek,0.196,0.011,0.167,0.850
+791,ogórki;banany,0.156,pomidory,0.196,0.026,0.167,0.850
+792,jajka;chleb pełnoziarnisty,0.180,pomidory,0.196,0.030,0.167,0.850
+793,ser żółty;płatki owsiane,0.078,pomidory,0.196,0.013,0.167,0.850
+794,płatki owsiane;jogurt naturalny,0.079,jajka,0.432,0.029,0.367,0.850
+795,pomidory;jabłka,0.057,mleko,0.434,0.021,0.368,0.849
+796,jajka;mleko,0.171,jabłka,0.407,0.059,0.345,0.848
+797,oliwa z oliwek;ogórki,0.063,ryż brązowy,0.412,0.022,0.349,0.848
+798,jajka,0.432,makaron pełnoziarnisty,0.183,0.067,0.155,0.848
+799,jabłka;mleko,0.170,ogórki,0.396,0.057,0.335,0.847
+800,ziemniaki;kurczak,0.065,ser żółty,0.418,0.023,0.354,0.847
+801,jabłka;płatki owsiane,0.082,banany,0.389,0.027,0.329,0.846
+802,jabłka;kurczak,0.066,ryż brązowy,0.412,0.023,0.348,0.846
+803,jogurt naturalny;banany,0.156,jajka,0.432,0.057,0.365,0.846
+804,jogurt naturalny;kurczak,0.076,banany,0.389,0.025,0.329,0.846
+805,chleb pełnoziarnisty;ogórki,0.163,pomidory,0.196,0.027,0.166,0.845
+806,ser żółty;mleko,0.194,makaron pełnoziarnisty,0.183,0.030,0.155,0.845
+807,ziemniaki,0.401,makaron pełnoziarnisty,0.183,0.062,0.155,0.845
+808,ryż brązowy;kurczak,0.060,jogurt naturalny,0.434,0.022,0.367,0.845
+809,jabłka,0.407,kurczak,0.192,0.066,0.162,0.845
+810,ziemniaki,0.401,kurczak,0.192,0.065,0.162,0.844
+811,oliwa z oliwek;jogurt naturalny,0.085,jajka,0.432,0.031,0.365,0.844
+812,ser żółty;ogórki,0.172,jogurt naturalny,0.434,0.063,0.366,0.844
+813,jabłka;chleb pełnoziarnisty,0.162,jajka,0.432,0.059,0.364,0.843
+814,ogórki;makaron pełnoziarnisty,0.070,jabłka,0.407,0.024,0.343,0.842
+815,jabłka;jogurt naturalny,0.177,banany,0.389,0.058,0.328,0.842
+816,ser żółty;jogurt naturalny,0.175,chleb pełnoziarnisty,0.414,0.061,0.349,0.842
+817,pomidory;ryż brązowy,0.063,ogórki,0.396,0.021,0.333,0.842
+818,pomidory;płatki owsiane,0.045,ogórki,0.396,0.015,0.333,0.842
+819,jabłka;jogurt naturalny,0.177,ogórki,0.396,0.059,0.333,0.842
+820,ser żółty;płatki owsiane,0.078,ogórki,0.396,0.026,0.333,0.842
+821,jabłka;makaron pełnoziarnisty,0.066,chleb pełnoziarnisty,0.414,0.023,0.348,0.842
+822,jajka;kurczak,0.080,ziemniaki,0.401,0.027,0.337,0.842
+823,ser żółty;mleko,0.194,oliwa z oliwek,0.196,0.032,0.165,0.842
+824,oliwa z oliwek;mleko,0.075,ryż brązowy,0.412,0.026,0.347,0.841
+825,pomidory;ryż brązowy,0.063,jogurt naturalny,0.434,0.023,0.365,0.841
+826,płatki owsiane;ogórki,0.074,ser żółty,0.418,0.026,0.351,0.841
+827,oliwa z oliwek;jogurt naturalny,0.085,płatki owsiane,0.210,0.015,0.176,0.840
+828,jajka;ogórki,0.155,kurczak,0.192,0.025,0.161,0.840
+829,chleb pełnoziarnisty;banany,0.158,pomidory,0.196,0.026,0.165,0.840
+830,ziemniaki;banany,0.146,oliwa z oliwek,0.196,0.024,0.164,0.839
+831,płatki owsiane;kurczak,0.046,banany,0.389,0.015,0.326,0.838
+832,banany;kurczak,0.066,mleko,0.434,0.024,0.364,0.838
+833,pomidory;banany,0.066,jogurt naturalny,0.434,0.024,0.364,0.838
+834,ziemniaki;pomidory,0.075,chleb pełnoziarnisty,0.414,0.026,0.347,0.837
+835,jajka;banany,0.157,jogurt naturalny,0.434,0.057,0.363,0.837
+836,oliwa z oliwek;jogurt naturalny,0.085,makaron pełnoziarnisty,0.183,0.013,0.153,0.836
+837,jajka;kurczak,0.080,banany,0.389,0.026,0.325,0.835
+838,jogurt naturalny;makaron pełnoziarnisty,0.057,płatki owsiane,0.210,0.010,0.175,0.835
+839,jabłka;banany,0.160,jogurt naturalny,0.434,0.058,0.363,0.835
+840,płatki owsiane;jajka,0.080,jogurt naturalny,0.434,0.029,0.363,0.835
+841,ser żółty;mleko,0.194,jajka,0.432,0.070,0.361,0.835
+842,jogurt naturalny;banany,0.156,kurczak,0.192,0.025,0.160,0.835
+843,ziemniaki;ser żółty,0.159,pomidory,0.196,0.026,0.164,0.834
+844,pomidory;jogurt naturalny,0.074,banany,0.389,0.024,0.324,0.834
+845,chleb pełnoziarnisty;makaron pełnoziarnisty,0.070,ryż brązowy,0.412,0.024,0.343,0.832
+846,ogórki;makaron pełnoziarnisty,0.070,ryż brązowy,0.412,0.024,0.343,0.832
+847,oliwa z oliwek;makaron pełnoziarnisty,0.036,jogurt naturalny,0.434,0.013,0.361,0.832
+848,jabłka;płatki owsiane,0.082,ogórki,0.396,0.027,0.329,0.831
+849,pomidory;ryż brązowy,0.063,płatki owsiane,0.210,0.011,0.175,0.831
+850,oliwa z oliwek;makaron pełnoziarnisty,0.036,ziemniaki,0.401,0.012,0.333,0.831
+851,oliwa z oliwek;mleko,0.075,ziemniaki,0.401,0.025,0.333,0.831
+852,jabłka;makaron pełnoziarnisty,0.066,ziemniaki,0.401,0.022,0.333,0.831
+853,pomidory;jabłka,0.057,ziemniaki,0.401,0.019,0.333,0.831
+854,jajka;ryż brązowy,0.171,makaron pełnoziarnisty,0.183,0.026,0.152,0.831
+855,płatki owsiane;chleb pełnoziarnisty,0.073,ogórki,0.396,0.024,0.329,0.830
+856,pomidory;jogurt naturalny,0.074,jabłka,0.407,0.025,0.338,0.830
+857,pomidory;jajka,0.070,ogórki,0.396,0.023,0.329,0.830
+858,ziemniaki;pomidory,0.075,ser żółty,0.418,0.026,0.347,0.829
+859,płatki owsiane;banany,0.067,jajka,0.432,0.024,0.358,0.829
+860,płatki owsiane;jajka,0.080,oliwa z oliwek,0.196,0.013,0.162,0.829
+861,ziemniaki;ryż brązowy,0.156,jogurt naturalny,0.434,0.056,0.359,0.827
+862,płatki owsiane;ryż brązowy,0.070,jajka,0.432,0.025,0.357,0.827
+863,jogurt naturalny;kurczak,0.076,chleb pełnoziarnisty,0.414,0.026,0.342,0.826
+864,jabłka;chleb pełnoziarnisty,0.162,ogórki,0.396,0.053,0.327,0.826
+865,ziemniaki;chleb pełnoziarnisty,0.164,kurczak,0.192,0.026,0.159,0.826
+866,pomidory;ogórki,0.068,oliwa z oliwek,0.196,0.011,0.162,0.825
+867,ser żółty;płatki owsiane,0.078,banany,0.389,0.025,0.321,0.824
+868,ziemniaki;jogurt naturalny,0.165,ryż brązowy,0.412,0.056,0.339,0.824
+869,ser żółty,0.418,makaron pełnoziarnisty,0.183,0.063,0.151,0.824
+870,chleb pełnoziarnisty;makaron pełnoziarnisty,0.070,jogurt naturalny,0.434,0.025,0.357,0.823
+871,pomidory;makaron pełnoziarnisty,0.042,jogurt naturalny,0.434,0.015,0.357,0.823
+872,oliwa z oliwek;pomidory,0.042,mleko,0.434,0.015,0.357,0.823
+873,ogórki;kurczak,0.065,ryż brązowy,0.412,0.022,0.338,0.822
+874,ziemniaki;płatki owsiane,0.080,ogórki,0.396,0.026,0.325,0.821
+875,ziemniaki;oliwa z oliwek,0.071,ryż brązowy,0.412,0.024,0.338,0.820
+876,oliwa z oliwek;kurczak,0.047,banany,0.389,0.015,0.319,0.820
+877,jogurt naturalny;kurczak,0.076,ziemniaki,0.401,0.025,0.329,0.820
+878,jajka;chleb pełnoziarnisty,0.180,płatki owsiane,0.210,0.031,0.172,0.820
+879,płatki owsiane;ogórki,0.074,ryż brązowy,0.412,0.025,0.338,0.820
+880,jajka;chleb pełnoziarnisty,0.180,makaron pełnoziarnisty,0.183,0.027,0.150,0.820
+881,jajka;chleb pełnoziarnisty,0.180,jogurt naturalny,0.434,0.064,0.356,0.819
+882,pomidory;płatki owsiane,0.045,mleko,0.434,0.016,0.356,0.819
+883,oliwa z oliwek;ogórki,0.063,jabłka,0.407,0.021,0.333,0.819
+884,pomidory;banany,0.066,jabłka,0.407,0.022,0.333,0.819
+885,ryż brązowy;makaron pełnoziarnisty,0.067,ziemniaki,0.401,0.022,0.328,0.819
+886,jogurt naturalny;kurczak,0.076,mleko,0.434,0.027,0.355,0.819
+887,jabłka;makaron pełnoziarnisty,0.066,banany,0.389,0.021,0.318,0.818
+888,płatki owsiane;jogurt naturalny,0.079,ser żółty,0.418,0.027,0.342,0.818
+889,jajka;ogórki,0.155,jogurt naturalny,0.434,0.055,0.355,0.818
+890,ziemniaki;makaron pełnoziarnisty,0.062,mleko,0.434,0.022,0.355,0.818
+891,mleko;kurczak,0.068,jajka,0.432,0.024,0.353,0.817
+892,ser żółty;jogurt naturalny,0.175,oliwa z oliwek,0.196,0.028,0.160,0.816
+893,mleko,0.434,kurczak,0.192,0.068,0.157,0.816
+894,ogórki;jogurt naturalny,0.162,ziemniaki,0.401,0.053,0.327,0.816
+895,ziemniaki;kurczak,0.065,ogórki,0.396,0.021,0.323,0.816
+896,ser żółty;kurczak,0.065,jogurt naturalny,0.434,0.023,0.354,0.815
+897,ser żółty;mleko,0.194,pomidory,0.196,0.031,0.160,0.815
+898,pomidory;mleko,0.082,banany,0.389,0.026,0.317,0.815
+899,pomidory;chleb pełnoziarnisty,0.076,płatki owsiane,0.210,0.013,0.171,0.815
+900,jajka;jogurt naturalny,0.180,banany,0.389,0.057,0.317,0.814
+901,jabłka;jajka,0.167,mleko,0.434,0.059,0.353,0.814
+902,banany;mleko,0.165,jajka,0.432,0.058,0.352,0.814
+903,ryż brązowy;jogurt naturalny,0.172,ziemniaki,0.401,0.056,0.326,0.812
+904,ziemniaki;oliwa z oliwek,0.071,mleko,0.434,0.025,0.352,0.811
+905,oliwa z oliwek;jajka,0.071,mleko,0.434,0.025,0.352,0.811
+906,ziemniaki;jogurt naturalny,0.165,ogórki,0.396,0.053,0.321,0.811
+907,jajka;ogórki,0.155,makaron pełnoziarnisty,0.183,0.023,0.148,0.811
+908,jabłka;mleko,0.170,oliwa z oliwek,0.196,0.027,0.159,0.810
+909,jabłka;banany,0.160,jajka,0.432,0.056,0.350,0.810
+910,ser żółty,0.418,kurczak,0.192,0.065,0.156,0.810
+911,ziemniaki;ogórki,0.153,płatki owsiane,0.210,0.026,0.170,0.809
+912,oliwa z oliwek;ser żółty,0.075,ryż brązowy,0.412,0.025,0.333,0.809
+913,jabłka;płatki owsiane,0.082,pomidory,0.196,0.013,0.159,0.809
+914,ziemniaki;chleb pełnoziarnisty,0.164,pomidory,0.196,0.026,0.159,0.809
+915,pomidory;jogurt naturalny,0.074,ziemniaki,0.401,0.024,0.324,0.809
+916,oliwa z oliwek;jajka,0.071,ser żółty,0.418,0.024,0.338,0.809
+917,jajka;ogórki,0.155,jabłka,0.407,0.051,0.329,0.808
+918,chleb pełnoziarnisty;jogurt naturalny,0.169,makaron pełnoziarnisty,0.183,0.025,0.148,0.808
+919,chleb pełnoziarnisty;kurczak,0.076,jabłka,0.407,0.025,0.329,0.808
+920,oliwa z oliwek;chleb pełnoziarnisty,0.075,ogórki,0.396,0.024,0.320,0.808
+921,oliwa z oliwek;ser żółty,0.075,ogórki,0.396,0.024,0.320,0.808
+922,chleb pełnoziarnisty;makaron pełnoziarnisty,0.070,jabłka,0.407,0.023,0.329,0.807
+923,ziemniaki;jajka,0.177,płatki owsiane,0.210,0.030,0.169,0.807
+924,ryż brązowy;kurczak,0.060,mleko,0.434,0.021,0.350,0.806
+925,kurczak;makaron pełnoziarnisty,0.040,jogurt naturalny,0.434,0.014,0.350,0.806
+926,oliwa z oliwek;kurczak,0.047,ogórki,0.396,0.015,0.319,0.806
+927,ogórki;kurczak,0.065,ziemniaki,0.401,0.021,0.323,0.806
+928,jajka;chleb pełnoziarnisty,0.180,jabłka,0.407,0.059,0.328,0.805
+929,oliwa z oliwek;makaron pełnoziarnisty,0.036,chleb pełnoziarnisty,0.414,0.012,0.333,0.805
+930,oliwa z oliwek;banany,0.069,jajka,0.432,0.024,0.348,0.805
+931,oliwa z oliwek;banany,0.069,chleb pełnoziarnisty,0.414,0.023,0.333,0.805
+932,banany;mleko,0.165,pomidory,0.196,0.026,0.158,0.804
+933,jabłka;chleb pełnoziarnisty,0.162,kurczak,0.192,0.025,0.154,0.804
+934,ziemniaki;banany,0.146,pomidory,0.196,0.023,0.158,0.804
+935,jabłka;banany,0.160,płatki owsiane,0.210,0.027,0.169,0.804
+936,oliwa z oliwek;jabłka,0.066,ogórki,0.396,0.021,0.318,0.803
+937,jabłka;mleko,0.170,jajka,0.432,0.059,0.347,0.803
+938,jabłka;makaron pełnoziarnisty,0.066,mleko,0.434,0.023,0.348,0.803
+939,jajka;ogórki,0.155,mleko,0.434,0.054,0.348,0.803
+940,chleb pełnoziarnisty;mleko,0.177,makaron pełnoziarnisty,0.183,0.026,0.147,0.803
+941,ziemniaki;mleko,0.178,pomidory,0.196,0.028,0.157,0.803
+942,płatki owsiane;ryż brązowy,0.070,oliwa z oliwek,0.196,0.011,0.157,0.802
+943,płatki owsiane;ryż brązowy,0.070,pomidory,0.196,0.011,0.157,0.802
+944,pomidory;jajka,0.070,oliwa z oliwek,0.196,0.011,0.157,0.802
+945,oliwa z oliwek;mleko,0.075,makaron pełnoziarnisty,0.183,0.011,0.147,0.801
+946,chleb pełnoziarnisty;jogurt naturalny,0.169,kurczak,0.192,0.026,0.154,0.801
+947,banany,0.389,makaron pełnoziarnisty,0.183,0.057,0.147,0.801
+948,chleb pełnoziarnisty;ogórki,0.163,jabłka,0.407,0.053,0.325,0.799
+949,oliwa z oliwek;chleb pełnoziarnisty,0.075,jogurt naturalny,0.434,0.026,0.347,0.799
+950,ziemniaki;ogórki,0.153,jogurt naturalny,0.434,0.053,0.346,0.798
+951,ser żółty;płatki owsiane,0.078,jogurt naturalny,0.434,0.027,0.346,0.798
+952,pomidory;jabłka,0.057,ser żółty,0.418,0.019,0.333,0.797
+953,oliwa z oliwek;banany,0.069,ser żółty,0.418,0.023,0.333,0.797
+954,jajka;mleko,0.171,ogórki,0.396,0.054,0.316,0.797
+955,mleko;makaron pełnoziarnisty,0.071,jabłka,0.407,0.023,0.324,0.796
+956,jabłka;płatki owsiane,0.082,chleb pełnoziarnisty,0.414,0.027,0.329,0.795
+957,banany;mleko,0.165,makaron pełnoziarnisty,0.183,0.024,0.145,0.795
+958,jabłka;jogurt naturalny,0.177,kurczak,0.192,0.027,0.153,0.794
+959,ziemniaki;jajka,0.177,kurczak,0.192,0.027,0.153,0.794
+960,ryż brązowy;kurczak,0.060,płatki owsiane,0.210,0.010,0.167,0.794
+961,płatki owsiane;ryż brązowy,0.070,chleb pełnoziarnisty,0.414,0.023,0.329,0.794
+962,jajka;chleb pełnoziarnisty,0.180,oliwa z oliwek,0.196,0.028,0.156,0.794
+963,ziemniaki;ryż brązowy,0.156,płatki owsiane,0.210,0.026,0.167,0.794
+964,jabłka;chleb pełnoziarnisty,0.162,płatki owsiane,0.210,0.027,0.167,0.794
+965,oliwa z oliwek;ryż brązowy,0.070,ogórki,0.396,0.022,0.314,0.794
+966,oliwa z oliwek;jabłka,0.066,ziemniaki,0.401,0.021,0.318,0.793
+967,ser żółty;makaron pełnoziarnisty,0.063,ziemniaki,0.401,0.020,0.317,0.792
+968,pomidory;ser żółty,0.065,banany,0.389,0.020,0.308,0.791
+969,oliwa z oliwek;jajka,0.071,pomidory,0.196,0.011,0.155,0.790
+970,mleko;makaron pełnoziarnisty,0.071,oliwa z oliwek,0.196,0.011,0.155,0.790
+971,płatki owsiane;ryż brązowy,0.070,jogurt naturalny,0.434,0.024,0.343,0.790
+972,ziemniaki;jogurt naturalny,0.165,kurczak,0.192,0.025,0.152,0.789
+973,płatki owsiane;jajka,0.080,ogórki,0.396,0.025,0.313,0.789
+974,jajka;kurczak,0.080,ogórki,0.396,0.025,0.313,0.789
+975,kurczak;makaron pełnoziarnisty,0.040,ryż brązowy,0.412,0.013,0.325,0.789
+976,ziemniaki;płatki owsiane,0.080,ryż brązowy,0.412,0.026,0.325,0.789
+977,oliwa z oliwek;chleb pełnoziarnisty,0.075,banany,0.389,0.023,0.307,0.788
+978,ziemniaki;pomidory,0.075,banany,0.389,0.023,0.307,0.788
+979,oliwa z oliwek;ser żółty,0.075,banany,0.389,0.023,0.307,0.788
+980,chleb pełnoziarnisty;kurczak,0.076,jogurt naturalny,0.434,0.026,0.342,0.788
+981,oliwa z oliwek;jogurt naturalny,0.085,ser żółty,0.418,0.028,0.329,0.788
+982,płatki owsiane;kurczak,0.046,chleb pełnoziarnisty,0.414,0.015,0.326,0.788
+983,jabłka;ogórki,0.150,jajka,0.432,0.051,0.340,0.787
+984,pomidory;kurczak,0.049,banany,0.389,0.015,0.306,0.787
+985,jabłka;płatki owsiane,0.082,mleko,0.434,0.028,0.341,0.787
+986,oliwa z oliwek;ser żółty,0.075,jabłka,0.407,0.024,0.320,0.786
+987,oliwa z oliwek;chleb pełnoziarnisty,0.075,jabłka,0.407,0.024,0.320,0.786
+988,ogórki;jogurt naturalny,0.162,jajka,0.432,0.055,0.340,0.786
+989,oliwa z oliwek;płatki owsiane,0.045,ogórki,0.396,0.014,0.311,0.786
+990,pomidory;ser żółty,0.065,oliwa z oliwek,0.196,0.010,0.154,0.785
+991,jogurt naturalny;banany,0.156,pomidory,0.196,0.024,0.154,0.785
+992,ziemniaki;ryż brązowy,0.156,oliwa z oliwek,0.196,0.024,0.154,0.785
+993,chleb pełnoziarnisty;jogurt naturalny,0.169,oliwa z oliwek,0.196,0.026,0.154,0.785
+994,jabłka;mleko,0.170,płatki owsiane,0.210,0.028,0.165,0.784
+995,płatki owsiane;ogórki,0.074,chleb pełnoziarnisty,0.414,0.024,0.324,0.783
+996,pomidory;ogórki,0.068,jajka,0.432,0.023,0.338,0.783
+997,ziemniaki;jogurt naturalny,0.165,ser żółty,0.418,0.054,0.327,0.783
+998,ryż brązowy;chleb pełnoziarnisty,0.176,oliwa z oliwek,0.196,0.027,0.153,0.783
+999,ziemniaki;ser żółty,0.159,jogurt naturalny,0.434,0.054,0.340,0.783
+1000,płatki owsiane;ogórki,0.074,jajka,0.432,0.025,0.338,0.782
+1001,jabłka;banany,0.160,kurczak,0.192,0.024,0.150,0.781
+1002,płatki owsiane;jajka,0.080,kurczak,0.192,0.012,0.150,0.781
+1003,oliwa z oliwek;ryż brązowy,0.070,makaron pełnoziarnisty,0.183,0.010,0.143,0.781
+1004,chleb pełnoziarnisty;mleko,0.177,płatki owsiane,0.210,0.029,0.164,0.780
+1005,jajka;banany,0.157,oliwa z oliwek,0.196,0.024,0.153,0.780
+1006,ser żółty;płatki owsiane,0.078,ryż brązowy,0.412,0.025,0.321,0.778
+1007,pomidory;ser żółty,0.065,ogórki,0.396,0.020,0.308,0.777
+1008,ryż brązowy;ogórki,0.169,makaron pełnoziarnisty,0.183,0.024,0.142,0.776
+1009,jabłka;chleb pełnoziarnisty,0.162,makaron pełnoziarnisty,0.183,0.023,0.142,0.776
+1010,jajka;ryż brązowy,0.171,oliwa z oliwek,0.196,0.026,0.152,0.776
+1011,jabłka;kurczak,0.066,pomidory,0.196,0.010,0.152,0.773
+1012,jabłka;makaron pełnoziarnisty,0.066,pomidory,0.196,0.010,0.152,0.773
+1013,oliwa z oliwek;mleko,0.075,chleb pełnoziarnisty,0.414,0.024,0.320,0.773
+1014,mleko;makaron pełnoziarnisty,0.071,ziemniaki,0.401,0.022,0.310,0.773
+1015,ziemniaki;makaron pełnoziarnisty,0.062,ser żółty,0.418,0.020,0.323,0.772
+1016,pomidory;ryż brązowy,0.063,jajka,0.432,0.021,0.333,0.772
+1017,oliwa z oliwek;mleko,0.075,jajka,0.432,0.025,0.333,0.772
+1018,ogórki;mleko,0.162,jajka,0.432,0.054,0.333,0.772
+1019,jajka;jogurt naturalny,0.180,ogórki,0.396,0.055,0.306,0.772
+1020,chleb pełnoziarnisty;makaron pełnoziarnisty,0.070,banany,0.389,0.021,0.300,0.771
+1021,ogórki;makaron pełnoziarnisty,0.070,banany,0.389,0.021,0.300,0.771
+1022,płatki owsiane;jajka,0.080,banany,0.389,0.024,0.300,0.771
+1023,jabłka;jajka,0.167,ogórki,0.396,0.051,0.305,0.771
+1024,ziemniaki;ryż brązowy,0.156,makaron pełnoziarnisty,0.183,0.022,0.141,0.771
+1025,mleko;kurczak,0.068,ziemniaki,0.401,0.021,0.309,0.770
+1026,jabłka;płatki owsiane,0.082,ryż brązowy,0.412,0.026,0.317,0.770
+1027,ser żółty;jogurt naturalny,0.175,ziemniaki,0.401,0.054,0.309,0.770
+1028,płatki owsiane;kurczak,0.046,ogórki,0.396,0.014,0.304,0.769
+1029,jajka;ogórki,0.155,płatki owsiane,0.210,0.025,0.161,0.768
+1030,oliwa z oliwek;ogórki,0.063,mleko,0.434,0.021,0.333,0.768
+1031,oliwa z oliwek;płatki owsiane,0.045,jogurt naturalny,0.434,0.015,0.333,0.768
+1032,ogórki;banany,0.156,kurczak,0.192,0.023,0.147,0.768
+1033,ryż brązowy;makaron pełnoziarnisty,0.067,banany,0.389,0.020,0.299,0.767
+1034,ser żółty;płatki owsiane,0.078,ziemniaki,0.401,0.024,0.308,0.767
+1035,jajka;jogurt naturalny,0.180,płatki owsiane,0.210,0.029,0.161,0.767
+1036,płatki owsiane;mleko,0.079,ogórki,0.396,0.024,0.304,0.767
+1037,płatki owsiane;jogurt naturalny,0.079,ogórki,0.396,0.024,0.304,0.767
+1038,ser żółty;makaron pełnoziarnisty,0.063,chleb pełnoziarnisty,0.414,0.020,0.317,0.767
+1039,ryż brązowy;kurczak,0.060,chleb pełnoziarnisty,0.414,0.019,0.317,0.765
+1040,płatki owsiane;chleb pełnoziarnisty,0.073,ryż brązowy,0.412,0.023,0.315,0.765
+1041,jogurt naturalny;mleko,0.184,kurczak,0.192,0.027,0.147,0.764
+1042,pomidory;kurczak,0.049,ziemniaki,0.401,0.015,0.306,0.763
+1043,ryż brązowy;mleko,0.181,płatki owsiane,0.210,0.029,0.160,0.763
+1044,pomidory;jabłka,0.057,chleb pełnoziarnisty,0.414,0.018,0.316,0.763
+1045,ryż brązowy;makaron pełnoziarnisty,0.067,oliwa z oliwek,0.196,0.010,0.149,0.761
+1046,ser żółty;mleko,0.194,płatki owsiane,0.210,0.031,0.160,0.761
+1047,ogórki;makaron pełnoziarnisty,0.070,jajka,0.432,0.023,0.329,0.761
+1048,płatki owsiane;kurczak,0.046,ziemniaki,0.401,0.014,0.304,0.759
+1049,płatki owsiane;jajka,0.080,ryż brązowy,0.412,0.025,0.313,0.758
+1050,ryż brązowy,0.412,kurczak,0.192,0.060,0.146,0.758
+1051,jabłka;ryż brązowy,0.175,oliwa z oliwek,0.196,0.026,0.149,0.758
+1052,pomidory;chleb pełnoziarnisty,0.076,mleko,0.434,0.025,0.329,0.758
+1053,chleb pełnoziarnisty;kurczak,0.076,mleko,0.434,0.025,0.329,0.758
+1054,banany;mleko,0.165,kurczak,0.192,0.024,0.145,0.758
+1055,płatki owsiane;chleb pełnoziarnisty,0.073,jogurt naturalny,0.434,0.024,0.329,0.758
+1056,jajka;ogórki,0.155,pomidory,0.196,0.023,0.148,0.757
+1057,pomidory;jajka,0.070,mleko,0.434,0.023,0.329,0.757
+1058,ser żółty;ogórki,0.172,kurczak,0.192,0.025,0.145,0.757
+1059,jajka;makaron pełnoziarnisty,0.067,mleko,0.434,0.022,0.328,0.757
+1060,płatki owsiane;banany,0.067,mleko,0.434,0.022,0.328,0.757
+1061,ziemniaki;kurczak,0.065,jabłka,0.407,0.020,0.308,0.756
+1062,jabłka;chleb pełnoziarnisty,0.162,oliwa z oliwek,0.196,0.024,0.148,0.756
+1063,jabłka;kurczak,0.066,ziemniaki,0.401,0.020,0.303,0.756
+1064,płatki owsiane;makaron pełnoziarnisty,0.046,jajka,0.432,0.015,0.326,0.755
+1065,ryż brązowy;mleko,0.181,makaron pełnoziarnisty,0.183,0.025,0.138,0.755
+1066,pomidory;jogurt naturalny,0.074,ryż brązowy,0.412,0.023,0.311,0.754
+1067,płatki owsiane;banany,0.067,ogórki,0.396,0.020,0.299,0.754
+1068,płatki owsiane;chleb pełnoziarnisty,0.073,ser żółty,0.418,0.023,0.315,0.754
+1069,ziemniaki;ser żółty,0.159,kurczak,0.192,0.023,0.145,0.753
+1070,pomidory;ryż brązowy,0.063,ziemniaki,0.401,0.019,0.302,0.752
+1071,ogórki;makaron pełnoziarnisty,0.070,ser żółty,0.418,0.022,0.314,0.752
+1072,ziemniaki;kurczak,0.065,banany,0.389,0.019,0.292,0.751
+1073,ziemniaki;jabłka,0.160,makaron pełnoziarnisty,0.183,0.022,0.137,0.751
+1074,jabłka;ser żółty,0.163,oliwa z oliwek,0.196,0.024,0.147,0.751
+1075,chleb pełnoziarnisty;ogórki,0.163,oliwa z oliwek,0.196,0.024,0.147,0.751
+1076,oliwa z oliwek;makaron pełnoziarnisty,0.036,jabłka,0.407,0.011,0.306,0.751
+1077,pomidory;jogurt naturalny,0.074,chleb pełnoziarnisty,0.414,0.023,0.311,0.751
+1078,pomidory;ogórki,0.068,ryż brązowy,0.412,0.021,0.309,0.750
+1079,mleko;kurczak,0.068,ryż brązowy,0.412,0.021,0.309,0.750
+1080,kurczak;makaron pełnoziarnisty,0.040,mleko,0.434,0.013,0.325,0.749
+1081,oliwa z oliwek;ryż brązowy,0.070,płatki owsiane,0.210,0.011,0.157,0.748
+1082,kurczak;makaron pełnoziarnisty,0.040,ziemniaki,0.401,0.012,0.300,0.748
+1083,płatki owsiane;ogórki,0.074,mleko,0.434,0.024,0.324,0.747
+1084,płatki owsiane;ogórki,0.074,jogurt naturalny,0.434,0.024,0.324,0.747
+1085,ser żółty;ryż brązowy,0.171,oliwa z oliwek,0.196,0.025,0.146,0.746
+1086,jajka;mleko,0.171,oliwa z oliwek,0.196,0.025,0.146,0.746
+1087,ser żółty;jajka,0.176,makaron pełnoziarnisty,0.183,0.024,0.136,0.745
+1088,ryż brązowy;chleb pełnoziarnisty,0.176,makaron pełnoziarnisty,0.183,0.024,0.136,0.745
+1089,ziemniaki;kurczak,0.065,mleko,0.434,0.021,0.323,0.744
+1090,płatki owsiane;ryż brązowy,0.070,kurczak,0.192,0.010,0.143,0.744
+1091,ser żółty;kurczak,0.065,chleb pełnoziarnisty,0.414,0.020,0.308,0.743
+1092,mleko;kurczak,0.068,ogórki,0.396,0.020,0.294,0.743
+1093,chleb pełnoziarnisty;banany,0.158,oliwa z oliwek,0.196,0.023,0.146,0.743
+1094,ziemniaki;jogurt naturalny,0.165,pomidory,0.196,0.024,0.145,0.742
+1095,ser żółty;makaron pełnoziarnisty,0.063,jabłka,0.407,0.019,0.302,0.741
+1096,ziemniaki;pomidory,0.075,jajka,0.432,0.024,0.320,0.741
+1097,oliwa z oliwek;ser żółty,0.075,jajka,0.432,0.024,0.320,0.741
+1098,pomidory;makaron pełnoziarnisty,0.042,ser żółty,0.418,0.013,0.310,0.740
+1099,jabłka;mleko,0.170,makaron pełnoziarnisty,0.183,0.023,0.135,0.739
+1100,oliwa z oliwek;jogurt naturalny,0.085,chleb pełnoziarnisty,0.414,0.026,0.306,0.739
+1101,płatki owsiane;jogurt naturalny,0.079,ryż brązowy,0.412,0.024,0.304,0.737
+1102,oliwa z oliwek;chleb pełnoziarnisty,0.075,mleko,0.434,0.024,0.320,0.737
+1103,ziemniaki;pomidory,0.075,jogurt naturalny,0.434,0.024,0.320,0.737
+1104,pomidory;mleko,0.082,chleb pełnoziarnisty,0.414,0.025,0.305,0.736
+1105,chleb pełnoziarnisty;mleko,0.177,kurczak,0.192,0.025,0.141,0.736
+1106,ogórki;banany,0.156,makaron pełnoziarnisty,0.183,0.021,0.135,0.736
+1107,ser żółty;jogurt naturalny,0.175,płatki owsiane,0.210,0.027,0.154,0.735
+1108,pomidory;chleb pełnoziarnisty,0.076,ryż brązowy,0.412,0.023,0.303,0.735
+1109,pomidory;jajka,0.070,banany,0.389,0.020,0.286,0.734
+1110,oliwa z oliwek;pomidory,0.042,banany,0.389,0.012,0.286,0.734
+1111,płatki owsiane;jogurt naturalny,0.079,chleb pełnoziarnisty,0.414,0.024,0.304,0.734
+1112,ryż brązowy;banany,0.149,makaron pełnoziarnisty,0.183,0.020,0.134,0.733
+1113,ser żółty;chleb pełnoziarnisty,0.160,pomidory,0.196,0.023,0.144,0.733
+1114,ryż brązowy;kurczak,0.060,jajka,0.432,0.019,0.317,0.733
+1115,ryż brązowy;mleko,0.181,oliwa z oliwek,0.196,0.026,0.144,0.733
+1116,ser żółty;kurczak,0.065,płatki owsiane,0.210,0.010,0.154,0.733
+1117,płatki owsiane;mleko,0.079,jajka,0.432,0.025,0.316,0.733
+1118,ser żółty;makaron pełnoziarnisty,0.063,ryż brązowy,0.412,0.019,0.302,0.732
+1119,pomidory;jabłka,0.057,jajka,0.432,0.018,0.316,0.731
+1120,jajka;mleko,0.171,kurczak,0.192,0.024,0.140,0.731
+1121,ser żółty;banany,0.163,płatki owsiane,0.210,0.025,0.153,0.730
+1122,pomidory;jajka,0.070,ryż brązowy,0.412,0.021,0.300,0.728
+1123,jajka;banany,0.157,płatki owsiane,0.210,0.024,0.153,0.728
+1124,jogurt naturalny;makaron pełnoziarnisty,0.057,mleko,0.434,0.018,0.316,0.728
+1125,ziemniaki;oliwa z oliwek,0.071,jabłka,0.407,0.021,0.296,0.727
+1126,płatki owsiane;makaron pełnoziarnisty,0.046,banany,0.389,0.013,0.283,0.727
+1127,chleb pełnoziarnisty;banany,0.158,makaron pełnoziarnisty,0.183,0.021,0.133,0.726
+1128,pomidory;banany,0.066,ser żółty,0.418,0.020,0.303,0.725
+1129,pomidory;chleb pełnoziarnisty,0.076,ser żółty,0.418,0.023,0.303,0.724
+1130,jogurt naturalny;kurczak,0.076,ser żółty,0.418,0.023,0.303,0.724
+1131,pomidory;ogórki,0.068,jabłka,0.407,0.020,0.294,0.723
+1132,jajka;makaron pełnoziarnisty,0.067,jogurt naturalny,0.434,0.021,0.313,0.722
+1133,jogurt naturalny;makaron pełnoziarnisty,0.057,banany,0.389,0.016,0.281,0.722
+1134,pomidory;ryż brązowy,0.063,ser żółty,0.418,0.019,0.302,0.722
+1135,chleb pełnoziarnisty;mleko,0.177,pomidory,0.196,0.025,0.141,0.721
+1136,jabłka;jogurt naturalny,0.177,pomidory,0.196,0.025,0.141,0.721
+1137,pomidory;płatki owsiane,0.045,jajka,0.432,0.014,0.311,0.720
+1138,płatki owsiane;jajka,0.080,mleko,0.434,0.025,0.313,0.720
+1139,ser żółty;banany,0.163,oliwa z oliwek,0.196,0.023,0.141,0.720
+1140,ser żółty;ogórki,0.172,płatki owsiane,0.210,0.026,0.151,0.720
+1141,oliwa z oliwek;mleko,0.075,banany,0.389,0.021,0.280,0.720
+1142,ziemniaki;ser żółty,0.159,płatki owsiane,0.210,0.024,0.151,0.719
+1143,pomidory;ser żółty,0.065,jabłka,0.407,0.019,0.292,0.718
+1144,banany;kurczak,0.066,ziemniaki,0.401,0.019,0.288,0.718
+1145,ziemniaki;płatki owsiane,0.080,ser żółty,0.418,0.024,0.300,0.718
+1146,mleko;makaron pełnoziarnisty,0.071,jajka,0.432,0.022,0.310,0.717
+1147,jabłka;banany,0.160,makaron pełnoziarnisty,0.183,0.021,0.131,0.717
+1148,oliwa z oliwek;płatki owsiane,0.045,mleko,0.434,0.014,0.311,0.717
+1149,pomidory;jogurt naturalny,0.074,ogórki,0.396,0.021,0.284,0.717
+1150,ziemniaki;mleko,0.178,oliwa z oliwek,0.196,0.025,0.140,0.717
+1151,płatki owsiane;mleko,0.079,banany,0.389,0.022,0.278,0.716
+1152,ziemniaki;ogórki,0.153,kurczak,0.192,0.021,0.137,0.715
+1153,jajka;kurczak,0.080,płatki owsiane,0.210,0.012,0.150,0.714
+1154,jabłka;ogórki,0.150,oliwa z oliwek,0.196,0.021,0.140,0.714
+1155,płatki owsiane;makaron pełnoziarnisty,0.046,ogórki,0.396,0.013,0.283,0.714
+1156,banany;makaron pełnoziarnisty,0.057,ser żółty,0.418,0.017,0.298,0.714
+1157,jogurt naturalny;makaron pełnoziarnisty,0.057,ser żółty,0.418,0.017,0.298,0.714
+1158,oliwa z oliwek;ogórki,0.063,ziemniaki,0.401,0.018,0.286,0.713
+1159,pomidory;ser żółty,0.065,jajka,0.432,0.020,0.308,0.712
+1160,ser żółty;płatki owsiane,0.078,chleb pełnoziarnisty,0.414,0.023,0.295,0.712
+1161,ser żółty;ogórki,0.172,oliwa z oliwek,0.196,0.024,0.140,0.712
+1162,ser żółty;kurczak,0.065,banany,0.389,0.018,0.277,0.712
+1163,pomidory;ogórki,0.068,jogurt naturalny,0.434,0.021,0.309,0.712
+1164,pomidory;płatki owsiane,0.045,jabłka,0.407,0.013,0.289,0.710
+1165,pomidory;ser żółty,0.065,ryż brązowy,0.412,0.019,0.292,0.709
+1166,ogórki;kurczak,0.065,mleko,0.434,0.020,0.308,0.709
+1167,pomidory;ser żółty,0.065,jogurt naturalny,0.434,0.020,0.308,0.709
+1168,ogórki;kurczak,0.065,jogurt naturalny,0.434,0.020,0.308,0.709
+1169,jabłka;ryż brązowy,0.175,płatki owsiane,0.210,0.026,0.149,0.707
+1170,oliwa z oliwek;mleko,0.075,ogórki,0.396,0.021,0.280,0.707
+1171,ryż brązowy;kurczak,0.060,ziemniaki,0.401,0.017,0.283,0.707
+1172,ogórki;mleko,0.162,płatki owsiane,0.210,0.024,0.148,0.705
+1173,ogórki;jogurt naturalny,0.162,płatki owsiane,0.210,0.024,0.148,0.705
+1174,ryż brązowy;ogórki,0.169,płatki owsiane,0.210,0.025,0.148,0.704
+1175,oliwa z oliwek;makaron pełnoziarnisty,0.036,mleko,0.434,0.011,0.306,0.704
+1176,pomidory;ogórki,0.068,ser żółty,0.418,0.020,0.294,0.704
+1177,jajka;mleko,0.171,makaron pełnoziarnisty,0.183,0.022,0.129,0.703
+1178,jogurt naturalny;kurczak,0.076,ryż brązowy,0.412,0.022,0.289,0.703
+1179,oliwa z oliwek;pomidory,0.042,jabłka,0.407,0.012,0.286,0.702
+1180,jabłka;banany,0.160,pomidory,0.196,0.022,0.137,0.702
+1181,pomidory;banany,0.066,jajka,0.432,0.020,0.303,0.701
+1182,płatki owsiane;kurczak,0.046,mleko,0.434,0.014,0.304,0.701
+1183,oliwa z oliwek;banany,0.069,mleko,0.434,0.021,0.304,0.701
+1184,ziemniaki;makaron pełnoziarnisty,0.062,chleb pełnoziarnisty,0.414,0.018,0.290,0.701
+1185,chleb pełnoziarnisty;ogórki,0.163,płatki owsiane,0.210,0.024,0.147,0.701
+1186,ser żółty;ryż brązowy,0.171,kurczak,0.192,0.023,0.135,0.701
+1187,jogurt naturalny;makaron pełnoziarnisty,0.057,ziemniaki,0.401,0.016,0.281,0.700
+1188,jabłka;ryż brązowy,0.175,pomidory,0.196,0.024,0.137,0.700
+1189,ser żółty;ogórki,0.172,makaron pełnoziarnisty,0.183,0.022,0.128,0.699
+1190,oliwa z oliwek;ogórki,0.063,jajka,0.432,0.019,0.302,0.698
+1191,pomidory;płatki owsiane,0.045,chleb pełnoziarnisty,0.414,0.013,0.289,0.698
+1192,pomidory;chleb pełnoziarnisty,0.076,jogurt naturalny,0.434,0.023,0.303,0.697
+1193,jajka;makaron pełnoziarnisty,0.067,jabłka,0.407,0.019,0.284,0.697
+1194,jajka;ryż brązowy,0.171,płatki owsiane,0.210,0.025,0.146,0.696
+1195,jajka;mleko,0.171,płatki owsiane,0.210,0.025,0.146,0.696
+1196,ser żółty;ryż brązowy,0.171,płatki owsiane,0.210,0.025,0.146,0.696
+1197,ser żółty;jajka,0.176,oliwa z oliwek,0.196,0.024,0.136,0.696
+1198,płatki owsiane;ogórki,0.074,banany,0.389,0.020,0.270,0.695
+1199,chleb pełnoziarnisty;jogurt naturalny,0.169,pomidory,0.196,0.023,0.136,0.694
+1200,ser żółty;makaron pełnoziarnisty,0.063,banany,0.389,0.017,0.270,0.694
+1201,chleb pełnoziarnisty;mleko,0.177,oliwa z oliwek,0.196,0.024,0.136,0.692
+1202,ziemniaki;jajka,0.177,pomidory,0.196,0.024,0.136,0.692
+1203,płatki owsiane;jogurt naturalny,0.079,makaron pełnoziarnisty,0.183,0.010,0.127,0.692
+1204,pomidory;jajka,0.070,jogurt naturalny,0.434,0.021,0.300,0.691
+1205,jajka;kurczak,0.080,mleko,0.434,0.024,0.300,0.691
+1206,pomidory;płatki owsiane,0.045,ser żółty,0.418,0.013,0.289,0.691
+1207,jabłka;makaron pełnoziarnisty,0.066,ser żółty,0.418,0.019,0.288,0.689
+1208,ziemniaki;ser żółty,0.159,makaron pełnoziarnisty,0.183,0.020,0.126,0.687
+1209,mleko;kurczak,0.068,jabłka,0.407,0.019,0.279,0.687
+1210,jajka;mleko,0.171,pomidory,0.196,0.023,0.135,0.686
+1211,ryż brązowy;kurczak,0.060,banany,0.389,0.016,0.267,0.686
+1212,ser żółty;chleb pełnoziarnisty,0.160,płatki owsiane,0.210,0.023,0.144,0.685
+1213,jabłka;ryż brązowy,0.175,kurczak,0.192,0.023,0.131,0.685
+1214,ser żółty;jogurt naturalny,0.175,kurczak,0.192,0.023,0.131,0.685
+1215,pomidory;jajka,0.070,ser żółty,0.418,0.020,0.286,0.684
+1216,chleb pełnoziarnisty;makaron pełnoziarnisty,0.070,ser żółty,0.418,0.020,0.286,0.684
+1217,ser żółty;chleb pełnoziarnisty,0.160,makaron pełnoziarnisty,0.183,0.020,0.125,0.683
+1218,ryż brązowy;jogurt naturalny,0.172,pomidory,0.196,0.023,0.134,0.682
+1219,jabłka;ogórki,0.150,pomidory,0.196,0.020,0.133,0.680
+1220,oliwa z oliwek;ser żółty,0.075,pomidory,0.196,0.010,0.133,0.680
+1221,ryż brązowy;makaron pełnoziarnisty,0.067,ser żółty,0.418,0.019,0.284,0.678
+1222,ryż brązowy;ogórki,0.169,kurczak,0.192,0.022,0.130,0.678
+1223,ziemniaki;banany,0.146,kurczak,0.192,0.019,0.130,0.678
+1224,pomidory;ogórki,0.068,mleko,0.434,0.020,0.294,0.678
+1225,chleb pełnoziarnisty;jogurt naturalny,0.169,płatki owsiane,0.210,0.024,0.142,0.676
+1226,płatki owsiane;makaron pełnoziarnisty,0.046,ser żółty,0.418,0.013,0.283,0.676
+1227,oliwa z oliwek;jajka,0.071,ogórki,0.396,0.019,0.268,0.676
+1228,kurczak;makaron pełnoziarnisty,0.040,jabłka,0.407,0.011,0.275,0.676
+1229,ziemniaki;mleko,0.178,makaron pełnoziarnisty,0.183,0.022,0.124,0.675
+1230,ogórki;jogurt naturalny,0.162,makaron pełnoziarnisty,0.183,0.020,0.123,0.675
+1231,oliwa z oliwek;makaron pełnoziarnisty,0.036,ryż brązowy,0.412,0.010,0.278,0.674
+1232,oliwa z oliwek;kurczak,0.047,ryż brązowy,0.412,0.013,0.277,0.671
+1233,ser żółty;mleko,0.194,kurczak,0.192,0.025,0.129,0.671
+1234,płatki owsiane;banany,0.067,ziemniaki,0.401,0.018,0.269,0.670
+1235,ziemniaki;jabłka,0.160,oliwa z oliwek,0.196,0.021,0.131,0.670
+1236,oliwa z oliwek;płatki owsiane,0.045,jajka,0.432,0.013,0.289,0.669
+1237,oliwa z oliwek;kurczak,0.047,chleb pełnoziarnisty,0.414,0.013,0.277,0.668
+1238,ser żółty;płatki owsiane,0.078,kurczak,0.192,0.010,0.128,0.668
+1239,ryż brązowy;chleb pełnoziarnisty,0.176,pomidory,0.196,0.023,0.131,0.667
+1240,jabłka;makaron pełnoziarnisty,0.066,jajka,0.432,0.019,0.288,0.666
+1241,oliwa z oliwek;jabłka,0.066,jajka,0.432,0.019,0.288,0.666
+1242,ryż brązowy;jogurt naturalny,0.172,kurczak,0.192,0.022,0.128,0.666
+1243,jogurt naturalny;kurczak,0.076,ogórki,0.396,0.020,0.263,0.665
+1244,ryż brązowy;jogurt naturalny,0.172,płatki owsiane,0.210,0.024,0.140,0.664
+1245,ryż brązowy;ogórki,0.169,oliwa z oliwek,0.196,0.022,0.130,0.664
+1246,jabłka;kurczak,0.066,mleko,0.434,0.019,0.288,0.663
+1247,oliwa z oliwek;kurczak,0.047,ser żółty,0.418,0.013,0.277,0.662
+1248,pomidory;kurczak,0.049,jajka,0.432,0.014,0.286,0.661
+1249,ogórki;jogurt naturalny,0.162,pomidory,0.196,0.021,0.130,0.661
+1250,oliwa z oliwek;pomidory,0.042,ogórki,0.396,0.011,0.262,0.661
+1251,ogórki;mleko,0.162,oliwa z oliwek,0.196,0.021,0.130,0.661
+1252,płatki owsiane;ryż brązowy,0.070,banany,0.389,0.018,0.257,0.661
+1253,ogórki;makaron pełnoziarnisty,0.070,jogurt naturalny,0.434,0.020,0.286,0.658
+1254,kurczak;makaron pełnoziarnisty,0.040,ser żółty,0.418,0.011,0.275,0.658
+1255,oliwa z oliwek;jajka,0.071,jabłka,0.407,0.019,0.268,0.658
+1256,pomidory;jogurt naturalny,0.074,jajka,0.432,0.021,0.284,0.657
+1257,banany;makaron pełnoziarnisty,0.057,ziemniaki,0.401,0.015,0.263,0.656
+1258,płatki owsiane;banany,0.067,jogurt naturalny,0.434,0.019,0.284,0.653
+1259,banany;kurczak,0.066,ser żółty,0.418,0.018,0.273,0.652
+1260,płatki owsiane;banany,0.067,ryż brązowy,0.412,0.018,0.269,0.652
+1261,płatki owsiane;makaron pełnoziarnisty,0.046,mleko,0.434,0.013,0.283,0.651
+1262,ziemniaki;jabłka,0.160,kurczak,0.192,0.020,0.125,0.651
+1263,ser żółty;chleb pełnoziarnisty,0.160,kurczak,0.192,0.020,0.125,0.651
+1264,jajka;banany,0.157,pomidory,0.196,0.020,0.127,0.650
+1265,banany;makaron pełnoziarnisty,0.057,jajka,0.432,0.016,0.281,0.650
+1266,banany;mleko,0.165,oliwa z oliwek,0.196,0.021,0.127,0.649
+1267,pomidory;mleko,0.082,jajka,0.432,0.023,0.280,0.649
+1268,banany;makaron pełnoziarnisty,0.057,jogurt naturalny,0.434,0.016,0.281,0.647
+1269,jogurt naturalny;makaron pełnoziarnisty,0.057,jabłka,0.407,0.015,0.263,0.647
+1270,pomidory;jogurt naturalny,0.074,ser żółty,0.418,0.020,0.270,0.647
+1271,ogórki;mleko,0.162,kurczak,0.192,0.020,0.123,0.643
+1272,ogórki;jogurt naturalny,0.162,kurczak,0.192,0.020,0.123,0.643
+1273,ser żółty;kurczak,0.065,jabłka,0.407,0.017,0.262,0.643
+1274,chleb pełnoziarnisty;makaron pełnoziarnisty,0.070,ziemniaki,0.401,0.018,0.257,0.641
+1275,ziemniaki;oliwa z oliwek,0.071,ogórki,0.396,0.018,0.254,0.640
+1276,jogurt naturalny;makaron pełnoziarnisty,0.057,ryż brązowy,0.412,0.015,0.263,0.639
+1277,jajka;jogurt naturalny,0.180,makaron pełnoziarnisty,0.183,0.021,0.117,0.638
+1278,jabłka;ser żółty,0.163,makaron pełnoziarnisty,0.183,0.019,0.117,0.637
+1279,oliwa z oliwek;kurczak,0.047,ziemniaki,0.401,0.012,0.255,0.637
+1280,banany;mleko,0.165,płatki owsiane,0.210,0.022,0.133,0.635
+1281,ziemniaki;kurczak,0.065,ryż brązowy,0.412,0.017,0.262,0.635
+1282,ryż brązowy;ogórki,0.169,pomidory,0.196,0.021,0.124,0.634
+1283,płatki owsiane;makaron pełnoziarnisty,0.046,ryż brązowy,0.412,0.012,0.261,0.633
+1284,pomidory;jajka,0.070,jabłka,0.407,0.018,0.257,0.632
+1285,jabłka;mleko,0.170,pomidory,0.196,0.021,0.124,0.630
+1286,ogórki;mleko,0.162,pomidory,0.196,0.020,0.123,0.630
+1287,chleb pełnoziarnisty;kurczak,0.076,ser żółty,0.418,0.020,0.263,0.630
+1288,pomidory;mleko,0.082,jabłka,0.407,0.021,0.256,0.629
+1289,jajka;ryż brązowy,0.171,pomidory,0.196,0.021,0.123,0.627
+1290,ser żółty;banany,0.163,pomidory,0.196,0.020,0.123,0.626
+1291,jajka;ogórki,0.155,oliwa z oliwek,0.196,0.019,0.123,0.625
+1292,ziemniaki;pomidory,0.075,jabłka,0.407,0.019,0.253,0.622
+1293,ryż brązowy;chleb pełnoziarnisty,0.176,płatki owsiane,0.210,0.023,0.131,0.622
+1294,ziemniaki;makaron pełnoziarnisty,0.062,banany,0.389,0.015,0.242,0.622
+1295,ser żółty;makaron pełnoziarnisty,0.063,jogurt naturalny,0.434,0.017,0.270,0.622
+1296,jabłka;jajka,0.167,makaron pełnoziarnisty,0.183,0.019,0.114,0.622
+1297,ziemniaki;ryż brązowy,0.156,pomidory,0.196,0.019,0.122,0.621
+1298,płatki owsiane;jogurt naturalny,0.079,banany,0.389,0.019,0.241,0.618
+1299,jabłka;kurczak,0.066,ser żółty,0.418,0.017,0.258,0.616
+1300,pomidory;mleko,0.082,ogórki,0.396,0.020,0.244,0.616
+1301,ziemniaki;pomidory,0.075,ryż brązowy,0.412,0.019,0.253,0.615
+1302,ziemniaki;mleko,0.178,kurczak,0.192,0.021,0.118,0.614
+1303,jajka;makaron pełnoziarnisty,0.067,banany,0.389,0.016,0.239,0.614
+1304,oliwa z oliwek;ogórki,0.063,banany,0.389,0.015,0.238,0.612
+1305,ogórki;banany,0.156,płatki owsiane,0.210,0.020,0.128,0.611
+1306,ser żółty;ryż brązowy,0.171,makaron pełnoziarnisty,0.183,0.019,0.111,0.607
+1307,chleb pełnoziarnisty;kurczak,0.076,ryż brązowy,0.412,0.019,0.250,0.607
+1308,oliwa z oliwek;pomidory,0.042,jajka,0.432,0.011,0.262,0.606
+1309,ziemniaki;jabłka,0.160,pomidory,0.196,0.019,0.119,0.606
+1310,ryż brązowy;mleko,0.181,kurczak,0.192,0.021,0.116,0.604
+1311,płatki owsiane;kurczak,0.046,jajka,0.432,0.012,0.261,0.604
+1312,ziemniaki;ogórki,0.153,oliwa z oliwek,0.196,0.018,0.118,0.600
+1313,ziemniaki;chleb pełnoziarnisty,0.164,makaron pełnoziarnisty,0.183,0.018,0.110,0.600
+1314,ziemniaki;makaron pełnoziarnisty,0.062,jajka,0.432,0.016,0.258,0.597
+1315,jajka;makaron pełnoziarnisty,0.067,ziemniaki,0.401,0.016,0.239,0.596
+1316,jajka;jogurt naturalny,0.180,pomidory,0.196,0.021,0.117,0.595
+1317,jabłka;ser żółty,0.163,pomidory,0.196,0.019,0.117,0.595
+1318,ziemniaki;makaron pełnoziarnisty,0.062,jogurt naturalny,0.434,0.016,0.258,0.595
+1319,pomidory;kurczak,0.049,ryż brązowy,0.412,0.012,0.245,0.594
+1320,oliwa z oliwek;płatki owsiane,0.045,ryż brązowy,0.412,0.011,0.244,0.593
+1321,pomidory;płatki owsiane,0.045,ryż brązowy,0.412,0.011,0.244,0.593
+1322,ser żółty;ogórki,0.172,pomidory,0.196,0.020,0.116,0.593
+1323,banany;kurczak,0.066,ryż brązowy,0.412,0.016,0.242,0.588
+1324,ziemniaki;banany,0.146,płatki owsiane,0.210,0.018,0.123,0.587
+1325,pomidory;kurczak,0.049,ser żółty,0.418,0.012,0.245,0.586
+1326,pomidory;makaron pełnoziarnisty,0.042,jabłka,0.407,0.010,0.238,0.585
+1327,mleko;makaron pełnoziarnisty,0.071,jogurt naturalny,0.434,0.018,0.254,0.584
+1328,ser żółty;jogurt naturalny,0.175,pomidory,0.196,0.020,0.114,0.583
+1329,jabłka;mleko,0.170,kurczak,0.192,0.019,0.112,0.582
+1330,pomidory;chleb pełnoziarnisty,0.076,jabłka,0.407,0.018,0.237,0.582
+1331,jabłka;jajka,0.167,oliwa z oliwek,0.196,0.019,0.114,0.580
+1332,jogurt naturalny;banany,0.156,płatki owsiane,0.210,0.019,0.122,0.580
+1333,ser żółty;jajka,0.176,pomidory,0.196,0.020,0.114,0.580
+1334,jajka;ryż brązowy,0.171,kurczak,0.192,0.019,0.111,0.579
+1335,ziemniaki;płatki owsiane,0.080,banany,0.389,0.018,0.225,0.578
+1336,jajka;kurczak,0.080,ryż brązowy,0.412,0.019,0.238,0.576
+1337,ryż brązowy;banany,0.149,płatki owsiane,0.210,0.018,0.121,0.575
+1338,ser żółty;banany,0.163,kurczak,0.192,0.018,0.110,0.575
+1339,pomidory;ryż brązowy,0.063,banany,0.389,0.014,0.222,0.571
+1340,ser żółty;banany,0.163,makaron pełnoziarnisty,0.183,0.017,0.104,0.570
+1341,oliwa z oliwek;pomidory,0.042,ser żółty,0.418,0.010,0.238,0.570
+1342,ziemniaki;ryż brązowy,0.156,kurczak,0.192,0.017,0.109,0.568
+1343,jabłka;chleb pełnoziarnisty,0.162,pomidory,0.196,0.018,0.111,0.567
+1344,ser żółty;ryż brązowy,0.171,pomidory,0.196,0.019,0.111,0.567
+1345,ryż brązowy;chleb pełnoziarnisty,0.176,kurczak,0.192,0.019,0.108,0.562
+1346,ziemniaki;banany,0.146,makaron pełnoziarnisty,0.183,0.015,0.103,0.561
+1347,jogurt naturalny;banany,0.156,makaron pełnoziarnisty,0.183,0.016,0.103,0.560
+1348,ryż brązowy;banany,0.149,kurczak,0.192,0.016,0.107,0.559
+1349,jajka;banany,0.157,makaron pełnoziarnisty,0.183,0.016,0.102,0.557
+1350,jabłka;jajka,0.167,pomidory,0.196,0.018,0.108,0.550
+1351,oliwa z oliwek;banany,0.069,ogórki,0.396,0.015,0.217,0.549
+1352,jabłka;ser żółty,0.163,kurczak,0.192,0.017,0.104,0.543
+1353,jogurt naturalny;mleko,0.184,makaron pełnoziarnisty,0.183,0.018,0.098,0.535
+1354,ser żółty;jogurt naturalny,0.175,makaron pełnoziarnisty,0.183,0.017,0.097,0.531
+1355,ziemniaki;jogurt naturalny,0.165,makaron pełnoziarnisty,0.183,0.016,0.097,0.530
+1356,płatki owsiane;kurczak,0.046,ryż brązowy,0.412,0.010,0.217,0.528
+1357,jabłka;makaron pełnoziarnisty,0.066,jogurt naturalny,0.434,0.015,0.227,0.524
+1358,płatki owsiane;kurczak,0.046,ser żółty,0.418,0.010,0.217,0.520
+1359,ryż brązowy;makaron pełnoziarnisty,0.067,jogurt naturalny,0.434,0.015,0.224,0.516
+1360,pomidory;banany,0.066,ryż brązowy,0.412,0.014,0.212,0.515
+1361,pomidory;kurczak,0.049,jabłka,0.407,0.010,0.204,0.501
+1362,płatki owsiane;makaron pełnoziarnisty,0.046,jogurt naturalny,0.434,0.010,0.217,0.501
+1363,ziemniaki;jajka,0.177,makaron pełnoziarnisty,0.183,0.016,0.090,0.494
+1364,ogórki;banany,0.156,oliwa z oliwek,0.196,0.015,0.096,0.491
+1365,ryż brązowy;banany,0.149,pomidory,0.196,0.014,0.094,0.479
+1366,ryż brązowy;jogurt naturalny,0.172,makaron pełnoziarnisty,0.183,0.015,0.087,0.477
+1367,jabłka;jogurt naturalny,0.177,makaron pełnoziarnisty,0.183,0.015,0.085,0.463

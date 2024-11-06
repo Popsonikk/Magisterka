@@ -5,24 +5,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import main.apriori.AprioriInterfaceController;
-import main.apriori.AprioriManager;
-import main.baskets.BasketInterfaceController;
-import main.baskets.BasketManager;
-import main.rules.RuleInterfaceController;
-import main.rules.RuleManager;
+import main.controllers.AprioriInterfaceController;
+import main.controllers.BasketInterfaceController;
+import main.controllers.MainWindowController;
+import main.controllers.RuleInterfaceController;
 
 public class Main extends Application {
 
 
     @Override
     public void start(Stage stage) throws Exception {
-        BasketManager basketManager=new BasketManager();
-        AprioriManager aprioriManager=new AprioriManager();
-        RuleManager ruleManager=new RuleManager();
-        aprioriManager.setBasketManager(basketManager);
-        ruleManager.setAprioriManager(aprioriManager);
 
+        //handle do kontrolerów interfejsów
         FXMLLoader mainWindowLoader = new FXMLLoader(getClass().getResource("MainWindow.fxml"));
         Parent mainWindow = mainWindowLoader.load();
         MainWindowController mainWindowController = mainWindowLoader.getController();
@@ -43,19 +37,18 @@ public class Main extends Application {
         mainWindowController.setBasketScene(new Scene(basketWindow,1000,750));
         mainWindowController.setAprioriScene(new Scene(aprioriWindow,1000,750));
         mainWindowController.setRuleScene(new Scene(ruleWindow,1000,750));
-        mainWindowController.setAprioriManager(aprioriManager);
-        mainWindowController.setRuleManager(ruleManager);
+
+        mainWindowController.setBasketInterfaceController(basketInterfaceController);
         mainWindowController.setAprioriInterfaceController(aprioriInterfaceController);
         mainWindowController.setRuleInterfaceController(ruleInterfaceController);
 
         Scene mainScene=new Scene(mainWindow,1000,750);
-        basketInterfaceController.setBasketManager(basketManager);
+
+        //ustawienie głównej sceny w każdym kontrolerze
         basketInterfaceController.setMainScene(mainScene);
         basketInterfaceController.setMainStage(stage);
         aprioriInterfaceController.setMainScene(mainScene);
         aprioriInterfaceController.setMainStage(stage);
-        aprioriInterfaceController.setAprioriManager(aprioriManager);
-        ruleInterfaceController.setRuleManager(ruleManager);
         ruleInterfaceController.setMainScene(mainScene);
         ruleInterfaceController.setMainStage(stage);
 

@@ -1,4 +1,4 @@
-package main.apriori;
+package main.objects;
 
 import java.util.List;
 

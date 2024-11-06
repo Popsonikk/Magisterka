@@ -1,12 +1,14 @@
-package main;
+package main.controllers;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import main.apriori.AprioriInterfaceController;
-import main.apriori.AprioriManager;
-import main.rules.RuleInterfaceController;
-import main.rules.RuleManager;
+import main.objects.AssociationRule;
+import main.functions.GeneratePattern;
+import main.objects.SimplePattern;
+
+import java.util.List;
+
 public class MainWindowController {
     @FXML
     public TextField confidence;
@@ -18,12 +20,11 @@ public class MainWindowController {
     private TextField length;
     private AprioriInterfaceController aprioriInterfaceController;
     private RuleInterfaceController ruleInterfaceController;
+    private BasketInterfaceController basketInterfaceController;
     private Stage mainStage;
     private Scene basketScene;
     private Scene aprioriScene;
     private Scene ruleScene;
-    private AprioriManager aprioriManager;
-    private RuleManager ruleManager;
     public void setMainStage(Stage mainStage) {this.mainStage = mainStage;}
     public void setBasketScene(Scene basketScene) {this.basketScene = basketScene;}
     public void setAprioriScene(Scene aprioriScene) {this.aprioriScene = aprioriScene;}
@@ -33,37 +34,49 @@ public class MainWindowController {
         this.ruleInterfaceController = ruleInterfaceController;
     }
 
-    public void setAprioriManager(AprioriManager aprioriManager) {this.aprioriManager = aprioriManager;}
-    public void setRuleManager(RuleManager ruleManager) {this.ruleManager = ruleManager;}
-    public void showBasketInterface() {mainStage.setScene(basketScene);}
     public void setAprioriInterfaceController(AprioriInterfaceController aprioriInterfaceController) {
         this.aprioriInterfaceController = aprioriInterfaceController;
     }
+
+    public void setBasketInterfaceController(BasketInterfaceController basketInterfaceController) {
+        this.basketInterfaceController = basketInterfaceController;
+    }
+
+    public void showBasketInterface() {mainStage.setScene(basketScene);}
+
     public void useApriori() {
-        aprioriManager.Apriori(Double.parseDouble(support.getText()),Integer.parseInt(length.getText()));
+        if(basketInterfaceController.getData().getDataSize()==0)
+        {
+            basketInterfaceController.createAlert(1,"Brak danych wejściowych!");
+            return;
+        }
+        List<SimplePattern> patterns= GeneratePattern.apriori(Double.parseDouble(support.getText()),Integer.parseInt(length.getText())
+                ,basketInterfaceController.getData().getData());
+        aprioriInterfaceController.getData().setData(patterns);
         support.setText("0.1");
         length.setText("3");
     }
     public void useRules() {
-        ruleManager.generateRules(Double.parseDouble(confidence.getText()),Double.parseDouble(lift.getText()));
+        if(aprioriInterfaceController.getData().getDataSize()==0)
+        {
+            aprioriInterfaceController.createAlert(1,"Brak danych wejściowych!");
+            return;
+        }
+        List<AssociationRule> rules= GeneratePattern.generateRules(Double.parseDouble(confidence.getText()),Double.parseDouble(lift.getText())
+        ,aprioriInterfaceController.getData().getData());
+        ruleInterfaceController.getData().setData(rules);
         confidence.setText("0.25");
         lift.setText("0.75");
     }
 
     public void showAprioriInterface() {
-        if(aprioriManager.getSupportListSize()>0)
-        {
-            aprioriInterfaceController.deleteHeader();
-            aprioriInterfaceController.showTable();
-        }
+        if(aprioriInterfaceController.getData().getDataSize()>0)
+            aprioriInterfaceController.createView();
         mainStage.setScene(aprioriScene);
     }
     public void showRuleInterface() {
-        if(ruleManager.getRuleListSize()>0)
-        {
-            ruleInterfaceController.deleteHeader();
-            ruleInterfaceController.showTable();
-        }
+        if(ruleInterfaceController.getData().getDataSize()>0)
+            ruleInterfaceController.createView();
         mainStage.setScene(aprioriScene);
         mainStage.setScene(ruleScene);
     }

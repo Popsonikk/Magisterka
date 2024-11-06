@@ -5,12 +5,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ScrollPane?>
 <Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0"
-      prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.apriori.AprioriInterfaceController">
+      prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.AprioriInterfaceController">
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
     <children>
-        <Button   onAction="#clearBase" layoutX="835.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść bazę" styleClass="interfaceButton" />
+        <Button   onAction="#clearInterface" layoutX="835.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść bazę" styleClass="interfaceButton" />
         <TextField fx:id="tx" layoutX="15.0" layoutY="5.0" prefHeight="50.0" prefWidth="329.0" alignment="CENTER" styleClass="filterBox"/>
         <ScrollPane fx:id="pane" prefHeight="575.0" prefWidth="970.0" layoutY="105.0"  layoutX="15.0" styleClass="empty">
             <content>

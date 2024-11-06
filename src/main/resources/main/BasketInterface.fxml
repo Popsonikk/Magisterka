@@ -7,15 +7,15 @@
 <?import javafx.scene.control.TextField?>
 <?import java.net.URL?>
 <Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0"
-      prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.baskets.BasketInterfaceController">
+      prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.BasketInterfaceController">
    <stylesheets>
       <URL value="@style.css" />
    </stylesheets>
    <children>
-      <Button onAction="#clearBase" layoutX="835.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść koszyki" styleClass="interfaceButton" />
-      <Button onAction="#loadBaskets" layoutX="670.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wczytaj koszyki" styleClass="interfaceButton"/>
+      <Button onAction="#clearInterface" layoutX="835.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść koszyki" styleClass="interfaceButton" />
+      <Button onAction="#loadFromCSV" layoutX="670.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wczytaj koszyki" styleClass="interfaceButton"/>
       <TextField fx:id="tx" layoutX="15.0" layoutY="5.0" prefHeight="50.0" prefWidth="329.0" alignment="CENTER" styleClass="filterBox"/>
-      <Button onAction="#filtrBaskets" layoutX="340.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Filtruj koszyki" styleClass="interfaceButton" />
+
 
       <ScrollPane fx:id="pane"  prefHeight="575.0" prefWidth="970.0" layoutY="105.0"  layoutX="15.0" styleClass="empty">
       <content>
