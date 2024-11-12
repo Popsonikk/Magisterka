@@ -5,10 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import main.controllers.AprioriInterfaceController;
-import main.controllers.BasketInterfaceController;
-import main.controllers.MainWindowController;
-import main.controllers.RuleInterfaceController;
+import main.controllers.*;
 
 public class Main extends Application {
 
@@ -33,14 +30,20 @@ public class Main extends Application {
         Parent ruleWindow = ruleWindowLoader.load();
         RuleInterfaceController ruleInterfaceController=ruleWindowLoader.getController();
 
+        FXMLLoader graphInterfaceLoader=new FXMLLoader(getClass().getResource("GraphInterface.fxml"));
+        Parent graphWindow=graphInterfaceLoader.load();
+        GraphInterfaceController graphInterfaceController=graphInterfaceLoader.getController();
+
         mainWindowController.setMainStage(stage);
         mainWindowController.setBasketScene(new Scene(basketWindow,1000,750));
         mainWindowController.setAprioriScene(new Scene(aprioriWindow,1000,750));
         mainWindowController.setRuleScene(new Scene(ruleWindow,1000,750));
+        mainWindowController.setGraphScene(new Scene(graphWindow,1000,750));
 
         mainWindowController.setBasketInterfaceController(basketInterfaceController);
         mainWindowController.setAprioriInterfaceController(aprioriInterfaceController);
         mainWindowController.setRuleInterfaceController(ruleInterfaceController);
+        mainWindowController.setGraphInterfaceController(graphInterfaceController);
 
         Scene mainScene=new Scene(mainWindow,1000,750);
 
@@ -51,6 +54,8 @@ public class Main extends Application {
         aprioriInterfaceController.setMainStage(stage);
         ruleInterfaceController.setMainScene(mainScene);
         ruleInterfaceController.setMainStage(stage);
+        graphInterfaceController.setMainScene(mainScene);
+        graphInterfaceController.setMainStage(stage);
 
         stage.setTitle("Analiza koszykowa");
         stage.setScene(mainScene);

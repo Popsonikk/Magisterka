@@ -1,5 +1,7 @@
 package main.controllers;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -7,9 +9,11 @@ import main.objects.AssociationRule;
 import main.functions.GeneratePattern;
 import main.objects.SimplePattern;
 
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class MainWindowController {
+public class MainWindowController implements Initializable {
     @FXML
     public TextField confidence;
     @FXML
@@ -21,14 +25,17 @@ public class MainWindowController {
     private AprioriInterfaceController aprioriInterfaceController;
     private RuleInterfaceController ruleInterfaceController;
     private BasketInterfaceController basketInterfaceController;
+    private GraphInterfaceController graphInterfaceController;
     private Stage mainStage;
     private Scene basketScene;
     private Scene aprioriScene;
     private Scene ruleScene;
+    private Scene graphScene;
     public void setMainStage(Stage mainStage) {this.mainStage = mainStage;}
     public void setBasketScene(Scene basketScene) {this.basketScene = basketScene;}
     public void setAprioriScene(Scene aprioriScene) {this.aprioriScene = aprioriScene;}
     public void setRuleScene(Scene ruleScene) {this.ruleScene = ruleScene;}
+    public void setGraphScene(Scene graphScene) {this.graphScene = graphScene;}
 
     public void setRuleInterfaceController(RuleInterfaceController ruleInterfaceController) {
         this.ruleInterfaceController = ruleInterfaceController;
@@ -40,6 +47,10 @@ public class MainWindowController {
 
     public void setBasketInterfaceController(BasketInterfaceController basketInterfaceController) {
         this.basketInterfaceController = basketInterfaceController;
+    }
+
+    public void setGraphInterfaceController(GraphInterfaceController graphInterfaceController) {
+        this.graphInterfaceController = graphInterfaceController;
     }
 
     public void showBasketInterface() {mainStage.setScene(basketScene);}
@@ -77,7 +88,15 @@ public class MainWindowController {
     public void showRuleInterface() {
         if(ruleInterfaceController.getData().getDataSize()>0)
             ruleInterfaceController.createView();
-        mainStage.setScene(aprioriScene);
         mainStage.setScene(ruleScene);
+    }
+
+    public void showGraphInterface() {
+        mainStage.setScene(graphScene);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }

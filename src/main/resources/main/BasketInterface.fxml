@@ -17,10 +17,8 @@
       <TextField fx:id="tx" layoutX="15.0" layoutY="5.0" prefHeight="50.0" prefWidth="329.0" alignment="CENTER" styleClass="filterBox"/>
 
 
-      <ScrollPane fx:id="pane"  prefHeight="575.0" prefWidth="970.0" layoutY="105.0"  layoutX="15.0" styleClass="empty">
-      <content>
-         <VBox fx:id="contentVBox" />
-      </content>
+      <ScrollPane fx:id="pane" prefHeight="575.0" prefWidth="970.0" layoutY="105.0" layoutX="15.0" styleClass="empty">
+         <VBox fx:id="contentVBox"/>
       </ScrollPane>
       <HBox fx:id="selectSizeBox"  layoutX="15.0" layoutY="695.0" alignment="CENTER" prefHeight="50.0" prefWidth="250.0" />
       <HBox fx:id="switchPageBox"  layoutX="525.0" layoutY="695.0" alignment="CENTER" prefHeight="50.0" prefWidth="450.0" />
