@@ -14,8 +14,7 @@
         <URL value="@style.css"/>
     </stylesheets>
     <Button onAction="#back" layoutX="5.0" layoutY="5.0" text="Powrót" styleClass="backButton"/>
-    <ScrollPane fx:id="pane" prefHeight="650.0" prefWidth="990.0" layoutY="75.0" layoutX="5.0" styleClass="graphBorder">
-        <VBox fx:id="contentVBox"/>
+    <ScrollPane fx:id="pane" prefHeight="680.0" prefWidth="990.0" layoutY="60.0" layoutX="5.0" styleClass="graphBorder">
+        <Pane fx:id="canvas"/>
     </ScrollPane>
-
 </Pane>

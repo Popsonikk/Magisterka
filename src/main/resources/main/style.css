@@ -33,12 +33,12 @@
 }
 .infoBox{
     -fx-background-color: #e0ffcd;
-    -fx-background-radius: 25px;
+    -fx-background-radius: 20px;
 
     -fx-border-width: 3px;
     -fx-border-color: #ffcab0;
     -fx-border-style: dashed;
-    -fx-border-radius: 25px;
+    -fx-border-radius: 20px;
     -fx-spacing: 10px;
 }
 .infoBoxText {
@@ -63,9 +63,9 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 5, 0.5, 0, 0); /* Efekt cienia */
 }
 .boxButton{
-    -fx-pref-height: 20px;
+
     -fx-background-color: #5fc9f3;
-    -fx-font-size: 12px;
+    -fx-font-size: 14px;
 }
 .boxButton:hover{
     -fx-background-color: #2e79ba;
@@ -110,4 +110,41 @@
 .graphBorder{
     -fx-border-color: black;
     -fx-border-width: 2px;
+    -fx-background-color: lightGray;
 }
+.circle{
+    -fx-fill: #f76b8a;
+    -fx-stroke: #66bfbf;
+    -fx-stroke-width: 2px;
+}
+.circle:hover{
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 5, 0.5, 0, 0); /* Efekt cienia */
+}
+.circleText{
+    -fx-fill: #fcfefe;
+}
+.infoBoxGraph{
+    -fx-background-color: #e0ffcd;
+    -fx-border-width: 3px;
+    -fx-border-color: #ffcab0;
+    -fx-border-style: solid;
+    -fx-spacing: 10px;
+    -fx-padding: 5px;
+    -fx-alignment: center-left;
+}
+.infoBoxTextGraph {
+    -fx-font-size: 14px;
+    -fx-fill: purple !important;
+
+}
+.filterBoxGraph{
+    -fx-border-color: #385170; /* kolor obwódki */
+    -fx-border-width: 3px;
+    -fx-font-size: 14px;
+    -fx-pref-width: 50px;
+}
+.filterBoxGraph:focused{
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 5, 0.5, 0, 0);
+    -fx-background-color: lightGrey;
+}
+

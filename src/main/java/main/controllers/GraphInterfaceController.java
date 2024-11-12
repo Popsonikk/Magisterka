@@ -2,24 +2,33 @@ package main.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class GraphInterfaceController implements Initializable {
     @FXML
     public ScrollPane pane;
     @FXML
-    public VBox contentVBox;
+    public Pane canvas;
     @FXML
     public Pane mainPane;
     private Scene mainScene;
     private Stage mainStage;
+    private List<Circle> nodeList;
 
     public void setMainScene(Scene mainScene) {this.mainScene = mainScene;}
     public void setMainStage(Stage mainStage) {this.mainStage = mainStage;}
@@ -27,12 +36,14 @@ public class GraphInterfaceController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        /*
-        *  Pane pane = new Pane();
-        int radius=20;
+        nodeList=new ArrayList<>();
+        createAddCircleBox();
 
-        // Tworzenie przykładowych węzłów (Circle) z tekstem
-        Circle node1 = createNode(pane,100, 100, "A",radius);
+        /*
+
+
+
+
         Circle node2 = createNode(pane,300, 200, "B",radius);
 
         // Dodawanie węzłów do panelu
@@ -47,39 +58,10 @@ public class GraphInterfaceController implements Initializable {
         primaryStage.show();
     }
 
-    // Metoda do tworzenia węzła (Circle) z tekstem i możliwością przeciągania
-    private Circle createNode(Pane pane,double x, double y, String label, int r) {
-        Circle node = new Circle(x, y, r); // x, y - pozycja; 15 - promień
-        node.setFill(Color.CORNFLOWERBLUE);
-        node.setStroke(Color.BLACK);
-        node.setStrokeWidth(2);
-
-        Text text = new Text(x - 5, y + 5, label); // Ustawienie tekstu w centrum węzła
-        text.setFill(Color.WHITE);
-
-        node.setOnMousePressed(event -> {
-            node.setUserData(new double[]{event.getSceneX(), event.getSceneY()});
-        });
-
-        node.setOnMouseDragged(event -> {
-            double[] offset = (double[]) node.getUserData();
-            double deltaX = event.getSceneX() - offset[0];
-            double deltaY = event.getSceneY() - offset[1];
-
-            node.setCenterX(node.getCenterX() + deltaX);
-            node.setCenterY(node.getCenterY() + deltaY);
-            text.setX(node.getCenterX() - 5);
-            text.setY(node.getCenterY() + 5);
-
-            node.setUserData(new double[]{event.getSceneX(), event.getSceneY()});
-        });
 
 
-        pane.getChildren().addAll(node,text);
-        return node;
-    }
 
-    // Metoda do tworzenia krawędzi z możliwością ustawienia wagi
+
     private Line createEdgeWithWeight(Pane pane, Circle start, Circle end) {
         Line edge = new Line();
         updateEdgePosition(edge, start, end);
@@ -153,4 +135,78 @@ public class GraphInterfaceController implements Initializable {
         edge.setEndY(endY + end.getRadius() * Math.sin(angleEnd));
     }*/
     }
+    //tworzenie pojedynczego węzła, domyslnie tworzymy w wyznaczonych miejscach
+    private void createNode( int x, int y) {
+        //węzeł reprezentowany jako koło
+        Circle node = new Circle((25+x*50.0), (25+y*50.0), 20);
+        node.getStyleClass().add("circle");
+        //tekst z nazwą węzła
+        int s=nodeList.size();
+        Text text = new Text(); // Ustawienie tekstu w centrum węzła
+        text.setX(node.getCenterX() - 5);
+        text.setY(node.getCenterY() + 5);
+        text.setText(Integer.toString(s));
+        text.getStyleClass().add("circleText");
+        Group nodeGroup=new Group(node,text);
+        //przesuwanie węzła na planszy
+        nodeGroup.setOnMousePressed(event -> {
+            //zapamiętanie obecnej pozycji
+            node.setUserData(new double[]{event.getSceneX(), event.getSceneY()});
+        });
+        nodeGroup.setOnMouseDragged(event -> {
+            //pobranie zapamiętanej pozycji
+            double[] offset = (double[]) node.getUserData();
+            double deltaX = event.getSceneX() - offset[0];
+            double deltaY = event.getSceneY() - offset[1];
+            //przesunięcie o różnice
+            node.setCenterX(node.getCenterX() + deltaX);
+            node.setCenterY(node.getCenterY() + deltaY);
+            text.setX(node.getCenterX() - 5);
+            text.setY(node.getCenterY() + 5);
+            node.setUserData(new double[]{event.getSceneX(), event.getSceneY()});
+
+        });
+        canvas.getChildren().addAll(nodeGroup);
+        nodeList.add(node);
+        createAlert(1,"Węzeł stworzony pomyślnie");
+    }
+    private void createAddCircleBox()
+    {
+        HBox menu=new HBox();
+        menu.getStyleClass().add("infoBoxGraph");
+        menu.setLayoutX(125.0);
+        menu.setLayoutY(5.0);
+        menu.setPrefHeight(50.0);
+        Text x=new Text("X: ");
+        x.getStyleClass().add("infoBoxTextGraph");
+        Text y=new Text("Y: ");
+        y.getStyleClass().add("infoBoxTextGraph");
+        TextField xField=new TextField();
+        xField.getStyleClass().add("filterBoxGraph");
+        TextField yField=new TextField();
+        yField.getStyleClass().add("filterBoxGraph");
+        Button add=new Button("Dodaj");
+        add.prefHeight(50.0);
+        add.setOnAction(e->{
+            createNode(Integer.parseInt(xField.getText()),Integer.parseInt(yField.getText()));
+            xField.clear();
+            yField.clear();
+        });
+        add.getStyleClass().add("boxButton");
+        menu.getChildren().addAll(x,xField,y,yField,add);
+        mainPane.getChildren().add(menu);
+    }
+    public void createAlert(int type,String value){
+        switch (type) {
+            case 1 -> {
+                Alert a = new Alert(Alert.AlertType.INFORMATION, value);
+                a.show();
+            }
+            case 2 -> {
+                Alert a = new Alert(Alert.AlertType.ERROR, value);
+                a.show();
+            }
+        }
+    }
+
 }
