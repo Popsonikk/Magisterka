@@ -106,6 +106,8 @@
 .empty{
     -fx-background-color: transparent;
     -fx-border-color: transparent;
+    -fx-spacing: 10px;
+    -fx-padding: 5px;
 }
 .graphBorder{
     -fx-border-color: black;
@@ -141,10 +143,17 @@
     -fx-border-color: #385170; /* kolor obwódki */
     -fx-border-width: 3px;
     -fx-font-size: 14px;
-    -fx-pref-width: 50px;
+    -fx-pref-width: 40px;
 }
 .filterBoxGraph:focused{
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 5, 0.5, 0, 0);
     -fx-background-color: lightGrey;
+}
+.line{
+    -fx-stroke: #66bfbf;
+    -fx-stroke-width: 5px;
+}
+.line:hover{
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 5, 0.5, 0, 0); /* Efekt cienia */
 }
 

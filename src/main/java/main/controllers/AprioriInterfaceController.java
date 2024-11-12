@@ -82,6 +82,11 @@ public class AprioriInterfaceController extends InterfaceTemplate<SimplePattern>
         String filename="";
         if (res.isPresent())
             filename = res.get();
+        if(filename.equals(""))
+        {
+            createAlert(2,"Brak podanej nazwy pliku!");
+            return;
+        }
         File file = new File("dane/" + filename + "_supportData.csv");
         //pętla mająca na celu zablokowanie duplikowania nazw plików
         if (file.createNewFile())

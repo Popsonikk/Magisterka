@@ -4,19 +4,23 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import main.objects.Edge;
+import main.objects.Graph;
+import main.objects.Node;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class GraphInterfaceController implements Initializable {
@@ -26,9 +30,10 @@ public class GraphInterfaceController implements Initializable {
     public Pane canvas;
     @FXML
     public Pane mainPane;
+    @FXML HBox menuBox;
     private Scene mainScene;
     private Stage mainStage;
-    private List<Circle> nodeList;
+    private Graph graph;
 
     public void setMainScene(Scene mainScene) {this.mainScene = mainScene;}
     public void setMainStage(Stage mainStage) {this.mainStage = mainStage;}
@@ -36,104 +41,13 @@ public class GraphInterfaceController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        nodeList=new ArrayList<>();
+        Button button=new Button("Powrót");
+        button.getStyleClass().add("backButton");
+        button.setOnAction(e->back());
+        menuBox.getChildren().add(button);
+        graph=new Graph();
         createAddCircleBox();
-
-        /*
-
-
-
-
-        Circle node2 = createNode(pane,300, 200, "B",radius);
-
-        // Dodawanie węzłów do panelu
-
-
-        // Tworzenie krawędzi (Line) między dwoma węzłami z możliwością dodania wagi
-        Line edge = createEdgeWithWeight(pane, node1, node2);
-
-        Scene scene = new Scene(pane, 400, 400);
-        primaryStage.setTitle("Graph Interface Example");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
-
-
-
-
-    private Line createEdgeWithWeight(Pane pane, Circle start, Circle end) {
-        Line edge = new Line();
-        updateEdgePosition(edge, start, end);
-        edge.setStrokeWidth(3);
-        edge.setStroke(Color.GRAY);
-
-        // Tekst dla wagi krawędzi
-        Text weightText = new Text();
-        weightText.setX((edge.getStartX() + edge.getEndX()) / 2);
-        weightText.setY((edge.getStartY() + edge.getEndY()) / 2);
-        weightText.setFill(Color.BLACK);
-
-        // Pole do wpisywania wagi, które pojawia się po kliknięciu na linię
-        TextField weightInput = new TextField();
-        weightInput.setVisible(false);
-        pane.getChildren().addAll(edge, weightText, weightInput);
-
-        // Aktualizacja pozycji krawędzi i wagi, gdy węzeł jest przeciągany
-        start.centerXProperty().addListener((obs, oldVal, newVal) -> updateEdgePosition(edge, start, end));
-        start.centerYProperty().addListener((obs, oldVal, newVal) -> updateEdgePosition(edge, start, end));
-        end.centerXProperty().addListener((obs, oldVal, newVal) -> updateEdgePosition(edge, start, end));
-        end.centerYProperty().addListener((obs, oldVal, newVal) -> updateEdgePosition(edge, start, end));
-
-        // Kliknięcie na linię, aby wprowadzić wagę
-        edge.setOnMouseClicked((MouseEvent event) -> {
-            weightInput.setLayoutX((edge.getStartX() + edge.getEndX()) / 2);
-            weightInput.setLayoutY((edge.getStartY() + edge.getEndY()) / 2);
-            weightInput.setVisible(true);
-            weightInput.requestFocus();
-        });
-
-        // Zdarzenie po zatwierdzeniu wagi
-        weightInput.setOnAction(e -> {
-            weightText.setText(weightInput.getText());
-            weightInput.setVisible(false);
-        });
-        pane.setOnMouseClicked(event -> {
-
-
-
-        });
-        pane.setOnMouseClicked(event -> {
-            // Ukryj pole tekstowe przy kliknięciu poza linią
-            if (!edge.contains(event.getX(), event.getY())) {
-                if(weightInput.isVisible())
-                {
-                    weightInput.setVisible(false);
-                    weightInput.clear();
-                }
-            }
-        });
-
-        return edge;
-    }
-
-    // Aktualizacja pozycji krawędzi, aby zaczynała i kończyła się na krawędzi okręgu
-    private void updateEdgePosition(Line edge, Circle start, Circle end) {
-        double startX = start.getCenterX();
-        double startY = start.getCenterY();
-        double endX = end.getCenterX();
-        double endY = end.getCenterY();
-
-        // Obliczenia dla punktu początkowego (krawędź okręgu startowego)
-        double angleStart = Math.atan2(endY - startY, endX - startX);
-        edge.setStartX(startX + start.getRadius() * Math.cos(angleStart));
-        edge.setStartY(startY + start.getRadius() * Math.sin(angleStart));
-
-        // Obliczenia dla punktu końcowego (krawędź okręgu końcowego)
-        double angleEnd = Math.atan2(startY - endY, startX - endX);
-        edge.setEndX(endX + end.getRadius() * Math.cos(angleEnd));
-        edge.setEndY(endY + end.getRadius() * Math.sin(angleEnd));
-    }*/
+        createAddEdgeBox();
     }
     //tworzenie pojedynczego węzła, domyslnie tworzymy w wyznaczonych miejscach
     private void createNode( int x, int y) {
@@ -141,7 +55,7 @@ public class GraphInterfaceController implements Initializable {
         Circle node = new Circle((25+x*50.0), (25+y*50.0), 20);
         node.getStyleClass().add("circle");
         //tekst z nazwą węzła
-        int s=nodeList.size();
+        int s=graph.getNodes().size();
         Text text = new Text(); // Ustawienie tekstu w centrum węzła
         text.setX(node.getCenterX() - 5);
         text.setY(node.getCenterY() + 5);
@@ -167,15 +81,75 @@ public class GraphInterfaceController implements Initializable {
 
         });
         canvas.getChildren().addAll(nodeGroup);
-        nodeList.add(node);
+        graph.getNodes().add(new Node(node,s));
         createAlert(1,"Węzeł stworzony pomyślnie");
+    }
+    private void createEdge(Node n1, Node n2) {
+        graph.getEdges().add(new Edge(n1.getId(), n2.getId(), 0));
+        Circle start=n1.getCircle();
+        Circle end=n2.getCircle();
+        Line edge = new Line();
+
+        Text weightText = new Text();
+        updateEdgePosition(edge, start, end,weightText);
+        weightText.getStyleClass().add("basketText");
+        edge.getStyleClass().add("line");
+        // Pole do wpisywania wagi, które pojawia się po kliknięciu na linię
+
+
+        canvas.getChildren().addAll(edge, weightText);
+
+        // Aktualizacja pozycji krawędzi i wagi, gdy węzeł jest przeciągany
+        start.centerXProperty().addListener((obs, oldVal, newVal) -> updateEdgePosition(edge, start, end,weightText));
+        start.centerYProperty().addListener((obs, oldVal, newVal) -> updateEdgePosition(edge, start, end,weightText));
+        end.centerXProperty().addListener((obs, oldVal, newVal) -> updateEdgePosition(edge, start, end,weightText));
+        end.centerYProperty().addListener((obs, oldVal, newVal) -> updateEdgePosition(edge, start, end,weightText));
+
+        // Kliknięcie na linię, aby wprowadzić wagę
+        edge.setOnMouseClicked((MouseEvent event) -> {
+            TextInputDialog dialog = new TextInputDialog();
+            dialog.setHeaderText("Wprowadź wartosć wagi");
+            Optional<String> res = dialog.showAndWait();
+            String weight="";
+            if (res.isPresent())
+                weight = res.get();
+            if(weight.equals(""))
+            {
+                createAlert(2,"NIe podałes wagi krawędzi!");
+                return;
+            }
+            weightText.setText(weight);
+            for(Edge l:graph.getEdges())
+            {
+                if(l.getNode1ID()== n1.getId()&&l.getNode2ID()== n2.getId()||(l.getNode2ID()== n1.getId()&&l.getNode1ID()== n2.getId()))
+                    l.setWeight(Integer.parseInt(weightText.getText()));
+            }
+        });
+        createAlert(1,"Połączenie stworzone pomyślnie");
+    }
+    // Aktualizacja pozycji krawędzi, aby zaczynała i kończyła się na krawędzi okręgu
+    private void updateEdgePosition(Line edge, Circle start, Circle end,Text text) {
+        double startX = start.getCenterX();
+        double startY = start.getCenterY();
+        double endX = end.getCenterX();
+        double endY = end.getCenterY();
+
+        // Obliczenia dla punktu początkowego (krawędź okręgu startowego)
+        double angleStart = Math.atan2(endY - startY, endX - startX);
+        edge.setStartX(startX + start.getRadius() * Math.cos(angleStart));
+        edge.setStartY(startY + start.getRadius() * Math.sin(angleStart));
+
+        // Obliczenia dla punktu końcowego (krawędź okręgu końcowego)
+        double angleEnd = Math.atan2(startY - endY, startX - endX);
+        edge.setEndX(endX + end.getRadius() * Math.cos(angleEnd));
+        edge.setEndY(endY + end.getRadius() * Math.sin(angleEnd));
+        text.setX(((edge.getStartX() + edge.getEndX()) / 2)+5);
+        text.setY(((edge.getStartY() + edge.getEndY()) / 2)+5);
     }
     private void createAddCircleBox()
     {
         HBox menu=new HBox();
         menu.getStyleClass().add("infoBoxGraph");
-        menu.setLayoutX(125.0);
-        menu.setLayoutY(5.0);
         menu.setPrefHeight(50.0);
         Text x=new Text("X: ");
         x.getStyleClass().add("infoBoxTextGraph");
@@ -185,7 +159,7 @@ public class GraphInterfaceController implements Initializable {
         xField.getStyleClass().add("filterBoxGraph");
         TextField yField=new TextField();
         yField.getStyleClass().add("filterBoxGraph");
-        Button add=new Button("Dodaj");
+        Button add=new Button("Dodaj węzeł");
         add.prefHeight(50.0);
         add.setOnAction(e->{
             createNode(Integer.parseInt(xField.getText()),Integer.parseInt(yField.getText()));
@@ -194,7 +168,46 @@ public class GraphInterfaceController implements Initializable {
         });
         add.getStyleClass().add("boxButton");
         menu.getChildren().addAll(x,xField,y,yField,add);
-        mainPane.getChildren().add(menu);
+        menuBox.getChildren().add(menu);
+    }
+    private void createAddEdgeBox()
+    {
+        HBox menu=new HBox();
+        menu.getStyleClass().add("infoBoxGraph");
+        menu.setPrefHeight(50.0);
+        Text n1=new Text("n1: ");
+        n1.getStyleClass().add("infoBoxTextGraph");
+        Text n2=new Text("n2: ");
+        n2.getStyleClass().add("infoBoxTextGraph");
+        TextField n1Field=new TextField();
+        n1Field.getStyleClass().add("filterBoxGraph");
+        TextField n2Field=new TextField();
+        n2Field.getStyleClass().add("filterBoxGraph");
+        Button add=new Button("Dodaj krawędź");
+        add.setOnAction(e->{
+            int node1=Integer.parseInt(n1Field.getText());
+            int node2=Integer.parseInt(n2Field.getText());
+            if(node2>graph.getNodes().size()||node1>graph.getNodes().size())
+            {
+                createAlert(2,"Podany węzeł nie istnieje");
+                return;
+            }
+            n1Field.clear();
+            n2Field.clear();
+            for(Edge l:graph.getEdges())
+            {
+                if(l.getNode1ID()== node1&&l.getNode2ID()== node2||(l.getNode2ID()== node1&&l.getNode1ID()== node2))
+                {
+                    createAlert(2,"Krawędź już istnieje!");
+                    return;
+                }
+            }
+            createEdge(graph.getNodes().get(node1),graph.getNodes().get(node2));
+        });
+        add.getStyleClass().add("boxButton");
+        menu.getChildren().addAll(n1,n1Field,n2,n2Field,add);
+        menuBox.getChildren().add(menu);
+
     }
     public void createAlert(int type,String value){
         switch (type) {

@@ -190,6 +190,11 @@ public class RuleInterfaceController extends InterfaceTemplate<AssociationRule> 
         String filename="";
         if (res.isPresent())
             filename = res.get();
+        if(filename.equals(""))
+        {
+            createAlert(2,"Brak podanej nazwy pliku!");
+            return;
+        }
         File file = new File("dane/" + filename+"_ruleData.csv");
 
         if (file.createNewFile())
