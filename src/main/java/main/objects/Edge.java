@@ -1,22 +1,25 @@
 package main.objects;
 
+import javafx.scene.Group;
+import javafx.scene.shape.Line;
+import javafx.scene.text.Text;
+
+import java.util.List;
+
 public class Edge {
-    private int node1ID;
-    private int node2ID;
+    private List<Node> nodes;
     private int weight;
+    private Group group;
 
-    public Edge(int node1ID, int node2ID, int weight) {
-        this.node1ID = node1ID;
-        this.node2ID = node2ID;
+
+    public Edge(List<Node> nodes, int weight, Group group) {
+        this.nodes = nodes;
         this.weight = weight;
+        this.group = group;
     }
 
-    public int getNode1ID() {
-        return node1ID;
-    }
-
-    public int getNode2ID() {
-        return node2ID;
+    public List<Node> getNodes() {
+        return nodes;
     }
 
     public int getWeight() {
@@ -26,4 +29,10 @@ public class Edge {
     public void setWeight(int weight) {
         this.weight = weight;
     }
+
+    public Group getGroup() {
+        return group;
+    }
 }
+
+

@@ -13,8 +13,9 @@
     <stylesheets>
         <URL value="@style.css"/>
     </stylesheets>
-    <HBox fx:id="menuBox" layoutX="5.0" layoutY="5.0" prefHeight="50.0" styleClass="empty"/>
-    <ScrollPane fx:id="pane" prefHeight="680.0" prefWidth="990.0" layoutY="65.0" layoutX="5.0" styleClass="graphBorder">
+    <HBox fx:id="menuBox"  prefHeight="50.0" styleClass="empty"/>
+    <ScrollPane fx:id="pane" prefHeight="625.0" prefWidth="990.0" layoutY="65.0" layoutX="5.0" styleClass="graphBorder">
         <Pane fx:id="canvas"/>
     </ScrollPane>
+    <HBox fx:id="bottomBox" layoutX="5.0" layoutY="695.0" prefHeight="50.0" />
 </Pane>
