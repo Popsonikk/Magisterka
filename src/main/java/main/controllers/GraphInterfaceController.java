@@ -10,15 +10,14 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import main.functions.GeneratePattern;
 import main.objects.Edge;
 import main.objects.Graph;
 import main.objects.Node;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.*;
 public class GraphInterfaceController implements Initializable {
@@ -66,6 +65,24 @@ public class GraphInterfaceController implements Initializable {
         canvas.getChildren().addAll(nodeGroup);
         graph.getNodes().add(new Node(node,s));
         graph.setSize(graph.getSize()+1);
+        addNodeMouseEvents(nodeGroup,node,text);
+    }
+    private void createNode(double x,double y, int id)
+    {
+        Circle node = new Circle(x,y, 20);
+        node.getStyleClass().add("circle");
+        Text text = new Text();
+        text.setX(node.getCenterX() - 5);
+        text.setY(node.getCenterY() + 5);
+        text.setText(Integer.toString(id));
+        text.getStyleClass().add("circleText");
+        Group nodeGroup=new Group(node,text);
+        canvas.getChildren().addAll(nodeGroup);
+        graph.getNodes().add(new Node(node,id));
+        addNodeMouseEvents(nodeGroup,node,text);
+    }
+    private void addNodeMouseEvents(Group nodeGroup,Circle node,Text text)
+    {
 
         //przesuwanie węzła na planszy
         nodeGroup.setOnMousePressed(event -> {
@@ -112,46 +129,45 @@ public class GraphInterfaceController implements Initializable {
                     if (Objects.equals(response.getText(), "Tak"))
                     {
                         //pobranie id node do usunięcia
-                       Text t=(Text)nodeGroup.getChildren().get(1);
-                       int id=Integer.parseInt(t.getText());
-                       for (Node n: graph.getNodes())
-                       {
-                           if(n.getId()==id)
-                           {
-                               //usunięcie node z tablicy
-                               graph.getNodes().remove(n);
-                               break;
-                           }
-                       }
-                       for(int i= graph.getEdges().size()-1;i>=0;i--)
-                       {
-                           //usunięcie linii powiązanych z usuwanym node
-                           if(graph.getEdges().get(i).getNodes().stream().anyMatch(n -> n.getId() == id))
-                           {
-                               Group g=graph.getEdges().get(i).getGroup();
-                               //usunięcie z planszy
-                               canvas.getChildren().remove(g);
-                               graph.getEdges().remove(i);
-                           }
-                       }
-                       //usunięcie z planszy
-                       canvas.getChildren().remove(nodeGroup);
+                        Text t=(Text)nodeGroup.getChildren().get(1);
+                        int id=Integer.parseInt(t.getText());
+                        for (Node n: graph.getNodes())
+                        {
+                            if(n.getId()==id)
+                            {
+                                //usunięcie node z tablicy
+                                graph.getNodes().remove(n);
+                                break;
+                            }
+                        }
+                        for(int i= graph.getEdges().size()-1;i>=0;i--)
+                        {
+                            //usunięcie linii powiązanych z usuwanym node
+                            if(graph.getEdges().get(i).getNodes().stream().anyMatch(n -> n.getId() == id))
+                            {
+                                Group g=graph.getEdges().get(i).getGroup();
+                                //usunięcie z planszy
+                                canvas.getChildren().remove(g);
+                                graph.getEdges().remove(i);
+                            }
+                        }
+                        //usunięcie z planszy
+                        canvas.getChildren().remove(nodeGroup);
                     }
                 });
             }
         });
-
     }
-    private void createEdge(Node n1, Node n2) {
+    private void createEdge(Node n1, Node n2,int wt) {
 
         //dane potrzebne do narysowania linii na planszy
         Circle start=n1.getCircle();
         Circle end=n2.getCircle();
         Line edge = new Line();
-        Text weightText = new Text("1");
+        Text weightText = new Text(String.valueOf(wt));
         Group nodeGroup=new Group(edge, weightText);
         canvas.getChildren().addAll(nodeGroup);
-        graph.getEdges().add(new Edge(List.of(n1,n2),1,nodeGroup));
+        graph.getEdges().add(new Edge(List.of(n1,n2),wt,nodeGroup));
         weightText.getStyleClass().add("basketText");
         edge.getStyleClass().add("line");
         updateEdgePosition(edge, start, end,weightText);
@@ -261,7 +277,7 @@ public class GraphInterfaceController implements Initializable {
                 if(n.getId()==node2)
                     c2=n;
             }
-            createEdge(c1,c2);
+            createEdge(c1,c2,1);
             createAlert(1,"Połączenie stworzone pomyślnie");
 
 
@@ -347,8 +363,49 @@ public class GraphInterfaceController implements Initializable {
             }
         });
         MenuItem load=new MenuItem("Wczytaj z pliku");
+        load.setOnAction(e-> {
+            try {
+                loadFromCSV();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
         menuButton.getItems().addAll(save,load);
         menuBox.getChildren().add(menuButton);
+    }
+    private void loadFromCSV() throws IOException {
+        graph.clear();
+        FileChooser fileChooser=new FileChooser();
+        fileChooser.setTitle("Wybierz plik zawierający gotowe reguły");
+        File file = fileChooser.showOpenDialog(null);
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        String []header=reader.readLine().split(",");
+        graph.setSize(Integer.parseInt(header[2]));
+        int s=Integer.parseInt(header[0]);
+        for(int i=0;i<s;i++)
+        {
+            String[] line=reader.readLine().split(",");
+            createNode(Double.parseDouble(line[0]),(Double.parseDouble(line[1])),Integer.parseInt(line[2]));
+        }
+        s=Integer.parseInt(header[1]);
+        for(int i=0;i<s;i++)
+        {
+            String[] line=reader.readLine().split(",");
+            int n1=Integer.parseInt(line[0]);
+            int n2=Integer.parseInt(line[1]);
+            Node c1=null,c2=null;
+            for (Node n: graph.getNodes())
+            {
+                if(n.getId()==n1)
+                    c1=n;
+                if(n.getId()==n2)
+                    c2=n;
+            }
+            createEdge(c1,c2,Integer.parseInt(line[2]));
+
+        }
+        createAlert(1,"Graf wczytany pomyślnie");
+
     }
     //zapis grafu do pliku
     private void saveToCSV() throws IOException {
