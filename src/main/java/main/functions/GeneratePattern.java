@@ -1,6 +1,7 @@
 package main.functions;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextInputDialog;
 import javafx.util.Pair;
 import main.objects.AssociationRule;
 import main.objects.SimplePattern;
@@ -150,5 +151,16 @@ public class GeneratePattern {
         Optional<SimplePattern> matchingPattern = patterns.stream()
                 .filter(simplePattern -> new HashSet<>(simplePattern.getPattern()).containsAll(subset)&&simplePattern.getPattern().size()==subset.size()).findFirst();
         return matchingPattern.orElse(null);
+    }
+
+    public static String getFilename()
+    {
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setHeaderText("Wprowadź nazwę pliku");
+        Optional<String> res = dialog.showAndWait();
+        String filename="";
+        if (res.isPresent())
+            filename = res.get();
+        return filename;
     }
 }

@@ -11,9 +11,14 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import main.functions.GeneratePattern;
 import main.objects.Edge;
 import main.objects.Graph;
 import main.objects.Node;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 public class GraphInterfaceController implements Initializable {
@@ -41,6 +46,7 @@ public class GraphInterfaceController implements Initializable {
         createBottomBox();
         createAddCircleBox();
         createAddEdgeBox();
+        createCSVFileButton();
     }
     //tworzenie pojedynczego węzła, domyślnie tworzymy w wyznaczonych miejscach
     private void createNode( int x, int y) {
@@ -227,7 +233,7 @@ public class GraphInterfaceController implements Initializable {
     private void createAddEdgeBox()
     {
         HBox menu=createBoxTemplate("n1:","n2:");
-        MenuButton button=createEdgeButton();
+        MenuButton button= createMenuButtonTemplate();
         TextField x=(TextField)menu.getChildren().get(1);
         TextField y=(TextField)menu.getChildren().get(3);
         MenuItem add=new MenuItem("Dodaj");
@@ -289,7 +295,7 @@ public class GraphInterfaceController implements Initializable {
 
     }
 
-    private MenuButton createEdgeButton()
+    private MenuButton createMenuButtonTemplate()
     {
         MenuButton menuButton=new MenuButton();
         menuButton.setText("Wybierz");
@@ -327,6 +333,55 @@ public class GraphInterfaceController implements Initializable {
         clear.setOnAction(e->clearCanvas());
         bottomBox.getChildren().addAll(button,clear);
         bottomBox.setSpacing(5.0);
+    }
+    private void createCSVFileButton()
+    {
+        MenuButton menuButton=createMenuButtonTemplate();
+        menuButton.setPrefHeight(50.0);
+        MenuItem save=new MenuItem("Zapisz do pliku");
+        save.setOnAction(e-> {
+            try {
+                saveToCSV();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        MenuItem load=new MenuItem("Wczytaj z pliku");
+        menuButton.getItems().addAll(save,load);
+        menuBox.getChildren().add(menuButton);
+    }
+    //zapis grafu do pliku
+    private void saveToCSV() throws IOException {
+        if(graph.getNodes().size()==0)
+        {
+            createAlert(2,"Brak danych do zapisania");
+            return;
+        }
+        String filename= GeneratePattern.getFilename();
+        File file = new File("dane/" + filename+"_graph.csv");
+        if (file.createNewFile())
+            System.out.println("Stworzono plik");
+        FileWriter writer=new FileWriter(file);
+        //zapis odpowiednio: liczba node, liczba krawędzi, najwyższy index node
+        writer.write(graph.getNodes().size()+","+graph.getEdges().size()+","+ graph.getSize()+"\n");
+        for(Node n: graph.getNodes())
+        {
+            Circle c=n.getCircle();
+            //zapis odpowiednio: środek X, środek Y, wartość id node
+            writer.write(String.format(Locale.US,"%.3f", c.getCenterX())+",");
+            writer.write(String.format(Locale.US,"%.3f", c.getCenterY())+",");
+            writer.write(n.getId()+"\n");
+        }
+        for(Edge e: graph.getEdges())
+        {
+            //zapis odpowiednio: id node1, id node2, waga krawędzi
+            writer.write(e.getNodes().get(0).getId()+",");
+            writer.write(e.getNodes().get(1).getId()+",");
+            writer.write(e.getWeight()+"\n");
+        }
+        writer.close();
+        createAlert(1, "zapisano pomyślnie");
+
     }
     private void clearCanvas()
     {

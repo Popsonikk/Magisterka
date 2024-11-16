@@ -7,6 +7,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
+import main.functions.GeneratePattern;
 import main.objects.FiltrType;
 import main.functions.InterfaceTemplate;
 import main.objects.SimplePattern;
@@ -76,12 +77,7 @@ public class AprioriInterfaceController extends InterfaceTemplate<SimplePattern>
             createAlert(2, "Brak danych do zapisania");
             return;
         }
-        TextInputDialog dialog = new TextInputDialog();
-        dialog.setHeaderText("Wprowadź nazwę pliku");
-        Optional<String> res = dialog.showAndWait();
-        String filename="";
-        if (res.isPresent())
-            filename = res.get();
+        String filename= GeneratePattern.getFilename();
         if(filename.equals(""))
         {
             createAlert(2,"Brak podanej nazwy pliku!");
