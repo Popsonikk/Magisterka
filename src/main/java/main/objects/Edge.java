@@ -9,6 +9,7 @@ import java.util.List;
 public class Edge {
     private List<Node> nodes;
     private int weight;
+    //line + weightText widoczne na planszy
     private Group group;
 
 
