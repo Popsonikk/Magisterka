@@ -153,6 +153,14 @@
     -fx-stroke: #66bfbf;
     -fx-stroke-width: 5px;
 }
+.lineMesh{
+    -fx-stroke: green ;
+    -fx-stroke-width: 1px;
+}
+.lineMesh5{
+    -fx-stroke: red ;
+    -fx-stroke-width: 1px;
+}
 .line:hover{
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 5, 0.5, 0, 0); /* Efekt cienia */
 }

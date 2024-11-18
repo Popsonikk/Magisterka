@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
@@ -34,6 +35,7 @@ public class GraphInterfaceController implements Initializable {
     private Scene mainScene;
     private Stage mainStage;
     private Graph graph;
+    private List<Line> mesh;
     public void setMainScene(Scene mainScene) {this.mainScene = mainScene;}
     public void setMainStage(Stage mainStage) {this.mainStage = mainStage;}
     public void back() {mainStage.setScene(mainScene);}
@@ -41,11 +43,14 @@ public class GraphInterfaceController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        mesh=new ArrayList<>();
         graph=new Graph();
+        createMesh();
         createBottomBox();
         createAddCircleBox();
         createAddEdgeBox();
         createCSVFileButton();
+        canvas.getChildren().addAll(mesh);
     }
     //tworzenie pojedynczego węzła, domyślnie tworzymy w wyznaczonych miejscach
     private void createNode( int x, int y) {
@@ -354,6 +359,7 @@ public class GraphInterfaceController implements Initializable {
     {
         MenuButton menuButton=createMenuButtonTemplate();
         menuButton.setPrefHeight(50.0);
+        menuButton.setText("Zarządzaj plikiem");
         MenuItem save=new MenuItem("Zapisz do pliku");
         save.setOnAction(e-> {
             try {
@@ -444,6 +450,7 @@ public class GraphInterfaceController implements Initializable {
     {
         graph.clear();
         canvas.getChildren().clear();
+        canvas.getChildren().addAll(mesh);
         createAlert(1, "Wyczyszczono całą planszę");
     }
     private boolean parseCanvasInput(TextField x, TextField y)
@@ -496,6 +503,36 @@ public class GraphInterfaceController implements Initializable {
                 a.show();
             }
         }
+    }
+    private void createMesh()
+    {
+        for(int i=20,j=0;i<2000;i+=50,j++)
+        {
+            Line line=new Line();
+            line.setStartX(i);
+            line.setStartY(0);
+            line.setEndY(2000);
+            line.setEndX(i);
+            if(j%5==0)
+                line.getStyleClass().add("lineMesh5");
+            else
+                line.getStyleClass().add("lineMesh");
+            mesh.add(line);
+        }
+        for(int i=20,j=0;i<2000;i+=50,j++)
+        {
+            Line line=new Line();
+            line.setStartX(0);
+            line.setStartY(i);
+            line.setEndY(i);
+            line.setEndX(2000);
+            if(j%5==0)
+                line.getStyleClass().add("lineMesh5");
+            else
+                line.getStyleClass().add("lineMesh");
+            mesh.add(line);
+        }
+
     }
 
 }
