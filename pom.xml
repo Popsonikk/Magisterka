@@ -38,7 +38,11 @@
             <version>5.9.2</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.neo4j.driver</groupId>
+            <artifactId>neo4j-java-driver</artifactId>
+            <version>5.22.0</version>
+        </dependency>
     </dependencies>
 
 </project>

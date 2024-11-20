@@ -3,11 +3,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.Neo4jConnector;
 import main.objects.AssociationRule;
 import main.functions.GeneratePattern;
 import main.objects.SimplePattern;
+import org.neo4j.driver.Record;
 
 import java.net.URL;
 import java.util.List;
@@ -93,6 +96,24 @@ public class MainWindowController implements Initializable {
 
     public void showGraphInterface() {
         mainStage.setScene(graphScene);
+    }
+
+    public void openNeo()
+    {
+        try (var greeter = new Neo4jConnector("neo4j+s://89d4ca68.databases.neo4j.io", "neo4j", "1XJ3eBvRUKicjfVdeIDmdsnc-b7tEOGMGnnLWyCem8c")) {
+            greeter.printGreeting("hello, world");
+            List<Record> res=greeter.getRecomendation("Angela Thompson","Forrest Gump");
+            StringBuilder builder=new StringBuilder("Polecane filmy \n");
+            for (Record r:res)
+            {
+                builder.append(r.get(0)).append("\n");
+            }
+            Alert a=new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText(builder.toString());
+            a.show();
+        }
+
+
     }
 
     @Override

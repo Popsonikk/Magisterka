@@ -13,7 +13,7 @@
     <children>
         <Button layoutX="425.0" layoutY="50.0" onAction="#showBasketInterface" prefHeight="50.0" prefWidth="150.0" text="Zarządzaj koszykami" />
         <Button layoutX="425.0" layoutY="125.0" onAction="#showGraphInterface" prefHeight="50.0" prefWidth="150.0" text="Zarządzaj grafami" />
-
+        <Button layoutX="425.0" layoutY="200.0" onAction="#openNeo" prefHeight="50.0" prefWidth="150.0" text="Uruchom bazę grafową" />
         <Button layoutX="125.0" layoutY="475.0" onAction="#useApriori" prefHeight="50.0" prefWidth="150.0" text="Algorytm Apriori" />
         <Button layoutX="125.0" layoutY="550.0" onAction="#showAprioriInterface" prefHeight="50.0" prefWidth="150.0" text="Zarządzaj wsparciem" />
         <Button layoutX="725.0" layoutY="475.0" onAction="#useRules" prefHeight="50.0" prefWidth="150.0" text="Wygeneruj reguły" />
