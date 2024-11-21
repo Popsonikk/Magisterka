@@ -13,6 +13,7 @@ import main.objects.SimplePattern;
 import org.neo4j.driver.Record;
 
 import java.net.URL;
+import java.util.Comparator;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -100,17 +101,15 @@ public class MainWindowController implements Initializable {
 
     public void openNeo()
     {
-        try (var greeter = new Neo4jConnector("neo4j+s://89d4ca68.databases.neo4j.io", "neo4j", "1XJ3eBvRUKicjfVdeIDmdsnc-b7tEOGMGnnLWyCem8c")) {
-            greeter.printGreeting("hello, world");
-            List<Record> res=greeter.getRecomendation("Angela Thompson","Forrest Gump");
-            StringBuilder builder=new StringBuilder("Polecane filmy \n");
-            for (Record r:res)
+        aprioriInterfaceController.getData().getData().sort(Comparator.comparingInt(o -> o.getPattern().size()));
+        try (var conn = new Neo4jConnector("neo4j+s://b80ce237.databases.neo4j.io", "neo4j", "STRyE_-kb6p8vYYFkPA2U23Ax-okWxlHd6Jjw_LxYow")) {
+            if(conn.doesAnyRecordExist())
             {
-                builder.append(r.get(0)).append("\n");
+                conn.cleanBase();
             }
-            Alert a=new Alert(Alert.AlertType.INFORMATION);
-            a.setContentText(builder.toString());
-            a.show();
+            aprioriInterfaceController.getData().getData().sort(Comparator.comparingInt(o -> o.getPattern().size()));
+            conn.createNodes(aprioriInterfaceController.getData().getData());
+            aprioriInterfaceController.createAlert(1,"Utworzono Node dla bazy neo4j");
         }
 
 

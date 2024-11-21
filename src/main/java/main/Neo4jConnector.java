@@ -1,5 +1,7 @@
 package main;
 
+import main.objects.AssociationRule;
+import main.objects.SimplePattern;
 import org.neo4j.driver.AuthTokens;
 import org.neo4j.driver.Driver;
 import org.neo4j.driver.GraphDatabase;
@@ -23,38 +25,53 @@ public class Neo4jConnector implements AutoCloseable {
         driver.close();
     }
 
-    public void printGreeting(final String message) {
+
+    public boolean doesAnyRecordExist() {
         try (var session = driver.session()) {
-            var greeting = session.executeWrite(tx -> {
-                var query = new Query("CREATE (a:Greeting) SET a.message = $message RETURN a.message + ', from node ' + id(a)", parameters("message", message));
-                var result = tx.run(query);
-                return result.single().get(0).asString();
+            var result = session.executeRead(tx -> {
+                var query = new Query("MATCH (n) RETURN count(n) > 0 AS exists");
+                var record = tx.run(query).single();
+                return record.get("exists").asBoolean();
             });
-            System.out.println(greeting);
+            return result;
         }
     }
-    public List<Record> getRecomendation(String us, String mv)
+    public void cleanBase() {
+        try (var session = driver.session()) {
+            session.executeWrite(tx -> {
+
+                var query = new Query("MATCH (n) DETACH DELETE n;");
+                return tx.run(query).list();
+            });
+        }
+    }
+    public void createNodes(List<SimplePattern> patterns)
     {
         try (var session = driver.session()) {
-            var greeting = session.executeWrite(tx -> {
-                var query = new Query("""
-                         MATCH (u:User)-[r:RATED {rating:5}]->(m:Movie {title:$myMovie})\s
-                                    WHERE u.name <> $myUser
-                                    WITH u.name AS findedUser\s
-                                    ORDER BY RAND() LIMIT 1\s
-                                    MATCH (u2:User )-[r2:RATED {rating:5}]->(m2:Movie)\s
-                                    WHERE u2.name = findedUser AND m2 <> $myMovie \s
-                                    RETURN m2.title AS recommendedMovies ORDER BY RAND() LIMIT 10\
-                        """, parameters("myUser", us,"myMovie",mv));
-                var result = tx.run(query);
-                return result.list();
-            });
-            return greeting;
 
+            for(SimplePattern pattern:patterns)
+            {
+                StringBuilder builder=new StringBuilder();
+                if(pattern.getPattern().size()==1)
+                {
+                    builder.append("MERGE (p:Product {name: $n , support: $p}) RETURN p");
+                    session.executeWrite(tx -> {
+                        var query = new Query(builder.toString(),parameters("n",pattern.getPattern().get(0),"p",pattern.getSupport()));
+                        return tx.run(query).list();
+                    });
+                }
+                else
+                {
+                    builder.append("MERGE (g:ProductGroup {name: $n, support: $s})")
+                            .append("WITH $p AS products, g UNWIND products AS item MATCH (it:Product {name: item})")
+                            .append("MERGE (it)-[:PART_OF]->(g) RETURN g");
+                    session.executeWrite(tx -> {
+                        var query = new Query(builder.toString(),parameters("p",pattern.getPattern(),"s",pattern.getSupport(),"n",pattern.getPattern().toString()));
+                        return tx.run(query).list();
+                    });
+                }
+            }
         }
     }
-
-
-
 
 }
