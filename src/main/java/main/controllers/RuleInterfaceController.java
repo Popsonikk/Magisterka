@@ -223,7 +223,7 @@ public class RuleInterfaceController extends InterfaceTemplate<AssociationRule> 
     @Override
     protected void createHeader() {
         header=new HBox();
-        header.setLayoutX(17.0);
+        header.setLayoutX(17.5);
         header.setLayoutY(66.0);
         header.setPrefWidth(950.0);
         header.setPrefHeight(40.0);

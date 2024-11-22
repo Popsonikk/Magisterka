@@ -129,8 +129,8 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
     //funkcja tworząca nagłówek tablicy
     protected void createHeader() {
         header=new HBox();
-        header.setLayoutX(17.0);
-        header.setLayoutY(66.0);
+        header.setLayoutX(17.5);
+        header.setLayoutY(65.0);
         header.setPrefWidth(950.0);
         header.getStyleClass().add("basketHeader");
         Text text=new Text("Koszyk");

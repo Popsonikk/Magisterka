@@ -107,7 +107,6 @@
     -fx-background-color: transparent;
     -fx-border-color: transparent;
     -fx-spacing: 10px;
-    -fx-padding: 5px;
 }
 .graphBorder{
     -fx-border-color: black;

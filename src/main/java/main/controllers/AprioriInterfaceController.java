@@ -136,7 +136,7 @@ public class AprioriInterfaceController extends InterfaceTemplate<SimplePattern>
     //generowanie nagłówka tabeli
     protected void createHeader() {
         header=new HBox();
-        header.setLayoutX(17.0);
+        header.setLayoutX(17.5);
         header.setLayoutY(66.0);
         header.setPrefWidth(950.0);
         header.setPrefHeight(40.0);

@@ -84,12 +84,12 @@ public class MainWindowController implements Initializable {
 
     public void showAprioriInterface() {
         if(aprioriInterfaceController.getData().getDataSize()>0)
-            aprioriInterfaceController.createView();
+            aprioriInterfaceController.showTable();
         mainStage.setScene(aprioriScene);
     }
     public void showRuleInterface() {
         if(ruleInterfaceController.getData().getDataSize()>0)
-            ruleInterfaceController.createView();
+            ruleInterfaceController.showTable();;
         mainStage.setScene(ruleScene);
     }
 
