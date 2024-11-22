@@ -13,9 +13,7 @@ import main.objects.SimplePattern;
 import org.neo4j.driver.Record;
 
 import java.net.URL;
-import java.util.Comparator;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class MainWindowController implements Initializable {
     @FXML
@@ -101,18 +99,21 @@ public class MainWindowController implements Initializable {
 
     public void openNeo()
     {
-        aprioriInterfaceController.getData().getData().sort(Comparator.comparingInt(o -> o.getPattern().size()));
+
         try (var conn = new Neo4jConnector("neo4j+s://b80ce237.databases.neo4j.io", "neo4j", "STRyE_-kb6p8vYYFkPA2U23Ax-okWxlHd6Jjw_LxYow")) {
+
             if(conn.doesAnyRecordExist())
-            {
                 conn.cleanBase();
-            }
-            aprioriInterfaceController.getData().getData().sort(Comparator.comparingInt(o -> o.getPattern().size()));
+            Date d1 = new Date();
             conn.createNodes(aprioriInterfaceController.getData().getData());
-            aprioriInterfaceController.createAlert(1,"Utworzono Node dla bazy neo4j");
+            Date d2 = new Date();
+            System.out.println(d2.getTime()-d1.getTime());
+            d1=new Date();
+            conn.createEdges(ruleInterfaceController.getData().getData());
+            d2 = new Date();
+            System.out.println(d2.getTime()-d1.getTime());
+            aprioriInterfaceController.createAlert(1,"Pomyślnie wczytano dane do bazy neo4j");
         }
-
-
     }
 
     @Override

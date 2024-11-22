@@ -9,6 +9,7 @@ import org.neo4j.driver.Query;
 import org.neo4j.driver.Record;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.neo4j.driver.Values.parameters;
 
@@ -39,38 +40,55 @@ public class Neo4jConnector implements AutoCloseable {
     public void cleanBase() {
         try (var session = driver.session()) {
             session.executeWrite(tx -> {
-
                 var query = new Query("MATCH (n) DETACH DELETE n;");
                 return tx.run(query).list();
             });
         }
     }
-    public void createNodes(List<SimplePattern> patterns)
+    public void createNodes(List<SimplePattern> patterns) {
+        try (var session = driver.session()) {
+            // Tworzymy indeks tylko raz
+            session.executeWrite(tx -> {
+                var query = new Query("CREATE INDEX patternIndex IF NOT EXISTS FOR (n:Pattern) ON (n.name)");
+                return tx.run(query).list();
+            });
+
+            // Przygotowujemy listę danych do wczytania
+            List<Map<String, String>> nodes = patterns.stream()
+                    .map(pattern -> Map.of(
+                            "name", pattern.toString(),
+                            "support", String.valueOf(pattern.getSupport())
+                    ))
+                    .toList();
+
+            session.executeWrite(tx -> {
+                var query = new Query("UNWIND $nodes AS node MERGE (p:Pattern {name: node.name, support:node.support})",
+                        parameters("nodes", nodes));
+                tx.run(query);
+                return null;
+            });
+        }
+    }
+    public void createEdges(List<AssociationRule> rules)
     {
         try (var session = driver.session()) {
 
-            for(SimplePattern pattern:patterns)
-            {
-                StringBuilder builder=new StringBuilder();
-                if(pattern.getPattern().size()==1)
-                {
-                    builder.append("MERGE (p:Product {name: $n , support: $p}) RETURN p");
-                    session.executeWrite(tx -> {
-                        var query = new Query(builder.toString(),parameters("n",pattern.getPattern().get(0),"p",pattern.getSupport()));
-                        return tx.run(query).list();
-                    });
-                }
-                else
-                {
-                    builder.append("MERGE (g:ProductGroup {name: $n, support: $s})")
-                            .append("WITH $p AS products, g UNWIND products AS item MATCH (it:Product {name: item})")
-                            .append("MERGE (it)-[:PART_OF]->(g) RETURN g");
-                    session.executeWrite(tx -> {
-                        var query = new Query(builder.toString(),parameters("p",pattern.getPattern(),"s",pattern.getSupport(),"n",pattern.getPattern().toString()));
-                        return tx.run(query).list();
-                    });
-                }
-            }
+            List<Map<String, Object>> ruleData = rules.stream()
+                    .map(rule -> Map.<String, Object>of(
+                            "antecedent", rule.getAntecedent().toString(),
+                            "consequent", rule.getConsequent().toString(),
+                            "confidence", String.valueOf(rule.getConfidence()),
+                            "lift", String.valueOf(rule.getLift())
+                    ))
+                    .toList();
+            StringBuilder builder=new StringBuilder();
+            builder.append("UNWIND $rules AS rule MATCH (left:Pattern {name: rule.antecedent}),(right:Pattern {name: rule.consequent})")
+                            .append("MERGE (left)-[:SUPPORTING {confidence: rule.confidence, lift:rule.lift}]->(right)");
+            session.executeWrite(tx -> {
+                var query = new Query(builder.toString(), parameters("rules", ruleData));
+                tx.run(query);
+                return null;
+            });
         }
     }
 
