@@ -91,5 +91,22 @@ public class Neo4jConnector implements AutoCloseable {
             });
         }
     }
+    public List<Record> checkNeighbourhood()
+    {
+        try (var session = driver.session()) {
+           var res= session.executeWrite(tx -> {
+                var query = new Query("""
+                        MATCH (n:Pattern)-[s:SUPPORTING]->(m:Pattern)
+                        WITH n, count(m) AS connections, sum(toFloat(s.lift)) AS strength
+                        RETURN n.name AS pattern, strength, connections
+                        ORDER BY strength DESC, connections DESC
+                        LIMIT 100;""");
+
+                return tx.run(query).list();
+            });
+           return res;
+        }
+    }
+
 
 }

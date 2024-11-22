@@ -113,6 +113,11 @@ public class MainWindowController implements Initializable {
             d2 = new Date();
             System.out.println(d2.getTime()-d1.getTime());
             aprioriInterfaceController.createAlert(1,"Pomyślnie wczytano dane do bazy neo4j");
+            List<Record> records= conn.checkNeighbourhood();
+            for (Record r:records){
+                System.out.println(r.get(0)+": "+r.get(1));
+            }
+
         }
     }
 
