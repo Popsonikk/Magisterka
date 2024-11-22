@@ -4,9 +4,9 @@ import javafx.scene.shape.Circle;
 
 public class Node {
     private Circle circle;
-    private int id;
+    private String id;
 
-    public Node(Circle circle, int id) {
+    public Node(Circle circle, String id) {
         this.circle = circle;
         this.id = id;
     }
@@ -15,7 +15,7 @@ public class Node {
         return circle;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 }

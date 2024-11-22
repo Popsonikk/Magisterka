@@ -123,10 +123,11 @@
 }
 .circleText{
     -fx-fill: #fcfefe;
+    -fx-font-size: 16px;
 }
 .infoBoxGraph{
     -fx-background-color: #e0ffcd;
-    -fx-border-width: 3px;
+    -fx-border-width: 2px;
     -fx-border-color: #ffcab0;
     -fx-border-style: solid;
     -fx-spacing: 5px;
@@ -162,5 +163,16 @@
 }
 .line:hover{
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 5, 0.5, 0, 0); /* Efekt cienia */
+}
+.zoomBox{
+    -fx-background-color: #e0ffcd;
+    -fx-border-width: 2px;
+    -fx-border-color: #ffcab0;
+    -fx-border-style: solid;
+    -fx-alignment: center-left;
+}
+.zoomInsideBox{
+    -fx-alignment: center-left;
+    -fx-spacing: 5px;
 }
 
