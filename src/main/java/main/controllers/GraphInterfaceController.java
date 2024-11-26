@@ -39,6 +39,7 @@ public class GraphInterfaceController implements Initializable {
     private Graph graph;
     private List<Line> mesh;
     private Scale scale;
+    private float meshSize;
     private float scaleRadius;
     public void setMainScene(Scene mainScene) {this.mainScene = mainScene;}
     public void setMainStage(Stage mainStage) {this.mainStage = mainStage;}
@@ -46,19 +47,20 @@ public class GraphInterfaceController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        meshSize=2500.0f;
         scale=new Scale(1,1,0,0);
         scaleRadius=1;
         mesh=new ArrayList<>();
         graph=new Graph();
-        createMesh();
+        createMesh(meshSize);
         createBottomBox();
         createAddCircleBox();
         createAddEdgeBox();
         createCSVFileButton();
         canvas.getChildren().addAll(mesh);
         canvas.getTransforms().add(scale);
-        //scaleController();
+        canvas.setPrefSize(meshSize,meshSize);
+        scaleController();
     }
     private void scaleController(){
         VBox box=new VBox();
@@ -69,6 +71,7 @@ public class GraphInterfaceController implements Initializable {
     }
     private HBox createZoomButton(String s1,String s2,float d)
     {
+
         HBox zoom=new HBox();
         zoom.getStyleClass().add("zoomInsideBox");
         Text zoomText=new Text(s1);
@@ -81,6 +84,7 @@ public class GraphInterfaceController implements Initializable {
                 scaleRadius=2.0f;
             scale.setX(scaleRadius);
             scale.setY(scaleRadius);
+            canvas.setPrefSize(meshSize*scaleRadius,meshSize*scaleRadius);
         });
         zoom.getChildren().addAll(zoomText,zoomButton);
         return zoom;
@@ -414,7 +418,6 @@ public class GraphInterfaceController implements Initializable {
         File file = fileChooser.showOpenDialog(null);
         BufferedReader reader = new BufferedReader(new FileReader(file));
         String []header=reader.readLine().split(",");
-        graph.setSize(Integer.parseInt(header[2]));
         int s=Integer.parseInt(header[0]);
         for(int i=0;i<s;i++)
         {
@@ -454,7 +457,7 @@ public class GraphInterfaceController implements Initializable {
             System.out.println("Stworzono plik");
         FileWriter writer=new FileWriter(file);
         //zapis odpowiednio: liczba node, liczba krawędzi, najwyższy index node
-        writer.write(graph.getNodes().size()+","+graph.getEdges().size()+","+ graph.getSize()+"\n");
+        writer.write(graph.getNodes().size()+","+graph.getEdges().size()+"\n");
         for(Node n: graph.getNodes())
         {
             Circle c=n.getCircle();
@@ -477,11 +480,12 @@ public class GraphInterfaceController implements Initializable {
     private void clearCanvas()
     {
         graph.clear();
-        canvas.getChildren().clear();
-        canvas.getChildren().addAll(mesh);
         scaleRadius=1;
         scale.setX(1);
         scale.setY(1);
+        canvas.setPrefSize(meshSize,meshSize);
+        canvas.getChildren().clear();
+        canvas.getChildren().addAll(mesh);
         createAlert(1, "Wyczyszczono całą planszę");
     }
     private boolean parseCanvasInput(TextField x, TextField y)
@@ -530,14 +534,14 @@ public class GraphInterfaceController implements Initializable {
             }
         }
     }
-    private void createMesh()
+    private void createMesh(float size)
     {
-        for(int i=20,j=0;i<2000;i+=50,j++)
+        for(int i=20,j=0;i<size;i+=50,j++)
         {
             Line line=new Line();
             line.setStartX(i);
             line.setStartY(0);
-            line.setEndY(2000);
+            line.setEndY(size);
             line.setEndX(i);
             if(j%5==0)
                 line.getStyleClass().add("lineMesh5");
@@ -545,13 +549,13 @@ public class GraphInterfaceController implements Initializable {
                 line.getStyleClass().add("lineMesh");
             mesh.add(line);
         }
-        for(int i=20,j=0;i<2000;i+=50,j++)
+        for(int i=20,j=0;i<size;i+=50,j++)
         {
             Line line=new Line();
             line.setStartX(0);
             line.setStartY(i);
             line.setEndY(i);
-            line.setEndX(2000);
+            line.setEndX(size);
             if(j%5==0)
                 line.getStyleClass().add("lineMesh5");
             else

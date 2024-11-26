@@ -115,7 +115,7 @@ public class MainWindowController implements Initializable {
             aprioriInterfaceController.createAlert(1,"Pomyślnie wczytano dane do bazy neo4j");
             List<Record> records= conn.checkNeighbourhood();
             for (Record r:records){
-                System.out.println(r.get(0)+": "+r.get(1));
+                System.out.println(r.get(0)+": support"+r.get(1)+" lift: "+r.get(2)+" conn "+r.get(3));
             }
 
         }

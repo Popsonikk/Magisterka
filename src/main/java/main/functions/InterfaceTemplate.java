@@ -42,7 +42,9 @@ public abstract class InterfaceTemplate <T>{
     protected MenuButton optionsButton;
     public void setMainScene(Scene mainScene) {this.mainScene = mainScene;}
     public void setMainStage(Stage mainStage) {this.mainStage = mainStage;}
-    public void back() {mainStage.setScene(mainScene);}
+    public void back() {
+        mainPane.getChildren().remove(header);
+        mainStage.setScene(mainScene);}
 
     public InterfaceData<T> getData() {
         return data;
