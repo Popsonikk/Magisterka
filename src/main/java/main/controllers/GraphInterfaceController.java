@@ -38,19 +38,23 @@ public class GraphInterfaceController implements Initializable {
     private Stage mainStage;
     private Graph graph;
     private List<Line> mesh;
+    private List<Text> textMesh;
     private Scale scale;
     private float meshSize;
     private float scaleRadius;
+    private int radius;
     public void setMainScene(Scene mainScene) {this.mainScene = mainScene;}
     public void setMainStage(Stage mainStage) {this.mainStage = mainStage;}
     public void back() {mainStage.setScene(mainScene);}
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        radius=25;
         meshSize=2500.0f;
         scale=new Scale(1,1,0,0);
         scaleRadius=1;
         mesh=new ArrayList<>();
+        textMesh=new ArrayList<>();
         graph=new Graph();
         createMesh(meshSize);
         createBottomBox();
@@ -58,6 +62,7 @@ public class GraphInterfaceController implements Initializable {
         createAddEdgeBox();
         createCSVFileButton();
         canvas.getChildren().addAll(mesh);
+        canvas.getChildren().addAll(textMesh);
         canvas.getTransforms().add(scale);
         canvas.setPrefSize(meshSize,meshSize);
         scaleController();
@@ -93,14 +98,14 @@ public class GraphInterfaceController implements Initializable {
     //tworzenie pojedynczego węzła, domyślnie tworzymy w wyznaczonych miejscach
     private void createNode( int x, int y, String id) {
         //węzeł reprezentowany jako koło
-        Circle node = new Circle((25+x*50.0), (25+y*50.0), 20);
+        Circle node = new Circle((radius+x*60.0), (radius+y*60.0), radius);
         node.getStyleClass().add("circle");
         addNodeMouseEvents(node,id);
 
     }
     private void createNode(double x,double y, String id)
     {
-        Circle node = new Circle(x,y, 20);
+        Circle node = new Circle(x,y, radius);
         node.getStyleClass().add("circle");
         addNodeMouseEvents(node,id);
 
@@ -108,11 +113,16 @@ public class GraphInterfaceController implements Initializable {
     private void addNodeMouseEvents(Circle node,String id)
     {
         Text text = new Text();
-        text.setX(node.getCenterX() - 5);
-        text.setY(node.getCenterY() + 5);
+        double len=radius/Math.sqrt(2);
+        text.setX(node.getCenterX()-len);
+        text.setY(node.getCenterY()+len/2);
         text.setText(id);
+        text.setWrappingWidth(len*2);
         text.getStyleClass().add("circleText");
+
         Group nodeGroup=new Group(node,text);
+        nodeGroup.setOnMouseEntered(event -> node.setStyle("-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 5, 0.5, 0, 0);"));
+        nodeGroup.setOnMouseExited(event -> node.setStyle("-fx-effect: null;"));
         canvas.getChildren().addAll(nodeGroup);
         graph.getNodes().add(new Node(node,id));
         //przesuwanie węzła na planszy
@@ -129,17 +139,17 @@ public class GraphInterfaceController implements Initializable {
             double xPos=node.getCenterX() + deltaX;
             double yPos=node.getCenterY() + deltaY;
             //blokowanie wyjścia na ujemne koordynaty
-            if(xPos<20)
-                node.setCenterX(20);
+            if(xPos<radius)
+                node.setCenterX(radius);
             else
                 node.setCenterX(xPos);
-            if(yPos<20)
-                node.setCenterY(20);
+            if(yPos<radius)
+                node.setCenterY(radius);
             else
                 node.setCenterY(yPos);
             //przesunięcie tekstu id wraz z node
-            text.setX(node.getCenterX() - 5);
-            text.setY(node.getCenterY() + 5);
+            text.setX(node.getCenterX()-len);
+            text.setY(node.getCenterY()+len/2);
             node.setUserData(new double[]{event.getSceneX(), event.getSceneY()});
 
         });
@@ -198,7 +208,7 @@ public class GraphInterfaceController implements Initializable {
         Group nodeGroup=new Group(edge, weightText);
         canvas.getChildren().addAll(nodeGroup);
         graph.getEdges().add(new Edge(List.of(n1,n2),wt,nodeGroup));
-        weightText.getStyleClass().add("basketHeaderText");
+        weightText.getStyleClass().add("circleText");
         edge.getStyleClass().add("line");
         updateEdgePosition(edge, start, end,weightText);
 
@@ -486,6 +496,7 @@ public class GraphInterfaceController implements Initializable {
         canvas.setPrefSize(meshSize,meshSize);
         canvas.getChildren().clear();
         canvas.getChildren().addAll(mesh);
+        canvas.getChildren().addAll(textMesh);
         createAlert(1, "Wyczyszczono całą planszę");
     }
     private boolean parseCanvasInput(TextField x, TextField y)
@@ -536,28 +547,49 @@ public class GraphInterfaceController implements Initializable {
     }
     private void createMesh(float size)
     {
-        for(int i=20,j=0;i<size;i+=50,j++)
+        for(int i=radius,j=0;i<size;i+=60,j++)
         {
+            //poziome
             Line line=new Line();
             line.setStartX(i);
             line.setStartY(0);
             line.setEndY(size);
             line.setEndX(i);
             if(j%5==0)
+            {
                 line.getStyleClass().add("lineMesh5");
+                Text text=new Text(String.valueOf(j));
+                text.setX(i-15);
+                text.setY(20);
+                text.setWrappingWidth(30);
+                text.getStyleClass().add("circleText");
+                textMesh.add(text);
+            }
+
             else
                 line.getStyleClass().add("lineMesh");
             mesh.add(line);
         }
-        for(int i=20,j=0;i<size;i+=50,j++)
+        for(int i=radius,j=0;i<size;i+=60,j++)
         {
+            //pionowe
             Line line=new Line();
             line.setStartX(0);
             line.setStartY(i);
             line.setEndY(i);
             line.setEndX(size);
             if(j%5==0)
+            {
                 line.getStyleClass().add("lineMesh5");
+                if(j!=0) {
+                    Text text = new Text(String.valueOf(j));
+                    text.setY(i);
+                    text.setX(10);
+                    text.setWrappingWidth(30);
+                    text.getStyleClass().add("circleText");
+                    textMesh.add(text);
+                }
+            }
             else
                 line.getStyleClass().add("lineMesh");
             mesh.add(line);

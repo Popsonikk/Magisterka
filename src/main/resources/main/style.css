@@ -118,12 +118,14 @@
     -fx-stroke: #66bfbf;
     -fx-stroke-width: 2px;
 }
-.circle:hover{
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 5, 0.5, 0, 0); /* Efekt cienia */
-}
+
 .circleText{
-    -fx-fill: #fcfefe;
-    -fx-font-size: 16px;
+    -fx-fill: black;
+    -fx-font-size: 24px;
+    -fx-text-alignment: center;
+
+
+
 }
 .infoBoxGraph{
     -fx-background-color: #e0ffcd;
