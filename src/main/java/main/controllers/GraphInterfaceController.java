@@ -69,30 +69,25 @@ public class GraphInterfaceController implements Initializable {
     }
     private void scaleController(){
         VBox box=new VBox();
-        box.getStyleClass().add("zoomBox");
-        box.getChildren().addAll(createZoomButton("Przybliż","+",0.1f),createZoomButton("Oddal   ","-",-0.1f));
+        box.getChildren().addAll(createZoomButton("Przybliż",0.1f),createZoomButton("Oddal",-0.2f));
         menuBox.getChildren().add(box);
 
     }
-    private HBox createZoomButton(String s1,String s2,float d)
+    private Button createZoomButton(String s,float d)
     {
-
-        HBox zoom=new HBox();
-        zoom.getStyleClass().add("zoomInsideBox");
-        Text zoomText=new Text(s1);
-        Button zoomButton=new Button(s2);
+        Button zoomButton=new Button(s);
+        zoomButton.getStyleClass().add("zoomButton");
         zoomButton.setOnAction(e->{
             scaleRadius+=d;
-            if(scaleRadius<0.5)
-                scaleRadius=0.5f;
+            if(scaleRadius<0.4)
+                scaleRadius=0.4f;
             if(scaleRadius>2.0)
                 scaleRadius=2.0f;
             scale.setX(scaleRadius);
             scale.setY(scaleRadius);
             canvas.setPrefSize(meshSize*scaleRadius,meshSize*scaleRadius);
         });
-        zoom.getChildren().addAll(zoomText,zoomButton);
-        return zoom;
+        return zoomButton;
     }
 
     //tworzenie pojedynczego węzła, domyślnie tworzymy w wyznaczonych miejscach
@@ -169,11 +164,9 @@ public class GraphInterfaceController implements Initializable {
                     //logika usunięcia
                     if (Objects.equals(response.getText(), "Tak"))
                     {
-                        //pobranie id node do usunięcia
-                        Text t=(Text)nodeGroup.getChildren().get(1);
                         for (Node n: graph.getNodes())
                         {
-                            if(Objects.equals(n.getId(), id))
+                            if(n.getId().equals(id))
                             {
                                 //usunięcie node z tablicy
                                 graph.getNodes().remove(n);
@@ -183,7 +176,7 @@ public class GraphInterfaceController implements Initializable {
                         for(int i= graph.getEdges().size()-1;i>=0;i--)
                         {
                             //usunięcie linii powiązanych z usuwanym node
-                            if(graph.getEdges().get(i).getNodes().stream().anyMatch(n -> Objects.equals(n.getId(), id)))
+                            if(graph.getEdges().get(i).getNodes().stream().anyMatch(n -> n.getId().equals(id)))
                             {
                                 Group g=graph.getEdges().get(i).getGroup();
                                 //usunięcie z planszy
@@ -209,6 +202,9 @@ public class GraphInterfaceController implements Initializable {
         canvas.getChildren().addAll(nodeGroup);
         graph.getEdges().add(new Edge(List.of(n1,n2),wt,nodeGroup));
         weightText.getStyleClass().add("circleText");
+        weightText.setWrappingWidth(30);
+        weightText.setOnMouseEntered(e-> weightText.setStyle("-fx-stroke-width: 2px;-fx-stroke: blue;"));
+        weightText.setOnMouseExited(e-> weightText.setStyle("-fx-stroke-width: 0px;-fx-stroke: transparent;"));
         edge.getStyleClass().add("line");
         updateEdgePosition(edge, start, end,weightText);
 
@@ -221,7 +217,7 @@ public class GraphInterfaceController implements Initializable {
         end.centerYProperty().addListener((obs, oldVal, newVal) -> updateEdgePosition(edge, start, end,weightText));
 
         // Kliknięcie, na linię, aby wprowadzić wagę
-        edge.setOnMouseClicked((MouseEvent event) -> {
+        weightText.setOnMouseClicked((MouseEvent event) -> {
             //okno dialogu do podania wartości wagi
             TextInputDialog dialog = new TextInputDialog();
             dialog.setHeaderText("Wprowadź wartość wagi");
@@ -241,11 +237,43 @@ public class GraphInterfaceController implements Initializable {
             for(Edge l:graph.getEdges())
             {
                 //znalezienie odpowiedniej krawędzi, w celu zaktualizowania wartości
-                if((l.getNodes().stream().anyMatch(node -> node.getId() == n1.getId()))&&
-                        (l.getNodes().stream().anyMatch(node -> node.getId() == n2.getId())))
+                if((l.getNodes().stream().anyMatch(node -> Objects.equals(node.getId(), n1.getId())))&&
+                        (l.getNodes().stream().anyMatch(node -> Objects.equals(node.getId(), n2.getId()))))
+                {
                     l.setWeight(Integer.parseInt(weightText.getText()));
+                    break;
+                }
+
             }
         });
+        edge.setOnMouseClicked(e-> {
+            //usuwanie wskazanej krawędzi
+            if (e.getClickCount() == 2) {
+                //okno potwierdzające usunięcie node
+                Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+                a.setContentText("Czy na pewno chcesz usunąć ten węzeł?");
+                a.getButtonTypes().clear();
+                ButtonType ok = new ButtonType("Tak");
+                ButtonType cancel = new ButtonType("Nie");
+                a.getButtonTypes().addAll(ok, cancel);
+                a.showAndWait().ifPresent(response ->
+                {
+                    if (Objects.equals(response.getText(), "Tak")) {
+                        for (Edge l : graph.getEdges()) {
+                            if ((l.getNodes().stream().anyMatch(node -> Objects.equals(node.getId(), n1.getId()))) &&
+                                    (l.getNodes().stream().anyMatch(node -> Objects.equals(node.getId(), n2.getId())))) {
+                                Group g = l.getGroup();
+                                canvas.getChildren().remove(g);
+                                graph.getEdges().remove(l);
+                                break;
+                            }
+                        }
+                        createAlert(1, "Połączenie usunięte pomyślnie");
+                    }
+                });
+            }
+        });
+
     }
     // Aktualizacja pozycji krawędzi, aby zaczynała i kończyła się na krawędzi okręgu
     private void updateEdgePosition(Line edge, Circle start, Circle end,Text text) {
@@ -263,30 +291,33 @@ public class GraphInterfaceController implements Initializable {
         double angleEnd = Math.atan2(startY - endY, startX - endX);
         edge.setEndX(endX + end.getRadius() * Math.cos(angleEnd));
         edge.setEndY(endY + end.getRadius() * Math.sin(angleEnd));
-        text.setX(((edge.getStartX() + edge.getEndX()) / 2)+5);
-        text.setY(((edge.getStartY() + edge.getEndY()) / 2)+5);
+        text.setX(((edge.getStartX() + edge.getEndX()) / 2)-15);
+        text.setY(((edge.getStartY() + edge.getEndY()) / 2));
     }
     private void createAddCircleBox()
     {
-        HBox menu=createBoxTemplate("X:","Y:");
-        Text idText=new Text("id:");
-        idText.getStyleClass().add("infoBoxTextGraph");
-        TextField idField=new TextField();
-        idField.getStyleClass().add("filterBoxGraph");
-        menu.getChildren().addAll(idText,idField);
-
-        Button add=new Button("Dodaj węzeł");
+        HBox menu=createBoxTemplate("X:","Y:","ID");
+        Button add=new Button("Node");
         //pobranie uchwytu z planszy
         TextField x=(TextField)menu.getChildren().get(1);
         TextField y=(TextField)menu.getChildren().get(3);
+        TextField id=(TextField)menu.getChildren().get(5);
         add.prefHeight(50.0);
         add.setOnAction(e->{
-            if (!parseCanvasInput(x,y))
+            if (!parseCanvasInput(x,y,id))
                 return;
-            createNode(Integer.parseInt(x.getText()),Integer.parseInt(y.getText()), idField.getText());
-            x.clear();
-            y.clear();
-            idField.clear();
+            if(Integer.parseInt(x.getText())<0||Integer.parseInt(y.getText())<0){
+                createAlert(2,"Podałeś ujemne koordynaty!");
+                return;
+            }
+            for(Node n: graph.getNodes())
+            {
+                if(n.getId().equals(id.getText())){
+                    createAlert(2,"ID już istnieje!");
+                    return;
+                }
+            }
+            createNode(Integer.parseInt(x.getText()),Integer.parseInt(y.getText()), id.getText());
             createAlert(1,"Węzeł stworzony pomyślnie");
         });
         add.getStyleClass().add("boxButton");
@@ -295,22 +326,27 @@ public class GraphInterfaceController implements Initializable {
     }
     private void createAddEdgeBox()
     {
-        HBox menu=createBoxTemplate("n1:","n2:");
-        MenuButton button= createMenuButtonTemplate();
+        HBox menu=createBoxTemplate("n1:","n2:","wg:");
         TextField x=(TextField)menu.getChildren().get(1);
         TextField y=(TextField)menu.getChildren().get(3);
-        MenuItem add=new MenuItem("Dodaj");
+        TextField wg=(TextField)menu.getChildren().get(5);
+        Button add=new Button("Edge");
+        add.getStyleClass().add("boxButton");
+        add.prefHeight(50.0);
         add.setOnAction(e->{
-            if (!parseCanvasInput(x,y)||!parseEdgeInput(x.getText(),y.getText()))
+            if (!parseCanvasInput(x,y,wg))
                 return;
             String node1=x.getText();
             String node2=y.getText();
-            x.clear();
-            y.clear();
+            if(node1.equals(node2)) {
+                createAlert(2,"Niedozwolona krawędź do samego siebie!");
+                return;
+            }
+
             for(Edge l:graph.getEdges())
             {
-                if((l.getNodes().stream().anyMatch(node -> Objects.equals(node.getId(), node1)))&&
-                        (l.getNodes().stream().anyMatch(node -> Objects.equals(node.getId(), node2))))
+                if((l.getNodes().stream().anyMatch(n ->n.getId().equals(node1)))&&
+                        (l.getNodes().stream().anyMatch(n ->n.getId().equals(node2))))
                 {
                     createAlert(2,"Krawędź już istnieje!");
                     return;
@@ -319,41 +355,19 @@ public class GraphInterfaceController implements Initializable {
             Node c1=null,c2=null;
             for (Node n: graph.getNodes())
             {
-                if(Objects.equals(n.getId(), node1))
+                if(n.getId().equals(node1))
                     c1=n;
-                if(Objects.equals(n.getId(), node2))
+                if(n.getId().equals(node2))
                     c2=n;
             }
-            createEdge(c1,c2,1);
-            createAlert(1,"Połączenie stworzone pomyślnie");
-
-
-        });
-        MenuItem delete=new MenuItem("Usuń");
-        delete.setOnAction(actionEvent -> {
-            if (!parseCanvasInput(x,y)||!parseEdgeInput(x.getText(),y.getText()))
+            if(c1==null||c2==null) {
+                createAlert(2,"Podany węzeł nie istnieje!");
                 return;
-            String node1=x.getText();
-            String node2=y.getText();
-            x.clear();
-            y.clear();
-            //usuwanie wskazanej krawędzi
-            for(Edge l:graph.getEdges())
-            {
-                if((l.getNodes().stream().anyMatch(node -> Objects.equals(node.getId(), node1)))&&
-                        (l.getNodes().stream().anyMatch(node -> Objects.equals(node.getId(), node2))))
-                {
-                    Group g=l.getGroup();
-                    canvas.getChildren().remove(g);
-                    graph.getEdges().remove(l);
-                    break;
-                }
             }
-            createAlert(1,"Połączenie usunięte pomyślnie");
-
+            createEdge(c1,c2,Integer.parseInt(wg.getText()));
+            createAlert(1,"Połączenie stworzone pomyślnie");
         });
-        button.getItems().addAll(add,delete);
-        menu.getChildren().addAll(button);
+        menu.getChildren().add(add);
         menuBox.getChildren().add(menu);
 
     }
@@ -368,7 +382,7 @@ public class GraphInterfaceController implements Initializable {
         return menuButton;
     }
     //funkcja, tworząca szkielet pól dodawania elementów do planszy
-    private HBox createBoxTemplate(String s1,String s2)
+    private HBox createBoxTemplate(String s1,String s2,String s3)
     {
         HBox box=new HBox();
         box.getStyleClass().add("infoBoxGraph");
@@ -377,11 +391,16 @@ public class GraphInterfaceController implements Initializable {
         x.getStyleClass().add("infoBoxTextGraph");
         Text y=new Text(s2);
         y.getStyleClass().add("infoBoxTextGraph");
+        Text idText=new Text(s3);
+        idText.getStyleClass().add("infoBoxTextGraph");
         TextField xField=new TextField();
         xField.getStyleClass().add("filterBoxGraph");
         TextField yField=new TextField();
         yField.getStyleClass().add("filterBoxGraph");
-        box.getChildren().addAll(x,xField,y,yField);
+
+        TextField idField=new TextField();
+        idField.getStyleClass().add("filterBoxGraph");
+        box.getChildren().addAll(x,xField,y,yField,idText,idField);
         return box;
     }
 
@@ -400,7 +419,7 @@ public class GraphInterfaceController implements Initializable {
     private void createCSVFileButton()
     {
         MenuButton menuButton=createMenuButtonTemplate();
-        menuButton.setPrefHeight(50.0);
+        menuButton.setPrefHeight(55);
         menuButton.setText("Zarządzaj plikiem");
         MenuItem save=new MenuItem("Zapisz do pliku");
         save.setOnAction(e-> {
@@ -499,39 +518,15 @@ public class GraphInterfaceController implements Initializable {
         canvas.getChildren().addAll(textMesh);
         createAlert(1, "Wyczyszczono całą planszę");
     }
-    private boolean parseCanvasInput(TextField x, TextField y)
+    private boolean parseCanvasInput(TextField x, TextField y,TextField z)
     {
-        if (x.getText().isEmpty()||y.getText().isEmpty())
+        if (x.getText().isEmpty()||y.getText().isEmpty()||z.getText().isEmpty())
         {
             createAlert(2,"Nie podałeś wartości!");
             return false;
         }
         return true;
     }
-    private boolean parseEdgeInput(String x, String y)
-    {
-        if(Objects.equals(x, y))
-        {
-            createAlert(2,"Niedozwolona krawędź do samego siebie!");
-            return false;
-        }
-        Node c1=null,c2=null;
-        for (Node n: graph.getNodes())
-        {
-            if(Objects.equals(n.getId(), x))
-                c1=n;
-            if(Objects.equals(n.getId(), y))
-                c2=n;
-        }
-        if(c1==null||c2==null)
-        {
-            createAlert(2,"Podany węzeł nie istnieje!");
-            return false ;
-        }
-        return true;
-
-    }
-
 
     public void createAlert(int type,String value){
         switch (type) {
@@ -545,56 +540,38 @@ public class GraphInterfaceController implements Initializable {
             }
         }
     }
+    //siatka interfejsu
     private void createMesh(float size)
     {
+        //poziome
         for(int i=radius,j=0;i<size;i+=60,j++)
-        {
-            //poziome
-            Line line=new Line();
-            line.setStartX(i);
-            line.setStartY(0);
-            line.setEndY(size);
-            line.setEndX(i);
-            if(j%5==0)
-            {
-                line.getStyleClass().add("lineMesh5");
-                Text text=new Text(String.valueOf(j));
-                text.setX(i-15);
-                text.setY(20);
-                text.setWrappingWidth(30);
-                text.getStyleClass().add("circleText");
-                textMesh.add(text);
-            }
-
-            else
-                line.getStyleClass().add("lineMesh");
-            mesh.add(line);
-        }
+            createMeshLine(i,0,i, (int) size,j,(i-15),20);
+         //poziome
         for(int i=radius,j=0;i<size;i+=60,j++)
-        {
-            //pionowe
-            Line line=new Line();
-            line.setStartX(0);
-            line.setStartY(i);
-            line.setEndY(i);
-            line.setEndX(size);
-            if(j%5==0)
-            {
-                line.getStyleClass().add("lineMesh5");
-                if(j!=0) {
-                    Text text = new Text(String.valueOf(j));
-                    text.setY(i);
-                    text.setX(10);
-                    text.setWrappingWidth(30);
-                    text.getStyleClass().add("circleText");
-                    textMesh.add(text);
-                }
-            }
-            else
-                line.getStyleClass().add("lineMesh");
-            mesh.add(line);
-        }
-
+            createMeshLine(0,i, (int) size,i,j,10,i);
     }
+    private void createMeshLine(int sx,int sy,int ex,int ey,int j,int ti, int ty)
+    {
+        Line line=new Line();
+        line.setStartX(sx);
+        line.setStartY(sy);
+        line.setEndX(ex);
+        line.setEndY(ey);
+        if(j%5==0&&j>0)
+        {
+            line.getStyleClass().add("lineMesh5");
+            Text text=new Text(String.valueOf(j));
+            text.setX(ti);
+            text.setY(ty);
+            text.setWrappingWidth(30);
+            text.getStyleClass().add("circleText");
+            textMesh.add(text);
+        }
+
+        else
+            line.getStyleClass().add("lineMesh");
+        mesh.add(line);
+    }
+
 
 }

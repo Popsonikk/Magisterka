@@ -123,9 +123,6 @@
     -fx-fill: black;
     -fx-font-size: 24px;
     -fx-text-alignment: center;
-
-
-
 }
 .infoBoxGraph{
     -fx-background-color: #e0ffcd;
@@ -166,15 +163,19 @@
 .line:hover{
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 5, 0.5, 0, 0); /* Efekt cienia */
 }
-.zoomBox{
-    -fx-background-color: #e0ffcd;
-    -fx-border-width: 2px;
-    -fx-border-color: #ffcab0;
-    -fx-border-style: solid;
-    -fx-alignment: center-left;
+.zoomButton{
+    -fx-background-color: lightYellow;
+    -fx-text-alignment: center;
+    -fx-font-size: 12px;
+    -fx-pref-width: 60px ;
+    -fx-border-width: 1px;
+    -fx-border-color: brown;
+    -fx-text-fill: black;
 }
-.zoomInsideBox{
-    -fx-alignment: center-left;
-    -fx-spacing: 5px;
+.zoomButton:hover{
+    -fx-background-color: yellow;
+    -fx-border-color: black;
+    -fx-text-fill: brown;
+
 }
 
