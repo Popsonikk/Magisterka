@@ -8,7 +8,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
@@ -61,6 +60,7 @@ public class GraphInterfaceController implements Initializable {
         createAddCircleBox();
         createAddEdgeBox();
         createCSVFileButton();
+        createGraphTemplateButton();
         canvas.getChildren().addAll(mesh);
         canvas.getChildren().addAll(textMesh);
         canvas.getTransforms().add(scale);
@@ -70,7 +70,7 @@ public class GraphInterfaceController implements Initializable {
     private void scaleController(){
         VBox box=new VBox();
         box.getChildren().addAll(createZoomButton("Przybliż",0.1f),createZoomButton("Oddal",-0.2f));
-        menuBox.getChildren().add(box);
+        bottomBox.getChildren().add(box);
 
     }
     private Button createZoomButton(String s,float d)
@@ -303,7 +303,15 @@ public class GraphInterfaceController implements Initializable {
         TextField y=(TextField)menu.getChildren().get(3);
         TextField id=(TextField)menu.getChildren().get(5);
         add.prefHeight(50.0);
-        add.setOnAction(e->{
+        add.setOnAction(event->{
+            try{
+                Integer.parseInt(x.getText());
+                Integer.parseInt(y.getText());
+            }
+            catch (Exception e) {
+                createAlert(2,"Współrzędne nie są liczbą!");
+                return;
+            }
             if (!parseCanvasInput(x,y,id))
                 return;
             if(Integer.parseInt(x.getText())<0||Integer.parseInt(y.getText())<0){
@@ -333,9 +341,21 @@ public class GraphInterfaceController implements Initializable {
         Button add=new Button("Edge");
         add.getStyleClass().add("boxButton");
         add.prefHeight(50.0);
-        add.setOnAction(e->{
+        add.setOnAction(event->{
+            try{
+                Integer.parseInt(wg.getText());
+            }
+            catch (Exception e) {
+                createAlert(2,"Waga nie są liczbą!");
+                return;
+            }
             if (!parseCanvasInput(x,y,wg))
                 return;
+            if(Integer.parseInt(wg.getText())<0)
+            {
+                createAlert(2,"Ujemna waga!");
+                return;
+            }
             String node1=x.getText();
             String node2=y.getText();
             if(node1.equals(node2)) {
@@ -372,10 +392,11 @@ public class GraphInterfaceController implements Initializable {
 
     }
 
-    private MenuButton createMenuButtonTemplate()
+    private MenuButton createMenuButtonTemplate(String s)
     {
         MenuButton menuButton=new MenuButton();
-        menuButton.setText("Wybierz");
+        menuButton.setText(s);
+        menuButton.setPrefHeight(55);
         menuButton.getStyleClass().add("filterButton");
         menuButton.setOnShowing(event -> menuButton.setStyle("-fx-background-color: #2e79ba; -fx-border-style: solid;"));
         menuButton.setOnHidden(event -> menuButton.setStyle("-fx-background-color: #5fc9f3; -fx-border-style: dashed;"));
@@ -412,15 +433,17 @@ public class GraphInterfaceController implements Initializable {
         button.setOnAction(e->back());
         Button clear=new Button("Wyczyść");
         clear.getStyleClass().add("backButton");
-        clear.setOnAction(e->clearCanvas());
+        clear.setOnAction(e-> {
+            clearCanvas();
+            createAlert(1, "Wyczyszczono całą planszę");
+        });
         bottomBox.getChildren().addAll(button,clear);
         bottomBox.setSpacing(5.0);
     }
     private void createCSVFileButton()
     {
-        MenuButton menuButton=createMenuButtonTemplate();
-        menuButton.setPrefHeight(55);
-        menuButton.setText("Zarządzaj plikiem");
+        MenuButton menuButton=createMenuButtonTemplate("Zarządzaj plikiem");
+
         MenuItem save=new MenuItem("Zapisz do pliku");
         save.setOnAction(e-> {
             try {
@@ -516,7 +539,7 @@ public class GraphInterfaceController implements Initializable {
         canvas.getChildren().clear();
         canvas.getChildren().addAll(mesh);
         canvas.getChildren().addAll(textMesh);
-        createAlert(1, "Wyczyszczono całą planszę");
+
     }
     private boolean parseCanvasInput(TextField x, TextField y,TextField z)
     {
@@ -571,6 +594,52 @@ public class GraphInterfaceController implements Initializable {
         else
             line.getStyleClass().add("lineMesh");
         mesh.add(line);
+    }
+    private  void createGraphTemplateButton()
+    {
+        MenuButton button=createMenuButtonTemplate("Wybierz wzorzec grafu");
+        MenuItem blank=new MenuItem("Graf bez połączeń");
+        blank.setOnAction(event->{
+            graph.clear();
+            clearCanvas();
+            TextInputDialog dialog=new TextInputDialog();
+            dialog.setHeaderText("Podaj rozmiar grafu");
+            Optional<String> res=dialog.showAndWait();
+            String size;
+            int a,b;
+            if(res.isPresent())
+            {
+                try{
+                    size=res.get();
+                    a=Integer.parseInt(size.split("x")[0].trim());
+                    b=Integer.parseInt(size.split("x")[1].trim());
+                }
+                catch (Exception e)
+                {
+                    createAlert(2,"Zły format rozmiaru!");
+                    return;
+                }
+            }
+
+            else
+                return;
+
+            int id=0;
+            for(int i=0;i<a;i++)
+            {
+                for(int j=0;j<b;j++)
+                {
+                    createNode((1+2*i),(1+2*j),String.valueOf(id));
+                    id++;
+                }
+
+            }
+
+
+        });
+        button.getItems().addAll(blank);
+        menuBox.getChildren().add(button);
+
     }
 
 
