@@ -63,6 +63,18 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
         BufferedReader reader = new BufferedReader(new FileReader(file));
         String line;
         line = reader.readLine(); // pominięcie lini nagłówka
+        try {
+            if(!line.split(",")[0].equals("id")||!line.split(",")[1].equals("basket"))
+            {
+                createAlert(2,"Błędny format pliku");
+                return;
+            }
+        }
+        catch (Exception e){
+            createAlert(2,"Błędny format pliku");
+            return;
+
+        }
         line = reader.readLine();
         while (line != null) {
             //formatowanie danych w celu uniknięcia tworzenia przez list.of
@@ -83,6 +95,7 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
     @Override
     protected void filtrData(FiltrType ft) {
         //sczytanie filtru i jego zapis do tablicy
+        data.getFiltrInfo().clearFiltr();
         String s=tx.getText();
         tx.clear();
         if (s.isEmpty()||data.getDataSize()==0) {

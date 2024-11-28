@@ -470,6 +470,14 @@ public class GraphInterfaceController implements Initializable {
         File file = fileChooser.showOpenDialog(null);
         BufferedReader reader = new BufferedReader(new FileReader(file));
         String []header=reader.readLine().split(",");
+        try {
+            Integer.parseInt(header[0]);
+            Integer.parseInt(header[1]);
+        }
+        catch (Exception e){
+            createAlert(2,"Błędny format pliku!");
+            return;
+        }
         int s=Integer.parseInt(header[0]);
         for(int i=0;i<s;i++)
         {

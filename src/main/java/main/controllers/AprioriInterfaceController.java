@@ -54,8 +54,22 @@ public class AprioriInterfaceController extends InterfaceTemplate<SimplePattern>
         //zapis nazwy pliku
         BufferedReader reader = new BufferedReader(new FileReader(file));
         String line;
-        reader.readLine(); //header
-        line= reader.readLine();
+        line= reader.readLine(); //header
+        try {
+            if(line.split(",").length!=3)
+            {
+                createAlert(2,"Błędny format pliku");
+                return;
+            }
+            line= reader.readLine();
+            Double.parseDouble(line.split(",")[1]);
+        }
+        catch (Exception e){
+            createAlert(2,"Błędny format pliku");
+            return;
+
+        }
+
         while (line!=null)
         {
             //pobranie danych zgodnie z formatem
@@ -176,6 +190,7 @@ public class AprioriInterfaceController extends InterfaceTemplate<SimplePattern>
     }
     @Override
     protected void filtrData(FiltrType ft) {
+        data.getFiltrInfo().clearFiltr();
         String s=tx.getText();
         tx.clear();
         if (s.isEmpty()||data.getDataSize()==0) {
