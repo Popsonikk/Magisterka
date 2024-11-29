@@ -1,5 +1,6 @@
 package main;
 
+import main.objects.DijkstraEdges;
 import org.neo4j.driver.Record;
 
 import java.util.*;
@@ -29,4 +30,9 @@ public class RecommendationFunctions {
         return productStrength;
 
     }
+    public Map<String,Integer> dijkstra(Map<String, DijkstraEdges> graph)
+    {
+        return null;
+    }
+
 }

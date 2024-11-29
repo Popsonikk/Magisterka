@@ -114,7 +114,7 @@ public class MainWindowController implements Initializable {
             System.out.println(d2.getTime()-d1.getTime());
             aprioriInterfaceController.createAlert(1,"Pomyślnie wczytano dane do bazy neo4j");
             System.out.println(RecommendationFunctions.processNeo4jOutput(conn.checkNeighbourhood(),aprioriInterfaceController.getProductList()));
-
+            //graphInterfaceController.getGraph().getDijkstraFormat();
         }
     }
 

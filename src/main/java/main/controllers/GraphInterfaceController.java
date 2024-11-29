@@ -828,4 +828,7 @@ public class GraphInterfaceController implements Initializable {
         return size;
     }
 
+    public Graph getGraph() {
+        return graph;
+    }
 }
