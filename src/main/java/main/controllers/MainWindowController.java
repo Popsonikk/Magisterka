@@ -7,6 +7,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.Neo4jConnector;
+import main.RecommendationFunctions;
 import main.objects.AssociationRule;
 import main.functions.GeneratePattern;
 import main.objects.SimplePattern;
@@ -78,7 +79,7 @@ public class MainWindowController implements Initializable {
         List<AssociationRule> rules= GeneratePattern.generateRules(Double.parseDouble(confidence.getText()),Double.parseDouble(lift.getText())
         ,aprioriInterfaceController.getData().getData());
         ruleInterfaceController.getData().setData(rules);
-        confidence.setText("0.25");
+        confidence.setText("0.1");
         lift.setText("0.75");
     }
 
@@ -101,7 +102,6 @@ public class MainWindowController implements Initializable {
     {
 
         try (var conn = new Neo4jConnector("neo4j+s://b80ce237.databases.neo4j.io", "neo4j", "STRyE_-kb6p8vYYFkPA2U23Ax-okWxlHd6Jjw_LxYow")) {
-
             if(conn.doesAnyRecordExist())
                 conn.cleanBase();
             Date d1 = new Date();
@@ -113,10 +113,7 @@ public class MainWindowController implements Initializable {
             d2 = new Date();
             System.out.println(d2.getTime()-d1.getTime());
             aprioriInterfaceController.createAlert(1,"Pomyślnie wczytano dane do bazy neo4j");
-            List<Record> records= conn.checkNeighbourhood();
-            for (Record r:records){
-                System.out.println(r.get(0)+": support"+r.get(1)+" lift: "+r.get(2)+" conn "+r.get(3));
-            }
+            System.out.println(RecommendationFunctions.processNeo4jOutput(conn.checkNeighbourhood(),aprioriInterfaceController.getProductList()));
 
         }
     }

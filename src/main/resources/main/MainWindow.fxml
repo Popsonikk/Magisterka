@@ -63,7 +63,7 @@
                     <Font size="18.0"/>
                 </font>
             </Text>
-            <TextField fx:id="confidence" text="0.25" GridPane.columnIndex="1"/>
+            <TextField fx:id="confidence" text="0.1" GridPane.columnIndex="1"/>
             <TextField fx:id="lift" text="0.75" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
         </GridPane>
     </children>

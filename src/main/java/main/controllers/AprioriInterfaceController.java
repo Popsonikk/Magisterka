@@ -258,6 +258,19 @@ public class AprioriInterfaceController extends InterfaceTemplate<SimplePattern>
             case supportUp -> filtrSupportLevel(data.getFiltrInfo().getIntegerFiltrValue(),FiltrType.supportUp);
         }
     }
+    public List<String> getProductList()
+    {
+        List<String> res=new ArrayList<>();
+        data.getData().sort(Comparator.comparingInt(o -> o.getPattern().size()));
+        for(SimplePattern l:data.getData())
+        {
+            if(l.getPattern().size()>1)
+                break;
+            res.add(l.getPattern().get(0));
+        }
+        return  res;
+    }
+
 
 
 }

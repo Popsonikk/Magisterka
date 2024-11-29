@@ -98,8 +98,8 @@ public class Neo4jConnector implements AutoCloseable {
                 var query = new Query("""
                         MATCH (n:Pattern)-[s:SUPPORTING]->(m:Pattern)
                         WITH n, count(m) AS connections, sum(toFloat(s.lift)) AS strength
-                        RETURN n.name AS pattern,n.support AS patternSupport, strength, connections
-                        ORDER BY strength DESC, connections DESC
+                        RETURN n.name AS pattern,n.support AS patternSupport, connections,strength 
+                        ORDER BY connections DESC, strength DESC
                         LIMIT 250;""");
 
                 return tx.run(query).list();

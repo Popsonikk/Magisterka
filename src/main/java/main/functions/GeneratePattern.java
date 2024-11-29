@@ -116,7 +116,7 @@ public class GeneratePattern {
                 SimplePattern ct= getSupport(patterns,Collections.singletonList(pattern.getPattern().get(1)));
                 double confidence = pattern.getSupport() / at.getSupport();
                 double lift = confidence / ct.getSupport();
-                if(conf>confidence&&lift>lt)
+                if(conf<confidence&&lift>lt)
                     ruleList.add(new AssociationRule(at,ct, pattern.getSupport(), confidence,lift));
                 continue;
             }
@@ -139,7 +139,8 @@ public class GeneratePattern {
                 SimplePattern ct= getSupport(patterns, consequent);
                 double confidence = pattern.getSupport() / at.getSupport();
                 double lift = confidence / ct.getSupport();
-                ruleList.add(new AssociationRule(at,ct, pattern.getSupport(),confidence,lift));
+                if(conf<confidence&&lift>lt)
+                    ruleList.add(new AssociationRule(at,ct, pattern.getSupport(), confidence,lift));
             }
         }
         Alert alert=new Alert(Alert.AlertType.INFORMATION);
