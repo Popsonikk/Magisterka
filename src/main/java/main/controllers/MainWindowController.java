@@ -117,7 +117,12 @@ public class MainWindowController implements Initializable {
             Map<String,Double> productStrength=RecommendationFunctions.processNeo4jOutput(conn.checkNeighbourhood(),aprioriInterfaceController.getProductList());
             System.out.println(productStrength);
             Map <Node,Integer> distances=RecommendationFunctions.findShortestPaths(graphInterfaceController.getGraph(),graphInterfaceController.getGraph().findNode("1"));
-            distances.forEach((k,v)->System.out.println(k.getId()+": "+v));
+            distances.forEach((k,v)->System.out.print(k.getId()+":"+v+" | "));
+            Map<Node,String> rec=RecommendationFunctions.neo4jRecommendation(new ArrayList<>(productStrength.keySet()),
+                    new ArrayList<>(distances.keySet()),graphInterfaceController.getGraph());
+            StringBuilder builder=new StringBuilder();
+            rec.forEach((k,v)-> builder.append(k.getId()).append(": ").append(v).append("\n"));
+            graphInterfaceController.updateRes(builder.toString());
         }
     }
 

@@ -42,12 +42,15 @@ public class GraphInterfaceController implements Initializable {
     private float meshSize;
     private float scaleRadius;
     private int radius;
+    private Button result;
+    private String resData;
     public void setMainScene(Scene mainScene) {this.mainScene = mainScene;}
     public void setMainStage(Stage mainStage) {this.mainStage = mainStage;}
     public void back() {mainStage.setScene(mainScene);}
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        resData="";
         radius=25;
         meshSize=2500.0f;
         scale=new Scale(1,1,0,0);
@@ -66,6 +69,7 @@ public class GraphInterfaceController implements Initializable {
         canvas.getTransforms().add(scale);
         canvas.setPrefSize(meshSize,meshSize);
         scaleController();
+        createResultButton();
     }
     private void scaleController(){
         VBox box=new VBox();
@@ -542,6 +546,8 @@ public class GraphInterfaceController implements Initializable {
     }
     private void clearCanvas()
     {
+        resData="";
+        result.setVisible(false);
         graph.clear();
         scaleRadius=1;
         scale.setX(1);
@@ -831,4 +837,19 @@ public class GraphInterfaceController implements Initializable {
     public Graph getGraph() {
         return graph;
     }
+    private void createResultButton()
+    {
+        result=new Button("Wynik");
+        result.getStyleClass().add("interfaceButton");
+        result.prefWidth(150.0);
+        result.setOnAction(e->createAlert(1,resData));
+        result.setVisible(false);
+        bottomBox.getChildren().add(result);
+    }
+    public void updateRes(String s){
+        resData=s;
+        result.setVisible(true);
+    }
+
+
 }
