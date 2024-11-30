@@ -10,6 +10,7 @@ import main.Neo4jConnector;
 import main.RecommendationFunctions;
 import main.objects.AssociationRule;
 import main.functions.GeneratePattern;
+import main.objects.Node;
 import main.objects.SimplePattern;
 import org.neo4j.driver.Record;
 
@@ -104,17 +105,19 @@ public class MainWindowController implements Initializable {
         try (var conn = new Neo4jConnector("neo4j+s://b80ce237.databases.neo4j.io", "neo4j", "STRyE_-kb6p8vYYFkPA2U23Ax-okWxlHd6Jjw_LxYow")) {
             if(conn.doesAnyRecordExist())
                 conn.cleanBase();
-            Date d1 = new Date();
+           // Date d1 = new Date();
             conn.createNodes(aprioriInterfaceController.getData().getData());
-            Date d2 = new Date();
-            System.out.println(d2.getTime()-d1.getTime());
-            d1=new Date();
+            //Date d2 = new Date();
+           // System.out.println(d2.getTime()-d1.getTime());
+           // d1=new Date();
             conn.createEdges(ruleInterfaceController.getData().getData());
-            d2 = new Date();
-            System.out.println(d2.getTime()-d1.getTime());
-            aprioriInterfaceController.createAlert(1,"Pomyślnie wczytano dane do bazy neo4j");
-            System.out.println(RecommendationFunctions.processNeo4jOutput(conn.checkNeighbourhood(),aprioriInterfaceController.getProductList()));
-            //graphInterfaceController.getGraph().getDijkstraFormat();
+           // d2 = new Date();
+           // System.out.println(d2.getTime()-d1.getTime());
+           // aprioriInterfaceController.createAlert(1,"Pomyślnie wczytano dane do bazy neo4j");
+            Map<String,Double> productStrength=RecommendationFunctions.processNeo4jOutput(conn.checkNeighbourhood(),aprioriInterfaceController.getProductList());
+            System.out.println(productStrength);
+            Map <Node,Integer> distances=RecommendationFunctions.findShortestPaths(graphInterfaceController.getGraph(),graphInterfaceController.getGraph().findNode("1"));
+            distances.forEach((k,v)->System.out.println(k.getId()+": "+v));
         }
     }
 

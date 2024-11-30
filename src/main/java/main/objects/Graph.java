@@ -15,6 +15,15 @@ public class Graph {
         edges=new ArrayList<>();
 
     }
+    public Node findNode(String id)
+    {
+        for(Node n:nodes) {
+            if(n.getId().contains(id))
+                return n;
+        }
+        return null;
+    }
+
 
     public List<Node> getNodes() {
         return nodes;
@@ -30,36 +39,5 @@ public class Graph {
         edges.clear();
 
     }
-    public Map<String,DijkstraEdges>  getDijkstraFormat()
-    {
-        Map<String,DijkstraEdges> edgesMap=new HashMap<>();
-        for(Edge e:edges)
-        {
-            String id1=e.getNodes().get(0).getId();
-            String id2=e.getNodes().get(1).getId();
-            updateMap(edgesMap,id1,id2,e.getWeight());
-            updateMap(edgesMap,id2,id1,e.getWeight());
-        }
-        for(Map.Entry<String,DijkstraEdges> entry:edgesMap.entrySet() )
-        {
-            System.out.println(entry.getKey()+":");
-            for(int i=0;i<entry.getValue().getNodes().size();i++)
-            {
-                System.out.println("id: "+entry.getValue().getNodes().get(i)+" wg: "+entry.getValue().getWeights().get(i));
-            }
-        }
-        return edgesMap;
 
-    }
-    private void updateMap(Map<String,DijkstraEdges> map,String id, String  node, int w)
-    {
-        if(!map.containsKey(id))
-            map.put(id,new DijkstraEdges(node,w));
-        else
-        {
-            DijkstraEdges de=map.get(id);
-            de.add(node,w);
-            map.replace(id,de);
-        }
-    }
 }

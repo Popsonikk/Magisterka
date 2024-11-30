@@ -9,14 +9,16 @@ import java.util.List;
 public class Edge {
     private List<Node> nodes;
     private int weight;
-    //line + weightText widoczne na planszy
-    private Group group;
+
+    private Group group; //line + weightText widoczne na planszy
 
 
     public Edge(List<Node> nodes, int weight, Group group) {
         this.nodes = nodes;
         this.weight = weight;
         this.group = group;
+        nodes.get(0).addEdge(this);
+        nodes.get(1).addEdge(this);
     }
 
     public List<Node> getNodes() {
