@@ -178,4 +178,22 @@
     -fx-text-fill: brown;
 
 }
+.mainWindowBox{
+    -fx-padding: 10px;
+    -fx-background-color:#fdffab;
+    -fx-border-color: #a8e6cf;
+    -fx-border-width: 3px;
+    -fx-border-style: solid;
+    -fx-pref-height: 300px;
+    -fx-pref-width: 275px;
+    -fx-alignment: top-center;
+
+
+}
+.mainWindowText{
+    -fx-fill: #c54c82;
+    -fx-font-size: 20px;
+    -fx-text-alignment: center;
+    -fx-max-width: max-content;
+}
 

@@ -76,9 +76,6 @@ public class GeneratePattern {
             result.addAll(p.getValue());
             i++;
         }
-        Alert a=new Alert(Alert.AlertType.INFORMATION);
-        a.setContentText("Operacja zakończona pomyślnie");
-        a.show();
         return result;
     }
 
@@ -143,9 +140,6 @@ public class GeneratePattern {
                     ruleList.add(new AssociationRule(at,ct, pattern.getSupport(), confidence,lift));
             }
         }
-        Alert alert=new Alert(Alert.AlertType.INFORMATION);
-        alert.setContentText("Reguły wygenerowane pomyślnie");
-        alert.show();
         return ruleList;
     }
     public static SimplePattern getSupport(List<SimplePattern> patterns, List<String> subset) {
