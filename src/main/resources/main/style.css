@@ -197,3 +197,13 @@
     -fx-max-width: max-content;
 }
 
+.resultBorder{
+    -fx-border-color: #142d4c; /* kolor obwódki */
+    -fx-border-width: 2px 3px; /*szerokosc obwódki*/
+    -fx-padding: 10px;
+    -fx-spacing: 20px;
+    -fx-background-color: #e7eaf6;
+    -fx-pref-width: 290px;
+
+
+}

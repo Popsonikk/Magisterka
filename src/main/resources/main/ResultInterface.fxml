@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.HBox?>
 <?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
 <Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="empty"
       prefHeight="750.0"
       prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="main.controllers.GraphInterfaceController">
+      fx:controller="main.controllers.ResultInterfaceController">
     <stylesheets>
         <URL value="@style.css"/>
     </stylesheets>
-    <HBox fx:id="menuBox"  prefHeight="50.0" styleClass="empty" alignment="CENTER" prefWidth="990"/>
-    <ScrollPane fx:id="pane" prefHeight="625.0" prefWidth="990.0" layoutY="65.0" layoutX="5.0" styleClass="graphBorder">
+    <ScrollPane prefHeight="685.0" prefWidth="685.0"  layoutX="5.0" layoutY="5.0" styleClass="graphBorder">
         <Pane fx:id="canvas"/>
     </ScrollPane>
-    <HBox fx:id="bottomBox" layoutX="5.0" layoutY="695.0" prefHeight="50.0" alignment="CENTER" prefWidth="990"/>
+    <ScrollPane prefHeight="685.0" prefWidth="300.0"  layoutX="695.0" layoutY="5.0" styleClass="graphBorder">
+        <VBox fx:id="resCanvas"/>
+    </ScrollPane>
+    <Button onAction="#back" layoutX="450.0" layoutY="695.0" text="Powrót" styleClass="backButton" />
+
 </Pane>

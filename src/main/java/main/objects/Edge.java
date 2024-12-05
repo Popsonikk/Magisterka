@@ -17,6 +17,7 @@ public class Edge {
         this.nodes = nodes;
         this.weight = weight;
         this.group = group;
+        //krawędzie dwukierunkowe, dodanie do listy krawędzi obu node
         nodes.get(0).addEdge(this);
         nodes.get(1).addEdge(this);
     }

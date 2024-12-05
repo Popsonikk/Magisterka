@@ -34,16 +34,22 @@ public class Main extends Application {
         Parent graphWindow=graphInterfaceLoader.load();
         GraphInterfaceController graphInterfaceController=graphInterfaceLoader.getController();
 
+        FXMLLoader resInterfaceLoader=new FXMLLoader(getClass().getResource("ResultInterface.fxml"));
+        Parent resWindow=resInterfaceLoader.load();
+        ResultInterfaceController resInterfaceController=resInterfaceLoader.getController();
+
         mainWindowController.setMainStage(stage);
         mainWindowController.setBasketScene(new Scene(basketWindow,1000,750));
         mainWindowController.setAprioriScene(new Scene(aprioriWindow,1000,750));
         mainWindowController.setRuleScene(new Scene(ruleWindow,1000,750));
         mainWindowController.setGraphScene(new Scene(graphWindow,1000,750));
+        mainWindowController.setResScene(new Scene(resWindow,1000,750));
 
         mainWindowController.setBasketInterfaceController(basketInterfaceController);
         mainWindowController.setAprioriInterfaceController(aprioriInterfaceController);
         mainWindowController.setRuleInterfaceController(ruleInterfaceController);
         mainWindowController.setGraphInterfaceController(graphInterfaceController);
+        mainWindowController.setResultInterfaceController(resInterfaceController);
 
         Scene mainScene=new Scene(mainWindow,1000,750);
 
@@ -56,6 +62,8 @@ public class Main extends Application {
         ruleInterfaceController.setMainStage(stage);
         graphInterfaceController.setMainScene(mainScene);
         graphInterfaceController.setMainStage(stage);
+        resInterfaceController.setMainScene(mainScene);
+        resInterfaceController.setMainStage(stage);
 
         stage.setTitle("Analiza koszykowa");
         stage.setScene(mainScene);

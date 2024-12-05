@@ -6,22 +6,25 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.TextField?>
 <?import java.net.URL?>
-<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0"
-      prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.BasketInterfaceController">
+<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="750.0"
+      prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="main.controllers.BasketInterfaceController">
    <stylesheets>
-      <URL value="@style.css" />
+      <URL value="@style.css"/>
    </stylesheets>
-   <children>
-      <Button onAction="#clearInterface" layoutX="835.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wyczyść koszyki" styleClass="interfaceButton" />
-      <Button onAction="#loadFromCSV" layoutX="670.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Wczytaj koszyki" styleClass="interfaceButton"/>
-      <TextField fx:id="tx" layoutX="15.0" layoutY="5.0" prefHeight="50.0" prefWidth="329.0" alignment="CENTER" styleClass="filterBox"/>
+   <Button onAction="#clearInterface" layoutX="835.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0"
+           prefWidth="150.0" text="Wyczyść koszyki" styleClass="interfaceButton"/>
+   <Button onAction="#loadFromCSV" layoutX="670.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0"
+           prefWidth="150.0" text="Wczytaj koszyki" styleClass="interfaceButton"/>
+   <TextField fx:id="tx" layoutX="15.0" layoutY="5.0" prefHeight="50.0" prefWidth="329.0" alignment="CENTER"
+              styleClass="filterBox"/>
 
 
-      <ScrollPane fx:id="pane" prefHeight="575.0" prefWidth="970.0" layoutY="105.0" layoutX="15.0" styleClass="empty">
-         <VBox fx:id="contentVBox"/>
-      </ScrollPane>
-      <HBox fx:id="selectSizeBox"  layoutX="15.0" layoutY="695.0" alignment="CENTER" prefHeight="50.0" prefWidth="250.0" />
-      <HBox fx:id="switchPageBox"  layoutX="525.0" layoutY="695.0" alignment="CENTER" prefHeight="50.0" prefWidth="450.0" />
-      <Button onAction="#back" layoutX="345.0" layoutY="695.0"  text="Powrót" styleClass="backButton" />
-   </children>
+   <ScrollPane fx:id="pane" prefHeight="575.0" prefWidth="970.0" layoutY="105.0" layoutX="15.0" styleClass="empty">
+      <VBox fx:id="contentVBox"/>
+   </ScrollPane>
+   <HBox fx:id="selectSizeBox" layoutX="15.0" layoutY="695.0" alignment="CENTER" prefHeight="50.0" prefWidth="250.0"/>
+   <HBox fx:id="switchPageBox" layoutX="525.0" layoutY="695.0" alignment="CENTER" prefHeight="50.0" prefWidth="450.0"/>
+   <Button onAction="#back" layoutX="345.0" layoutY="695.0" text="Powrót" styleClass="backButton"/>
 </Pane>
