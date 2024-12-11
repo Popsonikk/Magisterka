@@ -1,5 +1,4 @@
 package main.controllers;
-import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -7,12 +6,10 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-import main.Neo4jConnector;
-import main.RecommendationFunctions;
+import main.functions.Neo4jConnector;
+import main.functions.RecommendationFunctions;
 import main.objects.AssociationRule;
 import main.functions.GeneratePattern;
 import main.objects.Node;
@@ -263,7 +260,7 @@ public class MainWindowController implements Initializable {
                 createAlert(2,"Brak wczytanego grafu!");
                 return;
             }
-            resultInterfaceController.showResult(new HashMap<>(distances),new HashMap<>(recommendation),graphInterfaceController.getGraph());
+            resultInterfaceController.showResult(new LinkedHashMap<>(distances),new LinkedHashMap<>(recommendation),graphInterfaceController.getGraph());
             mainStage.setScene(resScene);
         });
 

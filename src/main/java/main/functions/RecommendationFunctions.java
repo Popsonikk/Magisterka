@@ -1,4 +1,4 @@
-package main;
+package main.functions;
 
 import main.objects.Edge;
 import main.objects.Graph;
@@ -98,7 +98,7 @@ public class RecommendationFunctions {
     {
         //znajduje najdalszy node i wrzuca tan najpopularniejszy item, jego sąsiadom dajemy produkty najmniej popularne
         //powtarzamy do wyczerpania listy
-        Map<Node,String> res=new HashMap<>();
+        Map<Node,String> res=new LinkedHashMap<>();
         while (!productStrength.isEmpty())
         {
             Node n=distances.get(0);
@@ -114,7 +114,6 @@ public class RecommendationFunctions {
                     neighbor = e.getNodes().get(0);
                 else
                     neighbor = e.getNodes().get(1);
-                String s=res.get(neighbor);
                 if(res.containsKey(neighbor))
                     continue;
                 res.put(neighbor,productStrength.get(productStrength.size()-1));

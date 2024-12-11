@@ -1,4 +1,4 @@
-package main;
+package main.functions;
 
 import main.objects.AssociationRule;
 import main.objects.SimplePattern;

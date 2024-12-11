@@ -58,7 +58,7 @@ public class ResultInterfaceController {
 
 
         canvas.getTransforms().add(new Scale(0.5,0.5,0,0));
-        List<Node> dijkstraList=new ArrayList<>(dijkstra.keySet());
+        List<Node> resultList=new ArrayList<>(result.keySet());
         HBox box=new HBox();
         box.getStyleClass().add("resultBorder");
         box.setAlignment(Pos.CENTER);
@@ -71,10 +71,10 @@ public class ResultInterfaceController {
         box.getChildren().addAll(nodeText,pathText,itemText);
         resCanvas.getChildren().add(box);
 
-        while (!dijkstraList.isEmpty())
+        while (!resultList.isEmpty())
         {
-            Node n=dijkstraList.get(0);
-            dijkstraList.remove(n);
+            Node n=resultList.get(0);
+            resultList.remove(n);
             resCanvas.getChildren().add(createBox(n,dijkstra.get(n),result.get(n)));
         }
     }
