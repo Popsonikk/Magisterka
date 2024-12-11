@@ -88,6 +88,7 @@ public class ProductInterfaceController  implements Initializable {
     public void clearInterface(ActionEvent actionEvent) {
         contentVBox.getChildren().clear();
         mainPane.getChildren().remove(header);
+        products.clear();
         createAlert(1,"Baza została wyczyszczona");
     }
 
@@ -213,4 +214,7 @@ public class ProductInterfaceController  implements Initializable {
         mainPane.getChildren().add(menuButton);
     }
 
+    public List<Pair<String, String>> getProducts() {
+        return products;
+    }
 }

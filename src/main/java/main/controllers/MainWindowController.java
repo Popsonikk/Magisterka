@@ -262,7 +262,7 @@ public class MainWindowController implements Initializable {
             }
             distances=RecommendationFunctions.findShortestPaths(graphInterfaceController.getGraph(),startNode);
             recommendation=RecommendationFunctions.neo4jRecommendation(new ArrayList<>(productStrength.keySet()),
-                    new ArrayList<>(distances.keySet()),graphInterfaceController.getGraph());
+                    new ArrayList<>(distances.keySet()),new ArrayList<>(productInterfaceController.getProducts()));
             createAlert(1,"Przetwarzanie danych zakończone pomyślnie");
         });
         Button showRes=createButton("Pokaż wyniki");
@@ -277,7 +277,7 @@ public class MainWindowController implements Initializable {
                 createAlert(2,"Brak wczytanego grafu!");
                 return;
             }
-            resultInterfaceController.showResult(new LinkedHashMap<>(distances),new LinkedHashMap<>(recommendation),graphInterfaceController.getGraph());
+            resultInterfaceController.showResult(new LinkedHashMap<>(distances),new LinkedHashMap<>(recommendation),graphInterfaceController.getGraph(),productInterfaceController.getProducts());
             mainStage.setScene(resScene);
         });
 

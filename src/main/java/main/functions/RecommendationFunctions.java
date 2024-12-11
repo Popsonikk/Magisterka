@@ -1,5 +1,6 @@
 package main.functions;
 
+import javafx.util.Pair;
 import main.objects.Edge;
 import main.objects.Graph;
 import main.objects.Node;
@@ -94,15 +95,31 @@ public class RecommendationFunctions {
             return distance;
         }
     }
-    public  static Map<Node,String> neo4jRecommendation(List<String> productStrength,List<Node> distances,Graph graph)
+    public  static Map<Node,String> neo4jRecommendation(List<String> productStrength,List<Node> distances,List<Pair<String,String>> categories)
     {
         //znajduje najdalszy node i wrzuca tan najpopularniejszy item, jego sąsiadom dajemy produkty najmniej popularne
         //powtarzamy do wyczerpania listy
         Map<Node,String> res=new LinkedHashMap<>();
-        while (!productStrength.isEmpty())
+        int size= distances.size();
+        while (res.size()<size)
         {
             Node n=distances.get(0);
             res.put(distances.get(0),productStrength.get(0));
+            String cat="";
+            if(!categories.isEmpty())
+            {
+                for(Pair<String,String>p:categories)
+                {
+                    if(p.getKey().equals(productStrength.get(0)))
+                    {
+                        cat=p.getValue();
+                        categories.remove(p);
+                        break ;
+                    }
+                }
+            }
+
+
             distances.remove(0);
             productStrength.remove(0);
             if(productStrength.isEmpty())
@@ -116,9 +133,40 @@ public class RecommendationFunctions {
                     neighbor = e.getNodes().get(1);
                 if(res.containsKey(neighbor))
                     continue;
-                res.put(neighbor,productStrength.get(productStrength.size()-1));
+                if(cat.equals(""))
+                {
+                    res.put(neighbor,productStrength.get(productStrength.size()-1));
+                    productStrength.remove(productStrength.size()-1);
+                }
+                else
+                {
+                    String item="";
+                    mainLoop:
+                    for(int i= productStrength.size()-1;i>=0;i--)
+                    {
+                        for(Pair<String,String>p:categories)
+                        {
+                            if(p.getKey().equals(productStrength.get(i))&&p.getValue().equals(cat))
+                            {
+                                item=p.getKey();
+                                categories.remove(p);
+                                break mainLoop;
+                            }
+                        }
+                    }
+                    if(!Objects.equals(item, ""))
+                    {
+                        res.put(neighbor,item);
+                        productStrength.remove(item);
+                    }
+                    else {
+                        res.put(neighbor,productStrength.get(productStrength.size()-1));
+                        productStrength.remove(productStrength.size()-1);
+                    }
+
+
+                }
                 distances.remove(neighbor);
-                productStrength.remove(productStrength.size()-1);
                 if(productStrength.isEmpty())
                     break;
             }

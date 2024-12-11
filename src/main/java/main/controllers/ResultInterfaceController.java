@@ -17,6 +17,7 @@ import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
+import javafx.util.Pair;
 import main.objects.Edge;
 import main.objects.Graph;
 import main.objects.Node;
@@ -43,7 +44,7 @@ public class ResultInterfaceController {
         resCanvas.getChildren().clear();
         mainStage.setScene(mainScene);
     }
-    public void showResult(Map<Node,Integer> dijkstra, Map<Node,String> result, Graph graph)
+    public void showResult(Map<Node,Integer> dijkstra, Map<Node,String> result, Graph graph,List<Pair<String,String>> categories)
     {
 
         dijkstra=dijkstra.entrySet().stream().sorted(Map.Entry.comparingByValue((v1,v2)->Integer.compare(v2,v1))).collect(LinkedHashMap::new,
@@ -68,19 +69,32 @@ public class ResultInterfaceController {
         pathText.getStyleClass().add("basketText");
         Text itemText=new Text("Found_item");
         itemText.getStyleClass().add("basketText");
-        box.getChildren().addAll(nodeText,pathText,itemText);
+        Text catText=new Text("Category");
+        catText.getStyleClass().add("basketText");
+        box.getChildren().addAll(nodeText,pathText,itemText,catText);
         resCanvas.getChildren().add(box);
 
         while (!resultList.isEmpty())
         {
             Node n=resultList.get(0);
             resultList.remove(n);
-            resCanvas.getChildren().add(createBox(n,dijkstra.get(n),result.get(n)));
+            resCanvas.getChildren().add(createBox(n,dijkstra.get(n),result.get(n),categories));
         }
     }
     //funkcja wyświetlająca wynik programu
-    private HBox createBox(Node node,int path,String item)
+    private HBox createBox(Node node,int path,String item,List<Pair<String,String>> categories)
     {
+        String cat="";
+        for(Pair<String,String>p:categories)
+        {
+            if(p.getKey().equals(item))
+            {
+                cat=p.getValue();
+                break;
+            }
+        }
+        if(cat.equals(""))
+            cat="-----";
         HBox box=new HBox();
         box.getStyleClass().add("resultBorder");
         Group g=createNode(15,15,20, node.getId());
@@ -88,7 +102,9 @@ public class ResultInterfaceController {
         pathText.getStyleClass().add("basketText");
         Text itemText=new Text(item);
         itemText.getStyleClass().add("basketText");
-        box.getChildren().addAll(g,pathText,itemText);
+        Text catText=new Text(cat);
+        catText.getStyleClass().add("basketText");
+        box.getChildren().addAll(g,pathText,itemText,catText);
         return box;
     }
 
