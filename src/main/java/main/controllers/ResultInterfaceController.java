@@ -45,8 +45,11 @@ public class ResultInterfaceController {
     }
     public void showResult(Map<Node,Integer> dijkstra, Map<Node,String> result, Graph graph)
     {
-        //podglądowe narysowanie grafu dla wyświetlenia wyniku, tylko do wyglądu
 
+        dijkstra=dijkstra.entrySet().stream().sorted(Map.Entry.comparingByValue((v1,v2)->Integer.compare(v2,v1))).collect(LinkedHashMap::new,
+                (m, e) -> m.put(e.getKey(), e.getValue()),
+                LinkedHashMap::putAll);
+        //podglądowe narysowanie grafu dla wyświetlenia wyniku, tylko do wyglądu
         for(Edge edge: graph.getEdges())
             createEdge(edge.getNodes().get(0),edge.getNodes().get(1),edge.getWeight());
         for(Node node: graph.getNodes())

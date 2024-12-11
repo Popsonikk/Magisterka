@@ -1,11 +1,9 @@
 package main.controllers;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ProgressIndicator;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -159,7 +157,7 @@ public class MainWindowController implements Initializable {
         reguly.getChildren().addAll(ruleInterface,confBox,liftBox,startRule);
 
         VBox neo4j=createBox(200,375,"Neo4j");
-        neo4j.setSpacing(30.0);
+        neo4j.setSpacing(15.0);
         HBox urlBox=createEnterBox("Podaj url");
         HBox passBox=createEnterBox("Podaj hasło");
         Button startNeo=createButton("Uruchom Reguły");
@@ -176,21 +174,42 @@ public class MainWindowController implements Initializable {
             }
             TextField u= (TextField) urlBox.getChildren().get(1);
             TextField p= (TextField) passBox.getChildren().get(1);
-
-            if(u.getText().isEmpty()||p.getText().isEmpty())
+            String urlVal,passVal;
+            if(u.getText().isEmpty()&&p.getText().isEmpty())
             {
-                createAlert(2,"Brak podanych parametrów!");
-                return;
+                urlVal="neo4j+s://b80ce237.databases.neo4j.io";
+                passVal="STRyE_-kb6p8vYYFkPA2U23Ax-okWxlHd6Jjw_LxYow";
             }
-            try (var conn = new Neo4jConnector(u.getText(), "neo4j", p.getText()))
-            {
+            else {
+                if(u.getText().isEmpty()||p.getText().isEmpty())
+                {
+                    createAlert(2,"Brak podanych parametrów!");
+                    return;
+                }
+                else {
+                    urlVal=u.getText();
+                    passVal=p.getText();
+                }
+            }
 
+            try (var conn = new Neo4jConnector(urlVal, "neo4j", passVal))
+            {
                 if(conn.doesAnyRecordExist())
                     conn.cleanBase();
                 conn.createNodes(aprioriInterfaceController.getData().getData());
                 conn.createEdges(ruleInterfaceController.getData().getData());
-
                 productStrength=RecommendationFunctions.processNeo4jOutput(conn.checkNeighbourhood(), aprioriInterfaceController.getProductList());
+                createAlert(1,"Dane przetworzone pomyślnie");
+
+            }
+
+        });
+        Button showNeo4jOutput=createButton("Wynik neo4j");
+        showNeo4jOutput.setOnAction(e->{
+            if(productStrength.isEmpty())
+            {
+                createAlert(2,"Brak danych!");
+                return;
             }
             StringBuilder builder=new StringBuilder();
             builder.append("Produkt").append(": ").append("Siła").append("\n");
@@ -199,9 +218,8 @@ public class MainWindowController implements Initializable {
             alert.setTitle("Współczynnik jakości produktów");
             alert.setContentText(builder.toString());
             alert.show();
-
         });
-        neo4j.getChildren().addAll(urlBox,passBox,startNeo);
+        neo4j.getChildren().addAll(urlBox,passBox,startNeo,showNeo4jOutput);
 
 
 

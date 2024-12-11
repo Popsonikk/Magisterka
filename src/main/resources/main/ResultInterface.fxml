@@ -11,10 +11,10 @@
     <stylesheets>
         <URL value="@style.css"/>
     </stylesheets>
-    <ScrollPane prefHeight="685.0" prefWidth="685.0"  layoutX="5.0" layoutY="5.0" styleClass="graphBorder">
+    <ScrollPane prefHeight="685.0" prefWidth="585.0"  layoutX="5.0" layoutY="5.0" styleClass="graphBorder">
         <Pane fx:id="canvas"/>
     </ScrollPane>
-    <ScrollPane prefHeight="685.0" prefWidth="300.0"  layoutX="695.0" layoutY="5.0" styleClass="graphBorder">
+    <ScrollPane prefHeight="685.0" prefWidth="400.0"  layoutX="595.0" layoutY="5.0" styleClass="graphBorder">
         <VBox fx:id="resCanvas"/>
     </ScrollPane>
     <Button onAction="#back" layoutX="450.0" layoutY="695.0" text="Powrót" styleClass="backButton" />
