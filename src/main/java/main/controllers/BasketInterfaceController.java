@@ -204,9 +204,6 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
             case patternLen -> filtrPatternLength(data.getFiltrInfo().getIntegerFiltrValue());
         }
     }
-    public boolean isHeaderActive()
-    {
-        return mainPane.getChildren().contains(header);
-    }
+
 
 }

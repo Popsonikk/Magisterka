@@ -323,6 +323,10 @@ public abstract class InterfaceTemplate <T>{
             }});
         menuButton.getItems().addAll(item1,item2);
     }
+    public boolean isHeaderActive()
+    {
+        return mainPane.getChildren().contains(header);
+    }
 
 
 

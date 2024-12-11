@@ -38,18 +38,24 @@ public class Main extends Application {
         Parent resWindow=resInterfaceLoader.load();
         ResultInterfaceController resInterfaceController=resInterfaceLoader.getController();
 
+        FXMLLoader itemInterfaceLoader=new FXMLLoader(getClass().getResource("ProductInterface.fxml"));
+        Parent itemWindow=itemInterfaceLoader.load();
+        ProductInterfaceController itemInterfaceController=itemInterfaceLoader.getController();
+
         mainWindowController.setMainStage(stage);
         mainWindowController.setBasketScene(new Scene(basketWindow,1000,750));
         mainWindowController.setAprioriScene(new Scene(aprioriWindow,1000,750));
         mainWindowController.setRuleScene(new Scene(ruleWindow,1000,750));
         mainWindowController.setGraphScene(new Scene(graphWindow,1000,750));
         mainWindowController.setResScene(new Scene(resWindow,1000,750));
+        mainWindowController.setProductScene(new Scene(itemWindow,1000,750));
 
         mainWindowController.setBasketInterfaceController(basketInterfaceController);
         mainWindowController.setAprioriInterfaceController(aprioriInterfaceController);
         mainWindowController.setRuleInterfaceController(ruleInterfaceController);
         mainWindowController.setGraphInterfaceController(graphInterfaceController);
         mainWindowController.setResultInterfaceController(resInterfaceController);
+        mainWindowController.setProductInterfaceController(itemInterfaceController);
 
         Scene mainScene=new Scene(mainWindow,1000,750);
 
@@ -64,6 +70,8 @@ public class Main extends Application {
         graphInterfaceController.setMainStage(stage);
         resInterfaceController.setMainScene(mainScene);
         resInterfaceController.setMainStage(stage);
+        itemInterfaceController.setMainScene(mainScene);
+        itemInterfaceController.setMainStage(stage);
 
         stage.setTitle("Analiza koszykowa");
         stage.setScene(mainScene);

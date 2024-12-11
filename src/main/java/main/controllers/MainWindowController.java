@@ -29,12 +29,14 @@ public class MainWindowController implements Initializable {
     private BasketInterfaceController basketInterfaceController;
     private GraphInterfaceController graphInterfaceController;
     private ResultInterfaceController resultInterfaceController;
+    private ProductInterfaceController productInterfaceController;
     private Stage mainStage;
     private Scene basketScene;
     private Scene aprioriScene;
     private Scene ruleScene;
     private Scene graphScene;
     private Scene resScene;
+    private Scene productScene;
     private Map<String, Double> productStrength;
     private Map <Node,Integer> distances;
     private Map<Node,String> recommendation;
@@ -43,6 +45,15 @@ public class MainWindowController implements Initializable {
     public void setAprioriScene(Scene aprioriScene) {this.aprioriScene = aprioriScene;}
     public void setRuleScene(Scene ruleScene) {this.ruleScene = ruleScene;}
     public void setGraphScene(Scene graphScene) {this.graphScene = graphScene;}
+
+    public void setProductInterfaceController(ProductInterfaceController productInterfaceController) {
+        this.productInterfaceController = productInterfaceController;
+    }
+
+    public void setProductScene(Scene productScene) {
+        this.productScene = productScene;
+    }
+
     public void setResultInterfaceController(ResultInterfaceController resultInterfaceController) {
         this.resultInterfaceController = resultInterfaceController;
     }
@@ -76,6 +87,10 @@ public class MainWindowController implements Initializable {
             ruleInterfaceController.showTable();;
         mainStage.setScene(ruleScene);
     }
+    public void showProductInterface() {
+
+        mainStage.setScene(productScene);
+    }
     public void showGraphInterface() {
         mainStage.setScene(graphScene);
     }
@@ -86,12 +101,14 @@ public class MainWindowController implements Initializable {
         recommendation=new HashMap<>();
         //pojedyncze pudło z danym segmentem aplikacji
         VBox sklep=createBox(25,25,"Sklep");
-        sklep.setSpacing(50.0);
+        sklep.setSpacing(25.0);
         Button basketInterface=createButton("Zarządzaj koszykami");
         basketInterface.setOnAction(e->showBasketInterface());
         Button graphInterface=createButton("Zarządzaj grafami");
         graphInterface.setOnAction(e->showGraphInterface());
-        sklep.getChildren().addAll(basketInterface,graphInterface);
+        Button itemInterface=createButton("Zarządzaj produktami");
+        itemInterface.setOnAction(e->showProductInterface());
+        sklep.getChildren().addAll(basketInterface,graphInterface,itemInterface);
 
         VBox apriori=createBox(350,25,"Apriori");
         apriori.setSpacing(15.0);
