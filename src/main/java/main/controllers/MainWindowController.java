@@ -1,4 +1,5 @@
 package main.controllers;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -130,13 +131,31 @@ public class MainWindowController implements Initializable {
                 createAlert(2,"Brak podanych parametrów!");
                 return;
             }
+            Stage stage = getStage();
+            Task<Void> task = new Task<>() {
+                @Override
+                protected Void call() throws Exception {
+                    List<SimplePattern> patterns= GeneratePattern.apriori(Double.parseDouble(s.getText()),Integer.parseInt(l.getText())
+                            ,basketInterfaceController.getData().getData());
+                    aprioriInterfaceController.getData().setData(patterns);
+                    s.clear();
+                    l.clear();
+                    return null;
+                }
+            };
+            task.setOnSucceeded(event -> {
+                stage.close();
+                createAlert(1,"Dane wygenerowane pomyślnie");
+            });
 
-            List<SimplePattern> patterns= GeneratePattern.apriori(Double.parseDouble(s.getText()),Integer.parseInt(l.getText())
-                    ,basketInterfaceController.getData().getData());
-            aprioriInterfaceController.getData().setData(patterns);
-            s.clear();
-            l.clear();
-            createAlert(1,"Dane wygenerowane pomyślnie");
+            // Uruchomienie zadania w tle
+            new Thread(task).start();
+
+            // Wyświetlenie okna "Proszę czekać"
+            stage.show();
+
+
+
         });
         apriori.getChildren().addAll(aprioriInterface,suppBox,lenBox,startApriori);
 
@@ -160,13 +179,27 @@ public class MainWindowController implements Initializable {
                 createAlert(2,"Brak podanych parametrów!");
                 return;
             }
+            Stage stage = getStage();
+            Task<Void> task = new Task<>() {
+                @Override
+                protected Void call() throws Exception {
+                    List<AssociationRule> rules=GeneratePattern.generateRules(Double.parseDouble(c.getText()),
+                            Double.parseDouble(l.getText()),aprioriInterfaceController.getData().getData());
+                    ruleInterfaceController.getData().setData(rules);
+                    c.clear();
+                    l.clear();
+                    return null;
+                }
+            };
+            task.setOnSucceeded(event -> {
+                stage.close();
+                createAlert(1,"Dane wygenerowane pomyślnie");
+            });
+            // Uruchomienie zadania w tle
+            new Thread(task).start();
+            // Wyświetlenie okna "Proszę czekać"
+            stage.show();
 
-            List<AssociationRule> rules=GeneratePattern.generateRules(Double.parseDouble(c.getText()),
-                    Double.parseDouble(l.getText()),aprioriInterfaceController.getData().getData());
-            ruleInterfaceController.getData().setData(rules);
-            c.clear();
-            l.clear();
-            createAlert(1,"Dane wygenerowane pomyślnie");
         });
         reguly.getChildren().addAll(ruleInterface,confBox,liftBox,startRule);
 
@@ -206,16 +239,32 @@ public class MainWindowController implements Initializable {
                 }
             }
 
-            try (var conn = new Neo4jConnector(urlVal, "neo4j", passVal))
-            {
-                if(conn.doesAnyRecordExist())
-                    conn.cleanBase();
-                conn.createNodes(aprioriInterfaceController.getData().getData());
-                conn.createEdges(ruleInterfaceController.getData().getData());
-                productStrength=RecommendationFunctions.processNeo4jOutput(conn.checkNeighbourhood(), aprioriInterfaceController.getProductList());
-                createAlert(1,"Dane przetworzone pomyślnie");
 
-            }
+            Stage stage = getStage();
+            Task<Void> task = new Task<>() {
+                @Override
+                protected Void call() throws Exception {
+                    try (var conn = new Neo4jConnector(urlVal, "neo4j", passVal))
+                    {
+
+                        if(conn.doesAnyRecordExist())
+                            conn.cleanBase();
+                        conn.createNodes(aprioriInterfaceController.getData().getData());
+                        conn.createEdges(ruleInterfaceController.getData().getData());
+                        productStrength=RecommendationFunctions.processNeo4jOutput(conn.checkNeighbourhood(), aprioriInterfaceController.getProductList());
+
+                    }
+                    return null;
+                }
+            };
+            task.setOnSucceeded(event -> {
+                stage.close();
+                createAlert(1,"Dane przetworzone pomyślnie");
+            });
+            // Uruchomienie zadania w tle
+            new Thread(task).start();
+            // Wyświetlenie okna "Proszę czekać"
+            stage.show();
 
         });
         Button showNeo4jOutput=createButton("Wynik neo4j");
@@ -326,6 +375,19 @@ public class MainWindowController implements Initializable {
                 a.show();
             }
         }
+    }
+    private Stage getStage()
+    {
+        Stage stage = new Stage();
+        stage.setTitle("Proszę czekać");
+
+        ProgressIndicator progressIndicator = new ProgressIndicator();
+        Label messageLabel = new Label("Trwa operacja...");
+
+        VBox layout = new VBox(10, progressIndicator, messageLabel);
+        layout.setStyle("-fx-padding: 20; -fx-alignment: center;");
+        stage.setScene(new Scene(layout));
+        return stage;
     }
 
 }
