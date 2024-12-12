@@ -53,10 +53,13 @@ public class RuleInterfaceController extends InterfaceTemplate<AssociationRule> 
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Wybierz plik zawierający gotowe reguły");
             File file = fileChooser.showOpenDialog(null);
+            if(file==null)
+                throw  new Exception();;
             data.clearData();
             mainPane.getChildren().remove(header);
             //zapis nazwy pliku
             BufferedReader reader = new BufferedReader(new FileReader(file));
+
             String line;
             line = reader.readLine(); //header
             try {
@@ -98,6 +101,7 @@ public class RuleInterfaceController extends InterfaceTemplate<AssociationRule> 
         catch (Exception e)
         {
             createAlert(2,"Nastąpił błąd przy wyborze pliku");
+            return;
         }
     }
 

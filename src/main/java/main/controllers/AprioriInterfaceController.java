@@ -52,6 +52,8 @@ public class AprioriInterfaceController extends InterfaceTemplate<SimplePattern>
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Wybierz plik zawierający poziomy wsparcia");
             File file = fileChooser.showOpenDialog(null);
+            if(file==null)
+                throw  new Exception();
             data.clearData();
             mainPane.getChildren().remove(header);
             //zapis nazwy pliku

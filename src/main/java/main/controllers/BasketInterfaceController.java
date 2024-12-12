@@ -60,6 +60,8 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Wybierz plik zawierający listę koszyków");
             File file = fileChooser.showOpenDialog(null);
+            if(file==null)
+                throw  new Exception();
             data.clearData();
             mainPane.getChildren().remove(header);
             BufferedReader reader = new BufferedReader(new FileReader(file));

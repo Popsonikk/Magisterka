@@ -472,6 +472,8 @@ public class GraphInterfaceController implements Initializable {
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Wybierz plik zawierający gotowe reguły");
             File file = fileChooser.showOpenDialog(null);
+            if(file==null)
+                throw  new Exception();
             graph.clear();
             canvas.getChildren().clear();
             BufferedReader reader = new BufferedReader(new FileReader(file));

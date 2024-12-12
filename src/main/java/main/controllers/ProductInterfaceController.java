@@ -97,6 +97,8 @@ public class ProductInterfaceController  implements Initializable {
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Wybierz plik zawierający produkty");
             File file = fileChooser.showOpenDialog(null);
+            if(file==null)
+                throw  new Exception();
             products.clear();
             contentVBox.getChildren().clear();
             //zapis nazwy pliku
