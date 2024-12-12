@@ -95,10 +95,11 @@ public class RecommendationFunctions {
             return distance;
         }
     }
-    public  static Map<Node,String> neo4jRecommendation(List<String> productStrength,List<Node> distances,List<Pair<String,String>> categories)
+    public  static Map<Node,String> neo4jRecommendation(List<String> products,List<Node> distances,List<Pair<String,String>> categories)
     {
         //znajduje najdalszy node i wrzuca tan najpopularniejszy item, jego sąsiadom dajemy produkty najmniej popularne
         //powtarzamy do wyczerpania listy
+        List<String> productStrength=new ArrayList<>(products);
         Map<Node,String> res=new LinkedHashMap<>();
         int size= distances.size();
         while (res.size()<size)
@@ -123,7 +124,7 @@ public class RecommendationFunctions {
             distances.remove(0);
             productStrength.remove(0);
             if(productStrength.isEmpty())
-                break;
+                productStrength=new ArrayList<>(products);
             for (Edge e:n.getOutgoingEdges())
             {
                 Node neighbor;
@@ -168,9 +169,10 @@ public class RecommendationFunctions {
                 }
                 distances.remove(neighbor);
                 if(productStrength.isEmpty())
-                    break;
+                    productStrength=new ArrayList<>(products);
             }
         }
+
         return res;
     }
 
