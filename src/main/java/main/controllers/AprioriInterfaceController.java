@@ -45,46 +45,51 @@ public class AprioriInterfaceController extends InterfaceTemplate<SimplePattern>
     }
 
     @Override
-    protected void loadFromCSV() throws IOException {
-        data.clearData();
-        mainPane.getChildren().remove(header);
-        FileChooser fileChooser=new FileChooser();
-        fileChooser.setTitle("Wybierz plik zawierający poziomy wsparcia");
-        File file = fileChooser.showOpenDialog(null);
-        //zapis nazwy pliku
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        String line;
-        line= reader.readLine(); //header
-        try {
-            if(line.split(",").length!=3)
-            {
-                createAlert(2,"Błędny format pliku");
-                return;
-            }
-            line= reader.readLine();
-            Double.parseDouble(line.split(",")[1]);
-        }
-        catch (Exception e){
-            createAlert(2,"Błędny format pliku");
-            return;
-
-        }
-
-        while (line!=null)
+    protected void loadFromCSV() {
+        try
         {
-            //pobranie danych zgodnie z formatem
-            String []pattern=line.split(",");
-            double support=Double.parseDouble(pattern[1]);
-            pattern=pattern[2].split(";");
-            List<String> list=new ArrayList<>();
-            for(String s:pattern)
-                list.add(s.trim().toLowerCase());
-            data.getData().add(new SimplePattern(list,support));
-            line= reader.readLine();
+
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Wybierz plik zawierający poziomy wsparcia");
+            File file = fileChooser.showOpenDialog(null);
+            data.clearData();
+            mainPane.getChildren().remove(header);
+            //zapis nazwy pliku
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line;
+            line = reader.readLine(); //header
+            try {
+                if (line.split(",").length != 3) {
+                    createAlert(2, "Błędny format pliku");
+                    return;
+                }
+                line = reader.readLine();
+                Double.parseDouble(line.split(",")[1]);
+            } catch (Exception e) {
+                createAlert(2, "Błędny format pliku");
+                return;
+
+            }
+
+            while (line != null) {
+                //pobranie danych zgodnie z formatem
+                String[] pattern = line.split(",");
+                double support = Double.parseDouble(pattern[1]);
+                pattern = pattern[2].split(";");
+                List<String> list = new ArrayList<>();
+                for (String s : pattern)
+                    list.add(s.trim().toLowerCase());
+                data.getData().add(new SimplePattern(list, support));
+                line = reader.readLine();
+            }
+            createAlert(1, "Dane zostały wczytane poprawnie");
+            mainPane.getChildren().add(header);
+            createView();
         }
-        createAlert(1,"Dane zostały wczytane poprawnie");
-        mainPane.getChildren().add(header);
-        createView();
+        catch (Exception e)
+        {
+            createAlert(2,"Nastąpił błąd przy wyborze pliku");
+        }
     }
     public void createCSVFIle() throws IOException {
         if (data.getDataSize() == 0) {

@@ -49,53 +49,56 @@ public class RuleInterfaceController extends InterfaceTemplate<AssociationRule> 
     @Override
     protected void loadFromCSV() throws IOException{
 
-        data.clearData();
-        mainPane.getChildren().remove(header);
-        FileChooser fileChooser=new FileChooser();
-        fileChooser.setTitle("Wybierz plik zawierający gotowe reguły");
-        File file = fileChooser.showOpenDialog(null);
-        //zapis nazwy pliku
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        String line;
-        line=reader.readLine(); //header
         try {
-            if(line.split(",").length!=8)
-            {
-                createAlert(2,"Błędny format pliku");
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Wybierz plik zawierający gotowe reguły");
+            File file = fileChooser.showOpenDialog(null);
+            data.clearData();
+            mainPane.getChildren().remove(header);
+            //zapis nazwy pliku
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line;
+            line = reader.readLine(); //header
+            try {
+                if (line.split(",").length != 8) {
+                    createAlert(2, "Błędny format pliku");
+                    return;
+                }
+                line = reader.readLine();
+                Double.parseDouble(line.split(",")[2]);
+            } catch (Exception e) {
+                createAlert(2, "Błędny format pliku");
                 return;
-            }
-            line= reader.readLine();
-            Double.parseDouble(line.split(",")[2]);
-        }
-        catch (Exception e){
-            createAlert(2,"Błędny format pliku");
-            return;
 
+            }
+            while (line != null) {
+                //pobranie danych zgodnie z formatem
+                String[] pattern = line.split(",");
+                double left_support = Double.parseDouble(pattern[2]);
+                double right_support = Double.parseDouble(pattern[4]);
+                double support = Double.parseDouble(pattern[5]);
+                double confidence = Double.parseDouble(pattern[6]);
+                double lift = Double.parseDouble(pattern[7]);
+                String[] left_pattern = pattern[1].split(";");
+                List<String> left_list = new ArrayList<>();
+                for (String s : left_pattern)
+                    left_list.add(s.trim().toLowerCase());
+                String[] right_pattern = pattern[3].split(";");
+                List<String> right_list = new ArrayList<>();
+                for (String s : right_pattern)
+                    right_list.add(s.trim().toLowerCase());
+                data.getData().add(new AssociationRule(new SimplePattern(left_list, left_support), new SimplePattern(right_list, right_support),
+                        support, confidence, lift));
+                line = reader.readLine();
+            }
+            createAlert(1, "Dane zostały wczytane poprawnie");
+            mainPane.getChildren().add(header);
+            createView();
         }
-        while (line!=null)
+        catch (Exception e)
         {
-            //pobranie danych zgodnie z formatem
-            String []pattern=line.split(",");
-            double left_support=Double.parseDouble(pattern[2]);
-            double right_support=Double.parseDouble(pattern[4]);
-            double support=Double.parseDouble(pattern[5]);
-            double confidence=Double.parseDouble(pattern[6]);
-            double lift=Double.parseDouble(pattern[7]);
-            String[] left_pattern=pattern[1].split(";");
-            List<String> left_list=new ArrayList<>();
-            for(String s:left_pattern)
-                left_list.add(s.trim().toLowerCase());
-            String[] right_pattern=pattern[3].split(";");
-            List<String> right_list=new ArrayList<>();
-            for(String s:right_pattern)
-                right_list.add(s.trim().toLowerCase());
-            data.getData().add(new AssociationRule(new SimplePattern(left_list,left_support),new SimplePattern(right_list,right_support),
-                    support,confidence,lift));
-            line= reader.readLine();
+            createAlert(2,"Nastąpił błąd przy wyborze pliku");
         }
-        createAlert(1,"Dane zostały wczytane poprawnie");
-        mainPane.getChildren().add(header);
-        createView();
     }
 
     @Override

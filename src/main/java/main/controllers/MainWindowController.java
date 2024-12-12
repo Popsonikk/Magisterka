@@ -254,6 +254,11 @@ public class MainWindowController implements Initializable {
                         productStrength=RecommendationFunctions.processNeo4jOutput(conn.checkNeighbourhood(), aprioriInterfaceController.getProductList());
 
                     }
+                    catch(Exception exception)
+                    {
+                        createAlert(2,"Błąd połączenia");
+                        return null;
+                    }
                     return null;
                 }
             };

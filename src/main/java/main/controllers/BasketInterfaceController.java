@@ -54,40 +54,45 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
         return  box;
     }
     @Override
-    public void loadFromCSV() throws IOException {
-        data.clearData();
-        mainPane.getChildren().remove(header);
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Wybierz plik zawierający listę koszyków");
-        File file = fileChooser.showOpenDialog(null);
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        String line;
-        line = reader.readLine(); // pominięcie lini nagłówka
+    public void loadFromCSV() {
         try {
-            if(!line.split(",")[0].equals("id")||!line.split(",")[1].equals("basket"))
-            {
-                createAlert(2,"Błędny format pliku");
-                return;
-            }
-        }
-        catch (Exception e){
-            createAlert(2,"Błędny format pliku");
-            return;
 
-        }
-        line = reader.readLine();
-        while (line != null) {
-            //formatowanie danych w celu uniknięcia tworzenia przez list.of
-            String[]b=line.split(",")[1].split(";");
-            List<String> list=new ArrayList<>();
-            for(String s:b)
-                list.add(s.trim().toLowerCase());
-            data.getData().add(list);
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Wybierz plik zawierający listę koszyków");
+            File file = fileChooser.showOpenDialog(null);
+            data.clearData();
+            mainPane.getChildren().remove(header);
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line;
+            line = reader.readLine(); // pominięcie lini nagłówka
+            try {
+                if (!line.split(",")[0].equals("id") || !line.split(",")[1].equals("basket")) {
+                    createAlert(2, "Błędny format pliku");
+                    return;
+                }
+            } catch (Exception e) {
+                createAlert(2, "Błędny format pliku");
+                return;
+
+            }
             line = reader.readLine();
+            while (line != null) {
+                //formatowanie danych w celu uniknięcia tworzenia przez list.of
+                String[] b = line.split(",")[1].split(";");
+                List<String> list = new ArrayList<>();
+                for (String s : b)
+                    list.add(s.trim().toLowerCase());
+                data.getData().add(list);
+                line = reader.readLine();
+            }
+            mainPane.getChildren().add(header);
+            createView();
+            createAlert(1, "Koszyki zostały wczytane poprawnie");
         }
-        mainPane.getChildren().add(header);
-        createView();
-        createAlert(1,"Koszyki zostały wczytane poprawnie");
+        catch(Exception e)
+        {
+            createAlert(2,"Nastąpił błąd przy wyborze pliku");
+        }
 
     }
 

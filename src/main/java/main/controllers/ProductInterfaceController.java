@@ -93,39 +93,41 @@ public class ProductInterfaceController  implements Initializable {
     }
 
     public void loadFromCSV(ActionEvent actionEvent) throws IOException {
-        products.clear();
-        contentVBox.getChildren().clear();
-        FileChooser fileChooser=new FileChooser();
-        fileChooser.setTitle("Wybierz plik zawierający produkty");
-        File file = fileChooser.showOpenDialog(null);
-        //zapis nazwy pliku
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        String line;
-        line= reader.readLine(); //header
         try {
-            if(!Objects.equals(line.split(",")[0], "id") ||
-                    !Objects.equals(line.split(",")[1], "product") || !Objects.equals(line.split(",")[2], "category"))
-            {
-                createAlert(2,"Błędny format pliku");
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Wybierz plik zawierający produkty");
+            File file = fileChooser.showOpenDialog(null);
+            products.clear();
+            contentVBox.getChildren().clear();
+            //zapis nazwy pliku
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line;
+            line = reader.readLine(); //header
+            try {
+                if (!Objects.equals(line.split(",")[0], "id") ||
+                        !Objects.equals(line.split(",")[1], "product") || !Objects.equals(line.split(",")[2], "category")) {
+                    createAlert(2, "Błędny format pliku");
+                    return;
+                }
+                line = reader.readLine();
+            } catch (Exception e) {
+                createAlert(2, "Błędny format pliku");
                 return;
+
             }
-            line= reader.readLine();
-        }
-        catch (Exception e){
-            createAlert(2,"Błędny format pliku");
-            return;
 
-        }
-
-        while (line!=null)
+            while (line != null) {
+                //pobranie danych zgodnie z formatem
+                products.add(new Pair<>(line.split(",")[1].toLowerCase().trim(), line.split(",")[2].toLowerCase().trim()));
+                line = reader.readLine();
+            }
+            createAlert(1, "Dane zostały wczytane poprawnie");
+            mainPane.getChildren().add(header);
+            createView();
+        }catch(Exception e)
         {
-            //pobranie danych zgodnie z formatem
-            products.add(new Pair<>(line.split(",")[1].toLowerCase().trim(),line.split(",")[2].toLowerCase().trim()));
-            line= reader.readLine();
+            createAlert(2,"Nastąpił błąd przy wyborze pliku");
         }
-        createAlert(1,"Dane zostały wczytane poprawnie");
-        mainPane.getChildren().add(header);
-        createView();
     }
 
     private void addItem() {

@@ -272,7 +272,6 @@ public class GraphInterfaceController implements Initializable {
                                 break;
                             }
                         }
-                        createAlert(1, "Połączenie usunięte pomyślnie");
                     }
                 });
             }
@@ -469,44 +468,46 @@ public class GraphInterfaceController implements Initializable {
         menuBox.getChildren().add(menuButton);
     }
     private void loadFromCSV() throws IOException {
-        graph.clear();
-        FileChooser fileChooser=new FileChooser();
-        fileChooser.setTitle("Wybierz plik zawierający gotowe reguły");
-        File file = fileChooser.showOpenDialog(null);
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        String []header=reader.readLine().split(",");
         try {
-            Integer.parseInt(header[0]);
-            Integer.parseInt(header[1]);
-        }
-        catch (Exception e){
-            createAlert(2,"Błędny format pliku!");
-            return;
-        }
-        int s=Integer.parseInt(header[0]);
-        for(int i=0;i<s;i++)
-        {
-            String[] line=reader.readLine().split(",");
-            createNode(Double.parseDouble(line[0]),(Double.parseDouble(line[1])),line[2]);
-        }
-        s=Integer.parseInt(header[1]);
-        for(int i=0;i<s;i++)
-        {
-            String[] line=reader.readLine().split(",");
-            String n1=line[0];
-            String n2=line[1];
-            Node c1=null,c2=null;
-            for (Node n: graph.getNodes())
-            {
-                if(Objects.equals(n.getId(), n1))
-                    c1=n;
-                if(Objects.equals(n.getId(), n2))
-                    c2=n;
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Wybierz plik zawierający gotowe reguły");
+            File file = fileChooser.showOpenDialog(null);
+            graph.clear();
+            canvas.getChildren().clear();
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String[] header = reader.readLine().split(",");
+            try {
+                Integer.parseInt(header[0]);
+                Integer.parseInt(header[1]);
+            } catch (Exception e) {
+                createAlert(2, "Błędny format pliku!");
+                return;
             }
-            createEdge(c1,c2,Integer.parseInt(line[2]));
+            int s = Integer.parseInt(header[0]);
+            for (int i = 0; i < s; i++) {
+                String[] line = reader.readLine().split(",");
+                createNode(Double.parseDouble(line[0]), (Double.parseDouble(line[1])), line[2]);
+            }
+            s = Integer.parseInt(header[1]);
+            for (int i = 0; i < s; i++) {
+                String[] line = reader.readLine().split(",");
+                String n1 = line[0];
+                String n2 = line[1];
+                Node c1 = null, c2 = null;
+                for (Node n : graph.getNodes()) {
+                    if (Objects.equals(n.getId(), n1))
+                        c1 = n;
+                    if (Objects.equals(n.getId(), n2))
+                        c2 = n;
+                }
+                createEdge(c1, c2, Integer.parseInt(line[2]));
 
+            }
+            createAlert(1, "Graf wczytany pomyślnie");
+        }catch (Exception e)
+        {
+            createAlert(2,"Nastąpił błąd przy wyborze pliku");
         }
-        createAlert(1,"Graf wczytany pomyślnie");
 
     }
     //zapis grafu do pliku
