@@ -56,7 +56,6 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
     @Override
     public void loadFromCSV() {
         try {
-
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Wybierz plik zawierający listę koszyków");
             File file = fileChooser.showOpenDialog(null);
@@ -75,7 +74,6 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
             } catch (Exception e) {
                 createAlert(2, "Błędny format pliku");
                 return;
-
             }
             line = reader.readLine();
             while (line != null) {
@@ -91,11 +89,9 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
             createView();
             createAlert(1, "Koszyki zostały wczytane poprawnie");
         }
-        catch(Exception e)
-        {
+        catch(Exception e) {
             createAlert(2,"Nastąpił błąd przy wyborze pliku");
         }
-
     }
 
     //funkcja filtrującą tablicę

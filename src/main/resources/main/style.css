@@ -207,3 +207,7 @@
 
 
 }
+.resText{
+    -fx-font-size: 16px;
+    -fx-fill: green !important;
+}

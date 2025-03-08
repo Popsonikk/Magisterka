@@ -162,7 +162,7 @@ public class MainWindowController implements Initializable {
         VBox reguly=createBox(675,25,"Reguły");
         reguly.setSpacing(15.0);
         HBox confBox=createEnterBox("Podaj ufność");
-        HBox liftBox=createEnterBox("Podaj lift");
+        HBox liftBox=createEnterBox("Podaj dźwignię");
         Button ruleInterface=createButton("Zarządzaj regułami");
         ruleInterface.setOnAction(e->showRuleInterface());
         Button startRule=createButton("Uruchom Reguły");
@@ -234,7 +234,7 @@ public class MainWindowController implements Initializable {
                     return;
                 }
                 else {
-                    urlVal=u.getText();
+                    urlVal="neo4j+s://"+u.getText()+".databases.neo4j.io";
                     passVal=p.getText();
                 }
             }

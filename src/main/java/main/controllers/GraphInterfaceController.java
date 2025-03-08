@@ -476,6 +476,7 @@ public class GraphInterfaceController implements Initializable {
                 throw  new Exception();
             graph.clear();
             canvas.getChildren().clear();
+            canvas.getChildren().addAll(mesh);
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String[] header = reader.readLine().split(",");
             try {
@@ -506,6 +507,7 @@ public class GraphInterfaceController implements Initializable {
 
             }
             createAlert(1, "Graf wczytany pomyślnie");
+
         }catch (Exception e)
         {
             createAlert(2,"Nastąpił błąd przy wyborze pliku");

@@ -19,12 +19,12 @@ public class RecommendationFunctions {
         Map<String,Double> productStrength=productList.stream().collect(Collectors.toMap(product -> product, product -> 0.0));
         for(Record r:records)
         {
-            double strength = Double.parseDouble(String.valueOf(r.get(1)).replace("\"", ""))
-                    *( Double.parseDouble(String.valueOf(r.get(3)).replace("\"", ""))
-                    / Double.parseDouble(String.valueOf(r.get(2)).replace("\"", "")));
+            double strength = Double.parseDouble(String.valueOf(r.get(1)).replace("\"", "")) // wsparcie
+                    *( Double.parseDouble(String.valueOf(r.get(3)).replace("\"", "")) //totalLift
+                    / Double.parseDouble(String.valueOf(r.get(2)).replace("\"", ""))); //stopień
 
             String[] patternProducts = String.valueOf(r.get(0)).replace("\"", "").split(",");
-            for(String s:patternProducts)
+            for(String s:patternProducts) // podział na pojedyncze produkty
                 productStrength.merge(s, strength, Double::sum);
         }
         productStrength=productStrength.entrySet()
@@ -46,30 +46,23 @@ public class RecommendationFunctions {
         }
         distances.put(startNode, 0);
         pq.add(new NodeDistance(startNode, 0));
-
         while (!pq.isEmpty()) {
             NodeDistance current = pq.poll();
             Node currentNode = current.getNode();
-
             if (visited.contains(currentNode)) continue;
             visited.add(currentNode);
-
-            // Aktualizuj sąsiadów
-            for (Edge edge : currentNode.getOutgoingEdges()) {
+            for (Edge edge : currentNode.getOutgoingEdges()) {// Aktualizuj sąsiadów
                 Node neighbor;
                 if(currentNode.getId().contains(edge.getNodes().get(1).getId()))
                     neighbor = edge.getNodes().get(0);
                 else
                     neighbor = edge.getNodes().get(1);
                 if (visited.contains(neighbor)) continue;
-
                 int newDist = distances.get(currentNode) + edge.getWeight();
                 if (newDist < distances.get(neighbor)) {
                     distances.put(neighbor, newDist);
                     pq.add(new NodeDistance(neighbor, newDist));
-                }
-            }
-        }
+                }}}
         distances=distances.entrySet().stream().sorted(Map.Entry.comparingByValue((v1,v2)->Integer.compare(v2,v1))).collect(LinkedHashMap::new,
                 (m, e) -> m.put(e.getKey(), e.getValue()),
                 LinkedHashMap::putAll);

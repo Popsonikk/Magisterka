@@ -65,24 +65,23 @@ public class ResultInterfaceController {
         box.setAlignment(Pos.CENTER);
         Text nodeText=new Text("Node");
         nodeText.getStyleClass().add("basketText");
-        Text pathText=new Text("Dijkstra_path");
-        pathText.getStyleClass().add("basketText");
+
         Text itemText=new Text("Found_item");
         itemText.getStyleClass().add("basketText");
         Text catText=new Text("Category");
         catText.getStyleClass().add("basketText");
-        box.getChildren().addAll(nodeText,pathText,itemText,catText);
+        box.getChildren().addAll(nodeText,itemText,catText);
         resCanvas.getChildren().add(box);
 
         while (!resultList.isEmpty())
         {
             Node n=resultList.get(0);
             resultList.remove(n);
-            resCanvas.getChildren().add(createBox(n,dijkstra.get(n),result.get(n),categories));
+            resCanvas.getChildren().add(createBox(n.getId(),result.get(n),categories));
         }
     }
     //funkcja wyświetlająca wynik programu
-    private HBox createBox(Node node,int path,String item,List<Pair<String,String>> categories)
+    private HBox createBox(String text,String item,List<Pair<String,String>> categories)
     {
         String cat="";
         for(Pair<String,String>p:categories)
@@ -97,14 +96,16 @@ public class ResultInterfaceController {
             cat="-----";
         HBox box=new HBox();
         box.getStyleClass().add("resultBorder");
-        Group g=createNode(15,15,20, node.getId());
-        Text pathText=new Text(String.valueOf(path));
-        pathText.getStyleClass().add("basketText");
+        box.setAlignment(Pos.CENTER);
+       // Group g=createNode(15,15,20, node.getId());
+
+        Text idText=new Text(text);
+        idText.getStyleClass().add("resText");
         Text itemText=new Text(item);
-        itemText.getStyleClass().add("basketText");
+        itemText.getStyleClass().add("resText");
         Text catText=new Text(cat);
-        catText.getStyleClass().add("basketText");
-        box.getChildren().addAll(g,pathText,itemText,catText);
+        catText.getStyleClass().add("resText");
+        box.getChildren().addAll(idText,itemText,catText);
         return box;
     }
 

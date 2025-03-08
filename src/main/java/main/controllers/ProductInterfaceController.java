@@ -169,6 +169,8 @@ public class ProductInterfaceController  implements Initializable {
                 break;
             }
         }
+        if(products.isEmpty())
+            mainPane.getChildren().remove(header);
         contentVBox.getChildren().clear();
         createView();
         createAlert(1,"Usunięto przedmiot");

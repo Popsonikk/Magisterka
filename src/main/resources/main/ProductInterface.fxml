@@ -13,9 +13,9 @@
     <stylesheets>
         <URL value="@style.css"/>
     </stylesheets>
-    <Button onAction="#clearInterface" layoutX="835.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0"
+    <Button onAction="#clearInterface" layoutX="820.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0"
             prefWidth="150.0" text="Wyczyść produkty" styleClass="interfaceButton"/>
-    <Button onAction="#loadFromCSV" layoutX="670.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0"
+    <Button onAction="#loadFromCSV" layoutX="655.0" layoutY="5.0" mnemonicParsing="false" prefHeight="50.0"
             prefWidth="150.0" text="Wczytaj produkty" styleClass="interfaceButton"/>
     <TextField fx:id="tx" layoutX="15.0" layoutY="5.0" prefHeight="50.0" prefWidth="275.0" alignment="CENTER"
                styleClass="filterBox"/>
