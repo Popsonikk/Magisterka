@@ -1,0 +1,169 @@
+id,support,pattern
+0,0.241,whole milk
+1,0.179,rolls/buns
+2,0.177,other vegetables
+3,0.167,soda
+4,0.126,yogurt
+5,0.105,bottled water
+6,0.097,root vegetables
+7,0.094,shopping bags
+8,0.094,tropical fruit
+9,0.087,sausage
+10,0.081,pastry
+11,0.078,canned beer
+12,0.078,bottled beer
+13,0.077,newspapers
+14,0.075,citrus fruit
+15,0.067,pip fruit
+16,0.064,fruit/vegetable juice
+17,0.062,whipped/sour cream
+18,0.060,brown bread
+19,0.055,domestic eggs
+20,0.055,frankfurter
+21,0.053,margarine
+22,0.053,coffee
+23,0.053,pork
+24,0.048,curd
+25,0.047,butter
+26,0.046,beef
+27,0.046,napkins
+28,0.043,chocolate
+29,0.041,frozen vegetables
+30,0.037,chicken
+31,0.036,white bread
+32,0.035,cream cheese
+33,0.034,waffles
+34,0.033,salty snack
+35,0.033,long life bakery product
+36,0.032,dessert
+37,0.032,uht-milk
+38,0.030,sugar
+39,0.029,berries
+40,0.029,hamburger meat
+41,0.029,hygiene articles
+42,0.028,specialty chocolate
+43,0.026,candy
+44,0.026,onions
+45,0.026,misc. beverages
+46,0.025,specialty bar
+47,0.025,beverages
+48,0.025,frozen meals
+49,0.024,butter milk
+50,0.024,oil
+51,0.024,meat
+52,0.023,ice cream
+53,0.022,ham
+54,0.021,chewing gum
+55,0.020,hard cheese
+56,0.020,sliced cheese
+57,0.020,cat food
+58,0.019,white wine
+59,0.019,grapes
+60,0.018,red/blush wine
+61,0.017,dishes
+62,0.017,detergent
+63,0.016,potted plants
+64,0.015,pickled vegetables
+65,0.015,flour
+66,0.015,semi-finished bread
+67,0.014,baking powder
+68,0.014,processed cheese
+69,0.014,herbs
+70,0.013,soft cheese
+71,0.013,seasonal products
+72,0.013,pasta
+73,0.012,canned fish
+74,0.012,packaged fruit/vegetables
+75,0.011,cake bar
+76,0.011,liquor
+77,0.010,cling film/bags
+78,0.010,spread cheese
+79,0.010,frozen fish
+80,0.010,flower (seeds)
+81,0.010,mustard
+82,0.009,condensed milk
+83,0.009,canned vegetables
+84,0.009,salt
+85,0.009,photo/film
+86,0.009,pet care
+87,0.009,dish cleaner
+88,0.009,frozen dessert
+89,0.008,roll products
+90,0.008,candles
+91,0.008,dog food
+92,0.008,chocolate marshmallow
+93,0.008,sweet spreads
+94,0.007,specialty cheese
+95,0.007,liquor (appetizer)
+96,0.007,mayonnaise
+97,0.007,frozen potato products
+98,0.007,instant coffee
+99,0.007,zwieback
+100,0.007,instant food products
+101,0.007,house keeping products
+102,0.006,popcorn
+103,0.006,turkey
+104,0.006,vinegar
+105,0.005,finished products
+106,0.005,soups
+107,0.005,sparkling wine
+108,0.005,female sanitary products
+109,0.005,softener
+110,0.005,rice
+111,0.005,kitchen towels
+112,0.005,dental care
+113,0.005,sauces
+114,0.004,cereals
+115,0.004,curd cheese
+116,0.004,liver loaf
+117,0.004,male cosmetics
+118,0.004,brandy
+119,0.004,spices
+120,0.004,jam
+121,0.004,rum
+122,0.004,cleaner
+123,0.004,meat spreads
+124,0.004,light bulbs
+125,0.004,tea
+126,0.003,ketchup
+127,0.003,specialty fat
+128,0.003,nuts/prunes
+129,0.003,artif. sweetener
+130,0.003,skin care
+131,0.003,snack products
+132,0.003,fish
+133,0.003,nut snack
+134,0.003,syrup
+135,0.003,abrasive cleaner
+136,0.003,canned fruit
+137,0.002,cookware
+138,0.002,soap
+139,0.002,bathroom cleaner
+140,0.002,tidbits
+141,0.002,potato products
+142,0.002,pudding powder
+143,0.002,cooking chocolate
+144,0.002,organic sausage
+145,0.002,flower soil/fertilizer
+146,0.002,prosecco
+147,0.002,cocoa drinks
+148,0.001,ready soups
+149,0.001,honey
+150,0.001,decalcifier
+151,0.001,specialty vegetables
+152,0.001,organic products
+153,0.001,hair spray
+154,0.001,cream
+155,0.001,liqueur
+156,0.001,frozen fruits
+157,0.001,whisky
+158,0.001,make up remover
+159,0.001,toilet cleaner
+160,0.001,rubbing alcohol
+161,0.001,salad dressing
+162,0.001,frozen chicken
+163,0.000,bags
+164,0.000,baby cosmetics
+165,0.000,kitchen utensil
+166,0.000,sound storage medium
+167,0.000,preservation products
