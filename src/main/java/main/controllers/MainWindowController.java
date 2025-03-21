@@ -16,6 +16,10 @@ import main.functions.GeneratePattern;
 import main.objects.Node;
 import main.objects.SimplePattern;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
@@ -224,8 +228,8 @@ public class MainWindowController implements Initializable {
             String urlVal,passVal;
             if(u.getText().isEmpty()&&p.getText().isEmpty())
             {
-                urlVal="neo4j+s://b80ce237.databases.neo4j.io";
-                passVal="STRyE_-kb6p8vYYFkPA2U23Ax-okWxlHd6Jjw_LxYow";
+                urlVal="neo4j+s://bf4d3846.databases.neo4j.io";
+                passVal="Y50WLbzeZrwCQy-XeioQXrPHHhNV_Z3-6Z_HlTn3vdI";
             }
             else {
                 if(u.getText().isEmpty()||p.getText().isEmpty())
@@ -279,13 +283,25 @@ public class MainWindowController implements Initializable {
                 createAlert(2,"Brak danych!");
                 return;
             }
-            StringBuilder builder=new StringBuilder();
-            builder.append("Produkt").append(": ").append("Siła").append("\n");
-            productStrength.forEach((k,v)-> builder.append(k).append(": ").append(String.format(Locale.US, "%.3f", v)).append("\n"));
-            Alert alert=new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Współczynnik jakości produktów");
-            alert.setContentText(builder.toString());
-            alert.show();
+            File file=new File("dane/neo4j-output.txt");
+            try {
+                BufferedWriter writer=new BufferedWriter(new FileWriter(file));
+                writer.write("Produkt"+","+"Siła"+"\n");
+                productStrength.forEach((k,v)->
+                {
+                    try {
+                        writer.write(k+","+String.format(Locale.US, "%.3f", v)+"\n");
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                });
+                writer.close();
+                createAlert(1,"Wygenerowano pomyślnie plik");
+
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+
         });
         neo4j.getChildren().addAll(urlBox,passBox,startNeo,showNeo4jOutput);
 

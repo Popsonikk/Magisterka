@@ -1,0 +1,125 @@
+Produkt,Siła
+whole milk,1.950
+other vegetables,1.560
+rolls/buns,1.060
+yogurt,0.933
+root vegetables,0.644
+tropical fruit,0.628
+soda,0.525
+bottled water,0.503
+sausage,0.447
+citrus fruit,0.399
+shopping bags,0.376
+whipped/sour cream,0.353
+pip fruit,0.328
+pastry,0.300
+fruit/vegetable juice,0.284
+domestic eggs,0.272
+curd,0.267
+bottled beer,0.258
+newspapers,0.256
+brown bread,0.240
+butter,0.231
+margarine,0.226
+beef,0.217
+pork,0.206
+frankfurter,0.192
+frozen vegetables,0.144
+chicken,0.133
+napkins,0.123
+hamburger meat,0.098
+onions,0.093
+cream cheese,0.091
+sugar,0.085
+chocolate,0.085
+canned beer,0.077
+liquor,0.071
+flour,0.064
+white bread,0.064
+long life bakery product,0.056
+uht-milk,0.050
+waffles,0.048
+salty snack,0.046
+berries,0.043
+specialty bar,0.041
+misc. beverages,0.041
+candy,0.041
+hygiene articles,0.041
+butter milk,0.041
+herbs,0.041
+coffee,0.040
+sliced cheese,0.039
+white wine,0.039
+oil,0.039
+chewing gum,0.036
+ham,0.035
+frozen meals,0.032
+dishes,0.032
+hard cheese,0.031
+ice cream,0.031
+baking powder,0.031
+cat food,0.031
+detergent,0.031
+potted plants,0.025
+semi-finished bread,0.024
+pickled vegetables,0.024
+soft cheese,0.022
+processed cheese,0.021
+cake bar,0.021
+pasta,0.020
+frozen fish,0.017
+canned fish,0.000
+mayonnaise,0.000
+dish cleaner,0.000
+sparkling wine,0.000
+popcorn,0.000
+instant food products,0.000
+instant coffee,0.000
+jam,0.000
+beverages,0.000
+flower (seeds),0.000
+frozen potato products,0.000
+turkey,0.000
+packaged fruit/vegetables,0.000
+roll products,0.000
+finished products,0.000
+canned vegetables,0.000
+curd cheese,0.000
+female sanitary products,0.000
+condensed milk,0.000
+pet care,0.000
+house keeping products,0.000
+photo/film,0.000
+salt,0.000
+vinegar,0.000
+specialty cheese,0.000
+specialty chocolate,0.000
+brandy,0.000
+rum,0.000
+male cosmetics,0.000
+mustard,0.000
+liquor (appetizer),0.000
+cleaner,0.000
+cereals,0.000
+frozen dessert,0.000
+cling film/bags,0.000
+dog food,0.000
+spices,0.000
+grapes,0.000
+zwieback,0.000
+sauces,0.000
+dental care,0.000
+kitchen towels,0.000
+candles,0.000
+spread cheese,0.000
+meat spreads,0.000
+seasonal products,0.000
+soups,0.000
+chocolate marshmallow,0.000
+softener,0.000
+liver loaf,0.000
+rice,0.000
+dessert,0.000
+meat,0.000
+red/blush wine,0.000
+sweet spreads,0.000
