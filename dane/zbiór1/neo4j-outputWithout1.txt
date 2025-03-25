@@ -68,58 +68,59 @@ processed cheese,0.021
 cake bar,0.021
 pasta,0.020
 frozen fish,0.017
-canned fish,0.000
-mayonnaise,0.000
-dish cleaner,0.000
-sparkling wine,0.000
-popcorn,0.000
-instant food products,0.000
-instant coffee,0.000
-jam,0.000
-beverages,0.000
-flower (seeds),0.000
-frozen potato products,0.000
-turkey,0.000
-packaged fruit/vegetables,0.000
-roll products,0.000
-finished products,0.000
-canned vegetables,0.000
-curd cheese,0.000
-female sanitary products,0.000
-condensed milk,0.000
-pet care,0.000
-house keeping products,0.000
-photo/film,0.000
-salt,0.000
-vinegar,0.000
-specialty cheese,0.000
-specialty chocolate,0.000
-brandy,0.000
-rum,0.000
-male cosmetics,0.000
-mustard,0.000
-liquor (appetizer),0.000
-cleaner,0.000
-cereals,0.000
-frozen dessert,0.000
-cling film/bags,0.000
-dog food,0.000
-spices,0.000
-grapes,0.000
-zwieback,0.000
-sauces,0.000
-dental care,0.000
-kitchen towels,0.000
-candles,0.000
-spread cheese,0.000
-meat spreads,0.000
-seasonal products,0.000
-soups,0.000
-chocolate marshmallow,0.000
-softener,0.000
-liver loaf,0.000
-rice,0.000
-dessert,0.000
-meat,0.000
-red/blush wine,0.000
-sweet spreads,0.000
+-----,0.000
+dessert,0.041
+specialty chocolate,0.032
+meat,0.030
+beverages,0.029
+grapes,0.024
+red/blush wine,0.022
+canned fish,0.016
+seasonal products,0.016
+packaged fruit/vegetables,0.014
+flower (seeds),0.013
+cling film/bags,0.013
+spread cheese,0.013
+mustard,0.012
+canned vegetables,0.012
+condensed milk,0.012
+salt,0.012
+dish cleaner,0.011
+frozen dessert,0.011
+roll products,0.011
+dog food,0.010
+candles,0.010
+pet care,0.010
+specialty cheese,0.010
+sweet spreads,0.010
+mayonnaise,0.009
+liquor (appetizer),0.009
+chocolate marshmallow,0.009
+popcorn,0.008
+instant food products,0.008
+instant coffee,0.008
+frozen potato products,0.008
+turkey,0.008
+zwieback,0.008
+house keeping products,0.008
+photo/film,0.008
+soups,0.007
+vinegar,0.007
+cereals,0.006
+finished products,0.006
+sauces,0.006
+dental care,0.006
+female sanitary products,0.006
+kitchen towels,0.006
+softener,0.006
+liver loaf,0.006
+rice,0.006
+sparkling wine,0.005
+rum,0.005
+male cosmetics,0.005
+jam,0.005
+cleaner,0.005
+spices,0.005
+curd cheese,0.005
+meat spreads,0.005
+brandy,0.005

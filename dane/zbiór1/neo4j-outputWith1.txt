@@ -59,52 +59,53 @@ potted plants,0.025
 grapes,0.021
 pickled vegetables,0.021
 semi-finished bread,0.021
-canned fish,0.000
-mayonnaise,0.000
-dish cleaner,0.000
-sparkling wine,0.000
-popcorn,0.000
-soft cheese,0.000
-instant food products,0.000
-instant coffee,0.000
-beverages,0.000
-flower (seeds),0.000
-frozen potato products,0.000
-processed cheese,0.000
-turkey,0.000
-packaged fruit/vegetables,0.000
-roll products,0.000
-finished products,0.000
-canned vegetables,0.000
-female sanitary products,0.000
-liquor,0.000
-condensed milk,0.000
-pet care,0.000
-house keeping products,0.000
-white wine,0.000
-photo/film,0.000
-salt,0.000
-vinegar,0.000
-canned beer,0.000
-specialty cheese,0.000
-specialty chocolate,0.000
-mustard,0.000
-ice cream,0.000
-frozen fish,0.000
-liquor (appetizer),0.000
-cake bar,0.000
-frozen dessert,0.000
-cling film/bags,0.000
-dog food,0.000
-zwieback,0.000
-candles,0.000
-spread cheese,0.000
-seasonal products,0.000
-soups,0.000
-pasta,0.000
-chocolate marshmallow,0.000
-dessert,0.000
-coffee,0.000
-meat,0.000
-red/blush wine,0.000
-sweet spreads,0.000
+-----,0.000
+canned beer,0.078
+coffee,0.053
+dessert,0.032
+specialty chocolate,0.028
+beverages,0.025
+meat,0.024
+ice cream,0.023
+white wine,0.019
+red/blush wine,0.018
+processed cheese,0.014
+soft cheese,0.013
+seasonal products,0.013
+pasta,0.013
+canned fish,0.012
+packaged fruit/vegetables,0.012
+cake bar,0.011
+liquor,0.011
+mustard,0.010
+frozen fish,0.010
+flower (seeds),0.010
+cling film/bags,0.010
+spread cheese,0.010
+dish cleaner,0.009
+frozen dessert,0.009
+canned vegetables,0.009
+condensed milk,0.009
+pet care,0.009
+photo/film,0.009
+salt,0.009
+roll products,0.008
+dog food,0.008
+candles,0.008
+chocolate marshmallow,0.008
+sweet spreads,0.008
+mayonnaise,0.007
+instant food products,0.007
+instant coffee,0.007
+liquor (appetizer),0.007
+frozen potato products,0.007
+zwieback,0.007
+house keeping products,0.007
+specialty cheese,0.007
+popcorn,0.006
+turkey,0.006
+vinegar,0.006
+sparkling wine,0.005
+finished products,0.005
+female sanitary products,0.005
+soups,0.005

@@ -265,15 +265,15 @@ public class AprioriInterfaceController extends InterfaceTemplate<SimplePattern>
             case supportUp -> filtrSupportLevel(data.getFiltrInfo().getIntegerFiltrValue(),FiltrType.supportUp);
         }
     }
-    public List<String> getProductList()
+    public Map<String,Double> getProductList()
     {
-        List<String> res=new ArrayList<>();
+        Map<String,Double> res=new HashMap<>();
         data.getData().sort(Comparator.comparingInt(o -> o.getPattern().size()));
         for(SimplePattern l:data.getData())
         {
             if(l.getPattern().size()>1)
                 break;
-            res.add(l.getPattern().get(0));
+            res.put(l.getPattern().get(0),l.getSupport());
         }
         return  res;
     }
