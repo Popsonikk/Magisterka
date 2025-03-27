@@ -251,6 +251,12 @@ public class AprioriInterfaceController extends InterfaceTemplate<SimplePattern>
                         data.getFilteredData().add(pattern);
                 }
             }
+            case patternLen -> {
+                for (SimplePattern pattern : data.getData()) {
+                    if ((pattern.getPattern().size()==supp))
+                        data.getFilteredData().add(pattern);
+                }
+            }
         }
 
     }

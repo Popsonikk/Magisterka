@@ -115,6 +115,12 @@ public class GeneratePattern {
                 double lift = confidence / ct.getSupport();
                 if(conf<confidence&&lift>lt)
                     ruleList.add(new AssociationRule(at,ct, pattern.getSupport(), confidence,lift));
+
+                double mirrorConfidence = pattern.getSupport() / ct.getSupport();
+                double mirrorLift = mirrorConfidence / at.getSupport();
+                if(conf<mirrorConfidence&&mirrorLift>lt)
+                    ruleList.add(new AssociationRule(ct,at, pattern.getSupport(), mirrorConfidence,mirrorLift));
+
                 continue;
             }
             subsets.clear();
