@@ -33,6 +33,7 @@ public class GeneratePattern {
     //algorytm controllers
     public static List<SimplePattern> apriori(double minSup, int len, List<List<String>> baskets)
     {
+        long startTime = System.currentTimeMillis();
         //struktura do zliczania występowania wzorca w zbiorze
         Map<List<String>, Integer> patternCount = new HashMap<>();
         //Kandydaci jedno Elementowi
@@ -76,6 +77,8 @@ public class GeneratePattern {
             result.addAll(p.getValue());
             i++;
         }
+        long endTime = System.currentTimeMillis();
+        System.out.println((double)((endTime - startTime)/1000.f));
         return result;
     }
 

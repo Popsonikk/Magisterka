@@ -309,7 +309,15 @@ public abstract class InterfaceTemplate <T>{
         MenuItem item1=new MenuItem("Zapisz do pliku");
         item1.setOnAction((event)-> {
             try {
-                createCSVFIle();
+                createCSVFIle(data.getData());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        MenuItem item3=new MenuItem("Zapisz filtrowane dane do pliku");
+        item3.setOnAction((event)-> {
+            try {
+                createCSVFIle(data.getFilteredData());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -321,7 +329,7 @@ public abstract class InterfaceTemplate <T>{
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }});
-        menuButton.getItems().addAll(item1,item2);
+        menuButton.getItems().addAll(item1,item2,item3);
     }
     public boolean isHeaderActive()
     {
@@ -330,7 +338,7 @@ public abstract class InterfaceTemplate <T>{
 
 
 
-    protected abstract void createCSVFIle()throws IOException;
+    protected abstract void createCSVFIle(List<T> data)throws IOException;
     protected abstract void createHeader();
     protected abstract void refresh();
     protected abstract void createViewTable(List<T> patterns);

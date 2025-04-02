@@ -1,0 +1,207 @@
+id,support,pattern
+0,0.080,whole milk;other vegetables
+1,0.066,rolls/buns;whole milk
+2,0.059,yogurt;whole milk
+3,0.051,whole milk;root vegetables
+4,0.048,other vegetables;root vegetables
+5,0.048,rolls/buns;other vegetables
+6,0.045,rolls/buns;soda
+7,0.044,whole milk;tropical fruit
+8,0.044,yogurt;other vegetables
+9,0.043,whole milk;soda
+10,0.039,bottled water;whole milk
+11,0.038,yogurt;rolls/buns
+12,0.037,sausage;rolls/buns
+13,0.036,whole milk;pastry
+14,0.035,other vegetables;tropical fruit
+15,0.034,other vegetables;soda
+16,0.034,bottled water;soda
+17,0.033,newspapers;whole milk
+18,0.032,whole milk;citrus fruit
+19,0.032,sausage;whole milk
+20,0.031,whipped/sour cream;whole milk
+21,0.031,whole milk;domestic eggs
+22,0.031,pip fruit;whole milk
+23,0.029,other vegetables;citrus fruit
+24,0.029,rolls/buns;bottled water
+25,0.029,yogurt;soda
+26,0.029,shopping bags;soda
+27,0.029,yogurt;tropical fruit
+28,0.028,sausage;soda
+29,0.028,brown bread;whole milk
+30,0.028,curd;whole milk
+31,0.027,whipped/sour cream;other vegetables
+32,0.027,shopping bags;whole milk
+33,0.027,sausage;other vegetables
+34,0.027,butter;whole milk
+35,0.026,rolls/buns;tropical fruit
+36,0.026,fruit/vegetable juice;whole milk
+37,0.026,margarine;whole milk
+38,0.026,rolls/buns;root vegetables
+39,0.026,pip fruit;other vegetables
+40,0.026,bottled water;other vegetables
+41,0.026,shopping bags;other vegetables
+42,0.025,yogurt;root vegetables
+43,0.025,yogurt;bottled water
+44,0.024,newspapers;rolls/buns
+45,0.023,pork;other vegetables
+46,0.023,pork;whole milk
+47,0.023,frankfurter;rolls/buns
+48,0.023,rolls/buns;pastry
+49,0.023,yogurt;citrus fruit
+50,0.022,shopping bags;rolls/buns
+51,0.022,whole milk;bottled beer
+52,0.022,other vegetables;pastry
+53,0.022,other vegetables;domestic eggs
+54,0.022,frankfurter;whole milk
+55,0.022,soda;pastry
+56,0.022,soda;tropical fruit
+57,0.021,beef;whole milk
+58,0.021,newspapers;other vegetables
+59,0.021,citrus fruit;tropical fruit
+60,0.021,margarine;other vegetables
+61,0.020,bottled beer;soda
+62,0.020,yogurt;sausage
+63,0.020,beef;other vegetables
+64,0.020,pip fruit;tropical fruit
+65,0.020,root vegetables;tropical fruit
+66,0.019,fruit/vegetable juice;other vegetables
+67,0.019,bottled water;tropical fruit
+68,0.019,brown bread;other vegetables
+69,0.019,frozen vegetables;whole milk
+70,0.019,whole milk;coffee
+71,0.019,yogurt;whipped/sour cream
+72,0.019,napkins;whole milk
+73,0.019,fruit/vegetable juice;soda
+74,0.019,sausage;shopping bags
+75,0.018,rolls/buns;citrus fruit
+76,0.018,bottled water;bottled beer
+77,0.018,soda;root vegetables
+78,0.018,chicken;other vegetables
+79,0.018,butter;other vegetables
+80,0.017,chicken;whole milk
+81,0.017,beef;root vegetables
+82,0.017,other vegetables;bottled beer
+83,0.017,yogurt;fruit/vegetable juice
+84,0.017,frankfurter;other vegetables
+85,0.017,canned beer;soda
+86,0.017,yogurt;curd
+87,0.017,yogurt;newspapers
+88,0.017,yogurt;pip fruit
+89,0.017,white bread;whole milk
+90,0.017,rolls/buns;domestic eggs
+91,0.017,curd;other vegetables
+92,0.017,citrus fruit;root vegetables
+93,0.017,newspapers;soda
+94,0.016,cream cheese;whole milk
+95,0.016,yogurt;pastry
+96,0.016,margarine;rolls/buns
+97,0.016,frozen vegetables;other vegetables
+98,0.016,whipped/sour cream;root vegetables
+99,0.016,fruit/vegetable juice;rolls/buns
+100,0.016,bottled water;root vegetables
+101,0.016,yogurt;shopping bags
+102,0.016,rolls/buns;bottled beer
+103,0.015,chocolate;whole milk
+104,0.015,bottled water;citrus fruit
+105,0.015,sugar;whole milk
+106,0.015,rolls/buns;whipped/sour cream
+107,0.015,fruit/vegetable juice;bottled water
+108,0.015,hamburger meat;whole milk
+109,0.015,rolls/buns;pip fruit
+110,0.015,sausage;root vegetables
+111,0.015,yogurt;brown bread
+112,0.014,shopping bags;canned beer
+113,0.014,pip fruit;root vegetables
+114,0.014,beef;rolls/buns
+115,0.014,shopping bags;tropical fruit
+116,0.014,hamburger meat;other vegetables
+117,0.014,rolls/buns;brown bread
+118,0.014,yogurt;margarine
+119,0.014,whole milk;dessert
+120,0.014,pip fruit;citrus fruit
+121,0.014,chocolate;soda
+122,0.014,pork;root vegetables
+123,0.014,newspapers;bottled water
+124,0.014,rolls/buns;butter
+125,0.014,white bread;other vegetables
+126,0.014,cream cheese;other vegetables
+127,0.014,rolls/buns;canned beer
+128,0.013,pip fruit;soda
+129,0.013,pork;soda
+130,0.013,onions;other vegetables
+131,0.013,shopping bags;root vegetables
+132,0.013,root vegetables;domestic eggs
+133,0.013,sausage;pastry
+134,0.013,napkins;other vegetables
+135,0.013,yogurt;butter
+136,0.013,sausage;tropical fruit
+137,0.013,rolls/buns;coffee
+138,0.013,sausage;bottled water
+139,0.013,newspapers;tropical fruit
+140,0.013,fruit/vegetable juice;tropical fruit
+141,0.013,yogurt;domestic eggs
+142,0.013,waffles;whole milk
+143,0.013,brown bread;soda
+144,0.012,shopping bags;pastry
+145,0.012,whipped/sour cream;tropical fruit
+146,0.012,soda;citrus fruit
+147,0.012,shopping bags;bottled water
+148,0.012,yogurt;cream cheese
+149,0.012,long life bakery product;whole milk
+150,0.012,pastry;tropical fruit
+151,0.012,other vegetables;coffee
+152,0.012,rolls/buns;pork
+153,0.012,hygiene articles;whole milk
+154,0.012,rolls/buns;chocolate
+155,0.012,napkins;soda
+156,0.012,napkins;rolls/buns
+157,0.012,frankfurter;soda
+158,0.012,soda;domestic eggs
+159,0.012,newspapers;root vegetables
+160,0.012,onions;whole milk
+161,0.011,rolls/buns;cream cheese
+162,0.011,sausage;frankfurter
+163,0.011,butter milk;whole milk
+164,0.011,berries;whole milk
+165,0.011,chocolate;other vegetables
+166,0.011,yogurt;berries
+167,0.011,yogurt;frankfurter
+168,0.011,shopping bags;fruit/vegetable juice
+169,0.011,sausage;brown bread
+170,0.011,yogurt;frozen vegetables
+171,0.011,yogurt;napkins
+172,0.011,shopping bags;coffee
+173,0.011,curd;root vegetables
+174,0.011,butter;root vegetables
+175,0.011,ham;whole milk
+176,0.011,sausage;citrus fruit
+177,0.011,margarine;root vegetables
+178,0.011,yogurt;beef
+179,0.011,oil;whole milk
+180,0.011,shopping bags;citrus fruit
+181,0.011,pip fruit;bottled water
+182,0.011,brown bread;tropical fruit
+183,0.011,whipped/sour cream;soda
+184,0.011,curd;rolls/buns
+185,0.011,whole milk;meat
+186,0.011,frozen vegetables;rolls/buns
+187,0.011,other vegetables;meat
+188,0.011,margarine;bottled water
+189,0.010,salty snack;whole milk
+190,0.010,brown bread;root vegetables
+191,0.010,curd;whipped/sour cream
+192,0.010,salty snack;other vegetables
+193,0.010,curd;tropical fruit
+194,0.010,pastry;root vegetables
+195,0.010,whole milk;canned beer
+196,0.010,long life bakery product;other vegetables
+197,0.010,other vegetables;dessert
+198,0.010,bottled beer;root vegetables
+199,0.010,soda;dessert
+200,0.010,domestic eggs;tropical fruit
+201,0.010,other vegetables;canned beer
+202,0.010,frozen vegetables;root vegetables
+203,0.010,frankfurter;root vegetables
+204,0.010,brown bread;pastry
+205,0.010,soda;coffee

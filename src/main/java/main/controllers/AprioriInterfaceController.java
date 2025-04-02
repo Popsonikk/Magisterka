@@ -10,6 +10,7 @@ import javafx.stage.FileChooser;
 import main.functions.GeneratePattern;
 import main.objects.FiltrType;
 import main.functions.InterfaceTemplate;
+import main.objects.InterfaceData;
 import main.objects.SimplePattern;
 
 import java.io.*;
@@ -93,8 +94,8 @@ public class AprioriInterfaceController extends InterfaceTemplate<SimplePattern>
             createAlert(2,"Nastąpił błąd przy wyborze pliku");
         }
     }
-    public void createCSVFIle() throws IOException {
-        if (data.getDataSize() == 0) {
+    public void createCSVFIle(List<SimplePattern> data) throws IOException {
+        if (data.size() == 0) {
             createAlert(2, "Brak danych do zapisania");
             return;
         }
@@ -112,7 +113,7 @@ public class AprioriInterfaceController extends InterfaceTemplate<SimplePattern>
         writer.write("id,support,pattern\n");
         int i = 0;
         //ręczny zapis do pliku w formie CSV
-        for (SimplePattern pattern : data.getData()) {
+        for (SimplePattern pattern : data) {
             writer.write(i + "," + String.format(Locale.US, "%.3f", pattern.getSupport()) + ",");
             List<String> patterns = pattern.getPattern();
             for (int j = 0; j < patterns.size() - 1; j++)

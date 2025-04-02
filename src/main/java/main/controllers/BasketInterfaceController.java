@@ -7,6 +7,7 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
 import main.objects.FiltrType;
 import main.functions.InterfaceTemplate;
+import main.objects.InterfaceData;
 
 import java.io.*;
 import java.net.URL;
@@ -137,9 +138,10 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
     }
 
     @Override
-    protected void createCSVFIle() throws IOException {
+    protected void createCSVFIle(List<List<String>> data) throws IOException {
 
     }
+
 
     @Override
     //funkcja tworząca nagłówek tablicy

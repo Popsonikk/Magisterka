@@ -12,6 +12,7 @@ import main.functions.GeneratePattern;
 import main.objects.AssociationRule;
 import main.objects.FiltrType;
 import main.functions.InterfaceTemplate;
+import main.objects.InterfaceData;
 import main.objects.SimplePattern;
 
 import java.io.*;
@@ -200,9 +201,11 @@ public class RuleInterfaceController extends InterfaceTemplate<AssociationRule> 
         menuButton.getItems().addAll(p,pl,su,sd,cu,cd,lu,ld);
     }
 
+
+
     @Override
-    protected void createCSVFIle() throws IOException {
-        if (data.getDataSize() == 0) {
+    protected void createCSVFIle(List<AssociationRule> data) throws IOException {
+        if (data.size()== 0) {
             createAlert(2, "Brak danych do zapisania");
             return;
         }
@@ -219,7 +222,7 @@ public class RuleInterfaceController extends InterfaceTemplate<AssociationRule> 
         writer.write("id,left_pattern,left_support,right_pattern,right_support,support,confidence,lift\n");
         int i=0;
         //ręczny zapis do pliku w formie CSV
-        for(AssociationRule rule:data.getData())
+        for(AssociationRule rule:data)
         {
             writer.write(i+",");
             List<String> left_pattern = rule.getAntecedent().getPattern();
