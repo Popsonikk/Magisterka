@@ -13,7 +13,7 @@ import java.io.*;
 import java.net.URL;
 import java.util.*;
 
-public class BasketInterfaceController extends InterfaceTemplate<List<String>> implements Initializable {
+public class BasketInterfaceController extends InterfaceTemplate<Set<String>> implements Initializable {
 
     @Override
     //funkcja inicjalizująca interfejs
@@ -25,15 +25,15 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
         optionsButton.getItems().add(item3);
     }
     @Override
-    protected void createViewTable(List<List<String>> baskets)
+    protected void createViewTable(List<Set<String>> baskets)
     {
         int size=baskets.size();
         int range=Math.min(size,(startId+boxSize));
         for(int i=startId;i<range;i++)
         {
-            List<String> basket=baskets.get(i);
+            Set<String> basket=baskets.get(i);
             //generowanie pojedynczego wiersza
-            HBox box=createBox(createTextList(basket));
+            HBox box=createBox(createTextList(basket.stream().toList()));
             contentVBox.getChildren().add(box);
         }
         //aktualizacja informacji o widocznej części tablicy
@@ -80,7 +80,7 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
             while (line != null) {
                 //formatowanie danych w celu uniknięcia tworzenia przez list.of
                 String[] b = line.split(",")[1].split(";");
-                List<String> list = new ArrayList<>();
+                Set<String> list = new HashSet<>();
                 for (String s : b)
                     list.add(s.trim().toLowerCase());
                 data.getData().add(list);
@@ -138,7 +138,7 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
     }
 
     @Override
-    protected void createCSVFIle(List<List<String>> data) throws IOException {
+    protected void createCSVFIle(List<Set<String>> data) throws IOException {
 
     }
 
@@ -153,7 +153,7 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
         header.getStyleClass().add("basketHeader");
         Text text=new Text("Koszyk");
         text.getStyleClass().add("basketHeaderText");
-        Button button=createSortButton(Comparator.comparingInt(List::size),(o1, o2) -> Integer.compare(o2.size(), o1.size()));
+        Button button=createSortButton(Comparator.comparingInt(Set::size),(o1, o2) -> Integer.compare(o2.size(), o1.size()));
         header.getChildren().addAll(text,button);
     }
 
@@ -172,7 +172,7 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
         }
         for (int i = checkBoxes.size() - 1; i >= 0; i--) {
             if (checkBoxes.get(i).isSelected()) {
-                List<String> list=new ArrayList<>(data.getFilteredData().get(i));
+                Set<String> list=new HashSet<>(data.getFilteredData().get(i));
                 data.getData().remove(list);
                 data.getFilteredData().remove(list);
                 list.removeAll(data.getFiltrInfo().getPatternFiltrValue());
@@ -188,13 +188,13 @@ public class BasketInterfaceController extends InterfaceTemplate<List<String>> i
     }
 
     private void filtrPatternItems(List<String> selectedItems){
-        for (List<String> b : data.getData()) {
+        for (Set<String> b : data.getData()) {
             if (new HashSet<>(b).containsAll(selectedItems))
                 data.getFilteredData().add(b);
         }
     }
     private void filtrPatternLength(double val){
-        for (List<String> b : data.getData()) {
+        for (Set<String> b : data.getData()) {
             if (b.size()==val)
                 data.getFilteredData().add(b);
         }
