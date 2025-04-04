@@ -30,6 +30,21 @@ public class GeneratePattern {
         patterns.addAll(generateCandidates(candidates, index + 1, size, currCandidate));
         return patterns;
     }
+    public static Set<List<String>> improvedCandidates(Set<String> uniqueItems,List<List<String>> currCandidates) {
+        Set<List<String>> candidates = new HashSet<>();
+        for (List<String> pattern : currCandidates) {
+            for (String item : uniqueItems) {
+                if (!pattern.contains(item)) {
+                    List<String> newPattern = new ArrayList<>(pattern);
+                    newPattern.add(item);
+                    Collections.sort(newPattern);
+                    candidates.add(newPattern);
+                }
+            }
+        }
+        return candidates;
+    }
+
     //algorytm controllers
     public static List<SimplePattern> apriori(double minSup, int len, List<Set<String>> baskets)
     {
@@ -52,14 +67,10 @@ public class GeneratePattern {
         }
         //Częste wzorce jednoelementowe
 
-
-
         Pair<List<List<String>>,List<SimplePattern>> p=filterItemSets(patternCount, size,minSup);
-
 
         List<List<String>>  currentPatterns = p.getKey();
         List<SimplePattern> result = new ArrayList<>(p.getValue());
-        System.out.println("Koniec koszyków jednoelemtowych "+(System.currentTimeMillis()-startTime));
         int i=2;
         // krok rekurencyjny
         while (!currentPatterns.isEmpty()&&i<=len)
@@ -68,10 +79,10 @@ public class GeneratePattern {
             Set<String> uniqueItems = currentPatterns.stream().flatMap(List::stream).collect(Collectors.toSet());
             baskets=cleanBase(baskets,i);
             // Generowanie k-wzorców częstych
-            System.out.println("generowanie wzorców "+i+" elementowych "+(System.currentTimeMillis()-startTime));
-            List<List<String>> candidates = GeneratePattern.generateCandidates(new ArrayList<>(uniqueItems),0,i,new ArrayList<>());
+            System.out.println("generowanie wzorców "+i+" elementowych czas "+(System.currentTimeMillis()-startTime));
+            //List<List<String>> candidates = GeneratePattern.generateCandidates(new ArrayList<>(uniqueItems),0,i,new ArrayList<>());
+            Set<List<String>> candidates =GeneratePattern.improvedCandidates(uniqueItems,currentPatterns);
             //wyczyszczenie mapy zliczającej wystąpienia k-wzorców
-            System.out.println("koniec generowanie wzorców "+i+" elementowych "+(System.currentTimeMillis()-startTime));
             System.out.println("liczba kandydatów: "+candidates.size() + " Liczba koszyków "+baskets.size()+" Liczba" +
                     " przedmiotów "+ uniqueItems.size());
             patternCount.clear();
@@ -80,8 +91,10 @@ public class GeneratePattern {
             for (Set<String> basket : baskets) {
 
                 a++;
-                if(a%500==0)
-                    System.out.println("koszyk "+a);
+                if(a%100==0)
+                    System.out.print("koszyk: "+a+" ");
+                if(a%1000==0)
+                    System.out.println();
                 //Struktura set zapobiega duplikatom w danych
                 for (List<String> candidate : candidates)
                 {
@@ -93,10 +106,9 @@ public class GeneratePattern {
 
                 }
             }
-            System.out.println("koniec zliczanie wsparcia wzorców "+i+" elementowych "+(System.currentTimeMillis()-startTime));
+            System.out.println("koniec zliczanie wsparcia wzorców "+i+" elementowych czas "+(System.currentTimeMillis()-startTime));
             //wyfiltrowanie wzorców po wymaganym wsparciu
             p=filterItemSets(patternCount, size,minSup);
-            System.out.println("koniec filtrowanie wsparcia wzorców "+i+" elementowych "+(System.currentTimeMillis()-startTime));
             currentPatterns = p.getKey();
             result.addAll(p.getValue());
             i++;
@@ -122,12 +134,6 @@ public class GeneratePattern {
                 //dodanie wyniku do listy wzorców
                 res.add(new SimplePattern(entry.getKey(),supp));
                 if(supp>= minSupport*1.5)
-                    patterns.add(entry.getKey());
-                else if(supp>= minSupport*2&&minSupport>=0.005)
-                    patterns.add(entry.getKey());
-                else if(supp>= minSupport*3&&minSupport>=0.001)
-                    patterns.add(entry.getKey());
-                else if(supp>= minSupport*4)
                     patterns.add(entry.getKey());
             }
 
