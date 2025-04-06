@@ -1,0 +1,2001 @@
+id,basket
+1,frozen vegetables;chocolate;ice cream;domestic eggs;softener;yogurt;detergent;rolls/buns;shopping bags
+2,frozen vegetables;fruit/vegetable juice;magazines;white bread;long life bakery product;meat spreads;frozen meals
+3,newspapers;pastry;other vegetables;softener;frozen fish;waffles;organic products;instant food
+4,chicken;chewing gum;tropical fruit;pip fruit;rolls/buns;pork;bottled beer;waffles
+5,sugar;chocolate;chewing gum;ice cream;fruit/vegetable juice;candy
+6,cream cheese;fruit/vegetable juice;tropical fruit;instant food;sugar;detergent;pastry
+7,meat spreads;cream cheese;pet care;pork;long life bakery product;pip fruit;rolls/buns;instant food;tropical fruit
+8,liquor;instant food;frozen dessert;frozen vegetables;chewing gum;sugar;soda
+9,organic products;frozen fish;liquor;cream cheese;rolls/buns;sugar;chocolate;detergent;citrus fruit
+10,white bread;beef;long life bakery product;domestic eggs;sausage;meat spreads;pet care
+11,frozen vegetables;tropical fruit;white bread;pork;organic products;ice cream;tea;sugar
+12,yogurt;beef;pip fruit;curd;rolls/buns;ready soups
+13,bottled water;sausage;frozen vegetables;chicken;magazines;waffles;pork;citrus fruit;coffee;bottled beer
+14,beef;shopping bags;ice cream;chicken;yogurt;organic products;bottled water;magazines
+15,sausage;chewing gum;margarine;semi-finished bread;tea;pastry;instant food
+16,organic products;chicken;domestic eggs;frozen meals;softener;sugar;cream cheese;baby food
+17,liquor;shopping bags;whole milk;pet care;candy;chewing gum;long life bakery product;newspapers
+18,baby food;organic products;frozen dessert;curd;sausage;beef;coffee;fruit/vegetable juice
+19,pastry;whole milk;chocolate;sausage;coffee;magazines;meat spreads;butter
+20,bottled water;bottled beer;waffles;rolls/buns;pip fruit;instant food;liquor
+21,liquor;soda;semi-finished bread;magazines;organic products;pet care;newspapers;tropical fruit
+22,frozen fish;sausage;brown bread;whole milk;candy;chocolate
+23,pip fruit;tea;softener;chicken;cream cheese;detergent;margarine
+24,newspapers;liquor;bottled water;bottled beer;baby food;semi-finished bread;frozen fish
+25,bottled water;domestic eggs;soda;bottled beer;frozen meals;margarine;pork;waffles;butter
+26,liquor;semi-finished bread;white bread;ice cream;sausage;sugar;chewing gum;pip fruit
+27,root vegetables;citrus fruit;coffee;tropical fruit;magazines;brown bread;sugar
+28,softener;frozen meals;domestic eggs;fruit/vegetable juice;bottled beer;sugar;magazines;margarine;semi-finished bread
+29,baby food;chewing gum;chocolate;frozen vegetables;frozen meals;instant food;semi-finished bread;chicken
+30,meat spreads;rolls/buns;long life bakery product;instant food;frozen dessert;coffee;ready soups;bottled beer;soda
+31,pet care;cream cheese;shopping bags;liquor;tea;yogurt;instant food;semi-finished bread
+32,semi-finished bread;soda;sausage;meat spreads;white bread;cream cheese;beef
+33,sugar;domestic eggs;baby food;pastry;frozen fish;instant food;long life bakery product
+34,curd;newspapers;butter;instant food;whole milk;frozen dessert;coffee
+35,long life bakery product;ice cream;bottled beer;softener;citrus fruit;shopping bags;domestic eggs;detergent
+36,coffee;liquor;bottled beer;brown bread;pip fruit;frozen fish;chicken;frozen dessert
+37,instant food;detergent;magazines;tropical fruit;meat spreads;yogurt;whole milk;candy;waffles;fruit/vegetable juice
+38,liquor;ready soups;candy;citrus fruit;sausage;frozen fish
+39,tea;instant food;beef;margarine;whole milk;organic products;yogurt
+40,instant food;soda;waffles;pork;frozen fish;semi-finished bread;pet care
+41,chocolate;pastry;other vegetables;sugar;fruit/vegetable juice;sausage;ice cream;shopping bags
+42,other vegetables;waffles;semi-finished bread;sausage;ice cream;pastry;candy
+43,sausage;coffee;root vegetables;fruit/vegetable juice;frozen vegetables;curd;chicken;candy
+44,organic products;coffee;margarine;cream cheese;rolls/buns;ready soups;instant food
+45,meat spreads;chocolate;shopping bags;sugar;whole milk;other vegetables
+46,curd;citrus fruit;softener;butter;yogurt;margarine;soda
+47,domestic eggs;frozen meals;whole milk;bottled water;softener;pet care;baby food;margarine
+48,beef;yogurt;white bread;curd;chocolate;organic products;instant food;whole milk;root vegetables
+49,instant food;semi-finished bread;frozen meals;chicken;whole milk;ready soups
+50,soda;softener;detergent;shopping bags;frozen fish;pastry;baby food;white bread;pip fruit
+51,chicken;pet care;butter;frozen vegetables;coffee;pastry;bottled water
+52,citrus fruit;rolls/buns;cream cheese;frozen vegetables;ready soups;root vegetables;pork;long life bakery product
+53,organic products;frozen meals;curd;shopping bags;butter;citrus fruit;baby food
+54,coffee;root vegetables;frozen dessert;sugar;semi-finished bread;domestic eggs;bottled water;butter;sausage
+55,frozen meals;liquor;curd;soda;organic products;rolls/buns;ready soups
+56,organic products;sausage;detergent;frozen vegetables;pet care;baby food;bottled water
+57,other vegetables;long life bakery product;frozen vegetables;magazines;beef;tea;organic products
+58,tea;sausage;pet care;ready soups;liquor;candy;curd;organic products;rolls/buns
+59,ice cream;organic products;detergent;meat spreads;pastry;frozen vegetables;sugar;brown bread;rolls/buns
+60,white bread;sugar;frozen fish;bottled water;other vegetables;tea;long life bakery product;liquor
+61,sugar;organic products;cream cheese;fruit/vegetable juice;ready soups;detergent;frozen fish;pet care
+62,frozen meals;magazines;margarine;sausage;shopping bags;tea
+63,yogurt;coffee;pastry;softener;butter;curd;pet care;meat spreads;frozen fish
+64,shopping bags;chocolate;meat spreads;domestic eggs;frozen dessert;citrus fruit
+65,margarine;instant food;chicken;frozen meals;soda;coffee;organic products
+66,citrus fruit;root vegetables;newspapers;other vegetables;magazines;shopping bags;ice cream
+67,pork;ice cream;whole milk;chewing gum;pet care;pastry;tropical fruit;fruit/vegetable juice
+68,white bread;tropical fruit;newspapers;domestic eggs;detergent;long life bakery product;chocolate;pip fruit;liquor
+69,instant food;pastry;beef;softener;citrus fruit;whole milk
+70,pet care;cream cheese;fruit/vegetable juice;waffles;frozen meals;frozen fish;margarine;ice cream;citrus fruit
+71,domestic eggs;rolls/buns;sausage;sugar;cream cheese;whole milk;ice cream
+72,ice cream;domestic eggs;organic products;frozen vegetables;frozen meals;citrus fruit;meat spreads;softener
+73,sugar;tea;long life bakery product;chicken;domestic eggs;waffles;frozen fish;butter;frozen meals
+74,tropical fruit;curd;citrus fruit;long life bakery product;pork;pet care
+75,bottled water;organic products;cream cheese;liquor;fruit/vegetable juice;tropical fruit;shopping bags;pip fruit
+76,ice cream;bottled beer;whole milk;frozen fish;semi-finished bread
+77,fruit/vegetable juice;margarine;bottled water;sausage;sugar;frozen meals;bottled beer
+78,frozen vegetables;ready soups;citrus fruit;ice cream;liquor;chewing gum;candy;long life bakery product
+79,coffee;beef;frozen dessert;long life bakery product;tropical fruit;pet care
+80,sugar;ready soups;root vegetables;chicken;waffles;bottled water;frozen dessert;magazines
+81,pip fruit;citrus fruit;ready soups;tropical fruit;ice cream;newspapers;beef
+82,pet care;frozen meals;whole milk;frozen dessert;soda;bottled beer;curd;domestic eggs
+83,ready soups;magazines;meat spreads;pastry;candy;softener;liquor;root vegetables
+84,candy;instant food;pet care;beef;meat spreads;chicken;frozen fish
+85,bottled beer;ice cream;tea;chicken;bottled water;soda;yogurt;organic products
+86,domestic eggs;sausage;softener;magazines;margarine;yogurt
+87,cream cheese;coffee;chicken;pork;other vegetables;candy;beef;margarine
+88,whole milk;pip fruit;white bread;bottled beer;margarine;pet care;ready soups;instant food
+89,organic products;pork;frozen meals;sausage;liquor;baby food;meat spreads;newspapers;frozen dessert
+90,chewing gum;ice cream;other vegetables;citrus fruit;cream cheese;softener;liquor
+91,baby food;frozen meals;pip fruit;sausage;waffles;citrus fruit
+92,semi-finished bread;coffee;ice cream;chocolate;shopping bags;liquor
+93,citrus fruit;sausage;bottled beer;meat spreads;soda;magazines;frozen vegetables;liquor
+94,root vegetables;bottled water;white bread;magazines;pip fruit;coffee
+95,organic products;liquor;ice cream;soda;softener;semi-finished bread;white bread;candy
+96,sausage;root vegetables;domestic eggs;chocolate;frozen meals;butter
+97,butter;candy;liquor;curd;organic products;pet care;frozen fish;detergent
+98,pip fruit;yogurt;frozen dessert;instant food;pastry;frozen meals;long life bakery product;root vegetables
+99,tropical fruit;bottled water;organic products;long life bakery product;butter;semi-finished bread;brown bread;root vegetables
+100,tropical fruit;ice cream;candy;beef;domestic eggs;frozen vegetables;frozen fish;tea
+101,frozen vegetables;tea;pastry;detergent;baby food;pip fruit;beef;bottled beer
+102,white bread;sugar;yogurt;fruit/vegetable juice;pastry;softener
+103,bottled beer;organic products;pork;white bread;rolls/buns;frozen meals;instant food;yogurt
+104,sugar;beef;frozen fish;detergent;bottled beer;organic products;whole milk;long life bakery product
+105,chewing gum;white bread;curd;butter;tea;ice cream;bottled water
+106,frozen dessert;frozen meals;coffee;chewing gum;ready soups;chocolate;sausage
+107,pet care;white bread;bottled beer;tropical fruit;frozen meals;long life bakery product;waffles;candy
+108,magazines;newspapers;waffles;pip fruit;brown bread;sausage
+109,detergent;tropical fruit;domestic eggs;sausage;soda;pastry;citrus fruit
+110,softener;beef;frozen fish;root vegetables;long life bakery product;liquor;candy;organic products
+111,tea;beef;softener;chocolate;curd;brown bread;coffee;butter
+112,waffles;newspapers;pork;magazines;beef;frozen vegetables;baby food;sugar
+113,pip fruit;curd;chicken;semi-finished bread;beef;ice cream;pastry
+114,whole milk;meat spreads;root vegetables;bottled water;magazines;white bread;domestic eggs;butter
+115,chewing gum;root vegetables;yogurt;pip fruit;frozen fish;butter;meat spreads
+116,softener;frozen vegetables;pork;frozen meals;instant food;waffles;root vegetables;ice cream
+117,domestic eggs;coffee;other vegetables;long life bakery product;whole milk;candy;softener
+118,magazines;sausage;meat spreads;whole milk;pip fruit;ready soups;curd;fruit/vegetable juice;butter;ice cream
+119,magazines;softener;waffles;frozen dessert;chicken;whole milk;brown bread;fruit/vegetable juice
+120,instant food;frozen vegetables;detergent;frozen fish;tropical fruit;whole milk;sausage
+121,newspapers;chewing gum;white bread;domestic eggs;margarine;organic products
+122,other vegetables;waffles;tea;semi-finished bread;bottled beer;ice cream;frozen fish;detergent
+123,whole milk;rolls/buns;curd;soda;chocolate;pastry;detergent;pet care
+124,instant food;pastry;chewing gum;root vegetables;softener;meat spreads;chocolate
+125,pip fruit;citrus fruit;fruit/vegetable juice;other vegetables;frozen meals;chicken;liquor
+126,bottled water;beef;chicken;frozen dessert;butter;brown bread;pet care;soda;candy
+127,instant food;long life bakery product;cream cheese;shopping bags;sausage;white bread;magazines;rolls/buns;tea
+128,sausage;semi-finished bread;baby food;other vegetables;instant food;whole milk
+129,chewing gum;semi-finished bread;softener;baby food;frozen vegetables;margarine;butter
+130,fruit/vegetable juice;tea;softener;waffles;newspapers;frozen fish;candy
+131,softener;domestic eggs;waffles;organic products;other vegetables;pastry;citrus fruit
+132,frozen vegetables;brown bread;whole milk;butter;candy;fruit/vegetable juice;pastry;liquor;white bread;margarine
+133,newspapers;tea;ready soups;cream cheese;semi-finished bread;sugar;bottled water;white bread
+134,pet care;detergent;liquor;ice cream;white bread;pastry;rolls/buns;soda
+135,pastry;frozen meals;frozen vegetables;ice cream;shopping bags;chicken;sugar;detergent
+136,rolls/buns;root vegetables;coffee;sugar;long life bakery product;butter;chocolate
+137,ready soups;cream cheese;brown bread;chocolate;frozen vegetables;other vegetables;domestic eggs;white bread;liquor
+138,pip fruit;frozen vegetables;semi-finished bread;curd;waffles;bottled water;sugar
+139,meat spreads;long life bakery product;tea;beef;rolls/buns;yogurt;domestic eggs;candy
+140,margarine;chicken;soda;pet care;fruit/vegetable juice;long life bakery product
+141,frozen vegetables;fruit/vegetable juice;meat spreads;coffee;softener;yogurt
+142,baby food;beef;curd;margarine;coffee;pip fruit;sugar;citrus fruit
+143,shopping bags;detergent;butter;organic products;ice cream;tropical fruit;chocolate;frozen vegetables;soda
+144,bottled beer;domestic eggs;pip fruit;liquor;whole milk;detergent;yogurt;baby food
+145,shopping bags;frozen fish;frozen meals;margarine;instant food;candy;pet care
+146,pet care;liquor;pip fruit;semi-finished bread;other vegetables;meat spreads;soda;baby food
+147,frozen meals;domestic eggs;waffles;ready soups;coffee
+148,rolls/buns;citrus fruit;margarine;coffee;detergent;sugar;meat spreads;waffles
+149,sausage;ready soups;citrus fruit;chocolate;bottled beer;waffles
+150,margarine;magazines;tea;ready soups;bottled beer;shopping bags;coffee;butter
+151,shopping bags;ready soups;margarine;semi-finished bread;softener;frozen dessert;detergent;frozen meals
+152,organic products;soda;chewing gum;chicken;magazines;sugar;yogurt
+153,pork;citrus fruit;root vegetables;cream cheese;frozen meals;whole milk;chocolate;tropical fruit
+154,whole milk;baby food;citrus fruit;long life bakery product;butter;tea
+155,pip fruit;long life bakery product;domestic eggs;sugar;yogurt;softener;detergent;margarine
+156,coffee;chocolate;softener;detergent;tea
+157,ice cream;sugar;frozen fish;tea;soda;brown bread;frozen vegetables;beef;instant food
+158,butter;baby food;tea;cream cheese;long life bakery product;pet care;pork;coffee;frozen vegetables
+159,chicken;sugar;ready soups;softener;beef;margarine;sausage;newspapers
+160,frozen fish;shopping bags;newspapers;yogurt;semi-finished bread;margarine;chocolate;meat spreads
+161,rolls/buns;newspapers;frozen vegetables;tea;baby food;sugar;liquor
+162,magazines;organic products;other vegetables;curd;liquor;beef;softener;shopping bags
+163,pip fruit;candy;pork;liquor;domestic eggs
+164,cream cheese;tea;chocolate;detergent;other vegetables;soda;margarine;meat spreads
+165,chewing gum;organic products;semi-finished bread;pet care;liquor;citrus fruit;pork
+166,chewing gum;shopping bags;frozen vegetables;bottled water;candy;white bread
+167,butter;curd;chewing gum;coffee;sugar;liquor;detergent
+168,detergent;beef;softener;candy;bottled water;soda;yogurt;coffee;whole milk
+169,frozen fish;liquor;pip fruit;chocolate;baby food;cream cheese;beef
+170,bottled water;coffee;waffles;pork;frozen dessert;margarine;long life bakery product;soda
+171,domestic eggs;organic products;frozen dessert;soda;liquor;pip fruit
+172,pet care;long life bakery product;domestic eggs;tea;magazines;ice cream
+173,semi-finished bread;tropical fruit;other vegetables;frozen fish;instant food;coffee;softener;pet care
+174,long life bakery product;soda;cream cheese;coffee;sausage;chocolate;butter;beef;pastry;frozen fish
+175,detergent;other vegetables;whole milk;pork;margarine;pip fruit;coffee;frozen fish
+176,pastry;whole milk;bottled beer;rolls/buns;curd;organic products;coffee
+177,frozen vegetables;chewing gum;rolls/buns;frozen fish;bottled beer;frozen meals;frozen dessert;curd
+178,beef;liquor;frozen fish;frozen meals;meat spreads;whole milk;coffee
+179,pet care;frozen dessert;soda;liquor;sausage;ice cream;beef
+180,whole milk;organic products;detergent;frozen vegetables;coffee;chicken;frozen fish;pet care;citrus fruit
+181,waffles;detergent;brown bread;curd;semi-finished bread;softener;whole milk;bottled beer
+182,ice cream;baby food;whole milk;citrus fruit;ready soups;meat spreads;instant food;frozen meals
+183,other vegetables;beef;ready soups;domestic eggs;frozen meals;pork;long life bakery product
+184,curd;pastry;coffee;sausage;beef;newspapers;ice cream
+185,shopping bags;newspapers;semi-finished bread;domestic eggs;butter;coffee;whole milk
+186,newspapers;pip fruit;butter;rolls/buns;detergent;pork;ready soups;yogurt
+187,frozen dessert;semi-finished bread;fruit/vegetable juice;bottled beer;newspapers;bottled water;margarine;baby food
+188,shopping bags;meat spreads;frozen vegetables;chocolate;organic products;citrus fruit;butter;domestic eggs
+189,chewing gum;liquor;brown bread;bottled beer;fruit/vegetable juice;cream cheese;pastry
+190,citrus fruit;cream cheese;semi-finished bread;waffles;soda;meat spreads;newspapers;chicken
+191,shopping bags;margarine;liquor;butter;whole milk;frozen vegetables
+192,cream cheese;chewing gum;chocolate;frozen fish;coffee;rolls/buns;butter;brown bread
+193,curd;beef;semi-finished bread;long life bakery product;baby food;cream cheese;waffles
+194,margarine;shopping bags;citrus fruit;pet care;candy;domestic eggs;pip fruit;meat spreads
+195,shopping bags;meat spreads;cream cheese;semi-finished bread;chocolate;frozen fish;magazines;sugar;candy
+196,rolls/buns;chicken;instant food;semi-finished bread;tea;softener;margarine;brown bread;coffee
+197,newspapers;chocolate;bottled beer;frozen dessert;whole milk;candy;beef
+198,fruit/vegetable juice;detergent;meat spreads;bottled beer;liquor;ice cream
+199,pastry;tea;chicken;chocolate;instant food;newspapers;brown bread
+200,brown bread;instant food;domestic eggs;beef;candy;pip fruit;waffles
+201,citrus fruit;frozen vegetables;chewing gum;sausage;domestic eggs;candy;tea;pastry
+202,magazines;chicken;newspapers;pet care;tropical fruit;detergent;other vegetables
+203,curd;ice cream;frozen dessert;pip fruit;long life bakery product;pork;white bread
+204,root vegetables;chewing gum;tropical fruit;curd;citrus fruit;newspapers;chicken
+205,instant food;frozen meals;sugar;yogurt;coffee;butter;domestic eggs;bottled water;beef;root vegetables
+206,pip fruit;chocolate;bottled water;candy;beef;chicken;sugar
+207,newspapers;ready soups;ice cream;pip fruit;pork;margarine;chocolate;frozen meals
+208,long life bakery product;frozen vegetables;chocolate;rolls/buns;waffles;chewing gum;bottled water;butter
+209,pip fruit;shopping bags;long life bakery product;chicken;bottled beer;frozen vegetables;pet care;yogurt;ready soups
+210,domestic eggs;bottled water;ready soups;soda;detergent;yogurt
+211,liquor;other vegetables;meat spreads;curd;organic products;sugar;cream cheese;citrus fruit;pastry
+212,brown bread;liquor;meat spreads;pastry;long life bakery product;domestic eggs;pip fruit;ready soups
+213,tropical fruit;white bread;beef;frozen vegetables;chicken;cream cheese;soda;shopping bags;frozen fish
+214,frozen fish;newspapers;tea;pet care;coffee;beef;ice cream;curd
+215,cream cheese;sugar;brown bread;domestic eggs;whole milk
+216,cream cheese;meat spreads;curd;margarine;frozen meals;baby food;tropical fruit;chocolate
+217,citrus fruit;frozen meals;frozen vegetables;white bread;ice cream;bottled water;coffee;frozen dessert
+218,cream cheese;long life bakery product;magazines;liquor;newspapers;pip fruit;frozen dessert;curd
+219,frozen dessert;rolls/buns;pet care;domestic eggs;margarine;candy;tropical fruit;cream cheese
+220,sugar;frozen vegetables;soda;tropical fruit;citrus fruit;fruit/vegetable juice;yogurt
+221,magazines;chewing gum;newspapers;waffles;candy;coffee;cream cheese;ready soups;pastry
+222,frozen meals;frozen dessert;citrus fruit;semi-finished bread;pip fruit;long life bakery product;baby food
+223,detergent;waffles;soda;pastry;rolls/buns;sugar
+224,waffles;shopping bags;bottled beer;frozen meals;liquor;semi-finished bread;softener;bottled water
+225,domestic eggs;ready soups;pork;frozen vegetables;root vegetables;coffee;whole milk
+226,fruit/vegetable juice;butter;softener;coffee;citrus fruit;margarine;frozen dessert
+227,white bread;tea;curd;shopping bags;chewing gum;organic products
+228,instant food;semi-finished bread;ready soups;ice cream;domestic eggs;frozen dessert;curd
+229,domestic eggs;baby food;ice cream;chewing gum;frozen fish;meat spreads;long life bakery product
+230,beef;semi-finished bread;sausage;citrus fruit;pet care;fruit/vegetable juice
+231,beef;brown bread;soda;frozen vegetables;waffles;semi-finished bread;sausage;frozen fish;yogurt
+232,pork;yogurt;white bread;cream cheese;whole milk;butter
+233,pip fruit;domestic eggs;frozen fish;cream cheese;baby food;detergent;sausage;beef;ready soups
+234,chewing gum;frozen fish;ready soups;instant food;softener;baby food
+235,brown bread;yogurt;magazines;white bread;newspapers;frozen meals;ready soups
+236,whole milk;semi-finished bread;bottled beer;beef;candy;sugar;soda;white bread;tropical fruit
+237,softener;fruit/vegetable juice;frozen meals;frozen vegetables;magazines;tea;domestic eggs
+238,cream cheese;citrus fruit;curd;root vegetables;instant food;semi-finished bread;sausage
+239,softener;candy;ready soups;sausage;pork;sugar;pip fruit;frozen vegetables
+240,frozen fish;waffles;rolls/buns;butter;softener;citrus fruit;newspapers;liquor
+241,citrus fruit;liquor;bottled beer;pastry;organic products;newspapers;fruit/vegetable juice
+242,coffee;baby food;semi-finished bread;pet care;newspapers;waffles;frozen meals;organic products
+243,bottled water;chocolate;cream cheese;instant food;frozen meals;citrus fruit;bottled beer;butter
+244,liquor;magazines;shopping bags;cream cheese;instant food;sausage;chocolate
+245,pip fruit;rolls/buns;brown bread;bottled beer;frozen meals;sugar;curd
+246,shopping bags;tropical fruit;sausage;frozen dessert;chicken;sugar;magazines;chocolate;bottled beer
+247,frozen meals;organic products;frozen fish;magazines;sugar;rolls/buns;long life bakery product;pastry
+248,bottled beer;margarine;newspapers;frozen dessert;instant food;chocolate;tropical fruit;chicken;root vegetables
+249,sugar;chocolate;curd;frozen fish;beef;rolls/buns;pip fruit;fruit/vegetable juice
+250,rolls/buns;frozen dessert;butter;sugar;shopping bags;whole milk;white bread;citrus fruit;candy
+251,brown bread;cream cheese;pastry;tropical fruit;chocolate;softener;citrus fruit;bottled beer
+252,frozen fish;citrus fruit;domestic eggs;organic products;fruit/vegetable juice;meat spreads;whole milk;root vegetables;sausage
+253,chicken;beef;long life bakery product;whole milk;soda;coffee;butter
+254,instant food;semi-finished bread;coffee;soda;bottled water;liquor;pip fruit
+255,ice cream;newspapers;ready soups;candy;sugar;beef;waffles
+256,semi-finished bread;organic products;margarine;yogurt;cream cheese;frozen vegetables;pip fruit
+257,root vegetables;curd;ready soups;meat spreads;ice cream;other vegetables;frozen vegetables
+258,softener;frozen dessert;frozen meals;ice cream;semi-finished bread;pork;chicken;bottled water
+259,other vegetables;baby food;tropical fruit;beef;liquor;white bread
+260,fruit/vegetable juice;sugar;tropical fruit;candy;meat spreads;pet care
+261,other vegetables;root vegetables;baby food;frozen dessert;pork;sausage;chocolate;citrus fruit
+262,pet care;white bread;frozen vegetables;cream cheese;instant food;fruit/vegetable juice;magazines
+263,brown bread;fruit/vegetable juice;root vegetables;white bread;yogurt;frozen dessert;pastry;chocolate;instant food;pork
+264,ready soups;frozen meals;coffee;chocolate;other vegetables;white bread;shopping bags;curd
+265,chicken;root vegetables;brown bread;fruit/vegetable juice;liquor;soda;sausage;bottled water;semi-finished bread
+266,chewing gum;yogurt;rolls/buns;soda;instant food;ready soups;root vegetables
+267,citrus fruit;detergent;chewing gum;organic products;semi-finished bread;pastry;meat spreads;rolls/buns
+268,frozen dessert;frozen meals;pastry;ready soups;pip fruit;bottled beer;waffles;margarine;organic products
+269,waffles;meat spreads;instant food;cream cheese;frozen meals;fruit/vegetable juice;semi-finished bread;ice cream;curd
+270,chocolate;pip fruit;ice cream;root vegetables;margarine;white bread;coffee;newspapers
+271,chewing gum;waffles;liquor;chicken;pet care;softener;pork;brown bread;white bread
+272,tea;pastry;frozen fish;whole milk;yogurt;liquor
+273,yogurt;frozen meals;magazines;chewing gum;frozen dessert;detergent;cream cheese;newspapers;meat spreads
+274,tea;beef;citrus fruit;root vegetables;bottled beer;candy;ice cream;pastry
+275,pip fruit;long life bakery product;rolls/buns;white bread;curd;tropical fruit;softener;root vegetables;bottled water
+276,pet care;beef;chewing gum;frozen dessert;other vegetables;brown bread;sausage;butter;candy
+277,chewing gum;brown bread;frozen fish;organic products;frozen vegetables;chicken
+278,frozen dessert;instant food;butter;baby food;whole milk;bottled beer;root vegetables
+279,white bread;other vegetables;soda;domestic eggs;bottled beer;frozen fish;meat spreads;detergent;semi-finished bread;root vegetables
+280,instant food;tea;meat spreads;magazines;pet care;root vegetables
+281,liquor;yogurt;whole milk;frozen fish;fruit/vegetable juice;waffles
+282,frozen vegetables;meat spreads;liquor;ready soups;candy;long life bakery product;pork
+283,frozen meals;other vegetables;sausage;tea;white bread;ice cream;frozen vegetables;waffles;baby food
+284,sugar;tropical fruit;organic products;candy;whole milk;margarine
+285,butter;pet care;frozen dessert;frozen vegetables;white bread;waffles
+286,tea;ready soups;frozen fish;frozen meals;newspapers;pip fruit;sausage;curd
+287,soda;softener;ready soups;fruit/vegetable juice;chicken;frozen vegetables;whole milk;yogurt;pip fruit
+288,magazines;curd;bottled beer;fruit/vegetable juice;brown bread;shopping bags;coffee
+289,root vegetables;candy;curd;yogurt;baby food;tropical fruit;brown bread
+290,sausage;newspapers;coffee;baby food;rolls/buns;other vegetables;tea;soda
+291,frozen vegetables;brown bread;citrus fruit;detergent;long life bakery product;candy;waffles;pip fruit
+292,bottled beer;detergent;butter;other vegetables;waffles;soda;frozen fish
+293,pork;beef;newspapers;pip fruit;long life bakery product;frozen fish
+294,bottled water;butter;tropical fruit;rolls/buns;sugar;pet care;chocolate
+295,pork;soda;ready soups;sausage;root vegetables;bottled water;liquor;semi-finished bread;frozen dessert;pip fruit
+296,softener;organic products;waffles;bottled water;coffee;cream cheese;instant food;soda
+297,citrus fruit;pastry;frozen dessert;tropical fruit;newspapers;ice cream
+298,magazines;chicken;fruit/vegetable juice;root vegetables;sausage;beef;butter
+299,margarine;long life bakery product;brown bread;softener;instant food;ice cream;other vegetables;semi-finished bread
+300,pork;curd;semi-finished bread;other vegetables;brown bread;candy;long life bakery product
+301,detergent;meat spreads;frozen vegetables;butter;newspapers;ice cream
+302,ready soups;soda;chewing gum;beef;chicken;candy;pet care;magazines
+303,newspapers;baby food;liquor;soda;beef;softener
+304,detergent;curd;citrus fruit;instant food;white bread;pip fruit;whole milk
+305,pastry;citrus fruit;chewing gum;baby food;magazines;rolls/buns;waffles;ice cream
+306,frozen dessert;organic products;instant food;bottled beer;yogurt;long life bakery product
+307,white bread;semi-finished bread;whole milk;ready soups;long life bakery product;frozen vegetables;organic products;root vegetables;magazines
+308,margarine;ready soups;chocolate;root vegetables;softener;fruit/vegetable juice;beef;yogurt
+309,waffles;pet care;whole milk;chewing gum;instant food;frozen dessert;frozen vegetables;other vegetables
+310,bottled water;candy;frozen dessert;pork;yogurt;meat spreads;whole milk
+311,ice cream;citrus fruit;frozen vegetables;pip fruit;whole milk;detergent;ready soups
+312,beef;ice cream;sausage;ready soups;magazines;whole milk;margarine;chocolate
+313,chewing gum;butter;rolls/buns;margarine;pork;curd
+314,ready soups;meat spreads;pip fruit;beef;liquor;magazines;frozen vegetables
+315,magazines;detergent;softener;beef;chewing gum;frozen meals;shopping bags
+316,frozen dessert;bottled water;soda;frozen vegetables;root vegetables;organic products;ready soups;rolls/buns
+317,semi-finished bread;long life bakery product;curd;white bread;other vegetables;candy;yogurt
+318,frozen vegetables;waffles;yogurt;frozen meals;baby food;cream cheese;shopping bags;bottled water
+319,root vegetables;candy;margarine;pet care;frozen dessert;other vegetables;instant food;tropical fruit;pastry
+320,fruit/vegetable juice;chocolate;sugar;organic products;detergent;newspapers
+321,domestic eggs;bottled beer;root vegetables;liquor;citrus fruit;soda;bottled water;tea
+322,baby food;yogurt;candy;frozen vegetables;ready soups;beef;meat spreads;chewing gum
+323,chewing gum;pastry;long life bakery product;rolls/buns;detergent;sausage;beef;frozen vegetables;yogurt
+324,newspapers;sausage;bottled beer;liquor;long life bakery product;pip fruit;soda;other vegetables
+325,frozen dessert;shopping bags;liquor;ready soups;curd;margarine;other vegetables;frozen fish;butter
+326,pork;ice cream;detergent;bottled beer;rolls/buns;domestic eggs;fruit/vegetable juice;chewing gum;sugar;brown bread
+327,root vegetables;sausage;bottled beer;shopping bags;baby food;domestic eggs;whole milk;citrus fruit;sugar;instant food
+328,sugar;ice cream;coffee;bottled water;frozen vegetables;newspapers;detergent;tea
+329,ready soups;butter;other vegetables;instant food;brown bread;white bread;soda;semi-finished bread;yogurt
+330,frozen vegetables;pip fruit;bottled beer;meat spreads;frozen meals;pet care;instant food
+331,pork;other vegetables;long life bakery product;curd;candy;frozen fish;yogurt
+332,long life bakery product;shopping bags;chocolate;bottled beer;chicken;coffee;root vegetables
+333,curd;pork;coffee;instant food;frozen meals
+334,root vegetables;pet care;domestic eggs;tropical fruit;long life bakery product;waffles;margarine
+335,fruit/vegetable juice;organic products;long life bakery product;butter;chewing gum;liquor;whole milk
+336,ready soups;whole milk;baby food;long life bakery product;semi-finished bread;sugar;fruit/vegetable juice;newspapers
+337,curd;frozen meals;liquor;butter;candy;brown bread;rolls/buns
+338,cream cheese;frozen fish;whole milk;meat spreads;pet care;frozen meals;softener
+339,frozen dessert;coffee;sausage;detergent;sugar;chocolate;frozen meals;whole milk
+340,bottled water;long life bakery product;rolls/buns;tropical fruit;beef;soda;meat spreads
+341,frozen fish;detergent;fruit/vegetable juice;organic products;cream cheese;other vegetables;instant food;ready soups
+342,coffee;citrus fruit;butter;meat spreads;white bread;whole milk;domestic eggs;ready soups
+343,citrus fruit;pastry;long life bakery product;softener;chewing gum;bottled water;frozen meals;candy
+344,frozen fish;meat spreads;sugar;coffee;white bread;domestic eggs;detergent
+345,butter;beef;pork;white bread;soda;other vegetables;detergent;chewing gum
+346,yogurt;instant food;curd;white bread;pip fruit;whole milk;frozen fish
+347,pastry;sausage;pork;frozen fish;tropical fruit;domestic eggs;coffee;ice cream
+348,candy;domestic eggs;pip fruit;sugar;chewing gum;detergent;coffee;tropical fruit
+349,pork;curd;fruit/vegetable juice;ready soups;margarine;magazines;frozen meals
+350,cream cheese;brown bread;frozen meals;tropical fruit;whole milk;coffee;detergent;baby food
+351,softener;root vegetables;yogurt;waffles;soda;frozen dessert
+352,ice cream;pet care;beef;frozen dessert;yogurt;chicken;instant food;pip fruit;soda;newspapers
+353,soda;detergent;pet care;beef;pip fruit;sausage;pastry;margarine
+354,pastry;candy;long life bakery product;other vegetables;baby food;frozen fish;bottled water;pet care;fruit/vegetable juice
+355,rolls/buns;magazines;chocolate;pet care;chicken;root vegetables;beef;long life bakery product;pip fruit
+356,frozen dessert;coffee;tropical fruit;curd;bottled water;sugar;chicken;tea
+357,sausage;other vegetables;pip fruit;long life bakery product;detergent;tropical fruit;frozen fish
+358,butter;beef;whole milk;curd;domestic eggs;baby food;coffee;softener
+359,newspapers;ready soups;meat spreads;candy;coffee;detergent;citrus fruit;chicken
+360,margarine;root vegetables;frozen dessert;shopping bags;meat spreads;tea
+361,other vegetables;frozen dessert;baby food;pip fruit;newspapers;pastry;bottled water;ready soups
+362,whole milk;frozen vegetables;detergent;candy;chocolate;semi-finished bread;bottled beer;curd
+363,candy;fruit/vegetable juice;liquor;root vegetables;coffee;brown bread;chocolate
+364,root vegetables;ice cream;butter;pet care;yogurt;sugar;cream cheese;beef
+365,magazines;pork;margarine;shopping bags;brown bread;pet care;fruit/vegetable juice
+366,candy;newspapers;shopping bags;detergent;frozen meals;liquor;tea;curd;ice cream
+367,coffee;citrus fruit;waffles;detergent;white bread;butter
+368,detergent;pastry;instant food;candy;sausage;bottled beer;fruit/vegetable juice;coffee
+369,frozen meals;tropical fruit;brown bread;candy;detergent;beef;curd;chicken;margarine
+370,pastry;whole milk;frozen vegetables;candy;baby food;white bread;curd;ready soups
+371,liquor;chocolate;frozen meals;domestic eggs;long life bakery product;detergent
+372,detergent;brown bread;ice cream;yogurt;domestic eggs;frozen meals
+373,sausage;organic products;pork;ice cream;cream cheese;frozen dessert;tea
+374,margarine;pastry;meat spreads;cream cheese;domestic eggs;pet care
+375,newspapers;semi-finished bread;baby food;long life bakery product;chicken;white bread;beef;sugar
+376,detergent;chewing gum;cream cheese;curd;softener;chicken;pip fruit;pet care
+377,softener;bottled water;sugar;root vegetables;soda;fruit/vegetable juice;other vegetables
+378,chewing gum;organic products;citrus fruit;tea;semi-finished bread;fruit/vegetable juice;sausage
+379,chicken;frozen vegetables;sugar;detergent;margarine;brown bread;pork;curd
+380,shopping bags;waffles;candy;bottled beer;liquor;pastry;rolls/buns;cream cheese
+381,newspapers;sugar;detergent;chocolate;tropical fruit;cream cheese;frozen dessert;meat spreads;sausage;pastry;magazines
+382,semi-finished bread;brown bread;domestic eggs;ice cream;fruit/vegetable juice;liquor;newspapers;frozen fish;chocolate
+383,rolls/buns;fruit/vegetable juice;beef;ready soups;root vegetables;yogurt;soda
+384,meat spreads;citrus fruit;sausage;beef;frozen vegetables;whole milk;coffee;baby food
+385,long life bakery product;coffee;chicken;shopping bags;ice cream;tea;citrus fruit
+386,semi-finished bread;root vegetables;coffee;meat spreads;other vegetables;curd;bottled water
+387,whole milk;bottled beer;sugar;semi-finished bread;curd;white bread;ice cream
+388,frozen vegetables;magazines;pet care;citrus fruit;ice cream;cream cheese;newspapers;brown bread
+389,pork;pet care;rolls/buns;newspapers;ice cream;semi-finished bread;chewing gum;ready soups
+390,liquor;candy;domestic eggs;pastry;organic products;frozen meals
+391,pip fruit;yogurt;baby food;frozen dessert;ice cream;pastry;instant food
+392,white bread;frozen meals;ready soups;sugar;rolls/buns;pip fruit;tea;frozen vegetables
+393,frozen dessert;butter;tea;brown bread;bottled water;sausage;frozen fish;chewing gum
+394,sugar;butter;coffee;beef;ice cream;whole milk;liquor;pet care
+395,frozen vegetables;sugar;soda;meat spreads;coffee;newspapers;margarine;pet care
+396,tropical fruit;white bread;cream cheese;organic products;candy;softener;domestic eggs;frozen dessert
+397,root vegetables;tea;frozen fish;pet care;organic products;pastry
+398,white bread;shopping bags;fruit/vegetable juice;domestic eggs;pet care;bottled beer;brown bread
+399,frozen fish;pip fruit;chicken;sausage;curd;frozen meals;tropical fruit;newspapers
+400,chicken;baby food;bottled beer;ready soups;margarine;soda;pork;pet care
+401,magazines;bottled beer;chicken;butter;chocolate
+402,sugar;magazines;organic products;bottled beer;long life bakery product;bottled water;pet care
+403,long life bakery product;yogurt;root vegetables;frozen fish;baby food;newspapers;pork;instant food
+404,rolls/buns;waffles;magazines;domestic eggs;citrus fruit;yogurt;bottled beer
+405,bottled water;frozen dessert;baby food;rolls/buns;candy;other vegetables
+406,fruit/vegetable juice;frozen dessert;waffles;shopping bags;baby food;pet care;bottled beer
+407,frozen fish;whole milk;curd;newspapers;organic products;magazines;yogurt;rolls/buns
+408,shopping bags;pastry;chewing gum;semi-finished bread;chocolate;sugar;white bread;ice cream
+409,newspapers;pastry;chicken;cream cheese;beef;soda;root vegetables;tea
+410,frozen dessert;newspapers;citrus fruit;bottled beer;yogurt;curd;magazines
+411,candy;tropical fruit;citrus fruit;sugar;liquor;detergent;chocolate
+412,instant food;pork;domestic eggs;waffles;ice cream;tropical fruit;root vegetables;candy
+413,sugar;instant food;softener;coffee;margarine;frozen dessert;newspapers
+414,pet care;instant food;cream cheese;whole milk;baby food;coffee;candy;detergent
+415,bottled water;sugar;pork;magazines;softener;butter;chewing gum
+416,citrus fruit;newspapers;pet care;softener;frozen vegetables;semi-finished bread;bottled water;chewing gum
+417,frozen dessert;pip fruit;chewing gum;yogurt;chicken;beef;pastry;butter
+418,sugar;coffee;citrus fruit;shopping bags;candy;root vegetables;tea;liquor
+419,ice cream;fruit/vegetable juice;domestic eggs;butter;ready soups;sugar;rolls/buns;pet care
+420,ready soups;domestic eggs;magazines;liquor;frozen vegetables;softener;citrus fruit;cream cheese
+421,brown bread;other vegetables;organic products;pastry;whole milk;instant food;pork;frozen meals;curd
+422,brown bread;waffles;long life bakery product;soda;margarine;instant food;ready soups
+423,sugar;rolls/buns;brown bread;fruit/vegetable juice;domestic eggs;long life bakery product
+424,yogurt;other vegetables;detergent;curd;pork;shopping bags;brown bread;softener
+425,semi-finished bread;citrus fruit;chocolate;shopping bags;sausage;ice cream;newspapers
+426,liquor;bottled water;softener;bottled beer;beef;meat spreads
+427,rolls/buns;waffles;fruit/vegetable juice;instant food;softener;yogurt;margarine;beef
+428,candy;ice cream;whole milk;tropical fruit;pet care;beef;domestic eggs
+429,root vegetables;soda;detergent;pet care;frozen meals;baby food;ready soups
+430,frozen vegetables;waffles;beef;citrus fruit;meat spreads;magazines;detergent;other vegetables;instant food
+431,softener;cream cheese;frozen fish;tea;brown bread;candy;domestic eggs
+432,semi-finished bread;root vegetables;frozen fish;organic products;baby food;pip fruit;frozen meals;sausage
+433,pork;yogurt;instant food;pip fruit;waffles;ready soups;frozen meals
+434,pip fruit;ice cream;rolls/buns;baby food;cream cheese;newspapers;tea;yogurt
+435,frozen vegetables;ready soups;whole milk;waffles;frozen dessert;bottled water
+436,instant food;softener;chewing gum;butter;bottled beer;shopping bags;whole milk
+437,tea;root vegetables;frozen meals;bottled beer;other vegetables;pip fruit;waffles;fruit/vegetable juice;semi-finished bread
+438,frozen dessert;chocolate;magazines;chewing gum;coffee;ready soups
+439,tea;pip fruit;margarine;ready soups;domestic eggs;meat spreads;frozen vegetables;bottled beer
+440,butter;other vegetables;ice cream;meat spreads;root vegetables;bottled water;whole milk;softener
+441,bottled water;chewing gum;liquor;organic products;domestic eggs;newspapers;softener
+442,coffee;waffles;cream cheese;white bread;sugar;frozen fish;margarine;liquor
+443,detergent;root vegetables;chocolate;baby food;semi-finished bread;waffles;tropical fruit;frozen meals;rolls/buns
+444,margarine;root vegetables;white bread;meat spreads;bottled water;coffee;pip fruit
+445,waffles;ready soups;chewing gum;coffee;bottled beer;detergent;softener
+446,white bread;tea;cream cheese;pet care;butter;newspapers;bottled beer
+447,newspapers;organic products;other vegetables;shopping bags;semi-finished bread;frozen vegetables;fruit/vegetable juice;frozen fish;ice cream
+448,newspapers;curd;bottled beer;frozen fish;softener;baby food;root vegetables
+449,bottled beer;frozen dessert;semi-finished bread;liquor;newspapers;pet care;frozen vegetables
+450,white bread;curd;meat spreads;sausage;ice cream;frozen vegetables;magazines;beef
+451,chicken;sugar;ice cream;organic products;butter;tropical fruit;pip fruit
+452,chicken;butter;citrus fruit;margarine;baby food;long life bakery product;waffles
+453,curd;pet care;rolls/buns;meat spreads;chicken;tropical fruit;magazines;citrus fruit;newspapers;cream cheese
+454,long life bakery product;white bread;newspapers;sugar;citrus fruit;other vegetables;whole milk;detergent
+455,margarine;brown bread;white bread;beef;chocolate;frozen vegetables;frozen dessert
+456,liquor;long life bakery product;butter;citrus fruit;whole milk;pip fruit;shopping bags
+457,cream cheese;long life bakery product;pastry;beef;instant food;chicken;pet care
+458,chicken;butter;frozen meals;sausage;root vegetables;soda;waffles;brown bread
+459,magazines;margarine;tea;instant food;pastry;baby food;pip fruit;long life bakery product
+460,whole milk;candy;frozen meals;meat spreads;curd;chocolate;baby food;organic products
+461,semi-finished bread;baby food;domestic eggs;other vegetables;shopping bags;pip fruit
+462,pork;root vegetables;frozen dessert;curd;chicken;ready soups;waffles
+463,sausage;margarine;whole milk;brown bread;waffles;yogurt;tropical fruit
+464,sugar;yogurt;chicken;candy;softener;whole milk;pet care;pastry
+465,ready soups;rolls/buns;frozen vegetables;fruit/vegetable juice;brown bread;sugar
+466,waffles;softener;frozen dessert;sausage;bottled beer;cream cheese
+467,pastry;yogurt;chocolate;detergent;ice cream;baby food;beef;instant food
+468,soda;pet care;other vegetables;yogurt;sugar;semi-finished bread;newspapers
+469,ice cream;long life bakery product;other vegetables;magazines;chicken;candy;curd;root vegetables
+470,white bread;organic products;yogurt;domestic eggs;curd;tea;soda;baby food
+471,brown bread;other vegetables;magazines;bottled beer;tropical fruit;semi-finished bread;pet care;pork
+472,pet care;shopping bags;coffee;candy;margarine;sausage;frozen fish;frozen dessert
+473,ice cream;ready soups;butter;detergent;curd;chewing gum;tropical fruit;pet care
+474,bottled beer;sausage;frozen dessert;detergent;frozen vegetables;liquor;instant food;newspapers
+475,pip fruit;citrus fruit;organic products;cream cheese;pet care;newspapers;domestic eggs;tropical fruit
+476,pip fruit;magazines;frozen fish;ready soups;chewing gum;curd
+477,chocolate;other vegetables;brown bread;whole milk;pet care;liquor;softener;curd;domestic eggs
+478,margarine;white bread;pastry;sausage;meat spreads;candy;root vegetables
+479,softener;pet care;baby food;newspapers;soda;other vegetables;liquor;tropical fruit
+480,chocolate;sausage;meat spreads;citrus fruit;ice cream;pork
+481,fruit/vegetable juice;cream cheese;rolls/buns;semi-finished bread;tropical fruit;pet care;magazines;pastry
+482,root vegetables;pork;semi-finished bread;pet care;citrus fruit;chocolate;ice cream;bottled beer
+483,white bread;detergent;domestic eggs;baby food;frozen dessert;citrus fruit;sugar;organic products;softener
+484,sausage;curd;baby food;soda;coffee;frozen vegetables;cream cheese;pet care;magazines;liquor
+485,sugar;chicken;waffles;pet care;fruit/vegetable juice;frozen vegetables;bottled water
+486,frozen dessert;detergent;pip fruit;ice cream;shopping bags;liquor;sausage
+487,cream cheese;yogurt;soda;bottled beer;root vegetables;rolls/buns;pet care;softener
+488,magazines;brown bread;softener;white bread;beef;frozen dessert;chewing gum
+489,rolls/buns;brown bread;white bread;waffles;organic products;meat spreads;sausage
+490,chocolate;baby food;softener;organic products;waffles;pork;brown bread;frozen dessert
+491,frozen vegetables;pastry;cream cheese;white bread;frozen dessert;long life bakery product;chewing gum
+492,cream cheese;organic products;newspapers;soda;chicken;coffee;curd;pastry
+493,frozen vegetables;ready soups;chicken;other vegetables;margarine;softener;chewing gum;rolls/buns
+494,semi-finished bread;meat spreads;curd;bottled beer;yogurt;bottled water
+495,citrus fruit;tropical fruit;margarine;baby food;chocolate;curd;cream cheese;waffles
+496,tea;newspapers;baby food;ice cream;coffee;liquor;long life bakery product
+497,curd;beef;magazines;citrus fruit;margarine;meat spreads;newspapers;bottled beer
+498,organic products;white bread;newspapers;semi-finished bread;softener;cream cheese
+499,chewing gum;sausage;bottled beer;chocolate;detergent;pastry;coffee;margarine
+500,tropical fruit;bottled beer;ready soups;domestic eggs;frozen vegetables;frozen fish;organic products
+501,other vegetables;baby food;chicken;frozen fish;instant food;pet care;brown bread
+502,rolls/buns;shopping bags;pork;frozen meals;instant food;soda;ice cream
+503,rolls/buns;pork;baby food;margarine;candy;semi-finished bread;pip fruit;meat spreads
+504,shopping bags;waffles;liquor;instant food;fruit/vegetable juice;margarine;chewing gum
+505,candy;long life bakery product;frozen meals;magazines;waffles;bottled water;newspapers
+506,shopping bags;citrus fruit;bottled water;cream cheese;coffee;fruit/vegetable juice
+507,candy;sugar;newspapers;shopping bags;curd;detergent;pork
+508,bottled beer;pork;softener;baby food;butter;whole milk;yogurt;waffles
+509,newspapers;tea;magazines;curd;chocolate;pork;organic products;sugar
+510,long life bakery product;coffee;organic products;semi-finished bread;meat spreads;detergent;white bread;tropical fruit
+511,butter;root vegetables;fruit/vegetable juice;detergent;chicken;meat spreads;organic products;bottled beer
+512,frozen meals;brown bread;fruit/vegetable juice;softener;pip fruit;tea;liquor;organic products
+513,ready soups;frozen vegetables;chewing gum;fruit/vegetable juice;tea;soda;frozen fish;sausage;beef
+514,pork;coffee;tropical fruit;chewing gum;frozen dessert;ready soups;soda;instant food
+515,rolls/buns;citrus fruit;chocolate;chewing gum;ice cream;ready soups;softener;detergent
+516,long life bakery product;whole milk;frozen vegetables;frozen fish;shopping bags;semi-finished bread;instant food;pip fruit
+517,yogurt;bottled beer;pastry;liquor;baby food;frozen vegetables;waffles;beef
+518,waffles;pastry;curd;white bread;pet care;frozen vegetables;chewing gum
+519,other vegetables;beef;semi-finished bread;coffee;tea;ready soups;tropical fruit;root vegetables
+520,butter;magazines;coffee;yogurt;detergent;candy;margarine;frozen dessert
+521,bottled beer;newspapers;pet care;yogurt;sugar;chicken;whole milk;frozen meals;domestic eggs
+522,sausage;yogurt;beef;soda;magazines;whole milk;chewing gum;root vegetables
+523,semi-finished bread;liquor;sausage;butter;frozen dessert;bottled water;pet care
+524,cream cheese;long life bakery product;domestic eggs;margarine;pork;bottled water;magazines;frozen vegetables;butter
+525,fruit/vegetable juice;brown bread;margarine;frozen dessert;butter;sugar;bottled water;candy
+526,softener;frozen meals;frozen dessert;cream cheese;tea;frozen fish
+527,yogurt;chocolate;white bread;pet care;root vegetables;coffee
+528,softener;cream cheese;newspapers;curd;brown bread;magazines;sausage;pip fruit
+529,frozen vegetables;semi-finished bread;chewing gum;whole milk;citrus fruit;bottled beer;curd
+530,pastry;shopping bags;pip fruit;pet care;tropical fruit;sausage;softener
+531,magazines;softener;ice cream;baby food;rolls/buns;meat spreads;tea;pork;cream cheese
+532,ready soups;yogurt;other vegetables;frozen dessert;frozen fish;soda
+533,domestic eggs;pastry;soda;ready soups;meat spreads;cream cheese;citrus fruit
+534,bottled beer;root vegetables;meat spreads;tea;ready soups;frozen vegetables
+535,ready soups;ice cream;bottled beer;rolls/buns;pastry;instant food;sausage
+536,tea;white bread;long life bakery product;soda;softener;coffee
+537,rolls/buns;ready soups;pastry;root vegetables;cream cheese;soda;frozen fish;beef;bottled water
+538,cream cheese;white bread;tea;butter;margarine;brown bread;curd;candy
+539,pip fruit;white bread;pastry;rolls/buns;coffee;brown bread;tropical fruit;fruit/vegetable juice;softener
+540,candy;sugar;bottled beer;magazines;chewing gum;chocolate;frozen vegetables;beef
+541,frozen fish;chicken;pet care;whole milk;semi-finished bread;instant food;margarine;curd
+542,other vegetables;domestic eggs;coffee;meat spreads;soda;organic products;long life bakery product
+543,frozen fish;coffee;fruit/vegetable juice;whole milk;soda;candy;baby food;ice cream;long life bakery product
+544,sausage;bottled beer;yogurt;frozen meals;tea;frozen fish;rolls/buns
+545,other vegetables;fruit/vegetable juice;frozen dessert;softener;baby food;newspapers
+546,softener;organic products;soda;tea;detergent;baby food;coffee;root vegetables
+547,pork;candy;beef;liquor;chocolate;sausage
+548,pork;pet care;whole milk;waffles;chicken;newspapers;long life bakery product;chewing gum
+549,tea;liquor;waffles;shopping bags;pip fruit;bottled beer;yogurt;soda
+550,pork;sugar;fruit/vegetable juice;ice cream;candy;soda;coffee;frozen meals;meat spreads
+551,tropical fruit;yogurt;meat spreads;newspapers;instant food;chewing gum;detergent
+552,whole milk;coffee;ice cream;beef;baby food;rolls/buns;frozen dessert;bottled beer
+553,frozen fish;frozen vegetables;shopping bags;rolls/buns;meat spreads;instant food
+554,sugar;candy;softener;butter;long life bakery product;soda;other vegetables
+555,frozen vegetables;newspapers;detergent;root vegetables;bottled beer;whole milk;chewing gum
+556,brown bread;softener;root vegetables;pip fruit;magazines;yogurt
+557,meat spreads;domestic eggs;frozen meals;sugar;semi-finished bread;pastry;pork;curd;chicken
+558,pastry;root vegetables;soda;meat spreads;pork;magazines;ready soups;detergent;sausage
+559,detergent;bottled beer;yogurt;ready soups;soda;newspapers
+560,root vegetables;whole milk;other vegetables;yogurt;beef;organic products;fruit/vegetable juice;chocolate;chewing gum
+561,detergent;liquor;sugar;long life bakery product;pet care;soda;beef
+562,liquor;detergent;domestic eggs;citrus fruit;beef;sugar;butter
+563,curd;pet care;beef;bottled water;ready soups;pork;instant food
+564,curd;chewing gum;frozen fish;pip fruit;newspapers;domestic eggs;pet care;tea
+565,long life bakery product;newspapers;organic products;fruit/vegetable juice;chicken;frozen dessert;instant food;other vegetables
+566,detergent;waffles;semi-finished bread;meat spreads;beef;pastry
+567,domestic eggs;organic products;magazines;tropical fruit;yogurt;meat spreads;soda;chewing gum
+568,other vegetables;coffee;pastry;cream cheese;organic products;tropical fruit;butter;pip fruit
+569,frozen dessert;pork;baby food;chicken;candy;beef;pip fruit
+570,ice cream;frozen meals;beef;organic products;newspapers;white bread;waffles;softener
+571,ready soups;root vegetables;frozen dessert;chicken;long life bakery product;ice cream
+572,whole milk;ready soups;margarine;other vegetables;detergent;frozen dessert;yogurt
+573,yogurt;rolls/buns;sugar;magazines;bottled water;softener;detergent
+574,butter;pet care;frozen dessert;baby food;bottled beer;frozen fish
+575,rolls/buns;pork;chewing gum;butter;tropical fruit;brown bread;newspapers
+576,organic products;ready soups;frozen meals;yogurt;rolls/buns;ice cream;margarine;pork
+577,domestic eggs;frozen fish;citrus fruit;soda;frozen dessert;magazines;tea
+578,whole milk;pet care;frozen meals;tea;organic products;semi-finished bread;rolls/buns
+579,rolls/buns;tea;pip fruit;yogurt;sausage;cream cheese;tropical fruit
+580,soda;pastry;brown bread;waffles;magazines;detergent;coffee;margarine
+581,pip fruit;semi-finished bread;beef;soda;frozen meals;root vegetables;detergent;chocolate
+582,shopping bags;chicken;chocolate;soda;semi-finished bread;fruit/vegetable juice;domestic eggs;white bread;ice cream
+583,pork;frozen dessert;bottled water;newspapers;coffee;domestic eggs
+584,waffles;bottled beer;softener;chewing gum;yogurt;butter;fruit/vegetable juice;tea
+585,shopping bags;waffles;baby food;cream cheese;sausage;candy;ready soups;citrus fruit;ice cream;organic products
+586,sausage;ice cream;candy;frozen fish;other vegetables;shopping bags;magazines;domestic eggs
+587,curd;chicken;waffles;instant food;tea;brown bread;margarine
+588,organic products;soda;white bread;whole milk;chewing gum;chocolate;frozen dessert
+589,instant food;chewing gum;frozen vegetables;softener;pork;citrus fruit
+590,tea;frozen vegetables;detergent;butter;beef;chocolate;bottled water
+591,instant food;shopping bags;butter;sausage;coffee;candy;sugar
+592,white bread;chewing gum;curd;sausage;frozen fish;newspapers
+593,ready soups;candy;pet care;frozen dessert;rolls/buns;domestic eggs
+594,chocolate;bottled water;chicken;soda;other vegetables;domestic eggs;softener;cream cheese
+595,white bread;yogurt;pet care;newspapers;long life bakery product
+596,magazines;margarine;meat spreads;beef;shopping bags
+597,whole milk;baby food;rolls/buns;other vegetables;long life bakery product;tea;bottled beer
+598,curd;soda;margarine;yogurt;chocolate;detergent;bottled water
+599,semi-finished bread;shopping bags;newspapers;frozen dessert;butter;meat spreads;soda
+600,sausage;baby food;curd;cream cheese;pastry;coffee;frozen vegetables;long life bakery product
+601,magazines;bottled water;yogurt;soda;ice cream;pastry;curd;frozen meals
+602,brown bread;beef;frozen meals;fruit/vegetable juice;yogurt;organic products;ready soups;bottled water
+603,butter;domestic eggs;ready soups;baby food;pip fruit;frozen meals;pet care
+604,magazines;fruit/vegetable juice;liquor;brown bread;semi-finished bread;rolls/buns;candy
+605,frozen dessert;whole milk;bottled beer;curd;other vegetables;shopping bags;yogurt
+606,semi-finished bread;brown bread;sugar;detergent;chewing gum;frozen vegetables;cream cheese;curd
+607,sugar;pet care;beef;curd;softener;pork;candy
+608,root vegetables;baby food;frozen dessert;whole milk;sugar;ice cream;bottled beer
+609,frozen meals;root vegetables;yogurt;chicken;citrus fruit;frozen vegetables;sugar
+610,semi-finished bread;bottled beer;margarine;fruit/vegetable juice;curd;pip fruit;domestic eggs
+611,pip fruit;softener;magazines;chocolate;curd;frozen meals;whole milk;tea
+612,candy;frozen dessert;chicken;rolls/buns;butter;newspapers;chewing gum;organic products
+613,magazines;sugar;sausage;margarine;detergent;white bread;ice cream
+614,shopping bags;ready soups;organic products;semi-finished bread;cream cheese;soda;pastry;pip fruit;chewing gum
+615,magazines;pip fruit;beef;margarine;bottled beer;bottled water;chewing gum;ice cream
+616,bottled water;cream cheese;sugar;pet care;fruit/vegetable juice;softener;beef;frozen dessert
+617,magazines;coffee;soda;meat spreads;newspapers;sugar;butter;shopping bags;chicken;frozen meals
+618,pip fruit;chocolate;coffee;citrus fruit;candy;domestic eggs;bottled water;yogurt;frozen vegetables
+619,white bread;liquor;bottled water;long life bakery product;candy;detergent;chewing gum
+620,frozen dessert;soda;shopping bags;magazines;frozen fish;pip fruit;margarine;baby food;chewing gum
+621,domestic eggs;chewing gum;root vegetables;frozen fish;beef;organic products;brown bread;candy;instant food
+622,frozen vegetables;waffles;frozen dessert;cream cheese;tropical fruit;other vegetables;whole milk;bottled beer
+623,meat spreads;margarine;white bread;softener;beef;sugar;tea;butter
+624,other vegetables;coffee;pork;waffles;whole milk;tea;bottled beer;pip fruit
+625,chewing gum;fruit/vegetable juice;rolls/buns;liquor;bottled beer;instant food;newspapers;butter;other vegetables
+626,chewing gum;softener;beef;pastry;bottled water;citrus fruit;soda;other vegetables
+627,rolls/buns;candy;frozen fish;bottled water;chocolate;pet care;citrus fruit;butter
+628,citrus fruit;brown bread;pork;chicken;candy;shopping bags;yogurt;semi-finished bread;magazines
+629,instant food;ready soups;pastry;magazines;chewing gum;detergent;ice cream;sugar
+630,root vegetables;tea;margarine;softener;chewing gum;tropical fruit;fruit/vegetable juice;other vegetables;organic products;instant food
+631,pip fruit;instant food;long life bakery product;meat spreads;semi-finished bread;sausage;bottled beer;frozen dessert
+632,frozen fish;semi-finished bread;pet care;detergent;newspapers;butter;magazines
+633,sugar;frozen meals;chicken;pork;domestic eggs;tropical fruit;frozen dessert;curd
+634,semi-finished bread;root vegetables;organic products;brown bread;magazines;chicken;tropical fruit;citrus fruit
+635,fruit/vegetable juice;frozen dessert;semi-finished bread;ready soups;sausage;waffles;shopping bags;liquor
+636,chocolate;shopping bags;soda;liquor;white bread;waffles;ice cream
+637,chewing gum;baby food;citrus fruit;white bread;instant food;candy;long life bakery product;sausage
+638,brown bread;frozen fish;butter;pip fruit;whole milk;cream cheese;chicken
+639,curd;cream cheese;shopping bags;beef;instant food;tea;soda
+640,chicken;whole milk;butter;margarine;beef;shopping bags
+641,baby food;bottled beer;pet care;domestic eggs;organic products;long life bakery product;newspapers;tea
+642,other vegetables;ice cream;white bread;brown bread;soda;pip fruit;chicken;candy;rolls/buns
+643,beef;brown bread;pastry;chewing gum;citrus fruit;instant food
+644,citrus fruit;yogurt;tea;coffee;pip fruit;meat spreads;sausage;frozen meals;domestic eggs
+645,newspapers;bottled water;instant food;pet care;candy;domestic eggs;softener;tea
+646,pip fruit;frozen fish;pastry;candy;frozen vegetables;meat spreads;baby food;chewing gum
+647,soda;ready soups;organic products;pet care;detergent;chewing gum;frozen vegetables
+648,beef;frozen fish;citrus fruit;frozen dessert;pastry;chicken;sugar;softener
+649,magazines;sausage;sugar;pork;meat spreads;tea;frozen meals
+650,semi-finished bread;curd;chicken;bottled beer;cream cheese;pip fruit;frozen vegetables;beef;other vegetables
+651,whole milk;detergent;sugar;frozen meals;newspapers;frozen vegetables
+652,frozen dessert;organic products;fruit/vegetable juice;pastry;frozen vegetables;pork;brown bread;softener
+653,pastry;waffles;frozen vegetables;candy;detergent;instant food;brown bread;pet care
+654,frozen dessert;instant food;sugar;other vegetables;newspapers;frozen vegetables;chicken
+655,sugar;pet care;chocolate;brown bread;yogurt;ready soups;pastry;pork
+656,frozen meals;long life bakery product;bottled beer;pork;frozen dessert;baby food;chewing gum
+657,chicken;citrus fruit;sugar;pip fruit;detergent;white bread;tea;beef;long life bakery product
+658,softener;domestic eggs;pastry;butter;organic products;root vegetables;bottled beer;long life bakery product;magazines
+659,baby food;tropical fruit;frozen dessert;cream cheese;bottled water;yogurt;ice cream
+660,frozen dessert;liquor;chicken;tropical fruit;waffles;root vegetables;brown bread;bottled beer
+661,shopping bags;butter;frozen vegetables;candy;baby food;pip fruit;frozen dessert;liquor;fruit/vegetable juice
+662,rolls/buns;cream cheese;coffee;chocolate;frozen dessert;shopping bags;semi-finished bread
+663,bottled water;citrus fruit;brown bread;pip fruit;detergent;chicken;organic products;rolls/buns
+664,white bread;long life bakery product;other vegetables;detergent;ready soups;ice cream;chewing gum
+665,brown bread;chocolate;white bread;fruit/vegetable juice;sausage;curd;chewing gum
+666,chicken;curd;bottled water;soda;citrus fruit;chewing gum;white bread
+667,meat spreads;baby food;cream cheese;detergent;instant food;long life bakery product;citrus fruit;sugar
+668,pork;frozen dessert;rolls/buns;domestic eggs;curd;pet care;yogurt;tropical fruit
+669,newspapers;ready soups;chicken;shopping bags;semi-finished bread;other vegetables;butter
+670,chewing gum;ice cream;fruit/vegetable juice;semi-finished bread;soda;chicken;white bread;waffles;organic products
+671,liquor;frozen meals;root vegetables;organic products;cream cheese;fruit/vegetable juice;frozen fish;sausage;frozen vegetables
+672,softener;tea;brown bread;chocolate;frozen fish;detergent;semi-finished bread
+673,frozen fish;rolls/buns;cream cheese;coffee;long life bakery product;beef;magazines;ready soups
+674,detergent;frozen vegetables;cream cheese;butter;frozen fish;bottled beer;whole milk;sausage
+675,frozen dessert;newspapers;frozen fish;liquor;brown bread;chicken;tea;pip fruit
+676,frozen fish;baby food;frozen meals;other vegetables;bottled beer;detergent;domestic eggs;pip fruit;root vegetables;instant food;cream cheese
+677,pip fruit;other vegetables;magazines;butter;ice cream;root vegetables;bottled water
+678,meat spreads;soda;cream cheese;magazines;chocolate;margarine;beef
+679,butter;domestic eggs;chocolate;tea;margarine;pork;soda;sugar;magazines
+680,chocolate;brown bread;liquor;instant food;candy;whole milk;coffee;citrus fruit;margarine
+681,other vegetables;coffee;tropical fruit;chocolate;domestic eggs;pork;long life bakery product
+682,shopping bags;curd;pork;baby food;fruit/vegetable juice;chewing gum;other vegetables;ready soups
+683,root vegetables;softener;bottled beer;ice cream;frozen fish;pastry;chicken;sugar
+684,whole milk;pastry;ready soups;chewing gum;pip fruit;waffles;bottled beer
+685,coffee;frozen dessert;fruit/vegetable juice;tropical fruit;frozen meals;soda
+686,chewing gum;frozen vegetables;coffee;pork;tropical fruit;meat spreads;organic products
+687,bottled water;domestic eggs;whole milk;liquor;fruit/vegetable juice;sausage;meat spreads
+688,detergent;long life bakery product;tropical fruit;bottled beer;yogurt;newspapers;tea;brown bread;baby food
+689,chicken;instant food;other vegetables;cream cheese;shopping bags;whole milk
+690,fruit/vegetable juice;other vegetables;long life bakery product;citrus fruit;root vegetables;frozen vegetables;beef
+691,chocolate;pet care;sausage;tropical fruit;newspapers;chewing gum;ice cream;margarine
+692,shopping bags;beef;long life bakery product;pet care;citrus fruit;meat spreads;baby food;instant food
+693,newspapers;coffee;bottled water;frozen dessert;magazines;ready soups;semi-finished bread
+694,magazines;tropical fruit;pet care;whole milk;semi-finished bread;detergent
+695,butter;soda;baby food;meat spreads;frozen fish;ice cream;tea;margarine;coffee
+696,sausage;waffles;soda;tropical fruit;meat spreads;magazines;citrus fruit;chewing gum;pastry
+697,white bread;tropical fruit;bottled beer;rolls/buns;frozen meals;cream cheese;ready soups;curd;chewing gum
+698,chocolate;chewing gum;margarine;citrus fruit;semi-finished bread;brown bread;ready soups;baby food;instant food
+699,sugar;shopping bags;softener;margarine;coffee;soda;newspapers
+700,frozen fish;waffles;candy;frozen vegetables;bottled water;yogurt;chewing gum;bottled beer
+701,chicken;frozen meals;magazines;shopping bags;other vegetables
+702,baby food;detergent;root vegetables;instant food;chocolate;chicken
+703,sugar;waffles;soda;tropical fruit;chewing gum;candy;frozen fish;curd
+704,candy;ready soups;waffles;other vegetables;cream cheese;tea;pastry;sausage
+705,sugar;frozen meals;butter;domestic eggs;pastry;liquor;beef
+706,whole milk;rolls/buns;pet care;margarine;candy;butter;shopping bags
+707,fruit/vegetable juice;newspapers;long life bakery product;pet care;margarine;coffee;domestic eggs;white bread
+708,curd;brown bread;pork;long life bakery product;other vegetables;root vegetables;fruit/vegetable juice;margarine;organic products;candy
+709,root vegetables;butter;organic products;soda;newspapers;softener;pip fruit;long life bakery product;shopping bags;frozen fish
+710,shopping bags;other vegetables;domestic eggs;pork;candy;pip fruit;pastry
+711,chocolate;chewing gum;pip fruit;candy;white bread;margarine;cream cheese;pet care
+712,waffles;candy;frozen meals;semi-finished bread;domestic eggs;frozen dessert
+713,tea;baby food;pet care;frozen fish;frozen dessert;margarine;pastry
+714,curd;frozen meals;bottled water;chicken;ice cream;pet care;citrus fruit;white bread
+715,frozen vegetables;frozen dessert;pet care;soda;newspapers;sugar
+716,soda;baby food;brown bread;rolls/buns;pip fruit;semi-finished bread;fruit/vegetable juice;ice cream
+717,coffee;chewing gum;brown bread;pet care;candy;newspapers;sausage;whole milk
+718,domestic eggs;curd;waffles;meat spreads;fruit/vegetable juice;chewing gum;newspapers
+719,other vegetables;sugar;baby food;white bread;sausage;pastry;long life bakery product
+720,shopping bags;instant food;pet care;liquor;butter;semi-finished bread;other vegetables;tea;brown bread
+721,fruit/vegetable juice;yogurt;shopping bags;pip fruit;frozen meals;meat spreads;pet care;brown bread
+722,frozen meals;chocolate;domestic eggs;chicken;tropical fruit;magazines;pip fruit;softener;newspapers;ice cream
+723,waffles;tea;white bread;cream cheese;brown bread;chocolate;citrus fruit;shopping bags
+724,newspapers;sausage;frozen fish;tropical fruit;cream cheese;yogurt
+725,liquor;other vegetables;instant food;whole milk;pip fruit;shopping bags;sugar
+726,newspapers;root vegetables;softener;pip fruit;long life bakery product;chicken;bottled beer
+727,candy;semi-finished bread;pork;citrus fruit;root vegetables;whole milk;fruit/vegetable juice;butter
+728,frozen meals;citrus fruit;tropical fruit;candy;waffles;sausage;chewing gum
+729,brown bread;shopping bags;pip fruit;semi-finished bread;rolls/buns
+730,softener;coffee;long life bakery product;yogurt;white bread;frozen fish;butter
+731,frozen meals;meat spreads;whole milk;newspapers;soda;ice cream;margarine;frozen fish
+732,sausage;instant food;newspapers;softener;frozen meals;sugar;cream cheese;yogurt
+733,margarine;other vegetables;liquor;sugar;rolls/buns;sausage
+734,frozen fish;ready soups;meat spreads;chicken;pork;softener;chocolate;chewing gum
+735,cream cheese;sugar;other vegetables;long life bakery product;chicken;candy;ice cream;magazines
+736,beef;other vegetables;detergent;tea;coffee;candy;tropical fruit
+737,liquor;yogurt;coffee;fruit/vegetable juice;frozen fish;ice cream;newspapers
+738,softener;newspapers;ready soups;frozen meals;beef;magazines;tropical fruit;ice cream;yogurt
+739,domestic eggs;liquor;soda;brown bread;sugar;ice cream;curd
+740,cream cheese;curd;root vegetables;yogurt;white bread;fruit/vegetable juice;whole milk
+741,baby food;candy;organic products;detergent;sugar;meat spreads;chicken;ice cream
+742,cream cheese;soda;candy;ready soups;detergent;waffles;liquor;whole milk
+743,white bread;chewing gum;liquor;bottled beer;coffee;waffles
+744,cream cheese;softener;baby food;citrus fruit;waffles;liquor;frozen vegetables;pip fruit;bottled beer
+745,meat spreads;fruit/vegetable juice;pip fruit;brown bread;frozen dessert;rolls/buns;softener;chocolate
+746,margarine;sausage;fruit/vegetable juice;white bread;bottled water;yogurt
+747,pet care;bottled beer;candy;frozen meals;newspapers;soda;ice cream;curd;coffee
+748,sugar;frozen dessert;softener;whole milk;tropical fruit;bottled beer;white bread;detergent
+749,rolls/buns;yogurt;brown bread;shopping bags;pip fruit;chocolate;long life bakery product
+750,frozen fish;chicken;soda;butter;pip fruit;frozen dessert;yogurt;long life bakery product;margarine
+751,whole milk;domestic eggs;pastry;pet care;cream cheese;other vegetables;magazines;soda
+752,cream cheese;tea;newspapers;frozen dessert;instant food;long life bakery product;rolls/buns;pet care
+753,bottled beer;frozen meals;butter;detergent;soda;long life bakery product;pip fruit;baby food
+754,frozen vegetables;butter;liquor;fruit/vegetable juice;meat spreads
+755,waffles;semi-finished bread;butter;detergent;frozen dessert;sausage;baby food;brown bread
+756,bottled beer;baby food;frozen dessert;fruit/vegetable juice;frozen meals;citrus fruit;chewing gum
+757,sausage;bottled water;frozen meals;shopping bags;tea;fruit/vegetable juice;other vegetables;beef;semi-finished bread
+758,softener;citrus fruit;coffee;brown bread;frozen dessert;baby food;yogurt;margarine;domestic eggs
+759,long life bakery product;whole milk;white bread;soda;yogurt;softener;meat spreads
+760,softener;pastry;frozen meals;magazines;margarine;ready soups;coffee
+761,meat spreads;chicken;tea;pork;tropical fruit;long life bakery product;yogurt;pip fruit
+762,bottled water;meat spreads;tropical fruit;chicken;bottled beer;frozen vegetables;ready soups
+763,frozen fish;organic products;tropical fruit;sausage;newspapers;liquor;beef
+764,frozen fish;bottled water;pastry;brown bread;magazines;tea
+765,candy;other vegetables;baby food;magazines;soda;chicken;liquor;citrus fruit
+766,softener;instant food;chewing gum;butter;long life bakery product;meat spreads;tea;semi-finished bread
+767,magazines;organic products;cream cheese;liquor;pork;chocolate;frozen fish;sausage;soda;margarine
+768,frozen fish;detergent;whole milk;long life bakery product;pork;baby food;instant food
+769,candy;newspapers;ice cream;frozen meals;pet care;whole milk;cream cheese
+770,long life bakery product;frozen meals;bottled beer;waffles;pip fruit;semi-finished bread;domestic eggs
+771,pip fruit;long life bakery product;curd;pork;citrus fruit;waffles;domestic eggs
+772,shopping bags;yogurt;baby food;chewing gum;sausage;citrus fruit;long life bakery product
+773,beef;tea;citrus fruit;butter;shopping bags;yogurt;soda
+774,domestic eggs;whole milk;pastry;bottled water;shopping bags;magazines;detergent
+775,pastry;chocolate;ice cream;curd;pet care;sausage;rolls/buns;margarine
+776,chicken;soda;semi-finished bread;rolls/buns;butter;fruit/vegetable juice;frozen fish
+777,white bread;pork;soda;tea;sausage;candy
+778,rolls/buns;pip fruit;ready soups;other vegetables;liquor;butter;frozen dessert;white bread
+779,candy;tropical fruit;ice cream;chocolate;meat spreads;fruit/vegetable juice;newspapers;soda
+780,margarine;softener;beef;long life bakery product;coffee;rolls/buns;bottled beer;liquor
+781,frozen meals;pork;frozen vegetables;sugar;coffee;detergent;semi-finished bread
+782,bottled water;curd;yogurt;domestic eggs;meat spreads;pastry;chocolate
+783,brown bread;long life bakery product;tropical fruit;shopping bags;organic products;chewing gum;candy;bottled water
+784,beef;meat spreads;whole milk;liquor;frozen dessert;sausage;tropical fruit;fruit/vegetable juice
+785,chicken;organic products;ready soups;pip fruit;softener;domestic eggs;brown bread;sausage;curd
+786,brown bread;other vegetables;newspapers;bottled beer;liquor;meat spreads;domestic eggs;bottled water;softener
+787,brown bread;detergent;ready soups;sugar;fruit/vegetable juice;whole milk
+788,long life bakery product;pip fruit;waffles;tea;semi-finished bread;ice cream;fruit/vegetable juice
+789,fruit/vegetable juice;rolls/buns;coffee;sausage;chewing gum;candy;tea
+790,sausage;rolls/buns;chicken;frozen dessert;frozen meals
+791,domestic eggs;ice cream;butter;baby food;cream cheese;frozen fish;tea;shopping bags
+792,beef;liquor;chocolate;frozen fish;chewing gum;bottled water;other vegetables
+793,white bread;waffles;softener;frozen vegetables;shopping bags;coffee;long life bakery product
+794,long life bakery product;ready soups;waffles;frozen vegetables;ice cream;yogurt;pork;pastry
+795,cream cheese;brown bread;frozen fish;baby food;rolls/buns;organic products
+796,bottled water;ready soups;pork;softener;root vegetables;liquor;chicken
+797,brown bread;chewing gum;pip fruit;pork;softener;citrus fruit;baby food;shopping bags
+798,pet care;sugar;newspapers;beef;baby food;softener
+799,liquor;tea;beef;butter;magazines;frozen meals;curd
+800,pork;ready soups;white bread;frozen vegetables;pastry;meat spreads;root vegetables;frozen fish;chocolate
+801,frozen vegetables;bottled beer;magazines;domestic eggs;waffles;meat spreads;chocolate;shopping bags
+802,frozen fish;cream cheese;sausage;pip fruit;tea;yogurt;softener;fruit/vegetable juice
+803,domestic eggs;chewing gum;yogurt;long life bakery product;meat spreads;baby food;semi-finished bread;butter
+804,tea;chocolate;root vegetables;curd;pip fruit;margarine;frozen fish;instant food
+805,sugar;pork;meat spreads;brown bread;waffles;pet care;softener
+806,tea;ice cream;bottled beer;pet care;long life bakery product;other vegetables;candy;root vegetables
+807,ready soups;sausage;organic products;liquor;butter;domestic eggs;fruit/vegetable juice
+808,ready soups;baby food;frozen dessert;bottled beer;soda;rolls/buns;tea
+809,sugar;tea;citrus fruit;magazines;beef;butter;ready soups;other vegetables
+810,detergent;chocolate;frozen meals;brown bread;beef;long life bakery product;sugar;sausage
+811,brown bread;frozen meals;waffles;long life bakery product;chewing gum;root vegetables;frozen vegetables
+812,brown bread;sausage;margarine;bottled beer;frozen fish;curd;frozen vegetables;chicken;newspapers
+813,tea;frozen vegetables;soda;meat spreads;chicken;frozen fish;curd
+814,margarine;meat spreads;whole milk;ice cream;tropical fruit;curd;soda;chewing gum
+815,pip fruit;bottled beer;ice cream;ready soups;brown bread;curd;cream cheese
+816,semi-finished bread;newspapers;shopping bags;pip fruit;citrus fruit;root vegetables;instant food
+817,brown bread;long life bakery product;detergent;magazines;bottled beer;whole milk
+818,bottled beer;pet care;sausage;margarine;softener;instant food;soda;ready soups;root vegetables
+819,soda;pet care;newspapers;tea;sugar;root vegetables
+820,frozen meals;pastry;ready soups;magazines;detergent;sugar;white bread;waffles
+821,pet care;rolls/buns;root vegetables;yogurt;tea;shopping bags;softener
+822,frozen vegetables;ready soups;pastry;beef;long life bakery product;rolls/buns;sausage;newspapers;butter
+823,sausage;butter;pastry;magazines;instant food;pet care;candy;ice cream
+824,candy;root vegetables;newspapers;pip fruit;frozen fish;frozen meals;beef;organic products;coffee;sausage
+825,candy;tropical fruit;chewing gum;long life bakery product;butter;sugar;whole milk;frozen meals;tea
+826,soda;detergent;butter;brown bread;frozen fish;instant food;frozen dessert;bottled water;cream cheese
+827,semi-finished bread;whole milk;frozen dessert;liquor;tea;pip fruit;softener
+828,frozen dessert;cream cheese;curd;citrus fruit;chewing gum;margarine;softener
+829,root vegetables;rolls/buns;waffles;citrus fruit;brown bread;pip fruit;meat spreads;frozen meals
+830,whole milk;chicken;other vegetables;sausage;baby food;fruit/vegetable juice;margarine;softener;curd
+831,tea;citrus fruit;instant food;shopping bags;soda;root vegetables;white bread;frozen vegetables
+832,pip fruit;pet care;waffles;liquor;detergent;frozen dessert;soda;tea
+833,shopping bags;detergent;white bread;coffee;softener;baby food;ice cream;citrus fruit;domestic eggs;candy
+834,pet care;shopping bags;newspapers;sugar;ice cream;fruit/vegetable juice;instant food;ready soups;candy
+835,semi-finished bread;bottled water;tropical fruit;ice cream;cream cheese;domestic eggs;sugar
+836,bottled water;tropical fruit;soda;long life bakery product;beef;liquor;frozen meals
+837,butter;long life bakery product;bottled beer;yogurt;coffee;bottled water;rolls/buns;chewing gum;detergent
+838,chocolate;candy;tropical fruit;white bread;instant food;meat spreads;cream cheese;pip fruit
+839,frozen vegetables;pork;long life bakery product;instant food;chewing gum;shopping bags;fruit/vegetable juice
+840,tropical fruit;semi-finished bread;chocolate;sugar;fruit/vegetable juice;cream cheese;liquor
+841,meat spreads;yogurt;pip fruit;sugar;curd;organic products;margarine;waffles
+842,soda;baby food;newspapers;white bread;long life bakery product;candy;chicken
+843,frozen fish;white bread;ice cream;whole milk;frozen vegetables;tea;root vegetables
+844,long life bakery product;bottled water;fruit/vegetable juice;rolls/buns;tropical fruit;cream cheese;chicken;tea
+845,tea;ice cream;pet care;tropical fruit;frozen fish;meat spreads;candy
+846,newspapers;tea;brown bread;liquor;long life bakery product;frozen vegetables;chewing gum;white bread
+847,waffles;white bread;frozen meals;bottled beer;instant food;pip fruit;root vegetables
+848,instant food;frozen dessert;long life bakery product;margarine;pip fruit;waffles
+849,pork;chewing gum;chicken;margarine;frozen vegetables;frozen fish
+850,ready soups;sugar;waffles;citrus fruit;bottled beer;pet care;liquor
+851,long life bakery product;baby food;fruit/vegetable juice;tropical fruit;whole milk;bottled beer;shopping bags;sugar
+852,sugar;frozen meals;pet care;semi-finished bread;baby food;softener
+853,organic products;long life bakery product;margarine;bottled water;cream cheese;chewing gum;chocolate;sausage;white bread
+854,frozen fish;coffee;chicken;chocolate;pork;semi-finished bread;frozen vegetables;fruit/vegetable juice;bottled water
+855,beef;brown bread;semi-finished bread;white bread;shopping bags;tropical fruit;instant food
+856,frozen vegetables;newspapers;frozen fish;chewing gum;baby food;citrus fruit;rolls/buns;cream cheese
+857,chicken;root vegetables;domestic eggs;instant food;meat spreads;ice cream;pork;newspapers;tropical fruit
+858,tropical fruit;other vegetables;baby food;brown bread;margarine;yogurt;chocolate;candy;cream cheese
+859,frozen vegetables;citrus fruit;ready soups;chocolate;baby food;semi-finished bread;newspapers
+860,detergent;baby food;frozen fish;chocolate;chewing gum;chicken;magazines;tea
+861,semi-finished bread;pastry;tropical fruit;waffles;bottled beer;frozen meals;fruit/vegetable juice
+862,yogurt;magazines;frozen fish;pastry;ice cream;frozen vegetables;organic products;pork;curd
+863,citrus fruit;beef;tropical fruit;baby food;bottled water;sugar;newspapers
+864,frozen vegetables;rolls/buns;tropical fruit;pip fruit;sugar;chocolate;frozen dessert
+865,white bread;shopping bags;other vegetables;baby food;beef;sugar;pastry
+866,shopping bags;margarine;baby food;long life bakery product;rolls/buns;curd;frozen vegetables
+867,yogurt;pastry;meat spreads;candy;frozen meals;curd;brown bread
+868,frozen vegetables;citrus fruit;cream cheese;bottled water;fruit/vegetable juice;candy;rolls/buns
+869,rolls/buns;sugar;fruit/vegetable juice;long life bakery product;frozen vegetables;detergent;soda
+870,frozen dessert;baby food;liquor;pet care;ice cream;frozen fish;newspapers;ready soups
+871,ice cream;butter;shopping bags;baby food;detergent
+872,chicken;tropical fruit;ice cream;tea;sugar;meat spreads;brown bread
+873,cream cheese;chicken;long life bakery product;ice cream;white bread;coffee;liquor
+874,sausage;whole milk;bottled beer;ready soups;chewing gum;shopping bags;pet care
+875,detergent;other vegetables;chocolate;frozen meals;ice cream;semi-finished bread;softener;ready soups
+876,chocolate;citrus fruit;pork;other vegetables;organic products;frozen vegetables;frozen meals;bottled water
+877,ice cream;brown bread;tropical fruit;shopping bags;sausage;organic products;candy;frozen vegetables
+878,pork;bottled water;ice cream;beef;domestic eggs;sugar;liquor;instant food
+879,curd;chewing gum;chocolate;sugar;frozen meals;bottled beer;semi-finished bread
+880,chicken;newspapers;whole milk;tropical fruit;curd;margarine;citrus fruit
+881,detergent;citrus fruit;liquor;long life bakery product;chocolate;instant food;frozen vegetables;other vegetables
+882,semi-finished bread;chicken;brown bread;cream cheese;other vegetables;root vegetables;meat spreads;coffee;pip fruit
+883,pastry;whole milk;butter;ready soups;cream cheese;liquor;frozen vegetables
+884,liquor;bottled beer;ice cream;sausage;pastry;detergent
+885,domestic eggs;shopping bags;chewing gum;waffles;pet care;butter;citrus fruit
+886,cream cheese;ice cream;waffles;softener;other vegetables;shopping bags;frozen vegetables
+887,bottled beer;liquor;root vegetables;rolls/buns;pip fruit;citrus fruit;brown bread;candy;fruit/vegetable juice;meat spreads
+888,pip fruit;meat spreads;frozen dessert;pet care;beef;white bread;softener;frozen fish
+889,tea;white bread;brown bread;pet care;sugar;pastry
+890,waffles;shopping bags;softener;organic products;frozen meals;pastry;whole milk
+891,whole milk;waffles;frozen dessert;butter;other vegetables;bottled water;organic products;tropical fruit
+892,curd;yogurt;pet care;chewing gum;fruit/vegetable juice;domestic eggs;margarine;cream cheese;candy
+893,tropical fruit;frozen vegetables;rolls/buns;bottled water;shopping bags;detergent
+894,butter;fruit/vegetable juice;rolls/buns;newspapers;baby food;whole milk;margarine;cream cheese
+895,pip fruit;frozen dessert;baby food;pork;chicken;chewing gum;bottled beer;newspapers;ice cream
+896,pet care;magazines;yogurt;semi-finished bread;fruit/vegetable juice;sausage;domestic eggs
+897,sausage;long life bakery product;rolls/buns;chocolate;sugar;fruit/vegetable juice;pip fruit;butter
+898,beef;pastry;ice cream;tropical fruit;soda;sausage;chewing gum
+899,coffee;organic products;ice cream;sugar;soda;whole milk;domestic eggs
+900,softener;margarine;ready soups;domestic eggs;pastry;rolls/buns;meat spreads
+901,bottled beer;waffles;other vegetables;chicken;yogurt;ready soups;candy;margarine;curd
+902,meat spreads;pip fruit;sausage;semi-finished bread;newspapers;curd;frozen dessert;coffee
+903,frozen dessert;frozen meals;root vegetables;domestic eggs;bottled beer;sugar
+904,pip fruit;newspapers;pet care;frozen fish;brown bread;meat spreads;frozen dessert
+905,meat spreads;tea;bottled water;fruit/vegetable juice;frozen vegetables;brown bread;softener;frozen fish
+906,instant food;tropical fruit;pork;yogurt;pet care;candy;newspapers;sausage
+907,softener;yogurt;ready soups;chocolate;butter;sausage;whole milk
+908,pip fruit;chocolate;pork;coffee;pastry;magazines;tropical fruit;shopping bags
+909,instant food;beef;softener;sugar;tropical fruit;sausage;soda;semi-finished bread;curd
+910,magazines;pet care;citrus fruit;instant food;domestic eggs;frozen vegetables;tropical fruit
+911,waffles;baby food;organic products;curd;frozen meals;whole milk;pet care;tea
+912,pork;butter;newspapers;coffee;tea;cream cheese;citrus fruit
+913,butter;candy;chocolate;margarine;white bread;sausage;pork;ready soups
+914,pip fruit;frozen vegetables;cream cheese;rolls/buns;softener;bottled water;soda;chewing gum
+915,ice cream;soda;sugar;waffles;margarine;whole milk;tea
+916,ice cream;instant food;pip fruit;root vegetables;pet care;softener;beef;rolls/buns
+917,margarine;pet care;meat spreads;domestic eggs;sugar;shopping bags;frozen meals;rolls/buns
+918,shopping bags;pork;instant food;newspapers;frozen dessert;domestic eggs
+919,brown bread;organic products;frozen fish;tea;cream cheese;pet care
+920,chocolate;bottled water;meat spreads;organic products;pet care;chewing gum;semi-finished bread;long life bakery product;frozen dessert
+921,other vegetables;tropical fruit;frozen meals;liquor;instant food;rolls/buns
+922,margarine;baby food;candy;pip fruit;softener;detergent
+923,semi-finished bread;rolls/buns;ice cream;frozen fish;root vegetables;pork
+924,brown bread;chocolate;rolls/buns;ice cream;organic products;butter
+925,softener;bottled beer;soda;waffles;tropical fruit;sausage;pork;chocolate;curd
+926,chewing gum;liquor;beef;pastry;citrus fruit;bottled water;long life bakery product
+927,sugar;ready soups;other vegetables;soda;frozen meals;candy;yogurt;softener
+928,pip fruit;ice cream;other vegetables;waffles;detergent;cream cheese;liquor
+929,butter;domestic eggs;ready soups;newspapers;white bread;yogurt;rolls/buns
+930,beef;yogurt;frozen fish;baby food;white bread;shopping bags;pork
+931,tropical fruit;pastry;frozen vegetables;curd;sausage;baby food;other vegetables;pip fruit
+932,candy;ice cream;chicken;root vegetables;rolls/buns;curd;whole milk;frozen dessert;newspapers
+933,baby food;beef;chicken;rolls/buns;brown bread;bottled water
+934,tea;cream cheese;newspapers;frozen vegetables;frozen dessert;other vegetables
+935,waffles;detergent;organic products;pip fruit;butter;citrus fruit;liquor;sugar
+936,tropical fruit;butter;chewing gum;detergent;pork;pip fruit;frozen fish;coffee
+937,pork;baby food;frozen dessert;meat spreads;coffee;frozen fish;instant food
+938,meat spreads;cream cheese;yogurt;semi-finished bread;rolls/buns;frozen dessert
+939,sausage;candy;other vegetables;frozen vegetables;pastry;tea;baby food;sugar
+940,waffles;chewing gum;whole milk;cream cheese;organic products;tropical fruit;ice cream;curd
+941,domestic eggs;soda;baby food;pet care;tea;beef
+942,soda;chicken;chewing gum;waffles;brown bread;magazines
+943,soda;chewing gum;coffee;fruit/vegetable juice;chicken;baby food
+944,long life bakery product;meat spreads;fruit/vegetable juice;shopping bags;candy;whole milk;ice cream
+945,domestic eggs;sausage;organic products;tea;sugar;pet care;white bread
+946,long life bakery product;chewing gum;ready soups;tropical fruit;semi-finished bread;bottled water;soda
+947,coffee;tropical fruit;bottled water;frozen fish;instant food;whole milk;frozen dessert;frozen vegetables
+948,citrus fruit;pet care;soda;frozen vegetables;pip fruit;ready soups
+949,whole milk;shopping bags;organic products;semi-finished bread;magazines;instant food
+950,bottled beer;citrus fruit;pastry;tea;frozen fish;detergent;yogurt
+951,bottled beer;citrus fruit;frozen fish;coffee;detergent;cream cheese;frozen dessert
+952,curd;chocolate;citrus fruit;beef;butter;sugar;cream cheese
+953,beef;chocolate;magazines;root vegetables;shopping bags;domestic eggs;baby food
+954,pet care;liquor;frozen dessert;white bread;long life bakery product;cream cheese;frozen vegetables;root vegetables
+955,semi-finished bread;citrus fruit;root vegetables;bottled water;pet care
+956,beef;white bread;chocolate;instant food;chewing gum
+957,domestic eggs;chocolate;margarine;waffles;ice cream;shopping bags;organic products
+958,semi-finished bread;liquor;domestic eggs;citrus fruit;frozen vegetables;rolls/buns;ice cream
+959,pip fruit;pork;candy;frozen dessert;domestic eggs;liquor;whole milk
+960,baby food;candy;domestic eggs;bottled beer;frozen vegetables;instant food;chicken
+961,coffee;soda;chewing gum;candy;bottled beer;instant food;sugar
+962,magazines;root vegetables;rolls/buns;bottled beer;ice cream
+963,chicken;shopping bags;pastry;white bread;semi-finished bread;frozen fish;brown bread;baby food;pip fruit;detergent
+964,domestic eggs;tropical fruit;chocolate;coffee;fruit/vegetable juice;rolls/buns;yogurt
+965,liquor;chicken;other vegetables;newspapers;pip fruit;coffee;yogurt
+966,sausage;chewing gum;organic products;citrus fruit;whole milk
+967,curd;cream cheese;magazines;frozen fish;waffles;sugar;organic products;other vegetables
+968,frozen vegetables;chocolate;ice cream;frozen fish;citrus fruit;long life bakery product;butter;rolls/buns
+969,white bread;bottled beer;shopping bags;chocolate;waffles;curd;cream cheese;margarine
+970,ready soups;pip fruit;fruit/vegetable juice;detergent;bottled beer;yogurt;whole milk
+971,cream cheese;tea;chocolate;frozen dessert;magazines;soda;bottled beer;detergent;tropical fruit
+972,meat spreads;waffles;bottled beer;liquor;beef;detergent;organic products
+973,white bread;softener;coffee;butter;ice cream;long life bakery product;detergent
+974,soda;detergent;yogurt;chicken;waffles;frozen vegetables
+975,instant food;tropical fruit;chicken;bottled beer;frozen vegetables;organic products
+976,curd;coffee;fruit/vegetable juice;pastry;whole milk;waffles;domestic eggs;liquor
+977,newspapers;pork;frozen fish;softener;sausage;organic products;butter;soda
+978,organic products;softener;white bread;whole milk;frozen dessert;frozen meals;brown bread;tropical fruit;coffee
+979,other vegetables;frozen meals;butter;frozen fish;meat spreads;curd;fruit/vegetable juice;domestic eggs
+980,sugar;tropical fruit;rolls/buns;coffee;organic products
+981,tropical fruit;chocolate;ice cream;frozen meals;meat spreads;detergent;fruit/vegetable juice;soda
+982,pet care;meat spreads;chocolate;ice cream;waffles;cream cheese;tropical fruit
+983,butter;frozen meals;bottled water;bottled beer;citrus fruit;chocolate;pet care;rolls/buns
+984,newspapers;beef;frozen fish;domestic eggs;semi-finished bread;candy;bottled beer
+985,sugar;bottled beer;domestic eggs;ready soups;chocolate;whole milk;root vegetables;curd
+986,curd;baby food;long life bakery product;shopping bags;softener;meat spreads;magazines
+987,meat spreads;other vegetables;chicken;pet care;chewing gum;magazines
+988,domestic eggs;other vegetables;white bread;chocolate;tropical fruit;frozen fish;cream cheese;curd
+989,rolls/buns;whole milk;frozen meals;sugar;magazines;cream cheese;pet care;softener
+990,pork;bottled beer;sausage;cream cheese;frozen fish;ice cream;meat spreads
+991,tropical fruit;tea;citrus fruit;fruit/vegetable juice;waffles;whole milk;chicken;pork
+992,pip fruit;baby food;curd;frozen fish;sausage;liquor;chocolate;frozen meals
+993,beef;frozen meals;coffee;detergent;waffles;pastry;instant food;bottled beer
+994,frozen fish;yogurt;chicken;soda;other vegetables;frozen meals;semi-finished bread;chewing gum
+995,domestic eggs;fruit/vegetable juice;bottled water;ice cream;semi-finished bread;newspapers;pastry;tea;liquor
+996,meat spreads;sugar;chewing gum;whole milk;margarine;ice cream;shopping bags
+997,softener;margarine;rolls/buns;newspapers;long life bakery product;frozen vegetables;magazines;soda;candy
+998,waffles;chicken;citrus fruit;bottled beer;frozen fish;softener;other vegetables;sausage
+999,candy;pastry;instant food;chewing gum;newspapers;whole milk;white bread;softener
+1000,frozen dessert;citrus fruit;pork;whole milk;chicken;other vegetables
+1001,frozen fish;soda;fruit/vegetable juice;root vegetables;detergent;cream cheese;bottled beer;yogurt
+1002,fruit/vegetable juice;white bread;bottled beer;newspapers;citrus fruit;beef;meat spreads;root vegetables;chocolate
+1003,frozen vegetables;candy;liquor;long life bakery product;frozen fish;pastry;waffles
+1004,tea;brown bread;frozen dessert;chicken;magazines;pastry;pork
+1005,soda;softener;pastry;sugar;detergent;whole milk;pork
+1006,frozen fish;candy;frozen vegetables;long life bakery product;newspapers
+1007,frozen meals;liquor;beef;fruit/vegetable juice;detergent;margarine
+1008,rolls/buns;ice cream;pet care;yogurt;beef;coffee;frozen meals;frozen fish
+1009,shopping bags;liquor;newspapers;whole milk;frozen meals;long life bakery product;yogurt
+1010,instant food;pip fruit;bottled beer;margarine;chicken;baby food;organic products
+1011,bottled beer;sausage;bottled water;newspapers;citrus fruit;whole milk;shopping bags
+1012,margarine;yogurt;long life bakery product;candy;rolls/buns;curd;pip fruit;ready soups
+1013,pip fruit;detergent;frozen fish;fruit/vegetable juice;sausage
+1014,tropical fruit;softener;bottled water;root vegetables;frozen vegetables;bottled beer;cream cheese;pastry
+1015,pastry;other vegetables;curd;newspapers;bottled water;waffles;soda;frozen vegetables
+1016,chicken;tea;root vegetables;magazines;frozen fish;bottled beer;ice cream
+1017,other vegetables;tropical fruit;soda;pet care;chewing gum;frozen meals;cream cheese
+1018,shopping bags;tropical fruit;frozen dessert;beef;detergent;softener
+1019,liquor;cream cheese;pip fruit;frozen dessert;newspapers;long life bakery product;rolls/buns;whole milk;meat spreads
+1020,whole milk;newspapers;sugar;brown bread;candy;tropical fruit;chewing gum
+1021,candy;magazines;sugar;white bread;domestic eggs;chocolate;beef;newspapers;meat spreads
+1022,chocolate;magazines;butter;candy;curd;tropical fruit;fruit/vegetable juice
+1023,curd;margarine;butter;frozen vegetables;root vegetables;pastry;citrus fruit;chocolate
+1024,meat spreads;instant food;chicken;candy;chewing gum;rolls/buns;sausage
+1025,frozen fish;citrus fruit;rolls/buns;softener;bottled water;waffles;whole milk;frozen vegetables;meat spreads;candy
+1026,sugar;pet care;liquor;pip fruit;sausage;bottled beer;baby food;yogurt
+1027,baby food;frozen fish;yogurt;root vegetables;butter;liquor;shopping bags
+1028,detergent;pastry;instant food;softener;pork;sausage;ready soups
+1029,liquor;chicken;frozen meals;bottled beer;bottled water;waffles
+1030,tropical fruit;cream cheese;instant food;magazines;bottled beer;chocolate;citrus fruit;domestic eggs;butter;brown bread
+1031,baby food;pork;other vegetables;softener;organic products;detergent
+1032,meat spreads;soda;domestic eggs;ready soups;tropical fruit;chewing gum
+1033,frozen fish;frozen dessert;organic products;sausage;softener;tea;butter;detergent;rolls/buns
+1034,shopping bags;frozen meals;pip fruit;other vegetables;organic products;margarine;chewing gum;frozen dessert
+1035,soda;citrus fruit;ready soups;sugar;frozen fish;meat spreads;chocolate
+1036,liquor;organic products;soda;beef;pork;magazines;root vegetables;waffles
+1037,instant food;frozen vegetables;candy;butter;pastry;yogurt;shopping bags;other vegetables
+1038,beef;brown bread;sugar;shopping bags;ice cream;chocolate
+1039,sausage;soda;pork;liquor;ready soups;margarine;magazines
+1040,liquor;candy;baby food;chocolate;other vegetables;yogurt;instant food;whole milk
+1041,chocolate;white bread;frozen fish;candy;waffles;ice cream;butter;sugar
+1042,coffee;soda;sausage;waffles;tea;frozen vegetables;baby food;frozen dessert;sugar
+1043,frozen vegetables;long life bakery product;butter;tea;curd;waffles;ice cream;beef;yogurt
+1044,candy;softener;yogurt;other vegetables;chewing gum;waffles;ready soups
+1045,root vegetables;bottled water;frozen vegetables;cream cheese;baby food;organic products;yogurt;white bread
+1046,frozen fish;coffee;frozen vegetables;newspapers;brown bread;cream cheese;beef;frozen meals;semi-finished bread
+1047,beef;pet care;white bread;pastry;detergent;frozen dessert
+1048,waffles;sausage;baby food;rolls/buns;brown bread;organic products;magazines
+1049,butter;rolls/buns;chocolate;whole milk;sugar;beef;candy;organic products
+1050,coffee;whole milk;organic products;chicken;tropical fruit;instant food;frozen vegetables;newspapers;chocolate
+1051,waffles;ice cream;chicken;curd;other vegetables;pip fruit;domestic eggs;citrus fruit
+1052,pet care;pork;soda;organic products;tropical fruit;frozen dessert;sausage;margarine
+1053,frozen vegetables;tropical fruit;whole milk;margarine;coffee;ice cream;newspapers
+1054,coffee;whole milk;fruit/vegetable juice;chicken;sausage;chocolate;white bread;cream cheese
+1055,rolls/buns;beef;frozen fish;bottled water;waffles;margarine;instant food
+1056,pastry;meat spreads;domestic eggs;long life bakery product;sugar;whole milk;waffles
+1057,whole milk;shopping bags;sausage;meat spreads;ready soups;frozen meals;root vegetables;detergent
+1058,chewing gum;pet care;frozen meals;shopping bags;detergent;semi-finished bread;organic products;chocolate
+1059,meat spreads;sugar;coffee;soda;tropical fruit;margarine;ice cream
+1060,pip fruit;soda;beef;pet care;butter;ice cream
+1061,frozen fish;organic products;sugar;baby food;tea;coffee;yogurt
+1062,citrus fruit;shopping bags;frozen fish;organic products;long life bakery product;instant food;frozen meals;tea;rolls/buns
+1063,domestic eggs;frozen meals;citrus fruit;detergent;coffee;frozen dessert;white bread;instant food;pork
+1064,sugar;rolls/buns;bottled beer;frozen fish;butter;beef;fruit/vegetable juice
+1065,candy;frozen fish;chicken;liquor;frozen vegetables;frozen meals;margarine;detergent
+1066,detergent;domestic eggs;semi-finished bread;shopping bags;chicken;curd;cream cheese;beef;sugar
+1067,curd;bottled water;root vegetables;beef;pork;frozen fish;bottled beer
+1068,chewing gum;liquor;detergent;white bread;frozen fish;ice cream;sausage;pork;pet care
+1069,newspapers;domestic eggs;soda;butter;frozen meals;pet care;pip fruit
+1070,frozen meals;margarine;chocolate;citrus fruit;butter;pork;chicken
+1071,magazines;sausage;citrus fruit;bottled beer;meat spreads;instant food;bottled water;ready soups;rolls/buns
+1072,citrus fruit;candy;root vegetables;brown bread;newspapers;liquor;whole milk;tropical fruit
+1073,other vegetables;curd;pork;pastry;softener;liquor;ready soups;baby food;magazines
+1074,frozen dessert;liquor;fruit/vegetable juice;semi-finished bread;domestic eggs;white bread;pork;bottled beer;coffee;pip fruit
+1075,ice cream;domestic eggs;brown bread;butter;bottled beer;white bread;detergent;instant food
+1076,chicken;organic products;bottled beer;candy;brown bread;coffee;frozen meals
+1077,whole milk;margarine;fruit/vegetable juice;detergent;root vegetables;citrus fruit;frozen fish;rolls/buns
+1078,rolls/buns;margarine;candy;yogurt;cream cheese;frozen meals;frozen dessert;chocolate;softener
+1079,long life bakery product;coffee;pip fruit;meat spreads;beef;newspapers;waffles
+1080,pork;meat spreads;bottled water;pip fruit;domestic eggs;frozen meals;magazines;fruit/vegetable juice;pet care
+1081,ready soups;rolls/buns;detergent;semi-finished bread;tea;long life bakery product
+1082,frozen dessert;instant food;long life bakery product;sugar;baby food;semi-finished bread;softener
+1083,frozen vegetables;frozen meals;citrus fruit;frozen fish;long life bakery product;shopping bags;cream cheese;yogurt;chicken
+1084,pet care;detergent;root vegetables;long life bakery product;softener;baby food;frozen dessert;meat spreads;other vegetables;pork
+1085,chewing gum;candy;shopping bags;margarine;magazines;chicken;instant food;long life bakery product;root vegetables
+1086,root vegetables;bottled beer;instant food;frozen meals;long life bakery product;fruit/vegetable juice;meat spreads;frozen vegetables
+1087,curd;domestic eggs;ice cream;pork;instant food;frozen fish
+1088,chocolate;candy;soda;tropical fruit;newspapers;white bread
+1089,candy;coffee;root vegetables;other vegetables;frozen dessert;semi-finished bread;frozen meals
+1090,frozen meals;rolls/buns;white bread;beef;long life bakery product;margarine;pip fruit;domestic eggs
+1091,butter;bottled water;curd;soda;frozen meals;meat spreads;whole milk;pip fruit;pork
+1092,instant food;chewing gum;frozen fish;bottled water;chocolate;margarine;semi-finished bread;detergent;yogurt
+1093,domestic eggs;shopping bags;other vegetables;bottled water;semi-finished bread;fruit/vegetable juice;frozen dessert;curd
+1094,organic products;rolls/buns;white bread;instant food;curd;pet care
+1095,shopping bags;chicken;liquor;fruit/vegetable juice;frozen fish;sausage;ready soups;newspapers
+1096,other vegetables;fruit/vegetable juice;soda;frozen vegetables;chocolate;tropical fruit;beef;curd;ice cream
+1097,pastry;root vegetables;coffee;softener;newspapers;organic products;curd;semi-finished bread;frozen dessert;butter
+1098,softener;sugar;liquor;rolls/buns;meat spreads;curd;cream cheese
+1099,beef;tea;chicken;magazines;organic products;semi-finished bread;sausage;coffee;long life bakery product
+1100,bottled water;root vegetables;sausage;detergent;frozen vegetables;chocolate;margarine
+1101,liquor;waffles;domestic eggs;pip fruit;fruit/vegetable juice;instant food;candy;pastry;yogurt
+1102,whole milk;bottled beer;tea;sugar;ready soups;tropical fruit;newspapers;waffles
+1103,frozen dessert;detergent;root vegetables;waffles;semi-finished bread;citrus fruit;pork;tropical fruit
+1104,baby food;frozen meals;pip fruit;tropical fruit;waffles;domestic eggs;tea;brown bread
+1105,whole milk;liquor;sausage;sugar;long life bakery product;candy;margarine
+1106,bottled water;fruit/vegetable juice;tea;baby food;frozen dessert;semi-finished bread;yogurt;pip fruit
+1107,curd;semi-finished bread;frozen meals;pastry;beef;bottled beer;sugar
+1108,semi-finished bread;beef;citrus fruit;magazines;soda;organic products
+1109,cream cheese;meat spreads;ice cream;shopping bags;rolls/buns;frozen vegetables;yogurt
+1110,newspapers;beef;waffles;meat spreads;detergent;cream cheese;other vegetables
+1111,waffles;butter;instant food;meat spreads;margarine;cream cheese;white bread
+1112,sausage;curd;magazines;pork;pastry;root vegetables;ready soups;soda
+1113,frozen dessert;ice cream;white bread;butter;chocolate;fruit/vegetable juice;brown bread;softener
+1114,pip fruit;tea;pet care;shopping bags;chocolate;organic products
+1115,detergent;chocolate;bottled water;chewing gum;frozen dessert;citrus fruit;pet care
+1116,root vegetables;chicken;sugar;pet care;bottled beer;long life bakery product;citrus fruit
+1117,tropical fruit;chocolate;frozen meals;semi-finished bread;rolls/buns;whole milk;instant food
+1118,bottled water;tropical fruit;liquor;cream cheese;waffles;pork
+1119,organic products;pork;root vegetables;softener;ice cream;frozen fish;chicken;pastry
+1120,brown bread;newspapers;ready soups;pet care;frozen meals;domestic eggs;citrus fruit;sausage
+1121,semi-finished bread;softener;organic products;yogurt;detergent;whole milk;fruit/vegetable juice;instant food
+1122,root vegetables;butter;organic products;softener;ready soups;tea
+1123,tropical fruit;tea;frozen fish;frozen meals;white bread;sausage;pip fruit;organic products;chicken
+1124,detergent;chocolate;instant food;soda;sugar
+1125,white bread;soda;tea;beef;detergent;chocolate;frozen dessert;coffee;pork
+1126,white bread;other vegetables;citrus fruit;whole milk;ice cream;beef;chicken;shopping bags
+1127,chocolate;sausage;chewing gum;chicken;tea;shopping bags;root vegetables;pastry
+1128,chewing gum;pastry;sugar;candy;instant food;magazines;frozen meals
+1129,softener;bottled water;shopping bags;sugar;chicken;coffee;brown bread;fruit/vegetable juice
+1130,sugar;beef;fruit/vegetable juice;bottled water;root vegetables;frozen meals;rolls/buns;candy;yogurt
+1131,softener;rolls/buns;sausage;baby food;bottled beer;curd;ready soups;frozen dessert
+1132,soda;sausage;butter;chocolate;newspapers;magazines;chicken
+1133,shopping bags;liquor;pip fruit;ice cream;pastry;sausage;tropical fruit;root vegetables
+1134,other vegetables;semi-finished bread;waffles;chicken;citrus fruit;candy;frozen dessert
+1135,magazines;chocolate;bottled water;butter;instant food;baby food;semi-finished bread
+1136,newspapers;soda;frozen meals;ready soups;tropical fruit;margarine;detergent
+1137,waffles;margarine;detergent;pork;frozen meals;yogurt;pet care;pastry;bottled water
+1138,tropical fruit;cream cheese;long life bakery product;semi-finished bread;citrus fruit;newspapers;brown bread
+1139,organic products;ready soups;frozen fish;whole milk;instant food;chicken;baby food;newspapers
+1140,whole milk;butter;soda;yogurt;semi-finished bread;organic products;pet care;baby food;magazines
+1141,brown bread;root vegetables;tea;pet care;shopping bags
+1142,butter;citrus fruit;whole milk;organic products;chocolate;margarine
+1143,bottled beer;bottled water;meat spreads;pip fruit;brown bread;softener;frozen dessert
+1144,tea;brown bread;butter;tropical fruit;frozen fish;softener;newspapers;pip fruit
+1145,frozen meals;bottled beer;baby food;other vegetables;newspapers;softener;soda;butter
+1146,pet care;other vegetables;meat spreads;shopping bags;sausage;frozen dessert;chewing gum;detergent;butter;citrus fruit
+1147,pet care;bottled water;ready soups;margarine;domestic eggs;long life bakery product;whole milk
+1148,brown bread;long life bakery product;pip fruit;detergent;ice cream;sugar;chewing gum;domestic eggs;meat spreads
+1149,magazines;ready soups;newspapers;other vegetables;curd;sausage;tropical fruit;softener;brown bread
+1150,other vegetables;ready soups;margarine;whole milk;waffles;chicken;beef;rolls/buns
+1151,tropical fruit;citrus fruit;beef;detergent;bottled water;chocolate;yogurt;chicken
+1152,root vegetables;candy;chicken;other vegetables;bottled beer;citrus fruit;liquor
+1153,cream cheese;bottled water;meat spreads;margarine;ice cream;sugar;instant food
+1154,yogurt;brown bread;instant food;domestic eggs;frozen meals;margarine;detergent
+1155,sausage;pastry;margarine;ice cream;frozen vegetables;baby food;cream cheese;softener
+1156,fruit/vegetable juice;ice cream;soda;sugar;ready soups;magazines;yogurt
+1157,bottled water;organic products;white bread;shopping bags;newspapers;candy;pet care;frozen meals
+1158,bottled beer;frozen meals;chocolate;ice cream;frozen dessert;other vegetables;chewing gum
+1159,pip fruit;softener;soda;magazines;bottled beer;liquor;meat spreads;cream cheese
+1160,pastry;whole milk;pork;citrus fruit;chicken;sausage;frozen fish
+1161,sausage;waffles;bottled beer;margarine;frozen fish;newspapers;frozen meals;chicken
+1162,waffles;beef;chicken;coffee;detergent;citrus fruit;other vegetables
+1163,frozen vegetables;baby food;candy;whole milk;organic products;white bread;sugar
+1164,soda;white bread;frozen meals;citrus fruit;chewing gum;frozen fish;whole milk;tropical fruit
+1165,rolls/buns;bottled water;beef;waffles;pet care;organic products;margarine;long life bakery product
+1166,brown bread;bottled beer;other vegetables;soda;whole milk;instant food;root vegetables;citrus fruit
+1167,softener;whole milk;organic products;curd;long life bakery product;pip fruit;baby food;sugar;bottled water
+1168,magazines;liquor;pip fruit;coffee;margarine;pastry;soda
+1169,citrus fruit;sausage;white bread;margarine;organic products;chocolate;curd;cream cheese
+1170,chocolate;tropical fruit;newspapers;waffles;instant food;frozen fish;pet care
+1171,organic products;softener;sausage;pip fruit;root vegetables;frozen dessert;semi-finished bread
+1172,ice cream;whole milk;tropical fruit;brown bread;pip fruit;meat spreads
+1173,frozen fish;sausage;pastry;curd;detergent;frozen meals;frozen dessert;softener
+1174,butter;other vegetables;semi-finished bread;soda;candy;liquor;chocolate;sausage;tea
+1175,ready soups;meat spreads;semi-finished bread;fruit/vegetable juice;root vegetables;other vegetables;white bread;softener;waffles
+1176,ice cream;white bread;shopping bags;long life bakery product;coffee;margarine
+1177,chicken;margarine;baby food;detergent;newspapers;frozen fish;cream cheese
+1178,candy;fruit/vegetable juice;long life bakery product;soda;liquor;baby food
+1179,candy;sugar;newspapers;beef;waffles;ready soups;margarine;fruit/vegetable juice;butter
+1180,chocolate;citrus fruit;rolls/buns;brown bread;ready soups;root vegetables
+1181,frozen meals;citrus fruit;pip fruit;sugar;instant food;rolls/buns;long life bakery product;sausage
+1182,ice cream;long life bakery product;chewing gum;softener;sugar;brown bread;whole milk;chocolate
+1183,root vegetables;tea;frozen meals;ready soups;sugar;white bread
+1184,whole milk;brown bread;pork;organic products;cream cheese;sausage
+1185,softener;frozen meals;rolls/buns;bottled beer;chewing gum;tropical fruit;tea;sausage;baby food
+1186,domestic eggs;shopping bags;tropical fruit;root vegetables;ice cream;margarine;chicken;meat spreads
+1187,pastry;long life bakery product;coffee;yogurt;shopping bags;sausage;semi-finished bread;detergent;pet care
+1188,instant food;pork;chicken;coffee;chocolate;white bread;fruit/vegetable juice
+1189,liquor;other vegetables;coffee;frozen meals;ready soups;chicken;domestic eggs;waffles;beef
+1190,cream cheese;magazines;margarine;frozen meals;shopping bags;instant food;domestic eggs;candy;frozen dessert
+1191,pet care;butter;sugar;pork;liquor;meat spreads;chewing gum;fruit/vegetable juice
+1192,citrus fruit;frozen dessert;fruit/vegetable juice;chewing gum;meat spreads;waffles
+1193,pip fruit;curd;coffee;magazines;rolls/buns;white bread;frozen dessert;pet care;frozen fish
+1194,citrus fruit;detergent;chocolate;newspapers;meat spreads;long life bakery product;tea;frozen meals
+1195,pork;yogurt;bottled water;sugar;curd;beef
+1196,bottled water;soda;pastry;ice cream;frozen meals;detergent;shopping bags
+1197,white bread;frozen meals;liquor;baby food;coffee;fruit/vegetable juice;pork;chicken
+1198,margarine;chewing gum;semi-finished bread;frozen dessert;candy;curd
+1199,semi-finished bread;tropical fruit;cream cheese;soda;ready soups;pork;pastry;frozen vegetables
+1200,newspapers;domestic eggs;pork;brown bread;bottled water;fruit/vegetable juice;tropical fruit
+1201,domestic eggs;instant food;softener;chocolate;sugar;other vegetables;sausage;meat spreads
+1202,bottled beer;beef;candy;sugar;waffles;shopping bags;sausage;citrus fruit
+1203,butter;root vegetables;pip fruit;detergent;frozen fish;pet care
+1204,chocolate;root vegetables;bottled beer;newspapers;whole milk;citrus fruit
+1205,chocolate;rolls/buns;chewing gum;candy;white bread;semi-finished bread;tea
+1206,frozen vegetables;waffles;ice cream;pork;chicken;meat spreads;baby food;brown bread
+1207,butter;frozen fish;margarine;other vegetables;tea;semi-finished bread;pastry;frozen dessert
+1208,bottled beer;pip fruit;citrus fruit;bottled water;pork;semi-finished bread;frozen meals;ready soups
+1209,baby food;frozen dessert;instant food;ice cream;beef;frozen fish;softener
+1210,waffles;meat spreads;long life bakery product;semi-finished bread;root vegetables;bottled water;newspapers;organic products
+1211,yogurt;detergent;bottled water;citrus fruit;liquor;pastry;pet care
+1212,liquor;other vegetables;shopping bags;bottled beer;brown bread;pastry;candy;yogurt
+1213,sausage;newspapers;detergent;whole milk;frozen meals;bottled water;white bread;ready soups
+1214,tropical fruit;other vegetables;candy;baby food;pork;brown bread;rolls/buns;detergent;magazines
+1215,yogurt;ready soups;sugar;liquor;organic products;other vegetables;root vegetables;long life bakery product
+1216,pet care;yogurt;candy;baby food;rolls/buns;instant food
+1217,other vegetables;root vegetables;candy;frozen vegetables;baby food;liquor
+1218,waffles;softener;instant food;other vegetables;coffee;liquor;sugar
+1219,fruit/vegetable juice;magazines;semi-finished bread;frozen dessert;newspapers;butter;pastry;whole milk
+1220,liquor;beef;margarine;pastry;rolls/buns;candy;newspapers
+1221,meat spreads;frozen dessert;fruit/vegetable juice;candy;chocolate;magazines;frozen vegetables
+1222,sugar;coffee;liquor;chocolate;other vegetables;root vegetables;shopping bags;newspapers
+1223,bottled water;beef;fruit/vegetable juice;soda;chocolate
+1224,whole milk;sausage;baby food;bottled water;tea;soda;shopping bags
+1225,ice cream;shopping bags;organic products;semi-finished bread;margarine;instant food
+1226,pet care;frozen meals;citrus fruit;whole milk;newspapers;ready soups;fruit/vegetable juice;baby food
+1227,bottled water;liquor;other vegetables;yogurt;frozen fish;sugar;tropical fruit;rolls/buns
+1228,tea;pip fruit;chewing gum;other vegetables;meat spreads;citrus fruit;sausage
+1229,sausage;magazines;frozen meals;organic products;candy;fruit/vegetable juice;frozen fish;margarine
+1230,frozen dessert;ready soups;frozen meals;citrus fruit;liquor;pip fruit;frozen fish;cream cheese;bottled water;yogurt
+1231,ice cream;softener;newspapers;instant food;brown bread;detergent;pastry;sausage
+1232,shopping bags;bottled water;long life bakery product;softener;root vegetables;semi-finished bread;frozen fish
+1233,coffee;domestic eggs;baby food;yogurt;chocolate;pork;instant food;margarine;chicken
+1234,pastry;ice cream;long life bakery product;detergent;beef;chocolate;ready soups
+1235,root vegetables;ice cream;liquor;frozen fish;shopping bags
+1236,soda;pet care;sausage;waffles;sugar;shopping bags
+1237,soda;magazines;sugar;brown bread;semi-finished bread;waffles;chicken;pastry;butter
+1238,sugar;chewing gum;detergent;pork;tropical fruit;brown bread;frozen meals
+1239,frozen fish;citrus fruit;ice cream;white bread;softener;yogurt;curd;brown bread
+1240,organic products;liquor;chicken;citrus fruit;bottled beer;fruit/vegetable juice;pastry;white bread
+1241,sausage;sugar;detergent;shopping bags;newspapers;instant food;frozen meals;coffee
+1242,candy;sugar;chocolate;citrus fruit;pet care
+1243,pastry;semi-finished bread;brown bread;baby food;waffles;pip fruit;long life bakery product
+1244,sugar;cream cheese;soda;detergent;chicken;chewing gum;frozen meals
+1245,chewing gum;candy;chocolate;cream cheese;pastry;pet care;instant food;waffles
+1246,brown bread;magazines;bottled beer;white bread;ice cream;pet care;curd;ready soups;rolls/buns
+1247,softener;semi-finished bread;beef;white bread;citrus fruit;baby food;curd;organic products
+1248,frozen fish;coffee;margarine;other vegetables;curd;brown bread;softener
+1249,ready soups;soda;chicken;sausage;margarine;magazines;fruit/vegetable juice
+1250,curd;pet care;butter;frozen fish;domestic eggs;frozen meals;ready soups;pastry
+1251,tea;semi-finished bread;coffee;shopping bags;frozen fish;frozen dessert
+1252,chocolate;bottled beer;frozen meals;whole milk;coffee;newspapers;liquor
+1253,rolls/buns;sugar;detergent;curd;semi-finished bread;softener;pork;ice cream;pip fruit
+1254,coffee;chocolate;beef;cream cheese;frozen dessert;frozen vegetables;white bread;detergent
+1255,soda;pork;detergent;candy;magazines;root vegetables;shopping bags;pip fruit
+1256,other vegetables;softener;pork;yogurt;liquor;baby food;frozen dessert;frozen meals;tropical fruit
+1257,shopping bags;tropical fruit;chewing gum;magazines;organic products;fruit/vegetable juice;soda;whole milk
+1258,coffee;meat spreads;long life bakery product;detergent;magazines;softener;cream cheese
+1259,ice cream;meat spreads;shopping bags;frozen fish;margarine;tropical fruit;chicken;citrus fruit;cream cheese
+1260,soda;liquor;root vegetables;magazines;baby food;pork
+1261,pip fruit;citrus fruit;soda;curd;instant food;fruit/vegetable juice
+1262,newspapers;waffles;chocolate;pastry;root vegetables;ready soups;yogurt;brown bread
+1263,ice cream;citrus fruit;whole milk;waffles;pet care;tropical fruit;pastry;candy
+1264,sausage;butter;domestic eggs;margarine;yogurt;candy;ready soups
+1265,frozen dessert;yogurt;rolls/buns;ice cream;tropical fruit;butter;fruit/vegetable juice
+1266,semi-finished bread;long life bakery product;soda;chewing gum;domestic eggs;frozen meals;beef;magazines
+1267,pork;margarine;ice cream;candy;softener;liquor
+1268,pip fruit;sausage;frozen dessert;waffles;liquor;magazines;bottled beer
+1269,whole milk;bottled water;fruit/vegetable juice;sausage;newspapers;domestic eggs;frozen fish
+1270,sausage;long life bakery product;citrus fruit;white bread;ready soups;semi-finished bread;chicken;butter
+1271,candy;bottled beer;instant food;chicken;frozen vegetables;sugar;fruit/vegetable juice;cream cheese
+1272,domestic eggs;shopping bags;chocolate;meat spreads;fruit/vegetable juice
+1273,pastry;frozen meals;newspapers;semi-finished bread;magazines;whole milk;bottled water
+1274,margarine;cream cheese;newspapers;white bread;semi-finished bread;liquor;curd;chewing gum
+1275,frozen vegetables;instant food;candy;chicken;brown bread;meat spreads;semi-finished bread
+1276,frozen meals;frozen dessert;frozen fish;yogurt;bottled beer
+1277,meat spreads;candy;soda;pet care;magazines;pip fruit;ready soups;yogurt
+1278,meat spreads;long life bakery product;pip fruit;baby food;chicken;semi-finished bread
+1279,rolls/buns;cream cheese;waffles;newspapers;shopping bags;beef;frozen vegetables;chocolate;sugar;instant food
+1280,frozen dessert;frozen vegetables;pip fruit;root vegetables;meat spreads;beef;detergent;frozen meals;rolls/buns;tropical fruit
+1281,citrus fruit;pet care;white bread;magazines;waffles;curd;meat spreads;sugar;rolls/buns
+1282,butter;rolls/buns;frozen dessert;candy;ice cream;beef;pastry;liquor
+1283,pastry;candy;chicken;coffee;frozen vegetables;instant food;whole milk
+1284,liquor;long life bakery product;ice cream;root vegetables;sausage;fruit/vegetable juice;pastry;frozen meals
+1285,tea;frozen meals;chicken;bottled water;butter;brown bread;white bread
+1286,curd;candy;tropical fruit;citrus fruit;frozen vegetables;frozen fish
+1287,meat spreads;frozen fish;shopping bags;beef;root vegetables;frozen vegetables;other vegetables
+1288,bottled water;sugar;detergent;softener;magazines;pip fruit;yogurt;candy;frozen meals
+1289,organic products;rolls/buns;frozen meals;other vegetables;tea;ice cream;liquor
+1290,meat spreads;beef;long life bakery product;pip fruit;ready soups;chewing gum;bottled beer
+1291,bottled water;frozen dessert;detergent;magazines;pastry;yogurt;margarine;organic products
+1292,margarine;frozen meals;frozen vegetables;candy;instant food;pet care;softener;organic products
+1293,whole milk;pip fruit;ready soups;pork;organic products;pet care;magazines;liquor;frozen meals;shopping bags;domestic eggs
+1294,white bread;instant food;whole milk;curd;bottled beer;sugar;root vegetables;semi-finished bread
+1295,softener;sausage;long life bakery product;brown bread;ready soups;pet care;frozen dessert;liquor;rolls/buns
+1296,softener;chicken;frozen vegetables;baby food;root vegetables;detergent;yogurt
+1297,beef;sugar;chicken;sausage;pastry;softener;pork
+1298,tea;frozen meals;curd;sausage;brown bread;rolls/buns;margarine
+1299,pet care;other vegetables;sugar;sausage;coffee;butter
+1300,baby food;pork;citrus fruit;yogurt;softener;butter;chocolate
+1301,tropical fruit;baby food;liquor;ready soups;chocolate;coffee;margarine
+1302,tropical fruit;domestic eggs;liquor;frozen vegetables;bottled beer;waffles;magazines;ice cream;detergent
+1303,coffee;ready soups;sausage;margarine;whole milk;pet care
+1304,semi-finished bread;citrus fruit;other vegetables;waffles;tropical fruit;liquor;frozen vegetables;bottled beer;chicken
+1305,tropical fruit;beef;domestic eggs;bottled water;coffee;softener;detergent
+1306,chocolate;ready soups;ice cream;shopping bags;citrus fruit;bottled water;pet care;chewing gum
+1307,curd;tropical fruit;fruit/vegetable juice;butter;ready soups;bottled water;whole milk
+1308,chewing gum;liquor;magazines;other vegetables;pastry;ready soups;root vegetables
+1309,yogurt;citrus fruit;chewing gum;beef;long life bakery product;margarine
+1310,root vegetables;white bread;yogurt;ready soups;margarine;meat spreads;butter
+1311,frozen vegetables;softener;ready soups;liquor;organic products;waffles
+1312,white bread;butter;fruit/vegetable juice;softener;tea;chewing gum;ice cream;sausage
+1313,long life bakery product;frozen dessert;frozen vegetables;detergent;domestic eggs;other vegetables;frozen meals
+1314,pet care;baby food;instant food;tropical fruit;ready soups;rolls/buns
+1315,soda;bottled beer;pastry;waffles;sausage;magazines
+1316,frozen fish;sausage;citrus fruit;chicken;pip fruit;frozen dessert;detergent
+1317,coffee;detergent;tea;magazines;citrus fruit;meat spreads;frozen dessert
+1318,chocolate;white bread;semi-finished bread;waffles;liquor;shopping bags;rolls/buns
+1319,shopping bags;cream cheese;candy;frozen fish;long life bakery product;margarine;waffles;other vegetables
+1320,magazines;candy;citrus fruit;tropical fruit;pork;newspapers;sausage
+1321,root vegetables;coffee;pork;margarine;shopping bags;cream cheese;tea;yogurt;chicken
+1322,chewing gum;soda;baby food;waffles;frozen fish;bottled beer;frozen dessert
+1323,cream cheese;white bread;sausage;pastry;magazines;chocolate;liquor
+1324,frozen fish;waffles;magazines;cream cheese;baby food;semi-finished bread;newspapers;tea
+1325,margarine;butter;domestic eggs;chicken;sugar;yogurt;bottled water
+1326,meat spreads;ice cream;other vegetables;frozen fish;sausage;organic products;whole milk;soda
+1327,chewing gum;softener;frozen dessert;fruit/vegetable juice;ice cream;tea;pork
+1328,baby food;root vegetables;organic products;white bread;tea;detergent;bottled water;frozen dessert
+1329,magazines;chocolate;pastry;soda;frozen meals;pork;ice cream;softener;waffles
+1330,pastry;rolls/buns;margarine;detergent;frozen dessert;frozen meals;instant food;frozen vegetables
+1331,rolls/buns;shopping bags;curd;pastry;other vegetables;bottled water;beef
+1332,root vegetables;pastry;beef;bottled water;chocolate;frozen fish;long life bakery product;yogurt
+1333,organic products;sausage;domestic eggs;tropical fruit;coffee;frozen fish;soda;frozen vegetables;tea
+1334,tropical fruit;ice cream;pork;organic products;frozen meals;citrus fruit
+1335,magazines;ice cream;shopping bags;soda;domestic eggs;baby food;pastry
+1336,sugar;root vegetables;beef;instant food;baby food;fruit/vegetable juice;chicken;long life bakery product
+1337,waffles;liquor;baby food;citrus fruit;instant food;chewing gum;pastry
+1338,pet care;pastry;liquor;brown bread;butter;long life bakery product;meat spreads;frozen vegetables
+1339,other vegetables;domestic eggs;butter;candy;sugar;tea;detergent;rolls/buns
+1340,frozen meals;soda;pet care;whole milk;meat spreads;curd;chicken
+1341,semi-finished bread;sausage;whole milk;butter;root vegetables;pastry;baby food
+1342,baby food;frozen vegetables;tea;softener;pip fruit;frozen fish;shopping bags
+1343,fruit/vegetable juice;margarine;semi-finished bread;frozen vegetables;brown bread;citrus fruit;newspapers;rolls/buns
+1344,candy;pork;newspapers;citrus fruit;pastry;soda
+1345,waffles;pip fruit;coffee;organic products;magazines;cream cheese;brown bread
+1346,chewing gum;ice cream;frozen vegetables;long life bakery product;sugar;tropical fruit;organic products;white bread
+1347,frozen fish;beef;butter;waffles;tea;rolls/buns;candy;chewing gum
+1348,tea;candy;chocolate;brown bread;other vegetables;beef;pastry;shopping bags
+1349,cream cheese;yogurt;whole milk;candy;waffles;frozen fish
+1350,beef;sausage;softener;curd;organic products;detergent;liquor;rolls/buns
+1351,instant food;chewing gum;magazines;chocolate;citrus fruit;meat spreads;beef
+1352,fruit/vegetable juice;meat spreads;domestic eggs;beef;yogurt;organic products;bottled water;bottled beer
+1353,pet care;yogurt;candy;other vegetables;liquor;chicken;instant food;shopping bags;tropical fruit;pip fruit
+1354,organic products;detergent;cream cheese;semi-finished bread;frozen fish;white bread;chewing gum;ready soups
+1355,frozen dessert;rolls/buns;curd;baby food;bottled beer;other vegetables
+1356,meat spreads;coffee;ready soups;liquor;fruit/vegetable juice;pet care;organic products
+1357,brown bread;cream cheese;white bread;magazines;organic products;citrus fruit;sausage
+1358,frozen meals;tea;yogurt;domestic eggs;long life bakery product
+1359,white bread;waffles;sugar;detergent;long life bakery product;pork;pet care
+1360,frozen vegetables;white bread;frozen dessert;butter;sugar;chewing gum;sausage
+1361,beef;tropical fruit;other vegetables;baby food;meat spreads;detergent;butter
+1362,root vegetables;candy;newspapers;other vegetables;coffee;magazines;margarine
+1363,beef;pet care;sugar;chewing gum;sausage;pip fruit;whole milk;baby food;frozen vegetables
+1364,sugar;soda;beef;semi-finished bread;sausage
+1365,frozen meals;baby food;organic products;white bread;magazines;long life bakery product;butter;soda
+1366,cream cheese;citrus fruit;instant food;frozen fish;margarine;softener;tropical fruit
+1367,brown bread;frozen meals;baby food;tea;long life bakery product;margarine;pip fruit
+1368,baby food;citrus fruit;meat spreads;beef;soda;detergent
+1369,sugar;long life bakery product;shopping bags;chocolate;candy;ice cream;softener
+1370,detergent;coffee;cream cheese;pastry;rolls/buns;whole milk;domestic eggs;candy;sugar
+1371,ice cream;pet care;frozen fish;pastry;other vegetables;beef;tropical fruit
+1372,tea;domestic eggs;pip fruit;newspapers;coffee;fruit/vegetable juice;instant food
+1373,instant food;chewing gum;pastry;coffee;ready soups;cream cheese;brown bread
+1374,liquor;soda;waffles;sausage;brown bread;magazines;meat spreads;sugar
+1375,long life bakery product;detergent;instant food;root vegetables;sugar;waffles;bottled beer
+1376,soda;pork;tea;baby food;curd;sugar;beef;frozen meals
+1377,citrus fruit;brown bread;magazines;butter;frozen fish;pork;sausage
+1378,domestic eggs;pet care;frozen vegetables;butter;semi-finished bread;chicken;baby food
+1379,rolls/buns;pet care;yogurt;newspapers;frozen meals;shopping bags;organic products;tea
+1380,citrus fruit;tropical fruit;detergent;chicken;ice cream;soda;root vegetables
+1381,pet care;detergent;soda;yogurt;beef;chewing gum;chocolate;ready soups;tropical fruit;semi-finished bread
+1382,meat spreads;tropical fruit;detergent;whole milk;coffee;citrus fruit;frozen fish
+1383,semi-finished bread;frozen vegetables;chocolate;margarine;pastry;frozen fish;instant food;waffles
+1384,frozen vegetables;baby food;semi-finished bread;softener;curd;instant food;long life bakery product;chocolate
+1385,rolls/buns;softener;organic products;brown bread;instant food;pip fruit;domestic eggs;frozen dessert
+1386,waffles;margarine;sugar;frozen vegetables;other vegetables;sausage;rolls/buns;chocolate
+1387,brown bread;sugar;detergent;tropical fruit;pet care;softener;ice cream
+1388,candy;rolls/buns;chocolate;chewing gum;butter;sausage;root vegetables
+1389,ready soups;instant food;frozen meals;margarine;coffee;sugar;meat spreads
+1390,meat spreads;detergent;margarine;instant food;baby food;magazines;frozen fish;chicken;domestic eggs;chocolate
+1391,frozen fish;beef;domestic eggs;semi-finished bread;soda;pip fruit;root vegetables;frozen dessert;instant food
+1392,fruit/vegetable juice;liquor;baby food;meat spreads;curd;whole milk;coffee
+1393,semi-finished bread;beef;domestic eggs;fruit/vegetable juice;tropical fruit;yogurt;baby food;white bread
+1394,chocolate;meat spreads;curd;frozen fish;ready soups;liquor
+1395,citrus fruit;curd;instant food;cream cheese;waffles;root vegetables;bottled beer;whole milk
+1396,white bread;cream cheese;chicken;semi-finished bread;bottled beer;yogurt;fruit/vegetable juice;sausage
+1397,fruit/vegetable juice;margarine;pip fruit;domestic eggs;white bread;whole milk;frozen dessert;yogurt
+1398,curd;bottled water;semi-finished bread;ice cream;meat spreads;pip fruit;softener;beef
+1399,frozen dessert;magazines;fruit/vegetable juice;long life bakery product;softener;soda;pastry;other vegetables;shopping bags
+1400,soda;shopping bags;citrus fruit;beef;other vegetables;ready soups;yogurt
+1401,white bread;chicken;chocolate;other vegetables;baby food;frozen dessert;yogurt;pastry
+1402,chicken;white bread;waffles;frozen vegetables;beef;yogurt;bottled beer;brown bread
+1403,frozen meals;butter;pet care;soda;cream cheese;organic products;instant food
+1404,shopping bags;tropical fruit;instant food;chicken;frozen vegetables;cream cheese;citrus fruit;newspapers;baby food
+1405,whole milk;butter;pork;pastry;other vegetables
+1406,tea;ready soups;beef;frozen vegetables;white bread;semi-finished bread;sausage;pork
+1407,frozen vegetables;newspapers;other vegetables;frozen meals;waffles;beef;fruit/vegetable juice;chicken
+1408,frozen fish;liquor;yogurt;organic products;frozen vegetables;pork;citrus fruit;bottled beer
+1409,whole milk;frozen meals;pastry;citrus fruit;soda;rolls/buns;liquor
+1410,candy;frozen dessert;ready soups;soda;tea;shopping bags
+1411,yogurt;tea;cream cheese;chocolate;pork;instant food;magazines;beef
+1412,instant food;coffee;white bread;newspapers;chicken;softener;other vegetables;pork
+1413,newspapers;ready soups;pastry;butter;ice cream;tropical fruit;beef;yogurt
+1414,liquor;bottled beer;newspapers;magazines;chicken;frozen dessert;bottled water
+1415,waffles;sugar;citrus fruit;domestic eggs;bottled water;frozen dessert;baby food;other vegetables
+1416,white bread;soda;pip fruit;cream cheese;frozen meals;chocolate;frozen dessert
+1417,soda;beef;citrus fruit;pip fruit;chicken;domestic eggs
+1418,detergent;organic products;chocolate;pastry;long life bakery product;baby food;softener;rolls/buns
+1419,shopping bags;white bread;whole milk;frozen vegetables;fruit/vegetable juice;candy;soda
+1420,curd;long life bakery product;yogurt;pet care;bottled water;soda;chewing gum;chocolate
+1421,frozen dessert;tropical fruit;tea;yogurt;long life bakery product;detergent;cream cheese;frozen meals
+1422,semi-finished bread;magazines;root vegetables;detergent;yogurt;chocolate;domestic eggs;citrus fruit
+1423,tropical fruit;margarine;sausage;sugar;baby food;semi-finished bread;long life bakery product
+1424,frozen vegetables;tropical fruit;pastry;yogurt;liquor;instant food;sugar
+1425,baby food;sugar;rolls/buns;curd;brown bread;butter;beef;magazines;detergent
+1426,sugar;tropical fruit;liquor;coffee;margarine;frozen dessert;pork;detergent
+1427,instant food;long life bakery product;waffles;shopping bags;ready soups;butter;magazines;fruit/vegetable juice;bottled beer;pork
+1428,margarine;candy;fruit/vegetable juice;sausage;softener;cream cheese;rolls/buns;coffee;magazines
+1429,frozen meals;cream cheese;root vegetables;curd;meat spreads;bottled beer;pip fruit;newspapers;white bread
+1430,citrus fruit;root vegetables;ice cream;magazines;chicken;softener
+1431,semi-finished bread;newspapers;root vegetables;bottled beer;softener;candy;pastry;sugar
+1432,chewing gum;tropical fruit;long life bakery product;pork;instant food;frozen meals
+1433,ready soups;cream cheese;tea;chicken;liquor;instant food;detergent;coffee
+1434,citrus fruit;baby food;semi-finished bread;rolls/buns;tropical fruit;frozen fish;pork;beef
+1435,pork;soda;meat spreads;cream cheese;pet care;frozen dessert;instant food;bottled water
+1436,newspapers;yogurt;cream cheese;bottled beer;ice cream;candy;butter;magazines
+1437,coffee;white bread;chicken;waffles;cream cheese;ice cream
+1438,chewing gum;liquor;sugar;frozen dessert;semi-finished bread;beef;softener;fruit/vegetable juice
+1439,chocolate;sausage;frozen fish;instant food;pastry;root vegetables;chewing gum
+1440,frozen fish;tropical fruit;bottled beer;long life bakery product;candy;domestic eggs;newspapers
+1441,instant food;baby food;sugar;sausage;beef;detergent;soda
+1442,waffles;pip fruit;sugar;ready soups;frozen vegetables;soda;frozen fish
+1443,ready soups;beef;chicken;chocolate;magazines;whole milk;brown bread;pastry
+1444,frozen dessert;long life bakery product;chewing gum;frozen meals;root vegetables;shopping bags;pet care;organic products
+1445,whole milk;cream cheese;sugar;candy;frozen dessert;detergent;butter;pet care;yogurt
+1446,ice cream;frozen meals;chocolate;waffles;long life bakery product;fruit/vegetable juice;cream cheese;domestic eggs
+1447,margarine;other vegetables;shopping bags;bottled water;semi-finished bread;ice cream;cream cheese;frozen meals
+1448,bottled water;frozen vegetables;beef;root vegetables;curd;long life bakery product;pip fruit
+1449,candy;chewing gum;beef;pet care;long life bakery product;instant food;frozen meals
+1450,frozen vegetables;waffles;organic products;white bread;whole milk;rolls/buns;ready soups
+1451,chocolate;waffles;whole milk;magazines;pork;baby food;tea
+1452,beef;bottled beer;fruit/vegetable juice;sausage;chewing gum;waffles;chocolate;margarine
+1453,pip fruit;fruit/vegetable juice;rolls/buns;magazines;pastry;newspapers;ready soups;detergent
+1454,soda;chewing gum;instant food;sugar;fruit/vegetable juice
+1455,long life bakery product;newspapers;butter;cream cheese;sugar;pastry;pork
+1456,shopping bags;domestic eggs;instant food;frozen fish;baby food;rolls/buns;chewing gum;white bread;frozen meals
+1457,sugar;butter;chocolate;whole milk;liquor;brown bread;meat spreads;pet care
+1458,rolls/buns;root vegetables;other vegetables;sugar;tropical fruit;chocolate;soda
+1459,frozen meals;magazines;margarine;yogurt;pip fruit;citrus fruit;long life bakery product
+1460,liquor;bottled water;fruit/vegetable juice;citrus fruit;other vegetables;root vegetables;newspapers;chewing gum
+1461,frozen meals;candy;waffles;margarine;coffee;newspapers;root vegetables
+1462,other vegetables;tropical fruit;cream cheese;whole milk;curd;tea
+1463,organic products;shopping bags;bottled beer;sugar;pet care;chocolate;curd;brown bread
+1464,frozen fish;domestic eggs;other vegetables;sausage;chicken;citrus fruit
+1465,pip fruit;cream cheese;candy;semi-finished bread;root vegetables;citrus fruit;meat spreads
+1466,sausage;white bread;butter;long life bakery product;frozen dessert;candy
+1467,newspapers;ice cream;fruit/vegetable juice;organic products;bottled beer;chocolate;rolls/buns
+1468,whole milk;organic products;meat spreads;candy;bottled water;bottled beer;yogurt
+1469,pork;organic products;whole milk;root vegetables;candy;chicken;rolls/buns
+1470,whole milk;detergent;bottled water;frozen meals;margarine;tea;ice cream
+1471,rolls/buns;ready soups;shopping bags;detergent;softener;fruit/vegetable juice;long life bakery product;pastry
+1472,meat spreads;yogurt;pet care;instant food;pip fruit;butter;baby food
+1473,long life bakery product;whole milk;cream cheese;baby food;softener;brown bread;waffles
+1474,coffee;frozen fish;shopping bags;root vegetables;bottled water;baby food;candy;yogurt
+1475,frozen vegetables;instant food;tropical fruit;yogurt;pastry
+1476,pet care;citrus fruit;fruit/vegetable juice;organic products;margarine;chewing gum;sausage;ice cream
+1477,other vegetables;coffee;softener;sausage;meat spreads;pip fruit
+1478,ice cream;sausage;bottled water;meat spreads;chewing gum;waffles;candy;sugar;liquor
+1479,detergent;waffles;chewing gum;frozen fish;fruit/vegetable juice;pastry;cream cheese;liquor;yogurt
+1480,newspapers;domestic eggs;shopping bags;margarine;pastry;liquor;long life bakery product;frozen dessert
+1481,pet care;yogurt;magazines;tea;frozen meals;margarine;bottled water;ready soups
+1482,pip fruit;coffee;chocolate;detergent;bottled beer;chewing gum
+1483,tea;butter;waffles;rolls/buns;fruit/vegetable juice;organic products;ready soups
+1484,rolls/buns;sausage;pet care;ready soups;coffee;magazines;baby food;domestic eggs;soda
+1485,ready soups;waffles;citrus fruit;coffee;domestic eggs;sugar;organic products
+1486,pork;chewing gum;detergent;fruit/vegetable juice;candy;whole milk;sausage;chicken
+1487,tropical fruit;shopping bags;pastry;frozen dessert;chicken;rolls/buns;bottled beer;newspapers
+1488,newspapers;citrus fruit;liquor;detergent;domestic eggs;shopping bags;beef;ready soups;instant food
+1489,chewing gum;fruit/vegetable juice;frozen fish;domestic eggs;newspapers;sausage;bottled beer;whole milk
+1490,butter;instant food;other vegetables;yogurt;citrus fruit;soda
+1491,coffee;other vegetables;rolls/buns;bottled beer;yogurt;ice cream
+1492,sugar;rolls/buns;tea;candy;frozen meals;tropical fruit;long life bakery product;newspapers
+1493,waffles;cream cheese;ready soups;butter;rolls/buns;candy;bottled beer;pork
+1494,newspapers;chocolate;sausage;long life bakery product;detergent;frozen dessert;softener;ice cream
+1495,curd;white bread;bottled beer;chocolate;liquor;yogurt;sugar;cream cheese
+1496,candy;newspapers;citrus fruit;root vegetables;white bread;butter;sausage
+1497,pork;butter;instant food;curd;liquor;chocolate;rolls/buns;tropical fruit
+1498,chewing gum;whole milk;butter;bottled water;root vegetables;sugar;rolls/buns
+1499,detergent;newspapers;frozen meals;tropical fruit;cream cheese;frozen fish;fruit/vegetable juice;curd
+1500,bottled beer;domestic eggs;cream cheese;fruit/vegetable juice;softener
+1501,frozen vegetables;margarine;pastry;yogurt;root vegetables;brown bread;long life bakery product;butter
+1502,sugar;newspapers;instant food;frozen fish;ready soups;chocolate;white bread
+1503,curd;pip fruit;margarine;candy;meat spreads;shopping bags;baby food
+1504,tea;frozen fish;newspapers;soda;butter;margarine;yogurt;citrus fruit
+1505,other vegetables;pet care;whole milk;softener;yogurt;fruit/vegetable juice
+1506,tea;candy;rolls/buns;coffee;pip fruit;liquor;meat spreads
+1507,chewing gum;curd;waffles;instant food;liquor;shopping bags;coffee
+1508,tea;sugar;butter;frozen vegetables;waffles;yogurt;instant food;root vegetables;ready soups
+1509,butter;frozen meals;tea;citrus fruit;frozen fish;ice cream;white bread
+1510,whole milk;root vegetables;ice cream;frozen dessert;butter;meat spreads;ready soups
+1511,pet care;sugar;frozen dessert;frozen meals;semi-finished bread;rolls/buns;cream cheese;curd
+1512,citrus fruit;newspapers;pastry;cream cheese;instant food;detergent;organic products;soda
+1513,long life bakery product;chewing gum;domestic eggs;brown bread;coffee;rolls/buns
+1514,coffee;chewing gum;frozen fish;rolls/buns;frozen meals;yogurt;softener;bottled beer
+1515,shopping bags;butter;chicken;ice cream;meat spreads;yogurt;root vegetables;whole milk;semi-finished bread
+1516,frozen vegetables;newspapers;tea;detergent;pastry;ice cream;ready soups
+1517,sausage;liquor;pip fruit;detergent;rolls/buns;butter;cream cheese;frozen dessert;coffee
+1518,domestic eggs;cream cheese;meat spreads;pork;chewing gum;frozen fish;frozen meals;white bread
+1519,waffles;butter;domestic eggs;white bread;liquor;margarine;newspapers
+1520,pork;long life bakery product;ready soups;ice cream;pastry;semi-finished bread;other vegetables;margarine
+1521,semi-finished bread;rolls/buns;other vegetables;root vegetables;pet care;beef;instant food;organic products
+1522,organic products;chewing gum;tropical fruit;meat spreads;candy;root vegetables;ice cream;instant food
+1523,other vegetables;curd;yogurt;baby food;domestic eggs;frozen fish
+1524,butter;magazines;tea;candy;cream cheese;rolls/buns;soda;tropical fruit;frozen fish
+1525,sugar;pork;tropical fruit;waffles;detergent;semi-finished bread;pet care
+1526,liquor;chewing gum;white bread;yogurt;pork;other vegetables;frozen vegetables;shopping bags;frozen fish
+1527,chewing gum;rolls/buns;baby food;waffles;curd;pastry;root vegetables;meat spreads
+1528,long life bakery product;sugar;sausage;root vegetables;cream cheese;magazines;instant food;candy
+1529,frozen fish;rolls/buns;other vegetables;white bread;beef;margarine;pork
+1530,cream cheese;organic products;domestic eggs;rolls/buns;shopping bags;candy;coffee
+1531,pip fruit;pork;beef;ready soups;candy;newspapers;sausage
+1532,baby food;frozen meals;frozen fish;white bread;other vegetables;sugar
+1533,liquor;sausage;soda;beef;softener;pastry;detergent;organic products
+1534,sausage;candy;domestic eggs;sugar;ice cream;bottled beer;frozen meals;other vegetables
+1535,cream cheese;rolls/buns;fruit/vegetable juice;chicken;margarine;ice cream;magazines;coffee
+1536,soda;frozen vegetables;ready soups;pip fruit;butter;fruit/vegetable juice;newspapers;instant food
+1537,curd;pork;frozen vegetables;ice cream;white bread;organic products;waffles
+1538,tea;beef;rolls/buns;magazines;ready soups;chicken;long life bakery product;margarine
+1539,chocolate;sausage;chicken;frozen meals;ice cream;margarine;bottled water;citrus fruit;magazines
+1540,bottled beer;white bread;pet care;whole milk;newspapers;bottled water;ready soups;chocolate;pastry
+1541,organic products;cream cheese;newspapers;meat spreads;pork;instant food;root vegetables;sugar;beef;softener
+1542,citrus fruit;magazines;organic products;pet care;ready soups;white bread;pip fruit;instant food
+1543,sausage;ready soups;chocolate;pork;newspapers;soda;domestic eggs;coffee;pip fruit
+1544,pet care;chocolate;frozen dessert;root vegetables;ready soups;curd;baby food;frozen vegetables
+1545,baby food;root vegetables;detergent;whole milk;pip fruit;chewing gum;liquor
+1546,chocolate;waffles;citrus fruit;newspapers;meat spreads;long life bakery product;white bread;sugar;shopping bags
+1547,semi-finished bread;sausage;waffles;shopping bags;chewing gum;frozen meals
+1548,chewing gum;ice cream;rolls/buns;cream cheese;margarine;beef;whole milk;softener
+1549,candy;meat spreads;pastry;waffles;cream cheese;chewing gum;margarine
+1550,yogurt;frozen vegetables;sugar;meat spreads;shopping bags;fruit/vegetable juice;organic products;magazines
+1551,yogurt;other vegetables;frozen vegetables;ice cream;shopping bags;rolls/buns;beef
+1552,pork;whole milk;domestic eggs;pastry;frozen meals;bottled beer;margarine
+1553,frozen fish;organic products;citrus fruit;coffee;rolls/buns;other vegetables;root vegetables;liquor;margarine;meat spreads
+1554,frozen dessert;chocolate;pip fruit;rolls/buns;instant food;detergent;meat spreads
+1555,brown bread;sausage;sugar;pet care;softener;soda;pip fruit;meat spreads;bottled beer
+1556,pork;organic products;beef;sugar;ice cream;instant food;semi-finished bread;detergent
+1557,coffee;root vegetables;rolls/buns;shopping bags;whole milk;butter;pork
+1558,other vegetables;margarine;brown bread;frozen dessert;candy;detergent;pet care
+1559,pastry;fruit/vegetable juice;butter;curd;ice cream;organic products;chewing gum;other vegetables
+1560,pet care;whole milk;white bread;sausage;bottled beer;fruit/vegetable juice;butter
+1561,coffee;candy;yogurt;ready soups;long life bakery product;margarine;curd;soda;chicken
+1562,root vegetables;sugar;tropical fruit;curd;citrus fruit;butter;other vegetables;softener
+1563,fruit/vegetable juice;chewing gum;sausage;domestic eggs;beef;newspapers;baby food
+1564,coffee;chewing gum;soda;instant food;waffles;frozen fish;other vegetables;chocolate
+1565,butter;frozen fish;chocolate;liquor;white bread;fruit/vegetable juice;curd
+1566,newspapers;shopping bags;pip fruit;ready soups;chewing gum;citrus fruit;pet care
+1567,chocolate;rolls/buns;white bread;frozen dessert;bottled beer;chewing gum
+1568,margarine;waffles;magazines;root vegetables;semi-finished bread;rolls/buns;pastry;organic products;baby food;frozen fish
+1569,semi-finished bread;whole milk;frozen dessert;bottled water;magazines;chocolate;softener;bottled beer;pork
+1570,organic products;candy;bottled beer;liquor;long life bakery product;ready soups;instant food;frozen dessert
+1571,butter;fruit/vegetable juice;meat spreads;bottled water;newspapers;detergent;shopping bags
+1572,citrus fruit;yogurt;pet care;pastry;butter;semi-finished bread;candy
+1573,newspapers;butter;magazines;frozen fish;tea;long life bakery product
+1574,chocolate;detergent;other vegetables;chicken;domestic eggs;soda
+1575,baby food;shopping bags;rolls/buns;frozen vegetables;sugar;soda;domestic eggs;detergent
+1576,pork;other vegetables;baby food;newspapers;frozen meals;curd;frozen dessert;rolls/buns;whole milk
+1577,pork;pet care;tea;liquor;waffles;detergent;fruit/vegetable juice;curd;shopping bags
+1578,whole milk;pip fruit;citrus fruit;yogurt;margarine;semi-finished bread;pork;frozen vegetables;root vegetables
+1579,whole milk;semi-finished bread;pip fruit;organic products;meat spreads;pork
+1580,semi-finished bread;organic products;frozen dessert;beef;bottled beer;rolls/buns
+1581,meat spreads;newspapers;frozen dessert;semi-finished bread;long life bakery product;pork;other vegetables
+1582,frozen dessert;waffles;softener;domestic eggs;soda;margarine;frozen fish
+1583,long life bakery product;frozen vegetables;ice cream;frozen fish;brown bread;citrus fruit;sugar
+1584,beef;root vegetables;shopping bags;soda;detergent;bottled beer;margarine
+1585,magazines;tea;frozen dessert;waffles;other vegetables;rolls/buns;candy;detergent
+1586,cream cheese;newspapers;tropical fruit;liquor;long life bakery product;softener;yogurt;semi-finished bread;root vegetables
+1587,bottled water;tea;whole milk;organic products;chocolate;pork;other vegetables;beef
+1588,bottled beer;frozen vegetables;pastry;sugar;white bread;detergent;instant food
+1589,beef;detergent;tea;other vegetables;chewing gum;bottled water;root vegetables
+1590,other vegetables;chicken;yogurt;ice cream;bottled beer;cream cheese;softener;citrus fruit
+1591,long life bakery product;liquor;yogurt;semi-finished bread;organic products;candy
+1592,tea;curd;chocolate;margarine;sugar;frozen fish;white bread
+1593,sausage;margarine;newspapers;detergent;yogurt;organic products;cream cheese;whole milk
+1594,baby food;instant food;chicken;margarine;beef;semi-finished bread;detergent
+1595,meat spreads;chicken;bottled beer;detergent;candy;baby food;pip fruit;tropical fruit
+1596,brown bread;beef;newspapers;long life bakery product;tea
+1597,other vegetables;shopping bags;pastry;soda;semi-finished bread;chocolate;chewing gum;pork
+1598,margarine;fruit/vegetable juice;brown bread;newspapers;softener;sugar
+1599,frozen vegetables;newspapers;other vegetables;pastry;bottled water;tropical fruit;chicken
+1600,butter;yogurt;ice cream;margarine;semi-finished bread;other vegetables;root vegetables
+1601,pastry;cream cheese;waffles;softener;fruit/vegetable juice;rolls/buns;bottled water
+1602,chicken;chewing gum;frozen meals;detergent;soda;yogurt;semi-finished bread;pip fruit
+1603,soda;candy;margarine;butter;liquor;whole milk;fruit/vegetable juice
+1604,frozen vegetables;meat spreads;chicken;softener;butter;ready soups;beef
+1605,bottled water;pork;baby food;bottled beer;tea
+1606,other vegetables;margarine;frozen vegetables;pastry;instant food;tea;chewing gum
+1607,ready soups;sugar;baby food;curd;newspapers;chewing gum;chicken
+1608,margarine;brown bread;white bread;cream cheese;long life bakery product;pastry;soda
+1609,pet care;beef;softener;candy;rolls/buns;white bread;domestic eggs
+1610,chicken;sausage;semi-finished bread;liquor;ice cream;organic products;baby food;magazines
+1611,butter;frozen dessert;tropical fruit;pip fruit;detergent;pet care
+1612,cream cheese;waffles;semi-finished bread;frozen vegetables;yogurt;liquor;rolls/buns;curd
+1613,brown bread;frozen dessert;pastry;citrus fruit;waffles;ice cream;white bread;long life bakery product
+1614,brown bread;frozen dessert;ready soups;magazines;frozen vegetables;sugar;rolls/buns;soda;tea
+1615,frozen fish;newspapers;pet care;root vegetables;fruit/vegetable juice;other vegetables;whole milk;chewing gum
+1616,tropical fruit;bottled water;organic products;waffles;pet care;ready soups;shopping bags
+1617,domestic eggs;baby food;frozen fish;softener;newspapers;brown bread;whole milk;tropical fruit;butter
+1618,rolls/buns;butter;meat spreads;beef;newspapers;liquor;frozen dessert;soda
+1619,chewing gum;rolls/buns;frozen meals;root vegetables;chocolate;curd;yogurt
+1620,chocolate;waffles;magazines;pet care;margarine;detergent;shopping bags
+1621,instant food;meat spreads;chicken;liquor;frozen dessert
+1622,pork;chicken;chocolate;semi-finished bread;whole milk;sausage;pip fruit;butter
+1623,tea;yogurt;cream cheese;root vegetables;liquor;detergent;sausage;tropical fruit;pastry
+1624,beef;pip fruit;cream cheese;baby food;frozen vegetables;chewing gum;liquor
+1625,ice cream;instant food;yogurt;long life bakery product;brown bread;meat spreads;detergent;bottled water;frozen meals
+1626,pork;sausage;shopping bags;fruit/vegetable juice;frozen dessert;rolls/buns;yogurt;bottled water;ready soups
+1627,candy;chewing gum;semi-finished bread;frozen meals;curd;ready soups;whole milk;white bread;bottled beer
+1628,ice cream;rolls/buns;waffles;white bread;margarine;tropical fruit;chocolate;softener
+1629,magazines;coffee;whole milk;cream cheese;soda
+1630,domestic eggs;magazines;pastry;whole milk;brown bread;sugar;organic products;rolls/buns
+1631,ready soups;brown bread;instant food;curd;frozen dessert;root vegetables;whole milk
+1632,other vegetables;margarine;tropical fruit;coffee;frozen meals;root vegetables;yogurt;pet care
+1633,pet care;citrus fruit;frozen fish;semi-finished bread;ready soups;margarine;chocolate;waffles
+1634,white bread;long life bakery product;pip fruit;newspapers;beef;ice cream;magazines;frozen meals;instant food
+1635,ready soups;magazines;citrus fruit;sausage;root vegetables;pork;baby food;candy;soda
+1636,pet care;chocolate;candy;sugar;chewing gum;newspapers;curd;chicken
+1637,detergent;tropical fruit;cream cheese;root vegetables;bottled beer;sausage;organic products;yogurt
+1638,butter;cream cheese;long life bakery product;yogurt;domestic eggs;citrus fruit;bottled beer
+1639,sugar;brown bread;sausage;long life bakery product;white bread;waffles;bottled water;coffee;semi-finished bread
+1640,curd;sugar;liquor;pet care;domestic eggs;yogurt;bottled water;brown bread
+1641,pip fruit;bottled beer;frozen fish;sugar;beef;ice cream;semi-finished bread;ready soups
+1642,instant food;long life bakery product;fruit/vegetable juice;newspapers;cream cheese;chocolate;brown bread;white bread
+1643,chewing gum;ready soups;frozen meals;butter;bottled water;pet care;root vegetables
+1644,citrus fruit;chocolate;long life bakery product;chicken;ready soups;domestic eggs;candy
+1645,root vegetables;softener;tea;instant food;newspapers;sugar;citrus fruit
+1646,semi-finished bread;frozen vegetables;pet care;citrus fruit;domestic eggs;curd;yogurt
+1647,sugar;baby food;tropical fruit;detergent;semi-finished bread;other vegetables;pastry
+1648,margarine;ready soups;ice cream;frozen fish;chicken;coffee;white bread
+1649,ready soups;bottled beer;waffles;detergent;fruit/vegetable juice;white bread;pastry;liquor
+1650,organic products;butter;coffee;magazines;whole milk;yogurt
+1651,bottled beer;white bread;baby food;instant food;chicken;organic products;curd;domestic eggs
+1652,bottled beer;white bread;sugar;candy;bottled water;brown bread
+1653,butter;whole milk;detergent;sugar;baby food;pork;brown bread
+1654,sugar;fruit/vegetable juice;tea;baby food;candy;shopping bags;chicken;waffles;other vegetables
+1655,root vegetables;candy;frozen dessert;yogurt;newspapers;frozen vegetables
+1656,bottled water;frozen vegetables;sausage;frozen meals;white bread;pip fruit;waffles;newspapers
+1657,tea;sugar;root vegetables;long life bakery product;white bread;newspapers;sausage
+1658,coffee;root vegetables;domestic eggs;ice cream;bottled beer;bottled water;meat spreads
+1659,chocolate;ready soups;coffee;citrus fruit;frozen fish;domestic eggs;root vegetables;semi-finished bread
+1660,soda;ready soups;margarine;domestic eggs;ice cream;meat spreads;brown bread
+1661,sausage;butter;coffee;instant food;sugar
+1662,root vegetables;domestic eggs;sausage;soda;ready soups;candy;coffee;liquor;ice cream
+1663,pet care;ready soups;butter;margarine;pip fruit;rolls/buns;detergent
+1664,other vegetables;waffles;liquor;chocolate;butter;beef
+1665,margarine;frozen fish;instant food;root vegetables;whole milk;pip fruit;semi-finished bread;sugar;pet care
+1666,shopping bags;bottled water;ice cream;root vegetables;citrus fruit;rolls/buns;curd
+1667,detergent;bottled water;curd;rolls/buns;beef;shopping bags;tea;pet care;brown bread
+1668,pet care;baby food;frozen dessert;ready soups;shopping bags;instant food;meat spreads;coffee
+1669,ice cream;soda;coffee;chicken;long life bakery product;pork;chewing gum;softener
+1670,baby food;pip fruit;cream cheese;brown bread;root vegetables;bottled beer;pork;beef
+1671,pork;pip fruit;newspapers;whole milk;chicken;baby food
+1672,tea;white bread;sausage;candy;soda;frozen vegetables;pork;organic products
+1673,soda;ready soups;frozen dessert;detergent;long life bakery product;ice cream;candy;domestic eggs
+1674,chocolate;other vegetables;long life bakery product;domestic eggs;rolls/buns;detergent;semi-finished bread;chewing gum;frozen dessert
+1675,shopping bags;frozen vegetables;soda;chicken;chocolate;waffles;brown bread;yogurt
+1676,root vegetables;pet care;baby food;yogurt;frozen vegetables;ready soups;detergent;brown bread
+1677,citrus fruit;white bread;sausage;newspapers;liquor;semi-finished bread;chicken
+1678,root vegetables;white bread;frozen fish;frozen dessert;ready soups;instant food
+1679,root vegetables;waffles;frozen dessert;pork;meat spreads;pastry;frozen fish
+1680,pastry;frozen fish;sausage;frozen meals;pet care;organic products;yogurt;beef
+1681,organic products;cream cheese;coffee;beef;baby food;yogurt;fruit/vegetable juice;ice cream
+1682,curd;pet care;tropical fruit;semi-finished bread;softener;chewing gum;beef;brown bread
+1683,chewing gum;chocolate;pork;fruit/vegetable juice;frozen fish;tea;semi-finished bread;yogurt;chicken
+1684,root vegetables;tropical fruit;pastry;brown bread;shopping bags;citrus fruit;semi-finished bread
+1685,margarine;detergent;pastry;other vegetables;frozen meals;frozen vegetables;butter
+1686,frozen fish;meat spreads;fruit/vegetable juice;curd;organic products;sausage;chocolate;long life bakery product
+1687,softener;soda;shopping bags;waffles;baby food;instant food;fruit/vegetable juice
+1688,cream cheese;pork;bottled water;long life bakery product;ice cream;sausage
+1689,soda;magazines;white bread;frozen meals;softener;frozen dessert;curd;bottled beer
+1690,white bread;sugar;bottled beer;citrus fruit;fruit/vegetable juice;pip fruit;baby food;organic products
+1691,candy;liquor;bottled water;sausage;newspapers;beef;butter
+1692,candy;meat spreads;sausage;curd;bottled water;frozen fish;baby food
+1693,margarine;soda;long life bakery product;butter;beef;candy;frozen vegetables;meat spreads
+1694,waffles;semi-finished bread;pip fruit;magazines;frozen meals;brown bread;tea
+1695,frozen dessert;pip fruit;bottled beer;whole milk;chewing gum;liquor;curd;white bread
+1696,bottled beer;sugar;frozen fish;cream cheese;magazines;pip fruit;beef
+1697,chewing gum;frozen meals;semi-finished bread;pastry;citrus fruit;sugar;detergent
+1698,whole milk;rolls/buns;bottled water;frozen vegetables;chocolate;semi-finished bread;other vegetables;softener;root vegetables
+1699,other vegetables;rolls/buns;waffles;liquor;newspapers;white bread;shopping bags;pork
+1700,margarine;pip fruit;soda;chicken;sausage;cream cheese;root vegetables;chewing gum
+1701,semi-finished bread;soda;pip fruit;tropical fruit;fruit/vegetable juice;tea;pork
+1702,frozen dessert;waffles;brown bread;bottled beer;meat spreads;fruit/vegetable juice;pastry;yogurt
+1703,rolls/buns;other vegetables;sugar;tropical fruit;whole milk
+1704,root vegetables;newspapers;pork;semi-finished bread;pip fruit;pastry;shopping bags;chicken
+1705,long life bakery product;sausage;yogurt;instant food;pork;bottled water;pastry
+1706,chocolate;detergent;semi-finished bread;ready soups;curd;pork;chewing gum;candy;chicken
+1707,instant food;beef;softener;bottled beer
+1708,frozen fish;pork;sugar;tea;other vegetables;frozen dessert;soda;waffles
+1709,chocolate;chicken;semi-finished bread;bottled water;cream cheese;tropical fruit;frozen fish;chewing gum
+1710,whole milk;tea;ice cream;brown bread;curd;frozen dessert;white bread;frozen meals;instant food;shopping bags
+1711,bottled water;softener;organic products;bottled beer;waffles;liquor;chicken
+1712,baby food;bottled beer;meat spreads;citrus fruit;sugar;frozen vegetables;root vegetables;brown bread
+1713,long life bakery product;chicken;newspapers;coffee;sugar;ready soups
+1714,margarine;chewing gum;frozen dessert;fruit/vegetable juice;sausage;other vegetables;semi-finished bread
+1715,other vegetables;citrus fruit;organic products;whole milk;pip fruit;ice cream;softener;domestic eggs
+1716,sausage;ready soups;citrus fruit;frozen fish;ice cream;candy;yogurt
+1717,long life bakery product;frozen dessert;butter;bottled water;meat spreads;chewing gum;shopping bags;candy
+1718,frozen fish;softener;sausage;margarine;brown bread;frozen meals;curd;frozen dessert;bottled water
+1719,waffles;instant food;fruit/vegetable juice;long life bakery product;magazines;meat spreads;other vegetables;sausage
+1720,bottled water;beef;candy;soda;rolls/buns;pork;sausage;domestic eggs;whole milk
+1721,detergent;coffee;long life bakery product;bottled beer;liquor;butter
+1722,pet care;beef;fruit/vegetable juice;organic products;coffee;butter;sugar;ready soups;candy
+1723,instant food;pork;newspapers;frozen fish;bottled water;root vegetables;ready soups;bottled beer
+1724,pet care;citrus fruit;tea;organic products;tropical fruit;sugar;sausage
+1725,fruit/vegetable juice;whole milk;bottled water;domestic eggs;rolls/buns;soda;magazines
+1726,meat spreads;beef;brown bread;organic products;waffles
+1727,yogurt;domestic eggs;magazines;waffles;curd;brown bread;bottled beer;margarine
+1728,bottled beer;frozen dessert;butter;chicken;pork;meat spreads;cream cheese;shopping bags
+1729,newspapers;chocolate;other vegetables;margarine;domestic eggs;root vegetables
+1730,chewing gum;domestic eggs;frozen vegetables;beef;white bread;softener;pip fruit
+1731,white bread;curd;baby food;coffee;frozen fish;other vegetables;instant food;organic products;margarine
+1732,chewing gum;ready soups;organic products;sausage;root vegetables;semi-finished bread;pastry
+1733,frozen dessert;pork;root vegetables;domestic eggs;waffles;bottled water;chicken;instant food
+1734,ready soups;domestic eggs;fruit/vegetable juice;butter;pastry;frozen fish;instant food;tropical fruit
+1735,sugar;ready soups;tropical fruit;yogurt;bottled water;curd;instant food;butter;chocolate
+1736,fruit/vegetable juice;curd;sugar;pastry;sausage;organic products;frozen meals
+1737,pork;waffles;frozen dessert;fruit/vegetable juice;yogurt;sugar;bottled beer;butter
+1738,bottled water;tea;instant food;chocolate;root vegetables;sugar;organic products;white bread
+1739,meat spreads;rolls/buns;candy;detergent;newspapers;fruit/vegetable juice;organic products
+1740,rolls/buns;pet care;tea;detergent;bottled water;yogurt;semi-finished bread;long life bakery product
+1741,ready soups;domestic eggs;baby food;sausage;tropical fruit;cream cheese
+1742,tea;shopping bags;meat spreads;tropical fruit;sugar;candy
+1743,frozen meals;tropical fruit;semi-finished bread;other vegetables;frozen vegetables;waffles;long life bakery product;yogurt;white bread
+1744,instant food;coffee;other vegetables;fruit/vegetable juice;citrus fruit;frozen dessert;sausage;waffles;frozen vegetables
+1745,sugar;frozen dessert;white bread;organic products;frozen fish;frozen vegetables;rolls/buns
+1746,curd;frozen dessert;ready soups;shopping bags;baby food;long life bakery product;frozen vegetables;beef
+1747,cream cheese;frozen meals;pork;waffles;newspapers;tea;detergent;brown bread;organic products
+1748,pet care;bottled water;sugar;organic products;baby food;fruit/vegetable juice;semi-finished bread;frozen meals;shopping bags
+1749,chocolate;magazines;semi-finished bread;butter;candy;shopping bags;bottled beer;sausage
+1750,domestic eggs;brown bread;other vegetables;long life bakery product;liquor;butter;bottled beer
+1751,bottled water;shopping bags;citrus fruit;pastry;margarine;pork;pip fruit;sugar
+1752,bottled water;shopping bags;white bread;frozen vegetables;softener;brown bread;semi-finished bread
+1753,whole milk;margarine;liquor;frozen fish;pork;yogurt;shopping bags
+1754,candy;pip fruit;tropical fruit;shopping bags;long life bakery product;meat spreads;baby food;ice cream;coffee
+1755,softener;bottled water;brown bread;pet care;pastry;margarine
+1756,waffles;sugar;bottled beer;pip fruit;pork;chewing gum;ice cream;fruit/vegetable juice
+1757,brown bread;liquor;softener;ice cream;curd;soda
+1758,yogurt;whole milk;beef;frozen fish;pip fruit;candy;baby food;shopping bags
+1759,pork;curd;brown bread;chocolate;sausage;instant food
+1760,domestic eggs;beef;citrus fruit;butter;organic products;tea;brown bread;soda
+1761,brown bread;frozen fish;semi-finished bread;root vegetables;organic products;rolls/buns;sugar
+1762,cream cheese;frozen dessert;waffles;ready soups;candy;root vegetables
+1763,chocolate;newspapers;yogurt;candy;organic products;long life bakery product;chicken;frozen vegetables
+1764,meat spreads;brown bread;semi-finished bread;tropical fruit;liquor;frozen fish;root vegetables;shopping bags
+1765,domestic eggs;semi-finished bread;curd;ice cream;whole milk;shopping bags;chewing gum;candy
+1766,frozen dessert;brown bread;bottled water;chocolate;yogurt;rolls/buns;magazines;ready soups
+1767,pip fruit;ice cream;fruit/vegetable juice;pork;sugar;citrus fruit;brown bread;meat spreads;detergent
+1768,candy;pastry;white bread;softener;yogurt;brown bread;domestic eggs
+1769,curd;citrus fruit;white bread;instant food;pastry;rolls/buns;fruit/vegetable juice
+1770,meat spreads;pork;magazines;bottled water;ice cream;brown bread;yogurt;soda
+1771,domestic eggs;baby food;whole milk;white bread;ready soups;newspapers;chocolate;instant food;chicken
+1772,margarine;frozen fish;curd;whole milk;chewing gum;instant food
+1773,frozen vegetables;other vegetables;sausage;long life bakery product;curd;frozen dessert;fruit/vegetable juice
+1774,curd;rolls/buns;brown bread;margarine;coffee;frozen vegetables;baby food;fruit/vegetable juice
+1775,softener;root vegetables;butter;frozen meals;soda;frozen vegetables;domestic eggs;long life bakery product
+1776,chicken;meat spreads;newspapers;bottled water;chewing gum;ice cream;fruit/vegetable juice;pip fruit
+1777,rolls/buns;chewing gum;tropical fruit;curd;bottled water;chicken;tea
+1778,whole milk;fruit/vegetable juice;frozen meals;butter;root vegetables;pip fruit
+1779,long life bakery product;magazines;frozen vegetables;coffee;instant food;pastry;shopping bags;newspapers;curd
+1780,detergent;citrus fruit;chewing gum;tea;cream cheese;brown bread;frozen vegetables;frozen meals
+1781,tea;curd;shopping bags;detergent;sugar;frozen fish;semi-finished bread
+1782,yogurt;long life bakery product;detergent;soda;ice cream;baby food;brown bread;root vegetables
+1783,waffles;bottled beer;meat spreads;frozen vegetables;baby food;ready soups;frozen dessert;root vegetables
+1784,pip fruit;yogurt;cream cheese;soda;frozen fish;butter;chicken;semi-finished bread
+1785,butter;organic products;frozen dessert;liquor;meat spreads;curd;magazines
+1786,pip fruit;root vegetables;newspapers;chicken;other vegetables;liquor;frozen meals
+1787,curd;candy;bottled water;fruit/vegetable juice;beef;yogurt;shopping bags;softener
+1788,pork;whole milk;other vegetables;sausage;candy;beef;long life bakery product
+1789,fruit/vegetable juice;long life bakery product;tropical fruit;tea;yogurt;sugar;soda
+1790,tropical fruit;semi-finished bread;tea;bottled water;fruit/vegetable juice;sausage
+1791,sugar;chewing gum;domestic eggs;other vegetables;butter;frozen fish;softener
+1792,margarine;pork;long life bakery product;fruit/vegetable juice;baby food;coffee;candy
+1793,domestic eggs;other vegetables;curd;sausage;pet care;detergent;rolls/buns
+1794,detergent;curd;tropical fruit;baby food;magazines;chocolate;sugar
+1795,instant food;tropical fruit;chicken;curd;domestic eggs;brown bread;chewing gum
+1796,pet care;sausage;chocolate;bottled beer;sugar;frozen dessert;detergent;newspapers
+1797,magazines;tea;citrus fruit;beef;pet care;frozen vegetables;coffee
+1798,detergent;semi-finished bread;tea;sausage;bottled beer;shopping bags
+1799,sausage;bottled water;long life bakery product;baby food;butter;brown bread;liquor
+1800,candy;newspapers;frozen dessert;pork;tea
+1801,meat spreads;pet care;long life bakery product;candy;frozen fish;pork;butter;shopping bags;sausage
+1802,candy;frozen dessert;sugar;chocolate;whole milk;white bread;newspapers
+1803,frozen dessert;citrus fruit;beef;semi-finished bread;magazines;softener;curd;pork
+1804,baby food;sugar;frozen meals;coffee;bottled beer;sausage;waffles
+1805,waffles;citrus fruit;other vegetables;beef;semi-finished bread;coffee
+1806,shopping bags;yogurt;bottled beer;bottled water;butter;detergent;margarine;magazines
+1807,bottled water;citrus fruit;ready soups;chewing gum;chicken;candy
+1808,citrus fruit;sugar;white bread;chewing gum;candy;pip fruit
+1809,frozen vegetables;ready soups;domestic eggs;semi-finished bread;chocolate;candy;sugar;soda
+1810,frozen vegetables;pork;baby food;sugar;frozen dessert;ready soups;semi-finished bread;softener
+1811,semi-finished bread;sausage;chicken;shopping bags;ice cream;candy;beef
+1812,baby food;margarine;curd;butter;pork;root vegetables;beef;soda
+1813,instant food;brown bread;coffee;pet care;domestic eggs;chewing gum;semi-finished bread;fruit/vegetable juice
+1814,ice cream;chicken;meat spreads;organic products;brown bread;soda;bottled beer
+1815,bottled beer;long life bakery product;root vegetables;semi-finished bread;butter;whole milk;citrus fruit;chewing gum
+1816,root vegetables;cream cheese;liquor;chewing gum;sugar;beef;domestic eggs
+1817,frozen dessert;shopping bags;bottled beer;chocolate;ice cream;frozen meals;baby food;magazines
+1818,margarine;soda;chicken;long life bakery product;fruit/vegetable juice;baby food;chewing gum;whole milk
+1819,detergent;shopping bags;bottled beer;candy;butter;pip fruit;frozen vegetables;instant food;other vegetables
+1820,soda;bottled water;tropical fruit;cream cheese;tea;pet care;shopping bags
+1821,sausage;instant food;pet care;pork;chocolate;chewing gum;ice cream
+1822,yogurt;bottled water;margarine;pet care;chewing gum;organic products
+1823,pet care;citrus fruit;softener;bottled beer;magazines;shopping bags;whole milk
+1824,sugar;tea;softener;instant food;chicken;butter;pork;margarine;root vegetables
+1825,soda;bottled water;sugar;frozen fish;butter;cream cheese;frozen meals
+1826,domestic eggs;frozen vegetables;chocolate;curd;soda;beef;semi-finished bread
+1827,domestic eggs;shopping bags;other vegetables;tea;curd;margarine;waffles
+1828,coffee;pet care;baby food;domestic eggs;softener;yogurt;organic products
+1829,cream cheese;softener;organic products;chocolate;white bread;detergent;citrus fruit;tropical fruit
+1830,meat spreads;pet care;softener;chicken;cream cheese;pork;whole milk;bottled water;chewing gum;baby food
+1831,shopping bags;beef;pork;softener;bottled water;other vegetables;brown bread;pastry;root vegetables
+1832,chicken;baby food;frozen meals;meat spreads;butter;candy;bottled water
+1833,newspapers;sausage;semi-finished bread;detergent;beef;brown bread;pork;ice cream;white bread
+1834,whole milk;bottled beer;waffles;sausage;magazines;detergent;instant food;tropical fruit
+1835,margarine;instant food;beef;liquor;detergent;whole milk
+1836,pet care;chewing gum;magazines;fruit/vegetable juice;semi-finished bread;whole milk;soda;curd
+1837,white bread;citrus fruit;curd;meat spreads;organic products
+1838,whole milk;frozen meals;rolls/buns;bottled beer;other vegetables;yogurt;pip fruit
+1839,semi-finished bread;brown bread;chicken;meat spreads;detergent;candy;citrus fruit
+1840,fruit/vegetable juice;newspapers;magazines;pet care;baby food;frozen meals;liquor;long life bakery product
+1841,soda;curd;bottled beer;tea;meat spreads;rolls/buns;other vegetables;pastry
+1842,chicken;tea;sugar;frozen vegetables;long life bakery product;newspapers;frozen dessert
+1843,chocolate;whole milk;baby food;chicken;domestic eggs;organic products;white bread;soda
+1844,margarine;other vegetables;detergent;soda;organic products;root vegetables
+1845,beef;bottled beer;frozen meals;frozen fish;bottled water;instant food
+1846,beef;chicken;liquor;meat spreads;waffles;semi-finished bread;frozen meals;tea
+1847,ready soups;organic products;citrus fruit;frozen meals;sausage;pet care;chewing gum;chocolate
+1848,citrus fruit;fruit/vegetable juice;frozen vegetables;meat spreads;semi-finished bread;organic products;long life bakery product;root vegetables
+1849,soda;organic products;curd;rolls/buns;long life bakery product
+1850,sausage;chewing gum;bottled beer;sugar;semi-finished bread;magazines;other vegetables
+1851,chewing gum;pip fruit;rolls/buns;ready soups;pork;baby food;meat spreads;brown bread;domestic eggs;soda;margarine
+1852,instant food;candy;bottled beer;tropical fruit;pip fruit;shopping bags;sausage
+1853,margarine;root vegetables;sausage;brown bread;pork;tea;organic products;soda;citrus fruit
+1854,root vegetables;tea;sugar;ready soups;brown bread;white bread;sausage;liquor
+1855,pastry;frozen dessert;semi-finished bread;organic products;tea;liquor;candy;curd
+1856,pet care;white bread;whole milk;liquor;pastry;yogurt;ice cream
+1857,chocolate;semi-finished bread;coffee;frozen dessert;detergent;organic products;pastry;tropical fruit;soda
+1858,frozen fish;liquor;meat spreads;chocolate;white bread;curd
+1859,sugar;other vegetables;chocolate;instant food;frozen meals;baby food;newspapers;long life bakery product
+1860,chewing gum;yogurt;soda;baby food;pet care;newspapers;semi-finished bread;fruit/vegetable juice;pip fruit;pork
+1861,soda;sugar;rolls/buns;ready soups;frozen vegetables;white bread;domestic eggs;beef
+1862,semi-finished bread;frozen vegetables;whole milk;organic products;yogurt;frozen dessert;root vegetables;butter;candy
+1863,tropical fruit;tea;sausage;ice cream;bottled water;whole milk;pip fruit
+1864,instant food;chewing gum;meat spreads;sausage;tropical fruit
+1865,chicken;shopping bags;meat spreads;long life bakery product;organic products;white bread;pork;beef
+1866,semi-finished bread;ready soups;pet care;pip fruit;root vegetables;domestic eggs;soda;detergent
+1867,tea;coffee;rolls/buns;ice cream;domestic eggs;pet care;softener;organic products;semi-finished bread
+1868,long life bakery product;citrus fruit;pet care;newspapers;yogurt;frozen meals;curd;semi-finished bread
+1869,bottled water;brown bread;tea;pet care;white bread;organic products;long life bakery product
+1870,liquor;detergent;curd;organic products;shopping bags
+1871,newspapers;tea;cream cheese;bottled water;instant food;ice cream;butter
+1872,other vegetables;frozen fish;root vegetables;ice cream;sausage;pork
+1873,chicken;root vegetables;rolls/buns;domestic eggs;frozen dessert;frozen fish;ice cream;shopping bags
+1874,candy;beef;ready soups;frozen fish;baby food;pet care
+1875,waffles;frozen fish;root vegetables;bottled beer;ice cream;candy;whole milk
+1876,semi-finished bread;soda;liquor;frozen meals;frozen vegetables;coffee;margarine;pip fruit
+1877,bottled water;soda;pork;margarine;tropical fruit;chewing gum;ready soups
+1878,yogurt;citrus fruit;chocolate;cream cheese;instant food;coffee;sausage;waffles;tea
+1879,beef;whole milk;chewing gum;cream cheese;shopping bags;frozen fish;baby food;butter
+1880,pork;rolls/buns;citrus fruit;cream cheese;meat spreads;margarine
+1881,brown bread;beef;domestic eggs;margarine;frozen fish
+1882,baby food;sugar;margarine;chicken;domestic eggs;long life bakery product;pet care
+1883,chewing gum;long life bakery product;ice cream;sugar;butter;instant food;baby food;organic products
+1884,pip fruit;bottled water;liquor;beef;softener;soda;whole milk
+1885,detergent;chicken;pork;cream cheese;soda;other vegetables
+1886,semi-finished bread;frozen meals;tropical fruit;domestic eggs;whole milk;tea;liquor
+1887,coffee;citrus fruit;pork;frozen meals;tea;curd;semi-finished bread;detergent
+1888,organic products;bottled beer;waffles;frozen meals;tropical fruit;softener;pork
+1889,liquor;chocolate;meat spreads;white bread;sugar;bottled beer;bottled water
+1890,sausage;whole milk;domestic eggs;rolls/buns;curd;instant food;pork
+1891,frozen dessert;domestic eggs;rolls/buns;frozen vegetables;citrus fruit;other vegetables
+1892,brown bread;rolls/buns;margarine;fruit/vegetable juice;tropical fruit;root vegetables;softener
+1893,tropical fruit;bottled beer;other vegetables;softener;tea;coffee;pet care
+1894,magazines;frozen dessert;instant food;pip fruit;chocolate;white bread;brown bread;other vegetables
+1895,organic products;shopping bags;margarine;curd;domestic eggs;pet care;coffee;bottled water
+1896,beef;ready soups;soda;ice cream;cream cheese;bottled beer
+1897,detergent;cream cheese;whole milk;frozen dessert;chicken;sugar;meat spreads;pastry
+1898,frozen meals;waffles;soda;beef;newspapers;organic products;other vegetables;cream cheese
+1899,ready soups;cream cheese;softener;ice cream;detergent;organic products;butter;yogurt
+1900,domestic eggs;magazines;cream cheese;beef;liquor;waffles;candy
+1901,pet care;shopping bags;chewing gum;softener;margarine;citrus fruit;bottled water;baby food
+1902,sausage;coffee;soda;citrus fruit;frozen fish;yogurt;chocolate
+1903,beef;soda;frozen vegetables;ready soups;candy;bottled water
+1904,frozen fish;domestic eggs;shopping bags;whole milk;pet care;tea;baby food;bottled beer
+1905,chocolate;candy;soda;curd;frozen dessert;domestic eggs;frozen meals;other vegetables;tropical fruit
+1906,shopping bags;tropical fruit;frozen fish;sugar;liquor;soda;ready soups;frozen meals
+1907,chocolate;domestic eggs;yogurt;citrus fruit;softener;baby food;candy;root vegetables;frozen dessert
+1908,butter;newspapers;white bread;other vegetables;brown bread;citrus fruit
+1909,waffles;citrus fruit;brown bread;baby food;yogurt;white bread;candy;pet care
+1910,candy;frozen vegetables;pet care;citrus fruit;chocolate;chewing gum;liquor
+1911,frozen vegetables;meat spreads;liquor;white bread;margarine;rolls/buns;chocolate;whole milk
+1912,margarine;bottled water;beef;pet care;yogurt;newspapers
+1913,ice cream;coffee;softener;pip fruit;rolls/buns;liquor;beef;pork;organic products
+1914,root vegetables;chocolate;soda;fruit/vegetable juice;other vegetables;liquor;magazines;white bread
+1915,curd;instant food;chocolate;citrus fruit;butter;chicken;ready soups;magazines
+1916,butter;chicken;other vegetables;fruit/vegetable juice;bottled beer;baby food;ice cream;pastry
+1917,newspapers;instant food;yogurt;brown bread;pet care;baby food;tropical fruit;tea
+1918,candy;cream cheese;sugar;tropical fruit;waffles;bottled water;yogurt;pastry
+1919,rolls/buns;liquor;detergent;chewing gum;whole milk;cream cheese;margarine;organic products
+1920,ready soups;bottled water;frozen meals;beef;citrus fruit;yogurt;liquor;whole milk
+1921,fruit/vegetable juice;semi-finished bread;sugar;whole milk;ice cream
+1922,other vegetables;margarine;bottled beer;sugar;white bread;rolls/buns;tropical fruit;frozen meals
+1923,yogurt;frozen dessert;whole milk;butter;newspapers;ice cream;ready soups
+1924,ice cream;long life bakery product;liquor;pastry;butter;fruit/vegetable juice;root vegetables;rolls/buns;sugar
+1925,frozen fish;long life bakery product;frozen vegetables;liquor;domestic eggs;white bread;baby food;organic products;chewing gum;bottled water
+1926,citrus fruit;organic products;pork;magazines;pip fruit;newspapers;meat spreads;curd
+1927,waffles;curd;brown bread;pastry;liquor;tea;instant food;newspapers;magazines
+1928,yogurt;ice cream;organic products;citrus fruit;sausage;sugar;brown bread;tropical fruit
+1929,whole milk;pip fruit;detergent;cream cheese;waffles;butter
+1930,pastry;bottled beer;yogurt;pork;chicken;brown bread;butter;whole milk
+1931,soda;liquor;frozen dessert;shopping bags;domestic eggs;pip fruit;frozen fish;rolls/buns;candy
+1932,detergent;pork;margarine;pastry;soda;whole milk
+1933,frozen vegetables;chicken;frozen fish;newspapers;baby food;instant food
+1934,newspapers;pastry;soda;cream cheese;instant food;chewing gum;ready soups;chocolate;bottled beer
+1935,magazines;chewing gum;pastry;frozen dessert;citrus fruit;frozen meals;fruit/vegetable juice;yogurt
+1936,baby food;pet care;candy;yogurt;newspapers;tropical fruit;domestic eggs
+1937,frozen fish;fruit/vegetable juice;long life bakery product;chewing gum;baby food;magazines;ice cream;waffles
+1938,waffles;fruit/vegetable juice;root vegetables;beef;cream cheese;detergent;sausage;margarine
+1939,liquor;frozen vegetables;tea;root vegetables;semi-finished bread;margarine
+1940,chocolate;beef;ready soups;chicken;fruit/vegetable juice;sausage;liquor;long life bakery product
+1941,detergent;butter;baby food;curd;softener;frozen meals;whole milk;ice cream
+1942,detergent;domestic eggs;semi-finished bread;waffles;magazines;yogurt;softener
+1943,meat spreads;fruit/vegetable juice;waffles;root vegetables;ice cream
+1944,pet care;long life bakery product;softener;frozen dessert;citrus fruit;chicken;bottled water;domestic eggs
+1945,other vegetables;frozen meals;margarine;chocolate;white bread;tropical fruit;semi-finished bread;pip fruit
+1946,chewing gum;yogurt;softener;whole milk;tea;frozen meals;organic products;cream cheese;pastry
+1947,rolls/buns;curd;chewing gum;long life bakery product;ready soups;fruit/vegetable juice;organic products;sausage
+1948,chewing gum;tea;semi-finished bread;root vegetables;softener;citrus fruit;organic products;magazines
+1949,cream cheese;shopping bags;semi-finished bread;pip fruit;root vegetables;curd;coffee
+1950,soda;pip fruit;newspapers;fruit/vegetable juice;shopping bags;frozen dessert
+1951,liquor;root vegetables;coffee;frozen meals;domestic eggs;instant food;beef
+1952,shopping bags;fruit/vegetable juice;pip fruit;root vegetables;margarine;candy;butter
+1953,chicken;pet care;butter;tea;frozen meals;detergent
+1954,sausage;pet care;white bread;long life bakery product;ice cream;pork;sugar
+1955,yogurt;pork;frozen fish;chocolate;softener;ready soups
+1956,pork;other vegetables;yogurt;margarine;rolls/buns;magazines;bottled beer;curd
+1957,beef;margarine;pork;pet care;ready soups;soda;meat spreads;domestic eggs
+1958,semi-finished bread;coffee;long life bakery product;beef;citrus fruit;waffles;meat spreads;baby food;softener
+1959,chewing gum;curd;sausage;tropical fruit;butter;bottled beer;pet care
+1960,chicken;waffles;coffee;meat spreads;frozen fish;beef;pet care;other vegetables;semi-finished bread
+1961,tropical fruit;waffles;frozen fish;frozen meals;pastry;tea;curd
+1962,long life bakery product;baby food;instant food;frozen dessert;candy;other vegetables;ready soups
+1963,root vegetables;ice cream;pip fruit;frozen vegetables;detergent;bottled water;tea
+1964,instant food;detergent;softener;baby food;chicken;bottled water
+1965,pastry;bottled water;waffles;baby food;citrus fruit;magazines;butter;liquor
+1966,long life bakery product;frozen vegetables;liquor;bottled water;rolls/buns;pet care;fruit/vegetable juice;magazines;pork
+1967,soda;organic products;frozen meals;tropical fruit;cream cheese;liquor;meat spreads;frozen fish
+1968,long life bakery product;organic products;tropical fruit;butter;bottled beer;rolls/buns
+1969,long life bakery product;coffee;shopping bags;magazines;citrus fruit;detergent;chocolate
+1970,root vegetables;margarine;chicken;tropical fruit;fruit/vegetable juice;yogurt;sausage;pork
+1971,yogurt;instant food;curd;rolls/buns;ready soups;shopping bags
+1972,candy;coffee;waffles;chicken;pip fruit;bottled beer;pork
+1973,sugar;coffee;ready soups;pet care;meat spreads;frozen dessert
+1974,tropical fruit;domestic eggs;citrus fruit;newspapers;softener;chocolate;rolls/buns;frozen meals;waffles
+1975,frozen dessert;chocolate;pip fruit;frozen fish;coffee;fruit/vegetable juice;waffles;root vegetables;semi-finished bread
+1976,cream cheese;beef;tea;semi-finished bread;chewing gum;pet care;citrus fruit;newspapers
+1977,chocolate;frozen dessert;butter;shopping bags;cream cheese;margarine;yogurt
+1978,pork;organic products;pet care;tea;butter;tropical fruit;bottled beer
+1979,detergent;butter;root vegetables;sausage;sugar;fruit/vegetable juice;brown bread
+1980,frozen dessert;butter;sugar;coffee;detergent;pip fruit;citrus fruit
+1981,sausage;butter;frozen dessert;waffles;semi-finished bread;organic products;liquor;long life bakery product
+1982,ready soups;softener;ice cream;semi-finished bread;rolls/buns;newspapers;liquor
+1983,long life bakery product;magazines;ice cream;meat spreads;shopping bags;pet care;frozen meals
+1984,pork;tea;pastry;margarine;root vegetables;ready soups;white bread
+1985,chewing gum;candy;cream cheese;instant food;frozen fish;sugar;frozen vegetables
+1986,other vegetables;pet care;instant food;frozen fish;tea;tropical fruit;curd;organic products
+1987,pip fruit;pet care;organic products;bottled beer;domestic eggs;chocolate;curd;frozen vegetables
+1988,ice cream;other vegetables;frozen dessert;long life bakery product;pastry;curd;tea;beef
+1989,tropical fruit;pet care;frozen meals;tea;citrus fruit;newspapers
+1990,liquor;other vegetables;shopping bags;coffee;white bread;detergent;fruit/vegetable juice;brown bread;soda;semi-finished bread
+1991,chocolate;newspapers;softener;domestic eggs;sausage;fruit/vegetable juice;pet care
+1992,long life bakery product;root vegetables;domestic eggs;instant food;frozen meals;yogurt;frozen dessert;liquor
+1993,soda;beef;fruit/vegetable juice;instant food;frozen dessert
+1994,white bread;rolls/buns;cream cheese;shopping bags;ice cream;frozen vegetables;instant food
+1995,magazines;beef;rolls/buns;tea;long life bakery product;curd;pork;frozen fish
+1996,detergent;soda;tropical fruit;yogurt;curd;butter
+1997,long life bakery product;frozen fish;cream cheese;candy;frozen meals;magazines
+1998,pork;chocolate;frozen vegetables;instant food;magazines;liquor;tea;other vegetables
+1999,ice cream;waffles;detergent;liquor;cream cheese;citrus fruit;rolls/buns;chewing gum
+2000,instant food;chocolate;beef;frozen meals;curd;soda;chicken;frozen dessert;brown bread

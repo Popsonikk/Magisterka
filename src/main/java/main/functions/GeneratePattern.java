@@ -44,6 +44,19 @@ public class GeneratePattern {
         }
         return candidates;
     }
+    public static long getSilnia(int basket, int candidate)
+    {
+        if (basket == candidate)
+            return 1;
+        else{
+            int i=1;
+            int len=basket-candidate;
+            for (int j=basket+1;j<=basket+len;j++)
+                i*=j;
+            return i/len;
+        }
+    }
+
 
     //algorytm controllers
     public static List<SimplePattern> apriori(double minSup, int len, List<Set<String>> baskets)
@@ -89,8 +102,9 @@ public class GeneratePattern {
             int a=0;
 
             for (Set<String> basket : baskets) {
-
+                long silnia=  getSilnia(basket.size(),i);
                 a++;
+                int count=0;
                 if(a%100==0)
                     System.out.print("koszyk: "+a+" ");
                 if(a%1000==0)
@@ -98,11 +112,15 @@ public class GeneratePattern {
                 //Struktura set zapobiega duplikatom w danych
                 for (List<String> candidate : candidates)
                 {
+
                     //sprawdzenie, czy konkretny wzorzec w całości znajduje się w koszyku
                     if (basket.containsAll(candidate)){
                         patternCount.put(candidate, patternCount.getOrDefault(candidate, 0) + 1);
+                        count++;
 
                     }
+                    if (count == silnia)
+                        break;
 
                 }
             }
