@@ -19,12 +19,5 @@ public class SimplePattern {
         return support;
     }
 
-    @Override
-    public String toString(){
-        StringBuilder builder=new StringBuilder();
-        for(int i=0;i<pattern.size()-1;i++)
-            builder.append(pattern.get(i)).append(",");
-        builder.append(pattern.get(pattern.size()-1));
-        return builder.toString();
-    }
+
 }

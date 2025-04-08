@@ -169,50 +169,47 @@ public class GeneratePattern {
 
         List<List<String>> subsets=new ArrayList<>();
         List<AssociationRule> ruleList=new ArrayList<>();
+        List<String> consequent;
+        Map<String, Double> patternMap=new HashMap<>();
+        patterns.sort(Comparator.comparingInt(o -> o.getPattern().size()));
+        for (SimplePattern pattern : patterns) {
+            patternMap.put(getString(pattern.getPattern()),pattern.getSupport());
+        }
+        long startTime = System.currentTimeMillis();
+        int k=0,size,h;
+        double confidence,lift;
         //iterujemy po wszystkich możliwych wzorcach
         for (SimplePattern pattern:patterns)
         {
+
+            k++;
+            System.out.println("wzorzec: "+k+" "+ "długość "+ pattern.getPattern().size());
+
             if(pattern.getPattern().size()==1)
                 continue;
-            if(pattern.getPattern().size()==2)
-            {
-                SimplePattern at = getSupport(patterns, Collections.singletonList(pattern.getPattern().get(0)));
-                SimplePattern ct= getSupport(patterns,Collections.singletonList(pattern.getPattern().get(1)));
-                double confidence = pattern.getSupport() / at.getSupport();
-                double lift = confidence / ct.getSupport();
-                if(conf<confidence&&lift>lt)
-                    ruleList.add(new AssociationRule(at,ct, pattern.getSupport(), confidence,lift));
-
-                double mirrorConfidence = pattern.getSupport() / ct.getSupport();
-                double mirrorLift = mirrorConfidence / at.getSupport();
-                if(conf<mirrorConfidence&&mirrorLift>lt)
-                    ruleList.add(new AssociationRule(ct,at, pattern.getSupport(), mirrorConfidence,mirrorLift));
-
-                continue;
-            }
             subsets.clear();
-            int size=pattern.getPattern().size();
-            int h;
-            if(size%2==1)
+            size=pattern.getPattern().size();
+           /* if(size%2==1)
                 h=size/2+1;
             else
-                h=size/2;
+                h=size/2;*/
             //tworzymy podzbiory wzorca
-            for(int i=h;i<size;i++)
+            for(int i=1;i<size;i++)
                 subsets.addAll(GeneratePattern.generateCandidates(pattern.getPattern(),0,i,new ArrayList<>()));
             for (List<String> antecedent:subsets)
             {
                 //tworzenie prawej strony na zasadzie usunięcia lewej strony z głównego wzorca
-                List<String> consequent=new ArrayList<>(pattern.getPattern());
+                consequent=new ArrayList<>(pattern.getPattern());
                 consequent.removeAll(antecedent);
-                SimplePattern at = getSupport(patterns,antecedent);
-                SimplePattern ct= getSupport(patterns, consequent);
-                double confidence = pattern.getSupport() / at.getSupport();
-                double lift = confidence / ct.getSupport();
+                SimplePattern at = new SimplePattern(antecedent,patternMap.get(getString(antecedent)));
+                SimplePattern ct= new SimplePattern(consequent,patternMap.get(getString(consequent)));
+                confidence = pattern.getSupport() / at.getSupport();
+                lift = confidence / ct.getSupport();
                 if(conf<confidence&&lift>lt)
                     ruleList.add(new AssociationRule(at,ct, pattern.getSupport(), confidence,lift));
             }
         }
+        System.out.println("Czas: "+((System.currentTimeMillis()-startTime)/1000.f));
         return ruleList;
     }
     public static SimplePattern getSupport(List<SimplePattern> patterns, List<String> subset) {
@@ -230,5 +227,14 @@ public class GeneratePattern {
         if (res.isPresent())
             filename = res.get();
         return filename;
+    }
+    public static String getString(List<String> list)
+    {
+
+        StringBuilder builder=new StringBuilder();
+        for(int i=0;i<list.size()-1;i++)
+            builder.append(list.get(i)).append(",");
+        builder.append(list.get(list.size()-1));
+        return builder.toString();
     }
 }
