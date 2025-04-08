@@ -105,10 +105,7 @@ public class GeneratePattern {
                 long silnia=  getSilnia(basket.size(),i);
                 a++;
                 int count=0;
-                if(a%100==0)
-                    System.out.print("koszyk: "+a+" ");
-                if(a%1000==0)
-                    System.out.println();
+                    System.out.println("koszyk: "+a+" ");
                 //Struktura set zapobiega duplikatom w danych
                 for (List<String> candidate : candidates)
                 {

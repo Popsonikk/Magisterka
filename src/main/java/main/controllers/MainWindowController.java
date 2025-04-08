@@ -213,7 +213,7 @@ public class MainWindowController implements Initializable {
         neo4j.setSpacing(15.0);
         HBox urlBox=createEnterBox("Podaj url");
         HBox passBox=createEnterBox("Podaj hasło");
-        Button startNeo=createButton("Uruchom Reguły");
+        Button startNeo=createButton("Uruchom Neo4j");
         startNeo.setOnAction((e)->{
             if(aprioriInterfaceController.getData().getDataSize()==0)
             {

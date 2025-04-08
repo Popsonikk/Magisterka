@@ -56,7 +56,7 @@ public class Neo4jConnector implements AutoCloseable {
             // Przygotowujemy listę danych do wczytania
             List<Map<String, String>> nodes = patterns.stream()
                     .map(pattern -> Map.of(
-                            "name", pattern.toString(),
+                            "name", GeneratePattern.getString(pattern.getPattern()),
                             "support", String.valueOf(pattern.getSupport())
                     ))
                     .toList();
@@ -71,12 +71,14 @@ public class Neo4jConnector implements AutoCloseable {
     }
     public void createEdges(List<AssociationRule> rules)
     {
+        System.out.println("Hello");
+        System.out.println(rules.size());
         try (var session = driver.session()) {
 
             List<Map<String, Object>> ruleData = rules.stream()
                     .map(rule -> Map.<String, Object>of(
-                            "antecedent", rule.getAntecedent().toString(),
-                            "consequent", rule.getConsequent().toString(),
+                            "antecedent", GeneratePattern.getString(rule.getAntecedent().getPattern()),
+                            "consequent", GeneratePattern.getString(rule.getConsequent().getPattern()),
                             "confidence", String.valueOf(rule.getConfidence()),
                             "lift", String.valueOf(rule.getLift())
                     ))
