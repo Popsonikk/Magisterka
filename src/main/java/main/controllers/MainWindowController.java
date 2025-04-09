@@ -136,7 +136,7 @@ public class MainWindowController implements Initializable {
                 return;
             }
             Stage stage = getStage();
-            aprioriInterfaceController.clearInterface();
+            aprioriInterfaceController.getData().getFiltrInfo().clearFiltr();
             Task<Void> task = new Task<>() {
                 @Override
                 protected Void call() throws Exception {
@@ -185,7 +185,7 @@ public class MainWindowController implements Initializable {
                 return;
             }
             Stage stage = getStage();
-            ruleInterfaceController.clearInterface();
+            ruleInterfaceController.getData().getFiltrInfo().clearFiltr();
             Task<Void> task = new Task<>() {
                 @Override
                 protected Void call() throws Exception {

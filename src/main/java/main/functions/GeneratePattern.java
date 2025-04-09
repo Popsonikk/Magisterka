@@ -100,12 +100,15 @@ public class GeneratePattern {
                     " przedmiotów "+ uniqueItems.size());
             patternCount.clear();
             int a=0;
-
+            System.out.print("koszyk: ");
             for (Set<String> basket : baskets) {
                 long silnia=  getSilnia(basket.size(),i);
                 a++;
                 int count=0;
-                    System.out.println("koszyk: "+a+" ");
+                System.out.print(a+" ");
+                if(a%100==0)
+                    System.out.print("\nkoszyk: ");
+
                 //Struktura set zapobiega duplikatom w danych
                 for (List<String> candidate : candidates)
                 {
@@ -164,11 +167,14 @@ public class GeneratePattern {
     }
     public static List<AssociationRule> generateRules(double conf, double lt, List<SimplePattern> patterns) {
 
+        for (SimplePattern pattern : patterns) {
+            pattern.getPattern().sort(Comparator.naturalOrder());
+        }
         List<List<String>> subsets=new ArrayList<>();
         List<AssociationRule> ruleList=new ArrayList<>();
         List<String> consequent;
         Map<String, Double> patternMap=new HashMap<>();
-        patterns.sort(Comparator.comparingInt(o -> o.getPattern().size()));
+       // patterns.sort(Comparator.comparingInt(o -> o.getPattern().size()));
         for (SimplePattern pattern : patterns) {
             patternMap.put(getString(pattern.getPattern()),pattern.getSupport());
         }
@@ -198,8 +204,11 @@ public class GeneratePattern {
                 //tworzenie prawej strony na zasadzie usunięcia lewej strony z głównego wzorca
                 consequent=new ArrayList<>(pattern.getPattern());
                 consequent.removeAll(antecedent);
+
                 SimplePattern at = new SimplePattern(antecedent,patternMap.get(getString(antecedent)));
+
                 SimplePattern ct= new SimplePattern(consequent,patternMap.get(getString(consequent)));
+
                 confidence = pattern.getSupport() / at.getSupport();
                 lift = confidence / ct.getSupport();
                 if(conf<confidence&&lift>lt)
