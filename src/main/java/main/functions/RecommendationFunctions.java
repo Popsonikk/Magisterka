@@ -20,6 +20,7 @@ public class RecommendationFunctions {
                 .collect(Collectors.toMap(key -> key, key -> 0.0));
         for(Record r:records)
         {
+            System.out.println(r);
             double strength = Double.parseDouble(String.valueOf(r.get(1)).replace("\"", "")) // wsparcie
                     *( Double.parseDouble(String.valueOf(r.get(3)).replace("\"", "")) //totalLift
                     / Double.parseDouble(String.valueOf(r.get(2)).replace("\"", ""))); //stopień

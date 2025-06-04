@@ -1,0 +1,156 @@
+Produkt,Siła
+whole milk,76.813
+other vegetables,61.350
+rolls/buns,53.506
+soda,44.658
+yogurt,44.343
+root vegetables,28.763
+sausage,28.750
+bottled water,27.600
+tropical fruit,22.391
+shopping bags,20.897
+pastry,18.598
+citrus fruit,17.686
+pip fruit,17.608
+bottled beer,16.716
+canned beer,16.299
+brown bread,14.844
+frankfurter,13.820
+whipped/sour cream,13.784
+pork,12.861
+newspapers,12.367
+curd,11.613
+domestic eggs,11.479
+fruit/vegetable juice,10.474
+butter,10.214
+beef,9.802
+margarine,7.955
+coffee,7.697
+chocolate,6.423
+white bread,6.327
+frozen vegetables,6.326
+chicken,5.736
+berries,5.024
+cream cheese,4.806
+uht-milk,4.765
+hamburger meat,4.236
+dessert,4.135
+waffles,3.804
+meat,3.701
+onions,3.586
+napkins,3.450
+ham,3.267
+sugar,3.086
+beverages,2.978
+salty snack,2.863
+frozen meals,2.820
+specialty chocolate,2.736
+oil,2.539
+grapes,2.347
+misc. beverages,2.245
+long life bakery product,2.221
+candy,1.959
+butter milk,1.950
+ice cream,1.946
+specialty bar,1.941
+cat food,1.866
+hard cheese,1.797
+sliced cheese,1.608
+chewing gum,1.471
+red/blush wine,1.384
+white wine,1.270
+soft cheese,1.238
+hygiene articles,1.219
+processed cheese,1.029
+semi-finished bread,0.857
+flour,0.828
+baking powder,0.801
+herbs,0.728
+liquor,0.623
+detergent,0.579
+pickled vegetables,0.559
+pot plants,0.551
+spread cheese,0.485
+pasta,0.462
+condensed milk,0.441
+frozen fish,0.432
+pet care,0.426
+dishes,0.401
+seasonal products,0.382
+canned fish,0.368
+frozen dessert,0.306
+cake bar,0.299
+packaged fruit/vegetables,0.277
+salt,0.259
+mustard,0.257
+mayonnaise,0.249
+instant coffee,0.200
+photo/film,0.183
+roll products,0.172
+liquor (appetizer),0.171
+flower (seeds),0.170
+specialty cheese,0.170
+turkey,0.162
+canned vegetables,0.160
+cling film/bags,0.134
+dish cleaner,0.133
+dog food,0.127
+curd cheese,0.121
+soups,0.118
+sweet spreads,0.117
+instant food products,0.113
+finished products,0.110
+frozen potato products,0.096
+candles,0.087
+zwieback,0.084
+spices,0.076
+cereals,0.063
+house keeping products,0.058
+sauces,0.058
+rice,0.056
+meat spreads,0.050
+sparkling wine,0.049
+popcorn,0.046
+softener,0.045
+snack products,0.036
+chocolate marshmallow,0.034
+brandy,0.032
+liver loaf,0.028
+male cosmetics,0.026
+potato products,0.025
+vinegar,0.024
+cleaner,0.024
+female sanitary products,0.022
+nuts/prunes,0.019
+jam,0.018
+syrup,0.018
+ketchup,0.017
+light bulbs,0.016
+rum,0.016
+dental care,0.015
+kitchen towels,0.015
+artif. sweetener,0.014
+canned fruit,0.010
+soap,0.010
+bathroom cleaner,0.008
+-----,0.000
+tea,0.007
+specialty fat,0.007
+fish,0.007
+abrasive cleaner,0.006
+organic sausage,0.006
+tidbits,0.006
+nut snack,0.006
+skin care,0.005
+prosecco,0.005
+pudding powder,0.004
+cookware,0.004
+ready soups,0.004
+cocoa drinks,0.004
+cooking chocolate,0.004
+flower soil/fertilizer,0.004
+organic products,0.003
+specialty vegetables,0.003
+cream,0.003
+frozen fruits,0.003
+honey,0.003

@@ -1,5 +1,11 @@
-mean,item_Percent,pattern_count
-5,10,1992
-7.5,15,16056
-10,20,126932
-12.5,25,551180
+zbiór,wzorce
+pełny_1,4223
+wyczyszczony_1,13386
+zbiór_2,52600
+losowy_1,20550
+losowy_2,27052
+losowy_3,7134
+losowy_4,2641
+losowy_5,535388
+losowy_6,76801
+losowy_7,13195

@@ -46,6 +46,7 @@ public class Neo4jConnector implements AutoCloseable {
         }
     }
     public void createNodes(List<SimplePattern> patterns) {
+        System.out.println("Creating " + patterns.size() + " nodes");
         try (var session = driver.session()) {
             // Tworzymy indeks tylko raz
             session.executeWrite(tx -> {
@@ -71,8 +72,7 @@ public class Neo4jConnector implements AutoCloseable {
     }
     public void createEdges(List<AssociationRule> rules)
     {
-        System.out.println("Hello");
-        System.out.println(rules.size());
+        System.out.println("Creating " + rules.size() + " edges");
         try (var session = driver.session()) {
 
             List<Map<String, Object>> ruleData = rules.stream()

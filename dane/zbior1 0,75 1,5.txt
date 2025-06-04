@@ -1,0 +1,123 @@
+Produkt,Siła
+whole milk,5.267
+other vegetables,4.484
+yogurt,3.019
+root vegetables,2.929
+tropical fruit,2.384
+whipped/sour cream,1.457
+rolls/buns,1.412
+citrus fruit,1.410
+pip fruit,1.327
+soda,1.132
+bottled water,1.127
+sausage,1.032
+butter,0.871
+fruit/vegetable juice,0.846
+domestic eggs,0.802
+curd,0.735
+beef,0.729
+pastry,0.721
+shopping bags,0.715
+pork,0.525
+margarine,0.511
+frozen vegetables,0.432
+chicken,0.415
+bottled beer,0.408
+cream cheese,0.379
+napkins,0.294
+onions,0.284
+white bread,0.279
+brown bread,0.275
+berries,0.219
+oil,0.192
+dessert,0.188
+chocolate,0.188
+newspapers,0.186
+butter milk,0.186
+sliced cheese,0.182
+hygiene articles,0.168
+grapes,0.166
+frankfurter,0.165
+waffles,0.165
+herbs,0.164
+coffee,0.158
+hamburger meat,0.147
+sugar,0.141
+ham,0.132
+hard cheese,0.131
+candy,0.119
+long life bakery product,0.113
+salty snack,0.109
+canned beer,0.107
+uht-milk,0.095
+flour,0.091
+red/blush wine,0.084
+processed cheese,0.081
+meat,0.073
+frozen meals,0.072
+baking powder,0.066
+misc. beverages,0.061
+specialty bar,0.058
+soft cheese,0.052
+semi-finished bread,0.047
+cake bar,0.036
+roll products,0.029
+turkey,0.025
+specialty cheese,0.025
+rice,0.024
+-----,0.000
+specialty chocolate,0.041
+cat food,0.040
+beverages,0.037
+pickled vegetables,0.034
+detergent,0.034
+ice cream,0.033
+chewing gum,0.031
+dishes,0.028
+pasta,0.027
+canned fish,0.026
+potted plants,0.025
+mustard,0.022
+white wine,0.022
+packaged fruit/vegetables,0.021
+seasonal products,0.021
+cling film/bags,0.020
+spread cheese,0.020
+frozen fish,0.020
+canned vegetables,0.020
+salt,0.019
+frozen dessert,0.019
+flower (seeds),0.018
+dish cleaner,0.018
+condensed milk,0.018
+mayonnaise,0.018
+sweet spreads,0.016
+dog food,0.015
+candles,0.014
+chocolate marshmallow,0.014
+frozen potato products,0.014
+instant food products,0.014
+pet care,0.014
+house keeping products,0.014
+popcorn,0.013
+liquor,0.012
+soups,0.012
+liquor (appetizer),0.012
+vinegar,0.012
+kitchen towels,0.012
+instant coffee,0.011
+dental care,0.011
+zwieback,0.010
+finished products,0.010
+jam,0.010
+cereals,0.010
+sauces,0.010
+spices,0.010
+softener,0.009
+liver loaf,0.009
+female sanitary products,0.009
+cleaner,0.009
+photo/film,0.008
+sparkling wine,0.008
+ketchup,0.008
+curd cheese,0.008
