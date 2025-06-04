@@ -10,18 +10,24 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.scene.transform.Scale;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import main.functions.GeneratePattern;
 import main.objects.Edge;
 import main.objects.Graph;
+import main.objects.GraphTemplateData;
 import main.objects.Node;
 
 import java.io.*;
 import java.net.URL;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Consumer;
+
 public class GraphInterfaceController implements Initializable {
     @FXML
     public ScrollPane pane;
@@ -50,7 +56,7 @@ public class GraphInterfaceController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         radius=25;
-        meshSize=2500.0f;
+        meshSize=5000.0f;
         scale=new Scale(1,1,0,0);
         scaleRadius=1;
         mesh=new ArrayList<>();
@@ -70,7 +76,7 @@ public class GraphInterfaceController implements Initializable {
     }
     private void scaleController(){
         VBox box=new VBox();
-        box.getChildren().addAll(createZoomButton("Przybliż",0.1f),createZoomButton("Oddal",-0.1f));
+        box.getChildren().addAll(createZoomButton("Przybliż",0.05f),createZoomButton("Oddal",-0.05f));
         bottomBox.getChildren().add(box);
 
     }
@@ -80,8 +86,8 @@ public class GraphInterfaceController implements Initializable {
         zoomButton.getStyleClass().add("zoomButton");
         zoomButton.setOnAction(e->{
             scaleRadius+=d;
-            if(scaleRadius<0.4)
-                scaleRadius=0.4f;
+            if(scaleRadius<0.2)
+                scaleRadius=0.2f;
             if(scaleRadius>2.0)
                 scaleRadius=2.0f;
             scale.setX(scaleRadius);
@@ -616,168 +622,300 @@ public class GraphInterfaceController implements Initializable {
     }
     private  void createGraphTemplateButton()
     {
+        final String[] patternSize = new String[1];
+        final String[] patternStartPoint = new String[1];
+        final boolean[] toClear = new boolean[1];
+
+        Stage stage=new Stage();
         MenuButton button=createMenuButtonTemplate("Wybierz wzorzec grafu");
+
+
+
+
         MenuItem blank=new MenuItem("Graf bez połączeń");
         blank.setOnAction(event->{
-            createBlankGraph();
 
+            Pane pane1= getGraphTemplatePane(stage,data -> {
+                int a,b,x,y;
+
+                patternSize[0] = data.size;
+                patternStartPoint[0] = data.startPoint;
+                toClear[0] = data.clearBoard;
+                try{
+
+                    b=Integer.parseInt(patternSize[0].split("x")[0].trim());
+                    a=Integer.parseInt(patternSize[0].split("x")[1].trim());
+                    y=Integer.parseInt(patternStartPoint[0].split(";")[0].trim());
+                    x=Integer.parseInt(patternStartPoint[0].split(";")[1].trim());
+                    if(toClear[0])
+                        clearCanvas();
+                    createBlankGraph(a,b,x,y,graph.getNodes().size());
+                }
+                catch (Exception e) {
+                    createAlert(2,"Zły format rozmiaru!");
+                    return;
+                }
+
+
+            });
+            Scene scene =new Scene(pane1);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/main/style.css")).toExternalForm());
+            stage.setScene(scene);
+            stage.show();
         });
         MenuItem shelvesRows=new MenuItem("Rzędy regałów");
         shelvesRows.setOnAction(actionEvent -> {
-            String s=createBlankGraph();
-            if(s.isEmpty())
-                return;
-            int a=Integer.parseInt(s.split("x")[0]);
-            int b=Integer.parseInt(s.split("x")[1]);
-            for(int i=0;i<a;i++)
-            {
-                for(int j=0;j<b-1;j++)
-                    createEdge(graph.getNodes().get(b*i+j),graph.getNodes().get(b*i+j+1),1);
-            }
-            for(int i=0;i<a-1;i++)
-            {
-                createEdge(graph.getNodes().get(b*i),graph.getNodes().get(b*(i+1)),3);
-                createEdge(graph.getNodes().get(b*(i+1)-1),graph.getNodes().get(b*(i+2)-1),3);
-            }
-        });
-        MenuItem islands=new MenuItem("Wyspy promocyjne");
-        islands.setOnAction(actionEvent -> {
-            graph.clear();
-            clearCanvas();
-            TextInputDialog dialog=new TextInputDialog();
-            dialog.setHeaderText("Podaj ilość wysp");
-            Optional<String> res=dialog.showAndWait();
-            int a;
-            if(res.isPresent())
-            {
-                try{
-                    a=Integer.parseInt(res.get());
-                }
-                catch (Exception e) {
-                    createAlert(2,"Zły format rozmiaru!");
-                    return ;
-                }
-            }
-            else
-                return;
-            for(int i=0,j=0,id=-1;;i++)
-            {
-                createIslandEdges(createNode(5*i+1,1,String.valueOf(++id)),
-                        createNode(5*(i+1)-1,1,String.valueOf(++id)),
-                        createNode(5*i+1,4,String.valueOf(++id)),
-                        createNode(5*(i+1)-1,4,String.valueOf(++id)),
-                        createNode((double) radius+((2.5+(5*i))*60.0),(double)radius+((2.5)*60.0),String.valueOf(++id)));
-                if(++j==a)
-                    break;
-                createIslandEdges(createNode(5*i+1,6,String.valueOf(++id)),
-                        createNode(5*(i+1)-1,6,String.valueOf(++id)),
-                        createNode(5*i+1,9,String.valueOf(++id)),
-                        createNode(5*(i+1)-1,9,String.valueOf(++id)),
-                        createNode((double) radius+((2.5+(5*i))*60.0),(double)radius+((7.5)*60.0),String.valueOf(++id)));
-                if(++j==a)
-                    break;
-            }
-        });
-        MenuItem promotion=new MenuItem("Regały prostopadłe");
-        promotion.setOnAction(ev->{
-            graph.clear();
-            clearCanvas();
-            TextInputDialog dialog=new TextInputDialog();
-            dialog.setHeaderText("Podaj ilość wysp");
-            Optional<String> res=dialog.showAndWait();
-            String [] line;
-            int a,b;
-            if(res.isPresent())
-            {
-                try{
-                    line=res.get().split("x");
-                    a=Integer.parseInt(line[0]);
-                    b=Integer.parseInt(line[1]);
-                }
-                catch (Exception e) {
-                    createAlert(2,"Zły format rozmiaru!");
-                    return ;
-                }
-            }
-            else
-                return;
-            int id=-1;
-            for(int i=0;i<a+2;i++)
-                createNode(1,1+2*i,String.valueOf(++id));
-            for(int i=0;i<a+1;i++)
-                createEdge(graph.getNodes().get(i),graph.getNodes().get(i+1),1);
-            for(int i=0;i<a;i++)
-            {
-                for(int j=0;j<b;j++)
-                    createNode((3+2*j),(3+2*i),String.valueOf(++id));
-            }
-            for(int i=0;i<a;i++)
-            {
-                for(int j=0;j<b-1;j++)
-                    createEdge(graph.getNodes().get(a+2+b*i+j),graph.getNodes().get(a+3+b*i+j),1);
-            }
 
-            for(int i=0;i<a+2;i++)
-                createNode(2*b+3,1+2*i,String.valueOf(++id));
-            for(int i=a+2+(a*b);i<2*a+3+(a*b);i++)
-                createEdge(graph.getNodes().get(i),graph.getNodes().get(i+1),1);
-            for(int i=0;i<a;i++)
-            {
-                createEdge(graph.getNodes().get(i+1),graph.getNodes().get(a+2+b*i),3);
-                createEdge(graph.getNodes().get(a+1+b*(i+1)),graph.getNodes().get(a*b+a+3+i),3);
-            }
+            Pane pane1= getGraphTemplatePane(stage,data -> {
+                int a,b,x,y;
 
-
-        });
-        MenuItem item=new MenuItem("Schowki");
-        item.setOnAction(ev->{
-            graph.clear();
-            clearCanvas();
-            TextInputDialog dialog=new TextInputDialog();
-            dialog.setHeaderText("Podaj rozmiar grafu");
-            Optional<String> res=dialog.showAndWait();
-            int a;
-            if(res.isPresent())
-            {
+                patternSize[0] = data.size;
+                patternStartPoint[0] = data.startPoint;
+                toClear[0] = data.clearBoard;
                 try{
 
-                    a=Integer.parseInt(res.get().split("x")[0].trim());
+                    b=Integer.parseInt(patternSize[0].split("x")[0].trim());
+                    a=Integer.parseInt(patternSize[0].split("x")[1].trim());
+                    y=Integer.parseInt(patternStartPoint[0].split(";")[0].trim());
+                    x=Integer.parseInt(patternStartPoint[0].split(";")[1].trim());
+                    if(toClear[0])
+                        clearCanvas();
+                    int id=graph.getNodes().size();
+                    createBlankGraph(a,b,x,y,graph.getNodes().size());
+                    for(int i=0;i<a-1;i++)
+                    {
+                        createEdge(graph.getNodes().get(id+b*i),graph.getNodes().get(id+b*(i+1)),3);
+                        createEdge(graph.getNodes().get(id+b*(i+1)-1),graph.getNodes().get(id+b*(i+2)-1),3);
+                        for(int j=0;j<b-1;j++)
+                            createEdge(graph.getNodes().get(id+j+b*i),graph.getNodes().get(id+j+1+b*i),3);
+                    }
+                    for(int j=0;j<b-1;j++)
+                        createEdge(graph.getNodes().get(id+j+b*(a-1)),graph.getNodes().get(id+j+b*(a-1)+1),3);
 
                 }
                 catch (Exception e) {
                     createAlert(2,"Zły format rozmiaru!");
                     return;
                 }
-            }
-            else
-                return;
 
-            int id=-1;
-            for(int i=0;i<2;i++)
-            {
-                for(int j=0;j<a;j++)
-                    createNode((1+2*i),(3+2*j),String.valueOf(++id));
-            }
-            for(int i=0;i<2;i++)
-            {
-                for(int j=0;j<a;j++)
-                    createNode((9+2*i),(3+2*j),String.valueOf(++id));
-            }
-            for(int i=0;i<a+2;i++)
-                createNode(6,(1+2*i),String.valueOf(++id));
-            for(int i=0;i<4;i++)
-            {
-                for(int j=0;j<a-1;j++)
-                    createEdge(graph.getNodes().get(a*i+j),graph.getNodes().get(a*i+j+1),1);
-            }
 
-            createEdge(graph.getNodes().get(0),graph.getNodes().get(a),3);
-            createEdge(graph.getNodes().get(2*a),graph.getNodes().get(a*3),3);
-            createEdge(graph.getNodes().get(a-1),graph.getNodes().get(2*a-1),3);
-            createEdge(graph.getNodes().get(3*a-1),graph.getNodes().get(a*4-1),3);
-            for(int i=4*a;i<5*a+1;i++)
-                createEdge(graph.getNodes().get(i),graph.getNodes().get(i+1),1);
+            });
+            Scene scene =new Scene(pane1);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/main/style.css")).toExternalForm());
+            stage.setScene(scene);
+            stage.show();
 
+
+
+        });
+        MenuItem islands=new MenuItem("Wyspy promocyjne");
+        islands.setOnAction(actionEvent -> {
+
+
+            Pane pane1= getGraphTemplatePane(stage,data -> {
+                int a,b,x,y;
+
+                patternSize[0] = data.size;
+                patternStartPoint[0] = data.startPoint;
+                toClear[0] = data.clearBoard;
+                try{
+
+
+                    a=Integer.parseInt(patternSize[0].split("x")[0].trim());
+                    y=Integer.parseInt(patternStartPoint[0].split(";")[0].trim());
+                    x=Integer.parseInt(patternStartPoint[0].split(";")[1].trim());
+                    if(toClear[0])
+                        clearCanvas();
+                    int id=graph.getNodes().size()-1;
+                    for(int i=0,j=0;;i++)
+                    {
+                        createIslandEdges(createNode(x+5*i+1,1+y,String.valueOf(++id)),
+                                createNode(x+5*(i+1)-1,1+y,String.valueOf(++id)),
+                                createNode(x+5*i+1,4+y,String.valueOf(++id)),
+                                createNode(x+5*(i+1)-1,4+y,String.valueOf(++id)),
+                                createNode((double) radius+((x+2.5+(5*i))*60.0),(double)radius+((2.5+y)*60.0),String.valueOf(++id)));
+                        if(++j==a)
+                            break;
+                        createIslandEdges(createNode(x+5*i+1,6+y,String.valueOf(++id)),
+                                createNode(x+5*(i+1)-1,6+y,String.valueOf(++id)),
+                                createNode(x+5*i+1,9+y,String.valueOf(++id)),
+                                createNode(x+5*(i+1)-1,9+y,String.valueOf(++id)),
+                                createNode((double) radius+((x+2.5+(5*i))*60.0),(double)radius+((7.5+y)*60.0),String.valueOf(++id)));
+                        if(++j==a)
+                            break;
+                    }
+                }
+                catch (Exception e) {
+                    createAlert(2,"Zły format rozmiaru!");
+                    return;
+                }
+
+
+            });
+            Scene scene =new Scene(pane1);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/main/style.css")).toExternalForm());
+            stage.setScene(scene);
+            stage.show();
+
+
+
+
+        });
+        MenuItem promotion=new MenuItem("Regały prostopadłe");
+        promotion.setOnAction(ev->{
+
+
+
+            Pane pane1= getGraphTemplatePane(stage,data -> {
+                int a,b,x,y;
+
+                patternSize[0] = data.size;
+                patternStartPoint[0] = data.startPoint;
+                toClear[0] = data.clearBoard;
+                try{
+
+                    a=Integer.parseInt(patternSize[0].split("x")[0].trim());
+                    b=Integer.parseInt(patternSize[0].split("x")[1].trim());
+                    y=Integer.parseInt(patternStartPoint[0].split(";")[0].trim());
+                    x=Integer.parseInt(patternStartPoint[0].split(";")[1].trim());
+                    if(toClear[0])
+                        clearCanvas();
+                    int startId=graph.getNodes().size();
+                    int id = startId;
+
+// Lewa półka (a+2 węzły pionowo)
+                    for (int i = 0; i < a + 2; i++) {
+                        createNode(x, y + 2 * i, String.valueOf(id++));
+                    }
+
+// Krawędzie lewej półki
+                    for (int i = 0; i < a + 1; i++) {
+                        createEdge(graph.getNodes().get(startId + i), graph.getNodes().get(startId + i + 1), 1);
+                    }
+
+// Regały prostopadłe między półkami
+                    for (int i = 0; i < a; i++) {
+                        for (int j = 0; j < b; j++) {
+                            createNode(x + 2 + 2 * j, y + 2 + 2 * i, String.valueOf(id++));
+                        }
+                    }
+
+// Krawędzie poziome między regałami
+                    for (int i = 0; i < a; i++) {
+                        for (int j = 0; j < b - 1; j++) {
+                            int offset = (a + 2) + (b * i) + j + startId;
+                            createEdge(graph.getNodes().get(offset), graph.getNodes().get(offset + 1), 1);
+                        }
+                    }
+
+// Prawa półka (a+2 węzły)
+                    for (int i = 0; i < a + 2; i++) {
+                        createNode(x + 2 * b + 3, y + 2 * i, String.valueOf(id++));
+                    }
+
+// Krawędzie prawej półki
+                    int rightStart = (a + 2) + (a * b) + startId;
+                    for (int i = rightStart; i < rightStart + a + 1; i++) {
+                        createEdge(graph.getNodes().get(i), graph.getNodes().get(i + 1), 1);
+                    }
+
+// Połączenia regałów do półek (góra/dół)
+                    for (int i = 0; i < a; i++) {
+                        int leftIndex = startId + i + 1;
+                        int regałStartIndex = startId + (a + 2) + (b * i);
+                        int rightIndex = rightStart + i;
+
+                        createEdge(graph.getNodes().get(leftIndex), graph.getNodes().get(regałStartIndex), 3);
+                        createEdge(graph.getNodes().get(regałStartIndex + b - 1), graph.getNodes().get(rightIndex + 1), 3);
+                    }
+                }
+                catch (Exception e) {
+                    createAlert(2,"Zły format rozmiaru!");
+                    return;
+                }
+
+
+            });
+            Scene scene =new Scene(pane1);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/main/style.css")).toExternalForm());
+            stage.setScene(scene);
+            stage.show();
+
+
+
+
+
+
+        });
+        MenuItem item=new MenuItem("Schowki");
+        item.setOnAction(ev->{
+            Pane pane1= getGraphTemplatePane(stage,data -> {
+                int a,b,x,y;
+
+                patternSize[0] = data.size;
+                patternStartPoint[0] = data.startPoint;
+                toClear[0] = data.clearBoard;
+                try{
+
+                    a=Integer.parseInt(patternSize[0].split("x")[0].trim());
+                    y=Integer.parseInt(patternStartPoint[0].split(";")[0].trim());
+                    x=Integer.parseInt(patternStartPoint[0].split(";")[1].trim());
+                    if(toClear[0])
+                        clearCanvas();
+                    int startId=graph.getNodes().size();
+                    int id = startId;
+
+// Lewa część regałów (x = x+1 i x+3)
+                    for (int i = 0; i < 2; i++) {
+                        for (int j = 0; j < a; j++) {
+                            createNode(x + 1 + 2 * i, y + 3 + 2 * j, String.valueOf(id++));
+                        }
+                    }
+
+// Prawa część regałów (x = x+9 i x+11)
+                    for (int i = 0; i < 2; i++) {
+                        for (int j = 0; j < a; j++) {
+                            createNode(x + 9 + 2 * i, y + 3 + 2 * j, String.valueOf(id++));
+                        }
+                    }
+
+// Środkowa kolumna (x = x+6)
+                    for (int i = 0; i < a + 2; i++) {
+                        createNode(x + 6, y + 1 + 2 * i, String.valueOf(id++));
+                    }
+
+// Połączenia w poziomie (4 grupy po a węzłów)
+                    for (int group = 0; group < 4; group++) {
+                        for (int j = 0; j < a - 1; j++) {
+                            int index = startId + group * a + j;
+                            createEdge(graph.getNodes().get(index), graph.getNodes().get(index + 1), 1);
+                        }
+                    }
+
+// Połączenia międzyregalowe (na końcach regałów)
+                    createEdge(graph.getNodes().get(startId), graph.getNodes().get(startId + a), 3);                 // 0 → a
+                    createEdge(graph.getNodes().get(startId + 2 * a), graph.getNodes().get(startId + 3 * a), 3);     // 2a → 3a
+                    createEdge(graph.getNodes().get(startId + a - 1), graph.getNodes().get(startId + 2 * a - 1), 3); // a-1 → 2a-1
+                    createEdge(graph.getNodes().get(startId + 3 * a - 1), graph.getNodes().get(startId + 4 * a - 1), 3); // 3a-1 → 4a-1
+
+// Połączenia środka (w pionie)
+                    int centerStart = startId + 4 * a;
+                    for (int i = centerStart; i < centerStart + a + 1; i++) {
+                        createEdge(graph.getNodes().get(i), graph.getNodes().get(i + 1), 1);
+                    }
+
+                }
+                catch (Exception e) {
+                    createAlert(2,"Zły format rozmiaru!");
+                    return;
+                }
+
+
+            });
+            Scene scene =new Scene(pane1);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/main/style.css")).toExternalForm());
+            stage.setScene(scene);
+            stage.show();
 
 
 
@@ -799,46 +937,87 @@ public class GraphInterfaceController implements Initializable {
     }
 
 
-    private String createBlankGraph()
+    private void createBlankGraph(int a,int b,int x,int y,int size)
     {
-        graph.clear();
-        clearCanvas();
-        TextInputDialog dialog=new TextInputDialog();
-        dialog.setHeaderText("Podaj rozmiar grafu");
-        Optional<String> res=dialog.showAndWait();
-        String size;
-        int a,b;
-        if(res.isPresent())
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(x);
+        System.out.println(y);
+        int id=size;
+        for(int i=x;i<x+a*2;i+=2)
         {
-            try{
-                size=res.get();
-                a=Integer.parseInt(size.split("x")[0].trim());
-                b=Integer.parseInt(size.split("x")[1].trim());
-            }
-            catch (Exception e) {
-                createAlert(2,"Zły format rozmiaru!");
-                return "";
-            }
-        }
-        else
-            return" ";
 
-        int id=0;
-        for(int i=0;i<a;i++)
-        {
-            for(int j=0;j<b;j++)
+            for(int j=y;j<y+b*2;j+=2)
             {
-                createNode((1+2*i),(1+2*j),String.valueOf(id));
+
+                createNode((i),(j),String.valueOf(id));
                 id++;
             }
 
         }
-        return size;
+
     }
 
     public Graph getGraph() {
         return graph;
     }
+
+
+    private Pane getGraphTemplatePane(Stage stage, Consumer<GraphTemplateData> callback)
+    {
+        Pane pane=new Pane();
+        pane.setPrefWidth(325);
+        pane.setPrefHeight(225);
+
+
+
+        Text t1=createText("Wybierz rozmiar szablonu",200,20);
+        TextField tf1= getTextField(200,8,100,25);
+        Text t2=createText("Czy wyczyścić planszę?",200,65);
+        CheckBox cb1=new CheckBox();
+        cb1.setLayoutX(245);
+        cb1.setLayoutY(50);
+        Text t3=createText("Wybierz punkt startowy \n (Lewy gorny róg) ",200,110);
+        TextField tf3=getTextField(200,100,100,25);
+        Button b1=new Button("Potwierdź");
+        b1.getStyleClass().add("interfaceButton");
+        b1.setLayoutX(75);
+        b1.setLayoutY(150);
+        b1.setOnAction(e->{
+            String sizeText = tf1.getText();
+            boolean clearBoard = cb1.isSelected();
+            String startPointText = tf3.getText();
+
+
+            callback.accept(new GraphTemplateData(sizeText, startPointText, clearBoard));
+
+
+            stage.close();
+
+        });
+        pane.getChildren().addAll(t1,tf1,t2,tf3,cb1,t3,b1);
+        return pane;
+    }
+    private Text createText(String text ,int width,int y)
+    {
+        Text t=new Text(text);
+        t.setFont(new Font("Arial",16));
+        t.setWrappingWidth(width);
+        t.setLayoutY(y);
+        t.setTextAlignment(TextAlignment.CENTER);
+        return t;
+    }
+    private TextField getTextField(int x,int y, int w, int h)
+    {
+        TextField tf=new TextField();
+        tf.setLayoutX(x);
+        tf.setLayoutY(y);
+        tf.setPrefWidth(w);
+        tf.setPrefHeight(h);
+        return tf;
+    }
+
+
 
 
 
