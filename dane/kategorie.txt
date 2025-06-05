@@ -1,0 +1,170 @@
+id,product,category
+0,whole milk,Dairy
+1,hard cheese,Dairy
+2,organic products,Organic
+3,decalcifier,Household
+4,skin care,Personal Care
+5,beverages,Beverages
+6,cream,Dairy
+7,canned beer,Beverages
+8,root vegetables,Fruits/Vegetables
+9,syrup,Bakery/Cooking
+10,frozen meals,Frozen
+11,snack products,Sweets/Snacks
+12,nuts/prunes,Sweets/Snacks
+13,bottled beer,Beverages
+14,abrasive cleaner,Household
+15,ready soups,Canned/Frozen
+16,packaged fruit/vegetables,Fruits/Vegetables
+17,brown bread,Bakery/Cooking
+18,toilet cleaner,Household
+19,pip fruit,Fruits/Vegetables
+20,specialty cheese,Dairy
+21,tidbits,Sweets/Snacks
+22,finished products,Canned/Frozen
+23,ketchup,Bakery/Cooking
+24,red/blush wine,Beverages
+25,canned fish,Canned/Frozen
+26,butter milk,Dairy
+27,yogurt,Dairy
+28,canned vegetables,Canned/Frozen
+29,candy,Sweets/Snacks
+30,pudding powder,Bakery/Cooking
+31,dental care,Personal Care
+32,bathroom cleaner,Household
+33,white bread,Bakery/Cooking
+34,soft cheese,Dairy
+35,tea,Beverages
+36,jam,Bakery/Cooking
+37,flour,Bakery/Cooking
+38,seasonal products,Other
+39,sound storage medium,Other
+40,light bulbs,Household
+41,rubbing alcohol,Household
+42,misc. beverages,Beverages
+43,onions,Fruits/Vegetables
+44,salt,Bakery/Cooking
+45,flower (seeds),Other
+46,long life bakery product,Bakery/Cooking
+47,specialty vegetables,Fruits/Vegetables
+48,dishes,Household
+49,hamburger meat,Meat/Fish
+50,newspapers,Other
+51,other vegetables,Fruits/Vegetables
+52,frozen potato products,Frozen
+53,cereals,Bakery/Cooking
+54,domestic eggs,Dairy
+55,white wine,Beverages
+56,margarine,Dairy
+57,pastry,Bakery/Cooking
+58,tropical fruit,Fruits/Vegetables
+59,sliced cheese,Dairy
+60,cocoa drinks,Beverages
+61,turkey,Meat/Fish
+62,potato products,Fruits/Vegetables
+63,roll products,Bakery/Cooking
+64,preservation products,Other
+65,uht-milk,Dairy
+66,salad dressing,Bakery/Cooking
+67,chocolate,Sweets/Snacks
+68,specialty chocolate,Sweets/Snacks
+69,fish,Meat/Fish
+70,cooking chocolate,Bakery/Cooking
+71,liqueur,Beverages
+72,brandy,Beverages
+73,curd cheese,Dairy
+74,sparkling wine,Beverages
+75,female sanitary products,Personal Care
+76,liquor,Beverages
+77,curd,Dairy
+78,beef,Meat/Fish
+79,whipped/sour cream,Dairy
+80,specialty fat,Bakery/Cooking
+81,whisky,Beverages
+82,photo/film,Other
+83,specialty bar,Sweets/Snacks
+84,potted plants,Other
+85,organic sausage,Organic
+86,dish cleaner,Household
+87,shopping bags,Other
+88,liquor (appetizer),Beverages
+89,sweet spreads,Bakery/Cooking
+90,artif. sweetener,Bakery/Cooking
+91,vinegar,Bakery/Cooking
+92,cookware,Household
+93,baking powder,Bakery/Cooking
+94,napkins,Household
+95,citrus fruit,Fruits/Vegetables
+96,grapes,Fruits/Vegetables
+97,baby food,Other
+98,canned fruit,Canned/Frozen
+99,dessert,Sweets/Snacks
+100,cling film/bags,Household
+101,salty snack,Sweets/Snacks
+102,frankfurter,Meat/Fish
+103,flower soil/fertilizer,Other
+104,dog food,Other
+105,soap,Personal Care
+106,zwieback,Bakery/Cooking
+107,pork,Meat/Fish
+108,chicken,Meat/Fish
+109,bags,Other
+110,cream cheese,Dairy
+111,rum,Beverages
+112,spread cheese,Dairy
+113,condensed milk,Dairy
+114,sausage,Meat/Fish
+115,berries,Fruits/Vegetables
+116,herbs,Fruits/Vegetables
+117,pet care,Other
+118,cat food,Other
+119,ham,Meat/Fish
+120,house keeping products,Household
+121,waffles,Sweets/Snacks
+122,honey,Bakery/Cooking
+123,chewing gum,Sweets/Snacks
+124,frozen fish,Frozen
+125,pickled vegetables,Canned/Frozen
+126,cleaner,Household
+127,softener,Household
+128,hair spray,Personal Care
+129,frozen vegetables,Frozen
+130,hygiene articles,Personal Care
+131,fruit/vegetable juice,Beverages
+132,processed cheese,Dairy
+133,liver loaf,Meat/Fish
+134,cake bar,Sweets/Snacks
+135,soda,Beverages
+136,rice,Bakery/Cooking
+137,coffee,Beverages
+138,frozen dessert,Frozen
+139,rolls/buns,Bakery/Cooking
+140,meat,Meat/Fish
+141,make up remover,Personal Care
+142,spices,Bakery/Cooking
+143,nut snack,Sweets/Snacks
+144,sugar,Bakery/Cooking
+145,sauces,Bakery/Cooking
+146,popcorn,Sweets/Snacks
+147,bottled water,Beverages
+148,mayonnaise,Bakery/Cooking
+149,candles,Other
+150,male cosmetics,Personal Care
+151,frozen chicken,Frozen
+152,kitchen utensil,Household
+153,kitchen towels,Household
+154,instant food products,Canned/Frozen
+155,meat spreads,Meat/Fish
+156,oil,Bakery/Cooking
+157,mustard,Bakery/Cooking
+158,ice cream,Sweets/Snacks
+159,instant coffee,Beverages
+160,soups,Canned/Frozen
+161,frozen fruits,Frozen
+162,detergent,Household
+163,pasta,Bakery/Cooking
+164,prosecco,Beverages
+165,baby cosmetics,Personal Care
+166,chocolate marshmallow,Sweets/Snacks
+167,semi-finished bread,Bakery/Cooking
+168,butter,Dairy

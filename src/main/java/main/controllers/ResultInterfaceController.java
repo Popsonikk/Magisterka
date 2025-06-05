@@ -2,12 +2,11 @@ package main.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -22,15 +21,31 @@ import main.objects.Edge;
 import main.objects.Graph;
 import main.objects.Node;
 
+import java.net.URL;
 import java.util.*;
 
-public class ResultInterfaceController {
+public class ResultInterfaceController implements Initializable {
+    @FXML
+    public ScrollPane sp;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        sp.setHbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        sp.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+    }
+
     @FXML
     public Pane mainPane;
     @FXML
     public Pane canvas;
     @FXML
     public VBox resCanvas;
+
+    private Scale scale;
+    private float meshSize;
+    private float scaleRadius;
+    private int radius;
+    public HBox bottomBox;
 
 
     private Scene mainScene;
@@ -47,6 +62,9 @@ public class ResultInterfaceController {
     public void showResult(Map<Node,Integer> dijkstra, Map<Node,String> result, Graph graph,List<Pair<String,String>> categories)
     {
 
+        scale=new Scale(0.5,0.5,0,0);
+        scaleRadius= 0.5F;
+        scaleController();
         dijkstra=dijkstra.entrySet().stream().sorted(Map.Entry.comparingByValue((v1,v2)->Integer.compare(v2,v1))).collect(LinkedHashMap::new,
                 (m, e) -> m.put(e.getKey(), e.getValue()),
                 LinkedHashMap::putAll);
@@ -58,7 +76,7 @@ public class ResultInterfaceController {
 
 
 
-        canvas.getTransforms().add(new Scale(0.5,0.5,0,0));
+        canvas.getTransforms().add(scale);
         List<Node> resultList=new ArrayList<>(result.keySet());
         HBox box=new HBox();
         box.getStyleClass().add("resultBorder");
@@ -117,9 +135,9 @@ public class ResultInterfaceController {
         node.getStyleClass().add("circle");
         Text text = new Text(id);
         double len=radius/Math.sqrt(2);
-        text.setX(node.getCenterX()-len);
+        text.setX(node.getCenterX()-len*1.5);
         text.setY(node.getCenterY()+len/2);
-        text.setWrappingWidth(len*2);
+        text.setWrappingWidth(len*3);
         text.getStyleClass().add("circleText");
         Group g=new Group(node,text);
         canvas.getChildren().add(g);
@@ -150,6 +168,28 @@ public class ResultInterfaceController {
         weightText.setX(((edge.getStartX() + edge.getEndX()) / 2)-15);
         weightText.setY(((edge.getStartY() + edge.getEndY()) / 2));
         canvas.getChildren().addAll(edge, weightText);
+    }
+    private void scaleController(){
+        VBox box=new VBox();
+        box.getChildren().addAll(createZoomButton("Przybliż",0.05f),createZoomButton("Oddal",-0.05f));
+        mainPane.getChildren().add(box);
+
+    }
+    private Button createZoomButton(String s, float d)
+    {
+        Button zoomButton=new Button(s);
+        zoomButton.getStyleClass().add("zoomButton");
+        zoomButton.setOnAction(e->{
+            scaleRadius+=d;
+            if(scaleRadius<0.2)
+                scaleRadius=0.2f;
+            if(scaleRadius>2.0)
+                scaleRadius=2.0f;
+            scale.setX(scaleRadius);
+            scale.setY(scaleRadius);
+            canvas.setPrefSize(meshSize*scaleRadius,meshSize*scaleRadius);
+        });
+        return zoomButton;
     }
 
 }

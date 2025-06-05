@@ -11,8 +11,8 @@
     <stylesheets>
         <URL value="@style.css"/>
     </stylesheets>
-    <ScrollPane prefHeight="685.0" prefWidth="685.0"  layoutX="5.0" layoutY="5.0" styleClass="graphBorder">
-        <Pane fx:id="canvas"/>
+    <ScrollPane fx:id="sp" prefHeight="685.0" prefWidth="685.0"  layoutX="5.0" layoutY="5.0" styleClass="graphBorder">
+        <Pane fx:id="canvas" prefHeight="5000.0" prefWidth="5000.0" />
     </ScrollPane>
     <ScrollPane prefHeight="685.0" prefWidth="350.0"  layoutX="645.0" layoutY="5.0" styleClass="graphBorder">
         <VBox fx:id="resCanvas"/>

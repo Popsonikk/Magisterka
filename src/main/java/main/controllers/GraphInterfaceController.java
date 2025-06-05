@@ -117,10 +117,10 @@ public class GraphInterfaceController implements Initializable {
     {
         Text text = new Text();
         double len=radius/Math.sqrt(2);
-        text.setX(node.getCenterX()-len);
+        text.setX(node.getCenterX()-len*1.5);
         text.setY(node.getCenterY()+len/2);
         text.setText(id);
-        text.setWrappingWidth(len*2);
+        text.setWrappingWidth(len*3);
         text.getStyleClass().add("circleText");
 
         Group nodeGroup=new Group(node,text);
@@ -425,9 +425,10 @@ public class GraphInterfaceController implements Initializable {
         idText.getStyleClass().add("infoBoxTextGraph");
         TextField xField=new TextField();
         xField.getStyleClass().add("filterBoxGraph");
+        xField.setPrefWidth(40);
         TextField yField=new TextField();
         yField.getStyleClass().add("filterBoxGraph");
-
+        yField.setPrefWidth(40);
         TextField idField=new TextField();
         idField.getStyleClass().add("filterBoxGraph");
         box.getChildren().addAll(x,xField,y,yField,idText,idField);

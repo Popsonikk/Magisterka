@@ -143,10 +143,10 @@ public class RuleInterfaceController extends InterfaceTemplate<AssociationRule> 
         CheckBox checkBox=new CheckBox();
         checkBoxes.add(checkBox);
         GridPane gridPane=new GridPane();
-        gridPane.getColumnConstraints().add(new ColumnConstraints(575.0));
-        gridPane.getColumnConstraints().add(new ColumnConstraints(125.0));
-        gridPane.getColumnConstraints().add(new ColumnConstraints(125.0));
-        gridPane.getColumnConstraints().add(new ColumnConstraints(125.0));
+        gridPane.getColumnConstraints().add(new ColumnConstraints(545.0));
+        gridPane.getColumnConstraints().add(new ColumnConstraints(135.0));
+        gridPane.getColumnConstraints().add(new ColumnConstraints(135.0));
+        gridPane.getColumnConstraints().add(new ColumnConstraints(135.0));
         //generowanie pojedynczej kolumny
 
         HBox box1=createTableColumn("","basketBorder","basketText");
@@ -194,9 +194,9 @@ public class RuleInterfaceController extends InterfaceTemplate<AssociationRule> 
         cu.setOnAction((event)->filtrData(FiltrType.confidenceDown));
         MenuItem cd=new MenuItem("Pokaż poziomy ufności powyżej");
         cd.setOnAction((event)->filtrData(FiltrType.confidenceUp));
-        MenuItem ld=new MenuItem("Pokaż poziom lift poniżej");
+        MenuItem ld=new MenuItem("Pokaż poziom dźwigni poniżej");
         ld.setOnAction((event)->filtrData(FiltrType.liftDown));
-        MenuItem lu=new MenuItem("Pokaż poziom lift powyżej");
+        MenuItem lu=new MenuItem("Pokaż poziom dźwigni powyżej");
         lu.setOnAction((event)->filtrData(FiltrType.liftUp));
         menuButton.getItems().addAll(p,pl,su,sd,cu,cd,lu,ld);
     }
@@ -252,10 +252,10 @@ public class RuleInterfaceController extends InterfaceTemplate<AssociationRule> 
         header.setPrefWidth(950.0);
         header.setPrefHeight(40.0);
         GridPane gridPane=new GridPane();
-        gridPane.getColumnConstraints().add(new ColumnConstraints(575.0));
-        gridPane.getColumnConstraints().add(new ColumnConstraints(125.0));
-        gridPane.getColumnConstraints().add(new ColumnConstraints(125.0));
-        gridPane.getColumnConstraints().add(new ColumnConstraints(125.0));
+        gridPane.getColumnConstraints().add(new ColumnConstraints(545.0));
+        gridPane.getColumnConstraints().add(new ColumnConstraints(135.0));
+        gridPane.getColumnConstraints().add(new ColumnConstraints(135.0));
+        gridPane.getColumnConstraints().add(new ColumnConstraints(135.0));
 
         HBox patternBox=createTableColumn("Reguła","basketHeader","basketHeaderText");
         Button patternButton=createSortButton(Comparator.comparingInt(o -> o.getAntecedent().getPattern().size()),
@@ -275,7 +275,7 @@ public class RuleInterfaceController extends InterfaceTemplate<AssociationRule> 
         confidenceBox.getChildren().add(confidenceButton);
         gridPane.add(confidenceBox,2,0);
 
-        HBox liftBox=createTableColumn("Lift","basketHeader","basketHeaderText");
+        HBox liftBox=createTableColumn("Dźwignia","basketHeader","basketHeaderText");
         Button liftButton=createSortButton(Comparator.comparingDouble(AssociationRule::getLift)
                 ,(o1,o2)->Double.compare(o2.getLift(),o1.getLift()));
         liftBox.getChildren().add(liftButton);
